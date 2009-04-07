@@ -98,7 +98,7 @@ public class DataPVMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 		return this.data.entrySet();
 	}
 
-	public Set<P> getPropertySet() {
+	public Set<P> keySet() {
 		return this.data.keySet();
 	}
 

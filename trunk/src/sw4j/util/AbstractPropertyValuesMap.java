@@ -70,7 +70,7 @@ abstract public class AbstractPropertyValuesMap <P,V> implements Comparable<Abst
 	 * @param map
 	 */
 	final public void add(AbstractPropertyValuesMap<P,V> map){
-		Iterator<P> iter = map.getPropertySet().iterator();
+		Iterator<P> iter = map.keySet().iterator();
 		while (iter.hasNext()){
 			P p = iter.next();
 			this.add(p, map.getValues(p));
@@ -122,7 +122,7 @@ abstract public class AbstractPropertyValuesMap <P,V> implements Comparable<Abst
 	 *  
 	 * @return
 	 */
-	abstract public Set<P> getPropertySet();
+	abstract public Set<P> keySet();
 	
 	/**
 	 * return cannonical string representation of this object, can be used to support comparable
@@ -158,7 +158,7 @@ abstract public class AbstractPropertyValuesMap <P,V> implements Comparable<Abst
 	
 	final public String toPrettyString() {
 		String ret = "";
-		Iterator <P> iter = this.getPropertySet().iterator();
+		Iterator <P> iter = this.keySet().iterator();
 		while (iter.hasNext()){
 			P p = iter.next();
 			ret+="\n";

@@ -387,6 +387,37 @@ public class DataSmartMap implements Comparable<String>{
 		hd.endDocument();		
     }
 
+	////////////////////////////////////////////////
+	// translation (to HTML)
+	////////////////////////////////////////////////
+    
+	public String toHTMLtablerow(){
+		StringWriter sw = new StringWriter();
+		PrintWriter out = new PrintWriter(sw);
+		Iterator<Map.Entry<String, Object>> iter = getData().entrySet().iterator();
+		//out.println(String.format("<tr>"));
+		while (iter.hasNext()){
+			Map.Entry<String, Object> entry = iter.next();
+			
+			out.println(String.format("<td>%s</td>", entry.getValue()));
+		}
+		//out.println(String.format("</tr>"));
+		return sw.toString();
+	}
+    
+	public String toHTMLtablerowheader(){
+		StringWriter sw = new StringWriter();
+		PrintWriter out = new PrintWriter(sw);
+		Iterator<Map.Entry<String, Object>> iter = getData().entrySet().iterator();
+		//out.println(String.format("<tr>"));
+		while (iter.hasNext()){
+			Map.Entry<String, Object> entry = iter.next();
+			
+			out.println(String.format("<td>%s</td>", entry.getKey()));
+		}
+		//out.println(String.format("</tr>"));
+		return sw.toString();
+	}
 	
 	////////////////////////////////////////////////
 	// translation (to SQL)

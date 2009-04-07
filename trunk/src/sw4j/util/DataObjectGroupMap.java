@@ -56,7 +56,7 @@ public class DataObjectGroupMap <V>{
 	}
 	
 	public void normalize(){
-		Iterator<V> iter = this.m_map_uri_uri.getPropertySet().iterator();
+		Iterator<V> iter = this.m_map_uri_uri.keySet().iterator();
 		while (iter.hasNext()){
 			V uri1 = iter.next();
 			Iterator <V> iter_2 = this.m_map_uri_uri.getValues(uri1).iterator();
@@ -131,12 +131,12 @@ public class DataObjectGroupMap <V>{
 		return this.m_map_uri_gid.size();
 	}
 	public int getTotalGroups() {
-		return this.m_map_gid_uris.getPropertySet().size();
+		return this.m_map_gid_uris.keySet().size();
 	}
 
 	public String toPrettyString() {
 		String ret = "";
-		Iterator <Integer> iter = this.m_map_gid_uris.getPropertySet().iterator();
+		Iterator <Integer> iter = this.m_map_gid_uris.keySet().iterator();
 		while (iter.hasNext()){
 			Integer gid = iter.next();
 			ret+="\n";
@@ -144,7 +144,7 @@ public class DataObjectGroupMap <V>{
 			ret+="\n";
 			ret+=gid;
 			ret+="\n";
-			ret+=this.getIds(gid);
+			ret+= ToolSafe.printCollectionToString(this.getIds(gid));
 		}
 		return ret;
 	}

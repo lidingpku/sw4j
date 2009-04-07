@@ -205,7 +205,7 @@ public class DataPVCMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 	 * list all properties
 	 * @return
 	 */
-	public Set<P> getPropertySet() {
+	public Set<P> keySet() {
 		return m_index.keySet();
 	}
 
