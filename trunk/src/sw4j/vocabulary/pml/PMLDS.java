@@ -7,7 +7,7 @@
  *  @author: Li Ding (http://www.cs.rpi.edu/~dingl )
  *
  */
-package  sw4j.vocabulary;
+package  sw4j.vocabulary.pml;
 
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.Property;
