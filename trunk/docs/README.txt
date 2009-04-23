@@ -8,8 +8,8 @@ This pages is written for better java based semantic web programming.
 
 ==Prerequisite==
 required
-* java 1.5.15 or up
-* jena   jena-2.5.7
+* java 1.6.03  (1.5.12 may also work)
+* jena   jena-2.5.7 (included in pellet distribution)
 * Pellet.  pellet-2.0.0-rc5.zip (Mar 3, 2009), http://clarkparsia.com/pellet/download/pellet-2.0.0-rc5
 * GoogleSearch SOAP API. - googleapi.jar  It was deprecated by google though. it is used to guess charset encoding.
 
