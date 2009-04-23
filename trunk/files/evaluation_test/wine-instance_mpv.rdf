@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+     <!ENTITY rdf  "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+     <!ENTITY wine  "http://tw.rpi.edu/2008/04/wine-lite.owl#" >
+     <!ENTITY xsd  "http://www.w3.org/2001/XMLSchema#" >
+   ]>
+<rdf:RDF
+  xmlns:wine = "&wine;"
+  xmlns:rdf = "&rdf;">
+
+
+<!-- 
+ A wine instance missing a value for hasMaker.
+ Therefore, we need to report a warning indicating a missing property value.
+-->
+<wine:Zinfandel rdf:about="#W1">
+  <wine:hasColor rdf:resource="&wine;Red"/>
+  <wine:hasFlavor rdf:resource="&wine;Moderate"/>
+  <wine:hasSugar rdf:resource="&wine;Dry"/>
+  <wine:hasBody rdf:resource="&wine;Full"/>
+</wine:Zinfandel>
+
+
+<!-- 
+ A wine instance missing a value for hasColor; however, the value for
+ hasColor for all instances of Zinfandel has been defined in the wine ontology.
+ Therefore, we don't need to report a warning indicating a missing property value.
+-->
+<wine:Zinfandel rdf:about="#W3">
+  <wine:hasFlavor rdf:resource="&wine;Moderate"/>
+  <wine:hasSugar rdf:resource="&wine;Dry"/>
+  <wine:hasBody rdf:resource="&wine;Full"/>
+  <wine:hasMaker>
+	<wine:Winery  rdf:about="#Elyse" />
+  </wine:hasMaker>
+</wine:Zinfandel>
+
+
+</rdf:RDF>

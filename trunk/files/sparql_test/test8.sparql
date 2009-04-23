@@ -1,0 +1,34 @@
+#
+# checks cases with card=1 restriction but without hasvalue restriction:
+# http://tw.rpi.edu/2008/03/wine-instance2.owl  found missing value
+# http://tw.rpi.edu/2008/03/wine-instance3.owl  no missing value (asserted by ontology's hasValue)
+#
+#
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX wine: <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#>
+SELECT ?w ?p 
+FROM NAMED <http://tw.rpi.edu/2008/03/wine-instance.owl>
+FROM NAMED <http://tw.rpi.edu/2008/03/wine.owl>
+WHERE { 
+	GRAPH ?g_o {
+		?c rdfs:subClassOf ?r.
+		?r rdf:type owl:Restriction .
+		?r owl:onProperty   ?p .
+		?r owl:cardinality ?card .
+		FILTER( ?card = 1 ) 
+		OPTIONAL {
+			?c rdfs:subClassOf ?r1.
+			?r1 rdf:type owl:Restriction .
+			?r1 owl:onProperty   ?p .
+			?r1 owl:hasValue ?val .
+		}
+		FILTER( !BOUND(?r1) )
+	}
+	GRAPH ?g_i {
+		?w rdf:type ?c .
+		OPTIONAL { ?w ?p ?o .    }
+		FILTER( !BOUND(?o) )
+	}
+}
