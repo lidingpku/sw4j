@@ -15,6 +15,7 @@ import sw4j.util.Sw4jException;
 import sw4j.util.ToolIO;
 import sw4j.util.DataSmartMap;
 import sw4j.util.ToolSafe;
+import sw4j.util.ToolString;
 import sw4j.util.rdf.ToolJena;
 import sw4j.util.rdf.ToolPellet;
 
@@ -492,7 +493,7 @@ public class ToolJenaDeductiveClosureTest {
 		if (bMistake){
 			System.out.println("------------summary----------------------");
 			System.out.println(entry.getAsString(FIELD_URL));
-			System.out.println(ToolSafe.printCollectionToString(message));
+			System.out.println(ToolString.printCollectionToString(message));
 			fail();
 		}
 		if (debug){

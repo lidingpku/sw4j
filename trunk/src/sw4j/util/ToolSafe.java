@@ -30,7 +30,6 @@ package sw4j.util;
 
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.Map;
 
 
 /**
@@ -99,36 +98,6 @@ public class ToolSafe {
 		}
 
 		return iter.next();
-	}
-
-	@SuppressWarnings("unchecked")
-	public static String printMapToString(Map data) {
-		if (isEmpty(data))
-			return "";
-		
-		String temp = "";
-		Iterator<Map.Entry> iter = data.entrySet().iterator();
-		while (iter.hasNext()) {
-			Map.Entry entry = iter.next();
-			temp += entry;
-			temp += "\n";
-		}
-		return temp;
-	}
-	
-	@SuppressWarnings("unchecked")
-	public static String printCollectionToString(Collection data) {
-		if (isEmpty(data))
-			return "";
-
-		String temp = "";
-		Iterator iter = data.iterator();
-		while (iter.hasNext()) {
-			String  entry = iter.next().toString();
-			temp += entry;
-			temp += "\n";
-		}
-		return temp;
 	}
 
 	public static void checkNonEmpty(Object data, String szMsg)

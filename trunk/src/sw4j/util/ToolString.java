@@ -28,9 +28,12 @@ OTHER DEALINGS IN THE SOFTWARE.
 package sw4j.util;
 
 import java.text.SimpleDateFormat;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
- * some convinient string fucntions
+ * some convenient string functions
  * <ul>
  * <li>ensure a string is non-empty, throw exception otherwise</li>
  * </ul>
@@ -114,6 +117,36 @@ public class ToolString {
 	public static String formatXMLDateTime(long date){
 		final SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 		return sf.format(date);
+	}
+
+	@SuppressWarnings("unchecked")
+	public static String printCollectionToString(Collection data) {
+		if (ToolSafe.isEmpty(data))
+			return "";
+	
+		String temp = "";
+		Iterator iter = data.iterator();
+		while (iter.hasNext()) {
+			String  entry = iter.next().toString();
+			temp += entry;
+			temp += "\n";
+		}
+		return temp;
+	}
+
+	@SuppressWarnings("unchecked")
+	public static String printMapToString(Map data) {
+		if (ToolSafe.isEmpty(data))
+			return "";
+		
+		String temp = "";
+		Iterator<Map.Entry> iter = data.entrySet().iterator();
+		while (iter.hasNext()) {
+			Map.Entry entry = iter.next();
+			temp += entry;
+			temp += "\n";
+		}
+		return temp;
 	}
 
 }

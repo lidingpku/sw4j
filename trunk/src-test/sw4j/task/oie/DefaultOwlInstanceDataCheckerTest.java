@@ -16,6 +16,7 @@ import sw4j.task.oie.InspectOwlDl;
 import sw4j.task.rdf.TaskParseRdf;
 import sw4j.task.util.DataTaskResult;
 import sw4j.util.ToolSafe;
+import sw4j.util.ToolString;
 
 
 public class DefaultOwlInstanceDataCheckerTest {
@@ -287,7 +288,7 @@ public class DefaultOwlInstanceDataCheckerTest {
 		}
 		
 		System.out.println("expect: "+ title+"---"+message);
-		System.out.println("found: " + ToolSafe.printCollectionToString(der.reports));
+		System.out.println("found: " + ToolString.printCollectionToString(der.reports));
 		//System.out.println(SwutilEvaluationReport.toXml(reports));
 		fail();
 	}	

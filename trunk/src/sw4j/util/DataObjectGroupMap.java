@@ -172,7 +172,7 @@ public class DataObjectGroupMap <V>{
 			Integer gid = iter.next();
 			ret+=String.format("\n--------------\n%d\n%s",
 			 gid,
-			 ToolSafe.printCollectionToString(this.getIds(gid)));
+			 ToolString.printCollectionToString(this.getIds(gid)));
 		}
 		return ret;
 	}
