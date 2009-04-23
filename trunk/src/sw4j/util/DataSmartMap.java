@@ -108,8 +108,8 @@ public class DataSmartMap implements Comparable<String>{
 	////////////////////////////////////////////////
 	// constant
 	////////////////////////////////////////////////
-	public final static int DB_TRUE = 1;
-	public final static int DB_FALSE = 0;
+	public final static String DB_TRUE = "1";
+	public final static String DB_FALSE = "0";
 	
 	////////////////////////////////////////////////
 	// internal data
@@ -132,11 +132,13 @@ public class DataSmartMap implements Comparable<String>{
 	////////////////////////////////////////////////
 	public DataSmartMap(){
 		this("");
-		this.m_szName = this.getClass().getSimpleName()+ System.currentTimeMillis();
 	}
 
 	public DataSmartMap(String szName){
-		m_szName = szName;
+		if (ToolSafe.isEmpty(szName))
+			this.m_szName = this.getClass().getSimpleName()+ System.currentTimeMillis();
+		else
+			this.m_szName = szName;
 	}
 	
 	
@@ -196,30 +198,38 @@ public class DataSmartMap implements Comparable<String>{
 		this.put( property, value );
     }
 
+    public void put(String property, Object value){
+    	this.do_put(property, value);
+	}
+
     public void put(String property, char value){
     	this.do_put(property, ""+value);
 	}
 
 	public void put(String property, boolean value){
+		Object obj = value;
     	if (value)
-    		this.do_put( property, ""+DB_TRUE );	//true
+    		this.do_put( property, obj );	//true
         else
-        	this.do_put( property, ""+DB_FALSE );  //false
+        	this.do_put( property, obj );  //false
     }
 
 	public void put(String property, int value){
-		this.do_put( property, ""+value );
+		Object obj = value;
+		this.do_put( property, obj );
 	}
 
 	public void put(String property, long value){
-		this.do_put( property, ""+value );
+		Object obj = value;
+		this.do_put( property, obj );
 	}
 
 	public void put(String property, double value){
-		this.do_put( property, ""+value );
+		Object obj = value;
+		this.do_put( property, obj );
 	}
 	
-	private void do_put(String property, String value){
+	private void do_put(String property, Object value){
    		m_data.put( property, value );
     }
  	
@@ -238,15 +248,32 @@ public class DataSmartMap implements Comparable<String>{
 	 * @param property
 	 * @return
 	 */
-	public String getEntryAsString(String property){
+	public String getAsString(String property){
         if (null == m_data)
             return null;
         
-        return (String)m_data.get(property);
+        return m_data.get(property).toString();
     }
-
-	public static boolean parseBooleanEntry(String temp){
-		return (""+DB_TRUE).equals(temp);
+	public String getAsDbString(String property){
+        if (null == m_data)
+            return null;
+        
+        Object value = m_data.get(property);
+        if (value instanceof Boolean){
+        	return parseBooleanToDbString((Boolean)value);
+        }else{
+        	return value.toString();
+        }
+    }
+	
+	public static boolean parseDbStringToBoolean(String temp){
+		return DB_TRUE.equals(temp);
+	}
+	public static String parseBooleanToDbString(Boolean temp){
+		if (temp)
+			return DB_TRUE;
+		else
+			return DB_FALSE;
 	}
 	
 	public void clearData(){
@@ -323,6 +350,7 @@ public class DataSmartMap implements Comparable<String>{
 	// translation (to XML)
 	////////////////////////////////////////////////
     
+    
 	public String toXml(){
 		StringWriter sw = new StringWriter();
 		PrintWriter out = new PrintWriter(sw);
@@ -359,16 +387,32 @@ public class DataSmartMap implements Comparable<String>{
 		return hd;
     }
     
-    public void xmlStartContent(TransformerHandler hd) throws SAXException{
+    @SuppressWarnings("unchecked")
+	public void xmlStartContent(TransformerHandler hd) throws SAXException{
 		AttributesImpl atts = new AttributesImpl();
+		  atts.addAttribute("", "", "xmlns:xsi", "", "http://www.w3.org/2001/XMLSchema-instance");
 		// Entry
 		hd.startElement("","",m_szName,atts);
 		// properties
-		  atts.clear();
 	    Iterator<Map.Entry<String,Object>> iter = m_data.entrySet().iterator();
 	    while (iter.hasNext()){
-	        Map.Entry<String,Object>  entry = iter.next();
-	        if (null!=entry.getValue()){
+
+		    Map.Entry<String,Object>  entry = iter.next();
+  		    Object value = entry.getValue();
+	        if (null!=value){
+		      atts.clear();
+		      Class[] myclass = new Class[]{
+		    		  String.class,
+		    		  Integer.class,
+		    		  Boolean.class,
+		      };
+		      for (int i=0; i<myclass.length; i++){
+		    	  Class theclass = myclass[i];
+		    	  if (theclass.isInstance(value)){
+		    		  atts.addAttribute("http://www.w3.org/2001/XMLSchema-instance", "type", "xsi:type", "", theclass.getSimpleName().toLowerCase());
+		    		  break;
+		    	  }
+		      }
 	  		  hd.startElement("","",entry.getKey(),atts);
 	  		  //hd.startCDATA();
 	  		  String szTemp = entry.getValue().toString();
@@ -390,6 +434,7 @@ public class DataSmartMap implements Comparable<String>{
 	////////////////////////////////////////////////
 	// translation (to HTML)
 	////////////////////////////////////////////////
+    
     
 	public String toHTMLtablerow(){
 		StringWriter sw = new StringWriter();
@@ -444,13 +489,12 @@ public class DataSmartMap implements Comparable<String>{
 		String szSQL="";
 		while (iter.hasNext()){
 			String property = (String) iter.next();
-			String value = (String) m_data.get(property);
 
 			if (szSQL.length()>0)
 				szSQL+=",";
 				
 			szSQL +=" " + property+"=";
-			szSQL += getSQLField(property, value);
+			szSQL += getSQLField(property);
 		}
 		return szSQL;
 	}
@@ -463,7 +507,7 @@ public class DataSmartMap implements Comparable<String>{
 	}
     
 	public String getSQLWhere(String property){
-		return property + " = "+getSQLField(property, getEntryAsString(property));
+		return property + " = "+getSQLField(property);
 	}
 	
 	public String getSQLWhere(Set<String> fields){
@@ -471,13 +515,14 @@ public class DataSmartMap implements Comparable<String>{
 		String temp = " 1 ";
 		while (iter.hasNext()){
 			String property = (String)iter.next();
-			temp += " AND "+property + " = "+getSQLField(property, getEntryAsString(property));
+			temp += " AND "+property + " = "+getSQLField(property);
 		}
 		return temp;
 	}
 	
-	private String getSQLField(String property, String value){
-		String temp = value;
+	private String getSQLField(String property){
+		
+		String temp = getAsDbString(property);
 		if (null==temp)
 			return "null";
 		
@@ -513,12 +558,11 @@ public class DataSmartMap implements Comparable<String>{
 		String szSQL="";
 		while (iter.hasNext()){
 			String property = (String) iter.next();
-			String value = (String) m_data.get(property);
 
 			if (szSQL.length()>0)
 				szSQL+=",";
 
-			szSQL += getSQLField(property, value);
+			szSQL += getSQLField(property);
 		}
 		return szSQL;
 	}

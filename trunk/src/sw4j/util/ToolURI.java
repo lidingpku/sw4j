@@ -40,6 +40,7 @@ import java.util.StringTokenizer;
 
 import org.apache.log4j.Logger;
 
+
 /**
  * provide functions for process URI and URL
  * 
@@ -63,6 +64,7 @@ public class ToolURI {
 	public final static String ERROR_BAD_URI_CRAWLER_TRAP = "Bad URI, potential crawler trap.";
 	public final static String ERROR_BAD_URI= "Bad URI.";
 
+	public final static String DEFAULT_XMLBASE = "http://ex.org/base#";
 
 	////////////////////////////////////////////////
 	// functions (convert)
@@ -98,7 +100,7 @@ public class ToolURI {
 			// validate 2: basic syntactic check 
 			return new URL(szUrl);
 		} catch (MalformedURLException e) {
-			throw new Sw4jException( Sw4jException.STATE_ERROR, e, "see "+ szUrl);
+			throw new Sw4jException( Sw4jMessage.STATE_ERROR, e, "see "+ szUrl);
 		}		
 	}	
 	
@@ -135,7 +137,7 @@ public class ToolURI {
 
 			return uri;
 		} catch (URISyntaxException e) {
-			throw new Sw4jException( Sw4jException.STATE_ERROR, e, "see "+ szUri);
+			throw new Sw4jException( Sw4jMessage.STATE_ERROR, e, "see "+ szUri);
 		}		
 	}	
 	
@@ -165,7 +167,7 @@ public class ToolURI {
 			szEncoded = szEncoded.replaceAll("\\+", "%2B");
 			return szEncoded;
 		} catch (UnsupportedEncodingException e) {
-			throw new Sw4jException( Sw4jException.STATE_ERROR, e);
+			throw new Sw4jException( Sw4jMessage.STATE_ERROR, e);
 		}
 	}
 
@@ -185,7 +187,7 @@ public class ToolURI {
 			szDecoded = szDecoded.replaceAll("%2B", "+");
 			return szDecoded;
 		} catch (UnsupportedEncodingException e) {
-			throw new Sw4jException( Sw4jException.STATE_ERROR, e);
+			throw new Sw4jException( Sw4jMessage.STATE_ERROR, e);
 		}
 	}
 	
@@ -264,7 +266,7 @@ public class ToolURI {
 		final String[] aryBadSegment = new String[] { "/..", "/text/text/", };
 		for (int i = 0; i < aryBadSegment.length; i++) {
 			if (szURL.indexOf(aryBadSegment[i]) > 0) {
-				throw new Sw4jException( Sw4jException.STATE_ERROR, ERROR_BAD_URI_CRAWLER_TRAP, "found "+ aryBadSegment[i]+ " in URL "+ szURL);
+				throw new Sw4jException( Sw4jMessage.STATE_ERROR, ERROR_BAD_URI_CRAWLER_TRAP, "found "+ aryBadSegment[i]+ " in URL "+ szURL);
 			}
 		}
 
@@ -289,7 +291,7 @@ public class ToolURI {
 				}
 
 				if (trap_depth[i] >= 2) {
-					throw new Sw4jException( Sw4jException.STATE_ERROR, ERROR_BAD_URI_CRAWLER_TRAP,
+					throw new Sw4jException( Sw4jMessage.STATE_ERROR, ERROR_BAD_URI_CRAWLER_TRAP,
 							"repeated pattern - " + (i + 3) + " " + token
 									+ " in " + szURL);
 				}
@@ -304,7 +306,7 @@ public class ToolURI {
 			// check absolute path depth
 			path_depth++;
 			if (path_depth > 20) {
-					throw new Sw4jException( Sw4jException.STATE_ERROR, ERROR_BAD_URI_CRAWLER_TRAP,
+					throw new Sw4jException( Sw4jMessage.STATE_ERROR, ERROR_BAD_URI_CRAWLER_TRAP,
 						"path_depth too long - " + path_depth + " in " + szURL);
 			}
 		}
@@ -341,7 +343,7 @@ public class ToolURI {
 		ToolSafe.checkNonEmpty( uri.getAuthority(),	"Need non-empty Authority in URI. But see "+ uri.toString());
 
 		if (uri.getAuthority().indexOf(".") < 0) {
-			throw new Sw4jException(Sw4jException.STATE_ERROR, ERROR_BAD_URI,
+			throw new Sw4jException(Sw4jMessage.STATE_ERROR, ERROR_BAD_URI,
 					"no '.' in domain part of uri. see "+uri.toString() );
 		}
 
@@ -383,7 +385,7 @@ public class ToolURI {
 			String ip = host.getHostAddress();
 			return ip;
 		} catch (UnknownHostException e) {
-			throw new Sw4jException(Sw4jException.STATE_ERROR, e, "See URL "+ url);
+			throw new Sw4jException(Sw4jMessage.STATE_ERROR, e, "See URL "+ url);
 		}
 	}	
 	
@@ -488,9 +490,9 @@ public class ToolURI {
 	 * @param szFileOrURI
 	 * @return
 	 */
-	public static String extractHostUrl(String szFileOrURI) throws Sw4jException{
-		return extractHostUrl(string2uri(szFileOrURI));
-	}
+//	public static URI extractHostUrl(String szFileOrURI) throws Sw4jException{
+//		return extractHostUrl(string2uri(szFileOrURI));
+//	}
 
 	/**
 	 * generate host URI. get the (scheme, host, port) part of the given URI
@@ -499,12 +501,12 @@ public class ToolURI {
 	 * @return
 	 */
 
-	public static String extractHostUrl(URI uri)  throws Sw4jException{
+	public static URI extractHostUrl(URI uri)  throws Sw4jException{
 		ToolSafe.checkNonEmpty(uri, ERROR_NON_EMPTY_URL_URI);
 		try {
-			return new URI(uri.getScheme(),null, uri.getHost(), uri.getPort(), "/", null, null).toString();
+			return new URI(uri.getScheme(),null, uri.getHost(), uri.getPort(), "/", null, null);
 		} catch (URISyntaxException e) {
-			throw new Sw4jException(Sw4jException.STATE_ERROR, e);
+			throw new Sw4jException(Sw4jMessage.STATE_ERROR, e);
 		}
 	}	
 		

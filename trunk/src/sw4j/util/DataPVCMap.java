@@ -28,6 +28,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 package sw4j.util;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -39,6 +40,7 @@ import java.util.TreeMap;
  *  extends AbstractPropertyValuesMap by adding the following features
  * - It offers a boolean "unique" option, i.e. allow duplicate (property, value) pairs.
  * - it counts the frequency of entry i.e. <p,v>
+ * - slow
  *
  * Example:
  *    (p1, List(v11,v12))  
@@ -192,8 +194,8 @@ public class DataPVCMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 	 * @param property
 	 * @return
 	 */
-	public List<V> getValues(P property) {
-		List<V> values = m_index.get(property);
+	public Collection<V> getValues(P property) {
+		Collection<V> values = m_index.get(property);
 		if (null==values)
 			return new ArrayList<V>();
 		else

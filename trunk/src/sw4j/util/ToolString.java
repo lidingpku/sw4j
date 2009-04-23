@@ -94,6 +94,10 @@ public class ToolString {
 	public static boolean match(String szText, String [] szLandMarks){
 		if (ToolSafe.isEmpty(szText))
 			return false;
+		
+		if (ToolSafe.isEmpty(szLandMarks))
+			return false;
+
 		szText = szText.toLowerCase();
 		
 		boolean bRet = true;

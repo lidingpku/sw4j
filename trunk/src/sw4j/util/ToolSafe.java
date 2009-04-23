@@ -133,7 +133,7 @@ public class ToolSafe {
 
 	public static void checkNonEmpty(Object data, String szMsg)
 	throws Sw4jException {
-		checkNonEmpty(data, szMsg, Sw4jException.STATE_ERROR);
+		checkNonEmpty(data, szMsg, Sw4jMessage.STATE_ERROR);
 	}
 	
 	public static void checkNonEmpty(Object data, String szMsg, int state)

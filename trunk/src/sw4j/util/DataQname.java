@@ -31,6 +31,7 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 /**
  *  XML Qname, split namespace and localname
  *  
@@ -95,6 +96,9 @@ public class DataQname {
 	}
 
 	public static String extractNamespaceUrl(String szUri){
+		if (ToolSafe.isEmpty(szUri))
+			return null;
+		
 		try {
 			return create(szUri).getNamespaceUrl();
 		} catch (Sw4jException e) {
@@ -208,7 +212,7 @@ public class DataQname {
 		// namespace should end with any of the following: '/' '#' ':'
 		if (!szNamespace.endsWith("/") && !szNamespace.endsWith("#")
 				&& !szNamespace.endsWith(":")) {
-			throw new Sw4jException( Sw4jException.STATE_ERROR, "bad Namespace.", "Expect end with either /, #, or : , but see "+szNamespace);
+			throw new Sw4jException( Sw4jMessage.STATE_ERROR, "bad Namespace.", "Expect end with either /, #, or : , but see "+szNamespace);
 		}
 	}
 
@@ -240,7 +244,7 @@ public class DataQname {
 		// check if the local name is empty
 		// case 2
 		if (szLocalname.equals("/")) {
-			throw new Sw4jException( Sw4jException.STATE_ERROR, "Bad localname.", "see "+szLocalname);
+			throw new Sw4jException( Sw4jMessage.STATE_ERROR, "Bad localname.", "see "+szLocalname);
 		}
 
 		// case 3
@@ -248,7 +252,7 @@ public class DataQname {
 
 		for (int i = 0; i < INDEX_STRING.length; i++) {
 			if (szLocalname.indexOf(INDEX_STRING[i]) >= 0) {
-				throw new Sw4jException( Sw4jException.STATE_ERROR, "Bad localname.", "see "+szLocalname);
+				throw new Sw4jException( Sw4jMessage.STATE_ERROR, "Bad localname.", "see "+szLocalname);
 			}
 		}
 		// TODO other cases

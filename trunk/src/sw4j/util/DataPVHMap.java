@@ -27,21 +27,22 @@ OTHER DEALINGS IN THE SOFTWARE.
 package sw4j.util;
 
 import java.util.Collection;
-import java.util.TreeSet;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
+import java.util.HashMap;
 
 
 /**
  *  implement AbstractPropertyValuesMap by adding the following features
  *  - require the value comparable
- * 
+ *  - fast, unsorted, no cannonical form
+ *  
  * @author Li Ding
  * 
  */
-public class DataPVMap <P, V> extends AbstractPropertyValuesMap<P,V>{
-	TreeMap<P, Set<V>> data = new TreeMap<P, Set<V>>();
+public class DataPVHMap <P, V> extends AbstractPropertyValuesMap<P,V>{
+	HashMap<P, Set<V>> data = new HashMap<P, Set<V>>();
 
 	
 	/**
@@ -52,7 +53,7 @@ public class DataPVMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 	public void add(P property, V value) {
 		Set<V> values = this.data.get(property);
 		if (null == values) {
-			values = new TreeSet<V>();
+			values = new HashSet<V>();
 			this.data.put(property, values);
 		}
 
@@ -63,7 +64,7 @@ public class DataPVMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 	public void add(P property, Collection<V> vs) {
 		Set<V> values = this.data.get(property);
 		if (null == values) {
-			values = new TreeSet<V>();
+			values = new HashSet<V>();
 			this.data.put(property, values);
 		}
 
@@ -74,7 +75,7 @@ public class DataPVMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 	public void set(P property, V value) {
 		Set<V> values = this.data.get(property);
 		if (null == values) {
-			values = new TreeSet<V>();
+			values = new HashSet<V>();
 		} else {
 			values.clear();
 		}
@@ -90,7 +91,7 @@ public class DataPVMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 	public Collection<V> getValues(P p) {
 		Set<V> ret = this.data.get(p);
 		if (null==ret)
-			ret = new TreeSet<V>();
+			ret = new HashSet<V>();
 		return ret;
 	}
 

@@ -54,6 +54,7 @@ import org.apache.log4j.Logger;
 
 
 
+
 /**
  * provide functions for read/write access and pipes among files, URLs, streams.
  * 
@@ -107,7 +108,7 @@ public class ToolIO {
 		try {
 			return new FileInputStream(f);
 		} catch (FileNotFoundException e) {
-			Sw4jException e1 = new Sw4jException(Sw4jException.STATE_FATAL, e);
+			Sw4jException e1 = new Sw4jException(Sw4jMessage.STATE_FATAL, e);
 			getLogger().error(e1.getMessage());
 			throw e1;
 		}
@@ -139,7 +140,7 @@ public class ToolIO {
 			conn.connect();
 			return conn.getInputStream();
 		} catch (IOException e) {
-			Sw4jException e1 = new Sw4jException(Sw4jException.STATE_FATAL, e);
+			Sw4jException e1 = new Sw4jException(Sw4jMessage.STATE_FATAL, e);
 			getLogger().error(e1.getMessage());
 			throw e1;
 		}
@@ -176,11 +177,11 @@ public class ToolIO {
 			return out;
 			
 		} catch (FileNotFoundException e) {
-			Sw4jException e1 = new Sw4jException(Sw4jException.STATE_FATAL, e);
+			Sw4jException e1 = new Sw4jException(Sw4jMessage.STATE_FATAL, e);
 			getLogger().error(e1.getMessage());
 			throw e1;
 		} catch (IOException e) {
-			Sw4jException e1 = new Sw4jException(Sw4jException.STATE_FATAL, e);
+			Sw4jException e1 = new Sw4jException(Sw4jMessage.STATE_FATAL, e);
 			getLogger().error(e1.getMessage());
 			throw e1;
 		}	
@@ -325,7 +326,7 @@ public class ToolIO {
 			}
 			in.close();
 		} catch (IOException e) {
-			Sw4jException e1 = new Sw4jException(Sw4jException.STATE_FATAL, e);
+			Sw4jException e1 = new Sw4jException(Sw4jMessage.STATE_FATAL, e);
 			getLogger().error(e1.getMessage());
 
 			try {
@@ -359,7 +360,7 @@ public class ToolIO {
 			reader.close();
 			return fileData.toString();
 		} catch (IOException e) {
-			Sw4jException e1 = new Sw4jException(Sw4jException.STATE_FATAL, e);
+			Sw4jException e1 = new Sw4jException(Sw4jMessage.STATE_FATAL, e);
 			getLogger().error(e1.getMessage());
 			throw e1;
 		}
@@ -419,7 +420,7 @@ public class ToolIO {
 			reader.close();
 
 		} catch (IOException e) {
-			Sw4jException e1 = new Sw4jException(Sw4jException.STATE_FATAL, e);
+			Sw4jException e1 = new Sw4jException(Sw4jMessage.STATE_FATAL, e);
 			getLogger().error(e1.getMessage());
 		}
 	}
@@ -437,7 +438,7 @@ public class ToolIO {
 
 			reader.close();
 		} catch (IOException e) {
-			Sw4jException e1 = new Sw4jException(Sw4jException.STATE_FATAL, e);
+			Sw4jException e1 = new Sw4jException(Sw4jMessage.STATE_FATAL, e);
 			getLogger().error(e1.getMessage());
 		}
 	}	
@@ -467,7 +468,7 @@ public class ToolIO {
 			out.close();
 			return ;
 		} catch (IOException e) {
-			Sw4jException e1 = new Sw4jException(Sw4jException.STATE_FATAL, e);
+			Sw4jException e1 = new Sw4jException(Sw4jMessage.STATE_FATAL, e);
 			getLogger().error(e1.getMessage());
 			throw e1;
 		}
