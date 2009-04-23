@@ -24,56 +24,58 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
  */
-package sw4j.util;
+package sw4j.util.web;
 
 import org.junit.Test;
 
+import sw4j.util.Sw4jException;
+import sw4j.util.ToolIO;
+import sw4j.util.web.ToolWeb;
 
-import static org.junit.Assert.fail;
 
 /**
  * 
  * @author Li Ding
 */
 
-public class DataPVMapTest {
+public class ToolWebTest {
+
+	
 	@Test
-	public void test_unique() {
-		System.out.println("++++++++++ Testing testParse_validate_URI ++++++++++++");
-		DataPVTMap<String, Object> dml = new DataPVTMap<String, Object>();
-		dml.add("name","TW");
-		dml.add("name","TWC");
-		dml.add("name","TW");
-		dml.add("year", new Integer("1999"));
+	public void test_remove_markup() {
+	  String [] aryURL = new String[]{
+		  "http://purl.org/dc/elements/1.1/",
+	  };
 
-		System.out.println("++++++++++ field name ++++++++++++");
-		System.out.println (dml);
-		System.out.println (dml.keySet());
-		
-		
-		System.out.println("++++++++++ test: values vs. valueset  ++++++++++++");
-		System.out.println (dml.getValues("name"));
+	  for (int i=0; i<aryURL.length; i++){
+		  String szURL = aryURL[i];
+		  /*
+		  DataTaskLoadHttp task = ToolLoadHttp.loadUrl(szURL);
+		  if (null==task){
+			  System.out.println(szURL);
+			  continue;
+		  }
+		  
+		  if (!task.isLoadSucceed()){
+			  task.print();
+			  continue;
+		  }
+		  
+		  if (ToolSafe.isEmpty(task.getContent()))
+			  continue;
+		  */
+		  String content;
+		try {
+			content = ToolIO.pipeUrlToString(szURL);
 
-		System.out.println("ok");
-		
-		{
-			System.out.println("++++++++++ test: same  ++++++++++++");
-			DataPVTMap<String, Object> dml1 = new DataPVTMap<String, Object>();
-			dml1.add("name","TW");
-			dml1.add("name","TWC");
-			dml1.add("year", new Integer("1999"));
-
-			if (!dml.equals(dml1)){
-				System.out.println (dml);
-				System.out.println (dml1);
-				fail();
-			}
-
-			System.out.println("ok");
+			//System.out.println(ToolWeb.removeHtmlComment(task.getContent()));
+			  System.out.println(ToolWeb.removeMarkup(content,"<rdf:RDF","</rdf:RDF>"));
+		} catch (Sw4jException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-
-
+		  
+		  
+	  }
 	}
-
-
 }

@@ -24,7 +24,7 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
  */
-package sw4j.util.jena;
+package sw4j.util.rdf;
 
 import static org.junit.Assert.fail;
 
@@ -33,15 +33,12 @@ import org.junit.Test;
 
 import sw4j.util.Sw4jException;
 import sw4j.util.ToolIO;
-import sw4j.util.ToolURI;
+import sw4j.util.rdf.ToolJena;
 
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.rdf.model.Statement;
-import com.hp.hpl.jena.rdf.model.StmtIterator;
-import com.hp.hpl.jena.vocabulary.RDFS;
 /**
  * 
  * @author Li Ding
@@ -88,7 +85,7 @@ public class ToolJenaTest {
 		}
 	}
 
-	
+/*	
 	@Test
 	public void test_deductive_closure() {
 		String [] urls = new String []{
@@ -106,8 +103,8 @@ public class ToolJenaTest {
 					m.read(ToolIO.pipeFileToInputStream(szURL), szURL);					
 				}
 				//m = AgentModelManager.get().loadModel(szURL);
-				Model m1 =ToolJena.model_createDeductiveClosureRDFS(m);
-				Model m2 =ToolJena.model_createDeductiveClosureOWLDL(m);
+				Model m1 =ToolJena.model_createTransitiveClosure_RDFS(m);
+				Model m2 =ToolJena.model_createDeductiveClosure_OWLDL(m);
 				System.out.println(
 						m.size()
 						+ "," + m1.listStatements().toSet().size() 
@@ -119,20 +116,20 @@ public class ToolJenaTest {
 				System.out.println("---");
 				print_s_o(m2.listStatements(null, RDFS.subClassOf, (String)null));
 				System.out.println("---");
-				print_s_o(ToolJena.model_createDeductiveClosureRDFS(m2).listStatements(null, RDFS.subClassOf, (String)null));
+				print_s_o(ToolJena.model_createTransitiveClosure_RDFS(m2).listStatements(null, RDFS.subClassOf, (String)null));
 			} catch (Sw4jException e) {
 				e.printStackTrace();
 				fail();
 			}
 		}
 	}
-	
 	private void print_s_o(StmtIterator iter ){
 		while (iter.hasNext()){
 			Statement stmt = (Statement) iter.next();
 			System.out.println (stmt.getSubject()+"->"+stmt.getObject());
 		}
 	}
+*/	
 	
 	@Test
 	public void test_SPARQL() {

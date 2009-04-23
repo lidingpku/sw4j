@@ -34,7 +34,6 @@ import java.net.URISyntaxException;
 import org.junit.Test;
 
 import sw4j.util.Sw4jException;
-import sw4j.util.ToolURI;
 
 /**
  * 
@@ -240,8 +239,13 @@ public class ToolURITest {
 			String temp;
 			try {
 				URI uri = ToolURI.string2uri(aryURIURI[i][0]);
-				String hostURI = ToolURI.extractHostUrl(uri);
-				temp = hostURI;
+				URI hostURI = ToolURI.extractHostUrl(uri);
+				if (null==hostURI){
+					System.out.println(uri);
+					fail("Host URL extraction failed");
+				}
+					
+				temp = hostURI.toString();
 				if (!aryURIURI[i][1].equals(temp)){
 					System.out.println(aryURIURI[i][1]);
 					System.out.println(temp);

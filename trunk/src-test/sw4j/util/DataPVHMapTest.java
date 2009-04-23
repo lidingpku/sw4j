@@ -31,7 +31,7 @@ import org.junit.Test;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.vocabulary.RDF;
 
-import sw4j.util.DataPVCMap;
+import sw4j.util.DataPVHMap;
 import sw4j.vocabulary.pml.PMLP;
 import static org.junit.Assert.fail;
 
@@ -40,11 +40,11 @@ import static org.junit.Assert.fail;
  * @author Li Ding
 */
 
-public class DataPVCMapTest {
+public class DataPVHMapTest {
 	@Test
 	public void test_unique() {
 		System.out.println("++++++++++ Testing testParse_validate_URI ++++++++++++");
-		DataPVCMap<String, Object> dml = new DataPVCMap<String, Object>(true);
+		DataPVHMap<String, Object> dml = new DataPVHMap<String, Object>();
 		dml.add("name","TW");
 		dml.add("name","TWC");
 		dml.add("name","TW");
@@ -66,7 +66,7 @@ public class DataPVCMapTest {
 		
 		{
 			System.out.println("++++++++++ test: same  ++++++++++++");
-			DataPVCMap<String, Object> dml1 = new DataPVCMap<String, Object>(false);
+			DataPVHMap<String, Object> dml1 = new DataPVHMap<String, Object>();
 			dml1.add("name","TW");
 			dml1.add("name","TWC");
 			dml1.add("year", new Integer("1999"));
@@ -80,13 +80,12 @@ public class DataPVCMapTest {
 
 		{
 			System.out.println("++++++++++ test: diff  ++++++++++++");
-			DataPVCMap<String, Object> dml1 = new DataPVCMap<String, Object>(false);
-			dml1.add("name","TW");
+			DataPVHMap<String, Object> dml1 = new DataPVHMap<String, Object>();
 			dml1.add("name","TW");
 			dml1.add("name","TWC");
 			dml1.add("year", new Integer("1999"));
 
-			if (dml.equals(dml1)){
+			if (!dml.equals(dml1)){
 				fail();
 			}
 
@@ -95,37 +94,13 @@ public class DataPVCMapTest {
 
 
 	}
-
-	@Test
-	public void test_duplicate() {
-		System.out.println("++++++++++ Testing testParse_validate_URI ++++++++++++");
-		DataPVCMap<String, Object> dml = new DataPVCMap<String, Object>(false);
-		dml.add("name","TW");
-		dml.add("name","TWC");
-		dml.add("name","TW");
-		dml.add("year", new Integer("1999"));
-		
-		System.out.println("++++++++++ field name ++++++++++++");
-		System.out.println (dml);
-		System.out.println (dml.keySet());
-		
-		
-		System.out.println("++++++++++ test: values vs. valueset  ++++++++++++");
-		System.out.println (dml.getValuesAsSet("name"));
-		System.out.println (dml.getValues("name"));
-
-		if (dml.getValuesAsSet("name").size()==dml.getValues("name").size()){
-			fail();
-		}
-		System.out.println("ok");
-	}
 	
 	@Test
 	public void test_jena() {
 		
 		
 		System.out.println("++++++++++ Testing testParse_validate_URI ++++++++++++");
-		DataPVCMap<Property, Object> dml = new DataPVCMap<Property, Object>();
+		DataPVHMap<Property, Object> dml = new DataPVHMap<Property, Object>();
 		dml.add(PMLP.hasName,"TW");
 		dml.add(PMLP.hasName,"TWC");
 		dml.add(RDF.type,PMLP.IdentifiedThing);
@@ -140,7 +115,7 @@ public class DataPVCMapTest {
 
 		{
 			System.out.println("++++++++++ test: same  ++++++++++++");
-			DataPVCMap<Property, Object> dml1 = new DataPVCMap<Property, Object>();
+			DataPVHMap<Property, Object> dml1 = new DataPVHMap<Property, Object>();
 			dml1.add(PMLP.hasName,"TW");
 			dml1.add(PMLP.hasName,"TWC");
 			dml1.add(RDF.type,PMLP.IdentifiedThing);
@@ -157,7 +132,7 @@ public class DataPVCMapTest {
 
 		{
 			System.out.println("++++++++++ test: diff  ++++++++++++");
-			DataPVCMap<Property, Object> dml1 = new DataPVCMap<Property, Object>();
+			DataPVHMap<Property, Object> dml1 = new DataPVHMap<Property, Object>();
 			dml1.add(PMLP.hasName,"TW");
 			dml1.add(PMLP.hasName,"Tetherless");
 			dml1.add(RDF.type,PMLP.IdentifiedThing);

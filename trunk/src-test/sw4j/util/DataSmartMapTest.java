@@ -64,6 +64,13 @@ public class DataSmartMapTest {
 		System.out.println("++++++++++ toXml ++++++++++++");
 		System.out.println (dsm.toXml());
 
+		System.out.println("++++++++++ toHtml ++++++++++++");
+		System.out.println (dsm.toHTMLtablerowheader());
+		System.out.println (dsm.toHTMLtablerow());
+
+		System.out.println("++++++++++ toCSV ++++++++++++");
+		System.out.println (dsm.toCSVrow());
+
 		System.out.println("++++++++++ toProperty ++++++++++++");
 		System.out.println (dsm.toProperty());
 

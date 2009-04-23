@@ -24,55 +24,52 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
  */
-package sw4j.util;
+package sw4j.util.web;
+
+import static org.junit.Assert.fail;
+
+import java.io.PrintWriter;
+import java.net.URI;
 
 import org.junit.Test;
 
-import sw4j.util.ToolWeb;
+import sw4j.task.load.ToolLoadHttp;
+import sw4j.util.web.DataRobotsTxt;
 
 /**
  * 
  * @author Li Ding
 */
 
-public class ToolWebTest {
-
-	
+public class DataRobotsTxtTest {
 	@Test
-	public void test_remove_markup() {
-	  String [] aryURL = new String[]{
-		  "http://purl.org/dc/elements/1.1/",
-	  };
+	public void test() {
+		String szURL = "http://swoogle.umbc.edu/service/";
+		szURL = "http://www.google.com/robots.txt";
+		szURL ="http://en.wikipedia.org/wiki/Robots.txt";
+		
+		try{
 
-	  for (int i=0; i<aryURL.length; i++){
-		  String szURL = aryURL[i];
-		  /*
-		  DataTaskLoadHttp task = ToolLoadHttp.loadUrl(szURL);
-		  if (null==task){
-			  System.out.println(szURL);
-			  continue;
-		  }
-		  
-		  if (!task.isLoadSucceed()){
-			  task.print();
-			  continue;
-		  }
-		  
-		  if (ToolSafe.isEmpty(task.getContent()))
-			  continue;
-		  */
-		  String content;
-		try {
-			content = ToolIO.pipeUrlToString(szURL);
+			ToolLoadHttp crawler = ToolLoadHttp.getSwaBot();
+			DataRobotsTxt  rt = ToolLoadHttp.loadRobotsTxt(szURL,crawler.getName());
+			if (null!= rt){
+				System.out.println("============ Related Path Cmd ===========");
+				PrintWriter pw = new PrintWriter(System.out);
+				rt.print(pw);
+				pw.flush();
+				System.out.println("============ TEST ===========");
+				
+				System.out.println("test url:"+szURL+"  disallow?"+rt.testDisallow(new URI(szURL)));
 
-			//System.out.println(ToolWeb.removeHtmlComment(task.getContent()));
-			  System.out.println(ToolWeb.removeMarkup(content,"<rdf:RDF","</rdf:RDF>"));
-		} catch (Sw4jException e) {
-			// TODO Auto-generated catch block
+				System.out.println("TEST PASS");
+				return;
+			}else{
+				fail();
+			}
+		}catch (Exception e){
 			e.printStackTrace();
+			fail();
 		}
-		  
-		  
-	  }
+		
 	}
 }

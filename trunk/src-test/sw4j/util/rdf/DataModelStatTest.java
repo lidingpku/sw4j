@@ -1,8 +1,10 @@
-package sw4j.util.jena;
+package sw4j.util.rdf;
 
 
 
 import org.junit.Test;
+
+import sw4j.util.rdf.AgentModelStat;
 
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -13,7 +15,7 @@ public class DataModelStatTest {
 	@Test
 	public void test_traverse() {
 		String szURL ="http://inference-web.org/2.0/pml-provenance.owl";
-		DataModelStat stat = new DataModelStat();
+		AgentModelStat stat = new AgentModelStat();
 		Model m = ModelFactory.createDefaultModel();
 		m.read(szURL);
 		stat.traverse(m);
