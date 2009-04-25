@@ -50,6 +50,7 @@ public class DataQname {
 	private String m_szUriCanonical = null;
 	private String m_szNamespace = null;
 	private String m_szLocalname =null;
+	private String m_szPrefix =null;
 
 	////////////////////////////////////////////////
 	// constructor
@@ -61,16 +62,18 @@ public class DataQname {
 	public static DataQname create(){
 		return new DataQname(); 
 	}
-	
-	public static DataQname create(String szUri) throws Sw4jException{
+
+	public static DataQname create(String szUri,String szPrefix) throws Sw4jException{
 		int index = ToolURI.splitUri(szUri);
 		return create(
 				szUri.substring(0,index),
-				szUri.substring(index));
+				szUri.substring(index),
+				szPrefix);
 	}
 	
 
-	public static DataQname create(String szNamespace, String szLocalname) throws Sw4jException{
+	
+	public static DataQname create(String szNamespace, String szLocalname, String szPrefix) throws Sw4jException{
 		DataQname dq =new DataQname();
 		
 		String szUri= "";
@@ -82,12 +85,14 @@ public class DataQname {
 		
 		dq.setNamespaceLocalname(szNamespace, szLocalname);
 		
+		dq.m_szPrefix = szPrefix;
+		
 		return dq;
 	}
 	
 	public static String extractNamespace(String szUri){
 		try {
-			return create(szUri).getNamespace();
+			return create(szUri, null).getNamespace();
 		} catch (Sw4jException e) {
 			if (debug)
 				e.printStackTrace();
@@ -100,7 +105,7 @@ public class DataQname {
 			return null;
 		
 		try {
-			return create(szUri).getNamespaceUrl();
+			return create(szUri, null).getNamespaceUrl();
 		} catch (Sw4jException e) {
 			if (debug)
 				e.printStackTrace();
@@ -129,6 +134,7 @@ public class DataQname {
 		return m_szNamespace;
 	}
 	
+
 	public String getNamespaceCanonical(){
 		if (null==getNamespace())
 			return null;
@@ -169,7 +175,13 @@ public class DataQname {
 		return !ToolSafe.isEmpty(m_szLocalname);
 	}
 
+	public String getPrefix(){
+		return m_szPrefix;
+	}
 	
+	public boolean hasPrefix(){
+		return !ToolSafe.isEmpty(m_szPrefix);
+	}
 	
 	
 	private void setUri(String szUri) throws Sw4jException{

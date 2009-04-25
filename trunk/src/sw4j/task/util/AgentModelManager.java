@@ -161,7 +161,7 @@ public class AgentModelManager {
 		}
 		String szKey = null;
 		try{
-			DataQname dqn = DataQname.create(szXmlBase);
+			DataQname dqn = DataQname.create(szXmlBase, null);
 			szXmlBase = dqn.getNamespaceCanonical(); 
 			szKey = szXmlBase; //ToolURI.extractNamespaceCanonical(szFileOrURI);
 		}catch(Sw4jException e){
@@ -288,7 +288,7 @@ public class AgentModelManager {
 				
 				DataQname dqn;
 				try {
-					dqn = DataQname.create(szURL);
+					dqn = DataQname.create(szURL,null);
 					szURL = dqn.getNamespaceCanonical(); 
 				} catch (Sw4jException e) {
 					// skip bad url

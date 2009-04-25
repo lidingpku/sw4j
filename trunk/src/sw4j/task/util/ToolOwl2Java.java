@@ -52,7 +52,7 @@ import com.hp.hpl.jena.vocabulary.RDFS;
  * @author Li Ding
  *
  */
-public class TaskOwl2Java {
+public class ToolOwl2Java {
 
 	/**
 	 * generate a java vocabulary file for a certain ontology.
@@ -155,8 +155,8 @@ public class TaskOwl2Java {
 	
 	
 	private static String loadTemplateVocabulary(boolean bUseJena){
-		String filename = "TaskOwl2Java.template.txt";
-    	BufferedReader in = new BufferedReader(new InputStreamReader( new TaskOwl2Java().getClass().getResourceAsStream(filename)));
+		String filename = "ToolOwl2Java.template.txt";
+    	BufferedReader in = new BufferedReader(new InputStreamReader( new ToolOwl2Java().getClass().getResourceAsStream(filename)));
     	String line =null;
     	String content ="";
     	try {

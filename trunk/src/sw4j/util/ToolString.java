@@ -31,6 +31,8 @@ import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
+//import java.util.TimeZone;
+import java.util.TimeZone;
 
 /**
  * some convenient string functions
@@ -114,9 +116,14 @@ public class ToolString {
 		return bRet;
 	}
 
-	public static String formatXMLDateTime(long date){
+	public static String formatXMLDateTime(long date, TimeZone tz){
 		final SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+		if (null!=tz)
+			sf.setTimeZone(tz);
 		return sf.format(date);
+	}
+	public static String formatXMLDateTime(long date){
+		return formatXMLDateTime(date, null);
 	}
 
 	@SuppressWarnings("unchecked")

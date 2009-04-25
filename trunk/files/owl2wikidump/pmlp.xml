@@ -1,0 +1,1424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Property:pmlp:hasDataCollectionEndDateTime</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Date]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasDataCollectionEndDateTime]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the time stamp when data collection ended]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:LearnedSourceUsage]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::data-collection-end-datetime]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#dateTime]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:TranslationRule</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:MethodRule]][[Category:pmlp:MethodRule]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:TranslationRule]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Translation rules are special kinds of inference rules which are used to translate expressions from one language to the other.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Translation Rule]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:MethodRule]]
+* see aslo [[MediaWiki:smw_import_pmlp]]
+==more description==
+===-239a690b:120db8a3dcf:-7fda===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:maxCardinality|owl:maxCardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:pmlp:hasToLanguage]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasPublicationDateTime</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Date]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasPublicationDateTime]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::When the publication is published.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:Publication]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::published in]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#dateTime]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Person</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:Agent]][[Category:pmlp:Agent]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:Person]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A person]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Person]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:Agent]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Website</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:Document]][[Category:pmlp:Document]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:Website]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Collection of files and related resources accessible through the World Wide Web and organized under a particular domain name. Typical files found at a Web site are HTML documents with their associated graphic image files (GIF, JPEG, etc.), scripted programs (in Perl, CGI, Java, etc.), and similar resources. The site's files are usually accessed through hypertext or hyperlinks embedded in other files. A Web site may consist of a single HTML file, or it may comprise hundreds or thousands of related files. A Web site's usual starting point or opening page, called a home page, usually functions as a table of contents or index, with links to other sections of the site. Web sites are hosted on one or more Web servers, which transfer files to client computers or other servers that request them using the HTTP protocol. Although the term ?ite?implies a single physical location, the files and resources of a Web site may actually be spread among several servers in different geographic locations.(adapted from Britannica Concise Encyclopedia).]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Website]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:Document]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasCreationDateTime</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Date]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasCreationDateTime]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::When the artifact has been first created.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::created]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#dateTime]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasFromCol</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasFromCol]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The from column of the fragment (inclusive, index based on 1)]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:DocumentFragmentByRowCol]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::from-column]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#int]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasMimetype</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasMimetype]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A well-defined string indicating the mime type of information content. Internet Media Types (MIME). see also http://www.iana.org/assignments/media-types/.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:Information]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::mime-type]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#string]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasName</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasName]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the human readable label of the identified thing.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:IdentifiedThing]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::name]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#string]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasUsageQueryContent</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasUsageQueryContent]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The query content that leads to the source usage. e.g. the query part of a URL.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:SourceUsage]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::query-content]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:pmlp:hasContent]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Document</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:Source]][[Category:pmlp:Source]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:Document]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:pmlp:Agent]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A physical information container that is not actionable. They function like database.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Document]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:Source]]
+* see aslo [[MediaWiki:smw_import_pmlp]]
+==more description==
+===-239a690b:120db8a3dcf:-7fec===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:maxCardinality|owl:maxCardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:pmlp:hasVersion]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasToLanguage</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasToLanguage]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::language used by the target.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:TranslationRule]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::to-language]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:Language]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Language</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:IdentifiedThing]][[Category:pmlp:IdentifiedThing]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:Language]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The language used to encode the raw string, e.g. English, Knowledge Interchange Format (KIF) , and N3. Languages are in general registered at the core IWRegistry.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Language]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:IdentifiedThing]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:SourceUsage</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:IdentifiedThing]][[Category:pmlp:IdentifiedThing]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:SourceUsage]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A usage of the source. It records an access of a source at a certain date time.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Source Usage]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:IdentifiedThing]]
+* see aslo [[MediaWiki:smw_import_pmlp]]
+==more description==
+===-239a690b:120db8a3dcf:-7fe1===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:cardinality|owl:cardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:pmlp:hasSource]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasToCol</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasToCol]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The to column of the fragment (inclusive, index based on 1)]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:DocumentFragmentByRowCol]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::to-column]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#int]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasEncoding</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasEncoding]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The content encoding, e.g. "base64". The value of this property helps applications determine the decoder of the raw string.	]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:Information]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::encoding]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#string]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasConfidenceValue</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasConfidenceValue]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::this is a common property and can be used to describe an agent's confidence          on a piece of information or an action step.It is typically used together with an object property         indicating who asserted the confidence. For example, an inference engine may be one example.         Although we did not specified its cardinality, it is typically used only once in one individual.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::confidence]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#double]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Software</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:Agent]][[Category:pmlp:Agent]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:Software]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::written programs or procedures or rules and associated documentation pertaining to the operation of a computer system and that are stored in read/write memory.(WordNet)]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Software]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:Agent]]
+* see aslo [[MediaWiki:smw_import_pmlp]]
+==more description==
+===-239a690b:120db8a3dcf:-7fee===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:maxCardinality|owl:maxCardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:pmlp:hasVersion]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://inference-web.org/2.0/pml-provenance.owl</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Ontology]]
+* [original] [[Property:owl:imports|owl:imports]]: [[owl:imports::http://inference-web.org/2.0/ds.owl#]]
+* [original] [[Property:owl:versionInfo|owl:versionInfo]]: [[owl:versionInfo::version 2.0, Authors: Deborah L. McGuinness, Li Ding, Paulo Pinheiro da Silva, Alyssa Glass, and Cynthia Chang]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Ontology]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The provenance part of PML2 ontology. It is a fundamental component of PML2 ontology.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::PML2 provenance ontology]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasToRow</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasToRow]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The to row of the fragment (inclusive, index based on 1)]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:DocumentFragmentByRowCol]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::to-row]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#int]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasFromRow</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasFromRow]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The from row of the fragment (inclusive, index based on 1)]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:DocumentFragmentByRowCol]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::from-row]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#int]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasDescription</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasDescription]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The detailed description of the identified thing, e.g. a web page describing KIF language. An identified thing may have zero to many descriptions that could be written in different languages, format, and etc. ]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:IdentifiedThing]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::description]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:Information]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Agent</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:Source]][[Category:pmlp:Source]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:Agent]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::actionalble entities.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Agent]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:Source]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasInferenceEngineRule</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasInferenceEngineRule]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The inference rules used by the inference engine]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:InferenceEngine]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::uses-inference-rule]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:InferenceRule]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasPrettyString</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasPrettyString]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the human friendly presentation of the information. Its format is text and it is usually written in English.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:Information]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::pretty-string]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#string]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Ontology</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:Document]][[Category:pmlp:Document]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:Ontology]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An Ontology is a document that describes a vocabulary of terms and their correlations.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Ontology]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:Document]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:AgentList</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:http://inference-web.org/2.0/ds.owl#List]][[Category:http://inference-web.org/2.0/ds.owl#List]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:AgentList]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label:: List of Agents]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:http://inference-web.org/2.0/ds.owl#List]]
+* see aslo [[MediaWiki:smw_import_pmlp]]
+==more description==
+===-239a690b:120db8a3dcf:-7ffb===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:allValuesFrom|owl:allValuesFrom]] [[:Category:pmlp:Agent]]
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:http://inference-web.org/2.0/ds.owl#first]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:IdentifiedThing</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:IdentifiedThing]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The abstract root of provenance related concepts. It organizes a collection of common metadata about the referenced object, and it does not have any instance. ]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Identified Thing]]
+* see aslo [[MediaWiki:smw_import_pmlp]]
+==more description==
+===-239a690b:120db8a3dcf:-7ff9===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:maxCardinality|owl:maxCardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:pmlp:hasName]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:MethodRule</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:InferenceRule]][[Category:pmlp:InferenceRule]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:MethodRule]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A method inference rule, uses patterns for premises and its conclusions, and additionally contains a method that must be applied.  In addition,  the conclusion needs to be a valid output of the method, using the premises.  For example, procedural attachment is a common encoding form for method rules.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Method Rule]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:InferenceRule]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:InferenceEngine</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:Software]][[Category:pmlp:Software]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:InferenceEngine]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An inference engine represents an engine that is able to produce a justification for a conclusion. Note that the phrase "inference engine" applies not only to reasoners but also to other systems like search engines which may justify their answers by direct assertion]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Inference Engine]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:Software]]
+* see aslo [[MediaWiki:smw_import_pmlp]]
+==more description==
+===-239a690b:120db8a3dcf:-7fd8===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:minCardinality|owl:minCardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:pmlp:hasInferenceEngineRule]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Format</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:IdentifiedThing]][[Category:pmlp:IdentifiedThing]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:Format]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A plan for the organization and arrangement of specified information. Examples: binary, text,  pdf, etc.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Format]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:IdentifiedThing]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:LearnedSourceUsage</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:SourceUsage]][[Category:pmlp:SourceUsage]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:LearnedSourceUsage]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A special type of source usage. It records the modification of sources - the question that initiates the learning process, the duration of learning, the original source and current source used by learning.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Learned Source Usage]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:SourceUsage]]
+* see aslo [[MediaWiki:smw_import_pmlp]]
+==more description==
+===-239a690b:120db8a3dcf:-7fde===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:maxCardinality|owl:maxCardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:pmlp:hasDataCollectionStartDateTime]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Source</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:IdentifiedThing]][[Category:pmlp:IdentifiedThing]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:Source]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A source refers to the source of information. It is the place where we obtain information.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Source]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:IdentifiedThing]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasContent</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasContent]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment:: This is a common concept that links to a piece of information. Currently, we focus on content of document, and inference rule.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::content]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:Information]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasLanguage</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasLanguage]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::it specifies the language used to encode information, e.g. "Tony's specialty is shellfish" is encoded in English. This property may also link to a registered formal language such as KIF.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:Information]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::language]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:Language]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Information</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:IdentifiedThing]][[Category:pmlp:IdentifiedThing]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:Information]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A piece of information, e.g. a formula in logic languages, and an utterance/word/phrase/sentence/paragraph/article in natural language. It is used as a range of iw:hasContent. This class and two of its sub-classes enable users to specify four types of semantics  (i) Information Annotation - annotate just the format and language used by the content of information; (ii) Information With Content - additionally provide the content of information that is materialized as string without loading a web page; (iii) Information external - additionally provide the URL for fetching the content; and (iv) Information - with every thing including the content string and URL. The second semantics is especially useful when the content is short or mainly used locally. For example, when learning by instruction, the utterances used for learning can be stored within the PML document without being externally stored. By assigning URI reference to information, we can even use owl:sameAs to capture the equivalence of two pieces of information. ]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Information]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:IdentifiedThing]]
+* see aslo [[MediaWiki:smw_import_pmlp]]
+==more description==
+===-239a690b:120db8a3dcf:-7ff3===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:maxCardinality|owl:maxCardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:pmlp:hasURL]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:WebService</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:Software]][[Category:pmlp:Software]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:WebService]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::services implemented by software and available on the Web]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Web Service]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:Software]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:InferenceRule</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:IdentifiedThing]][[Category:pmlp:IdentifiedThing]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:InferenceRule]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Inference rules are used to derive conclusions from premises. Inference Web divides inference rules into three classes: Primitive and Derived and Translation.  This is an abstract class without any direct instance. A primitive rule is an atomic rule with respect to an inference engine. An inference engine may support rules that it does not need to further decompose. Since a primitive rule is an inference engine dependent concept, we may find a rule is primitive to one inference engine but not to another engine. For example a `natural deduction reasoner R1 may define Modus Ponens as a primitive rule and another reasoner R2 may register Robinson's resolution rule as a primitive rule. The reasoner R2 may be able to derive a Modus Ponens rule using its primitive resolution rule. ]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Inference Rule]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:IdentifiedThing]]
+* see aslo [[MediaWiki:smw_import_pmlp]]
+==more description==
+===-239a690b:120db8a3dcf:-7fdc===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:maxCardinality|owl:maxCardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:pmlp:hasEnglishDescriptionTemplate]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasReferenceSourceUsage</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasReferenceSourceUsage]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Explain how this information is obtained from a source: by whom, when, which source and which part of the source.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:Information]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::reference source usage]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:SourceUsage]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasRuleExample</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasRuleExample]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::it is sub-property of rdfs:comment. It is used to provide an example to help users understand the referred entity.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:InferenceRule]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::rule example]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:Information]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Organization</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:Agent]][[Category:pmlp:Agent]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:Organization]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A group of agents organized for a particular purpose, e.g., KSL, stanford.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Organization]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:Agent]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasPrettyNameMappingList</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasPrettyNameMappingList]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The rendering instruction. UI tools may feed the PrettyNameMapping in sequence to string replace operation to get a pretty rendering of the conclusion of a NodeSet. It only applies to the conclusion of the node set.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:Information]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::pretty name mapping]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:PrettyNameMappingList]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasOwner</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasOwner]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the owner of a thing.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::owner]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:Agent]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasAuthorList</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasAuthorList]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A list of agents primarily responsible for making the artifact, for example, a person, an organization, or a software service. The AgentList enables an ordered list of agents; however, domain applications may optionally choose to ignore the order. We should be able to derive that each agent is the dc:creator of the artifact.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::author(s)]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:AgentList]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasToOffset</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasToOffset]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The to offset of the fragment (exclusive, index based on 0)]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:DocumentFragmentByOffset]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::to-offset]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#int]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasAbstract</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasAbstract]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The abstract of a document.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:Document]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::abstract]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#string]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasFromLanguage</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasFromLanguage]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::language used by the source.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:TranslationRule]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::from-language]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:Language]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:usesInferenceEngine</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:usesInferenceEngine]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The inference engine used by an agent]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:Agent]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::uses-inference-engine]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:InferenceEngine]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>MediaWiki:smw_import_pmlp</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">http://inference-web.org/2.0/pml-provenance.owl#|[http://inference-web.org/2.0/pml-provenance.owl pmlp]
+ hasDataCollectionEndDateTime|Type:Date
+ TranslationRule|Category
+ hasPublicationDateTime|Type:Date
+ Person|Category
+ Website|Category
+ hasCreationDateTime|Type:Date
+ hasFromCol|Type:Page
+ hasMimetype|Type:Text
+ hasName|Type:Text
+ hasUsageQueryContent|Type:Page
+ Document|Category
+ hasToLanguage|Type:Page
+ Language|Category
+ SourceUsage|Category
+ hasConfidenceValue|Type:Page
+ hasEncoding|Type:Text
+ hasToCol|Type:Page
+ Software|Category
+ hasFromRow|Type:Page
+ hasToRow|Type:Page
+ Agent|Category
+ hasDescription|Type:Page
+ hasInferenceEngineRule|Type:Page
+ hasPrettyString|Type:Text
+ Ontology|Category
+ AgentList|Category
+ IdentifiedThing|Category
+ MethodRule|Category
+ InferenceEngine|Category
+ Format|Category
+ LearnedSourceUsage|Category
+ Source|Category
+ hasContent|Type:Page
+ hasLanguage|Type:Page
+ Information|Category
+ WebService|Category
+ InferenceRule|Category
+ hasReferenceSourceUsage|Type:Page
+ hasRuleExample|Type:Page
+ Organization|Category
+ hasPrettyNameMappingList|Type:Page
+ hasOwner|Type:Page
+ hasAuthorList|Type:Page
+ hasToOffset|Type:Page
+ hasAbstract|Type:Text
+ hasFromLanguage|Type:Page
+ usesInferenceEngine|Type:Page
+ hasMember|Type:Page
+ hasDataCollectionStartDateTime|Type:Date
+ hasEscapeCharacterSequence|Type:Text
+ hasDocument|Type:Page
+ DeclarativeRule|Category
+ hasEnglishDescriptionTemplate|Type:Text
+ hasShortPrettyName|Type:Page
+ hasModificationDateTime|Type:Date
+ hasRawString|Type:Text
+ hasUsageDateTime|Type:Date
+ PrettyNameMappingList|Category
+ Publication|Category
+ DocumentFragment|Category
+ hasFromOffset|Type:Page
+ hasPrettyName|Type:Text
+ DocumentFragmentByOffset|Category
+ Dataset|Category
+ PrettyNameMapping|Category
+ hasLongPrettyName|Type:Page
+ hasPublisher|Type:Page
+ Sensor|Category
+ hasISBN|Type:Text
+ EmptyInformation|Category
+ DocumentFragmentByRowCol|Category
+ hasFormat|Type:Page
+ hasURL|Type:URL
+ hasSource|Type:Page
+ isMemberOf|Type:Page
+ hasVersion|Type:Text
+ hasReplacee|Type:Text</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasMember</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasMember]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An organization may have member agents such as persons and other organizations.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:Organization]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::member]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:Agent]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasEscapeCharacterSequence</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasEscapeCharacterSequence]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The escape character used by a (formal) language (for parse use). It is used more like a comment indicator. This is used by InferenceML to embed metalangauge for proof checking (talk to Priyendra Deshwa).]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:Language]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::escape character sequence]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#string]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasDataCollectionStartDateTime</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Date]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasDataCollectionStartDateTime]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the time stamp when data collection started]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:LearnedSourceUsage]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::data-collection-start-datetime]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#dateTime]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasDocument</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasDocument]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A document fragment always depend on one source document, which is also the source.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:DocumentFragment]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::document]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:Document]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasEnglishDescriptionTemplate</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasEnglishDescriptionTemplate]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::it is sub-property of rdfs:comment. It is also a simplified template for adding rule description template in English rather than using hasDescription.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:InferenceRule]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::english-description-template]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#string]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:DeclarativeRule</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:InferenceRule]][[Category:pmlp:InferenceRule]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:DeclarativeRule]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A declarative inference rule can be fully specified by patterns for premises and its conclusion.   For example, Modus Ponens, can be specified by the premise patterns ?A,  ?A -&gt; ?B and the conclusion pattern ?B.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Declarative Rule]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:InferenceRule]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasShortPrettyName</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasShortPrettyName]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::short pretty name]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:pmlp:hasPrettyName]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasModificationDateTime</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Date]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasModificationDateTime]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::When the artifact has been modified.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::last modified]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#dateTime]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://inference-web.org/2.0/ds.owl#</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Ontology]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Ontology]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasRawString</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasRawString]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::materialized version of the content of information]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:Information]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::raw-string]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#string]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasUsageDateTime</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Date]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasUsageDateTime]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the time stamp when the source usage occurred.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:SourceUsage]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::usage-datetime]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#dateTime]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:PrettyNameMappingList</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:http://inference-web.org/2.0/ds.owl#List]][[Category:http://inference-web.org/2.0/ds.owl#List]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:PrettyNameMappingList]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label:: List of PrettyNameMappings]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:http://inference-web.org/2.0/ds.owl#List]]
+* see aslo [[MediaWiki:smw_import_pmlp]]
+==more description==
+===-239a690b:120db8a3dcf:-7fd6===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:allValuesFrom|owl:allValuesFrom]] [[:Category:pmlp:PrettyNameMappingList]]
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:http://inference-web.org/2.0/ds.owl#rest]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Publication</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:Document]][[Category:pmlp:Document]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:Publication]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::If we have two versions of the same publication, we need to create two instances of Publication. A publication may have multiple ISBNs.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Publication]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:Document]]
+* see aslo [[MediaWiki:smw_import_pmlp]]
+==more description==
+===-239a690b:120db8a3dcf:-7fe9===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:maxCardinality|owl:maxCardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:pmlp:hasPublicationDateTime]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:DocumentFragment</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:Source]][[Category:pmlp:Source]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:DocumentFragment]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A fragment of document that can be used as source.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Document Fragment]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:Source]]
+* see aslo [[MediaWiki:smw_import_pmlp]]
+==more description==
+===-239a690b:120db8a3dcf:-7fe8===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:cardinality|owl:cardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:pmlp:hasDocument]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasPrettyName</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasPrettyName]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:PrettyNameMapping]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::pretty name]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#string]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasFromOffset</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasFromOffset]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The from offset of the fragment (inclusive, index based on 0).]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:DocumentFragmentByOffset]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::from-offset]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#int]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:DocumentFragmentByOffset</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:DocumentFragment]][[Category:pmlp:DocumentFragment]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:DocumentFragmentByOffset]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::We may treat a document a one dimensional string, so we can mark a fragment with two offsets. We don't use byte because characters in text document may be multi-bytes.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Document Fragment by Offset]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:DocumentFragment]]
+* see aslo [[MediaWiki:smw_import_pmlp]]
+==more description==
+===-239a690b:120db8a3dcf:-7fe7===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:cardinality|owl:cardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:pmlp:hasFromOffset]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Dataset</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:Document]][[Category:pmlp:Document]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:Dataset]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A dataset is a collection of data document whose information is encoded in a defined structure (for example, lists, tables, and databases). see also http://purl.org/dc/dcmitype/Dataset.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Dataset]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:Document]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:PrettyNameMapping</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:PrettyNameMapping]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::specially designed for pretty display purpose.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Pretty Name Mapping]]
+* see aslo [[MediaWiki:smw_import_pmlp]]
+==more description==
+===-239a690b:120db8a3dcf:-7fd4===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:cardinality|owl:cardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:pmlp:hasShortPrettyName]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasLongPrettyName</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasLongPrettyName]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::long pretty name]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:pmlp:hasPrettyName]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasPublisher</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasPublisher]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An agent responsible for making the document publicly available. see also http://purl.org/dc/elements/1.1/publisher.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:Document]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::publisher]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:Agent]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Sensor</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:Agent]][[Category:pmlp:Agent]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:Sensor]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::any device that receives a signal or stimulus (as heat or pressure or light or motion etc.) and records it. (WordNet)]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Sensor]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:Agent]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasISBN</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasISBN]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The International Standard Book Number.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:Publication]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::isbn]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#string]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasFormat</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasFormat]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::it specifies the format of information, e.g. "pdf", "ppt" (Power Point). It is mainly used to determine the appropriate application for process/display purpose.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:Information]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::format]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:Format]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:DocumentFragmentByRowCol</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:DocumentFragment]][[Category:pmlp:DocumentFragment]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:DocumentFragmentByRowCol]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Document Fragment by Row/Column]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:DocumentFragment]]
+* see aslo [[MediaWiki:smw_import_pmlp]]
+==more description==
+===-239a690b:120db8a3dcf:-7fe5===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:cardinality|owl:cardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:pmlp:hasToRow]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:EmptyInformation</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:Information]][[Category:pmlp:Information]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:EmptyInformation]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An instance of information indicating no conclusion has been derived, i.e. empty set of statements. In this case, the rawstring may contain some english message indicating no answer. ]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Empty Information]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:Information]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasURL</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:URL]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasURL]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The URL of a relevant web page.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:Information]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::url]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#anyURI]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:isMemberOf</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:isMemberOf]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:pmlp:hasMember]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An organization may have member agents such as persons and other organizations.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:Agent]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::member of]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:Organization]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasSource</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasSource]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the source of the Source Usage, i.e. where does it come from.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:SourceUsage]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::source]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:Source]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasVersion</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasVersion]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the version number.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::version]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#string]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasReplacee</title>
+     <revision>
+       <timestamp>2009-04-25T04:30:53Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlp:hasReplacee]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-provenance.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlp:PrettyNameMapping]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::replacee]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#string]]
+* see aslo [[MediaWiki:smw_import_pmlp]]</text>
+     </revision>
+ </page>
+</mediawiki>

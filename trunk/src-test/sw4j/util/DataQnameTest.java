@@ -55,7 +55,7 @@ public class DataQnameTest {
 			for (int i=0; i<aryURI.length; i++){
 				String szURI = aryURI[i];
 				try {
-					DataQname.create(szURI);
+					DataQname.create(szURI,null);
 				} catch (Sw4jException e) {
 					e.printStackTrace();
 					System.out.println(aryURI[i]);
@@ -73,7 +73,7 @@ public class DataQnameTest {
 				for (int i=0; i<aryURI.length; i++){
 					String szURI = aryURI[i];
 					try {
-						DataQname.create(szURI);
+						DataQname.create(szURI,null);
 						System.out.println(aryURI[i]);
 						fail("should report exception");
 					} catch (Sw4jException e) {
@@ -138,7 +138,7 @@ public class DataQnameTest {
 			String temp;
 				DataQname dq;
 				try {
-					dq = DataQname.create(aryURIURI[i][0]);
+					dq = DataQname.create(aryURIURI[i][0],null);
 
 					temp = dq.getNamespaceCanonical();
 					

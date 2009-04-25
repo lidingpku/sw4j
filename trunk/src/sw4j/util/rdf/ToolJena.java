@@ -872,7 +872,7 @@ public class ToolJena {
 		if (node.isURIResource()){
 			DataQname dq;
 			try {
-				dq = DataQname.create(getNodeString(node));
+				dq = DataQname.create(getNodeString(node), getNodePrefix(node));
 				String szLn = dq.getLocalname();
 				String szNs = dq.getNamespace();
 				
@@ -928,7 +928,7 @@ public class ToolJena {
 			}
 			//to simplify the case, only include Resource with URI
 			try {
-				DataQname dq = DataQname.create(getNodeString(node));
+				DataQname dq = DataQname.create(getNodeString(node), getNodePrefix(node));
 				if (dq.hasLocalname()){
 					iter.remove();
 					continue;
@@ -953,5 +953,33 @@ public class ToolJena {
 		
 		return ret;
 	}
+
 	
+	public static String getNodePrefix(RDFNode node) {
+		if (node.isURIResource()){
+			Resource res = (Resource) node;
+			
+			String szNamespace = res.getNameSpace();
+			if (null!=szNamespace){
+				String szPrefix = ToolModelAnalysis.getKnownNamespacePrefix(szNamespace);
+				if (ToolSafe.isEmpty(szPrefix))
+					szPrefix = res.getModel().getNsURIPrefix(szNamespace);
+				
+				return szPrefix;
+			}
+		}
+		return null;
+	}
+	
+	
+	public static DataQname getDataQname(RDFNode node){
+		if (node.isURIResource()){
+			try {
+				return DataQname.create(((Resource)node).getURI(), ToolJena.getNodePrefix(node));
+			} catch (Sw4jException e) {
+			}
+		}
+		return null;
+
+	}
 }

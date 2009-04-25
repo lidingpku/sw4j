@@ -287,4 +287,18 @@ public class ToolModelAnalysis {
 	
 		return data;
 	}
+	
+	public static String getKnownNamespacePrefix(String szNamespace){
+		String [][] nsPrefix= new String[][]{
+				{"http://inference-web.org/2.0/pml-provenance.owl#","pmlp"},
+				{"http://inference-web.org/2.0/pml-justification.owl#","pmlj"},
+		};
+		
+		for (int i=0; i<nsPrefix.length; i++){
+			if (nsPrefix[i][0].equals(szNamespace))
+				return nsPrefix[i][1];
+		}
+		
+		return null;
+	}
 }

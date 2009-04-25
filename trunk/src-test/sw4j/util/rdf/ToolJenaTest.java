@@ -75,6 +75,8 @@ public class ToolJenaTest {
 			System.out.println(m2.size());
 			ToolJena.printModel(m2);
 			
+			System.out.println(ToolJena.getNodePrefix(PMLDS_first));
+			
 			if (m.size()-3!=m2.size()){
 				fail();
 			}
@@ -236,7 +238,7 @@ public class ToolJenaTest {
         }
 	}
 	
-	@Test
+	//@Test
 	public void testWriteModelToFile() {
 		String szURI;
 		szURI = "http://inference-web.org/registry/DPR/Told.owl#Told";
