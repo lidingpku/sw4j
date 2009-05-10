@@ -27,12 +27,17 @@ OTHER DEALINGS IN THE SOFTWARE.
 package sw4j.util.rdf;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import org.apache.log4j.Logger;
 
-import sw4j.util.DataPVCMap;
+import sw4j.util.AbstractPropertyValuesMap;
+import sw4j.util.DataPVHMap;
+
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.RDFNode;
@@ -258,8 +263,8 @@ public class ToolModelAnalysis {
 	 * @param model_data
 	 * @return
 	 */
-	public static DataPVCMap<Resource,Resource> getMapInstanceTypes(Model model_data) {
-		DataPVCMap<Resource,Resource> data = new DataPVCMap<Resource,Resource>(true);
+	public static AbstractPropertyValuesMap<Resource,Resource> getMapInstanceTypes(Model model_data) {
+		DataPVHMap<Resource,Resource> data = new DataPVHMap<Resource,Resource>();
 	
 		// TODO we assume simple instance definition here
 		StmtIterator iter = model_data
@@ -301,4 +306,69 @@ public class ToolModelAnalysis {
 		
 		return null;
 	}
+	
+	////////////////////////////////////////////////
+	// model analysis
+	////////////////////////////////////////////////
+	
+	/**
+	 * split subjects into instance, ontology, and unknown
+	 * excluding class/property definition.
+	 * 
+	 * @param model_data
+	 * @return
+	 */
+	
+	public static final int SUBJECT_INSTANCE = 0;
+	public static final int SUBJECT_ONTOLOGY = 1;
+	public static final int SUBJECT_UNKNOWN = 2;
+	@SuppressWarnings("unchecked")
+	public static List<Set<Resource>> splitSubjects(Model model_data) {
+		ArrayList<Set<Resource>> ret = new ArrayList<Set<Resource>>();
+		
+		ret.add(new HashSet<Resource>());	// instance
+		ret.add(new HashSet<Resource>());	// ontology
+		ret.add(new HashSet<Resource>());	// unknown
+
+		ret.get(SUBJECT_UNKNOWN).addAll(model_data.listSubjects().toSet());
+		StmtIterator iter = model_data.listStatements(null, RDF.type, (String) null);
+		while (iter.hasNext()) {
+			Statement stmt = iter.nextStatement();
+			ret.get(SUBJECT_UNKNOWN).remove(stmt.getSubject());
+			
+			// skip meta-class
+			if (ToolModelAnalysis.testMetaClass(stmt.getObject())) {
+				ret.get(SUBJECT_ONTOLOGY).add(stmt.getSubject());
+				continue;
+			}
+
+			// skip meta-property
+			if (ToolModelAnalysis.testMetaProperty(stmt.getObject())) {
+				ret.get(SUBJECT_ONTOLOGY).add(stmt.getSubject());
+				continue;
+			}
+
+			ret.get(SUBJECT_INSTANCE).add(stmt.getSubject());
+		}
+		return ret;
+	}
+	
+	
+	public static Map<Resource, DataInstance> listInstanceDescription(Model m){
+		HashMap<Resource, DataInstance> data = new HashMap<Resource, DataInstance>();
+		StmtIterator iter = m.listStatements();
+		while (iter.hasNext()) {
+			Statement stmt = iter.nextStatement();
+			Resource subject = stmt.getSubject();
+			DataInstance di = data.get(subject);
+			if (null== di){
+				di = new DataInstance(subject);
+				data.put(subject, di);
+			}
+			di.addDescription(stmt);
+		}
+		
+		return data;
+
+	}	
 }

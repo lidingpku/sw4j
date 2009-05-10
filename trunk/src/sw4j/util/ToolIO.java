@@ -93,8 +93,8 @@ public class ToolIO {
 	 * @return
 	 * @throws Sw4jException
 	 */
-	public 	static FileInputStream pipeFileToInputStream(String szFileName) throws Sw4jException {
-		return pipeFileToInputStream(prepareFile(szFileName));
+	public 	static FileInputStream prepareFileInputStream(String szFileName) throws Sw4jException {
+		return prepareFileInputStream(prepareFile(szFileName));
 	}	
 
 
@@ -104,7 +104,7 @@ public class ToolIO {
 	 * @return
 	 * @throws Sw4jException
 	 */
-	public 	static FileInputStream pipeFileToInputStream(File f) throws Sw4jException {
+	public 	static FileInputStream prepareFileInputStream(File f) throws Sw4jException {
 		try {
 			return new FileInputStream(f);
 		} catch (FileNotFoundException e) {
@@ -263,7 +263,7 @@ public class ToolIO {
 	 * @throws Sw4jException
 	 */
 	public 	static byte[] pipeFileToBytes(File f) throws Sw4jException {
-		return pipeInputStreamToBytes(pipeFileToInputStream(f));
+		return pipeInputStreamToBytes(prepareFileInputStream(f));
 	}
 
 	/**
@@ -283,11 +283,11 @@ public class ToolIO {
 	}
 
 	public static String pipeFileToString(File f) throws Sw4jException {
-		return pipeInputStreamToString(pipeFileToInputStream(f));
+		return pipeInputStreamToString(prepareFileInputStream(f));
 	}	
 
 	public static void pipeFileToFile(File from, File to) throws Sw4jException{
-		ToolIO.pipeInputStreamToOutputStream(pipeFileToInputStream(from), prepareFileOutputStream(to, false, false));
+		ToolIO.pipeInputStreamToOutputStream(prepareFileInputStream(from), prepareFileOutputStream(to, false, false));
 	}
 
 

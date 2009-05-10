@@ -34,11 +34,9 @@ import java.io.OutputStream;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -424,70 +422,7 @@ public class ToolJena {
 	}
 
 	
-	////////////////////////////////////////////////
-	// model analysis
-	////////////////////////////////////////////////
-	
-	/**
-	 * split subjects into instance, ontology, and unknown
-	 * excluding class/property definition.
-	 * 
-	 * @param model_data
-	 * @return
-	 */
-	
-	public static final int SUBJECT_INSTANCE = 0;
-	public static final int SUBJECT_ONTOLOGY = 1;
-	public static final int SUBJECT_UNKNOWN = 2;
-	@SuppressWarnings("unchecked")
-	public static List<Set<Resource>> splitSubjects(Model model_data) {
-		ArrayList<Set<Resource>> ret = new ArrayList<Set<Resource>>();
-		
-		ret.add(new HashSet<Resource>());	// instance
-		ret.add(new HashSet<Resource>());	// ontology
-		ret.add(new HashSet<Resource>());	// unknown
 
-		ret.get(SUBJECT_UNKNOWN).addAll(model_data.listSubjects().toSet());
-		StmtIterator iter = model_data.listStatements(null, RDF.type, (String) null);
-		while (iter.hasNext()) {
-			Statement stmt = iter.nextStatement();
-			ret.get(SUBJECT_UNKNOWN).remove(stmt.getSubject());
-			
-			// skip meta-class
-			if (ToolModelAnalysis.testMetaClass(stmt.getObject())) {
-				ret.get(SUBJECT_ONTOLOGY).add(stmt.getSubject());
-				continue;
-			}
-
-			// skip meta-property
-			if (ToolModelAnalysis.testMetaProperty(stmt.getObject())) {
-				ret.get(SUBJECT_ONTOLOGY).add(stmt.getSubject());
-				continue;
-			}
-
-			ret.get(SUBJECT_INSTANCE).add(stmt.getSubject());
-		}
-		return ret;
-	}
-	
-	
-	public static Map<Resource, DataInstance> listInstanceDescription(Model m){
-		HashMap<Resource, DataInstance> data = new HashMap<Resource, DataInstance>();
-		StmtIterator iter = m.listStatements();
-		while (iter.hasNext()) {
-			Statement stmt = iter.nextStatement();
-			Resource subject = stmt.getSubject();
-			DataInstance di = data.get(subject);
-			if (null== di){
-				di = new DataInstance(subject);
-				data.put(subject, di);
-			}
-			di.addDescription(stmt);
-		}
-		
-		return data;
-
-	}
 
 	// ////////////////////////////////////////////////////////
 	//
@@ -869,6 +804,9 @@ public class ToolJena {
 	
 	
 	public static  String fromatRDFnode(RDFNode node, boolean bDetail){
+		if (ToolSafe.isEmpty(node))
+			return "";
+
 		if (node.isURIResource()){
 			DataQname dq;
 			try {
@@ -892,6 +830,9 @@ public class ToolJena {
 	}	
 	
 	public static String getNodeString(RDFNode node) {
+		if (ToolSafe.isEmpty(node))
+			return "";
+		
 		String type = getNodeType(node);
 		if (type.equals(NODE_LITERAL)) {
 			return ((Literal) node).getString().trim();
@@ -902,6 +843,9 @@ public class ToolJena {
 	}
 
 	public static String getNodeStringRes(Resource res) {
+		if (ToolSafe.isEmpty(res))
+			return "";
+
 		// I have seen some ugly swds which contain white-spaces at the end of
 		// URI
 		// e.g.
