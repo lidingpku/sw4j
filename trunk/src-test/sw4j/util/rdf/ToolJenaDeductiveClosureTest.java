@@ -64,7 +64,7 @@ public class ToolJenaDeductiveClosureTest {
 			//load jena model
 			Model model = ModelFactory.createDefaultModel();
 			try {
-				model.read( ToolIO.pipeFileToInputStream(szFileOrUrl),"http://example.org/rdf");
+				model.read( ToolIO.prepareFileInputStream(szFileOrUrl),"http://example.org/rdf");
 			} catch (Sw4jException e) {
 				e.printStackTrace();
 				fail("cannot load");
@@ -112,7 +112,7 @@ public class ToolJenaDeductiveClosureTest {
 			//load jena model
 			Model model = ModelFactory.createDefaultModel();
 			try {
-				model.read( ToolIO.pipeFileToInputStream(szFileOrUrl),"http://example.org/rdf");
+				model.read( ToolIO.prepareFileInputStream(szFileOrUrl),"http://example.org/rdf");
 			} catch (Sw4jException e) {
 				e.printStackTrace();
 				fail("cannot load");

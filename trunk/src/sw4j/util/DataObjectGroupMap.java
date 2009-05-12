@@ -53,8 +53,8 @@ public class DataObjectGroupMap <V>{
 		return new Integer(ggid++);
 	}
 	
-	public Integer add(V uri){
-		Integer gid = this.m_map_uri_gid.get(uri);
+	public Integer addObject(V uri){
+		Integer gid = getGid(uri);
 		if (null==gid){
 			gid = create_gid();
 			do_add(uri, gid);
@@ -62,13 +62,13 @@ public class DataObjectGroupMap <V>{
 		return gid;
 	}
 	
-	public Integer add(V uri, Integer gid){
+	public Integer addObject(V uri, Integer gid){
 		if (null!=gid){
 			do_remove(uri);
 			do_add(uri,gid);
 			return gid;
 		}else{
-			return add(uri);
+			return addObject(uri);
 		}
 	}
 
@@ -77,11 +77,11 @@ public class DataObjectGroupMap <V>{
 		return gid;
 	}
 
-	public Collection<V> getIds(Integer gid){
+	public Collection<V> getObjectsByGid(Integer gid){
 		return this.m_map_gid_uris.getValues(gid);
 	}
 
-	public void addLink(V uri1, V uri2){
+	public void addSameObjectAs(V uri1, V uri2){
 		do_merge(uri1,uri2);
 		m_map_uri_uri.add(uri1,uri2);
 	}
@@ -133,7 +133,7 @@ public class DataObjectGroupMap <V>{
 				
 			}else{
 				// both empty
-				gid1 =add(uri1);
+				gid1 =addObject(uri1);
 				do_add(uri2,gid1);
 				
 			}
@@ -158,10 +158,10 @@ public class DataObjectGroupMap <V>{
 		return this.m_map_gid_uris.m_index.toString();// +"\n"+ this.m_map_uri_uri.toString()+"\n";
 	}
 
-	public int getTotalIds() {
+	public int getTotalObjects() {
 		return this.m_map_uri_gid.size();
 	}
-	public int getTotalGroups() {
+	public int getTotalGids() {
 		return this.m_map_gid_uris.keySet().size();
 	}
 
@@ -172,7 +172,7 @@ public class DataObjectGroupMap <V>{
 			Integer gid = iter.next();
 			ret+=String.format("\n--------------\n%d\n%s",
 			 gid,
-			 ToolString.printCollectionToString(this.getIds(gid)));
+			 ToolString.printCollectionToString(this.getObjectsByGid(gid)));
 		}
 		return ret;
 	}

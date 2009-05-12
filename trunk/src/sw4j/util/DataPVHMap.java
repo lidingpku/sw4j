@@ -28,9 +28,11 @@ package sw4j.util;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.HashMap;
+import java.util.TreeSet;
 
 
 /**
@@ -95,6 +97,8 @@ public class DataPVHMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 		return ret;
 	}
 
+
+	
 	public Set<Map.Entry<P, Set<V>>> entrySet() {
 		return this.data.entrySet();
 	}
@@ -105,7 +109,13 @@ public class DataPVHMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 
 	@Override
 	public String toString() {
-		return this.data.toString();
+		TreeSet<String> strdata = new TreeSet<String>();
+		Iterator<Map.Entry<P, Set<V>>> iter = this.data.entrySet().iterator();
+		while (iter.hasNext()){
+			Map.Entry<P, Set<V>> entry = iter.next();
+			strdata.add(entry.toString());
+		}
+		return strdata.toString();
 	}
 
 	public void clear() {

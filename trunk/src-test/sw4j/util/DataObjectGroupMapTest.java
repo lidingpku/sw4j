@@ -43,12 +43,12 @@ public class DataObjectGroupMapTest {
 		DataObjectGroupMap<Integer> dg = new DataObjectGroupMap<Integer>();
 		
 		for (int i=0;i<max_node; i++){
-			dg.add(ToolRandom.randomInteger(max_node));	
+			dg.addObject(ToolRandom.randomInteger(max_node));	
 		}
 		System.out.println(dg);
 
 		for (int i=0;i<max_eq; i++){
-			dg.addLink(ToolRandom.randomInteger(max_node), ToolRandom.randomInteger(max_node));			
+			dg.addSameObjectAs(ToolRandom.randomInteger(max_node), ToolRandom.randomInteger(max_node));			
 			System.out.println(dg);
 		}
 	}

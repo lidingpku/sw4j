@@ -97,6 +97,14 @@ abstract public class AbstractPropertyValuesMap <P,V> implements Comparable<Abst
 	 */
 	abstract public Collection<V> getValues(P p);
 
+	public boolean hasValue(P p, V v){
+		Collection<V> ret = getValues(p);
+		if (null==ret)
+			return false;
+		else
+			return ret.contains(v);
+	}
+	
 	/**
 	 * return the values as a newly created set. 
 	 * 

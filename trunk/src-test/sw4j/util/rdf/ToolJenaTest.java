@@ -54,7 +54,7 @@ public class ToolJenaTest {
 		Property PMLDS_first= m.createProperty("http://inference-web.org/2.0/ds.owl#first");
 		Property PMLDS_rest = m.createProperty("http://inference-web.org/2.0/ds.owl#rest");
 		try {
-			m.read(ToolIO.pipeFileToInputStream(szURL), "http://foo.com/rdf");
+			m.read(ToolIO.prepareFileInputStream(szURL), "http://foo.com/rdf");
 			System.out.println("original");
 			System.out.println(m.size());
 			ToolJena.printModel(m);
