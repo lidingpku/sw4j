@@ -389,7 +389,7 @@ public class ToolIO {
 
 	public static void pipeStringToFile(String szContent, String szFileName, boolean bGzip, boolean bAppend)
 	throws Sw4jException {
-		pipeStringToFile(szContent, prepareFile(szFileName), bGzip, false);
+		pipeStringToFile(szContent, prepareFile(szFileName), bGzip, bAppend);
 	}
 
 	public static void pipeStringToFile(String szContent, File f, boolean bGzip, boolean bAppend)
