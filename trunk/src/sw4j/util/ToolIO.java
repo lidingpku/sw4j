@@ -384,10 +384,15 @@ public class ToolIO {
 	 */
 	public static void pipeStringToFile(String szContent, String szFileName, boolean bGzip)
 	throws Sw4jException {
-		pipeStringToFile(szContent, prepareFile(szFileName), false, bGzip);
+		pipeStringToFile(szContent, szFileName, bGzip, false);
 	}
 
-	public static void pipeStringToFile(String szContent, File f, boolean bAppend, boolean bGzip)
+	public static void pipeStringToFile(String szContent, String szFileName, boolean bGzip, boolean bAppend)
+	throws Sw4jException {
+		pipeStringToFile(szContent, prepareFile(szFileName), bGzip, false);
+	}
+
+	public static void pipeStringToFile(String szContent, File f, boolean bGzip, boolean bAppend)
 	throws Sw4jException {
 		ToolSafe.checkNonEmpty(szContent, "Need non-empty content");
 		pipeBytesToFile(szContent.getBytes(), f, bAppend, bGzip);
