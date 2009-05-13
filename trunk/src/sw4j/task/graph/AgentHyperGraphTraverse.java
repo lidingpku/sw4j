@@ -59,7 +59,7 @@ public class AgentHyperGraphTraverse {
 	long m_runtime_timer_end;
 
 	ArrayList<DataHyperGraph> m_runtime_solutions = new ArrayList<DataHyperGraph>();
-	protected int m_config_solutions_limit = -1;
+	protected int m_config_solutions_limit = 1;
 	
 	HashSet<Integer> m_runtime_preferred_vertex = new HashSet<Integer>();
 
@@ -72,7 +72,7 @@ public class AgentHyperGraphTraverse {
 	 * @param v
 	 */
 	public void traverse(DataHyperGraph G, Integer v){
-		traverse(G,v, -1, -1);
+		traverse(G,v, -1, -1, 1);
 		System.gc();
 		System.gc();
 		System.gc();
@@ -86,11 +86,12 @@ public class AgentHyperGraphTraverse {
 	 * @param limit - total result to be returned (-1 means no limit)
 	 * @return
 	 */
-	public void traverse(DataHyperGraph G, Integer v, int solution_limit, int timeout_limit){
+	public void traverse(DataHyperGraph G, Integer v, int solution_count_limit, int timeout_limit, int solutions_limit){
 		//reset
 		m_runtime_solution_count =0;
-		m_config_solution_count_limit = solution_limit;
+		m_config_solution_count_limit = solution_count_limit;
 		m_config_timer_limit = timeout_limit;
+		m_config_solutions_limit= solutions_limit;
 		
 		//prepare to-visit set
 		HashSet<Integer> Vx = new HashSet<Integer> ();
