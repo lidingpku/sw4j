@@ -155,6 +155,10 @@ public class DataHyperGraph {
 			return false;
 		}
 		
+		//avoid self-linked hyperedge
+		if (g.getSources().contains(g.getSink()))
+			return false;
+		
 		m_map_edge_context.add(g, contexts);
 		m_map_sink_edge.add(g.m_sink, g);
 		m_sources.addAll(g.m_sources);

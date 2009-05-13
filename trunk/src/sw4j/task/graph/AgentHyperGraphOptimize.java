@@ -26,10 +26,7 @@ OTHER DEALINGS IN THE SOFTWARE.
  */
 package sw4j.task.graph;
 
-import java.util.ArrayList;
 import java.util.Set;
-
-import sw4j.util.DataCachedObjectMap;
 
 
 
@@ -43,10 +40,7 @@ import sw4j.util.DataCachedObjectMap;
 public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 	
 
-	public ArrayList<DataHyperGraph> m_best_results = new ArrayList<DataHyperGraph>();
-	public int max_results = -1;
 	
-	public DataCachedObjectMap<Integer,Integer> m_cache_bad_branch = new DataCachedObjectMap<Integer,Integer>();
 	
 	/**
 	 * quality of optimal solutions, better quality has lower integer value
@@ -86,14 +80,19 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 
 			// update best quality if better quality found
 			if (m_best_result_quality > quality){
-				m_best_results.clear();
+				m_runtime_solutions.clear();
 				m_best_result_quality = quality;
+				
+				m_runtime_preferred_vertex.clear();
+
+				//reset timer
+				m_runtime_timer_start = System.currentTimeMillis();
 			}	
-
-
-			//a best quality result
-			if ( (max_results==-1 || max_results >m_best_results.size()) && quality==m_best_result_quality)
-				m_best_results.add(Gx);
+			
+			// if the quality of the solution is not the best, remove it from solution set if added
+			if (quality > m_best_result_quality){
+				this.m_runtime_solutions.remove(Gx);
+			}
 			
 			return true;
 		}else{
@@ -101,10 +100,22 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 		}		
 	}
 	
+	
 	@Override
 	protected boolean canDiscard(DataHyperGraph G, Set<Integer> Vx, DataHyperGraph Gx){
 		int quality = predictTotalQuality(G, Vx, Gx);
 
+		if (debug){
+			println_sys(String.format("edges %d, vertices %d, solutions %d, quality %d, best_q %d. todo %s ", 
+					Gx.getEdges().size(), 
+					Gx.getVertices().size(),
+					this.m_runtime_solution_count,
+					quality,
+					m_best_result_quality,
+					Vx.toString()));
+		}
+
+		
 		// skip worse quality 
 		if (m_best_result_quality!=-1 && quality > m_best_result_quality){
 			return true;
@@ -119,8 +130,8 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 		String ret = String.format("found total: %d\n" +
 				"best total: %d\n" +
 				"best quality: %d" ,
-				this.m_count_found,
-				this.m_best_results.size(),
+				this.m_runtime_solution_count,
+				this.m_runtime_solutions.size(),
 				this.m_best_result_quality);
 			
 		return ret;

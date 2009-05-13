@@ -51,7 +51,7 @@ public class DataHyperGraphTest {
 			AgentHyperGraphTraverse.debug= debug;
 			do_traverse(lg, v, alg);
 
-			if (-1!=total && alg.m_count_found!=total){
+			if (-1!=total && alg.m_runtime_solution_count!=total){
 				fail();
 			}
 		}
@@ -63,11 +63,11 @@ public class DataHyperGraphTest {
 			AgentHyperGraphTraverse.debug= debug;
 			do_traverse(lg, v, alg);
 			
-			if (-1!=best_total && alg.m_best_results.size()!=best_total){
+			if (-1!=best_total && alg.m_runtime_solutions.size()!=best_total){
 				fail();
 			}
 			
-			if (-1!=optimized_total && alg.m_count_found!=optimized_total){
+			if (-1!=optimized_total && alg.m_runtime_solution_count!=optimized_total){
 				fail();
 			}
 
