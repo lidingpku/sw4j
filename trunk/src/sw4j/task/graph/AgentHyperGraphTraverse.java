@@ -212,7 +212,7 @@ public class AgentHyperGraphTraverse {
 		}
 		
 		//filter the alternative edges
-		DataDigraph tc = Gx.getDigraph();
+		DataDigraph tc = null;
 
 		Iterator<DataHyperEdge> iter =G.m_map_sink_edge.getValues(vh).iterator();
 		while (iter.hasNext()){
@@ -226,8 +226,13 @@ public class AgentHyperGraphTraverse {
 			}
 
 			// avoid cycle
-			if (Vx.size()==1 && tc.isReachable(g.getSources(), g.getSink())){
-				continue;
+			if (Vx.size()==1){
+				if (null==tc)
+					tc = Gx.getDigraph();
+				
+				if (tc.isReachable(g.getSources(), g.getSink())){
+					continue;
+				}
 			}
 
 			if (m_runtime_preferred_vertex.containsAll(g.getSources()))
