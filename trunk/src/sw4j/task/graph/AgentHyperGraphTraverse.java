@@ -254,15 +254,15 @@ public class AgentHyperGraphTraverse {
 	}
 	
 	public boolean isAboveLimitTimeout(){
-		return (-1 != m_config_timer_limit && (m_runtime_timer_end - m_runtime_timer_start)>m_config_timer_limit);
+		return (-1 != m_config_timer_limit && (m_runtime_timer_end - m_runtime_timer_start)>= m_config_timer_limit);
 	}
 
 	public boolean isAboveLimitSolutionCount(){
-		return -1 != m_config_solution_count_limit &&  m_runtime_solution_count> m_config_solution_count_limit;
+		return -1 != m_config_solution_count_limit &&  m_runtime_solution_count>= m_config_solution_count_limit;
 	}
 
 	public boolean isAboveLimitSolutions(){
-		return -1 != m_config_solution_count_limit &&  m_runtime_solutions.size() >m_config_solutions_limit;
+		return -1 != m_config_solution_count_limit &&  m_runtime_solutions.size() >= m_config_solutions_limit;
 	}
 		
 	public List<DataHyperGraph> getSolutions(){
