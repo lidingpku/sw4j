@@ -27,6 +27,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 package sw4j.task.graph;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -59,7 +60,7 @@ public class AgentHyperGraphTraverse {
 	long m_runtime_timer_end;
 
 	ArrayList<DataHyperGraph> m_runtime_solutions = new ArrayList<DataHyperGraph>();
-	protected int m_config_solutions_limit = 1;
+	int m_config_solutions_limit = 1;
 	
 	HashSet<Integer> m_runtime_preferred_vertex = new HashSet<Integer>();
 
@@ -114,10 +115,6 @@ public class AgentHyperGraphTraverse {
 			//add some preferred vertex
 			m_runtime_preferred_vertex.addAll(Gx.getSinks());
 			
-			//if no better answers can be found in 5 minutes, stop search and return the current best
-			m_runtime_timer_end = System.currentTimeMillis();
-			if (isAboveLimitTimeout())
-				m_bMustStop = true;
 
 			//if solution limit has been reached
 			if (isAboveLimitSolutionCount())
@@ -138,6 +135,11 @@ public class AgentHyperGraphTraverse {
 
 
 	public boolean isMustStop(){
+		//if no better answers can be found in 5 minutes, stop search and return the current best
+		m_runtime_timer_end = System.currentTimeMillis();
+		if (isAboveLimitTimeout())
+			m_bMustStop = true;
+
 		return m_bMustStop;
 	}
 	
@@ -215,6 +217,8 @@ public class AgentHyperGraphTraverse {
 		Iterator<DataHyperEdge> iter =G.m_map_sink_edge.getValues(vh).iterator();
 		while (iter.hasNext()){
 			DataHyperEdge g = iter.next();
+			
+			
 
 			// skip if g is definitely causing incomplete linkedGraph
 			if (!G.getSinks().containsAll(g.getSources())){
@@ -226,7 +230,10 @@ public class AgentHyperGraphTraverse {
 				continue;
 			}
 
-			new_next.add(g);
+			if (m_runtime_preferred_vertex.containsAll(g.getSources()))
+				new_next.add(0, g);
+			else
+				new_next.add(g);
 		}		
 		
 		return new_next;
@@ -275,5 +282,9 @@ public class AgentHyperGraphTraverse {
 	
 	public double getProcessSeconds(){
 		return (this.m_runtime_process_end- this.m_runtime_process_start)/1000.0;
+	}
+	
+	public void addPreferredVertices(Collection<Integer> vertices){
+		this.m_runtime_preferred_vertex.addAll(vertices);
 	}
 }

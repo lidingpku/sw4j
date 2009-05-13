@@ -191,6 +191,17 @@ public class DataHyperGraph {
 		return ret;
 	}
 	
+	public DataHyperGraph getHyperGraphByContext(String context){
+		DataHyperGraph g = new DataHyperGraph();
+		Iterator<Map.Entry<DataHyperEdge,Set<String>>> iter = this.m_map_edge_context.entrySet().iterator();
+		while (iter.hasNext()){
+			Map.Entry<DataHyperEdge,Set<String>> entry = iter.next();
+			if (entry.getValue().contains(context))
+				g.add(entry.getKey());
+		}
+		return g;
+	}
+	
 	/**
 	 * list all sink vertices
 	 * 
