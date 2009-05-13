@@ -26,12 +26,16 @@ OTHER DEALINGS IN THE SOFTWARE.
  */
 package sw4j.task.graph;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+
+import sw4j.util.Sw4jException;
+import sw4j.util.ToolIO;
 
 /**
  * traverse a hypergraph (aka AND/OR graph) and report solutions
@@ -100,6 +104,12 @@ public class AgentHyperGraphTraverse {
 
 		m_runtime_process_start = System.currentTimeMillis();
 		m_runtime_timer_start = m_runtime_process_start;
+		try {
+			ToolIO.pipeStringToFile("remove file to stop","run-"+m_runtime_timer_start,false,false);
+		} catch (Sw4jException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		do_traverse(G,v,Vx,new DataHyperGraph());
 		
@@ -140,6 +150,10 @@ public class AgentHyperGraphTraverse {
 		if (isAboveLimitTimeout())
 			m_bMustStop = true;
 
+		if (!new File("run-"+m_runtime_timer_start).exists())
+			m_bMustStop = true;
+
+			
 		return m_bMustStop;
 	}
 	
