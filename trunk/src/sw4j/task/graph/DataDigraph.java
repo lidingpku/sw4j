@@ -30,6 +30,7 @@ package sw4j.task.graph;
  * @author Li Ding
  * 
  */
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -68,19 +69,28 @@ public class DataDigraph extends DataPVHMap<Integer, Integer> {
 	
 	public boolean isReachable(Integer sink, Integer source){
 		
-		HashSet<Integer> visiting = new HashSet<Integer> ();
-		visiting.add(sink);
+		HashSet<Integer> visited = new HashSet<Integer> ();
+		visited.add(sink);
 		
 		HashSet<Integer> goal = new HashSet<Integer> ();
 		goal.add(source);
 		
-		return do_check_connected(null, visiting, goal);
+		return do_check_connected(visited, this.getValues(sink), goal);
 		
 	}
 
+	private HashSet<Integer> getNext(Collection<Integer> from){
+		HashSet<Integer> next = new HashSet<Integer> (); 
+		Iterator<Integer> iter = from.iterator();
+		while (iter.hasNext()){
+			Integer node = iter.next();
+			
+			next.addAll(this.getValues(node));
+		}
+		return next;
+	}
 	
-	
-	private boolean do_check_connected(Set<Integer> visited, Set<Integer> visiting,  Set<Integer> goal){
+	private boolean do_check_connected(Collection<Integer> visited, Collection<Integer> visiting,  Set<Integer> goal){
 		if (null==visited)
 			visited = new HashSet<Integer> ();
 		
@@ -90,13 +100,8 @@ public class DataDigraph extends DataPVHMap<Integer, Integer> {
 		if (null==visiting || visiting.isEmpty())
 			return false;
 
-		HashSet<Integer> new_visiting = new HashSet<Integer> (); 
-		Iterator<Integer> iter = visiting.iterator();
-		while (iter.hasNext()){
-			Integer node = iter.next();
-			
-			new_visiting.addAll(this.getValues(node));
-		}
+		Collection<Integer> new_visiting = getNext(visiting);
+
 		
 		new_visiting.removeAll(visited);
 		new_visiting.removeAll(visiting);

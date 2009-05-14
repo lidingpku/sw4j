@@ -63,7 +63,7 @@ public class DataHyperGraphTest {
 			AgentHyperGraphTraverse.debug= debug;
 			do_traverse(lg, v, alg);
 			
-			if (-1!=best_total && alg.m_runtime_solutions.size()!=best_total){
+			if (-1!=best_total && alg.m_runtime_solution_count_best!=best_total){
 				fail();
 			}
 			
@@ -71,7 +71,7 @@ public class DataHyperGraphTest {
 				fail();
 			}
 
-			if (-1!=best_quality && alg.m_best_result_quality!=best_quality){
+			if (-1!=best_quality && alg.m_runtime_best_quality!=best_quality){
 				fail();
 			}
 		}		
@@ -89,7 +89,7 @@ public class DataHyperGraphTest {
 		System.out.println("-------");
 		System.out.println("2.  traverse ");
 
-		alg.traverse(lg, v);
+		alg.traverse(lg, v,-1, -1, -1);
 		
 		System.out.println("-------");
 		System.out.println("3. output summary ");
@@ -112,8 +112,9 @@ public class DataHyperGraphTest {
 		System.out.println("======================================================================");
 		System.out.println("test_traverse_case2");
 		DataHyperGraph lg = create_case2();
+		debug=true;
 		Integer v = new Integer(0);
-		do_traverse(lg,v, 8, 4, 4, 7);
+		do_traverse(lg,v, 8, 5, 4, 7);
 
 	}
 
@@ -193,7 +194,7 @@ public class DataHyperGraphTest {
 		System.out.println("test_traverse_worstcase1");
 		DataHyperGraph lg = create_worstcase1(5);
 		Integer v = new Integer(1);
-		do_traverse(lg,v,16,16,1,5);		
+		do_traverse(lg,v,16,1,1,5);		
 
 	}
 
@@ -281,7 +282,7 @@ Steps:
 		DataHyperGraph[] lgs =create_test_rain();
 		DataHyperGraph lg =lgs[2];
 		Integer v = new Integer(11);
-		do_traverse(lg,v,7,2,2,5);		
+		do_traverse(lg,v,7,3,2,5);		
 	}
 
 	private static DataHyperGraph[] create_test_rain(){

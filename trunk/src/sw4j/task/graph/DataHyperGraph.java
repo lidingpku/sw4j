@@ -34,6 +34,7 @@ package sw4j.task.graph;
  */
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
@@ -191,17 +192,36 @@ public class DataHyperGraph {
 		return ret;
 	}
 	
-	public DataHyperGraph getHyperGraphByContext(String context){
-		DataHyperGraph g = new DataHyperGraph();
+	public DataHyperGraph getHyperGraphByContext(String szContext){
+		return getSubHyperGraphs().get(szContext);
+	}
+	
+	
+	public Map<String,DataHyperGraph> getSubHyperGraphs(){
+		HashMap<String,DataHyperGraph> ret = new HashMap<String,DataHyperGraph>();
+		
 		Iterator<Map.Entry<DataHyperEdge,Set<String>>> iter = this.m_map_edge_context.entrySet().iterator();
 		while (iter.hasNext()){
 			Map.Entry<DataHyperEdge,Set<String>> entry = iter.next();
-			if (entry.getValue().contains(context))
+			
+			Iterator<String> iter_context= entry.getValue().iterator();
+			while (iter_context.hasNext()){
+				String szContext = iter_context.next();
+				
+				DataHyperGraph g = ret.get(szContext);
+				if (null==g){
+					g = new DataHyperGraph();
+					ret.put(szContext,g);
+				}
+				
 				g.add(entry.getKey());
+				
+				
+				
+			}
 		}
-		return g;
+		return ret;
 	}
-	
 	/**
 	 * list all sink vertices
 	 * 

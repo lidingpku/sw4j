@@ -54,22 +54,66 @@ public class AgentHyperGraphTraverse {
 	
 	public static boolean debug = false;
 	
-	int m_config_solution_count_limit  = -1;
-	int m_runtime_solution_count = 0;
-	
+
+	// threshold for how many seconds can be used between two effective solutions
 	long m_config_timer_limit  = -1;
-	long m_runtime_process_start;
-	long m_runtime_process_end;
 	long m_runtime_timer_start;
 	long m_runtime_timer_end;
+	public boolean isAboveLimitTimeout(){
+		return (-1 != m_config_timer_limit && (m_runtime_timer_end - m_runtime_timer_start)>= m_config_timer_limit);
+	}
 
-	ArrayList<DataHyperGraph> m_runtime_solutions = new ArrayList<DataHyperGraph>();
+	// how many seconds have been used 
+	long m_runtime_process_start;
+	long m_runtime_process_end;
+	/**
+	 * return the seconds used by this process
+	 * @return
+	 */
+	public double getProcessSeconds(){
+		return (this.m_runtime_process_end- this.m_runtime_process_start)/1000.0;
+	}
+
+	
+	// threshold for how many solutions have been seen
+	int m_config_solution_count_limit  = -1;
+	int m_runtime_solution_count = 0;
+	public boolean isAboveLimitSolutionCount(){
+		return -1 != m_config_solution_count_limit &&  m_runtime_solution_count>= m_config_solution_count_limit;
+	}
+
+	/**
+	 * return how many solutions have been found
+	 * @return
+	 */
+	public int getSolutionCount() {
+		return this.m_runtime_solution_count;
+	}
+	
+	
+	// record samples of found solutions
 	int m_config_solutions_limit = 1;
-	
-	HashSet<Integer> m_runtime_preferred_vertex = new HashSet<Integer>();
+	ArrayList<DataHyperGraph> m_runtime_solutions = new ArrayList<DataHyperGraph>();
 
+	protected void saveSolution(DataHyperGraph g){
+
+		if (-1 == m_config_solution_count_limit ||  m_runtime_solutions.size() < m_config_solutions_limit)
+			m_runtime_solutions.add(g);
+	}
 	
-	boolean m_bMustStop=false;
+	
+	// file based run time control to stop the process
+	String m_szFileName_runtime = null;
+
+
+	/**
+	 * return a list of recorded solutions
+	 * @return
+	 */
+	public List<DataHyperGraph> getSolutions(){
+		return this.m_runtime_solutions;
+	}
+
 	
 	/**
 	 * traverse hypergraph to find solution graph
@@ -77,11 +121,7 @@ public class AgentHyperGraphTraverse {
 	 * @param v
 	 */
 	public void traverse(DataHyperGraph G, Integer v){
-		traverse(G,v, -1, -1, 1);
-		System.gc();
-		System.gc();
-		System.gc();
-		System.out.println("free memory:" + Runtime.getRuntime().freeMemory());
+		traverse(G, v, -1, -1, 1);
 	}	
 	
 	/**
@@ -92,71 +132,58 @@ public class AgentHyperGraphTraverse {
 	 * @return
 	 */
 	public void traverse(DataHyperGraph G, Integer v, int solution_count_limit, int timeout_limit, int solutions_limit){
-		//reset
-		m_runtime_solution_count =0;
+		before_traverse(G,v);
+		
+		//additional init
 		m_config_solution_count_limit = solution_count_limit;
 		m_config_timer_limit = timeout_limit;
 		m_config_solutions_limit= solutions_limit;
 		
-		//prepare to-visit set
 		HashSet<Integer> Vx = new HashSet<Integer> ();
 		Vx.add(v);
 
+		// run process
+		on_traverse(G, v, Vx, new DataHyperGraph());
+		
+		
+		after_traverse();
+		
+	}
+
+	protected void before_traverse(DataHyperGraph G, Integer v){
+		//init
+		m_runtime_solution_count =0;
+
 		m_runtime_process_start = System.currentTimeMillis();
 		m_runtime_timer_start = m_runtime_process_start;
+		
+		// set run token file
 		try {
-			ToolIO.pipeStringToFile("remove file to stop","run-"+m_runtime_timer_start,false,false);
+			m_szFileName_runtime = "run-"+m_runtime_timer_start;
+			ToolIO.pipeStringToFile("remove file to stop",m_szFileName_runtime,false,false);
 		} catch (Sw4jException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
-		do_traverse(G,v,Vx,new DataHyperGraph());
-		
+		}		
+	}
+
+	protected void after_traverse(){
+		//record when finished
 		m_runtime_process_end = System.currentTimeMillis();
-	}
 
-
-
-	public boolean isSolution(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
-		if (Vx.isEmpty() && Gx.isComplete() && Gx.isSingleRoot(v)){
-			this.m_runtime_solution_count ++;
-
-			//add some preferred vertex
-			m_runtime_preferred_vertex.addAll(Gx.getSinks());
-			
-
-			//if solution limit has been reached
-			if (isAboveLimitSolutionCount())
-				m_bMustStop = true;
-			
-			if (!isAboveLimitSolutions())
-				this.m_runtime_solutions.add(Gx);
-
-			if (debug)
-			{
-				System.out.println(Gx.data_export(G));
-			}
-			return true;
-		}else{
-			return false;			
+		// remove run token file
+		File f=null;
+		if (null!= m_szFileName_runtime && !(f=new File(m_szFileName_runtime)).exists()){
+			f.delete();
 		}
+
+		System.gc();
+		System.gc();
+		System.gc();
+		System.out.println("free memory:" + Runtime.getRuntime().freeMemory());
+		
 	}
 
 
-	public boolean isMustStop(){
-		//if no better answers can be found in 5 minutes, stop search and return the current best
-		m_runtime_timer_end = System.currentTimeMillis();
-		if (isAboveLimitTimeout())
-			m_bMustStop = true;
-
-		if (!new File("run-"+m_runtime_timer_start).exists())
-			m_bMustStop = true;
-
-			
-		return m_bMustStop;
-	}
-	
 	/**
 	 * traverse concise subgraphs for a hypergraph starting from a given vertex v.
 	 * 
@@ -166,25 +193,32 @@ public class AgentHyperGraphTraverse {
 	 * @param Gx	the current path, i.e. concise selection of hyperedge
 	 * @return	if some solution was found
 	 */
-	protected boolean do_traverse(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
-
-			
+	protected boolean on_traverse(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
 		// check if g is not meeting other criteria
 		if (canDiscard(G, Vx, Gx))
 			return false;
 
 		// check the hyperedge selection
-		if (isSolution(G, v, Vx, Gx))
+		if (checkSolution(G, v, Vx, Gx))
 			return true;
 
-		// if there are no more vertices to be investigate
+		// stop if there are no more vertices
 		if (Vx.isEmpty())
 			return false;
 
-		// getNextStep
-		Iterator<DataHyperEdge> iter = getNextStep(G,v,Vx,Gx).iterator();
+		//select one vertex 
+		Integer vh = select_next_vertex(G,v,Vx,Gx);
+		
+		if (null==vh)
+			return false;
+		
 
-		// try each hyperedge
+		//list the edge (filter, reorder...)
+		Iterator<DataHyperEdge> iter = reorder_next_edges(G,v,Vx,Gx, 
+										filter_next_edges(G,v,Vx,Gx, 
+												G.getEdgesBySink(vh)) ).iterator();
+
+		// try each edge,
 		// in case iter is empty, that mean vh is not justified by any hyper edge
 		boolean bRet = false;
 		while (iter.hasNext()){
@@ -204,63 +238,24 @@ public class AgentHyperGraphTraverse {
 			DataHyperGraph new_gx = new DataHyperGraph(Gx);
 			new_gx.add(g);
 			
-			bRet |= do_traverse(G, v, new_vx, new_gx);
+			bRet |= on_traverse(G, v, new_vx, new_gx);
 		}
 		
 		
 		return bRet;
 	}
 	
-	protected List<DataHyperEdge> getNextStep(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
-		ArrayList<DataHyperEdge> new_next = new ArrayList<DataHyperEdge>();
-
-		if (Vx.isEmpty())
-			return new_next;
-		
-		// simply pick the edges associated with the first to-visit vertex.
-		Integer vh = Vx.iterator().next();
-		HashSet<Integer> temp = new HashSet<Integer> (Vx);
-		temp.retainAll(this.m_runtime_preferred_vertex);
-		if (!temp.isEmpty()){
-			vh= temp.iterator().next();
-		}
-		
-		//filter the alternative edges
-		DataDigraph tc = null;
-
-		Iterator<DataHyperEdge> iter =G.m_map_sink_edge.getValues(vh).iterator();
-		while (iter.hasNext()){
-			DataHyperEdge g = iter.next();
-			
-			
-
-			// skip if g is definitely causing incomplete linkedGraph
-			if (!G.getSinks().containsAll(g.getSources())){
-				continue;
-			}
-
-			// avoid cycle
-			if (Vx.size()==1){
-				if (null==tc)
-					tc = Gx.getDigraph();
-				
-				if (tc.isReachable(g.getSources(), g.getSink())){
-					continue;
-				}
-			}
-
-			if (m_runtime_preferred_vertex.containsAll(g.getSources()))
-				new_next.add(0, g);
-			else
-				new_next.add(g);
-		}		
-		
-		return new_next;
-	}
-	
+	/**
+	 * check if we can discard a search branch. Normal traverse will say "no" but further optimization can say yes.
+	 * 
+	 * @param G
+	 * @param Vx
+	 * @param Gx
+	 * @return
+	 */
 	protected boolean canDiscard(DataHyperGraph G, Set<Integer> Vx, DataHyperGraph Gx){
 		if (debug){
-			println_sys(String.format("edges %d, vertices %d, solutions %d. todo %s ", 
+			log(String.format("edges %d, vertices %d, solutions %d. todo %s ", 
 					Gx.getEdges().size(), 
 					Gx.getVertices().size(),
 					this.m_runtime_solution_count,
@@ -269,41 +264,96 @@ public class AgentHyperGraphTraverse {
 		
 		return false;
 	}
+	
+	protected boolean isSolution(Integer v, Set<Integer> Vx, DataHyperGraph Gx){
+		return (Vx.isEmpty() && Gx.isComplete() && Gx.isSingleRoot(v) && Gx.isAcyclic());
+	}
+	
+	protected boolean checkSolution(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
+		if (isSolution(v,Vx,Gx)){	
+			this.m_runtime_solution_count ++;
+
+			//add some preferred vertex
+			//m_runtime_preferred_vertex.addAll(Gx.getSinks());
+			
+			saveSolution(Gx);
+
+			if (debug){
+				System.out.println(Gx.data_summary());
+			}
+			return true;
+		}else{
+			return false;			
+		}
+	}
+
+
+	protected boolean isMustStop(){
+		//stop if two many solutions were found
+		if (isAboveLimitSolutionCount())
+			return true;
+
+		//stop if no better answers can be found in 5 minutes
+		m_runtime_timer_end = System.currentTimeMillis();
+		if (isAboveLimitTimeout())
+			return  true;
+
+		//stop if the run token file is removed by user
+		if (null!= m_szFileName_runtime && !new File(m_szFileName_runtime).exists())
+			return  true;
+
+		return false;	
+	}
+	
+
+	protected Integer select_next_vertex(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
+		// simply pick the edges associated with the first to-visit vertex.
+		if (!Vx.isEmpty())
+			return Vx.iterator().next();
+		else
+			return null;
+	}
+	
+	protected Collection<DataHyperEdge> filter_next_edges(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx, Collection<DataHyperEdge> edges){
+		ArrayList<DataHyperEdge> new_next = new ArrayList<DataHyperEdge>();
+
+		//generate a directed graph 
+		DataDigraph adj = Gx.getDigraph();
+
+		Iterator<DataHyperEdge> iter =edges.iterator();
+		while (iter.hasNext()){
+			DataHyperEdge g = iter.next();
+			
+			// skip if g is definitely causing incomplete linkedGraph
+			if (!G.getSinks().containsAll(g.getSources())){
+				continue;
+			}
+
+			// avoid cycle
+			if (adj.isReachable(g.getSources(), g.getSink())){
+				continue;
+			}
+
+			//if (m_runtime_preferred_vertex.containsAll(g.getSources()))
+			//	new_next.add(0, g);
+			//else
+			new_next.add(g);
+		}		
+		
+		return new_next;
+	}
+	protected Collection<DataHyperEdge> reorder_next_edges(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx, Collection<DataHyperEdge> edges){
+		return edges;
+	}	
+
 
 	public String getSummary(DataHyperGraph G) {
-		return String.format("found total: %d", this.m_runtime_solution_count);
+		return String.format("found %d solutions in %.3f seconds", this.m_runtime_solution_count, this.getProcessSeconds());
 	}
 	
 	
-	protected void println_sys(String szText){
+	protected void log(String szText){
 		System.out.println("[T:"+(System.currentTimeMillis()-this.m_runtime_process_start)/1000+"] "+szText);
 	}
 	
-	public boolean isAboveLimitTimeout(){
-		return (-1 != m_config_timer_limit && (m_runtime_timer_end - m_runtime_timer_start)>= m_config_timer_limit);
-	}
-
-	public boolean isAboveLimitSolutionCount(){
-		return -1 != m_config_solution_count_limit &&  m_runtime_solution_count>= m_config_solution_count_limit;
-	}
-
-	public boolean isAboveLimitSolutions(){
-		return -1 != m_config_solution_count_limit &&  m_runtime_solutions.size() >= m_config_solutions_limit;
-	}
-		
-	public List<DataHyperGraph> getSolutions(){
-		return this.m_runtime_solutions;
-	}
-
-	public int getSolutionCount() {
-		return this.m_runtime_solution_count;
-	}
-	
-	public double getProcessSeconds(){
-		return (this.m_runtime_process_end- this.m_runtime_process_start)/1000.0;
-	}
-	
-	public void addPreferredVertices(Collection<Integer> vertices){
-		this.m_runtime_preferred_vertex.addAll(vertices);
-	}
 }

@@ -26,6 +26,11 @@ OTHER DEALINGS IN THE SOFTWARE.
  */
 package sw4j.task.graph;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 
@@ -41,11 +46,15 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 	
 
 	
-	
+	HashSet<Integer> m_runtime_preferred_vertex = new HashSet<Integer>();
+
+
+	public int m_runtime_solution_count_best = 0;
+
 	/**
 	 * quality of optimal solutions, better quality has lower integer value
 	 */
-	public int m_best_result_quality = -1;
+	public int m_runtime_best_quality = -1;
 
 	/**
 	 * g function - measure the cost of current solution
@@ -69,29 +78,70 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 	}
 	
 	@Override
-	public boolean isSolution(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
-		if (super.isSolution(G, v, Vx, Gx)){
+	protected void before_traverse(DataHyperGraph G, Integer v){
+		super.before_traverse(G, v);
+		
+		//initiate best quality and preferred vertex
+		Map<String,DataHyperGraph> map_graph_context = G.getSubHyperGraphs();
+		Iterator<DataHyperGraph> iter = map_graph_context.values().iterator();
+		int best_quality = -1;
+		DataHyperGraph best_g = null;
+		while (iter.hasNext()){
+			DataHyperGraph g = iter.next();
+			
+			if (!isSolution(v, new HashSet<Integer>(), g))
+				continue;
+						
+			int quality = getQuality(g);
+			
+			if (null==best_g || best_quality > quality){
+				best_g =g;
+				best_quality = quality;
+			}
+		}
+		
+		if (null!=best_g)
+			this.m_runtime_preferred_vertex.addAll(best_g.getVertices());
+	}
+	
+	@Override
+	public boolean checkSolution(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
+		if (super.checkSolution(G, v, Vx, Gx)){
 			int quality = getQuality(Gx);
 
 			// init m_query_best_result, just do it one time
-			if (-1 == m_best_result_quality){
-				m_best_result_quality = quality;
+			if (-1 == m_runtime_best_quality){
+				m_runtime_best_quality = quality;
+				m_runtime_solution_count_best =0;
 			}
 
 			// update best quality if better quality found
-			if (m_best_result_quality > quality){
+			if (m_runtime_best_quality > quality){
+				
+				//rest
 				m_runtime_solutions.clear();
-				m_best_result_quality = quality;
+				m_runtime_best_quality = quality;
+				m_runtime_solution_count_best =0;
 				
 				m_runtime_preferred_vertex.clear();
 
-				//reset timer
 				m_runtime_timer_start = System.currentTimeMillis();
 			}	
-			
-			// if the quality of the solution is not the best, remove it from solution set if added
-			if (quality > m_best_result_quality){
+
+			// check if the solution is the best
+			if (quality > m_runtime_best_quality){
+				// no
+				
+				// only keep the best solutions
 				this.m_runtime_solutions.remove(Gx);
+			}else{
+				//yes
+				
+				//increment counter
+				m_runtime_solution_count_best ++;
+				
+				//update preferred vertex
+				this.m_runtime_preferred_vertex.addAll(Gx.getSinks());
 			}
 			
 			return true;
@@ -106,18 +156,18 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 		int quality = predictTotalQuality(G, Vx, Gx);
 
 		if (debug){
-			println_sys(String.format("edges %d, vertices %d, solutions %d, quality %d, best_q %d. todo %s ", 
+			log(String.format("edges %d, vertices %d, solutions %d, quality %d, best_q %d. todo %s ", 
 					Gx.getEdges().size(), 
 					Gx.getVertices().size(),
 					this.m_runtime_solution_count,
 					quality,
-					m_best_result_quality,
+					m_runtime_best_quality,
 					Vx.toString()));
 		}
 
 		
 		// skip worse quality 
-		if (m_best_result_quality!=-1 && quality > m_best_result_quality){
+		if (m_runtime_best_quality!=-1 && quality > m_runtime_best_quality){
 			return true;
 		}
 		
@@ -126,13 +176,48 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 	
 	
 	@Override
+	protected Integer select_next_vertex(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
+
+		if (Vx.isEmpty())
+			return null;
+		
+		// simply pick the edges associated with the first to-visit vertex.
+		Integer vh = Vx.iterator().next();
+		
+		// update vh if it is preferred
+		HashSet<Integer> temp = new HashSet<Integer> (Vx);
+		temp.retainAll(this.m_runtime_preferred_vertex);
+		if (!temp.isEmpty()){
+			vh= temp.iterator().next();
+		}
+		
+		return vh;
+	}
+	
+	@Override
+	protected Collection<DataHyperEdge> reorder_next_edges(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx, Collection<DataHyperEdge> edges){
+		ArrayList<DataHyperEdge> new_next = new ArrayList<DataHyperEdge>();
+
+		Iterator<DataHyperEdge> iter =edges.iterator();
+		while (iter.hasNext()){
+			DataHyperEdge e = iter.next();
+			
+			if (m_runtime_preferred_vertex.containsAll(e.getSources()))
+				new_next.add(0, e);
+			else
+				new_next.add(e);
+		}		
+		
+		return new_next;
+	}
+	
+	@Override
 	public String getSummary(DataHyperGraph G) {
-		String ret = String.format("found total: %d\n" +
-				"best total: %d\n" +
-				"best quality: %d" ,
-				this.m_runtime_solution_count,
-				this.m_runtime_solutions.size(),
-				this.m_best_result_quality);
+		
+		String ret = String.format("%s | best-total: %d best-quality: %d" ,
+				super.getSummary(G),
+				this.m_runtime_solution_count_best,
+				this.m_runtime_best_quality);
 			
 		return ret;
 	}
