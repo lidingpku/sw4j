@@ -172,7 +172,7 @@ public class AgentHyperGraphTraverse {
 
 		// remove run token file
 		File f=null;
-		if (null!= m_szFileName_runtime && !(f=new File(m_szFileName_runtime)).exists()){
+		if (null!= m_szFileName_runtime && (f=new File(m_szFileName_runtime)).exists()){
 			f.delete();
 		}
 
