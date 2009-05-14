@@ -114,7 +114,7 @@ public class DataHyperGraphTest {
 		DataHyperGraph lg = create_case2();
 		debug=true;
 		Integer v = new Integer(0);
-		do_traverse(lg,v, 8, 5, 4, 7);
+		do_traverse(lg,v, 8, 6, 4, 7);
 
 	}
 
@@ -194,7 +194,7 @@ public class DataHyperGraphTest {
 		System.out.println("test_traverse_worstcase1");
 		DataHyperGraph lg = create_worstcase1(5);
 		Integer v = new Integer(1);
-		do_traverse(lg,v,16,1,1,5);		
+		do_traverse(lg,v,16,2,1,5);		
 
 	}
 
@@ -282,7 +282,7 @@ Steps:
 		DataHyperGraph[] lgs =create_test_rain();
 		DataHyperGraph lg =lgs[2];
 		Integer v = new Integer(11);
-		do_traverse(lg,v,7,3,2,5);		
+		do_traverse(lg,v,7,5,2,5);		
 	}
 
 	private static DataHyperGraph[] create_test_rain(){
@@ -398,12 +398,12 @@ Steps:
 		DataHyperGraph lg =lgs[2];
 		{
 			Integer v = new Integer(1);
-			do_traverse(lg,v,2,2,2,4);		
+			do_traverse(lg,v,2,3,2,4);		
 		}
 		
 		{
 			Integer v = new Integer(11);
-			do_traverse(lg,v,2,2,2,4);		
+			do_traverse(lg,v,2,3,2,4);		
 		}
 	}
 
