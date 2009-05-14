@@ -106,7 +106,7 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 	
 	@Override
 	public boolean checkSolution(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
-		if (super.checkSolution(G, v, Vx, Gx)){
+		if (isSolution(v,Vx,Gx)){	
 			int quality = getQuality(Gx);
 
 			// init m_query_best_result, just do it one time
@@ -129,16 +129,14 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 			}	
 
 			// check if the solution is the best
-			if (quality > m_runtime_best_quality){
-				// no
-				
-				// only keep the best solutions
-				this.m_runtime_solutions.remove(Gx);
-			}else{
+			if (quality <= m_runtime_best_quality){
 				//yes
 				
+				saveSolution(Gx);
+
 				//increment counter
 				m_runtime_solution_count_best ++;
+				
 				
 				//update preferred vertex
 				this.m_runtime_preferred_vertex.addAll(Gx.getSinks());

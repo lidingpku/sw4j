@@ -179,7 +179,7 @@ public class AgentHyperGraphTraverse {
 		System.gc();
 		System.gc();
 		System.gc();
-		System.out.println("free memory:" + Runtime.getRuntime().freeMemory());
+		//System.out.println("free memory:" + Runtime.getRuntime().freeMemory());
 		
 	}
 
@@ -266,16 +266,17 @@ public class AgentHyperGraphTraverse {
 	}
 	
 	protected boolean isSolution(Integer v, Set<Integer> Vx, DataHyperGraph Gx){
-		return (Vx.isEmpty() && Gx.isComplete() && Gx.isSingleRoot(v) && Gx.isAcyclic());
+		boolean bRet = (Vx.isEmpty() && Gx.isComplete() && Gx.isSingleRoot(v) && Gx.isAcyclic());
+		if (bRet){
+			this.m_runtime_solution_count ++;
+		}
+		
+		return bRet;
 	}
 	
 	protected boolean checkSolution(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
 		if (isSolution(v,Vx,Gx)){	
-			this.m_runtime_solution_count ++;
 
-			//add some preferred vertex
-			//m_runtime_preferred_vertex.addAll(Gx.getSinks());
-			
 			saveSolution(Gx);
 
 			if (debug){
