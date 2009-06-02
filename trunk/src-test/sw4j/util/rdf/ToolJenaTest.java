@@ -31,8 +31,10 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
+import sw4j.task.rdf.RDFSYNTAX;
 import sw4j.util.Sw4jException;
 import sw4j.util.ToolIO;
+import sw4j.util.ToolSafe;
 import sw4j.util.rdf.ToolJena;
 
 
@@ -135,28 +137,77 @@ public class ToolJenaTest {
 	
 	@Test
 	public void test_SPARQL() {
-		{
-		String queryText = 
-			"PREFIX dc:      <http://purl.org/dc/elements/1.1/> " +
-			"PREFIX rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-			"PREFIX foaf:      <http://xmlns.com/foaf/0.1/> " +
-			"describe $book " +
-			"from named <http://www.cs.rpi.edu/~dingl/foaf.rdf> " +
-			"WHERE  { $book rdf:type foaf:Person} ";
-		Model m = ToolJena.sparql_createModel(queryText);
-        if (null!=m)
-            m.write(System.out, "N3");
-        else
-        	fail();
-		}
+	
 		
 		{
 			String queryText;
 			try {
+				queryText = ToolIO.pipeUrlToString("http://tw.rpi.edu/proj/portal.wiki/images/d/dd/CoreQuery3_0.sparql");
+				Object ret = ToolJena.sparql_exec(queryText, true);
+		        if (!ToolSafe.isEmpty(ret))
+		            System.out.println(ret);
+		        else
+		        	fail();
+			} catch (Sw4jException e) {
+				
+				e.printStackTrace();
+	        	fail();
+			}
+        }
+		
+		{
+			String queryText;
+			try {
+				queryText = ToolIO.pipeUrlToString("http://onto.rpi.edu/alpha/sparql/test1.sparql");
+				Model m = ToolJena.sparql_create_describe(queryText, false);
+		        if (null!=m && m.size()>0)
+		            m.write(System.out, RDFSYNTAX.RDFXML);
+		        else
+		        	fail();
+			} catch (Sw4jException e) {
+				
+				e.printStackTrace();
+	        	fail();
+			}
+        }
+		
+		{
+			String queryText;
+			try {
+				queryText = ToolIO.pipeUrlToString("http://onto.rpi.edu/alpha/sparql/test4.sparql");
+				Object ret = ToolJena.sparql_exec(queryText, false);
+		        if (!ToolSafe.isEmpty(ret))
+		            System.out.println(ret);
+		        else
+		        	fail();
+			} catch (Sw4jException e) {
+				
+				e.printStackTrace();
+	        	fail();
+			}
+        }
+
+		{
+			String queryText = 
+				"PREFIX dc:      <http://purl.org/dc/elements/1.1/> " +
+				"PREFIX rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
+				"PREFIX foaf:      <http://xmlns.com/foaf/0.1/> " +
+				"describe ?p " +
+				"FROM NAMED <http://www.cs.rpi.edu/~dingl/foaf.rdf> " +
+				"WHERE {GRAPH ?g { ?p rdf:type foaf:Person}} ";
+			Model m = ToolJena.sparql_create_describe(queryText, false);
+	        if (null!=m && m.size()>0)
+	            m.write(System.out, RDFSYNTAX.N3);
+	        else
+	        	fail();
+		}
+		{
+			String queryText;
+			try {
 				queryText = ToolIO.pipeFileToString("files/sparql_test/test2.sparql");
-				Model m = ToolJena.sparql_createModel(queryText);
-		        if (null!=m)
-		            m.write(System.out, "N3");
+				Model m = ToolJena.sparql_create_describe(queryText, false);
+		        if (null!=m && m.size()>0)
+		            m.write(System.out, RDFSYNTAX.RDFXML);
 		        else
 		        	fail();
 			} catch (Sw4jException e) {

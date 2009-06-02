@@ -44,14 +44,6 @@ import com.ibm.icu.util.StringTokenizer;
 public class ToolMarkupDetector {
 	public static boolean debug = false;
 	
-	public static final String RDF_SYNTAX_RDFXML = "RDF/XML";
-	public static final String RDF_SYNTAX_NT = "N-TRIPLE";
-	public static final String RDF_SYNTAX_N3 = "N3";
-	public static final String RDF_SYNTAX_TURTLE = "TURTLE";
-	public static final String RDFA_SYNTAX = "RDFA";
-	
-    
-	
 	public final static int FORMAT_TEXT = 0;
     public final static int FORMAT_XML = 1;
     public final static int FORMAT_HTML = 2;
@@ -68,14 +60,14 @@ public class ToolMarkupDetector {
     	{"text", ""},
 		{"xml",""},
 		{"html",""},
-		{"rdf_xml", RDF_SYNTAX_RDFXML},
-		{"html_embed_rdf_xml",RDF_SYNTAX_RDFXML},
-		{"text_n3",RDF_SYNTAX_N3},
-		{"text_nt",RDF_SYNTAX_NT},
+		{"rdf_xml", RDFSYNTAX.RDFXML},
+		{"html_embed_rdf_xml",RDFSYNTAX.RDFXML},
+		{"text_n3",RDFSYNTAX.N3},
+		{"text_nt",RDFSYNTAX.NT},
 		{"markup_empty",""},
 		{"text_empty",""},
-		{"text_embed_rdf_xml",RDF_SYNTAX_RDFXML},
-		{"text_rdfa",RDFA_SYNTAX},
+		{"text_embed_rdf_xml",RDFSYNTAX.RDFXML},
+		{"text_rdfa",RDFSYNTAX.RDFA},
     };
 
     public static String getJenaSyntaxByFormat(int iFormat){
@@ -169,13 +161,13 @@ public class ToolMarkupDetector {
 	public static int guessFormat(String szRdfSyntax, String szMimetype, String szRawURL, String szXmlBase){
 		// first use user supplied rdf syntax
 		if (!ToolSafe.isEmpty(szRdfSyntax)){
-			if (RDF_SYNTAX_RDFXML.equals(szRdfSyntax)){
+			if (RDFSYNTAX.RDFXML.equals(szRdfSyntax)){
 				return FORMAT_RDFXML;
-			}else if (RDF_SYNTAX_N3.equals(szRdfSyntax)){
+			}else if (RDFSYNTAX.N3.equals(szRdfSyntax)){
 				return FORMAT_TEXT_N3;
-			}else if (RDF_SYNTAX_NT.equals(szRdfSyntax)){
+			}else if (RDFSYNTAX.NT.equals(szRdfSyntax)){
 				return FORMAT_TEXT_NT;
-			}else if (RDF_SYNTAX_TURTLE.equals(szRdfSyntax)){
+			}else if (RDFSYNTAX.TURTLE.equals(szRdfSyntax)){
 				return FORMAT_TEXT_N3;
 			}
 		}

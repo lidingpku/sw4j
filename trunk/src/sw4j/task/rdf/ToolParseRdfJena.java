@@ -111,7 +111,7 @@ public class ToolParseRdfJena {
 			
 			// this code is removed because jena can parse more rdf data from pdf file
 			//
-			if (szRdfSyntax.equalsIgnoreCase(ToolMarkupDetector.RDF_SYNTAX_RDFXML))
+			if (szRdfSyntax.equalsIgnoreCase(RDFSYNTAX.RDFXML))
 				reader.setProperty("error-mode","strict");
 			
 			reader.setErrorHandler(oMyErrorHandler);

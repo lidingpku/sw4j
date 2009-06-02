@@ -567,22 +567,7 @@ public class ToolJena {
 
 	
 
-	public static Model  sparql_createModel(String queryString){	
-		Query query = QueryFactory.create(queryString) ;
-		Dataset dataset = DatasetFactory.create(query.getGraphURIs(), query.getNamedGraphURIs());
-		QueryExecution qexec = QueryExecutionFactory.create(query, dataset) ;
-		Model resultModel =null;
-		if (query.isDescribeType())
-			resultModel = qexec.execDescribe() ;
-		else if (query.isConstructType())
-			resultModel = qexec.execConstruct() ;
-		else
-			return null;
-		
-		qexec.close() ;
-		return resultModel;
-		
-	}
+
 
 	@SuppressWarnings("unchecked")
 	public static Dataset prepareDataset(Query query,  boolean usePellet){
@@ -613,8 +598,65 @@ public class ToolJena {
 	}
 	
 	
-	public static String  sparql_select(String queryString,  boolean usePellet){
+	public static Object sparql_exec(String queryString, boolean usePellet){
+		Query query = QueryFactory.create(queryString) ;
+		
+		//System.out.println(queryString);
+		Dataset dataset = prepareDataset(query, usePellet);
+		
+		QueryExecution qexec = QueryExecutionFactory.create(query, dataset) ;
+
+		Object ret = null;
+		if (query.isDescribeType()){
+			ret = qexec.execDescribe();
+		}else if (query.isConstructType()){
+			ret = qexec.execConstruct() ;
+		}else if (query.isSelectType()){
+			ResultSet results = qexec.execSelect() ;
+			ByteArrayOutputStream sw = new ByteArrayOutputStream();
+			ResultSetFormatter.out(sw,results, query);
+			ret = sw.toString();
+		}else if (query.isAskType()){
+			ret = qexec.execAsk() ;
+		}
+		
+		qexec.close() ;
+		return ret;
+	}
 	
+	
+	public static Model  sparql_create_describe(String queryString, boolean usePellet){	
+		Object ret = sparql_exec(queryString, usePellet);
+		if (ret instanceof Model)
+			return (Model)ret;
+		else
+			return null;
+		/*
+		Query query = QueryFactory.create(queryString) ;
+		
+		Dataset dataset = prepareDataset(query, usePellet);
+		
+		QueryExecution qexec = QueryExecutionFactory.create(query, dataset) ;
+		Model resultModel =null;
+		if (query.isDescribeType())
+			resultModel = qexec.execDescribe() ;
+		else if (query.isConstructType())
+			resultModel = qexec.execConstruct() ;
+		else
+			return null;
+		
+		qexec.close() ;
+		return resultModel;
+		*/
+	}
+	
+	public static String  sparql_select(String queryString,  boolean usePellet){
+		Object ret = sparql_exec(queryString, usePellet);
+		if (ret instanceof String)
+			return (String)ret;
+		else
+			return null;
+		/*
 		Query query = QueryFactory.create(queryString) ;
 	
 		//System.out.println(queryString);
@@ -640,8 +682,37 @@ public class ToolJena {
 		qexec.close() ;
 		
 		return ret;
+		*/
 	}	
 
+	public static boolean sparql_ask (String queryString,  boolean usePellet){
+		Object ret = sparql_exec(queryString, usePellet);
+		if (ret instanceof Boolean)
+			return (Boolean)ret;
+		else
+			return false;
+		/*
+		Query query = QueryFactory.create(queryString) ;
+	
+		//System.out.println(queryString);
+		Dataset dataset = prepareDataset(query, usePellet);
+		
+		QueryExecution qexec = QueryExecutionFactory.create(query, dataset) ;
+		boolean ret = false;
+		if (query.isAskType())
+			ret = qexec.execAsk() ;
+		else{
+			return ret;
+		}			
+		
+		// Important - free up resources used running the query
+		qexec.close() ;
+		
+		return ret;
+		*/
+	}		
+	
+	
 	public static  Model model_createDeductiveClosure(Model deduction, Model m) throws Sw4jException{
 		OntModel ont;
 		if ( m instanceof OntModel){
@@ -650,6 +721,9 @@ public class ToolJena {
 			ont = ToolPellet.createOntModel();
 			ToolJena.model_merge(ont, m);
 		}
+
+		ont.setStrictMode( false );
+
 		
 		// invalid model should not have any deduction model
 		if (!ont.validate().isValid()){

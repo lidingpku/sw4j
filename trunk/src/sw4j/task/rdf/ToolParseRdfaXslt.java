@@ -89,9 +89,9 @@ public class ToolParseRdfaXslt {
 		     
 		     //System.out.println(sw);
 		     
-		     ToolParseRdfJena.parse(sw.toString(), data_crawl.getXmlBase().toString(), ToolMarkupDetector.RDF_SYNTAX_RDFXML, output);
+		     ToolParseRdfJena.parse(sw.toString(), data_crawl.getXmlBase().toString(), RDFSYNTAX.RDFXML, output);
 		     if (output.hasModel()){
-		    	 output.setRdfSyntax(ToolMarkupDetector.RDFA_SYNTAX);
+		    	 output.setRdfSyntax(RDFSYNTAX.RDFA);
 		     }
 		     
 		     return output;
