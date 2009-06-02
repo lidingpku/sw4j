@@ -1,8 +1,0 @@
-#  Test case
-#   select subclasses of a class
-#
-PREFIX pmlp:      <http://inference-web.org/2.0/pml-provenance.owl#> 
-PREFIX rdfs:      <http://www.w3.org/2000/01/rdf-schema#> 
-SELECT ?cls 
-FROM <http://inference-web.org/2.0/pml-provenance.owl> 
-WHERE {?cls rdfs:subClassOf  pmlp:Source }
