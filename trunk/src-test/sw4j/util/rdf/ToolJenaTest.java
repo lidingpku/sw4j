@@ -138,7 +138,21 @@ public class ToolJenaTest {
 	@Test
 	public void test_SPARQL() {
 	
-		
+		{
+			String queryText;
+			try {
+				queryText = ToolIO.pipeFileToString("files/sparql_test/test10.sparql");
+				Object ret = ToolJena.sparql_exec(queryText, true);
+		        if (!ToolSafe.isEmpty(ret))
+		            System.out.println(ret);
+		        else
+		        	fail();
+			} catch (Sw4jException e) {
+				
+				e.printStackTrace();
+	        	fail();
+			}
+        }	
 		{
 			String queryText;
 			try {

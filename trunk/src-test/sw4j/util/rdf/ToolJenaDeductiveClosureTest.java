@@ -10,6 +10,7 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
+
 import sw4j.task.util.AgentModelManager;
 import sw4j.util.Sw4jException;
 import sw4j.util.ToolIO;
@@ -64,7 +65,8 @@ public class ToolJenaDeductiveClosureTest {
 			//load jena model
 			Model model = ModelFactory.createDefaultModel();
 			try {
-				model.read( ToolIO.prepareFileInputStream(szFileOrUrl),"http://example.org/rdf");
+				model = AgentModelManager.get().loadModel(szFileOrUrl);
+				//model.read( ToolIO.prepareFileInputStream(szFileOrUrl),"http://example.org/rdf");
 			} catch (Sw4jException e) {
 				e.printStackTrace();
 				fail("cannot load");
@@ -147,6 +149,19 @@ public class ToolJenaDeductiveClosureTest {
 
 	
 		//////////////////////////////////////////////////////////////////
+		{
+			//transitive subclass
+			//rdfs class 
+			DataSmartMap entry = new DataSmartMap();
+			entry.put(FIELD_URL, "http://www.cs.rpi.edu/~michaj6/provenance/UCDGC.owl");
+			entry.put(FIELD_ORIGINAL, 5);
+			entry.put(FIELD_DEDUCTIVE_PELLET, 39);  //34
+ 			entry.put(FIELD_DEDUCTIVE_RDFS, 9); 
+			entry.put(FIELD_DEDUCTIVE_SW4J, 39);  
+			
+			data.add(entry);
+		}
+
 		{
 			//transitive subclass
 			//rdfs class 

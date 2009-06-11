@@ -33,7 +33,11 @@ import org.mindswap.pellet.PelletOptions.MonitorType;
 import org.mindswap.pellet.jena.PelletReasonerFactory;
 
 
+import com.clarkparsia.pellet.sparqldl.jena.SparqlDLExecutionFactory;
 import com.hp.hpl.jena.ontology.OntModel;
+import com.hp.hpl.jena.query.Query;
+import com.hp.hpl.jena.query.QueryExecution;
+import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 
 /**
@@ -61,6 +65,14 @@ public class ToolPellet {
 
 	}
 
+	public static QueryExecution sparql_exec(Model m, Query q){
+		OntModel model = ModelFactory.createOntologyModel( PelletReasonerFactory.THE_SPEC );
+		model.add(m);
+		
+		// Create a SPARQL-DL query execution for the given query and
+		// ontology model
+		return  SparqlDLExecutionFactory.create( q, model );
+	}
 
 	
 }

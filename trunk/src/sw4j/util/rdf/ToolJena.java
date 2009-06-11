@@ -601,10 +601,14 @@ public class ToolJena {
 	public static Object sparql_exec(String queryString, boolean usePellet){
 		Query query = QueryFactory.create(queryString) ;
 		
-		//System.out.println(queryString);
-		Dataset dataset = prepareDataset(query, usePellet);
-		
-		QueryExecution qexec = QueryExecutionFactory.create(query, dataset) ;
+		QueryExecution qexec;
+		if (usePellet){
+			Dataset dataset = prepareDataset(query, false);
+			qexec = ToolPellet.sparql_exec(dataset.getDefaultModel(), query);
+		}else{
+			Dataset dataset = prepareDataset(query, usePellet);
+			qexec = QueryExecutionFactory.create(query, dataset) ;
+		}
 
 		Object ret = null;
 		if (query.isDescribeType()){
@@ -722,7 +726,7 @@ public class ToolJena {
 			ToolJena.model_merge(ont, m);
 		}
 
-		ont.setStrictMode( false );
+		//ont.setStrictMode( false );
 
 		
 		// invalid model should not have any deduction model
@@ -777,10 +781,10 @@ public class ToolJena {
 			//System.out.println("inconsistent reference");
 			return;
 		}
-
-		m.add(ref);
 		
-		model_copyNsPrefix(m,ref);
+		m.add(ref);
+		model_copyNsPrefix( m,ref);						
+
 	}
 	
 	/**
