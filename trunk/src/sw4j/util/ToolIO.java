@@ -394,8 +394,10 @@ public class ToolIO {
 
 	public static void pipeStringToFile(String szContent, File f, boolean bGzip, boolean bAppend)
 	throws Sw4jException {
-		ToolSafe.checkNonEmpty(szContent, "Need non-empty content");
-		pipeBytesToFile(szContent.getBytes(), f, bAppend, bGzip);
+		if (ToolSafe.isEmpty(szContent))
+			pipeBytesToFile("".getBytes(), f, bAppend, bGzip);
+		else
+			pipeBytesToFile(szContent.getBytes(), f, bAppend, bGzip);
 	}
 
 	public static StringReader pipeStringToReader(String szContent)

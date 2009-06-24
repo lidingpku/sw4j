@@ -8,7 +8,7 @@ public class DataServeletResponseTest {
 
 	@Test
 	public void test1(){
-		DataServeletResponse response = DataServeletResponse.createResponse(ModelFactory.createDefaultModel(), null);
+		DataServeletResponse response = DataServeletResponse.createResponse(ModelFactory.createDefaultModel(), null, null);
 		System.out.println(response.getMimeType());
 		
 	}

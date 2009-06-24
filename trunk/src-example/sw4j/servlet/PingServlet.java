@@ -23,20 +23,22 @@ import sw4j.util.ToolSafe;
  * @author Li
  *
  */
-public class SparqlJenaServlet extends HttpServlet {
+public class PingServlet extends HttpServlet {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -3392604472787612392L;
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response)
+    @Override
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
     throws IOException, ServletException
 	{
     	doProcessQuery(request,response);
 	}
 	
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
+    @Override
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
     throws IOException, ServletException
 	{
     	doProcessQuery(request,response);
@@ -46,26 +48,22 @@ public class SparqlJenaServlet extends HttpServlet {
     public void doProcessQuery(HttpServletRequest request, HttpServletResponse response)
     throws IOException, ServletException
     {
-    	SparqlService svc = new SparqlService();
+    	PingService svc = new PingService();
     	
     	// parse input parameters
-    	svc.queryURL =  (String) request.getParameter("queryURL");
-    	svc.queryText =  (String) request.getParameter("queryText");
-		
-		
-
+		svc.szURL =  request.getParameter("url");
 		String view =  request.getParameter("view");
 		svc.rdfsyntax = RDFSYNTAX.parseRdfSyntax(view);
-
-		svc.bUsePellet = false;
-		String usePellet= (String) request.getParameter("usePellet");
-		svc.bUsePellet =ToolSafe.isEqual(usePellet, "yes");
-		
 		if (!ToolSafe.isEmpty(request) && !ToolSafe.isEmpty(request.getRequestURI()))
 			svc.requestURI =  request.getRequestURI() ;
-		
+
+		svc.bValidateRDF = false;
+		String temp = (String) request.getParameter("vrdf");
+		svc.bValidateRDF =ToolSafe.isEqual(temp, "yes");
+
         DataServeletResponse ret = svc.run();
-       	ret.output(response);  
+       	ret.output(response);        
+
     }
    
 }
