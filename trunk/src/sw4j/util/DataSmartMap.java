@@ -30,6 +30,7 @@ package sw4j.util;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.List;
 import java.util.TreeSet;
 import java.util.Map;
 import java.util.Properties;
@@ -237,7 +238,20 @@ public class DataSmartMap implements Comparable<String>{
 		m_data.putAll(data);
 		m_string_fields.addAll(stringFields);
 	}    
+	
+	public void putAll(List<String> fields, List<String> values, Set<String> stringFields){
+		Iterator<String> iter_field = fields.iterator();
+		Iterator<String> iter_value = values.iterator();
+		while (iter_value.hasNext()){
+			String field = iter_field.next();
+			String value = iter_value.next();
 
+			if (!ToolSafe.isEmpty(value))
+				m_data.put(field, value);
+		}
+		m_string_fields.addAll(stringFields);
+	}    
+	
 	public void copy(DataSmartMap sf){
 		this.putAll(sf.m_data, sf.m_string_fields);
 	}  	
@@ -343,6 +357,24 @@ public class DataSmartMap implements Comparable<String>{
     	Properties ret = new Properties();
     	ret.putAll(this.m_data);
     	return ret;
+    }
+	
+	////////////////////////////////////////////////
+	// translation  (to string template)
+	////////////////////////////////////////////////
+	/**
+	 * translate to wiki template
+	 */
+    public String toTemplate(String templatename){
+    	String ret = "{{"+ templatename;
+	    Iterator<Map.Entry<String,Object>> iter = m_data.entrySet().iterator();
+	    while (iter.hasNext()){
+		    Map.Entry<String,Object>  entry = iter.next();
+		    
+		    ret += String.format("\n |%s=%s", entry.getKey(), entry.getValue());
+	    }
+	    ret +="\n}}";
+	    return ret;
     }
 	
 	
