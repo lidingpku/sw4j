@@ -788,6 +788,24 @@ public class ToolJena {
 	}
 	
 	/**
+	 * create model A-B
+	 * @param m
+	 * @param ref
+	 */
+	public static Model model_diff(Model m_a, Model m_b){
+		if (ToolSafe.isEmpty(m_a))
+			return null;
+		
+		if (ToolSafe.isEmpty(m_b))
+			return null;
+
+		Model ret = ModelFactory.createDefaultModel();
+		model_merge(ret,m_a);
+		ret.remove(m_b);
+		return ret;
+	}
+	
+	/**
 	 * add a list of models to model m
 	 * @param m
 	 * @param ref

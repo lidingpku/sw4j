@@ -4,11 +4,19 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 public class DataTable {
-	ArrayList<DataSmartMap> m_data = new ArrayList<DataSmartMap>();
+	//ArrayList<DataSmartMap> m_data = new ArrayList<DataSmartMap>();
+	ArrayList<String> m_header = new ArrayList<String>();
+	ArrayList<List<String>> m_values = new ArrayList<List<String>>();
+	
+	public List<String> getHeader(){
+		return this.m_header;
+	}
+	public List<List<String>> getValues(){
+		return this.m_values;
+	}
 	
 	public static DataTable fromCSV(String szURL){
 		DataTable  table = new DataTable();
@@ -17,20 +25,15 @@ public class DataTable {
 			String line = null;
 			int rowid=0;
 			ToolCsvParser parser = new ToolCsvParser();
-			List<String> fields = null;
 			while (null!=(line=reader.readLine())){
 				if (0 == rowid){
 					//process header row
-					fields = new ArrayList<String>( parser.parse(line));
+					table.m_header = new ArrayList<String>( parser.parse(line));
 				}else{
 					//process rows
-					List<String> values = parser.parse(line);
+					List<String> values = new ArrayList<String>( parser.parse(line));
 					
-					DataSmartMap map = new DataSmartMap();
-										
-					map.putAll(fields, values, new HashSet<String>());
-					
-					table.m_data.add(map);
+					table.m_values.add(values);
 				}
 				rowid++;
 			}
@@ -45,4 +48,5 @@ public class DataTable {
 		
 		return table;
 	}
+	
 }

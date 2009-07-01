@@ -236,7 +236,8 @@ public class DataSmartMap implements Comparable<String>{
  	
 	public void putAll(Map<String,Object> data, Set<String> stringFields){
 		m_data.putAll(data);
-		m_string_fields.addAll(stringFields);
+		if (!ToolSafe.isEmpty(stringFields))
+			m_string_fields.addAll(stringFields);
 	}    
 	
 	public void putAll(List<String> fields, List<String> values, Set<String> stringFields){
@@ -249,7 +250,8 @@ public class DataSmartMap implements Comparable<String>{
 			if (!ToolSafe.isEmpty(value))
 				m_data.put(field, value);
 		}
-		m_string_fields.addAll(stringFields);
+		if (!ToolSafe.isEmpty(stringFields))
+			m_string_fields.addAll(stringFields);
 	}    
 	
 	public void copy(DataSmartMap sf){
