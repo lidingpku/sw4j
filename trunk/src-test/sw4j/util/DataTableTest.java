@@ -15,7 +15,9 @@ public class DataTableTest {
 			
 			DataTable table = DataTable.fromCSV(szURI);
 			
-			System.out.println(table.m_data.iterator().next().toTemplate("catalog"));
+			DataSmartMap map = new DataSmartMap();
+			map.putAll(table.m_header, table.m_values.iterator().next(), null);
+			System.out.println(map.toTemplate("catalog"));
 		}
 	}
 	
