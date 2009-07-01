@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import sw4j.task.rdf.RDFSYNTAX;
 import sw4j.util.ToolSafe;
 
 
@@ -23,20 +22,22 @@ import sw4j.util.ToolSafe;
  * @author Li
  *
  */
-public class SparqlJenaServlet extends HttpServlet {
+public class DiffServlet extends HttpServlet {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -3392604472787612392L;
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response)
+    @Override
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
     throws IOException, ServletException
 	{
     	doProcessQuery(request,response);
 	}
 	
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
+    @Override
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
     throws IOException, ServletException
 	{
     	doProcessQuery(request,response);
@@ -46,26 +47,19 @@ public class SparqlJenaServlet extends HttpServlet {
     public void doProcessQuery(HttpServletRequest request, HttpServletResponse response)
     throws IOException, ServletException
     {
-    	SparqlService svc = new SparqlService();
+    	DiffService svc = new DiffService();
     	
     	// parse input parameters
-    	svc.queryURL =  (String) request.getParameter("queryURL");
-    	svc.queryText =  (String) request.getParameter("queryText");
-		
-		
+		svc.szPrev=  request.getParameter("prev");
+		svc.szCur =  request.getParameter("cur");
 
-		String view =  request.getParameter("view");
-		svc.rdfsyntax = RDFSYNTAX.parseRdfSyntax(view);
-
-		svc.bUsePellet = false;
-		String usePellet= (String) request.getParameter("usePellet");
-		svc.bUsePellet =ToolSafe.isEqual(usePellet, "yes");
-		
 		if (!ToolSafe.isEmpty(request) && !ToolSafe.isEmpty(request.getRequestURI()))
 			svc.requestURI =  request.getRequestURI() ;
-		
+
+		// compute model = cur - prev
         DataServeletResponse ret = svc.run();
-       	ret.output(response);  
+       	ret.output(response);        
+
     }
    
 }

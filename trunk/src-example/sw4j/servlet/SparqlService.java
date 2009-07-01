@@ -9,7 +9,7 @@ import sw4j.util.rdf.ToolJena;
 
 public class SparqlService {
 	
-	final public static String AGENT = "TW SPARQL Service. http://onto.rpi.edu/alpha/sparql";
+	final public static String AGENT = "TW SPARQL Service. http://onto.rpi.edu/sw4j/sparql.html";
 
 	public String queryURL;
 	public String queryText;

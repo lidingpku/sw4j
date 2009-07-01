@@ -16,7 +16,7 @@ import sw4j.util.ToolString;
 
 public class PingService {
 
-	final public static String AGENT = "TW Ping Service. http://onto.rpi.edu/alpha/ping";
+	final public static String AGENT = "TW Ping Service. http://onto.rpi.edu/sw4j/ping.html";
 	
 	public String szURL;
 	public String rdfsyntax;

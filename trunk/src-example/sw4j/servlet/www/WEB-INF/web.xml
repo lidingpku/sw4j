@@ -8,12 +8,23 @@
 
   <servlet>
     <servlet-name>SPARQL</servlet-name>
-    <servlet-class>sw4j.servlet.SparqlJenaServlet</servlet-class>
+    <servlet-class>sw4j.servlet.SparqlServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
     <servlet-name>SPARQL</servlet-name>
     <url-pattern>/sparql</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>Diff</servlet-name>
+    <servlet-class>sw4j.servlet.DiffServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Diff</servlet-name>
+    <url-pattern>/diff</url-pattern>
   </servlet-mapping>
   
   
