@@ -8,6 +8,7 @@ public class RDFSYNTAX {
 	public static final String NT = "N-TRIPLE";
 	public static final String RDFXML = "RDF/XML";
 	public static final String TURTLE = "TURTLE";
+	public static final String RDFXML_ABBREV = "RDF/XML-ABBREV";
 	
 	public static final String RDFA = "RDFA";
 	
@@ -28,6 +29,8 @@ public class RDFSYNTAX {
 		}else if (TURTLE.equals(rdfsyntax)){
 			return MIME_N3;
 		}else if (RDFXML.equals(rdfsyntax)){
+			return MIME_RDFXML;
+		}else if (RDFXML_ABBREV.equals(rdfsyntax)){
 			return MIME_RDFXML;
 		}else if (NT.equals(rdfsyntax)){
 			return MIME_TEXT_PLAIN;
@@ -55,6 +58,8 @@ public class RDFSYNTAX {
 				return TURTLE;
 			}else if (RDFXML.equalsIgnoreCase(rdfsyntax)){
 				return RDFXML;
+			}else if (RDFXML_ABBREV.equalsIgnoreCase(rdfsyntax)){
+				return RDFXML_ABBREV;
 			}else if (NT.equalsIgnoreCase(rdfsyntax)){
 				return NT;
 			}else{

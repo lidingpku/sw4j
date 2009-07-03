@@ -344,6 +344,7 @@ public class ToolJena {
 		StringWriter sw = new StringWriter();
 		RDFWriter writer = m.getWriter(rdfsyntax);
 		writer.setProperty("showXmlDeclaration", "true");
+		writer.setProperty("allowBadURIs", "true");
 		writer.write(m, sw, null);
 		return sw.toString();
 	}
