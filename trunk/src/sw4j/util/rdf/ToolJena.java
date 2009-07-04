@@ -1023,4 +1023,13 @@ public class ToolJena {
 		return null;
 
 	}
+
+	public static String getValueOfProperty(Model m, Resource s, Property p, String default_value) {
+		 NodeIterator iter_node = m.listObjectsOfProperty(s,p);
+		 if (iter_node.hasNext()){
+			 return getNodeString(iter_node.nextNode());
+		 }else{
+			 return default_value;
+		 }
+	}
 }

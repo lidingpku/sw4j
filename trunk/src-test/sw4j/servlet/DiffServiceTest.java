@@ -12,8 +12,8 @@ public class DiffServiceTest {
 	@Test
 	public void test1() throws IOException{
 		DiffService svc = new DiffService();
-		svc.szCur = "http://data-gov.tw.rpi.edu/catalog/2009/07-01-map-dataset-url.rdf";
-		svc.szPrev = "http://data-gov.tw.rpi.edu/catalog/2009/06-29-map-dataset-url.rdf";
+		svc.szCur = "http://data-gov.tw.rpi.edu/catalog/2009/07-03-today.rss";
+		svc.szPrev = "http://data-gov.tw.rpi.edu/catalog/2009/06-24-today.rss";
 		
 		DataServeletResponse ret = svc.run();
 		
@@ -26,8 +26,8 @@ public class DiffServiceTest {
 	@Test
 	public void test2() throws IOException{
 		DiffService svc = new DiffService();
-		svc.szPrev = "http://data-gov.tw.rpi.edu/catalog/2009/07-01-map-dataset-url.rdf";
-		svc.szCur = "http://data-gov.tw.rpi.edu/catalog/2009/06-29-map-dataset-url.rdf";
+		svc.szPrev = "http://data-gov.tw.rpi.edu/catalog/2009/07-03-today.rss";
+		svc.szCur = "http://data-gov.tw.rpi.edu/catalog/2009/06-24-today.rss";
 		
 		DataServeletResponse ret = svc.run();
 		

@@ -52,6 +52,10 @@ public class DiffServlet extends HttpServlet {
     	// parse input parameters
 		svc.szPrev=  request.getParameter("prev");
 		svc.szCur =  request.getParameter("cur");
+		svc.output = request.getParameter("output");
+		svc.rss_title =  request.getParameter("rss_title");
+		svc.rss_url =  request.getParameter("rss_url");
+		svc.root_type_uri =  request.getParameter("root_type_uri");
 
 		if (!ToolSafe.isEmpty(request) && !ToolSafe.isEmpty(request.getRequestURI()))
 			svc.requestURI =  request.getRequestURI() ;
