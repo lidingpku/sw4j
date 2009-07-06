@@ -50,12 +50,31 @@ public class DiffServlet extends HttpServlet {
     	DiffService svc = new DiffService();
     	
     	// parse input parameters
-		svc.szPrev=  request.getParameter("prev");
-		svc.szCur =  request.getParameter("cur");
-		svc.output = request.getParameter("output");
-		svc.rss_title =  request.getParameter("rss_title");
-		svc.rss_url =  request.getParameter("rss_url");
-		svc.root_type_uri =  request.getParameter("root_type_uri");
+		String szTemp;
+		szTemp = request.getParameter("prev");
+		if (!ToolSafe.isEmpty(szTemp))
+			svc.szPrev =szTemp;
+
+		szTemp = request.getParameter("cur");
+		if (!ToolSafe.isEmpty(szTemp))
+			svc.szCur =szTemp;
+		
+		szTemp = request.getParameter("output");
+		if (!ToolSafe.isEmpty(szTemp))
+			svc.output =szTemp;
+
+		szTemp = request.getParameter("rss_title");
+		if (!ToolSafe.isEmpty(szTemp))
+			svc.rss_title =szTemp;
+
+		szTemp = request.getParameter("rss_url");
+		if (!ToolSafe.isEmpty(szTemp))
+			svc.rss_url =szTemp;
+
+		szTemp = request.getParameter("root_type_uri");
+		if (!ToolSafe.isEmpty(szTemp))
+			svc.root_type_uri =szTemp;
+
 
 		if (!ToolSafe.isEmpty(request) && !ToolSafe.isEmpty(request.getRequestURI()))
 			svc.requestURI =  request.getRequestURI() ;

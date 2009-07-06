@@ -22,7 +22,7 @@ public class DiffService {
 	public String rss_url="http://tw.rpi.edu/";
 	public String rss_title="DIFF default";
 
-	public String output=TaskDiff.DIFF_RSS;
+	public String output=TaskDiff.DIFF_RDF;
 	
 	
 
@@ -51,10 +51,12 @@ public class DiffService {
 	        	return ret;
 	        }
 	        
-	        TaskDiff diff = TaskDiff.create(model_cur, model_prev, root_type_uri);
+	        TaskDiff diff = TaskDiff.create(model_cur, model_prev, root_type_uri, szCur, szPrev);
 
 	        if (TaskDiff.DIFF_RSS.equals(this.output)){
 		        return  DataServeletResponse.createResponse(diff.getOutputRss(rss_url, rss_title, RSS.title, RSS.link), null, RDFSYNTAX.RDFXML_ABBREV);
+	        }else if (TaskDiff.DIFF_RDF.equals(this.output)){
+	        	return DataServeletResponse.createResponse(diff.getOutputRdfDiff(), null, RDFSYNTAX.RDFXML);	        	
 	        }else if (TaskDiff.DIFF_RDF_DEL.equals(this.output)){
 	        	return DataServeletResponse.createResponse(diff.m_model_del, null, RDFSYNTAX.RDFXML_ABBREV);	        	
 	        }else{

@@ -33,15 +33,95 @@ public class PMLOWL{
 	 public final static String InformationRdfInstance_uri = "http://inference-web.org/2.0/pml-owl.owl#InformationRdfInstance";
 	 public final static Resource  InformationRdfInstance = ResourceFactory.createResource(InformationRdfInstance_uri);
 
-	// Property (1)
+	// Property (3)
 	 public final static String hasInstanceReference_lname = "hasInstanceReference";
 	 public final static String hasInstanceReference_qname = "pmlowl:hasInstanceReference";
 	 public final static String hasInstanceReference_uri = "http://inference-web.org/2.0/pml-owl.owl#hasInstanceReference";
 	 public final static Property  hasInstanceReference = ResourceFactory.createProperty(hasInstanceReference_uri);
 
-	// Instance (0)
+	 public final static String hasInstanceType_lname = "hasInstanceType";
+	 public final static String hasInstanceType_qname = "pmlowl:hasInstanceType";
+	 public final static String hasInstanceType_uri = "http://inference-web.org/2.0/pml-owl.owl#hasInstanceType";
+	 public final static Property  hasInstanceType = ResourceFactory.createProperty(hasInstanceType_uri);
+
+	 public final static String hasPropertyReference_lname = "hasPropertyReference";
+	 public final static String hasPropertyReference_qname = "pmlowl:hasPropertyReference";
+	 public final static String hasPropertyReference_uri = "http://inference-web.org/2.0/pml-owl.owl#hasPropertyReference";
+	 public final static Property  hasPropertyReference = ResourceFactory.createProperty(hasPropertyReference_uri);
+	 
+	 public final static String hasDiffSourcePrev_lname = "hasDiffSourcePrev";
+	 public final static String hasDiffSourcePrev_qname = "pmlowl:hasDiffSourcePrev";
+	 public final static String hasDiffSourcePrev_uri = "http://inference-web.org/2.0/pml-owl.owl#hasDiffSourcePrev";
+	 public final static Property  hasDiffSourcePrev = ResourceFactory.createProperty(hasDiffSourcePrev_uri);
+
+	 public final static String hasDiffSourceCur_lname = "hasDiffSourceCur";
+	 public final static String hasDiffSourceCur_qname = "pmlowl:hasDiffSourceCur";
+	 public final static String hasDiffSourceCur_uri = "http://inference-web.org/2.0/pml-owl.owl#hasDiffSourceCur";
+	 public final static Property  hasDiffSourceCur = ResourceFactory.createProperty(hasDiffSourceCur_uri);
+
+	 
+	 public final static String hasDiffOperation_lname = "hasDiffOperation";
+	 public final static String hasDiffOperation_qname = "pmlowl:hasDiffOperation";
+	 public final static String hasDiffOperation_uri = "http://inference-web.org/2.0/pml-owl.owl#hasDiffOperation";
+	 public final static Property  hasDiffOperation = ResourceFactory.createProperty(hasDiffOperation_uri);
+
+	 public final static String hasDiffAddInstance_lname = "hasDiffAddInstance";
+	 public final static String hasDiffAddInstance_qname = "pmlowl:hasDiffAddInstance";
+	 public final static String hasDiffAddInstance_uri = "http://inference-web.org/2.0/pml-owl.owl#hasDiffAddInstance";
+	 public final static Property  hasDiffAddInstance = ResourceFactory.createProperty(hasDiffAddInstance_uri);
+
+	 public final static String hasDiffDelInstance_lname = "hasDiffDelInstance";
+	 public final static String hasDiffDelInstance_qname = "pmlowl:hasDiffDelInstance";
+	 public final static String hasDiffDelInstance_uri = "http://inference-web.org/2.0/pml-owl.owl#hasDiffDelInstance";
+	 public final static Property  hasDiffDelInstance = ResourceFactory.createProperty(hasDiffDelInstance_uri);
+
+	 public final static String hasDiffUpdateInstance_lname = "hasDiffUpdateInstance";
+	 public final static String hasDiffUpdateInstance_qname = "pmlowl:hasDiffUpdateInstance";
+	 public final static String hasDiffUpdateInstance_uri = "http://inference-web.org/2.0/pml-owl.owl#hasDiffUpdateInstance";
+	 public final static Property  hasDiffUpdateInstance = ResourceFactory.createProperty(hasDiffUpdateInstance_uri);
+
+	 
+	 public final static String hasDiffUpdateInstanceAddProperty_lname = "hasDiffUpdateInstanceAddProperty";
+	 public final static String hasDiffUpdateInstanceAddProperty_qname = "pmlowl:hasDiffUpdateInstanceAddProperty";
+	 public final static String hasDiffUpdateInstanceAddProperty_uri = "http://inference-web.org/2.0/pml-owl.owl#hasDiffUpdateInstanceAddProperty";
+	 public final static Property  hasDiffUpdateInstanceAddProperty = ResourceFactory.createProperty(hasDiffUpdateInstanceAddProperty_uri);
+
+	 public final static String hasDiffUpdateInstanceDelProperty_lname = "hasDiffUpdateInstanceDelProperty";
+	 public final static String hasDiffUpdateInstanceDelProperty_qname = "pmlowl:hasDiffUpdateInstanceDelProperty";
+	 public final static String hasDiffUpdateInstanceDelProperty_uri = "http://inference-web.org/2.0/pml-owl.owl#hasDiffUpdateInstanceDelProperty";
+	 public final static Property  hasDiffUpdateInstanceDelProperty = ResourceFactory.createProperty(hasDiffUpdateInstanceDelProperty_uri);
+
+	 public final static String hasDiffUpdateInstanceUpdateProperty_lname = "hasDiffUpdateInstanceUpdateProperty";
+	 public final static String hasDiffUpdateInstanceUpdateProperty_qname = "pmlowl:hasDiffUpdateInstanceUpdateProperty";
+	 public final static String hasDiffUpdateInstanceUpdateProperty_uri = "http://inference-web.org/2.0/pml-owl.owl#hasDiffUpdateInstanceUpdateProperty";
+	 public final static Property  hasDiffUpdateInstanceUpdateProperty = ResourceFactory.createProperty(hasDiffUpdateInstanceUpdateProperty_uri);
+	 // Instance (0)
+/*	 public final static String diff_add_instance_lname = "diff_add_instance";
+	 public final static String diff_add_instance_qname = "pmlowl:diff_add_instance";
+	 public final static String diff_add_instance_uri = "http://inference-web.org/2.0/pml-owl.owl#diff_add_instance";
+	 public final static Resource  diff_add_instance = ResourceFactory.createResource(diff_add_instance_uri);
+
+	 public final static String diff_del_instance_lname = "diff_del_instance";
+	 public final static String diff_del_instance_qname = "pmlowl:diff_del_instance";
+	 public final static String diff_del_instance_uri = "http://inference-web.org/2.0/pml-owl.owl#diff_del_instance";
+	 public final static Resource  diff_del_instance = ResourceFactory.createResource(diff_del_instance_uri);
 
 
+	 public final static String diff_update_instance_add_property_lname = "diff_update_instance_add_property";
+	 public final static String diff_update_instance_add_property_qname = "pmlowl:diff_update_instance_add_property";
+	 public final static String diff_update_instance_add_property_uri = "http://inference-web.org/2.0/pml-owl.owl#diff_update_instance_add_property";
+	 public final static Resource  diff_update_instance_add_property = ResourceFactory.createResource(diff_update_instance_add_property_uri);
+	 
+	 public final static String diff_update_instance_del_property_lname = "diff_update_instance_del_property";
+	 public final static String diff_update_instance_del_property_qname = "pmlowl:diff_update_instance_del_property";
+	 public final static String diff_update_instance_del_property_uri = "http://inference-web.org/2.0/pml-owl.owl#diff_update_instance_del_property";
+	 public final static Resource  diff_update_instance_del_property = ResourceFactory.createResource(diff_update_instance_del_property_uri);
+
+	 public final static String diff_update_instance_update_property_lname = "diff_update_instance_update_property";
+	 public final static String diff_update_instance_update_property_qname = "pmlowl:diff_update_instance_update_property";
+	 public final static String diff_update_instance_update_property_uri = "http://inference-web.org/2.0/pml-owl.owl#diff_update_instance_update_property";
+	 public final static Resource  diff_update_instance_update_property = ResourceFactory.createResource(diff_update_instance_update_property_uri);
+*/
 }
 
 

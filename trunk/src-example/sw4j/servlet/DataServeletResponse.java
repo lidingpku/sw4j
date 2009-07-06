@@ -87,9 +87,19 @@ public class DataServeletResponse {
 	public String getContent(){
 		if (!ToolSafe.isEmpty(this.m_sz_content))
 			return this.m_sz_content;
-		else if (!ToolSafe.isEmpty(m_model_content))
-			return  ToolJena.printModelToString(m_model_content, m_sz_rdf_syntax);
-		else
+		else if (!ToolSafe.isEmpty(m_model_content)){
+			String szTemp =  ToolJena.printModelToString(m_model_content, m_sz_rdf_syntax);
+			String [] content = ToolString.section_split(szTemp,"<channel","</channel>");
+			if (null==content)
+				return szTemp;
+			
+			String ret = content[0] +content[2];
+			int index = ret.indexOf("<item");
+			if (index<0)
+				return szTemp;
+			else
+				return ret.substring(0,index)+content[1]+ret.substring(index);
+		}else
 			return "";
 	}
 	

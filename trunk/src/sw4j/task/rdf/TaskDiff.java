@@ -4,11 +4,13 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 import sw4j.util.DataPVHMap;
 import sw4j.util.ToolSafe;
 import sw4j.util.rdf.ToolJena;
+import sw4j.vocabulary.pml.PMLOWL;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
@@ -17,19 +19,24 @@ import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
+import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDF;
+import com.hp.hpl.jena.vocabulary.RDFS;
 import com.hp.hpl.jena.vocabulary.RSS;
 
 public class TaskDiff {
 	
 	public static final String DIFF_RSS = "rss";
+	public static final String DIFF_RDF = "rdf";
 	public static final String DIFF_RDF_ADD = "rdf_add";
 	public static final String DIFF_RDF_DEL = "rdf_del";
 	
 	
 	public Resource m_res_root_type = null;
 	public Model m_model_cur = null;
+	String m_url_cur = null;
 	public Model m_model_prev = null;
+	String m_url_prev = null;
 	
 	public Model m_model_add = null;
 	public Model m_model_del = null;
@@ -43,7 +50,7 @@ public class TaskDiff {
 	HashMap<Resource,DataPVHMap<Property, RDFNode>> m_map_root_update_cur = new HashMap<Resource,DataPVHMap<Property, RDFNode>>();
 	HashMap<Resource,DataPVHMap<Property, RDFNode>> m_map_root_update_prev = new HashMap<Resource,DataPVHMap<Property, RDFNode>>();
 	
-	 public static TaskDiff create(Model model_cur, Model model_prev, String sz_root_type_uri){
+	 public static TaskDiff create(Model model_cur, Model model_prev, String sz_root_type_uri, String url_cur, String url_prev){
 		 if (ToolSafe.isEmpty(model_cur))
 			 return null;
 
@@ -52,7 +59,9 @@ public class TaskDiff {
 		 
 		 TaskDiff task = new TaskDiff();
 		 task.m_model_cur = model_cur;
+		 task.m_url_cur = url_cur;
 		 task.m_model_prev = model_prev;
+		 task.m_url_prev = url_prev;
 		 if (!ToolSafe.isEmpty(sz_root_type_uri))
 			 task.m_res_root_type = model_cur.getResource(sz_root_type_uri);
 		 
@@ -192,6 +201,213 @@ public class TaskDiff {
 	 }
 	 
 	 
+	 public Model getOutputRdfDiff(){
+		 Model m = ModelFactory.createDefaultModel();
+		 
+		 //add item
+		 {
+			 Iterator<Resource> iter = this.m_roots_add.iterator();
+			 while (iter.hasNext()){
+				 Resource root = iter.next();
+				 
+				 Resource entry = m.createResource();
+				 entry.addProperty(PMLOWL.hasInstanceReference, root);
+				 if (!ToolSafe.isEmpty(this.m_res_root_type))
+					 entry.addProperty(PMLOWL.hasInstanceType, this.m_res_root_type );
+				 else{
+					 entry.addProperty(PMLOWL.hasInstanceType, (Resource)( ToolJena.getValueOfProperty(m_model_cur, root, RDF.type, OWL.Thing)));
+				 }
+				 entry.addProperty(PMLOWL.hasDiffOperation, PMLOWL.hasDiffAddInstance);
+				 entry.addProperty(PMLOWL.hasDiffSourceCur, m.createResource(this.m_url_cur));
+				 entry.addProperty(PMLOWL.hasDiffSourcePrev, m.createResource(this.m_url_prev));
+				 entry.addProperty(RDFS.comment, getDiffDescription(root));
+			 }
+		 }
+		 
+		 //deleted item
+		 {
+			 Iterator<Resource> iter = this.m_roots_del.iterator();
+			 while (iter.hasNext()){
+				 Resource root = iter.next();
+
+				 Resource entry = m.createResource();
+				 entry.addProperty(PMLOWL.hasInstanceReference, root);
+				 if (!ToolSafe.isEmpty(this.m_res_root_type))
+					 entry.addProperty(PMLOWL.hasInstanceType, this.m_res_root_type );
+				 else{
+					 entry.addProperty(PMLOWL.hasInstanceType, (Resource)( ToolJena.getValueOfProperty(m_model_prev, root, RDF.type, OWL.Thing)));
+				 }
+				 entry.addProperty(PMLOWL.hasDiffOperation, PMLOWL.hasDiffDelInstance);
+				 entry.addProperty(PMLOWL.hasDiffSourceCur, m.createResource(this.m_url_cur));
+				 entry.addProperty(PMLOWL.hasDiffSourcePrev, m.createResource(this.m_url_prev));
+				 entry.addProperty(RDFS.comment, getDiffDescription(root));
+			}
+		 }
+	
+
+		 //updated item
+		 /*
+		 {
+			 Iterator<Resource> iter = this.m_roots_update.iterator();
+			 while (iter.hasNext()){
+				 Resource root = iter.next();
+				 
+				 Resource entry = m.createResource();
+				 entry.addProperty(PMLOWL.hasInstanceReference, root);
+				 entry.addProperty(PMLOWL.hasInstanceType, this.m_res_root_type );
+				 entry.addProperty(PMLOWL.hasDiffOperation, PMLOWL.hasDiffUpdateInstance);
+				 entry.addProperty(PMLOWL.hasDiffSourceCur, this.m_url_cur);
+				 entry.addProperty(PMLOWL.hasDiffSourcePrev, this.m_url_prev);
+				 
+				 
+
+			 }
+		 }*/
+		 
+		 {
+			 Iterator<Map.Entry<Resource,DataPVHMap<Property, RDFNode>>> iter = this.m_map_root_add.entrySet().iterator();
+			 while(iter.hasNext()){
+				 Map.Entry<Resource,DataPVHMap<Property, RDFNode>> item = iter.next();
+				 Resource root = item.getKey();
+				 Iterator<Map.Entry<Property, Set<RDFNode>>> iter_item = item.getValue().entrySet().iterator();
+				 while (iter_item.hasNext()){
+					 Map.Entry<Property, Set<RDFNode>> pvs = iter_item.next();
+					 Property property =pvs.getKey();
+					 
+					 Resource entry = m.createResource();
+					 entry.addProperty(PMLOWL.hasInstanceReference, root);
+					 if (!ToolSafe.isEmpty(this.m_res_root_type))
+						 entry.addProperty(PMLOWL.hasInstanceType, this.m_res_root_type );
+					 else{
+						 entry.addProperty(PMLOWL.hasInstanceType, (Resource)( ToolJena.getValueOfProperty(m_model_cur, root, RDF.type, OWL.Thing)));
+					 }
+					 entry.addProperty(PMLOWL.hasDiffOperation, PMLOWL.hasDiffUpdateInstanceAddProperty);
+					 entry.addProperty(PMLOWL.hasDiffSourceCur, m.createResource(this.m_url_cur));
+					 entry.addProperty(PMLOWL.hasDiffSourcePrev, m.createResource(this.m_url_prev));
+					 entry.addProperty(PMLOWL.hasPropertyReference, property );
+					 entry.addProperty(RDFS.comment, getDiffDescription(root,property));
+
+				 }
+			 }
+		 }
+		 {
+			 Iterator<Map.Entry<Resource,DataPVHMap<Property, RDFNode>>> iter = this.m_map_root_del.entrySet().iterator();
+			 while(iter.hasNext()){
+				 Map.Entry<Resource,DataPVHMap<Property, RDFNode>> item = iter.next();
+				 Resource root = item.getKey();
+				 Iterator<Map.Entry<Property, Set<RDFNode>>> iter_item = item.getValue().entrySet().iterator();
+				 while (iter_item.hasNext()){
+					 Map.Entry<Property, Set<RDFNode>> pvs = iter_item.next();
+					 Property property =pvs.getKey();
+
+					 Resource entry = m.createResource();
+					 entry.addProperty(PMLOWL.hasInstanceReference, root);
+					 if (!ToolSafe.isEmpty(this.m_res_root_type))
+						 entry.addProperty(PMLOWL.hasInstanceType, this.m_res_root_type );
+					 else{
+						 entry.addProperty(PMLOWL.hasInstanceType, (Resource)( ToolJena.getValueOfProperty(m_model_prev, root, RDF.type, OWL.Thing)));
+					 }
+					 entry.addProperty(PMLOWL.hasDiffOperation, PMLOWL.hasDiffUpdateInstanceDelProperty);
+					 entry.addProperty(PMLOWL.hasDiffSourceCur, m.createResource(this.m_url_cur));
+					 entry.addProperty(PMLOWL.hasDiffSourcePrev, m.createResource(this.m_url_prev));
+					 entry.addProperty(PMLOWL.hasPropertyReference, property );
+					 entry.addProperty(RDFS.comment, getDiffDescription(root,property));
+
+				 }
+			 }
+		 }
+		 {
+			 Iterator<Map.Entry<Resource,DataPVHMap<Property, RDFNode>>> iter = this.m_map_root_update_cur.entrySet().iterator();
+			 while(iter.hasNext()){
+				 Map.Entry<Resource,DataPVHMap<Property, RDFNode>> item = iter.next();
+				 Resource root = item.getKey();
+				 Iterator<Map.Entry<Property, Set<RDFNode>>> iter_item = item.getValue().entrySet().iterator();
+				 while (iter_item.hasNext()){
+					 Map.Entry<Property, Set<RDFNode>> pvs = iter_item.next();
+					 Property property =pvs.getKey();
+
+					 Resource entry = m.createResource();
+					 entry.addProperty(PMLOWL.hasInstanceReference, root);
+					 if (!ToolSafe.isEmpty(this.m_res_root_type))
+						 entry.addProperty(PMLOWL.hasInstanceType, this.m_res_root_type );
+					 else{
+						 entry.addProperty(PMLOWL.hasInstanceType, (Resource)( ToolJena.getValueOfProperty(m_model_cur, root, RDF.type, OWL.Thing)));
+					 }
+					 entry.addProperty(PMLOWL.hasDiffOperation, PMLOWL.hasDiffUpdateInstanceUpdateProperty);
+					 entry.addProperty(PMLOWL.hasDiffSourceCur, m.createResource(this.m_url_cur));
+					 entry.addProperty(PMLOWL.hasDiffSourcePrev, m.createResource(this.m_url_prev));
+					 entry.addProperty(PMLOWL.hasPropertyReference, property );
+					 entry.addProperty(RDFS.comment, getDiffDescription(root,property));
+
+				 }
+			 }
+		 }
+		 
+		 
+		 ToolJena.model_copyNsPrefix(m, m_model_cur);
+		 m.setNsPrefix(PMLOWL.class.getSimpleName().toLowerCase(), PMLOWL.getURI());
+		 
+		 return m;
+	 }
+
+	 private String prettyDescription(Resource root, Model m){
+		 String ret ="";
+		 StmtIterator iter = m.listStatements(root, null, (String)null);
+		 while (iter.hasNext()){
+			 Statement stmt = iter.nextStatement();
+			 if (stmt.getPredicate().equals(RDF.type))
+				 continue;
+			 ret += String.format("%s %s;<br/>", ToolJena.prettyPrint(stmt.getPredicate()), ToolJena.prettyPrint(stmt.getObject()));
+		 }
+		 return ret;	 
+	 }
+	 
+	 private String prettyRDFNodes(Collection<RDFNode> nodes){
+		 String ret ="";
+		 if (null!=nodes)
+			 return ret;
+		 Iterator<RDFNode> iter = nodes.iterator();
+		 while (iter.hasNext()){
+			 RDFNode node = iter.next();
+			 ret += String.format("%s, ", ToolJena.prettyPrint(node));
+		 }
+		 return ret;
+	 }
+	 
+	 public String getDiffDescription(Resource root){
+		 return getDiffDescription(root, null);
+	 }
+	 
+	 public String getDiffDescription(Resource root, Property property){
+		 if (m_roots_add.contains(root)){
+			 return String.format("[add instance]<br/>(%s).<br/> %s",
+					 ToolJena.prettyPrint(root),
+					 prettyDescription(root,  m_model_cur));
+		 }else if (m_roots_del.contains(root)){
+			 return String.format("[del instance]<br/>(%s).<br/> %s",
+					 ToolJena.prettyPrint(root),
+					 prettyDescription(root,  m_model_prev));
+		 }else if (m_map_root_add.keySet().contains(root) && !ToolSafe.isEmpty(property)){
+			 return String.format("[update instance add property]<br/>(%s, %s).<br/> %s",
+					 ToolJena.prettyPrint(root),
+					 ToolJena.prettyPrint(property),
+					 prettyRDFNodes(m_map_root_add.get(root).getValues((property))));
+		 }else if (m_map_root_del.keySet().contains(root)&& !ToolSafe.isEmpty(property)){
+			 return String.format("[update instance del property]<br/>(%s, %s).<br/>. %s",
+					 ToolJena.prettyPrint(root),
+					 ToolJena.prettyPrint(property),
+					 prettyRDFNodes(m_map_root_del.get(root).getValues((property))));
+		 }else if (m_map_root_update_cur.keySet().contains(root)&& !ToolSafe.isEmpty(property)){
+			 return String.format("[update instance update property]<br/>(%s, %s).<br/> [add] %s. <br/> [del] %s", 
+					 ToolJena.prettyPrint(root),
+					 ToolJena.prettyPrint(property),
+					prettyRDFNodes(this.m_map_root_update_cur.get(root).getValues((property))),
+					prettyRDFNodes(this.m_map_root_update_prev.get(root).getValues((property))));
+		 }
+		 
+		 return "";
+	 }
+	 
 	 public Model getOutputRss(String rss_url, String rss_title, Property p_title, Property p_link){
 		 Model m = ModelFactory.createDefaultModel();
 
@@ -265,15 +481,5 @@ public class TaskDiff {
 		 return m;
 	 }
 
-	 public String getDiffDescription(Resource root){
-		 if (m_roots_add.contains(root)){
-			 return "";
-		 }else if (m_roots_del.contains(root)){
-			 return "";
-		 }else if (m_roots_update.contains(root)){
-			 return "";
-		 }
-		 
-		 return "";
-	 }
+
 }

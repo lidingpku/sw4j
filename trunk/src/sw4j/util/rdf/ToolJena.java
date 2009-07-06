@@ -1032,4 +1032,29 @@ public class ToolJena {
 			 return default_value;
 		 }
 	}
+	public static Resource getValueOfProperty(Model m, Resource s, Property p, Resource default_value) {
+		 NodeIterator iter_node = m.listObjectsOfProperty(s,p);
+		 if (iter_node.hasNext()){
+			 RDFNode node= iter_node.nextNode();
+			 if (node.isURIResource())
+				 return (Resource)node;
+		 }
+		 return default_value;
+	}
+	
+	
+	public static String prettyPrint(RDFNode node){
+		if (node.isLiteral()){
+			return ((Literal)node).getString();
+		}else if (node.isURIResource()){
+			DataQname ret = getDataQname(node);
+			if (null!=ret && !ToolSafe.isEmpty(ret.getLocalname())){
+				return ret.getPrefix()+":"+ ret.getLocalname();
+			}else{
+				return node.toString();
+			}
+		}else {
+			return ((Resource)node).getId().toString();
+		}
+	}
 }

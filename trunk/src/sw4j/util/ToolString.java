@@ -59,7 +59,7 @@ public class ToolString {
 	 * @return
 	 */
 	public static String section_extract(String szText,String szBegin, String szEnd){
-		int indexBegin= szText.indexOf(szBegin);
+		/*int indexBegin= szText.indexOf(szBegin);
 		if (indexBegin<0)
 			return null;
 		int indexEnd= szText.indexOf(szEnd,indexBegin);
@@ -67,7 +67,38 @@ public class ToolString {
 			return null;
 		
 		return szText.substring(indexBegin, indexEnd+szEnd.length());
+		*/
+		String [] ret  = section_split(szText, szBegin,szEnd);
+		if (null!=ret){
+			return ret[1];
+		}else{
+			return null;
+		}
 	}
+
+	/**
+	 * split szText into three sections, identified by the "szBegin" and "szEnd" landmark  
+	 * 
+	 * @param szText
+	 * @param szBegin
+	 * @param szEnd
+	 * @return
+	 */
+	public static String[] section_split(String szText,String szBegin, String szEnd){
+		int indexBegin= szText.indexOf(szBegin);
+		if (indexBegin<0)
+			return null;
+		int indexEnd= szText.indexOf(szEnd,indexBegin);
+		if (indexEnd<0)
+			return null;
+		
+		String [] ret = new String[3];
+		ret[0]= szText.substring(0,indexBegin);
+		ret[1]= szText.substring(indexBegin, indexEnd+szEnd.length());
+		ret[2]= szText.substring(indexEnd+szEnd.length());
+		return ret;
+	}
+	
 
 	/**
 	 * in szText, replace a section identified by the "szBegin" and "szEnd" landmark with szToReplace
