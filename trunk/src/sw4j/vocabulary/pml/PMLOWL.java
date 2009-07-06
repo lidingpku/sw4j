@@ -60,10 +60,10 @@ public class PMLOWL{
 	 public final static Property  hasDiffSourceCur = ResourceFactory.createProperty(hasDiffSourceCur_uri);
 
 	 
-	 public final static String hasDiffOperation_lname = "hasDiffOperation";
-	 public final static String hasDiffOperation_qname = "pmlowl:hasDiffOperation";
-	 public final static String hasDiffOperation_uri = "http://inference-web.org/2.0/pml-owl.owl#hasDiffOperation";
-	 public final static Property  hasDiffOperation = ResourceFactory.createProperty(hasDiffOperation_uri);
+	 public final static String hasDiffRelation_lname = "hasDiffRelation";
+	 public final static String hasDiffRelation_qname = "pmlowl:hasDiffRelation";
+	 public final static String hasDiffRelation_uri = "http://inference-web.org/2.0/pml-owl.owl#hasDiffRelation";
+	 public final static Property  hasDiffRelation = ResourceFactory.createProperty(hasDiffRelation_uri);
 
 	 public final static String hasDiffAddInstance_lname = "hasDiffAddInstance";
 	 public final static String hasDiffAddInstance_qname = "pmlowl:hasDiffAddInstance";

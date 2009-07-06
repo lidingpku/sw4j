@@ -217,7 +217,7 @@ public class TaskDiff {
 				 else{
 					 entry.addProperty(PMLOWL.hasInstanceType, (Resource)( ToolJena.getValueOfProperty(m_model_cur, root, RDF.type, OWL.Thing)));
 				 }
-				 entry.addProperty(PMLOWL.hasDiffOperation, PMLOWL.hasDiffAddInstance);
+				 entry.addProperty(PMLOWL.hasDiffRelation, PMLOWL.hasDiffAddInstance);
 				 entry.addProperty(PMLOWL.hasDiffSourceCur, m.createResource(this.m_url_cur));
 				 entry.addProperty(PMLOWL.hasDiffSourcePrev, m.createResource(this.m_url_prev));
 				 entry.addProperty(RDFS.comment, getDiffDescription(root));
@@ -237,7 +237,7 @@ public class TaskDiff {
 				 else{
 					 entry.addProperty(PMLOWL.hasInstanceType, (Resource)( ToolJena.getValueOfProperty(m_model_prev, root, RDF.type, OWL.Thing)));
 				 }
-				 entry.addProperty(PMLOWL.hasDiffOperation, PMLOWL.hasDiffDelInstance);
+				 entry.addProperty(PMLOWL.hasDiffRelation, PMLOWL.hasDiffDelInstance);
 				 entry.addProperty(PMLOWL.hasDiffSourceCur, m.createResource(this.m_url_cur));
 				 entry.addProperty(PMLOWL.hasDiffSourcePrev, m.createResource(this.m_url_prev));
 				 entry.addProperty(RDFS.comment, getDiffDescription(root));
@@ -255,7 +255,7 @@ public class TaskDiff {
 				 Resource entry = m.createResource();
 				 entry.addProperty(PMLOWL.hasInstanceReference, root);
 				 entry.addProperty(PMLOWL.hasInstanceType, this.m_res_root_type );
-				 entry.addProperty(PMLOWL.hasDiffOperation, PMLOWL.hasDiffUpdateInstance);
+				 entry.addProperty(PMLOWL.hasDiffRelation, PMLOWL.hasDiffUpdateInstance);
 				 entry.addProperty(PMLOWL.hasDiffSourceCur, this.m_url_cur);
 				 entry.addProperty(PMLOWL.hasDiffSourcePrev, this.m_url_prev);
 				 
@@ -281,7 +281,7 @@ public class TaskDiff {
 					 else{
 						 entry.addProperty(PMLOWL.hasInstanceType, (Resource)( ToolJena.getValueOfProperty(m_model_cur, root, RDF.type, OWL.Thing)));
 					 }
-					 entry.addProperty(PMLOWL.hasDiffOperation, PMLOWL.hasDiffUpdateInstanceAddProperty);
+					 entry.addProperty(PMLOWL.hasDiffRelation, PMLOWL.hasDiffUpdateInstanceAddProperty);
 					 entry.addProperty(PMLOWL.hasDiffSourceCur, m.createResource(this.m_url_cur));
 					 entry.addProperty(PMLOWL.hasDiffSourcePrev, m.createResource(this.m_url_prev));
 					 entry.addProperty(PMLOWL.hasPropertyReference, property );
@@ -307,7 +307,7 @@ public class TaskDiff {
 					 else{
 						 entry.addProperty(PMLOWL.hasInstanceType, (Resource)( ToolJena.getValueOfProperty(m_model_prev, root, RDF.type, OWL.Thing)));
 					 }
-					 entry.addProperty(PMLOWL.hasDiffOperation, PMLOWL.hasDiffUpdateInstanceDelProperty);
+					 entry.addProperty(PMLOWL.hasDiffRelation, PMLOWL.hasDiffUpdateInstanceDelProperty);
 					 entry.addProperty(PMLOWL.hasDiffSourceCur, m.createResource(this.m_url_cur));
 					 entry.addProperty(PMLOWL.hasDiffSourcePrev, m.createResource(this.m_url_prev));
 					 entry.addProperty(PMLOWL.hasPropertyReference, property );
@@ -333,7 +333,7 @@ public class TaskDiff {
 					 else{
 						 entry.addProperty(PMLOWL.hasInstanceType, (Resource)( ToolJena.getValueOfProperty(m_model_cur, root, RDF.type, OWL.Thing)));
 					 }
-					 entry.addProperty(PMLOWL.hasDiffOperation, PMLOWL.hasDiffUpdateInstanceUpdateProperty);
+					 entry.addProperty(PMLOWL.hasDiffRelation, PMLOWL.hasDiffUpdateInstanceUpdateProperty);
 					 entry.addProperty(PMLOWL.hasDiffSourceCur, m.createResource(this.m_url_cur));
 					 entry.addProperty(PMLOWL.hasDiffSourcePrev, m.createResource(this.m_url_prev));
 					 entry.addProperty(PMLOWL.hasPropertyReference, property );
