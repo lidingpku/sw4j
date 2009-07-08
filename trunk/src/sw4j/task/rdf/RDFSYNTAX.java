@@ -41,7 +41,19 @@ public class RDFSYNTAX {
 				return default_mime_type;
 		}
 	}
-
+	/**
+	 * parse/validate RDF syntax from input string, return null if no RDF syntax is detected
+	 * 
+	 * @param rdfsyntax
+	 * @return
+	 */
+	public static String parseRdfSyntax(String rdfsyntax, String sz_default){
+		String ret = parseRdfSyntax(rdfsyntax);
+		if (null==ret)
+			return sz_default;
+		else
+			return ret;		
+	}
 	/**
 	 * parse/validate RDF syntax from input string, return null if no RDF syntax is detected
 	 * 

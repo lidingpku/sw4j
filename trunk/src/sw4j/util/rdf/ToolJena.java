@@ -42,6 +42,7 @@ import java.util.TreeSet;
 
 import org.apache.log4j.Logger;
 
+import sw4j.task.rdf.RDFSYNTAX;
 import sw4j.util.DataPVCMap;
 import sw4j.util.DataQname;
 import sw4j.util.Sw4jException;
@@ -343,8 +344,10 @@ public class ToolJena {
 			return "";
 		StringWriter sw = new StringWriter();
 		RDFWriter writer = m.getWriter(rdfsyntax);
-		writer.setProperty("showXmlDeclaration", "true");
-		writer.setProperty("allowBadURIs", "true");
+		if (RDFSYNTAX.RDFXML.equals(rdfsyntax)){
+			writer.setProperty("showXmlDeclaration", "true");
+			writer.setProperty("allowBadURIs", "true");
+		}
 		writer.write(m, sw, null);
 		return sw.toString();
 	}

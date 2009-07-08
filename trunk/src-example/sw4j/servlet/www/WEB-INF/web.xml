@@ -27,6 +27,15 @@
     <url-pattern>/diff</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>Convert</servlet-name>
+    <servlet-class>sw4j.servlet.ConvertServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Convert</servlet-name>
+    <url-pattern>/convert</url-pattern>
+  </servlet-mapping>
   
   <servlet>
     <servlet-name>PING</servlet-name>
