@@ -108,6 +108,7 @@ public class DataServeletResponse {
         PrintWriter out = response.getWriter();
     	response.setContentType(getMimeType());
         output(out);
+        out.flush();
 		out.close();
 	}
 	public void output(PrintWriter out) throws IOException{

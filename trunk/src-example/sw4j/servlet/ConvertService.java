@@ -7,7 +7,7 @@ import sw4j.util.ToolSafe;
 
 public class ConvertService {
 
-	final public static String AGENT = "TW Ping Service. http://onto.rpi.edu/sw4j/ping.html";
+	final public static String AGENT = "TW Converter Service. http://onto.rpi.edu/sw4j/ping.html";
 	
 	public String szURL;
 	public String rdfsyntax;

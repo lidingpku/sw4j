@@ -22,7 +22,8 @@ public class ConvertServiceTest {
 	@Test
 	public void test_1b() throws IOException {
 		ConvertService svc = new ConvertService();
-		svc.szURL = "http://www.cs.rpi.edu/~dingl/foaf.rdf";
+		svc.szURL = "http://dig.csail.mit.edu/2005/ajar/ajaw/data";
+		svc.szURL = "http://dig.csail.mit.edu/TAMI/2007/amord/air.ttl";
 		svc.rdfsyntax = "N-TRIPLE";
 		
 		DataServeletResponse ret = svc.run();
