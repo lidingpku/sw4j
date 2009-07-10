@@ -38,14 +38,14 @@ public class TaskCatalogRdf2WikiDump {
 
 	public static void run_catalog(){
 		String sz_url_input = "http://data-gov.tw.rpi.edu/raw/92/data.rdf";
-		String  sz_file_output1 = "files/rdf2wikidump/92prop.xml";
-		String  sz_file_output2 = "files/rdf2wikidump/92bot.xml";
-		String  sz_file_output3 = "files/rdf2wikidump/92man.xml";
+		String  sz_file_output_prop = "files/rdf2wikidump/92prop.xml";
+		String  sz_file_output_bot = "files/rdf2wikidump/92bot.xml";
+		String  sz_file_output_man = "files/rdf2wikidump/92man.xml";
 		String sz_type = DGTWC.DataEntry.getURI();
 
-		HashMap<String,String> map_pages1 = new HashMap<String,String> ();
-		HashMap<String,String> map_pages2 = new HashMap<String,String> ();
-		HashMap<String,String> map_pages3 = new HashMap<String,String> ();
+		HashMap<String,String> map_pages_property = new HashMap<String,String> ();
+		HashMap<String,String> map_pages_bot = new HashMap<String,String> ();
+		HashMap<String,String> map_pages_man = new HashMap<String,String> ();
 
 		//load RDF
 		Model m;
@@ -103,7 +103,7 @@ public class TaskCatalogRdf2WikiDump {
 								sz_object,
 								sz_format);
 
-						save_page(map_pages2,map_pages3, title_datafile, sz_content);
+						save_page(map_pages_bot,map_pages_man, title_datafile, sz_content);
 					}
 					
 				}				
@@ -118,15 +118,15 @@ public class TaskCatalogRdf2WikiDump {
 					
 					String sz_content="";
 					if (stmt.getObject().isURIResource()){
-						sz_content  += String.format("*[[has type::Type:URL]]\n*[[rdf:type::owl:DatatypeProperty]]\n*[[dc:relation::Dataset_92]]");
+						sz_content  += String.format("*[[has type::Type:URL]]\n*[[rdf:type::Category:owl:DatatypeProperty]]\n*[[dc:relation::Dataset_92]]");
 					}else{
-						sz_content  += String.format("*[[has type::Type:Text]]\n*[[rdf:type::owl:DatatypeProperty]]\n*[[dc:relation::Dataset_92]]");						
+						sz_content  += String.format("*[[has type::Type:Text]]\n*[[rdf:type::Category:owl:DatatypeProperty]]\n*[[dc:relation::Dataset_92]]");						
 					}
 					
 					String title_property=String.format("Property:92/%s", stmt.getPredicate().getLocalName());
-					String temp = map_pages1.get(title_property);
+					String temp = map_pages_property.get(title_property);
 					if (null==temp || temp.indexOf("URL")>0)
-						map_pages1.put(title_property, sz_content);
+						map_pages_property.put(title_property, sz_content);
 
 				}				
 			}		
@@ -187,24 +187,24 @@ public class TaskCatalogRdf2WikiDump {
 				String content2 =  dump_instance_to_wiki(m_metadata, subject);
 				
 
-				save_page(map_pages2,map_pages3, title_dataset, content1+content2+"[[Category:dgtwc:Dataset]]");
+				save_page(map_pages_bot,map_pages_man, title_dataset, content1+content2+"[[Category:dgtwc:Dataset]]");
 
 			}
 			
 			
 			//save the map to wikidump
-			System.out.println(map_pages1.size() +" page generated!");
+			System.out.println(map_pages_property.size() +" page generated!");
 			//System.out.println(map_pages);
-			ToolMediaWiki.create_wiki_dump( map_pages1, true, sz_file_output1);				
+			ToolMediaWiki.create_wiki_dump( map_pages_property, true, sz_file_output_prop);				
 
-			System.out.println(map_pages2.size() +" page generated!");
+			System.out.println(map_pages_bot.size() +" page generated!");
 			//System.out.println(map_pages);
-			ToolMediaWiki.create_wiki_dump( map_pages2, sz_file_output2);				
+			ToolMediaWiki.create_wiki_dump( map_pages_bot, sz_file_output_bot);				
 
-			System.out.println(map_pages3.size() +" page generated!");
+			System.out.println(map_pages_man.size() +" page generated!");
 			//System.out.println(map_pages);
-			ToolMediaWiki.create_wiki_dump( map_pages3, true, sz_file_output3);				
-			//System.out.println(ToolString.printCollectionToString(map_pages2.keySet()));
+			ToolMediaWiki.create_wiki_dump( map_pages_man, true, sz_file_output_man);				
+			//System.out.println(ToolString.printCollectionToString(map_pages_bot.keySet()));
 
 			
 		} catch (Sw4jException e) {
@@ -251,12 +251,12 @@ public class TaskCatalogRdf2WikiDump {
 	}
 */	
 
-	private static void save_page(HashMap<String, String> map_pages2,
-			HashMap<String, String> map_pages3,
+	private static void save_page(HashMap<String, String> map_pages_bot,
+			HashMap<String, String> map_pages_man,
 			String title, String content) {
 		String title_bot= "BOT:"+title;
-		map_pages2.put(title_bot, "<![CDATA[<noinclude>This is an automatically generated page, DO NOT modify this page.</noinclude><includeonly>"+content+"</includeonly>]]>");
-		map_pages3.put(title, String.format("{{:%s}}", title_bot));
+		map_pages_bot.put(title_bot, "<![CDATA[<noinclude>This is an automatically generated page, DO NOT modify this page.</noinclude><includeonly>"+content+"</includeonly>]]>");
+		map_pages_man.put(title, String.format("{{:%s}}", title_bot));
 	}
 
 	private static String dump_instance_to_wiki(Model m, Resource subject) {
