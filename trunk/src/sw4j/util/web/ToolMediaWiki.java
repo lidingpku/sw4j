@@ -44,11 +44,14 @@ import sw4j.util.ToolString;
 public class ToolMediaWiki {
 	
 
+	public static void create_wiki_dump(Map<String,String> map_pages,  String szFileName){
+		create_wiki_dump(map_pages, false, szFileName);
+	}	
 	
-	public static void create_wiki_dump(Map<String,String> map_pages, String szFileName){
+	public static void create_wiki_dump(Map<String,String> map_pages, boolean bNoTimestamp, String szFileName){
 		try {
 			PrintWriter out =  new PrintWriter(ToolIO.prepareFileOutputStream(szFileName, false));
-			create_wiki_dump(map_pages, out);
+			create_wiki_dump(map_pages, bNoTimestamp,out);
 			out.close();
 		} catch (Sw4jException e) {
 			// TODO Auto-generated catch block
@@ -57,7 +60,7 @@ public class ToolMediaWiki {
 		
 	}
 	
-	public static void create_wiki_dump(Map<String,String> map_pages, PrintWriter out){
+	public static void create_wiki_dump(Map<String,String> map_pages, boolean bNoTimestamp, PrintWriter out){
 		out.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 		out.println("<mediawiki>");
 
@@ -69,9 +72,12 @@ public class ToolMediaWiki {
 "     <title>",
 
 "</title>\n" +
-"     <revision>\n" +
+"     <revision>\n" ,
+
 "       <timestamp>",
-"</timestamp>\n" +
+
+"</timestamp>\n" ,
+
 "       <text xml:space=\"preserve\">",
 
 "</text>\n" +
@@ -85,10 +91,14 @@ public class ToolMediaWiki {
 			szTemp += szTemplates[0];
 			szTemp += entry.getKey();
 			szTemp += szTemplates[1];
-			szTemp += szTime;
-			szTemp += szTemplates[2];
+			if (!bNoTimestamp){
+				szTemp += szTemplates[2];
+				szTemp += szTime;
+				szTemp += szTemplates[3];
+			}
+			szTemp += szTemplates[4];
 			szTemp += entry.getValue();
-			szTemp += szTemplates[3];
+			szTemp += szTemplates[5];
 			
 			out.println(szTemp);
 			out.flush();
