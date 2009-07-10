@@ -277,9 +277,10 @@ public class TaskCatalogRdf2WikiDump {
 				continue;
 			
 			
-			// remove markups
+			// remove markups and â??
 			value = value.replaceAll("<[^>]+>", "");
 			value = value.replaceAll("\\s+", " ");
+			value = value.replaceAll("â", " ");
 			
 			//escape data
 			//value = ToolWeb.escapeHTML(value);
