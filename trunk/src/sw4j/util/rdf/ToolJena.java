@@ -1008,7 +1008,6 @@ public class ToolJena {
 				String szPrefix = ToolModelAnalysis.getKnownNamespacePrefix(szNamespace);
 				if (ToolSafe.isEmpty(szPrefix))
 					szPrefix = res.getModel().getNsURIPrefix(szNamespace);
-				
 				return szPrefix;
 			}
 		}

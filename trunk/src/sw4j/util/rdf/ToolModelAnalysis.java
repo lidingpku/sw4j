@@ -44,8 +44,11 @@ import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
+import com.hp.hpl.jena.sparql.vocabulary.FOAF;
 import com.hp.hpl.jena.vocabulary.DAMLVocabulary;
 import com.hp.hpl.jena.vocabulary.DAML_OIL;
+import com.hp.hpl.jena.vocabulary.DC;
+import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
@@ -297,6 +300,9 @@ public class ToolModelAnalysis {
 		String [][] nsPrefix= new String[][]{
 				{"http://inference-web.org/2.0/pml-provenance.owl#","pmlp"},
 				{"http://inference-web.org/2.0/pml-justification.owl#","pmlj"},
+				{DCTerms.getURI(),DCTerms.class.getSimpleName().toLowerCase()},
+				{DC.getURI(),DC.class.getSimpleName().toLowerCase()},
+				{FOAF.getURI(),FOAF.class.getSimpleName().toLowerCase()},
 		};
 		
 		for (int i=0; i<nsPrefix.length; i++){

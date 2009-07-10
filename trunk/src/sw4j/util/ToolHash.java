@@ -39,7 +39,7 @@ import java.security.*;
  * @author  Li Ding
  * 
  */
-public class ToolHashDigest {
+public class ToolHash {
     
 
 	
