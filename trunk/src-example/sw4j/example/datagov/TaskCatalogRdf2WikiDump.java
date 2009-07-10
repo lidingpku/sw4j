@@ -83,22 +83,27 @@ public class TaskCatalogRdf2WikiDump {
 				while (iter.hasNext()){
 					Statement stmt = iter.nextStatement();
 					Resource subject = stmt.getSubject();
-					String sz_predicate = stmt.getPredicate().getURI();
 					String sz_object = ToolJena.getNodeString(stmt.getObject());
 					String object_page = "URLSHA1/"+ ToolHash.hash_sum_sha1(sz_object.getBytes());
 					
-					if (sz_predicate.endsWith("_access_point")){
+					String sz_predicate_localname = stmt.getPredicate().getLocalName();
+
+					if (sz_predicate_localname.endsWith("_access_point")){
 						String title_datafile=object_page;
 
 						m_metadata.add(m_metadata.createStatement(subject, DC.relation, title_datafile));
 						
-						
-						String sz_format = sz_predicate.substring(0,sz_predicate.indexOf("_access_point"));
+						String sz_format = sz_predicate_localname.substring(0,sz_predicate_localname.indexOf("_access_point"));
 
-						String sz_content = String.format("*[[dc:relation::Dataset_%s]]\n*[[dc:format::%s]]\n[[Category:foaf:Document]]", map_uri_id.get(subject), sz_format);
+						String sz_content = String.format(
+								"*[[dc:relation::Dataset_%s]]\n" +
+								"*[[rdfs:seeAlso::%s]]\n" +
+								"*[[dc:format::%s]]\n[[Category:dgtwc:Datafile]]",
+								map_uri_id.get(subject),
+								sz_object,
+								sz_format);
 
-						map_pages2.put(title_datafile, sz_content);
-
+						save_page(map_pages2, title_datafile, sz_content);
 					}
 					
 				}				
@@ -119,7 +124,9 @@ public class TaskCatalogRdf2WikiDump {
 					}
 					
 					String title_property=String.format("Property:92/%s", stmt.getPredicate().getLocalName());
-					map_pages1.put(title_property, sz_content);
+					String temp = map_pages1.get(title_property);
+					if (null==temp || temp.indexOf("URL")>0)
+						map_pages1.put(title_property, sz_content);
 
 				}				
 			}		
@@ -178,7 +185,9 @@ public class TaskCatalogRdf2WikiDump {
 
 				String content1 =  dump_instance_to_template(m, subject, sz_template_name1);
 				String content2 =  dump_instance_to_template(m_metadata, subject, sz_template_name2);
-				map_pages2.put(title_dataset, "<![CDATA["+content1+content2+"[[Category:dgtwc:Dataset]]]]>");
+				
+
+				save_page(map_pages2, title_dataset, content1+content2+"[[Category:dgtwc:Dataset]]");
 
 			}
 			
@@ -239,6 +248,13 @@ public class TaskCatalogRdf2WikiDump {
 	}
 */	
 
+	private static void save_page(HashMap<String, String> map_pages,
+			String title, String content) {
+		String title_bot= "BOT:"+title;
+		map_pages.put(title_bot, "<![CDATA[<noinclude>This is an automatically generated page, DO NOT modify this page.</noinclude><includeonly>"+content+"</includeonly>]]>");
+		//map_pages.put(title, String.format("{{:%s}}", title_bot));
+	}
+
 	private static String dump_instance_to_template(Model m, Resource subject,	String sz_template_name) {
 		String sz_content ="";
 		StmtIterator iter = m.listStatements(subject, null, (String)null);
@@ -284,4 +300,5 @@ public class TaskCatalogRdf2WikiDump {
 		}
 		return String.format("\n==%s==\n%s\n", sz_template_name, sz_content);
 	}
+	
 }
