@@ -41,7 +41,7 @@ import sw4j.util.DataQname;
 import sw4j.util.Sw4jException;
 import sw4j.util.Sw4jMessage;
 import sw4j.util.ToolSafe;
-import sw4j.util.ToolHashDigest;
+import sw4j.util.ToolHash;
 import sw4j.util.ToolIO;
 import sw4j.util.ToolURI;
 
@@ -272,11 +272,11 @@ abstract public class TaskLoad extends AbstractTaskDesc{
 	}
 	
 	public String getSha1sum(){
-		return ToolHashDigest.hash_sum_sha1(m_bytes);
+		return ToolHash.hash_sum_sha1(m_bytes);
 	}
 	
 	public String getMd5sum(){
-		return ToolHashDigest.hash_sum_md5(m_bytes);
+		return ToolHash.hash_sum_md5(m_bytes);
 	}
 	
 	public void writeToFile(File f, boolean bGzip) throws Sw4jException{

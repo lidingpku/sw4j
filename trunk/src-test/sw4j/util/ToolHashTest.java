@@ -30,14 +30,14 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-import sw4j.util.ToolHashDigest;
+import sw4j.util.ToolHash;
 
 /**
  * 
  * @author Li Ding
 */
 
-public class ToolHashDigestTest {
+public class ToolHashTest {
 	@Test
 	public void test() {
 		String [][] aryTest = new String[][]{
@@ -45,13 +45,13 @@ public class ToolHashDigestTest {
 				{"Since its inception the World Wide Web has changed the ways people work, play, communicate, collaborate, and educate. There is, however, a growing realization among researchers across a number of disciplines that without new research aimed at understanding the current, evolving and potential Web, we may be missing or delaying opportunities for new and revolutionary capabilities. If we want to be able to model the Web, if we want to understand the architectural principles that have provided for its growth, and if we want to be sure that it supports the basic social values of trustworthiness, personal control over information, and respect for social boundaries, then we must pursue a research agenda that targets the Web and its use as a primary focus of attention.", "8bf38afea61d0c394d4d4146b718b65ebc14a53c","fbb35d6834147ff727db42f9e6c667f0"},
 		};
 		for (int i=0; i< aryTest.length; i++){
-			String szTemp = ToolHashDigest.hash_sum_sha1(aryTest[i][0].getBytes());
+			String szTemp = ToolHash.hash_sum_sha1(aryTest[i][0].getBytes());
 			if (!aryTest[i][1].equals(szTemp))
 				fail();
 		}
 		
 		for (int i=0; i< aryTest.length; i++){
-			String szTemp = ToolHashDigest.hash_sum_md5(aryTest[i][0].getBytes());
+			String szTemp = ToolHash.hash_sum_md5(aryTest[i][0].getBytes());
 			if (!aryTest[i][2].equals(szTemp))
 				fail();
 		}
@@ -65,7 +65,7 @@ public class ToolHashDigestTest {
 				{"MailTo:dingl@cs.rpi.edu", "a7d0967c21ba8952ab0443bf822750d4c44afe2c"},
 		};
 		for (int i=0; i< aryTest.length; i++){
-			String szTemp = ToolHashDigest.hash_mbox_sum_sha1(aryTest[i][0]);
+			String szTemp = ToolHash.hash_mbox_sum_sha1(aryTest[i][0]);
 			if (!aryTest[i][1].equals(szTemp))
 				fail();
 		}
