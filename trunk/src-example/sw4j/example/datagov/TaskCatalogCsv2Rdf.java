@@ -1,9 +1,8 @@
-package sw4j.example;
+package sw4j.example.datagov;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -11,46 +10,49 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.sparql.vocabulary.FOAF;
 import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
+import sw4j.servlet.vocabulary.DGTWC;
 import sw4j.util.DataTable;
+import sw4j.util.ToolHash;
 import sw4j.util.ToolSafe;
 import sw4j.util.ToolString;
 import sw4j.util.rdf.ToolJena;
-import sw4j.vocabulary.pml.PMLP;
-import sw4j.vocabulary.pml.PMLR;
 
-public class TaskCsv2Rdf {
+public class TaskCatalogCsv2Rdf {
 	public static final String VER = "1.0";
 	
 	public static void main(String[] args) {
-		String szWikiBase = "http://data-gov.tw.rpi.edu/vocab/";
-		String szInputUrl = "http://www.data.gov/data_gov_catalog.csv";
-		String szMapUrl = "http://data-gov.tw.rpi.edu/map/map00092.csv";
-		String szDatasetID = "92";
-		String szOutputDir = "../data-gov/raw/"+szDatasetID+"/";
-		String szOutputBase = "http://data-gov.tw.rpi.edu/raw/"+szDatasetID+"/";
-		loadCsv(szInputUrl, szMapUrl, szDatasetID, szWikiBase,szOutputBase,szOutputDir);
+		String sz_url_server = "http://data-gov.tw.rpi.edu";
+		String sz_url_csv = "http://www.data.gov/data_gov_catalog.csv";
+		String sz_id = "92";
+		String sz_dir_output = "../data-gov/raw/"+sz_id+"/";
+		String sz_url_catalog = "http://data-gov.tw.rpi.edu/raw/"+sz_id+"/";
+		
+		String sz_url_mapping = "http://data-gov.tw.rpi.edu/map/map00092.csv";
+		loadCsv(sz_url_csv, sz_url_mapping, sz_id, sz_url_server,sz_url_catalog,sz_dir_output);
 	}
 	
-	public static void loadCsv(String szInputUrl, String szMapUrl,  String szDatasetID, String szWikiBase,String szOutputBase, String szOutputDir){
-		String szPropertyNamespace = szWikiBase + "Property:";
-		String szInstanceNamespace = szWikiBase;
+	public static void loadCsv(String sz_url_csv, String sz_url_mapping,  String sz_id, String sz_url_server,String sz_url_catalog, String sz_dir_output){
+		String szPropertyNamespace = String.format("%s/vocab/p/%s/",sz_url_server,sz_id);			
+		String szInstanceNamespace = String.format("%s/vocab/",sz_url_server);
+		String szWikiNamespace = String.format("%s/wiki/",sz_url_server);
 
 		String szIndexPath= "index.rdf";
-		String szDataPath = "catalog.rdf";
-		String szOutputDataFile = szOutputDir+szDataPath;
-		String szOutputIndexFile = szOutputDir+szIndexPath;
-		String szOutputDataUrl = szOutputBase+szDataPath;
-		String szOutputIndexUrl = szOutputBase+szIndexPath;
+		String szDataPath = "data.rdf";
+		String szOutputDataFile = sz_dir_output+szDataPath;
+		String szOutputIndexFile = sz_dir_output+szIndexPath;
+		String szOutputDataUrl = sz_url_catalog+szDataPath;
+		String szOutputIndexUrl = sz_url_catalog+szIndexPath;
 
 		DataTable map =null;
-		if (!ToolSafe.isEmpty(szMapUrl))
-			map = DataTable.fromCSV(szMapUrl);
+		//if (!ToolSafe.isEmpty(sz_url_mapping))
+		//	map = DataTable.fromCSV(sz_url_mapping);
 	
-		DataTable table = DataTable.fromCSV(szInputUrl);
+		DataTable table = DataTable.fromCSV(sz_url_csv);
 
 		// model index
 		Model model_index = ModelFactory.createDefaultModel();
@@ -74,30 +76,32 @@ public class TaskCsv2Rdf {
 			processRow(instance, properties, row, map, szInstanceNamespace);
 			
 		}
-		model_data.setNsPrefix( "dgp",szPropertyNamespace);
+		model_data.setNsPrefix( "dgp"+sz_id, szPropertyNamespace  );
 		model_data.setNsPrefix( "dg",szInstanceNamespace);
-		model_data.setNsPrefix(PMLP.class.getSimpleName().toLowerCase(),PMLP.getURI());
-		model_data.setNsPrefix(PMLR.class.getSimpleName().toLowerCase(),PMLR.getURI());
+		model_data.setNsPrefix(DGTWC.class.getSimpleName().toLowerCase(),DGTWC.getURI());
+		//ToolJena.printModel(model_data);
+		//System.out.println(model_data.getNsPrefixMap());
 		ToolJena.printModelToFile(model_data, szOutputDataFile, "RDF/XML",false);
 		
 		
 		// model index
 		Resource res_dataset = model_index.createResource(szOutputIndexUrl+"#me");
-		res_dataset.addProperty(RDF.type, PMLP.Dataset);
-		res_dataset.addProperty(DC.source, model_index.createResource(szInputUrl));
-		res_dataset.addProperty(PMLR.hasPart, res_data_file);
-		res_dataset.addProperty(RDFS.seeAlso,  model_index.createResource(szInstanceNamespace+"Dataset"+szDatasetID) );
-		res_dataset.addLiteral(model_index.createProperty(szPropertyNamespace+"Number_of_entries"), table.getValues().size());
-		res_dataset.addLiteral(model_index.createProperty(szPropertyNamespace+"Number_of_columns"), table.getHeader().size());
-		res_dataset.addLiteral(model_index.createProperty(szPropertyNamespace+"Number_of_triples"), model_data.size());
+		res_dataset.addProperty(RDF.type, DGTWC.Dataset);
+		res_dataset.addProperty(DC.source, model_index.createResource(sz_url_csv));
+		res_dataset.addProperty(DGTWC.complete_data, res_data_file);
+		String sz_datafile_hash = "URLSHA1/"+ToolHash.hash_sum_sha1(sz_url_csv.getBytes());
+		res_dataset.addProperty(RDFS.isDefinedBy,  model_index.createResource(szInstanceNamespace+sz_datafile_hash) );
+		res_dataset.addProperty(RDFS.seeAlso,  model_index.createResource(szWikiNamespace+sz_datafile_hash) );
+		res_dataset.addLiteral(DGTWC.number_of_entries, table.getValues().size());
+		res_dataset.addLiteral(DGTWC.number_of_properties, table.getHeader().size());
+		res_dataset.addLiteral(DGTWC.number_of_triples, model_data.size());
 
-		res_data_file.addProperty(PMLR.isPartOf, res_dataset);
+		res_data_file.addProperty(DGTWC.isPartOf, res_dataset);
 		
 		//model_index.setNsPrefix("dgp",szPropertyNamespace);
-		model_index.setNsPrefix(PMLP.class.getSimpleName().toLowerCase(),PMLP.getURI());
-		model_index.setNsPrefix(PMLR.class.getSimpleName().toLowerCase(),PMLR.getURI());
-		model_index.setNsPrefix( "dg",szInstanceNamespace);
-		model_index.setNsPrefix( "dgp",szPropertyNamespace);
+		model_index.setNsPrefix(DGTWC.class.getSimpleName().toLowerCase(),DGTWC.getURI());
+		//model_index.setNsPrefix( "dg",szInstanceNamespace);
+		model_index.setNsPrefix( "dgp"+sz_id, szPropertyNamespace  );
 		ToolJena.printModelToFile(model_index, szOutputIndexFile, "RDF/XML",false);
 		
 
@@ -109,11 +113,11 @@ public class TaskCsv2Rdf {
 		if (ToolSafe.isEmpty(szName))
 			return null;
 		String szTemp = szName;
-		szTemp = szTemp.replaceAll("/\\W+/", " ");
+		szTemp = szTemp.replaceAll("\\W+", " ");
 		szTemp = szTemp.trim();
 		szTemp = szTemp.replaceAll(" ", "_");
 		szTemp = szTemp.toLowerCase();
-		szTemp = szTemp.substring(0,1).toUpperCase()+szTemp.substring(1);
+		//szTemp = szTemp.substring(0,1).toUpperCase()+szTemp.substring(1);
 		return szTemp;
 	}
 	
@@ -127,7 +131,7 @@ public class TaskCsv2Rdf {
 		String szTemp = szValue;
 		szTemp = szTemp.trim();
 		szTemp = szTemp.replaceAll(" ", "_");
-		szTemp = szTemp.substring(0,1).toUpperCase()+szTemp.substring(1);
+		//szTemp = szTemp.substring(0,1).toUpperCase()+szTemp.substring(1);
 		return szTemp;
 	}
 	
@@ -148,17 +152,19 @@ public class TaskCsv2Rdf {
 		Iterator<Property> iter_header = header.iterator();
 		Iterator<String> iter_row = row.iterator();
 
+
+		/*
 //		Iterator<String> iter_map_header = map.getHeader().iterator();
 		Iterator<List<String>> iter_map = null;
 
-		Iterator<String> iter_map_type = null;
+		 Iterator<String> iter_map_type = null;
 
 		if (!ToolSafe.isEmpty(map)){
 			iter_map = map.getValues().iterator();
 
 			iter_map_type = iter_map.next().iterator();
 		}
-		
+		*/
 		Pattern pattern_href = Pattern.compile("^<a +href=\"([^\"]+)\">[\\s]*h?[tf]tps?[^<]+</a>$");
 		Pattern pattern_url = Pattern.compile("^h?[tf]tps?://[\\S]+$");
 
@@ -169,16 +175,17 @@ public class TaskCsv2Rdf {
 			//TODO verify map_header
 			//String map_header = iter_map_header.next();
 
+
+			if (ToolSafe.isEmpty(row_value))
+				continue;
+			
+				/*
 			// process mapping file
 			String map_type = null;
 			if (!ToolSafe.isEmpty(map)){
 				map_type = iter_map_type.next();
 			}
 
-			if (ToolSafe.isEmpty(row_value))
-				continue;
-			
-				
 			if ("WIKI".equalsIgnoreCase(map_type)){
 				instance.addProperty(p, instance.getModel().createResource( szInstanceNamespace + processResource(row_value)));
 			}else if ("CSV".equalsIgnoreCase(map_type)){
@@ -190,9 +197,8 @@ public class TaskCsv2Rdf {
 						instance.addProperty(p, instance.getModel().createResource(szTemp));						
 					}
 				}
-/*			}else if ("URL".equalsIgnoreCase(map_type)){
-				instance.addProperty(p, instance.getModel().createResource(row_value));
-*/			}else{
+			}else
+			*/{
 				 //System.out.println(row_value);
 				 row_value = row_value.trim();
 				 Matcher m1 = pattern_href.matcher(row_value);
@@ -216,9 +222,8 @@ public class TaskCsv2Rdf {
 	
 	@SuppressWarnings("unused")
 	private static void annotateFile(Resource res_file){
-		res_file.addProperty(RDF.type, PMLP.Document);
-		res_file.addProperty(PMLP.hasPublisher, res_file.getModel().createResource("http://data-gov.tw.rpi.edu/vocab/Tetherless_World_Constellation"));
-		res_file.addProperty(PMLP.hasCreationDateTime, ToolString.formatXMLDateTime(System.currentTimeMillis()));
-		res_file.addProperty(PMLP.hasVersion, VER);
+		res_file.addProperty(RDF.type, FOAF.Document);
+		res_file.addProperty(DC.creator, res_file.getModel().createResource("http://tw.rpi.edu"));
+		res_file.addProperty(DC.date, ToolString.formatXMLDateTime(System.currentTimeMillis()));
 	}
 }

@@ -24,6 +24,7 @@ public class ConfigGenerateVocabularyServlet {
 //					{"http://tw.rpi.edu/2008/sw/archive.owl#", "ARCHIVE", "archive"},
 					{"http://tw.rpi.edu/2009/sw/response.owl#", "RESPONSE", "response"},
 					{"http://tw.rpi.edu/2009/sw/rdf-metadata.owl#", "RM", "rm"},
+					{"http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf#", "DGTWC", "dgtwc"},
 			};
 			
 			for (int i=0; i< aryOntologyURL.length; i++){
