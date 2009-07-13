@@ -19,7 +19,7 @@ public class DiffService {
 	public String szPrev;
 	public String szCur;
 	public String root_type_uri=RSS.item.getURI();
-	public String rss_url="http://tw.rpi.edu/";
+	public String xmlbase = "http://tw.rpi.edu/diff";
 	public String rss_title="DIFF default";
 
 	public String output=TaskDiff.DIFF_RDF;
@@ -51,10 +51,10 @@ public class DiffService {
 	        	return ret;
 	        }
 	        
-	        TaskDiff diff = TaskDiff.create(model_cur, model_prev, root_type_uri, szCur, szPrev);
+	        TaskDiff diff = TaskDiff.create(model_cur, model_prev, root_type_uri, szCur, szPrev, xmlbase);
 
 	        if (TaskDiff.DIFF_RSS.equals(this.output)){
-		        return  DataServeletResponse.createResponse(diff.getOutputRss(rss_url, rss_title, RSS.title, RSS.link), null, RDFSYNTAX.RDFXML_ABBREV);
+		        return  DataServeletResponse.createResponse(diff.getOutputRss(rss_title, RSS.title, RSS.link), null, RDFSYNTAX.RDFXML_ABBREV);
 	        }else if (TaskDiff.DIFF_RDF.equals(this.output)){
 	        	return DataServeletResponse.createResponse(diff.getOutputRdfDiff(), null, RDFSYNTAX.RDFXML);	        	
 	        }else if (TaskDiff.DIFF_RDF_DEL.equals(this.output)){

@@ -806,6 +806,7 @@ public class ToolJena {
 		Model ret = ModelFactory.createDefaultModel();
 		model_merge(ret,m_a);
 		ret.remove(m_b);
+		model_copyNsPrefix(ret,m_a);
 		return ret;
 	}
 	
@@ -1018,7 +1019,15 @@ public class ToolJena {
 	public static DataQname getDataQname(RDFNode node){
 		if (node.isURIResource()){
 			try {
-				return DataQname.create(((Resource)node).getURI(), ToolJena.getNodePrefix(node));
+				Resource res = (Resource)node;
+				String prefix = ToolJena.getNodePrefix(node);
+				if (!ToolSafe.isEmpty(res.getLocalName())&&!ToolSafe.isEmpty(res.getNameSpace())){
+					//use jena results
+					return DataQname.create(res.getNameSpace(), res.getLocalName(), prefix);
+				}else{
+					//we guess it
+					return DataQname.create(((Resource)node).getURI(), prefix);
+				}
 			} catch (Sw4jException e) {
 			}
 		}
@@ -1050,7 +1059,7 @@ public class ToolJena {
 			return ((Literal)node).getString();
 		}else if (node.isURIResource()){
 			DataQname ret = getDataQname(node);
-			if (null!=ret && !ToolSafe.isEmpty(ret.getLocalname())){
+			if (null!=ret && null!=ret.getPrefix() && !ToolSafe.isEmpty(ret.getLocalname())){
 				return ret.getPrefix()+":"+ ret.getLocalname();
 			}else{
 				return node.toString();

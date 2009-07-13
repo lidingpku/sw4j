@@ -67,9 +67,9 @@ public class DiffServlet extends HttpServlet {
 		if (!ToolSafe.isEmpty(szTemp))
 			svc.rss_title =szTemp;
 
-		szTemp = request.getParameter("rss_url");
+		szTemp = request.getParameter("xmlbase");
 		if (!ToolSafe.isEmpty(szTemp))
-			svc.rss_url =szTemp;
+			svc.xmlbase =szTemp;
 
 		szTemp = request.getParameter("root_type_uri");
 		if (!ToolSafe.isEmpty(szTemp))

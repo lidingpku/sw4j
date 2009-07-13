@@ -30,9 +30,9 @@ output: <SELECT name="output">
  <OPTION VALUE="rss">summarize diff using rss</OPTION>
  </SELECT>
  <br/>	
-	rss_url: <input name="rss_url" size="102" type="text">  <br/>
+	xmlbase of output: <input name="xmlbase" size="102" type="text">  <br/>
 	rss_title: <input name="rss_title" size="102" type="text">  <br/>
-    <input value="ping"  type="submit">
+    <input value="diff"  type="submit">
  </form>
 </fieldset>
 
@@ -71,11 +71,11 @@ Base service URI: &nbsp;http://onto.rpi.edu/sw4j/diff<br />
 example usage
 <ul>
   <li> simple diff (default) - <a
- href="http://onto.rpi.edu/sw4j/diff?cur=http://data-gov.tw.rpi.edu/catalog/2009/07-03-today.rss&prev=http://data-gov.tw.rpi.edu/catalog/2009/06-24-today.rss">http://onto.rpi.edu/sw4j/diff?cur=http://data-gov.tw.rpi.edu/catalog/2009/07-03-today.rss&prev=http://data-gov.tw.rpi.edu/catalog/2009/06-24-today.rss</a></li>
+ href="http://onto.rpi.edu/sw4j/diff?cur=http://data-gov.tw.rpi.edu/raw/92/2009-07-10/today.rss&prev=http://data-gov.tw.rpi.edu/raw/92/2009-07-09/today.rss">http://onto.rpi.edu/sw4j/diff?cur=http://data-gov.tw.rpi.edu/raw/92/2009-07-10/today.rss&prev=http://data-gov.tw.rpi.edu/raw/92/2009-07-09/today.rss</a></li>
   <li> simple diff (inverse) - <a
- href="http://onto.rpi.edu/sw4j/diff?prev=http://data-gov.tw.rpi.edu/catalog/2009/07-03-today.rss&cur=http://data-gov.tw.rpi.edu/catalog/2009/06-24-today.rss">http://onto.rpi.edu/sw4j/diff?prev=http://data-gov.tw.rpi.edu/catalog/2009/07-03-today.rss&cur=http://data-gov.tw.rpi.edu/catalog/2009/06-24-today.rss</a></li>
+ href="http://onto.rpi.edu/sw4j/diff?prev=http://data-gov.tw.rpi.edu/raw/92/2009-07-10/today.rss&cur=http://data-gov.tw.rpi.edu/raw/92/2009-07-09/today.rss">http://onto.rpi.edu/sw4j/diff?prev=http://data-gov.tw.rpi.edu/raw/92/2009-07-10/today.rss&cur=http://data-gov.tw.rpi.edu/raw/92/2009-07-09/today.rss</a></li>
   <li> simple diff (rss) - <a
- href="http://onto.rpi.edu/sw4j/diff?cur=http://data-gov.tw.rpi.edu/catalog/2009/07-03-today.rss&prev=http://data-gov.tw.rpi.edu/catalog/2009/06-24-today.rss&output=rss&rss_url=http://data-gov.tw.rpi.edu/catalog/diff.rss&rss_title=Updates%20of%20data.gov%20catalog">http://onto.rpi.edu/sw4j/diff?cur=http://data-gov.tw.rpi.edu/catalog/2009/07-03-today.rss&prev=http://data-gov.tw.rpi.edu/catalog/2009/06-24-today.rss&output=rss&rss_url=http://data-gov.tw.rpi.edu/catalog/diff.rss&rss_title=Updates%20of%20data.gov%20catalog</a></li>
+ href="http://onto.rpi.edu/sw4j/diff?cur=http://data-gov.tw.rpi.edu/raw/92/2009-07-10/today.rss&prev=http://data-gov.tw.rpi.edu/raw/92/2009-07-09/today.rss&output=rss&rss_url=http://data-gov.tw.rpi.edu/catalog/diff.rss&rss_title=Updates%20of%20data.gov%20catalog">http://onto.rpi.edu/sw4j/diff?cur=http://data-gov.tw.rpi.edu/raw/92/2009-07-10/today.rss&prev=http://data-gov.tw.rpi.edu/raw/92/2009-07-09/today.rss&output=rss&xmlbase=http://data-gov.tw.rpi.edu/catalog/diff.rss&rss_title=Updates%20of%20data.gov%20catalog</a></li>
 </ul>
 
 

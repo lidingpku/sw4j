@@ -15,10 +15,11 @@ public class DiffServiceTest {
 	@Test
 	public void test0() throws IOException{
 		DiffService svc = new DiffService();
-		svc.szCur = "http://data-gov.tw.rpi.edu/catalog/2009/07-04-today.rss";
-		svc.szPrev = "http://data-gov.tw.rpi.edu/catalog/2009/07-03-today.rss";
+		svc.szCur = "http://data-gov.tw.rpi.edu/raw/92/2009-07-10/today.rss";
+		svc.szPrev = "http://data-gov.tw.rpi.edu/raw/92/2009-07-09/today.rss";
 		svc.root_type_uri = RSS.item.getURI();
-		
+		svc.output = TaskDiff.DIFF_RSS;
+
 		DataServeletResponse ret = svc.run();
 		
 		System.out.println(ret.getMimeType());
@@ -27,12 +28,12 @@ public class DiffServiceTest {
 			fail("URL should be succeed");		
 	}	
 	
-	@Test
+	//@Test
 	public void test1() throws IOException{
 		DiffService svc = new DiffService();
-		svc.szCur = "http://data-gov.tw.rpi.edu/catalog/2009/07-03-today.rss";
-		svc.szPrev = "http://data-gov.tw.rpi.edu/catalog/2009/06-24-today.rss";
-		//svc.root_type_uri = RSS.item.getURI();
+		svc.szCur = "http://data-gov.tw.rpi.edu/raw/92/2009-07-09/today.rss";
+		svc.szPrev = "http://data-gov.tw.rpi.edu/raw/92/2009-07-10/today.rss";
+		svc.xmlbase = "http://foo.com/diff";
 		
 		DataServeletResponse ret = svc.run();
 		
@@ -42,11 +43,11 @@ public class DiffServiceTest {
 			fail("URL should be succeed");		
 	}
 	
-	@Test
+	//@Test
 	public void test1b() throws IOException{
 		DiffService svc = new DiffService();
-		svc.szCur = "http://data-gov.tw.rpi.edu/catalog/2009/07-03-today.rss";
-		svc.szPrev = "http://data-gov.tw.rpi.edu/catalog/2009/06-24-today.rss";
+		svc.szCur = "http://data-gov.tw.rpi.edu/raw/92/2009-07-03/today.rss";
+		svc.szPrev = "http://data-gov.tw.rpi.edu/raw/92/2009-06-24/today.rss";
 		svc.root_type_uri = RSS.item.getURI();
 		svc.output = TaskDiff.DIFF_RSS;
 
@@ -60,8 +61,8 @@ public class DiffServiceTest {
 	//@Test
 	public void test2() throws IOException{
 		DiffService svc = new DiffService();
-		svc.szPrev = "http://data-gov.tw.rpi.edu/catalog/2009/07-03-today.rss";
-		svc.szCur = "http://data-gov.tw.rpi.edu/catalog/2009/06-24-today.rss";
+		svc.szPrev = "http://data-gov.tw.rpi.edu/raw/92/2009-07-03/today.rss";
+		svc.szCur = "http://data-gov.tw.rpi.edu/raw/92/2009-06-24/today.rss";
 		
 		DataServeletResponse ret = svc.run();
 		
