@@ -122,6 +122,9 @@ public class PMLOWL{
 	 public final static String diff_update_instance_update_property_uri = "http://inference-web.org/2.0/pml-owl.owl#diff_update_instance_update_property";
 	 public final static Resource  diff_update_instance_update_property = ResourceFactory.createResource(diff_update_instance_update_property_uri);
 */
+	 
+	 public final static String hasSubjectReference_uri = "http://inference-web.org/2.0/pml-owl.owl#hasSubjectReference";
+	public static final Property hasSubjectReference = ResourceFactory.createProperty(hasSubjectReference_uri);;
 }
 
 

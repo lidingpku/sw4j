@@ -43,6 +43,55 @@ public class TaskDiff {
 			return m.createResource(String.format("%s#id_%s",this.m_xmlbase, getGid() ));
 	}
 	
+	class InstanceKey{
+		Resource subject = null;
+		Property predicate = null;
+		
+		public InstanceKey(Resource s, Property p) {
+			this.subject=s;
+			this.predicate=p;
+		}
+
+		@Override
+		public String toString(){
+			return String.format("%s-%s",subject.toString(), predicate.toString());
+		}
+
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result
+					+ ((predicate == null) ? 0 : predicate.hashCode());
+			result = prime * result
+					+ ((subject == null) ? 0 : subject.hashCode());
+			return result;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			final InstanceKey other = (InstanceKey) obj;
+			if (predicate == null) {
+				if (other.predicate != null)
+					return false;
+			} else if (!predicate.equals(other.predicate))
+				return false;
+			if (subject == null) {
+				if (other.subject != null)
+					return false;
+			} else if (!subject.equals(other.subject))
+				return false;
+			return true;
+		}
+		
+	}
+	
 	public Resource m_res_root_type = null;
 	public String m_xmlbase = null;
 	public Model m_model_cur = null;
@@ -53,16 +102,31 @@ public class TaskDiff {
 	public Model m_model_add = null;
 	public Model m_model_del = null;
 	
-	
 	Set<Resource> m_roots_add;
 	Set<Resource> m_roots_del;
 	Set<Resource> m_roots_other;
 	Set<Resource> m_roots_update = new HashSet<Resource>();
+
+	HashMap<Resource,DataPVHMap<InstanceKey, RDFNode>> m_map_root_add = new HashMap<Resource,DataPVHMap<InstanceKey, RDFNode>>();
+	HashMap<Resource,DataPVHMap<InstanceKey, RDFNode>> m_map_root_del = new HashMap<Resource,DataPVHMap<InstanceKey, RDFNode>>();
+	HashMap<Resource,DataPVHMap<InstanceKey, RDFNode>> m_map_root_update_cur = new HashMap<Resource,DataPVHMap<InstanceKey, RDFNode>>();
+	HashMap<Resource,DataPVHMap<InstanceKey, RDFNode>> m_map_root_update_prev = new HashMap<Resource,DataPVHMap<InstanceKey, RDFNode>>();
+
+	/*	
+	HashMap<Resource,Resource> m_map_root_root = new HashMap<Resource,Resource>();
+
+	Set<Resource> m_root_add;
+	Set<Resource> m_root_del;
+	Set<Resource> m_root_other;
+	Set<Resource> m_root_update = new HashSet<Resource>();
+
+
+	
 	HashMap<Resource,DataPVHMap<Property, RDFNode>> m_map_root_add = new HashMap<Resource,DataPVHMap<Property, RDFNode>>();
 	HashMap<Resource,DataPVHMap<Property, RDFNode>> m_map_root_del = new HashMap<Resource,DataPVHMap<Property, RDFNode>>();
 	HashMap<Resource,DataPVHMap<Property, RDFNode>> m_map_root_update_cur = new HashMap<Resource,DataPVHMap<Property, RDFNode>>();
 	HashMap<Resource,DataPVHMap<Property, RDFNode>> m_map_root_update_prev = new HashMap<Resource,DataPVHMap<Property, RDFNode>>();
-	
+*/
 	 public static TaskDiff create(Model model_cur, Model model_prev, String sz_root_type_uri, String url_cur, String url_prev, String xmlbase){
 		 if (ToolSafe.isEmpty(model_cur))
 			 return null;
@@ -122,10 +186,14 @@ public class TaskDiff {
             check_update_details(subject, subject, new HashSet<Resource>());
         }
         
+        //m_roots_other.removeAll(this.m_map_root_root.values());
+        
         m_roots_update.addAll(m_map_root_add.keySet());
         m_roots_update.addAll(m_map_root_del.keySet());
         m_roots_update.addAll(m_map_root_update_cur.keySet());
         m_roots_update.addAll(m_map_root_update_prev.keySet());
+        
+        m_roots_other.retainAll(m_roots_update);
 	 }
 	 
 	 private void check_update_details(Resource subject, Resource root_subject, Set<Resource> visited){
@@ -135,31 +203,31 @@ public class TaskDiff {
 		 		visited.add(subject);
 
 	        	StmtIterator iter_stmt;
-	            DataPVHMap<Property, RDFNode> pvm_cur = new  DataPVHMap<Property, RDFNode>();
+	            DataPVHMap<InstanceKey, RDFNode> pvm_cur = new  DataPVHMap<InstanceKey, RDFNode>();
 	        	iter_stmt = m_model_cur.listStatements(subject, null, (String)null);
 	        	while (iter_stmt.hasNext()){
 	        		Statement stmt = iter_stmt.nextStatement();
-	        		pvm_cur.add(stmt.getPredicate(),stmt.getObject());
+	        		pvm_cur.add(new InstanceKey(subject, stmt.getPredicate()),stmt.getObject());
 	        	}
 	        	
-	            DataPVHMap<Property, RDFNode> pvm_prev = new  DataPVHMap<Property, RDFNode>();
+	            DataPVHMap<InstanceKey, RDFNode> pvm_prev = new  DataPVHMap<InstanceKey, RDFNode>();
 	        	iter_stmt = m_model_prev.listStatements(subject, null, (String)null);
 	        	while (iter_stmt.hasNext()){
 	        		Statement stmt = iter_stmt.nextStatement();
-	        		pvm_prev.add(stmt.getPredicate(),stmt.getObject());
+	        		pvm_prev.add(new InstanceKey(subject, stmt.getPredicate()),stmt.getObject());
 	        	}
 
 	        	// 4 compute details
-	        	Iterator<Property> iter_property;
-	            DataPVHMap<Property, RDFNode> pvm_add = new  DataPVHMap<Property, RDFNode>();
-	            DataPVHMap<Property, RDFNode> pvm_delete = new  DataPVHMap<Property, RDFNode>();
-	            DataPVHMap<Property, RDFNode> pvm_update_cur = new  DataPVHMap<Property, RDFNode>();            
-	            DataPVHMap<Property, RDFNode> pvm_update_prev = new  DataPVHMap<Property, RDFNode>();
+	        	Iterator<InstanceKey> iter_property;
+	            DataPVHMap<InstanceKey, RDFNode> pvm_add = new  DataPVHMap<InstanceKey, RDFNode>();
+	            DataPVHMap<InstanceKey, RDFNode> pvm_delete = new  DataPVHMap<InstanceKey, RDFNode>();
+	            DataPVHMap<InstanceKey, RDFNode> pvm_update_cur = new  DataPVHMap<InstanceKey, RDFNode>();            
+	            DataPVHMap<InstanceKey, RDFNode> pvm_update_prev = new  DataPVHMap<InstanceKey, RDFNode>();
 
 	            // 4a. 4c update - add/update property
 	            iter_property = pvm_cur.keySet().iterator();
 	            while (iter_property.hasNext()){
-	            	Property property = iter_property.next();
+	            	InstanceKey property = iter_property.next();
 	            	if (pvm_prev.keySet().contains(property)){
 	            		Collection<RDFNode> nodes_cur = pvm_cur.getValues(property);
 	            		Collection<RDFNode> nodes_prev = pvm_prev.getValues(property);
@@ -196,22 +264,30 @@ public class TaskDiff {
 	        	// 4b. update - del property
 	            iter_property = pvm_prev.keySet().iterator();
 	            while (iter_property.hasNext()){
-	            	Property property = iter_property.next();
+	            	InstanceKey property = iter_property.next();
 	            	if (pvm_cur.keySet().contains(property)){
 	            	}else{
 	            		pvm_delete.add(property, pvm_prev.getValues(property));
 	            	}
 	            }
 
-	            if (pvm_add.entrySet().size()>0)
+	            if (pvm_add.entrySet().size()>0){
+	            	//m_map_root_root.put(subject, root_subject);
+	            	
 	            	m_map_root_add.put(root_subject,pvm_add);
-	            if (pvm_delete.entrySet().size()>0)
+	            }
+	            if (pvm_delete.entrySet().size()>0){
+	            	//m_map_root_root.put(subject, root_subject);
 	            	m_map_root_del.put(root_subject,pvm_delete);
-	            if (pvm_update_cur.entrySet().size()>0)
+	            }
+	            if (pvm_update_cur.entrySet().size()>0){
+	            	//m_map_root_root.put(subject, root_subject);
 	            	m_map_root_update_cur.put(root_subject,pvm_update_cur);
-	            if (pvm_update_prev.entrySet().size()>0)
+	            }
+	            if (pvm_update_prev.entrySet().size()>0){
+	            	//m_map_root_root.put(subject, root_subject);
 	            	m_map_root_update_prev.put(root_subject,pvm_update_prev);
-	        
+	            }	        
 	 }
 	 
 	 
@@ -234,7 +310,7 @@ public class TaskDiff {
 				 entry.addProperty(PMLOWL.hasDiffRelation, PMLOWL.hasDiffAddInstance);
 				 entry.addProperty(PMLOWL.hasDiffSourceCur, m.createResource(this.m_url_cur));
 				 entry.addProperty(PMLOWL.hasDiffSourcePrev, m.createResource(this.m_url_prev));
-				 entry.addProperty(RDFS.comment, getDiffDescription(root));
+				 entry.addProperty(RDFS.comment, getDiffDescription(root, null));
 			 }
 		 }
 		 
@@ -254,7 +330,7 @@ public class TaskDiff {
 				 entry.addProperty(PMLOWL.hasDiffRelation, PMLOWL.hasDiffDelInstance);
 				 entry.addProperty(PMLOWL.hasDiffSourceCur, m.createResource(this.m_url_cur));
 				 entry.addProperty(PMLOWL.hasDiffSourcePrev, m.createResource(this.m_url_prev));
-				 entry.addProperty(RDFS.comment, getDiffDescription(root));
+				 entry.addProperty(RDFS.comment, getDiffDescription(root, null));
 			}
 		 }
 	
@@ -278,15 +354,18 @@ public class TaskDiff {
 			 }
 		 }*/
 		 
+		 
 		 {
-			 Iterator<Map.Entry<Resource,DataPVHMap<Property, RDFNode>>> iter = this.m_map_root_add.entrySet().iterator();
+			 Iterator<Map.Entry<Resource,DataPVHMap<InstanceKey, RDFNode>>> iter = this.m_map_root_add.entrySet().iterator();
 			 while(iter.hasNext()){
-				 Map.Entry<Resource,DataPVHMap<Property, RDFNode>> item = iter.next();
+				 Map.Entry<Resource,DataPVHMap<InstanceKey, RDFNode>> item = iter.next();
 				 Resource root = item.getKey();
-				 Iterator<Map.Entry<Property, Set<RDFNode>>> iter_item = item.getValue().entrySet().iterator();
+				 
+				 Iterator<Map.Entry<InstanceKey, Set<RDFNode>>> iter_item = item.getValue().entrySet().iterator();
 				 while (iter_item.hasNext()){
-					 Map.Entry<Property, Set<RDFNode>> pvs = iter_item.next();
-					 Property property =pvs.getKey();
+					 Map.Entry<InstanceKey, Set<RDFNode>> pvs = iter_item.next();
+					 Property property =pvs.getKey().predicate;
+					 Resource subject = pvs.getKey().subject;
 					 
 					 Resource entry = this.createResource(m);
 					 entry.addProperty(PMLOWL.hasInstanceReference, root);
@@ -298,21 +377,24 @@ public class TaskDiff {
 					 entry.addProperty(PMLOWL.hasDiffRelation, PMLOWL.hasDiffUpdateInstanceAddProperty);
 					 entry.addProperty(PMLOWL.hasDiffSourceCur, m.createResource(this.m_url_cur));
 					 entry.addProperty(PMLOWL.hasDiffSourcePrev, m.createResource(this.m_url_prev));
+					 entry.addProperty(PMLOWL.hasSubjectReference, subject);
 					 entry.addProperty(PMLOWL.hasPropertyReference, property );
-					 entry.addProperty(RDFS.comment, getDiffDescription(root,property));
+					 entry.addProperty(RDFS.comment, getDiffDescription(root, new InstanceKey(subject, property)));
 
 				 }
 			 }
 		 }
 		 {
-			 Iterator<Map.Entry<Resource,DataPVHMap<Property, RDFNode>>> iter = this.m_map_root_del.entrySet().iterator();
+			 Iterator<Map.Entry<Resource,DataPVHMap<InstanceKey, RDFNode>>> iter = this.m_map_root_del.entrySet().iterator();
 			 while(iter.hasNext()){
-				 Map.Entry<Resource,DataPVHMap<Property, RDFNode>> item = iter.next();
+				 Map.Entry<Resource,DataPVHMap<InstanceKey, RDFNode>> item = iter.next();
 				 Resource root = item.getKey();
-				 Iterator<Map.Entry<Property, Set<RDFNode>>> iter_item = item.getValue().entrySet().iterator();
+
+				 Iterator<Map.Entry<InstanceKey, Set<RDFNode>>> iter_item = item.getValue().entrySet().iterator();
 				 while (iter_item.hasNext()){
-					 Map.Entry<Property, Set<RDFNode>> pvs = iter_item.next();
-					 Property property =pvs.getKey();
+					 Map.Entry<InstanceKey, Set<RDFNode>> pvs = iter_item.next();
+					 Property property =pvs.getKey().predicate;
+					 Resource subject = pvs.getKey().subject;
 
 					 Resource entry = this.createResource(m);
 					 entry.addProperty(PMLOWL.hasInstanceReference, root);
@@ -324,21 +406,24 @@ public class TaskDiff {
 					 entry.addProperty(PMLOWL.hasDiffRelation, PMLOWL.hasDiffUpdateInstanceDelProperty);
 					 entry.addProperty(PMLOWL.hasDiffSourceCur, m.createResource(this.m_url_cur));
 					 entry.addProperty(PMLOWL.hasDiffSourcePrev, m.createResource(this.m_url_prev));
+					 entry.addProperty(PMLOWL.hasSubjectReference, subject);
 					 entry.addProperty(PMLOWL.hasPropertyReference, property );
-					 entry.addProperty(RDFS.comment, getDiffDescription(root,property));
+					 entry.addProperty(RDFS.comment, getDiffDescription(root,new InstanceKey(subject, property)));
 
 				 }
 			 }
 		 }
 		 {
-			 Iterator<Map.Entry<Resource,DataPVHMap<Property, RDFNode>>> iter = this.m_map_root_update_cur.entrySet().iterator();
+			 Iterator<Map.Entry<Resource,DataPVHMap<InstanceKey, RDFNode>>> iter = this.m_map_root_update_cur.entrySet().iterator();
 			 while(iter.hasNext()){
-				 Map.Entry<Resource,DataPVHMap<Property, RDFNode>> item = iter.next();
+				 Map.Entry<Resource,DataPVHMap<InstanceKey, RDFNode>> item = iter.next();
 				 Resource root = item.getKey();
-				 Iterator<Map.Entry<Property, Set<RDFNode>>> iter_item = item.getValue().entrySet().iterator();
+
+				 Iterator<Map.Entry<InstanceKey, Set<RDFNode>>> iter_item = item.getValue().entrySet().iterator();
 				 while (iter_item.hasNext()){
-					 Map.Entry<Property, Set<RDFNode>> pvs = iter_item.next();
-					 Property property =pvs.getKey();
+					 Map.Entry<InstanceKey, Set<RDFNode>> pvs = iter_item.next();
+					 Property property =pvs.getKey().predicate;
+					 Resource subject = pvs.getKey().subject;
 
 					 Resource entry = this.createResource(m);
 					 entry.addProperty(PMLOWL.hasInstanceReference, root);
@@ -350,8 +435,9 @@ public class TaskDiff {
 					 entry.addProperty(PMLOWL.hasDiffRelation, PMLOWL.hasDiffUpdateInstanceUpdateProperty);
 					 entry.addProperty(PMLOWL.hasDiffSourceCur, m.createResource(this.m_url_cur));
 					 entry.addProperty(PMLOWL.hasDiffSourcePrev, m.createResource(this.m_url_prev));
+					 entry.addProperty(PMLOWL.hasSubjectReference, subject);
 					 entry.addProperty(PMLOWL.hasPropertyReference, property );
-					 entry.addProperty(RDFS.comment, getDiffDescription(root,property));
+					 entry.addProperty(RDFS.comment, getDiffDescription(root, new InstanceKey(subject, property)));
 
 				 }
 			 }
@@ -364,15 +450,15 @@ public class TaskDiff {
 		 return m;
 	 }
 
-	 private String prettyDescription(Resource root, Model m){
+	 private static String prettyDescription(Resource subject, Model m){
 		 String ret ="";
-		 StmtIterator iter = m.listStatements(root, null, (String)null);
+		 StmtIterator iter = m.listStatements(subject, null, (String)null);
 		 while (iter.hasNext()){
 			 Statement stmt = iter.nextStatement();
 			 
 			 if (stmt.getPredicate().equals(RDF.type))
 				 continue;
-			 ret += String.format(" --> %s. %s<br/>", ToolJena.prettyPrint(stmt.getPredicate()), ToolJena.prettyPrint(stmt.getObject()));
+			 ret += String.format(" ----> %s . [values]{%s}<br/>", ToolJena.prettyPrint(stmt.getPredicate()), ToolJena.prettyPrint(stmt.getObject()));
 		 }
 		 return ret;	 
 	 }
@@ -389,68 +475,94 @@ public class TaskDiff {
 		 return ret;
 	 }
 	 
-	 public String getDiffDescription(Resource root){
-		 return getDiffDescription(root, null);
-	 }
-	 
 
-	 private static String getDiffDescription2(String title, String type, Resource root, Property property, HashMap<Resource,DataPVHMap<Property, RDFNode>> map){
+
+	 private static String getDiffDescription2(String title, String type, Resource root, InstanceKey key, HashMap<Resource,DataPVHMap<InstanceKey, RDFNode>> map){
 		 String ret = String.format("%s %s<br/>",
 				 title,
 				 ToolJena.prettyPrint(root));
-		 if (ToolSafe.isEmpty(property)){
+		 if (ToolSafe.isEmpty(key)){
 			 
-			 Iterator<Map.Entry<Property, Set<RDFNode>>> iter_item = map.get(root).entrySet().iterator();
+			 Iterator<Map.Entry<InstanceKey, Set<RDFNode>>> iter_item = map.get(root).entrySet().iterator();
 			 while (iter_item.hasNext()){
-				 Map.Entry<Property, Set<RDFNode>> pvs = iter_item.next();
-				 property =pvs.getKey();
+				 Map.Entry<InstanceKey, Set<RDFNode>> pvs = iter_item.next();
+				 key  =pvs.getKey();
 
-				 ret += String.format(" --> %s . [%s]{%s} <br/>",
-						 ToolJena.prettyPrint(property),
-						 type,
-						 prettyRDFNodes(pvs.getValue()));
+				 if (key.subject.equals(root))
+					 ret += String.format(" ----> %s . [%s]{%s} <br/>",
+							 ToolJena.prettyPrint(key.predicate),
+							 type,
+							 prettyRDFNodes(pvs.getValue()));
+				 else	 
+					 ret += String.format(" ==> %s %s . [%s]{%s} <br/>",
+							 ToolJena.prettyPrint(key.subject),
+							 ToolJena.prettyPrint(key.predicate),
+							 type,
+							 prettyRDFNodes(pvs.getValue()));
 			 }
 
 		 }else{
-			 ret += String.format(" --> %s . [%s]{%s}",
-					 ToolJena.prettyPrint(property),
-					 type,
-					 prettyRDFNodes(map.get(root).getValues((property))));
+			 if (key.subject.equals(root))
+				 ret += String.format(" ---->  %s . [%s]{%s}",
+						 ToolJena.prettyPrint(key.predicate),
+						 type,
+						 prettyRDFNodes(map.get(root).getValues((key))));
+			 else
+				 ret += String.format(" ==> %s %s . [%s]{%s}",
+						 ToolJena.prettyPrint(key.subject),
+						 ToolJena.prettyPrint(key.predicate),
+						 type,
+						 prettyRDFNodes(map.get(root).getValues((key))));
 		 }
 		 return ret;
 
 	 }
 	 
-	 private static String getDiffDescription3(String title, Resource root, Property property, HashMap<Resource,DataPVHMap<Property, RDFNode>> map_cur, HashMap<Resource,DataPVHMap<Property, RDFNode>> map_prev){
+	 private static String getDiffDescription3(String title, Resource root,InstanceKey key, HashMap<Resource,DataPVHMap<InstanceKey, RDFNode>> map_cur, HashMap<Resource,DataPVHMap<InstanceKey, RDFNode>> map_prev){
 		 String ret = String.format("%s %s<br/>",
 				 title,
 				 ToolJena.prettyPrint(root));
-		 if (ToolSafe.isEmpty(property)){
+		 if (ToolSafe.isEmpty(key)){
 			 
 
-			 HashSet<Property> props = new HashSet<Property>();
+			 HashSet<InstanceKey> props = new HashSet<InstanceKey>();
 			 props.addAll(map_cur.get(root).keySet());
 			 props.addAll(map_prev.get(root).keySet());
 			 
-			 Iterator<Property> iter = props.iterator();
+			 Iterator<InstanceKey> iter = props.iterator();
 			 while (iter.hasNext()){
-				 ret += String.format("  --> %s . [add] {%s} [del] {%s}<br/>",
-						 ToolJena.prettyPrint(property),
-						 prettyRDFNodes(map_cur.get(root).getValues((property))),
-						 prettyRDFNodes(map_prev.get(root).getValues((property))));				 
+				 key = iter.next();
+				 
+				 if (key.subject.equals(root))
+					 ret += String.format("  ----> %s . [add] {%s} [del] {%s}<br/>",
+							 ToolJena.prettyPrint(key.predicate),
+							 prettyRDFNodes(map_cur.get(root).getValues((key))),
+							 prettyRDFNodes(map_prev.get(root).getValues((key))));				 
+				 else
+					 ret += String.format("  ==> %s %s . [add] {%s} [del] {%s}<br/>",
+							 ToolJena.prettyPrint(key.subject),
+							 ToolJena.prettyPrint(key.predicate),
+							 prettyRDFNodes(map_cur.get(root).getValues((key))),
+							 prettyRDFNodes(map_prev.get(root).getValues((key))));				 
 			 }
 
 		 }else{
-			 ret += String.format(" --> %s . [add] {%s} [del] {%s}",
-					 ToolJena.prettyPrint(property),
-					 prettyRDFNodes(map_cur.get(root).getValues((property))),
-					 prettyRDFNodes(map_prev.get(root).getValues((property))));
+			 if (key.subject.equals(root))
+				 ret += String.format(" ----> %s . [add] {%s} [del] {%s}",
+						 prettyRDFNodes(map_cur.get(root).getValues((key))),
+						 prettyRDFNodes(map_prev.get(root).getValues((key))));
+			 else
+				 ret += String.format(" ==> %s %s . [add] {%s} [del] {%s}",
+						 ToolJena.prettyPrint(key.subject),
+						 ToolJena.prettyPrint(key.predicate),
+						 prettyRDFNodes(map_cur.get(root).getValues((key))),
+						 prettyRDFNodes(map_prev.get(root).getValues((key))));
 		 }
 		 return ret;
 
 	 }
 	 
-	 public String getDiffDescription(Resource root, Property property){
+	 public String getDiffDescription(Resource root, InstanceKey key){
 		 if (m_roots_add.contains(root)){
 			 return String.format("[add instance] %s <br/> %s",
 					 ToolJena.prettyPrint(root),
@@ -459,12 +571,12 @@ public class TaskDiff {
 			 return String.format("[del instance] %s <br/> %s",
 					 ToolJena.prettyPrint(root),
 					 prettyDescription(root,  m_model_prev));
-		 }else if (m_map_root_add.keySet().contains(root) && !ToolSafe.isEmpty(property)){
-			 return getDiffDescription2("[update instance]", "add", root, property, m_map_root_add );
+		 }else if (m_map_root_add.keySet().contains(root) ){
+			 return getDiffDescription2("[update instance]", "add", root, key, m_map_root_add );
 		 }else if (m_map_root_del.keySet().contains(root)){
-			 return getDiffDescription2("[update instance]","del", root, property, m_map_root_del );
-		 }else if (m_map_root_update_cur.keySet().contains(root)&& !ToolSafe.isEmpty(property)){
-			 return getDiffDescription3("[update instance]",root, property, m_map_root_update_cur, m_map_root_update_prev  );
+			 return getDiffDescription2("[update instance]","del", root, key, m_map_root_del );
+		 }else if (m_map_root_update_cur.keySet().contains(root)){
+			 return getDiffDescription3("[update instance]",root, key, m_map_root_update_cur, m_map_root_update_prev  );
 
 		 }
 		 
@@ -489,7 +601,7 @@ public class TaskDiff {
 
 				 String title = "[new]" + ToolJena.getValueOfProperty(this.m_model_cur,  root, p_title,"");
 				 String link = ToolJena.getValueOfProperty(this.m_model_cur,  root, p_link,"");
-				 String description = getDiffDescription(root);
+				 String description = getDiffDescription(root, null);
 
 				 m.add(root, RDF.type, RSS.item);
 				 m.add(root, RSS.title, title);
@@ -508,7 +620,7 @@ public class TaskDiff {
 
 				 String title = "[deleted]" + ToolJena.getValueOfProperty(this.m_model_prev,  root, p_title,"");
 				 String link = ToolJena.getValueOfProperty(this.m_model_prev,  root, p_link,"");
-				 String description = getDiffDescription(root);
+				 String description = getDiffDescription(root, null);
 
 				 m.add(root, RDF.type, RSS.item);
 				 m.add(root, RSS.title, title);
@@ -541,23 +653,15 @@ public class TaskDiff {
 		 
 		 
 		 {
-			 Iterator<Map.Entry<Resource,DataPVHMap<Property, RDFNode>>> iter = this.m_map_root_add.entrySet().iterator();
+			 Iterator<Map.Entry<Resource,DataPVHMap<InstanceKey, RDFNode>>> iter = this.m_map_root_add.entrySet().iterator();
 			 while(iter.hasNext()){
-				 Map.Entry<Resource,DataPVHMap<Property, RDFNode>> item = iter.next();
+				 Map.Entry<Resource,DataPVHMap<InstanceKey, RDFNode>> item = iter.next();
 				 Resource root = item.getKey();
 
 				 String title = "[updated (add)]" + ToolJena.getValueOfProperty(this.m_model_cur,  root, p_title,"");
 				 String link = ToolJena.getValueOfProperty(this.m_model_cur,  root, p_link,"");
-				 String description = "";
+				 String description = getDiffDescription(root, null);
 				 
-				 Iterator<Map.Entry<Property, Set<RDFNode>>> iter_item = item.getValue().entrySet().iterator();
-				 while (iter_item.hasNext()){
-					 Map.Entry<Property, Set<RDFNode>> pvs = iter_item.next();
-					 Property property =pvs.getKey();
-					 
-					 description += getDiffDescription(root, property) +"<p/>";
-
-				 }
 
 				 m.add(root, RDF.type, RSS.item);
 				 m.add(root, RSS.title, title);
@@ -568,22 +672,15 @@ public class TaskDiff {
 			 }
 		 }
 		 {
-			 Iterator<Map.Entry<Resource,DataPVHMap<Property, RDFNode>>> iter = this.m_map_root_del.entrySet().iterator();
+			 Iterator<Map.Entry<Resource,DataPVHMap<InstanceKey, RDFNode>>> iter = this.m_map_root_del.entrySet().iterator();
 			 while(iter.hasNext()){
-				 Map.Entry<Resource,DataPVHMap<Property, RDFNode>> item = iter.next();
+				 Map.Entry<Resource,DataPVHMap<InstanceKey, RDFNode>> item = iter.next();
 				 Resource root = item.getKey();
 				 
 				 String title = "[updated (del)]" + ToolJena.getValueOfProperty(this.m_model_prev,  root, p_title,"");
 				 String link = ToolJena.getValueOfProperty(this.m_model_prev,  root, p_link,"");
-				 String description = "";
+				 String description = getDiffDescription(root,  null);
 
-				 Iterator<Map.Entry<Property, Set<RDFNode>>> iter_item = item.getValue().entrySet().iterator();
-				 while (iter_item.hasNext()){
-					 Map.Entry<Property, Set<RDFNode>> pvs = iter_item.next();
-					 Property property =pvs.getKey();
-
-					 description += getDiffDescription(root, property) +"<p/>";
-				 }
 				 
 				 m.add(root, RDF.type, RSS.item);
 				 m.add(root, RSS.title, title);
@@ -594,23 +691,15 @@ public class TaskDiff {
 			 }
 		 }
 		 {
-			 Iterator<Map.Entry<Resource,DataPVHMap<Property, RDFNode>>> iter = this.m_map_root_update_cur.entrySet().iterator();
+			 Iterator<Map.Entry<Resource,DataPVHMap<InstanceKey, RDFNode>>> iter = this.m_map_root_update_cur.entrySet().iterator();
 			 while(iter.hasNext()){
-				 Map.Entry<Resource,DataPVHMap<Property, RDFNode>> item = iter.next();
+				 Map.Entry<Resource,DataPVHMap<InstanceKey, RDFNode>> item = iter.next();
 				 Resource root = item.getKey();
 
 				 String title = "[updated (update)]" + ToolJena.getValueOfProperty(this.m_model_cur,  root, p_title,"");
 				 String link = ToolJena.getValueOfProperty(this.m_model_cur,  root, p_link,"");
-				 String description = "";
-				 
-				 Iterator<Map.Entry<Property, Set<RDFNode>>> iter_item = item.getValue().entrySet().iterator();
-				 while (iter_item.hasNext()){
-					 Map.Entry<Property, Set<RDFNode>> pvs = iter_item.next();
-					 Property property =pvs.getKey();
+				 String description = getDiffDescription(root,  null);
 
-					 description += getDiffDescription(root, property) +"<p/>";
-
-				 }
 
 				 m.add(root, RDF.type, RSS.item);
 				 m.add(root, RSS.title, title);
