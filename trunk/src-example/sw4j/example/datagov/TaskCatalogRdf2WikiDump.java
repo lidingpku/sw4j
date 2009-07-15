@@ -120,7 +120,7 @@ public class TaskCatalogRdf2WikiDump {
 					if (stmt.getObject().isURIResource()){
 						sz_content  += String.format("*[[has type::Type:URL]]\n*[[rdf:type::Category:owl:DatatypeProperty]]\n*[[dc:relation::Dataset_92]]");
 					}else{
-						sz_content  += String.format("*[[has type::Type:Text]]\n*[[rdf:type::Category:owl:DatatypeProperty]]\n*[[dc:relation::Dataset_92]]");						
+						sz_content  += String.format("*[[has type::Type:String]]\n*[[rdf:type::Category:owl:DatatypeProperty]]\n*[[dc:relation::Dataset_92]]");						
 					}
 					
 					String title_property=String.format("Property:92/%s", stmt.getPredicate().getLocalName());
