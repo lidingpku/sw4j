@@ -229,9 +229,9 @@ public class ToolOwl2SemanticMediaWiki {
 							map_range_wikitype.put(RDFS.Literal, "Text");
 							map_range_wikitype.put(XSD.xstring, "Text");
 							map_range_wikitype.put(XSD.dateTime, "Date");
-							map_range_wikitype.put(XSD.negativeInteger, "Integer");
-							map_range_wikitype.put(XSD.integer, "Integer");
-							map_range_wikitype.put(XSD.nonNegativeInteger, "Integer");
+							map_range_wikitype.put(XSD.negativeInteger, "Number");
+							map_range_wikitype.put(XSD.integer, "Number");
+							map_range_wikitype.put(XSD.nonNegativeInteger, "Number");
 							if (stmt.getPredicate().equals(RDFS.range)){
 								String wikitype = map_range_wikitype.get(resObj);
 								if (null!=wikitype){
