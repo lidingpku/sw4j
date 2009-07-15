@@ -7,6 +7,7 @@ import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
+import sw4j.servlet.vocabulary.DGTWC;
 import sw4j.task.util.ToolOwl2SemanticMediaWiki;
 
 
@@ -20,6 +21,7 @@ public class TaskOwl2WikiDump {
 				{RDFS.getURI(), RDFS.class.getSimpleName().toLowerCase(),"files/owl2wikidump/"+RDFS.class.getSimpleName().toLowerCase()+".xml"},
 				{DCTerms.getURI(), DCTerms.class.getSimpleName().toLowerCase(),"files/owl2wikidump/"+DCTerms.class.getSimpleName().toLowerCase()+".xml"},
 				{FOAF.getURI(), FOAF.class.getSimpleName().toLowerCase(),"files/owl2wikidump/"+FOAF.class.getSimpleName().toLowerCase()+".xml"},
+				{DGTWC.getURI(), DGTWC.class.getSimpleName().toLowerCase(),"files/owl2wikidump/"+DGTWC.class.getSimpleName().toLowerCase()+".xml"},
 				{"http://inference-web.org/2.0/ds.owl#", "ds", "files/owl2wikidump/ds.xml"},
 				{"http://inference-web.org/2.0/pml-provenance.owl#", "pmlp","files/owl2wikidump/pmlp.xml"},
 				{"http://inference-web.org/2.0/pml-justification.owl#", "pmlj","files/owl2wikidump/pmlj.xml"},
