@@ -49,6 +49,7 @@ import sw4j.util.DataCachedObjectMap;
 import sw4j.util.DataQname;
 import sw4j.util.ToolSafe;
 import sw4j.util.ToolURI;
+import sw4j.util.web.AgentURLExtractor;
 import sw4j.util.web.DataRobotsTxt;
 
 public class ToolLoadHttp extends ToolLoad{
@@ -415,5 +416,36 @@ public class ToolLoadHttp extends ToolLoad{
 		  return task;
 	}
 	
+	public static Set<String> listWebDirItems(String szBaseUrl, boolean bKeepDirectory, boolean bKeepFile){
+		HashSet<String> ret = new HashSet<String>();
+		String content = ToolLoadHttp.wget(szBaseUrl);
+		if (ToolSafe.isEmpty(ret))
+			return ret ;
+		
+		Iterator<String> iter = AgentURLExtractor.process(content, szBaseUrl).iterator();
+		while (iter.hasNext()){
+			String szUrl = iter.next();
+			
+			if (!szUrl.startsWith(szBaseUrl))
+				continue;
+
+
+			boolean bIsDirectory = szUrl.endsWith("/");
+			boolean bIsFile = !bIsDirectory && !szUrl.equals(".") && !szUrl.equals("..");
+
+			if (!bKeepDirectory &&  bIsDirectory)
+				continue;
+			
+			if (!bKeepFile && bIsFile )
+				continue;
+
+			//extract sub link
+			String temp = szUrl.substring(szBaseUrl.length(), szUrl.length()- (bIsDirectory?1:0));
+			System.out.println(temp);
+
+			ret.add(temp);
+		}
+		return ret;
+	}
 	
 }
