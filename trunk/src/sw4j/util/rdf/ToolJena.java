@@ -66,7 +66,6 @@ import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.NodeIterator;
-import com.hp.hpl.jena.rdf.model.NsIterator;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.RDFWriter;
@@ -833,13 +832,17 @@ public class ToolJena {
 		if (!isConsistent(ref))
 			return;
 
-		NsIterator iter = m.listNameSpaces();
+		//System.out.println(ref.getNsPrefixMap());
+		m.setNsPrefixes(ref.getNsPrefixMap());
+		/*NsIterator iter = ref.listNameSpaces();
 		while (iter.hasNext()){
 			String ns = iter.nextNs();
 			String prefix = ref.getNsURIPrefix(ns);
 			if (null!= prefix)
 				m.setNsPrefix(prefix,ns);
-		}
+		}*/
+		//System.out.println(m.getNsPrefixMap());
+		
  	}	
 	
 	public static boolean isConsistent(Model m){
@@ -1007,6 +1010,7 @@ public class ToolJena {
 			String szNamespace = res.getNameSpace();
 			if (null!=szNamespace){
 				String szPrefix = ToolModelAnalysis.getKnownNamespacePrefix(szNamespace);
+				//System.out.println(res.getModel().getNsPrefixMap());
 				if (ToolSafe.isEmpty(szPrefix))
 					szPrefix = res.getModel().getNsURIPrefix(szNamespace);
 				return szPrefix;
