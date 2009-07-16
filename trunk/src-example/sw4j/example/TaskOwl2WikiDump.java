@@ -15,13 +15,13 @@ public class TaskOwl2WikiDump {
 	public static void main(String[] args) {
 
 		String [][] aryInputOutput = new String [][]{
+				{DGTWC.getURI(), DGTWC.class.getSimpleName().toLowerCase(),"files/owl2wikidump/"+DGTWC.class.getSimpleName().toLowerCase()+".xml"},
 				{DC.getURI(), DC.class.getSimpleName().toLowerCase(),"files/owl2wikidump/"+DC.class.getSimpleName().toLowerCase()+".xml"},
 				{OWL.getURI(), OWL.class.getSimpleName().toLowerCase(), "files/owl2wikidump/"+OWL.class.getSimpleName().toLowerCase()+".xml"},
 				{RDF.getURI(), RDF.class.getSimpleName().toLowerCase(), "files/owl2wikidump/"+RDF.class.getSimpleName().toLowerCase()+".xml"},
 				{RDFS.getURI(), RDFS.class.getSimpleName().toLowerCase(),"files/owl2wikidump/"+RDFS.class.getSimpleName().toLowerCase()+".xml"},
 				{DCTerms.getURI(), DCTerms.class.getSimpleName().toLowerCase(),"files/owl2wikidump/"+DCTerms.class.getSimpleName().toLowerCase()+".xml"},
 				{FOAF.getURI(), FOAF.class.getSimpleName().toLowerCase(),"files/owl2wikidump/"+FOAF.class.getSimpleName().toLowerCase()+".xml"},
-				{DGTWC.getURI(), DGTWC.class.getSimpleName().toLowerCase(),"files/owl2wikidump/"+DGTWC.class.getSimpleName().toLowerCase()+".xml"},
 				{"http://inference-web.org/2.0/ds.owl#", "ds", "files/owl2wikidump/ds.xml"},
 				{"http://inference-web.org/2.0/pml-provenance.owl#", "pmlp","files/owl2wikidump/pmlp.xml"},
 				{"http://inference-web.org/2.0/pml-justification.owl#", "pmlj","files/owl2wikidump/pmlj.xml"},
