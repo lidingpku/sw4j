@@ -63,7 +63,7 @@ public class ToolOwl2SemanticMediaWiki {
 		HashMap<String,String> map_pages = get_wikidump_pages(szOntologyNamespace, szPrefix);
 		
 		System.out.println(map_pages.size() +" page generated!");
-		ToolMediaWiki.create_wiki_dump( map_pages, szFilename);				
+		ToolMediaWiki.create_wiki_dump( map_pages, false, szFilename);				
 	}
 	
 	/**
@@ -98,7 +98,7 @@ public class ToolOwl2SemanticMediaWiki {
 		if (null== m)
 			return data;
 
-		System.out.println(m.getNsPrefixMap());
+		//System.out.println(m.getNsPrefixMap());
 		
 		//identify all classes
 		{
@@ -446,7 +446,7 @@ public class ToolOwl2SemanticMediaWiki {
 			//		break;
 			//	}
 			//}
-			
+			int i=2;
 			DataQname dq = ToolJena.getDataQname(node);
 			if (null!=dq){
 				szPrefix= dq.getPrefix();
