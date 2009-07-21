@@ -185,7 +185,7 @@ public class ToolOwl2SemanticMediaWiki {
 						
 						if (null!=dq && dq.hasPrefix() && dq.getPrefix().equals(szPrefix) ){
 							content.add( toWiki("imported from", dq.getPrefix()+":"+dq.getLocalname(), false));
-							content.add( String.format("\n* see aslo [[%s]]",szSMW_import_page));
+							content.add( String.format("\n* see also [[%s]]",szSMW_import_page));
 						}						
 
 					}
@@ -446,7 +446,6 @@ public class ToolOwl2SemanticMediaWiki {
 			//		break;
 			//	}
 			//}
-			int i=2;
 			DataQname dq = ToolJena.getDataQname(node);
 			if (null!=dq){
 				szPrefix= dq.getPrefix();

@@ -121,7 +121,7 @@ public class TaskCatalogRdf2WikiDump {
 					
 					String sz_format = sz_predicate_localname.substring(0,sz_predicate_localname.indexOf("_access_point"));
 
-					String sz_content = "<!--";
+					String sz_content = "<!--\n";
 					sz_content +=to_hidden_wiki("dc:relation","Dataset_"+map_uri_id.get(subject));
 					sz_content +=to_hidden_wiki("rdfs:seeAlso",sz_object);
 					sz_content +=to_hidden_wiki("dc:format",sz_format);
@@ -151,7 +151,7 @@ public class TaskCatalogRdf2WikiDump {
 					map_pages_bot,
 					map_pages_man, 
 					title_dataset, 
-					String.format("%s%s[[Category:dgtwc:Dataset]]{{#ifexist:BOT:%s_index|{{BOT:%s_index}}}}", content1,content2,title_dataset,title_dataset));
+					String.format("<!--\n-->%s%s<!--\n-->[[Category:dgtwc:Dataset]]<!--\n-->{{#ifexist:BOT:%s_index|{{BOT:%s_index}}}}<!--\n-->{{#ifexist:BOT:Dataset_at_data.gov|{{BOT:Dataset_at_data.gov}}}}<!--\n-->", content1,content2,title_dataset,title_dataset));
 
 		}
 		
@@ -185,6 +185,7 @@ public class TaskCatalogRdf2WikiDump {
 			Statement stmt = iter.nextStatement();
 			
 			String value = ToolJena.getNodeString(stmt.getObject());
+			String property = stmt.getPredicate().getURI();
 
 			/*
 			if (stmt.getObject().isURIResource()){
@@ -199,7 +200,33 @@ public class TaskCatalogRdf2WikiDump {
 			// remove markups and â??
 			value = value.replaceAll("<[^>]+>", "");
 			value = value.replaceAll("\\s+", " ");
+			
+			//////////////////////////////////////////////
+			//////////////////////////////////////////////
+			//////////////////////////////////////////////
+			//special treatments
 			value = value.replaceAll("â", " ");
+
+			if ( (property.indexOf("title")>0 && value.indexOf("Toxics Release Inventory data for ")>0)
+					||(property.indexOf("title")>0 && value.indexOf("Toxics Release Inventory for ")>0)){
+				sz_content += "-->[[Category:Skipped Subset Dataset]]<!--\n";
+				
+				/*
+				 * 
+				 //TODO
+				String sz_state="";
+				String sz_sparql="";
+				if (value.indexOf("state")>=0){
+					
+				}
+				if (value.indexOf("2005")>=0){
+					sz_content +=String.format("-->This dataset is a subset of [[Dataset 191]]. You can get this dataset by running a sparql query \n<pre>%s</pre><!--",sz_sparql);
+				}
+				*/
+			}
+
+			
+			//////////////////////////////////////////////
 			
 			//escape data
 			//value = ToolWeb.escapeHTML(value);

@@ -11,7 +11,9 @@ import sw4j.util.Sw4jException;
 import sw4j.util.rdf.ToolJena;
 import sw4j.util.web.ToolMediaWiki;
 import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.NodeIterator;
 import com.hp.hpl.jena.rdf.model.Property;
+import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
@@ -61,7 +63,7 @@ public class TaskIndexRdf2WikiDump {
 			if (null== m)
 				return sz_content;
 
-			sz_content += "<![CDATA[<noinclude>This is an automatically generated page, DO NOT modify this page.</noinclude><includeonly><!--\n";
+			sz_content += "<![CDATA[<noinclude>This is an automatically generated page, DO NOT modify this page.</noinclude><includeonly>[[Category:Converted Dataset]]<!--\n";
 			// list special annotations
 			Property p = DGTWC.number_of_entries;
 			sz_content += TaskCatalogRdf2WikiDump.to_hidden_wiki(
@@ -85,6 +87,29 @@ public class TaskIndexRdf2WikiDump {
 					DGTWC.number_of_triples_qname,
 					ToolJena.getValueOfProperty(m, null, p, "0") );
 
+			{
+				p = DGTWC.complete_data;
+				NodeIterator iter = m.listObjectsOfProperty(p);
+				while (iter.hasNext()){
+					RDFNode node = iter.nextNode();
+
+					sz_content += TaskCatalogRdf2WikiDump.to_hidden_wiki(
+							DGTWC.complete_data_qname,
+							ToolJena.getNodeString(node));
+				}
+			}
+
+			{
+				p = DGTWC.link_data;
+				NodeIterator iter = m.listObjectsOfProperty(p);
+				while (iter.hasNext()){
+					RDFNode node = iter.nextNode();
+
+					sz_content += TaskCatalogRdf2WikiDump.to_hidden_wiki(
+							DGTWC.link_data_qname,
+							ToolJena.getNodeString(node));
+				}
+			}
 			// list properties
 			{
 				sz_content += "\n\nproperties\n";
