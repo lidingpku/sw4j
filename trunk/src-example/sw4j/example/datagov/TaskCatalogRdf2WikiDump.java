@@ -35,8 +35,29 @@ public class TaskCatalogRdf2WikiDump {
 		
 		save_property(m);
 		save_entries(m);
+		save_states();
 	}
 		
+	public static void save_states(){
+		String  sz_file_output_prop = "files/rdf2wikidump/states.xml";
+		HashMap<String,String> map_pages_states= new HashMap<String,String> ();
+
+		for (int i=0; i< aryStateAbbrev.length; i++){
+			String sz_content = String.format("[[rdfs:seeAlso::http://en.wikipedia.org/wiki/%s]][[Category:%s]]",  aryStateAbbrev[i][0], aryStateAbbrev[i][2]);
+			String sz_title = String.format("%s", aryStateAbbrev[i][0]);
+			map_pages_states.put(sz_title, sz_content);
+
+			sz_content = String.format("#REDIRECT [[%s]]", aryStateAbbrev[i][0]);
+			sz_title = String.format("%s", aryStateAbbrev[i][1]);
+			map_pages_states.put(sz_title, sz_content);
+		}
+
+		//save the map to wikidump
+		System.out.println(map_pages_states.size() +" page generated!");
+		//System.out.println(map_pages);
+		ToolMediaWiki.create_wiki_dump( map_pages_states, false, sz_file_output_prop);				
+		
+	}
 	public static void save_property(Model m){
 		String  sz_file_output_prop = "files/rdf2wikidump/92prop.xml";
 		HashMap<String,String> map_pages_property = new HashMap<String,String> ();
@@ -172,7 +193,7 @@ public class TaskCatalogRdf2WikiDump {
 			HashMap<String, String> map_pages_man,
 			String title, String content) {
 		String title_bot= "BOT:"+title;
-		String content_bot = String.format("<![CDATA[<noinclude>This is an automatically generated page, DO NOT modify this page.</noinclude><includeonly>%s</includeonly>]]>", content);
+		String content_bot = String.format("<![CDATA[<noinclude>This is an automatically generated page for [[%s]], DO NOT modify this page.</noinclude><includeonly>%s</includeonly>]]>", title, content);
 		map_pages_bot.put(title_bot, content_bot);
 		
 		map_pages_man.put(title, String.format("{{:%s}}", title_bot));
@@ -211,18 +232,7 @@ public class TaskCatalogRdf2WikiDump {
 					||(property.indexOf("title")>0 && value.indexOf("Toxics Release Inventory for ")>0)){
 				sz_content += "-->[[Category:Skipped Subset Dataset]]<!--\n";
 				
-				/*
-				 * 
-				 //TODO
-				String sz_state="";
-				String sz_sparql="";
-				if (value.indexOf("state")>=0){
-					
-				}
-				if (value.indexOf("2005")>=0){
-					sz_content +=String.format("-->This dataset is a subset of [[Dataset 191]]. You can get this dataset by running a sparql query \n<pre>%s</pre><!--",sz_sparql);
-				}
-				*/
+				sz_content +=String.format("-->%s<!--", get_EPA_annotation(value));
 			}
 
 			
@@ -255,5 +265,125 @@ public class TaskCatalogRdf2WikiDump {
 	static String to_hidden_wiki(String property, String value){
 		//return String.format("-->{{#set:%s=%s}}<!--\n",property, value);
 		return String.format("-->[[%s::%s| ]]<!--\n",property, value);
+	}
+	
+	static String[][] aryStateAbbrev = new String[][]{
+		{"Alaska","AK","US State"},
+		{"Alabama","AL","US State"},
+		{"Arkansas","AR","US State"},
+		{"American Samoa","AS","US Territory"},
+		{"Arizona","AZ","US State"},
+		{"California","CA","US State"},
+		{"Colorado","CO","US State"},
+		{"Connecticut","CT","US State"},
+		{"District of Columbia","DC","US Territory"},
+		{"Delaware","DE","US State"},
+		{"Florida","FL","US State"},
+		{"Georgia","GA","US State"},
+		{"Guam","GU","US Territory"},
+		{"Hawaii","HI","US State"},
+		{"Iowa","IA","US State"},
+		{"Idaho","ID","US State"},
+		{"Illinois","IL","US State"},
+		{"Indiana","IN","US State"},
+		{"Kansas","KS","US State"},
+		{"Kentucky","KY","US State"},
+		{"Louisiana","LA","US State"},
+		{"Massachusetts","MA","US State"},
+		{"Maryland","MD","US State"},
+		{"Maine","ME","US State"},
+		{"Michigan","MI","US State"},
+		{"Minnesota","MN","US State"},
+		{"Missouri","MO","US State"},
+		{"Mariana Islands","MP","US Territory"},
+		{"Mississippi","MS","US State"},
+		{"Montana","MT","US State"},
+		{"North Carolina","NC","US State"},
+		{"North Dakota","ND","US State"},
+		{"Nebraska","NE","US State"},
+		{"New Hampshire","NH","US State"},
+		{"New Jersey","NJ","US State"},
+		{"New Mexico","NM","US State"},
+		{"Nevada","NV","US State"},
+		{"New York","NY","US State"},
+		{"Ohio","OH","US State"},
+		{"Oklahoma","OK","US State"},
+		{"Oregon","OR","US State"},
+		{"Pennsylvania","PA","US State"},
+		{"Puero Rico","PR","US Territory"},
+		{"Rhode Island","RI","US State"},
+		{"South Carolina","SC","US State"},
+		{"South Dakota","SD","US State"},
+		{"Tennessee","TN","US State"},
+		{"Texas","TX","US State"},
+		{"Utah","UT","US State"},
+		{"Virginia","VA","US State"},
+		{"Virgin Islands","VI","US Territory"},
+		{"Vermont","VT","US State"},
+		{"Washington","WA","US State"},
+		{"Wisconsin","WI","US State"},
+		{"West Virgina","WV","US State"},
+		{"Wyoming","WY","US State"},
+	};
+
+	static String get_EPA_annotation(String value){
+		String year = value.substring(0,4);
+		/*
+		 * http://data-gov.tw.rpi.edu/raw/191/EPA_TRI_05YR00001.rdf
+		 * 
+		 */
+
+		int nSuperDataId = 191;
+		if (year.equals("2005")){
+			nSuperDataId =191;
+		}else if (year.equals("2006")){
+			nSuperDataId =249;
+		}else if (year.equals("2007")){
+			nSuperDataId =307;
+		}
+		
+		String sz_sparql ="";
+		String sz_description =""; 
+		if (value.indexOf("Federal Facilities")>0){
+			sz_description = "This is a dataset is related to [[dgtwc:coverage::Federal Facilities]].";
+			sz_sparql = String.format(
+					"\nCONSTRUCT {    ?s  ?p  ?o .  }" +
+					"\nFROM <http://data-gov.tw.rpi.edu/raw/%d/data-%d.nt> " +
+					"\nWHERE {" +
+					"\n	?s  ?p  ?o ." +
+					"\n   ?s  ?p1  \"YES\"." +
+					"\n    FILTER regex(str(?p1), \"federal_facility_ind\") " +
+					"\n}",
+					nSuperDataId,
+					nSuperDataId );
+		}else{
+			for (int i=0; i<aryStateAbbrev.length; i++){
+				String state = aryStateAbbrev[i][0];
+				if (value.indexOf(state)>0){
+					sz_description = String.format("This is a dataset is related to the US state(or territory) [[%s]].", state);
+					sz_sparql=String.format(
+							"\nCONSTRUCT {    ?s  ?p  ?o .  }" +
+							"\nFROM <http://data-gov.tw.rpi.edu/raw/%d/data-%d.nt.gz> " +
+							"\nWHERE {" +
+							"\n	?s  ?p  ?o ." +
+							"\n   ?s  ?p1 \"NO\"." +
+							"\n   ?s  ?p2 \"%s\" ." +
+							"\n    FILTER regex(str(?p1), \"federal_facility_ind\") " +
+							"\n    FILTER regex(str(?p2), \"facility_state\") " +
+							"\n}",
+							nSuperDataId,
+							nSuperDataId,
+							aryStateAbbrev[i][1]);
+				}
+			}
+		}
+		
+		
+		return String.format("This dataset is a subset of [[dgtwc:coverage::Dataset_%d]]. %s" +
+				" You may obtain this dataset using the following sparql " +
+				"query on the complete data of that dataset. \n<pre>%s</pre>", 
+				nSuperDataId,
+				sz_description,
+				sz_sparql);
 	}
 }

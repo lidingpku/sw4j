@@ -63,7 +63,7 @@ public class TaskIndexRdf2WikiDump {
 			if (null== m)
 				return sz_content;
 
-			sz_content += "<![CDATA[<noinclude>This is an automatically generated page, DO NOT modify this page.</noinclude><includeonly>[[Category:Converted Dataset]]<!--\n";
+			sz_content += String.format("<![CDATA[<noinclude>This is an automatically generated page for [[Dataset_%d]], DO NOT modify this page.</noinclude><includeonly>[[Category:Converted Dataset]]<!--\n", id);
 			// list special annotations
 			Property p = DGTWC.number_of_entries;
 			sz_content += TaskCatalogRdf2WikiDump.to_hidden_wiki(
