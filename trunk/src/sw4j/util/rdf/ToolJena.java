@@ -601,7 +601,7 @@ public class ToolJena {
 	}
 	
 	
-	public static Object sparql_exec(String queryString, boolean usePellet){
+	public static Object sparql_exec(String queryString, boolean usePellet, String szRdfSyntax){
 		Query query = QueryFactory.create(queryString) ;
 		
 		QueryExecution qexec;
@@ -621,7 +621,12 @@ public class ToolJena {
 		}else if (query.isSelectType()){
 			ResultSet results = qexec.execSelect() ;
 			ByteArrayOutputStream sw = new ByteArrayOutputStream();
-			ResultSetFormatter.out(sw,results, query);
+			if (RDFSYNTAX.SPARQL_XML.equals(szRdfSyntax)){
+				ResultSetFormatter.outputAsXML(sw, results);
+			}else{
+				ResultSetFormatter.out(sw,results, query);				
+			}
+					
 			ret = sw.toString();
 		}else if (query.isAskType()){
 			ret = qexec.execAsk() ;
@@ -632,8 +637,8 @@ public class ToolJena {
 	}
 	
 	
-	public static Model  sparql_create_describe(String queryString, boolean usePellet){	
-		Object ret = sparql_exec(queryString, usePellet);
+	public static Model  sparql_create_describe(String queryString, boolean usePellet, String szRdfSyntax){	
+		Object ret = sparql_exec(queryString, usePellet,szRdfSyntax);
 		if (ret instanceof Model)
 			return (Model)ret;
 		else
@@ -657,8 +662,8 @@ public class ToolJena {
 		*/
 	}
 	
-	public static String  sparql_select(String queryString,  boolean usePellet){
-		Object ret = sparql_exec(queryString, usePellet);
+	public static String  sparql_select(String queryString,  boolean usePellet, String szRdfSyntax){
+		Object ret = sparql_exec(queryString, usePellet, szRdfSyntax);
 		if (ret instanceof String)
 			return (String)ret;
 		else
@@ -692,8 +697,8 @@ public class ToolJena {
 		*/
 	}	
 
-	public static boolean sparql_ask (String queryString,  boolean usePellet){
-		Object ret = sparql_exec(queryString, usePellet);
+	public static boolean sparql_ask (String queryString,  boolean usePellet, String szRdfSyntax){
+		Object ret = sparql_exec(queryString, usePellet, szRdfSyntax);
 		if (ret instanceof Boolean)
 			return (Boolean)ret;
 		else

@@ -49,7 +49,7 @@ public class SparqlService {
         //assert (bEmptyText==false)
 
         // run sparql and return result
-        Object results = ToolJena.sparql_exec(queryText, bUsePellet);
+        Object results = ToolJena.sparql_exec(queryText, bUsePellet, rdfsyntax);
         if (ToolSafe.isEmpty(results)){
         	DataServeletResponse ret = DataServeletResponse.createResponse("empty result.", false, requestURI, AGENT,  rdfsyntax);
         	return ret;

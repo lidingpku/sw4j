@@ -11,12 +11,16 @@ public class RDFSYNTAX {
 	public static final String RDFXML_ABBREV = "RDF/XML-ABBREV";
 	
 	public static final String RDFA = "RDFA";
+	public static final String SPARQL_XML = "sparql/xml";
+	public static final String SPARQL_JSON = "sparql/json";
 	
 	
 	public static final String MIME_N3= "text/rdf+n3";
 	public static final String MIME_RDFXML= "application/rdf+xml";
 	public static final String MIME_TEXT_PLAIN= "text/plain";
 	public static final String MIME_TEXT_HTML= "text/html";
+	public static final String MIME_SPARQL_XML ="application/sparql-results+xml";
+	public static final String MIME_SPARQL_JSON ="application/sparql-results+json";
 	/**
 	 * get mimetype for the rdf syntax
 	 * @param rdfsyntax
@@ -34,6 +38,10 @@ public class RDFSYNTAX {
 			return MIME_RDFXML;
 		}else if (NT.equals(rdfsyntax)){
 			return MIME_TEXT_PLAIN;
+		}else if (SPARQL_XML.equals(rdfsyntax)){
+			return MIME_SPARQL_XML;
+		}else if (SPARQL_JSON.equals(rdfsyntax)){
+			return MIME_SPARQL_JSON;
 		}else {
 			if (ToolSafe.isEmpty(default_mime_type))
 				return MIME_TEXT_HTML;
@@ -74,6 +82,10 @@ public class RDFSYNTAX {
 				return RDFXML_ABBREV;
 			}else if (NT.equalsIgnoreCase(rdfsyntax)){
 				return NT;
+			}else if (SPARQL_XML.equalsIgnoreCase(rdfsyntax)){
+				return SPARQL_XML;
+			}else if (SPARQL_JSON.equalsIgnoreCase(rdfsyntax)){
+				return SPARQL_JSON;
 			}else{
 				return null;
 			}

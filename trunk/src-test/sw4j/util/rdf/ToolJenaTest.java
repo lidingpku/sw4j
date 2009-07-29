@@ -142,7 +142,7 @@ public class ToolJenaTest {
 			String queryText;
 			try {
 				queryText = ToolIO.pipeFileToString("files/sparql_test/test10.sparql");
-				Object ret = ToolJena.sparql_exec(queryText, true);
+				Object ret = ToolJena.sparql_exec(queryText, true, RDFSYNTAX.SPARQL_XML);
 		        if (!ToolSafe.isEmpty(ret))
 		            System.out.println(ret);
 		        else
@@ -157,7 +157,7 @@ public class ToolJenaTest {
 			String queryText;
 			try {
 				queryText = ToolIO.pipeUrlToString("http://tw.rpi.edu/proj/portal.wiki/images/d/dd/CoreQuery3_0.sparql");
-				Object ret = ToolJena.sparql_exec(queryText, true);
+				Object ret = ToolJena.sparql_exec(queryText, true, RDFSYNTAX.RDFXML);
 		        if (!ToolSafe.isEmpty(ret))
 		            System.out.println(ret);
 		        else
@@ -173,7 +173,7 @@ public class ToolJenaTest {
 			String queryText;
 			try {
 				queryText = ToolIO.pipeUrlToString("http://onto.rpi.edu/alpha/sparql/test1.sparql");
-				Model m = ToolJena.sparql_create_describe(queryText, false);
+				Model m = ToolJena.sparql_create_describe(queryText, false, RDFSYNTAX.RDFXML);
 		        if (null!=m && m.size()>0)
 		            m.write(System.out, RDFSYNTAX.RDFXML);
 		        else
@@ -189,7 +189,7 @@ public class ToolJenaTest {
 			String queryText;
 			try {
 				queryText = ToolIO.pipeUrlToString("http://onto.rpi.edu/alpha/sparql/test4.sparql");
-				Object ret = ToolJena.sparql_exec(queryText, false);
+				Object ret = ToolJena.sparql_exec(queryText, false, RDFSYNTAX.RDFXML);
 		        if (!ToolSafe.isEmpty(ret))
 		            System.out.println(ret);
 		        else
@@ -209,7 +209,7 @@ public class ToolJenaTest {
 				"describe ?p " +
 				"FROM NAMED <http://www.cs.rpi.edu/~dingl/foaf.rdf> " +
 				"WHERE {GRAPH ?g { ?p rdf:type foaf:Person}} ";
-			Model m = ToolJena.sparql_create_describe(queryText, false);
+			Model m = ToolJena.sparql_create_describe(queryText, false, RDFSYNTAX.RDFXML);
 	        if (null!=m && m.size()>0)
 	            m.write(System.out, RDFSYNTAX.N3);
 	        else
@@ -219,7 +219,7 @@ public class ToolJenaTest {
 			String queryText;
 			try {
 				queryText = ToolIO.pipeFileToString("files/sparql_test/test2.sparql");
-				Model m = ToolJena.sparql_create_describe(queryText, false);
+				Model m = ToolJena.sparql_create_describe(queryText, false, RDFSYNTAX.RDFXML);
 		        if (null!=m && m.size()>0)
 		            m.write(System.out, RDFSYNTAX.RDFXML);
 		        else
@@ -240,7 +240,7 @@ public class ToolJenaTest {
 			"SELECT ?cls " +
 			"FROM <http://inference-web.org/2.0/pml-provenance.owl> " +
 			"WHERE {?cls rdfs:subClassOf  pmlp:Source } ";
-			System.out.println( ToolJena.sparql_select(queryText, false));
+			System.out.println( ToolJena.sparql_select(queryText, false, RDFSYNTAX.RDFXML));
 		}
 		{// default graph, with Pellet inference
 			String queryText = 
@@ -251,7 +251,7 @@ public class ToolJenaTest {
 			"SELECT ?cls " +
 			"FROM <http://inference-web.org/2.0/pml-provenance.owl> " +
 			"WHERE {?cls rdfs:subClassOf  pmlp:Source } ";
-			System.out.println( ToolJena.sparql_select(queryText, true));
+			System.out.println( ToolJena.sparql_select(queryText, true, RDFSYNTAX.RDFXML));
 		}
 		{// named graph, expect pattern in named graph, with Pellet inference
 			String queryText = 
@@ -262,7 +262,7 @@ public class ToolJenaTest {
 				"SELECT ?cls " +
 				"FROM NAMED  <http://inference-web.org/2.0/pml-provenance.owl> " +
 				"WHERE {GRAPH ?g {?cls rdfs:subClassOf  pmlp:Source } }";
-			System.out.println( ToolJena.sparql_select(queryText, true));
+			System.out.println( ToolJena.sparql_select(queryText, true, RDFSYNTAX.RDFXML));
 		}
 		
 		{// named graph, expect pattern in default graph,  with Pellet inference, no result (we need to be specific the pattern is on default graph or a named graph)
@@ -274,14 +274,14 @@ public class ToolJenaTest {
 				"SELECT ?cls " +
 				"FROM NAMED  <http://inference-web.org/2.0/pml-provenance.owl> " +
 				"WHERE { ?cls rdfs:subClassOf  pmlp:Source  }";
-			System.out.println( ToolJena.sparql_select(queryText, true));
+			System.out.println( ToolJena.sparql_select(queryText, true, RDFSYNTAX.RDFXML));
 		}
 
 		{
 			String queryText;
 			try {
 				queryText = ToolIO.pipeFileToString("files/sparql_test/test6.sparql");
-				System.out.println( ToolJena.sparql_select(queryText, true));
+				System.out.println( ToolJena.sparql_select(queryText, true, RDFSYNTAX.RDFXML));
 				
 			} catch (Sw4jException e) {
 				
@@ -293,7 +293,7 @@ public class ToolJenaTest {
 			String queryText;
 			try {
 				queryText = ToolIO.pipeFileToString("files/sparql_test/test7.sparql");
-				System.out.println( ToolJena.sparql_select(queryText, true));
+				System.out.println( ToolJena.sparql_select(queryText, true, RDFSYNTAX.RDFXML));
 				
 			} catch (Sw4jException e) {
 				
