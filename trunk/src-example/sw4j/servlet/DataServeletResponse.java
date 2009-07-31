@@ -39,6 +39,24 @@ public class DataServeletResponse {
 			response.m_root =null;
 
 			return response;
+		}else if (RDFSYNTAX.SPARQL_XML.equalsIgnoreCase(rdfsyntax)){
+			DataServeletResponse response = new DataServeletResponse();
+			response.m_sz_mime_type = RDFSYNTAX.MIME_SPARQL_XML;
+			response.m_sz_rdf_syntax =RDFSYNTAX.SPARQL_XML;
+			response.m_sz_content = msg;
+			response.m_model_content =null;
+			response.m_root =null;
+
+			return response;			
+		}else if (RDFSYNTAX.SPARQL_JSON.equalsIgnoreCase(rdfsyntax)){
+			DataServeletResponse response = new DataServeletResponse();
+			response.m_sz_mime_type = RDFSYNTAX.MIME_SPARQL_JSON;
+			response.m_sz_rdf_syntax =RDFSYNTAX.SPARQL_JSON;
+			response.m_sz_content = msg;
+			response.m_model_content =null;
+			response.m_root =null;
+
+			return response;			
 		}else{
 			Model m = ModelFactory.createDefaultModel();
 			Resource root = m.createResource();
@@ -113,10 +131,9 @@ public class DataServeletResponse {
 	}
 	public void output(PrintWriter out) throws IOException{
 		if (!ToolSafe.isEmpty(m_sz_content)){
-			String header =
-				"# date: "+ ToolString.formatXMLDateTime(System.currentTimeMillis())+"\n";
+			//String header = "# date: "+ ToolString.formatXMLDateTime(System.currentTimeMillis())+"\n";
 			
-			out.println(header);
+			//out.println(header);
 			out.println(getContent());
 		}else{
 			out.println(getContent());

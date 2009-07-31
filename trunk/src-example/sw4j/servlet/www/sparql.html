@@ -29,6 +29,7 @@ Paste a valid sparql query in the text field below.<br>
     Option: output syntax<SELECT name="view">
  <OPTION VALUE="" SELECTED>not-specified</OPTION>
  <OPTION VALUE="RDF/XML">RDF/XML</OPTION>
+ <OPTION VALUE="sparql/XML">SPARQL/XML</OPTION>
  <OPTION VALUE="RDF/XML-ABBREV">RDF/XML-ABBREV</OPTION>
  <OPTION VALUE="N3">N3</OPTION>
  </SELECT>
@@ -71,6 +72,10 @@ example usage
  href="http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test1.sparql">http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test1.sparql</a></li>
   <li> return N3 - <a
  href="http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test1.sparql&amp;view=n3">http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test1.sparql&amp;view=n3</a></li>
+  <li> return Text - <a
+ href="http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test3.sparql">http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test3.sparql</a></li>
+  <li> return SPARQL/Xml - <a
+ href="http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test3.sparql&amp;view=sparql/xml">http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test3.sparql&amp;view=sparql/xml</a></li>
   <li> use Pellet OWL DL inference - <a
  href="http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test4.sparql&amp;usePellet=yes">http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test4.sparql&amp;usePellet=yes</a></li>
 </ul>
