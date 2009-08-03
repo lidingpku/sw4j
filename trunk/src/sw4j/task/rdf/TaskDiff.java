@@ -152,6 +152,7 @@ public class TaskDiff {
 		 m_model_add = ToolJena.model_diff(m_model_cur, m_model_prev);
 		 m_model_del = ToolJena.model_diff( m_model_prev,m_model_cur);
 		 
+
 		Set<Resource> roots_cur =null;
 		Set<Resource> roots_prev =null;
 		if (ToolSafe.isEmpty(m_res_root_type)){
@@ -549,6 +550,7 @@ public class TaskDiff {
 		 }else{
 			 if (key.subject.equals(root))
 				 ret += String.format(" ----> %s . [add] {%s} [del] {%s}",
+						 ToolJena.prettyPrint(key.predicate),
 						 prettyRDFNodes(map_cur.get(root).getValues((key))),
 						 prettyRDFNodes(map_prev.get(root).getValues((key))));
 			 else
@@ -583,9 +585,20 @@ public class TaskDiff {
 		 return "";
 	 }
 	 
-	 public Model getOutputRss(String rss_title, Property p_title, Property p_link){
+	 public Model getOutputRss(String rss_title, String rss_title_prop, String rss_link_prop){
 		 Model m = ModelFactory.createDefaultModel();
-
+		 Property p_title = null; 
+		 Property p_link = null;
+		 {
+			 Property temp = this.m_model_cur.getProperty(rss_title_prop);
+			 if (null!=temp)
+				 p_title= temp;
+		 }
+		 {
+			 Property temp = this.m_model_cur.getProperty(rss_link_prop);
+			 if (null!=temp)
+				 p_link= temp;
+		 }
 		 //add channel
 		 Resource channel = m.createResource(this.m_xmlbase, RSS.channel);
 		 
@@ -599,7 +612,7 @@ public class TaskDiff {
 			 while (iter.hasNext()){
 				 Resource root = iter.next();
 
-				 String title = "[new]" + ToolJena.getValueOfProperty(this.m_model_cur,  root, p_title,"");
+				 String title = "[new]" + ToolJena.getValueOfProperty(this.m_model_cur,  root, p_title, "Instance");
 				 String link = ToolJena.getValueOfProperty(this.m_model_cur,  root, p_link,"");
 				 String description = getDiffDescription(root, null);
 
@@ -618,7 +631,7 @@ public class TaskDiff {
 			 while (iter.hasNext()){
 				 Resource root = iter.next();
 
-				 String title = "[deleted]" + ToolJena.getValueOfProperty(this.m_model_prev,  root, p_title,"");
+				 String title = "[deleted]" + ToolJena.getValueOfProperty(this.m_model_prev,  root, p_title,"Instance");
 				 String link = ToolJena.getValueOfProperty(this.m_model_prev,  root, p_link,"");
 				 String description = getDiffDescription(root, null);
 
@@ -658,7 +671,7 @@ public class TaskDiff {
 				 Map.Entry<Resource,DataPVHMap<InstanceKey, RDFNode>> item = iter.next();
 				 Resource root = item.getKey();
 
-				 String title = "[updated (add)]" + ToolJena.getValueOfProperty(this.m_model_cur,  root, p_title,"");
+				 String title = "[updated (add)]" + ToolJena.getValueOfProperty(this.m_model_cur,  root, p_title,"Instance");
 				 String link = ToolJena.getValueOfProperty(this.m_model_cur,  root, p_link,"");
 				 String description = getDiffDescription(root, null);
 				 
@@ -677,7 +690,7 @@ public class TaskDiff {
 				 Map.Entry<Resource,DataPVHMap<InstanceKey, RDFNode>> item = iter.next();
 				 Resource root = item.getKey();
 				 
-				 String title = "[updated (del)]" + ToolJena.getValueOfProperty(this.m_model_prev,  root, p_title,"");
+				 String title = "[updated (del)]" + ToolJena.getValueOfProperty(this.m_model_prev,  root, p_title,"Instance");
 				 String link = ToolJena.getValueOfProperty(this.m_model_prev,  root, p_link,"");
 				 String description = getDiffDescription(root,  null);
 
@@ -696,7 +709,7 @@ public class TaskDiff {
 				 Map.Entry<Resource,DataPVHMap<InstanceKey, RDFNode>> item = iter.next();
 				 Resource root = item.getKey();
 
-				 String title = "[updated (update)]" + ToolJena.getValueOfProperty(this.m_model_cur,  root, p_title,"");
+				 String title = "[updated (update)]" + ToolJena.getValueOfProperty(this.m_model_cur,  root, p_title,"Instance");
 				 String link = ToolJena.getValueOfProperty(this.m_model_cur,  root, p_link,"");
 				 String description = getDiffDescription(root,  null);
 

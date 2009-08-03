@@ -13,6 +13,21 @@ import com.hp.hpl.jena.vocabulary.RSS;
 
 public class DiffServiceTest {
 	@Test
+	public void test_11() throws IOException{
+		DiffService svc = new DiffService();
+		svc.szCur = "http://data-gov.tw.rpi.edu/raw/92/2009-07-03/data-92.rdf";
+		svc.szPrev = "http://data-gov.tw.rpi.edu/raw/92/2009-06-24/data-92.rdf";
+		svc.output = TaskDiff.DIFF_RDF_ADD;
+
+		DataServeletResponse ret = svc.run();
+		
+		System.out.println(ret.getMimeType());
+		ret.output(new PrintWriter(System.out));
+		if (ret.m_model_content==null)
+			fail("URL should be succeed");		
+	}	
+
+	//@Test
 	public void test0() throws IOException{
 		DiffService svc = new DiffService();
 		svc.szCur = "http://data-gov.tw.rpi.edu/raw/92/2009-07-10/today-ping.rss";

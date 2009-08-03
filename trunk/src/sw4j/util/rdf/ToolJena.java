@@ -343,7 +343,7 @@ public class ToolJena {
 			return "";
 		StringWriter sw = new StringWriter();
 		RDFWriter writer = m.getWriter(rdfsyntax);
-		if (RDFSYNTAX.RDFXML.equals(rdfsyntax)){
+		if (RDFSYNTAX.RDFXML.equals(rdfsyntax)||RDFSYNTAX.RDFXML_ABBREV.equals(rdfsyntax)){
 			writer.setProperty("showXmlDeclaration", "true");
 			writer.setProperty("allowBadURIs", "true");
 		}
