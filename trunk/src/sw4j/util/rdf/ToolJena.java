@@ -623,6 +623,8 @@ public class ToolJena {
 			ByteArrayOutputStream sw = new ByteArrayOutputStream();
 			if (RDFSYNTAX.SPARQL_XML.equals(szRdfSyntax)){
 				ResultSetFormatter.outputAsXML(sw, results);
+			}else if (RDFSYNTAX.SPARQL_JSON.equals(szRdfSyntax)){
+				ResultSetFormatter.outputAsJSON(sw, results);
 			}else{
 				ResultSetFormatter.out(sw,results, query);				
 			}

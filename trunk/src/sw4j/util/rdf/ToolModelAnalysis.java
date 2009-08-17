@@ -303,6 +303,7 @@ public class ToolModelAnalysis {
 				{DCTerms.getURI(),DCTerms.class.getSimpleName().toLowerCase()},
 				{DC.getURI(),DC.class.getSimpleName().toLowerCase()},
 				{FOAF.getURI(),FOAF.class.getSimpleName().toLowerCase()},
+				{"http://www.w3.org/2003/01/geo/wgs84_pos#","geo"},
 		};
 		
 		for (int i=0; i<nsPrefix.length; i++){
