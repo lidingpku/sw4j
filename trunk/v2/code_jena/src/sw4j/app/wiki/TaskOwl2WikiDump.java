@@ -7,7 +7,6 @@ import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
-import sw4j.app.datagov.DGTWC;
 import sw4j.rdf.util.ToolOwl2SemanticMediaWiki;
 
 
@@ -15,7 +14,6 @@ public class TaskOwl2WikiDump {
 	public static void main(String[] args) {
 
 		String [][] aryInputOutput = new String [][]{
-				{DGTWC.getURI(), DGTWC.class.getSimpleName().toLowerCase(),"files/owl2wikidump/"+DGTWC.class.getSimpleName().toLowerCase()+".xml"},
 				{DC.getURI(), DC.class.getSimpleName().toLowerCase(),"files/owl2wikidump/"+DC.class.getSimpleName().toLowerCase()+".xml"},
 				{OWL.getURI(), OWL.class.getSimpleName().toLowerCase(), "files/owl2wikidump/"+OWL.class.getSimpleName().toLowerCase()+".xml"},
 				{RDF.getURI(), RDF.class.getSimpleName().toLowerCase(), "files/owl2wikidump/"+RDF.class.getSimpleName().toLowerCase()+".xml"},
