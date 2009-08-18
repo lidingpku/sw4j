@@ -7,7 +7,6 @@ import java.io.PrintWriter;
 
 import org.junit.Test;
 
-import sw4j.app.datagov.DGTWC;
 import sw4j.app.servlet.DiffService;
 import sw4j.app.servlet.common.DataServletResponse;
 import sw4j.rdf.load.TaskDiff;
@@ -20,7 +19,7 @@ public class DiffServiceTest {
 		DiffService svc = new DiffService();
 		svc.params.put(DiffService.PARAM_CUR, "http://data-gov.tw.rpi.edu/raw/92/2009-08-07/data-92.rdf");
 		svc.params.put(DiffService.PARAM_PREV, "http://data-gov.tw.rpi.edu/raw/92/2009-08-06/data-92.rdf");
-		svc.params.put(DiffService.PARAM_ROOT_TYPE_URI, DGTWC.DataEntry.getURI());
+		svc.params.put(DiffService.PARAM_ROOT_TYPE_URI, "http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf#DataEntry");
 		svc.params.put(DiffService.PARAM_OUTPUT, TaskDiff.DIFF_RDF);
 		svc.params.put(DiffService.PARAM_RSS_LINK_PROP,  "http://data-gov.tw.rpi.edu/vocab/p/92/url");
 		svc.params.put(DiffService.PARAM_RSS_TITLE_PROP,  "http://data-gov.tw.rpi.edu/vocab/p/92/title");
