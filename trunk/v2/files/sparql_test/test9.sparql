@@ -1,0 +1,8 @@
+#  Test case
+#  construct an RDF graph by describing resource in an existing RDF graph
+#
+PREFIX rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX foaf:      <http://xmlns.com/foaf/0.1/> 
+SELECT ?person 
+FROM <http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test1.sparql> 
+WHERE  { ?person rdf:type foaf:Person} 

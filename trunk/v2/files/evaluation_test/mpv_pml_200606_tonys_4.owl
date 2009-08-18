@@ -1,0 +1,33 @@
+<rdf:RDF
+    xmlns:iw="http://inferenceweb.stanford.edu/2004/07/iw.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <iw:NodeSet rdf:about="http://iw4.stanford.edu/proofs/tonys/tonys_4/ns19.owl#ns19">
+    <iw:hasConclusion rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >(|http://www.w3.org/1999/02/22-rdf-syntax-ns#|::type |http://iw.stanford.edu/enginesdoc/jtp/script-data/tonys.daml#|::|TonysSpecialty| ?x)</iw:hasConclusion>
+    <iw:hasLanguage rdf:resource="http://inferenceweb.stanford.edu/registry/LG/KIF.owl#KIF"/>
+    <iw:isConsequentOf>
+      <iw:InferenceStep>
+        <iw:hasRule rdf:resource="http://inferenceweb.stanford.edu/registry/DPR/GMP.owl#GMP"/>
+        <iw:hasAntecedent rdf:resource="http://iw4.stanford.edu/proofs/tonys/tonys_4/ns18.owl#ns18"/>
+        <iw:hasIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >0</iw:hasIndex>
+        <iw:fromQuery rdf:resource="http://iw4.stanford.edu/proofs/tonys/tonys.owl#tonys"/>
+        <iw:hasAntecedent rdf:resource="http://iw4.stanford.edu/proofs/tonys/tonys_4/ns5.owl#ns5"/>
+        <iw:hasInferenceEngine rdf:resource="http://inferenceweb.stanford.edu/registry/IE/JTP.owl#JTP"/>
+        <iw:hasVariableMapping>
+          <iw:Mapping>
+            <iw:mapTo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >|http://iw.stanford.edu/enginesdoc/jtp/script-data/tonys.daml#|::|SEAFOOD|</iw:mapTo>
+            <iw:mapFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >?x</iw:mapFrom>
+          </iw:Mapping>
+        </iw:hasVariableMapping>
+      </iw:InferenceStep>
+    </iw:isConsequentOf>
+  </iw:NodeSet>
+</rdf:RDF>

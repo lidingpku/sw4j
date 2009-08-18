@@ -1,0 +1,28 @@
+﻿<?xml version="1.0"?>
+<!--
+This is not a valid PML document.
+This example include an pml instance that has two triples links to two different hasAuthorList, and thus this pml instance is violating the corresponding owl:maxCardinality=1 restriction.	
+-->
+<rdf:RDF
+    xmlns:ds="http://inference-web.org/2.0/ds.owl#"
+    xmlns:pmlp="http://inference-web.org/2.0/pml-provenance.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#">
+
+  <pmlp:Document>
+	<pmlp:hasAuthorList>
+		<pmlp:AgentList>
+			<ds:first>
+				<pmlp:Person rdf:about="http://foo.com/bar#Bob"/>
+			</ds:first>
+		</pmlp:AgentList>
+	</pmlp:hasAuthorList>
+	<pmlp:hasAuthorList>
+		<pmlp:AgentList>
+			<ds:first>
+				<pmlp:Person rdf:about="http://foo.com/bar#Alice"/>
+			</ds:first>
+		</pmlp:AgentList>
+	</pmlp:hasAuthorList>
+  </pmlp:Document>
+</rdf:RDF>

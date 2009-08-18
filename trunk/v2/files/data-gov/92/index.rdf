@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:pmlr="http://inference-web.org/2.0/pml-relation.owl#"
+    xmlns:pmlp="http://inference-web.org/2.0/pml-provenance.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" > 
+  <rdf:Description rdf:about="http://data-gov.tw.rpi.edu/raw/92/index.rdf">
+    <pmlp:hasVersion>1.0</pmlp:hasVersion>
+    <pmlp:hasCreationDateTime>2009-06-29T14:00:09Z</pmlp:hasCreationDateTime>
+    <pmlp:hasPublisher rdf:resource="http://data-gov.tw.rpi.edu/vocab/Tetherless_World_Constellation"/>
+    <rdf:type rdf:resource="http://inference-web.org/2.0/pml-provenance.owl#Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data-gov.tw.rpi.edu/raw/92/index.rdf#me">
+    <rdfs:seeAlso rdf:resource="http://data-gov.tw.rpi.edu/vocab/Dataset92"/>
+    <pmlr:hasPart rdf:resource="http://data-gov.tw.rpi.edu/raw/92/catalog.rdf"/>
+    <dc:source rdf:resource="http://www.data.gov/data_gov_catalog.csv"/>
+    <rdf:type rdf:resource="http://inference-web.org/2.0/pml-provenance.owl#Dataset"/>
+  </rdf:Description>
+</rdf:RDF>
