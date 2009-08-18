@@ -1,0 +1,142 @@
+
+#generated: 2009-05-10T23:07:32Z
+#context (total): 6 - [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl, http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SOS---2.0/answer.owl, http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl, http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SNARK---20080805r005/answer.owl, http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Otter---3.3/answer.owl, http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl] 
+#hyperedges (total): 132
+#hyperedges (axioms): 60
+#hyperedges (sharing sink, limit 10): 12 - [137, 136, 138, 141, 140, 143, 142, 144, 145, 133, 134]
+#vertices (total): 109
+#vertices (sinks): 109
+#vertices (sources): 104
+#vertices (roots): 5 - [171, 193, 214, 211, 236] 
+{208, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SNARK---20080805r005/answer.owl]}
+{237, [229], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{216, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SOS---2.0/answer.owl]}
+{142, [145, 225, 239], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{136, [156, 157], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{167, [176], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{223, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SOS---2.0/answer.owl]}
+{197, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Otter---3.3/answer.owl]}
+{232, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{141, [141], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{225, [228], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{180, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{207, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SNARK---20080805r005/answer.owl]}
+{215, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SOS---2.0/answer.owl]}
+{172, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{154, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{214, [138, 220, 222], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SOS---2.0/answer.owl]}
+{175, [169], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{146, [143, 144, 218], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SOS---2.0/answer.owl]}
+{224, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{184, [162], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{198, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Otter---3.3/answer.owl]}
+{135, [147, 155], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{188, [136, 173], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{233, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{153, [134, 149], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{230, [227], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{146, [143, 144, 212], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SNARK---20080805r005/answer.owl]}
+{134, [161, 164], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{206, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SNARK---20080805r005/answer.owl]}
+{177, [190], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{142, [146, 202, 205], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SNARK---20080805r005/answer.owl]}
+{183, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{151, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{142, [145, 199, 201], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Otter---3.3/answer.owl]}
+{221, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SOS---2.0/answer.owl]}
+{199, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Otter---3.3/answer.owl]}
+{134, [147, 156], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{234, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{169, [172], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{190, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{163, [175, 181], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{140, [186, 189], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{186, [177], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{133, [139, 184], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{205, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SNARK---20080805r005/answer.owl]}
+{152, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{145, [143, 144, 198], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Otter---3.3/answer.owl]}
+{236, [233, 238, 239], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{213, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SOS---2.0/answer.owl]}
+{174, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{200, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Otter---3.3/answer.owl]}
+{222, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SOS---2.0/answer.owl]}
+{238, [142, 240], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{235, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{191, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Otter---3.3/answer.owl]}
+{211, [134, 136, 142, 210], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SNARK---20080805r005/answer.owl]}
+{171, [164, 185], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{160, [178], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{212, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SNARK---20080805r005/answer.owl]}
+{179, [168], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{157, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{136, [216, 223], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SOS---2.0/answer.owl]}
+{192, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Otter---3.3/answer.owl]}
+{143, [217, 221], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SOS---2.0/answer.owl]}
+{166, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{204, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SNARK---20080805r005/answer.owl]}
+{148, [133, 154], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{144, [204, 208], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SNARK---20080805r005/answer.owl]}
+{137, [159], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{159, [136, 153], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{141, [135, 138], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{193, [134, 136, 142, 195], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Otter---3.3/answer.owl]}
+{140, [150, 151], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{228, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{133, [139, 152], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{187, [183], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{219, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SOS---2.0/answer.owl]}
+{150, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{158, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{136, [206, 207], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SNARK---20080805r005/answer.owl]}
+{144, [213, 219], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SOS---2.0/answer.owl]}
+{168, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{203, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SNARK---20080805r005/answer.owl]}
+{143, [234, 237], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{138, [134, 136, 146, 215], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SOS---2.0/answer.owl]}
+{161, [160], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{176, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{229, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{162, [166], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{149, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{226, [231, 241], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{194, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Otter---3.3/answer.owl]}
+{241, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{220, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SOS---2.0/answer.owl]}
+{134, [216, 222], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SOS---2.0/answer.owl]}
+{155, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{210, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SNARK---20080805r005/answer.owl]}
+{181, [174], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{136, [192, 196], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Otter---3.3/answer.owl]}
+{189, [170], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{202, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SNARK---20080805r005/answer.owl]}
+{217, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SOS---2.0/answer.owl]}
+{185, [138, 165], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{143, [191, 194], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Otter---3.3/answer.owl]}
+{165, [179], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{138, [148, 158], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{136, [182, 187], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{139, [137, 140], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl, http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{195, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Otter---3.3/answer.owl]}
+{201, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Otter---3.3/answer.owl]}
+{170, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{156, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{164, [180], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{134, [205, 206], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SNARK---20080805r005/answer.owl]}
+{178, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{143, [203, 209], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SNARK---20080805r005/answer.owl]}
+{137, [134, 188], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{231, [232], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{138, [133, 163], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{227, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{134, [196, 199], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Otter---3.3/answer.owl]}
+{145, [143, 226, 235], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{218, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SOS---2.0/answer.owl]}
+{182, [160], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{144, [197, 200], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Otter---3.3/answer.owl]}
+{239, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{209, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/SNARK---20080805r005/answer.owl]}
+{147, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl]}
+{240, [224, 230, 233], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Vampire---9.0/answer.owl]}
+{173, [167], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Metis---2.1/answer.owl]}
+{196, [], [http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/Otter---3.3/answer.owl]}

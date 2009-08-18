@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Category:ds:List</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:06Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::ds:List]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/ds.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A template for defining typed-list. It functions like rdf:List with object members.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::List]]
+* see also [[MediaWiki:smw_import_ds]]
+==more description==
+===7c12365:122e8b6b0be:-7ffc===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:ds:rest]]
+* [original] [[Property:owl:maxCardinality|owl:maxCardinality]] 1</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://inference-web.org/2.0/ds.owl</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:06Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/ds.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Ontology]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Ontology]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::This ontology offers OWL-Lite definition for object list. It is a restricted version of OWL-S ObjectList (http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl).    It is compatible to rdf:List with the following differences: (i) OWL individuals as list members and (ii) appropriate property cardinality restriction. The range of first will specified by the subclasses.    ]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Data Structure Ontology (v 0.1.1)]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:ds:rest</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:06Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::ds:rest]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/ds.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The rest of the subject RDF list after the first item.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:ds:List]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::rest]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:ds:List]]
+* see also [[MediaWiki:smw_import_ds]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>ds:nil</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:06Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:ds:List]][[Category:ds:List]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::ds:nil]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/ds.owl]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:ds:List]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The empty list, with no items in it. If the rest of a list is nil then the list has no more items in it.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::nil]]
+* see also [[MediaWiki:smw_import_ds]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>MediaWiki:smw_import_ds</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:06Z</timestamp>
+       <text xml:space="preserve">http://inference-web.org/2.0/ds.owl#|[http://inference-web.org/2.0/ds.owl ds]
+ List|Category
+ ds.owl|Type:Page
+ rest|Type:Page
+ nil|Type:Page
+ first|Type:Page</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:ds:first</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:06Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::ds:first]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/ds.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The first item in the subject RDF list.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:ds:List]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::first]]
+* see also [[MediaWiki:smw_import_ds]]</text>
+     </revision>
+ </page>
+</mediawiki>

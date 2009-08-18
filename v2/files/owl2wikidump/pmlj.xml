@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Property:pmlj:hasAnswerPattern</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:hasAnswerPattern]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Usually it is an English Pattern for the question. We may apply (string-replace) the variable mappings from the answer node set to generate the answer of the question. We may generate different queries for the same question, e.g. find Li's friends: I can (i) run JTP (KIF) to derive John's friends or (ii) query (SPARQL) a FOAF RDF database using foaf:knows. ]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlj:Question]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::answer pattern]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#string]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlj:NodeSet</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlj:JustificationElement]][[Category:pmlj:JustificationElement]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:NodeSet]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A node set hosts a conclusion and a set of alternative inference steps each of which can justify the conclusion. The term ``node set'' is chosen because a node set captures a set of nodes (with inference steps) from one or many proof trees deriving the same conclusion. The URI  of a node set is its unique identifier, and every node set has exactly one URI.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Node Set]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlj:JustificationElement]]
+* see also [[MediaWiki:smw_import_pmlj]]
+==more description==
+===7c12365:122e8b6b0be:-7fd1===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:cardinality|owl:cardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:pmlj:hasConclusion]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>MediaWiki:smw_import_pmlj</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">http://inference-web.org/2.0/pml-justification.owl#|[http://inference-web.org/2.0/pml-justification.owl pmlj]
+ hasAnswerPattern|Type:Text
+ NodeSet|Category
+ hasInferenceRule|Type:Page
+ fromQuery|Type:Page
+ isQueryFor|Type:Page
+ mapFrom|Type:Text
+ Question|Category
+ AbstractionRule|Category
+ isExplanationOf|Type:Page
+ hasAnswer|Type:Page
+ hasSourceUsage|Type:Page
+ hasInferenceEngine|Type:Page
+ fromAnswerOrQuery|Type:Page
+ Query|Category
+ InferenceStep|Category
+ hasIndex|Type:Page
+ fromAnswer|Type:Page
+ hasPatternNodeSet|Type:Page
+ hasDischarge|Type:Page
+ isFromEngine|Type:Page
+ pml-justification.owl|Type:Page
+ hasMetaBinding|Type:Page
+ mapTo|Type:Text
+ NodeSetList|Category
+ hasVariableMapping|Type:Page
+ isConsequentOf|Type:Page
+ hasAntecedentList|Type:Page
+ hasConclusion|Type:Page
+ JustificationElement|Category
+ Mapping|Category</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:fromQuery</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:fromQuery]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the query that is answered by the present node set that hosts this inference step]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::source-query]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlj:Query]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:pmlj:fromAnswerOrQuery]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasInferenceRule</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:hasInferenceRule]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::links to the inference rule that is used in deriving this inference step.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlj:InferenceStep]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::inference rule]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:InferenceRule]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:isQueryFor</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:isQueryFor]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlj:Query]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::query-for]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlj:Question]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:mapFrom</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:mapFrom]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::literal string to be replaced.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlj:Mapping]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::map-from]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#string]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlj:Question</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlj:JustificationElement]][[Category:pmlj:JustificationElement]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:Question]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A Question refers to natural language version of a user's query. For example, a question can be "What is the type of Tony's Specialty?"  A question is usually additional information to an instance of Query as additional annotation.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Question]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlj:JustificationElement]]
+* see also [[MediaWiki:smw_import_pmlj]]
+==more description==
+===7c12365:122e8b6b0be:-7fc5===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:maxCardinality|owl:maxCardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:pmlj:hasAnswerPattern]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlj:AbstractionRule</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlp:MethodRule]][[Category:pmlp:MethodRule]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:AbstractionRule]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Abstraction Rule]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlp:MethodRule]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:isExplanationOf</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:isExplanationOf]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::links to a node set (and its antecedents) that is explained by the present node set. This is used for connecting the orginal justifications to the NodeSet that abstracts this node set (and its antecedents).]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlj:NodeSet]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::explains]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlj:NodeSet]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://inference-web.org/2.0/pml-provenance.owl#</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Ontology]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Ontology]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasAnswer</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:hasAnswer]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::links to one of many alternative answers to this query.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlj:Query]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::answer]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlj:NodeSet]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasSourceUsage</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:hasSourceUsage]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::links to the source usage that is used in deriving this inference step.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlj:InferenceStep]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::source usage]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:SourceUsage]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasInferenceEngine</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:hasInferenceEngine]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::links to the inference engine that derives this inference step.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlj:InferenceStep]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::inference engine]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:InferenceEngine]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:fromAnswerOrQuery</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:fromAnswerOrQuery]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::abstract property modifying an inference step. It is use to impose the exclusion restriction on fromAnswer and fromQuery]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlj:InferenceStep]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::source-answer-or-query]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlj:Query</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlj:JustificationElement]][[Category:pmlj:JustificationElement]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:Query]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A Query is a formal representation of user's question. For example, the content of the query can be '(type TonysSpecialty ?x)' which is encoded in KIF. An inference engine will take the query's content as input and find corresponding answers, each of which is a tree of node sets representing the proof traces obtained from the inference engine. ]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Query]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlj:JustificationElement]]
+* see also [[MediaWiki:smw_import_pmlj]]
+==more description==
+===7c12365:122e8b6b0be:-7fc6===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:cardinality|owl:cardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:pmlp:hasContent]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlj:InferenceStep</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:pmlj:JustificationElement]][[Category:pmlj:JustificationElement]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:InferenceStep]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An inference step represents a justification for the conclusion of the corresponding node set. Instances of inference step are usually anonymous as part of node set. For this reason, inference steps usually have no URIs. Moreover, an application should treat node set and its inference steps in whole.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Inference Step]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:pmlj:JustificationElement]]
+* see also [[MediaWiki:smw_import_pmlj]]
+==more description==
+===7c12365:122e8b6b0be:-7fca===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:maxCardinality|owl:maxCardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:pmlj:hasAntecedentList]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasIndex</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:hasIndex]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the index of this inference step in the corresponding node set.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlj:InferenceStep]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::index]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#int]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:fromAnswer</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:fromAnswer]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the root node set that answers the specific query but not necessarily the present nodeset that hosts this inference step.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::root-node-set]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlj:NodeSet]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:pmlj:fromAnswerOrQuery]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasPatternNodeSet</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:hasPatternNodeSet]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlj:AbstractionRule]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::pattern]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlj:NodeSet]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasDischarge</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:hasDischarge]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::dismiss causal dependency from the conclusion of the present nodeset to an (recursive) antecedent nodeset of the present inference step. In particular, OR-elimination can only be implemented by hasDischarge]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlj:InferenceStep]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::discharge]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlj:NodeSet]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:isFromEngine</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:isFromEngine]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlj:Query]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::answer-generator]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlp:InferenceEngine]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://inference-web.org/2.0/pml-justification.owl</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Ontology]]
+* [original] [[Property:owl:imports|owl:imports]]: [[owl:imports::http://inference-web.org/2.0/pml-provenance.owl#]]
+* [original] [[Property:owl:versionInfo|owl:versionInfo]]: [[owl:versionInfo::version 2.0, Authors: Deborah L. McGuinness, Li Ding, Paulo Pinheiro da Silva, Alyssa Glass, and Cynthia Chang]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Ontology]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The justification part of PML2 ontology. It is a fundamental component of PML2 ontology.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::PML2 justification ontology]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasMetaBinding</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:hasMetaBinding]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Given a formal representation of inference rule (e.g. PPDR), we may represent the structure of inference rule (i.e. we don't need to represent rules as an opaque one). Therefore, the inference engine might have a chance to capture how each-part of the inference rule may be mapped to some sentences. This mapping is metabinding.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlj:InferenceStep]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::meta binding]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlj:Mapping]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:mapTo</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:mapTo]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::literal string as the subsitutor.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlj:Mapping]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::map-to]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#string]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlj:NodeSetList</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:http://inference-web.org/2.0/ds.owl#List]][[Category:http://inference-web.org/2.0/ds.owl#List]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:NodeSetList]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label:: List of NodeSet]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:http://inference-web.org/2.0/ds.owl#List]]
+* see also [[MediaWiki:smw_import_pmlj]]
+==more description==
+===7c12365:122e8b6b0be:-7fc9===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:allValuesFrom|owl:allValuesFrom]] [[:Category:pmlj:NodeSet]]
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:http://inference-web.org/2.0/ds.owl#first]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasVariableMapping</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:hasVariableMapping]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Variable mapping captures the result (substitution) of unifying variables of premises/antecedents of a conclusion. Each VariableMapping of an inference step (i.e., the object of iw:hasVariableMapping) records the mapping from a 'variable'  to a 'term' (both variable and term are first logic concepts). Each variable mapping maps to one substitution. Note that variable mapping only captures string-replace alike substitution, we do not assume any understanding/parsing of the sentences mentioned in antecedents. In each inference step, the variable binding should be applied to the conclusions of corresponding antecedents. ]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlj:InferenceStep]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::variable mapping]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlj:Mapping]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:isConsequentOf</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:isConsequentOf]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::links to an inference step that derives the conclusion of the present node set.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlj:NodeSet]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::because]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlj:InferenceStep]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasAntecedentList</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:hasAntecedentList]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The Antecedents of an inference step (i.e., the object of iw:hasAntecedent) is a collection of node sets each of whose conclusions is a premise of the application of the inference step's rule. The collection can contain any number of node sets including none. PML supports the order of premises in two folds: (i) The fact that the premises are ordered may be relevant for some rules such as ordered resolution that uses the order to match premises with the schemas of the associated rule. To this end, users may declare one iw:hasAntecedent that links to an instance of rdf:List, which is an ordered list of the antecedent node sets.  (II) For other rules such as modus Ponens, the order of the premises is irrelevant; therefore, Antecedents can be viewed as a bag of premises. To this end, users may declare multiple iw:hasAntecedent each of which links to an antecedent node set.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlj:InferenceStep]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::antecedent]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:pmlj:NodeSetList]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasConclusion</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:hasConclusion]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::links to the conclusion of the present node set. The conclusion is the one after applied variable mapping of the node set's inference steps. The content/language/format of conclusion is the only information needed in comparing conclusions. ]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlj:NodeSet]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::conclusion]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:pmlp:hasContent]]
+* see also [[MediaWiki:smw_import_pmlj]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlj:Mapping</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:Mapping]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::annotating things to be mapped. The mapping is represented from a literal string to another literal string. PML does not understand/parse the semantics of the string.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Mapping]]
+* see also [[MediaWiki:smw_import_pmlj]]
+==more description==
+===7c12365:122e8b6b0be:-7fc3===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:cardinality|owl:cardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:Property:pmlj:mapFrom]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlj:JustificationElement</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:07Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlj:JustificationElement]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-justification.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A justification element functions like relation in relational algebra. It captures the complex relations that associate. ]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Justification Element]]
+* see also [[MediaWiki:smw_import_pmlj]]
+==more description==
+===7c12365:122e8b6b0be:-7fd3===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Restriction]]
+* [original] [[Property:owl:maxCardinality|owl:maxCardinality]] 1
+* [original] [[Property:owl:onProperty|owl:onProperty]] [[:pmlp:hasCreationDateTime]]</text>
+     </revision>
+ </page>
+</mediawiki>

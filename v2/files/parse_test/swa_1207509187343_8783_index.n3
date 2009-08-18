@@ -1,0 +1,11 @@
+@prefix archive: <http://tw.rpi.edu/2008/sw/archive.owl#> . 
+@prefix dc: <http://purl.org/dc/elements/1.1/> . 
+
+[] a archive:Document;
+	archive:url_base <http://www.daml.org/2003/06/ruletests/translation-3.n3>;
+	archive:url_version <http://tw.rpi.edu/swa/cache/2008/04/06/swa_1207509187343_8783.ori>;
+	dc:format "N3";
+	archive:cnt_byte "1884";
+	archive:md5sum "b45b0069b9403190e19633638c40c909";
+	archive:cnt_triple "23";
+	archive:url_version_rdf <http://tw.rpi.edu/swa/cache/2008/04/06/swa_1207509187343_8783.rdf>.

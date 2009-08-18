@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+  <link href="http://inference-web.org/iw.css" rel="stylesheet" type="text/css" /> 
+</head>
+
+
+
+
+<body>
+
+
+<h3>SemDiff Web Service</h3>
+Features:
+<ul>
+<li> diff two RDF documents</li>
+<li> REST web service interface </li>
+</ul>
+
+<fieldset id="filedset_text">
+<legend>Process Diff Request</legend>
+<form method="GET" action="/sw4j/diff" border="1">
+	cur URL: <input name="cur" size="102" type="text">  <br/>
+	prev URL: <input name="prev" size="102" type="text">  <br/>
+output: <SELECT name="output">
+ <OPTION VALUE="rdf" SELECTED>diff in RDF</OPTION>
+ <OPTION VALUE="rdf_add">newly added triples</OPTION>
+ <OPTION VALUE="rdf_del">deleted triples</OPTION>
+ <OPTION VALUE="rss">summarize diff using rss</OPTION>
+ </SELECT>
+ <br/>	
+	xmlbase of output: <input name="xmlbase" size="102" type="text">  <br/>
+	rss_title: <input name="rss_title" size="102" type="text">  <br/>
+    <input value="diff"  type="submit">
+ </form>
+</fieldset>
+
+<h3>REST Service Interface Description</h3>
+Base service URI: &nbsp;http://onto.rpi.edu/sw4j/diff<br />
+<table style="text-align: left; width: 699px; height: 91px;"
+ border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="width: 111px; font-weight: bold;">parameter</td>
+      <td style="width: 378px; font-weight: bold;">meaning</td>
+    </tr>
+    <tr>
+      <td style="width: 111px;">cur</td>
+      <td style="width: 378px;">the URL of current RDF document</td>
+    </tr>
+    <tr>
+      <td style="width: 111px;">prev</td>
+      <td style="width: 378px;">the URL of previous RDF document</td>
+    </tr>
+    <tr>
+      <td style="width: 111px;">output</td>
+      <td style="width: 378px;">the output format, any of the following ('rss', 'rdf_add', 'rdf_del')</td>
+    </tr>
+    <tr>
+      <td style="width: 111px;">rss_title</td>
+      <td style="width: 378px;">required when output=rss, title of rss channel</td>
+    </tr>
+    <tr>
+      <td style="width: 111px;">rss_url</td>
+      <td style="width: 378px;">required when output=rss, url of rss channel</td>
+    </tr>
+  </tbody>
+</table>
+
+example usage
+<ul>
+  <li> simple diff (default) - <a
+ href="http://onto.rpi.edu/sw4j/diff?cur=http://data-gov.tw.rpi.edu/raw/92/2009-07-10/today.rss&prev=http://data-gov.tw.rpi.edu/raw/92/2009-07-09/today.rss">http://onto.rpi.edu/sw4j/diff?cur=http://data-gov.tw.rpi.edu/raw/92/2009-07-10/today.rss&prev=http://data-gov.tw.rpi.edu/raw/92/2009-07-09/today.rss</a></li>
+  <li> simple diff (inverse) - <a
+ href="http://onto.rpi.edu/sw4j/diff?prev=http://data-gov.tw.rpi.edu/raw/92/2009-07-10/today.rss&cur=http://data-gov.tw.rpi.edu/raw/92/2009-07-09/today.rss">http://onto.rpi.edu/sw4j/diff?prev=http://data-gov.tw.rpi.edu/raw/92/2009-07-10/today.rss&cur=http://data-gov.tw.rpi.edu/raw/92/2009-07-09/today.rss</a></li>
+  <li> simple diff (rss) - <a
+ href="http://onto.rpi.edu/sw4j/diff?cur=http://data-gov.tw.rpi.edu/raw/92/2009-07-10/today.rss&prev=http://data-gov.tw.rpi.edu/raw/92/2009-07-09/today.rss&output=rss&rss_url=http://data-gov.tw.rpi.edu/catalog/diff.rss&rss_title=Updates%20of%20data.gov%20catalog">http://onto.rpi.edu/sw4j/diff?cur=http://data-gov.tw.rpi.edu/raw/92/2009-07-10/today.rss&prev=http://data-gov.tw.rpi.edu/raw/92/2009-07-09/today.rss&output=rss&xmlbase=http://data-gov.tw.rpi.edu/catalog/diff.rss&rss_title=Updates%20of%20data.gov%20catalog</a></li>
+</ul>
+
+
+
+
+
+<hr style="font-family: sans-serif;">
+<p><font color="#008000"><i>This page is maintained by Li Ding. Page last updated on&nbsp; July 1, 2009
+
+</i></font></p>
+</body>
+</html>
