@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Property:92/non_response_adjustment</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/geographic_coverage</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/agency_data_series_page</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/series_breaks</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/xls_file_size</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/keywords</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/csv_txt_access_point</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:URL]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/frequency</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/questionnaire_design</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/privacy_and_confidentiality</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/xml_access_point</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:URL]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/collection_mode</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/citation</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/agency</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/date_released</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/estimation</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/map_access_point</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:URL]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/data_gov_data_category_type</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/data_dictionary_variable_list</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/kml_kmz_access_point</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:URL]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/additional_metadata</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/seasonal_adjustment</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/data_quality_certification</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/applicable_agency_information_quality_guideline_designation</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/statistical_characteristics</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/weighting</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/type</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:URL]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/data_collection_instrument</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/disclosure_avoidance</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/specialized_data_category_designation</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/feeds_access_point</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:URL]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/agency_program_page</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/url</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:URL]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/data_extraction_access_point</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:URL]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/feeds_file_size</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/time_period</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/unit_of_analysis</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/category</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/date</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/esri_access_point</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:URL]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/creator</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:URL]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/technical_documentation</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/description</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/kml_file_size</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/csv_txt_file_size</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/xml_file_size</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/date_updated</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/statistical_methodology</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/fgdc_compliance_geospatial_only</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/sampling</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/source</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:URL]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/widget_access_point</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:URL]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/esri_file_size</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/granularity</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/xls_access_point</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:URL]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:92/title</title>
+     <revision>
+       <text xml:space="preserve">*[[has type::Type:String]]
+*[[rdf:type::Category:owl:DatatypeProperty]]
+*[[dc:relation::Dataset_92]]</text>
+     </revision>
+ </page>
+</mediawiki>

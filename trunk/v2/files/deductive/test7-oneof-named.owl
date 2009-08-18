@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+	Goal: test blank class other than Restriction.
+
+	Expect:
+		oneOf inference  (the anonymous class should be mentioned if no equivalent named class exists)
+			[http://ex.org/foo#Strong, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://ex.org/foo#WineFlavor]
+
+
+	Issues:
+		Pellet handle this correctly.
+	
+-->
+
+<!DOCTYPE owl [
+<!ENTITY dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY foo "http://ex.org/foo#">
+]>
+<rdf:RDF
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:owl="http://www.w3.org/2002/07/owl#"
+ xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+ xmlns:foo="http://ex.org/foo#"
+ xml:base="http://ex.org/foo"
+>
+
+<owl:Class rdf:ID="WineFlavor">
+  <owl:oneOf rdf:parseType="Collection">
+	<owl:Thing rdf:about="#Moderate">
+	</owl:Thing>
+	<owl:Thing rdf:about="#Strong">
+	</owl:Thing>
+  </owl:oneOf>
+</owl:Class>
+
+
+
+</rdf:RDF>
