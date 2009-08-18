@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Property:dc:type</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dc:type]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://purl.org/dc/elements/1.1/]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:dcterms:description|dcterms:description]]: [[dcterms:description::Recommended best practice is to use a controlled vocabulary such as the DCMI Type Vocabulary [DCMITYPE]. To describe the file format, physical medium, or dimensions of the resource, use the Format element.]]
+* [original] [[Property:dcterms:hasVersion|dcterms:hasVersion]]: [[dcterms:hasVersion::http://dublincore.org/usage/terms/history/#type-006]]
+* [original] [[Property:dcterms:issued|dcterms:issued]]: [[dcterms:issued::1999-07-02]]
+* [original] [[Property:dcterms:modified|dcterms:modified]]: [[dcterms:modified::2008-01-14]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The nature or genre of the resource.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://purl.org/dc/elements/1.1/]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Type]]
+* [original] [[Property:skos:note|skos:note]]: [[skos:note::A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.]]
+* see also [[MediaWiki:smw_import_dc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:rights</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dc:rights]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://purl.org/dc/elements/1.1/]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:dcterms:description|dcterms:description]]: [[dcterms:description::Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.]]
+* [original] [[Property:dcterms:hasVersion|dcterms:hasVersion]]: [[dcterms:hasVersion::http://dublincore.org/usage/terms/history/#rights-006]]
+* [original] [[Property:dcterms:issued|dcterms:issued]]: [[dcterms:issued::1999-07-02]]
+* [original] [[Property:dcterms:modified|dcterms:modified]]: [[dcterms:modified::2008-01-14]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Information about rights held in and over the resource.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://purl.org/dc/elements/1.1/]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Rights]]
+* [original] [[Property:skos:note|skos:note]]: [[skos:note::A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.]]
+* see also [[MediaWiki:smw_import_dc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:source</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dc:source]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://purl.org/dc/elements/1.1/]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:dcterms:description|dcterms:description]]: [[dcterms:description::The described resource may be derived from the related resource in whole or in part. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system.]]
+* [original] [[Property:dcterms:hasVersion|dcterms:hasVersion]]: [[dcterms:hasVersion::http://dublincore.org/usage/terms/history/#source-006]]
+* [original] [[Property:dcterms:issued|dcterms:issued]]: [[dcterms:issued::1999-07-02]]
+* [original] [[Property:dcterms:modified|dcterms:modified]]: [[dcterms:modified::2008-01-14]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A related resource from which the described resource is derived.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://purl.org/dc/elements/1.1/]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Source]]
+* [original] [[Property:skos:note|skos:note]]: [[skos:note::A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.]]
+* see also [[MediaWiki:smw_import_dc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:description</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dc:description]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://purl.org/dc/elements/1.1/]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:dcterms:description|dcterms:description]]: [[dcterms:description::Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.]]
+* [original] [[Property:dcterms:hasVersion|dcterms:hasVersion]]: [[dcterms:hasVersion::http://dublincore.org/usage/terms/history/#description-006]]
+* [original] [[Property:dcterms:issued|dcterms:issued]]: [[dcterms:issued::1999-07-02]]
+* [original] [[Property:dcterms:modified|dcterms:modified]]: [[dcterms:modified::2008-01-14]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An account of the resource.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://purl.org/dc/elements/1.1/]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Description]]
+* [original] [[Property:skos:note|skos:note]]: [[skos:note::A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.]]
+* see also [[MediaWiki:smw_import_dc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://purl.org/dc/elements/1.1/</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dc:]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://purl.org/dc/elements/1.1/]]
+* [original] [[Property:dcterms:modified|dcterms:modified]]: [[dcterms:modified::2008-01-14]]
+* [original] [[Property:dcterms:publisher|dcterms:publisher]]: [[dcterms:publisher::The Dublin Core Metadata Initiative]]
+* [original] [[Property:dcterms:title|dcterms:title]]: [[dcterms:title::DCMI Namespace for the Dublin Core Metadata Element Set, Version 1.1]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::To comment on this schema, please contact dcmifb@dublincore.org.]]
+* see also [[MediaWiki:smw_import_dc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:subject</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dc:subject]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://purl.org/dc/elements/1.1/]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:dcterms:description|dcterms:description]]: [[dcterms:description::Typically, the subject will be represented using keywords, key phrases, or classification codes. Recommended best practice is to use a controlled vocabulary. To describe the spatial or temporal topic of the resource, use the Coverage element.]]
+* [original] [[Property:dcterms:hasVersion|dcterms:hasVersion]]: [[dcterms:hasVersion::http://dublincore.org/usage/terms/history/#subject-006]]
+* [original] [[Property:dcterms:issued|dcterms:issued]]: [[dcterms:issued::1999-07-02]]
+* [original] [[Property:dcterms:modified|dcterms:modified]]: [[dcterms:modified::2008-01-14]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The topic of the resource.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://purl.org/dc/elements/1.1/]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Subject]]
+* [original] [[Property:skos:note|skos:note]]: [[skos:note::A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.]]
+* see also [[MediaWiki:smw_import_dc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:format</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dc:format]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://purl.org/dc/elements/1.1/]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:dcterms:description|dcterms:description]]: [[dcterms:description::Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types [MIME].]]
+* [original] [[Property:dcterms:hasVersion|dcterms:hasVersion]]: [[dcterms:hasVersion::http://dublincore.org/usage/terms/history/#format-007]]
+* [original] [[Property:dcterms:issued|dcterms:issued]]: [[dcterms:issued::1999-07-02]]
+* [original] [[Property:dcterms:modified|dcterms:modified]]: [[dcterms:modified::2008-01-14]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The file format, physical medium, or dimensions of the resource.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://purl.org/dc/elements/1.1/]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Format]]
+* [original] [[Property:skos:note|skos:note]]: [[skos:note::A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.]]
+* see also [[MediaWiki:smw_import_dc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>MediaWiki:smw_import_dc</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">http://purl.org/dc/elements/1.1/|[http://purl.org/dc/elements/1.1/ dc]
+ type|Type:Page
+ rights|Type:Page
+ source|Type:Page
+ description|Type:Page
+ subject|Type:Page
+ format|Type:Page
+ publisher|Type:Page
+ identifier|Type:Page
+ title|Type:Page
+ relation|Type:Page
+ coverage|Type:Page
+ date|Type:Page
+ language|Type:Page
+ creator|Type:Page
+ contributor|Type:Page</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:publisher</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dc:publisher]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://purl.org/dc/elements/1.1/]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:dcterms:description|dcterms:description]]: [[dcterms:description::Examples of a Publisher include a person, an organization, or a service. Typically, the name of a Publisher should be used to indicate the entity.]]
+* [original] [[Property:dcterms:hasVersion|dcterms:hasVersion]]: [[dcterms:hasVersion::http://dublincore.org/usage/terms/history/#publisher-006]]
+* [original] [[Property:dcterms:issued|dcterms:issued]]: [[dcterms:issued::1999-07-02]]
+* [original] [[Property:dcterms:modified|dcterms:modified]]: [[dcterms:modified::2008-01-14]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An entity responsible for making the resource available.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://purl.org/dc/elements/1.1/]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Publisher]]
+* [original] [[Property:skos:note|skos:note]]: [[skos:note::A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.]]
+* see also [[MediaWiki:smw_import_dc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:identifier</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dc:identifier]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://purl.org/dc/elements/1.1/]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:dcterms:description|dcterms:description]]: [[dcterms:description::Recommended best practice is to identify the resource by means of a string conforming to a formal identification system. ]]
+* [original] [[Property:dcterms:hasVersion|dcterms:hasVersion]]: [[dcterms:hasVersion::http://dublincore.org/usage/terms/history/#identifier-006]]
+* [original] [[Property:dcterms:issued|dcterms:issued]]: [[dcterms:issued::1999-07-02]]
+* [original] [[Property:dcterms:modified|dcterms:modified]]: [[dcterms:modified::2008-01-14]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An unambiguous reference to the resource within a given context.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://purl.org/dc/elements/1.1/]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Identifier]]
+* [original] [[Property:skos:note|skos:note]]: [[skos:note::A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.]]
+* see also [[MediaWiki:smw_import_dc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:title</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dc:title]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://purl.org/dc/elements/1.1/]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:dcterms:hasVersion|dcterms:hasVersion]]: [[dcterms:hasVersion::http://dublincore.org/usage/terms/history/#title-006]]
+* [original] [[Property:dcterms:issued|dcterms:issued]]: [[dcterms:issued::1999-07-02]]
+* [original] [[Property:dcterms:modified|dcterms:modified]]: [[dcterms:modified::2008-01-14]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A name given to the resource.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://purl.org/dc/elements/1.1/]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Title]]
+* [original] [[Property:skos:note|skos:note]]: [[skos:note::A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.]]
+* see also [[MediaWiki:smw_import_dc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:relation</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dc:relation]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://purl.org/dc/elements/1.1/]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:dcterms:description|dcterms:description]]: [[dcterms:description::Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system. ]]
+* [original] [[Property:dcterms:hasVersion|dcterms:hasVersion]]: [[dcterms:hasVersion::http://dublincore.org/usage/terms/history/#relation-006]]
+* [original] [[Property:dcterms:issued|dcterms:issued]]: [[dcterms:issued::1999-07-02]]
+* [original] [[Property:dcterms:modified|dcterms:modified]]: [[dcterms:modified::2008-01-14]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A related resource.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://purl.org/dc/elements/1.1/]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Relation]]
+* [original] [[Property:skos:note|skos:note]]: [[skos:note::A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.]]
+* see also [[MediaWiki:smw_import_dc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:coverage</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dc:coverage]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://purl.org/dc/elements/1.1/]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:dcterms:description|dcterms:description]]: [[dcterms:description::Spatial topic and spatial applicability may be a named place or a location specified by its geographic coordinates. Temporal topic may be a named period, date, or date range. A jurisdiction may be a named administrative entity or a geographic place to which the resource applies. Recommended best practice is to use a controlled vocabulary such as the Thesaurus of Geographic Names [TGN]. Where appropriate, named places or time periods can be used in preference to numeric identifiers such as sets of coordinates or date ranges.]]
+* [original] [[Property:dcterms:hasVersion|dcterms:hasVersion]]: [[dcterms:hasVersion::http://dublincore.org/usage/terms/history/#coverage-006]]
+* [original] [[Property:dcterms:issued|dcterms:issued]]: [[dcterms:issued::1999-07-02]]
+* [original] [[Property:dcterms:modified|dcterms:modified]]: [[dcterms:modified::2008-01-14]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The spatial or temporal topic of the resource, the spatial applicability of the resource, or the jurisdiction under which the resource is relevant.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://purl.org/dc/elements/1.1/]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Coverage]]
+* [original] [[Property:skos:note|skos:note]]: [[skos:note::A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.]]
+* see also [[MediaWiki:smw_import_dc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:date</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dc:date]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://purl.org/dc/elements/1.1/]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:dcterms:description|dcterms:description]]: [[dcterms:description::Date may be used to express temporal information at any level of granularity.  Recommended best practice is to use an encoding scheme, such as the W3CDTF profile of ISO 8601 [W3CDTF].]]
+* [original] [[Property:dcterms:hasVersion|dcterms:hasVersion]]: [[dcterms:hasVersion::http://dublincore.org/usage/terms/history/#date-006]]
+* [original] [[Property:dcterms:issued|dcterms:issued]]: [[dcterms:issued::1999-07-02]]
+* [original] [[Property:dcterms:modified|dcterms:modified]]: [[dcterms:modified::2008-01-14]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A point or period of time associated with an event in the lifecycle of the resource.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://purl.org/dc/elements/1.1/]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Date]]
+* [original] [[Property:skos:note|skos:note]]: [[skos:note::A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.]]
+* see also [[MediaWiki:smw_import_dc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:language</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dc:language]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://purl.org/dc/elements/1.1/]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:dcterms:description|dcterms:description]]: [[dcterms:description::Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646].]]
+* [original] [[Property:dcterms:hasVersion|dcterms:hasVersion]]: [[dcterms:hasVersion::http://dublincore.org/usage/terms/history/#language-007]]
+* [original] [[Property:dcterms:issued|dcterms:issued]]: [[dcterms:issued::1999-07-02]]
+* [original] [[Property:dcterms:modified|dcterms:modified]]: [[dcterms:modified::2008-01-14]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A language of the resource.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://purl.org/dc/elements/1.1/]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Language]]
+* [original] [[Property:rdfs:seeAlso|rdfs:seeAlso]]: [[rdfs:seeAlso::http://www.ietf.org/rfc/rfc4646.txt]]
+* [original] [[Property:skos:note|skos:note]]: [[skos:note::A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.]]
+* see also [[MediaWiki:smw_import_dc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:creator</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dc:creator]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://purl.org/dc/elements/1.1/]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:dcterms:description|dcterms:description]]: [[dcterms:description::Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity.]]
+* [original] [[Property:dcterms:hasVersion|dcterms:hasVersion]]: [[dcterms:hasVersion::http://dublincore.org/usage/terms/history/#creator-006]]
+* [original] [[Property:dcterms:issued|dcterms:issued]]: [[dcterms:issued::1999-07-02]]
+* [original] [[Property:dcterms:modified|dcterms:modified]]: [[dcterms:modified::2008-01-14]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An entity primarily responsible for making the resource.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://purl.org/dc/elements/1.1/]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Creator]]
+* [original] [[Property:skos:note|skos:note]]: [[skos:note::A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.]]
+* see also [[MediaWiki:smw_import_dc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:contributor</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dc:contributor]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://purl.org/dc/elements/1.1/]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:dcterms:description|dcterms:description]]: [[dcterms:description::Examples of a Contributor include a person, an organization, or a service. Typically, the name of a Contributor should be used to indicate the entity.]]
+* [original] [[Property:dcterms:hasVersion|dcterms:hasVersion]]: [[dcterms:hasVersion::http://dublincore.org/usage/terms/history/#contributor-006]]
+* [original] [[Property:dcterms:issued|dcterms:issued]]: [[dcterms:issued::1999-07-02]]
+* [original] [[Property:dcterms:modified|dcterms:modified]]: [[dcterms:modified::2008-01-14]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An entity responsible for making contributions to the resource.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://purl.org/dc/elements/1.1/]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Contributor]]
+* [original] [[Property:skos:note|skos:note]]: [[skos:note::A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.]]
+* see also [[MediaWiki:smw_import_dc]]</text>
+     </revision>
+ </page>
+</mediawiki>

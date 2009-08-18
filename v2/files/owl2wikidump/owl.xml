@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Category:owl:DeprecatedClass</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:rdfs:Class]][[Category:rdfs:Class]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:DeprecatedClass]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::DeprecatedClass]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:rdfs:Class]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:Class</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:rdfs:Class]][[Category:rdfs:Class]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:Class]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Class]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:rdfs:Class]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:AnnotationProperty</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:rdf:Property]][[Category:rdf:Property]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:AnnotationProperty]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::AnnotationProperty]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:rdf:Property]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:maxCardinality</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Number]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:maxCardinality]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:Restriction]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::maxCardinality]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#nonNegativeInteger]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>MediaWiki:smw_import_owl</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">http://www.w3.org/2002/07/owl#|[http://www.w3.org/2002/07/owl owl]
+ DeprecatedClass|Category
+ Class|Category
+ AnnotationProperty|Category
+ maxCardinality|Type:Number
+ incompatibleWith|Type:Page
+ inverseOf|Type:Page
+ distinctMembers|Type:Page
+ DatatypeProperty|Category
+ allValuesFrom|Type:Page
+ Restriction|Category
+ equivalentClass|Type:Page
+ minCardinality|Type:Number
+ DataRange|Category
+ backwardCompatibleWith|Type:Page
+ FunctionalProperty|Category
+ oneOf|Type:Page
+ disjointWith|Type:Page
+ InverseFunctionalProperty|Category
+ OntologyProperty|Category
+ versionInfo|Type:Page
+ Thing|Category
+ seeAlso|Type:Page
+ SymmetricProperty|Category
+ DeprecatedProperty|Category
+ onProperty|Type:Page
+ owl|Type:Page
+ TransitiveProperty|Category
+ label|Type:Page
+ intersectionOf|Type:Page
+ unionOf|Type:Page
+ differentFrom|Type:Page
+ Ontology|Category
+ someValuesFrom|Type:Page
+ complementOf|Type:Page
+ isDefinedBy|Type:Page
+ priorVersion|Type:Page
+ AllDifferent|Category
+ hasValue|Type:Page
+ sameAs|Type:Page
+ imports|Type:Page
+ ObjectProperty|Category
+ Nothing|Category
+ cardinality|Type:Number
+ equivalentProperty|Type:Page
+ comment|Type:Page</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:incompatibleWith</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:incompatibleWith]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:OntologyProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:OntologyProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:Ontology]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::incompatibleWith]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:owl:Ontology]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:inverseOf</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:inverseOf]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::inverseOf]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:owl:ObjectProperty]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:distinctMembers</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:distinctMembers]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:AllDifferent]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::distinctMembers]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdf:List]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:allValuesFrom</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:allValuesFrom]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:Restriction]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::allValuesFrom]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Class]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:DatatypeProperty</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:rdf:Property]][[Category:rdf:Property]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:DatatypeProperty]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::DatatypeProperty]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:rdf:Property]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:equivalentClass</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:equivalentClass]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::equivalentClass]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:owl:Class]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:rdfs:subClassOf]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:Restriction</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:owl:Class]][[Category:owl:Class]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:Restriction]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Restriction]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:owl:Class]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:DataRange</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:DataRange]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::DataRange]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:minCardinality</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Number]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:minCardinality]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:Restriction]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::minCardinality]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#nonNegativeInteger]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:backwardCompatibleWith</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:backwardCompatibleWith]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:OntologyProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:OntologyProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:Ontology]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::backwardCompatibleWith]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:owl:Ontology]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:FunctionalProperty</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:rdf:Property]][[Category:rdf:Property]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:FunctionalProperty]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::FunctionalProperty]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:rdf:Property]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:oneOf</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:oneOf]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:rdfs:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::oneOf]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdf:List]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:disjointWith</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:disjointWith]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::disjointWith]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:owl:Class]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:InverseFunctionalProperty</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:owl:ObjectProperty]][[Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:InverseFunctionalProperty]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::InverseFunctionalProperty]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:owl:ObjectProperty]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:OntologyProperty</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:rdf:Property]][[Category:rdf:Property]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:OntologyProperty]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::OntologyProperty]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:rdf:Property]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:versionInfo</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:versionInfo]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:AnnotationProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:AnnotationProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::versionInfo]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:Thing</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:Thing]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Thing]]
+* see also [[MediaWiki:smw_import_owl]]
+==more description==
+===7c12365:122e8b6b0be:-8000===
+* [original] [[Property:rdf:first|rdf:first]] [[:Category:owl:Nothing]]
+* [original] [[Property:rdf:rest|rdf:rest]] [[#7c12365:122e8b6b0be:-7ffe]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdfs:seeAlso</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:AnnotationProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:AnnotationProperty]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:SymmetricProperty</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:owl:ObjectProperty]][[Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:SymmetricProperty]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::SymmetricProperty]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:owl:ObjectProperty]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:DeprecatedProperty</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:rdf:Property]][[Category:rdf:Property]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:DeprecatedProperty]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::DeprecatedProperty]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:rdf:Property]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:onProperty</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:onProperty]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:Restriction]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::onProperty]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdf:Property]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:TransitiveProperty</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:owl:ObjectProperty]][[Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:TransitiveProperty]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::TransitiveProperty]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:owl:ObjectProperty]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://www.w3.org/2002/07/owl</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Ontology]]
+* [original] [[Property:owl:imports|owl:imports]]: [[owl:imports::http://www.w3.org/2000/01/rdf-schema]]
+* [original] [[Property:owl:priorVersion|owl:priorVersion]]: [[owl:priorVersion::http://www.daml.org/2001/03/daml+oil]]
+* [original] [[Property:owl:versionInfo|owl:versionInfo]]: [[owl:versionInfo::10 February 2004, revised $Date: 2004/09/24 18:12:02 $]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Ontology]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::This file specifies in RDF Schema format the     built-in classes and properties that together form the basis of     the RDF/XML syntax of OWL Full, OWL DL and OWL Lite.     We do not expect people to import this file     explicitly into their ontology. People that do import this file     should expect their ontology to be an OWL Full ontology.    ]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/TR/2004/REC-owl-features-20040210/]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/TR/2004/REC-owl-semantics-20040210/]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/TR/2004/REC-owl-test-20040210/]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:intersectionOf</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:intersectionOf]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::intersectionOf]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdf:List]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdfs:label</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:AnnotationProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:AnnotationProperty]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:unionOf</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:unionOf]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::unionOf]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdf:List]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:differentFrom</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:differentFrom]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:Thing]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::differentFrom]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:owl:Thing]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:Ontology</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:Ontology]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Ontology]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:someValuesFrom</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:someValuesFrom]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:Restriction]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::someValuesFrom]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Class]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdfs:isDefinedBy</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:AnnotationProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:AnnotationProperty]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:complementOf</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:complementOf]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::complementOf]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:owl:Class]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:priorVersion</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:priorVersion]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:OntologyProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:OntologyProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:Ontology]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::priorVersion]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:owl:Ontology]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:AllDifferent</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:AllDifferent]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::AllDifferent]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:sameAs</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:sameAs]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:Thing]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::sameAs]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:owl:Thing]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:hasValue</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:hasValue]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:Restriction]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::hasValue]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:imports</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:imports]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:OntologyProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:OntologyProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:Ontology]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::imports]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:owl:Ontology]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:ObjectProperty</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[:Category:rdf:Property]][[Category:rdf:Property]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::ObjectProperty]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:rdf:Property]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:Nothing</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:Nothing]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:owl:complementOf|owl:complementOf]]: [[owl:complementOf::Category:owl:Thing]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Nothing]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:cardinality</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Number]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:cardinality]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:owl:Restriction]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::cardinality]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#nonNegativeInteger]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdfs:comment</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:AnnotationProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:AnnotationProperty]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:equivalentProperty</title>
+     <revision>
+       <timestamp>2009-08-05T04:00:02Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::owl:equivalentProperty]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/2002/07/owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::equivalentProperty]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:rdfs:subPropertyOf]]
+* see also [[MediaWiki:smw_import_owl]]</text>
+     </revision>
+ </page>
+</mediawiki>

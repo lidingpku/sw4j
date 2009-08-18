@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Property:dgtwc:number_of_bytes</title>
+     <revision>
+       <timestamp>2009-08-05T03:59:59Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Number]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dgtwc:number_of_bytes]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::number of bytes of a file]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::number of bytes]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#nonNegativeInteger]]
+* see also [[MediaWiki:smw_import_dgtwc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dgtwc:Datafile</title>
+     <revision>
+       <timestamp>2009-08-05T03:59:59Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dgtwc:Datafile]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A data file physically storing the dataset in part or in whole. Subclass of foaf:document ]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Data File]]
+* see also [[MediaWiki:smw_import_dgtwc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dgtwc:number_of_entries</title>
+     <revision>
+       <timestamp>2009-08-05T03:59:59Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Number]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dgtwc:number_of_entries]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::number of entries in a dataset, e.g. number of rows in a spreadsheet]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::number of entries]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#nonNegativeInteger]]
+* see also [[MediaWiki:smw_import_dgtwc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>dgtwc:hasPart</title>
+     <revision>
+       <timestamp>2009-08-05T03:59:59Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dgtwc:hasPart]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:TransitiveProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:TransitiveProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::one thing has another thing as a part]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::part]]
+* see also [[MediaWiki:smw_import_dgtwc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dgtwc:Dataset</title>
+     <revision>
+       <timestamp>2009-08-05T03:59:59Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dgtwc:Dataset]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A dataset, e.g. a spreadsheet. ]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Dataset]]
+* see also [[MediaWiki:smw_import_dgtwc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>MediaWiki:smw_import_dgtwc</title>
+     <revision>
+       <timestamp>2009-08-05T03:59:59Z</timestamp>
+       <text xml:space="preserve">http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf#|[http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf dgtwc]
+ number_of_bytes|Type:Number
+ Datafile|Category
+ number_of_entries|Type:Number
+ hasPart|Type:Page
+ Dataset|Category
+ isPartOf|Type:Page
+ complete_data|Type:Page
+ imports|Type:Page
+ number_of_triples|Type:Number
+ number_of_properties|Type:Number
+ DataEntry|Category
+ data-gov-twc.rdf|Type:Page
+ link_data|Type:Page
+ partial_data|Type:Page</text>
+     </revision>
+ </page>
+ <page>
+     <title>dgtwc:isPartOf</title>
+     <revision>
+       <timestamp>2009-08-05T03:59:59Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dgtwc:isPartOf]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:TransitiveProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::dgtwc:hasPart]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:TransitiveProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::one thing is part of another thing]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::part of]]
+* see also [[MediaWiki:smw_import_dgtwc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dgtwc:complete_data</title>
+     <revision>
+       <timestamp>2009-08-05T03:59:59Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dgtwc:complete_data]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the document contains complete data of a dataset]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::complete data]]
+* see also [[MediaWiki:smw_import_dgtwc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>dgtwc:imports</title>
+     <revision>
+       <timestamp>2009-08-05T03:59:59Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dgtwc:imports]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:TransitiveProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:TransitiveProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::this document imports the content of another document]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::imports]]
+* see also [[MediaWiki:smw_import_dgtwc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dgtwc:number_of_triples</title>
+     <revision>
+       <timestamp>2009-08-05T03:59:59Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Number]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dgtwc:number_of_triples]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::number of triples contributed by a dataset (excluding its metadata)]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::number of triples]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#nonNegativeInteger]]
+* see also [[MediaWiki:smw_import_dgtwc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dgtwc:number_of_properties</title>
+     <revision>
+       <timestamp>2009-08-05T03:59:59Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Number]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dgtwc:number_of_properties]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::number of properties used to describe data in a dataset, e.g. number of columns in a spreadsheet]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::number of properties]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#nonNegativeInteger]]
+* see also [[MediaWiki:smw_import_dgtwc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dgtwc:DataEntry</title>
+     <revision>
+       <timestamp>2009-08-05T03:59:59Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dgtwc:DataEntry]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An entry in a dataset, e.g. a row in a spreadsheet.]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::DataEntry]]
+* see also [[MediaWiki:smw_import_dgtwc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf</title>
+     <revision>
+       <timestamp>2009-08-05T03:59:59Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Ontology]]
+* [original] [[Property:owl:versionInfo|owl:versionInfo]]: [[owl:versionInfo::version 0.2]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Ontology]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The ontology for RDF data published at http://data-gov.tw.rpi.edu. ]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::dgtwc ontology]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dgtwc:link_data</title>
+     <revision>
+       <timestamp>2009-08-05T03:59:59Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dgtwc:link_data]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the document contains links to partial data of a dataset]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::link data]]
+* see also [[MediaWiki:smw_import_dgtwc]]</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dgtwc:partial_data</title>
+     <revision>
+       <timestamp>2009-08-05T03:59:59Z</timestamp>
+       <text xml:space="preserve">==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::dgtwc:partial_data]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the document contains partial data of a dataset]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::partial data]]
+* see also [[MediaWiki:smw_import_dgtwc]]</text>
+     </revision>
+ </page>
+</mediawiki>

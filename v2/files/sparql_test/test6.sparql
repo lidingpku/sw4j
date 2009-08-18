@@ -1,0 +1,10 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wine: <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#>
+SELECT   ?c  ?p ?z
+FROM <http://tw.rpi.edu/2008/03/wine.owl>
+WHERE { 
+	wine:Zinfandel rdfs:subClassOf ?c.
+	?c ?p ?z 
+}

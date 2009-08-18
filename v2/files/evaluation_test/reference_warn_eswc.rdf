@@ -1,0 +1,79 @@
+<!-- Processed by Id: cwm.py,v 1.193 2007/06/26 02:36:15 syosi Exp -->
+<!--     using base file:///Users/knud/Projekte/eswc2007data/-->
+
+
+<rdf:RDF xmlns="http://xmlns.com/foaf/0.1/"
+    xmlns:bibtex="http://swrc.ontoware.org/ontology#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:ical="http://www.w3.org/2002/12/cal/ical#"
+    xmlns:onto="http://data.semanticweb.org/ns/swc/ontology#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+    <owl:Ontology rdf:about="authors">
+        <dc:creator>Sean Bechhofer</dc:creator>
+        <owl:imports rdf:resource="http://data.semanticweb.org/ns/swc/ontology"/>
+    </owl:Ontology>
+
+    <owl:Ontology rdf:about="demos">
+        <dc:creator>Sean Bechhofer</dc:creator>
+        <owl:imports rdf:resource="http://data.semanticweb.org/ns/swc/ontology"/>
+    </owl:Ontology>
+
+    <owl:Ontology rdf:about="events">
+        <dc:creator>Sean Bechhofer</dc:creator>
+        <owl:imports rdf:resource="http://data.semanticweb.org/ns/swc/ontology"/>
+
+    </owl:Ontology>
+
+    <owl:Ontology rdf:about="locations">
+        <dc:creator>Sean Bechhofer</dc:creator>
+        <owl:imports rdf:resource="http://data.semanticweb.org/ns/swc/ontology"/>
+    </owl:Ontology>
+
+    <owl:Ontology rdf:about="oc">
+        <dc:creator>Sean Bechhofer</dc:creator>
+
+        <owl:imports rdf:resource="http://data.semanticweb.org/ns/swc/ontology"/>
+    </owl:Ontology>
+
+    <owl:Ontology rdf:about="papers">
+        <dc:creator>Sean Bechhofer</dc:creator>
+        <owl:imports rdf:resource="http://data.semanticweb.org/ns/swc/ontology"/>
+    </owl:Ontology>
+
+    <owl:Ontology rdf:about="pc">
+
+        <dc:creator>Sean Bechhofer</dc:creator>
+        <owl:imports rdf:resource="http://data.semanticweb.org/ns/swc/ontology"/>
+    </owl:Ontology>
+
+    <owl:Ontology rdf:about="sessions">
+        <dc:creator>Sean Bechhofer</dc:creator>
+        <owl:imports rdf:resource="http://data.semanticweb.org/ns/swc/ontology"/>
+    </owl:Ontology>
+
+    <owl:Ontology rdf:about="urls">
+        <dc:creator>Sean Bechhofer</dc:creator>
+        <owl:imports rdf:resource="http://data.semanticweb.org/ns/swc/ontology"/>
+    </owl:Ontology>
+
+
+    <Person rdf:about="http://data.semanticweb.org/conference/eswc/2007/person-40002">
+        <onto:affiliation>NIST</onto:affiliation>
+        <onto:holdsRole rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://data.semanticweb.org/ns/swc/ontology#WorkshopOrganiser"/>
+
+            <onto:isRoleAt rdf:resource="http://data.semanticweb.org/conference/eswc/2007/workshop-1"/>
+        </onto:holdsRole>
+        <rdfs:label>Evan Wallace</rdfs:label>
+        <family_name>Wallace</family_name>
+        <firstName>Evan</firstName>
+        <mbox_sha1sum>203d1e776e34dced78a941970401c528335a5428</mbox_sha1sum>
+        <name>Evan Wallace</name>
+
+    </Person>
+
+</rdf:RDF>

@@ -1,0 +1,9 @@
+#  Test case
+#  aggregator function
+#
+PREFIX rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX foaf:      <http://xmlns.com/foaf/0.1/> 
+select ?o count(*)  
+from <http://www.cs.rpi.edu/~dingl/foaf.rdf> 
+WHERE  { ?person rdf:type ?o} 
+GROUP BY ?o
