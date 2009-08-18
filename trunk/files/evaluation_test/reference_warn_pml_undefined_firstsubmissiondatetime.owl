@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+This is an invalid PML document because it uses undefined PML properties:   iw:firstSubmissionDateTime.
+The current PML ontology http://iw.stanford.edu/2004/07/iw.owl only defined iw:firstSubmissionDate .
+-->
+
+<rdf:RDF
+    xmlns:iw="http://inferenceweb.stanford.edu/2004/07/iw.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#">
+	
+  <iw:Query rdf:about="http://logos.cs.umbc.edu:8080/iwvalidator/doc/iw200407/test1/tonys.owl#tonys">
+	 
+	<iw:firstSubmissionDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2004-12-08T10:00:00-08:00</iw:firstSubmissionDateTime>
+	<iw:lastSubmissionDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2004-12-08T02:00:00Z</iw:lastSubmissionDateTime>
+	 
+    <iw:queryContent>(|http://www.w3.org/1999/02/22-rdf-syntax-ns#|::type |http://iw.stanford.edu/enginesdoc/jtp/script-data/tonys.daml#|::|TonysSpecialty| ?x)</iw:queryContent>
+    <iw:isFromEngine rdf:resource="http://inferenceweb.stanford.edu/registry/IE/JTP.owl#JTP"/>
+    <iw:hasAnswer rdf:resource="http://logos.cs.umbc.edu:8080/iwvalidator/doc/iw200407/test1/tonysns1_0.owl#tonysns1_0"/>
+    <iw:hasAnswer rdf:resource="http://logos.cs.umbc.edu:8080/iwvalidator/doc/iw200407/test1/tonysns2_0.owl#tonysns2_0"/>
+    <iw:hasAnswer rdf:resource="http://logos.cs.umbc.edu:8080/iwvalidator/doc/iw200407/test1/tonysns3_0.owl#tonysns3_0"/>
+  </iw:Query>
+</rdf:RDF>

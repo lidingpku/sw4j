@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+  <servlet>
+    <servlet-name>SPARQL</servlet-name>
+    <servlet-class>sw4j.servlet.SparqlServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>SPARQL</servlet-name>
+    <url-pattern>/sparql</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>Diff</servlet-name>
+    <servlet-class>sw4j.servlet.DiffServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Diff</servlet-name>
+    <url-pattern>/diff</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Convert</servlet-name>
+    <servlet-class>sw4j.servlet.ConvertServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Convert</servlet-name>
+    <url-pattern>/convert</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>PING</servlet-name>
+    <servlet-class>sw4j.servlet.PingServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>PING</servlet-name>
+    <url-pattern>/ping</url-pattern>
+  </servlet-mapping>
+  
+
+  <session-config>
+    <session-timeout>15</session-timeout>
+  </session-config>
+
+</web-app>
