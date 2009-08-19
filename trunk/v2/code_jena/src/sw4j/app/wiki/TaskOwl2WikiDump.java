@@ -1,5 +1,7 @@
 package sw4j.app.wiki;
 
+import sw4j.rdf.util.ToolOwl2SemanticMediaWiki;
+
 import com.hp.hpl.jena.sparql.vocabulary.FOAF;
 import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.DCTerms;
@@ -7,7 +9,6 @@ import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
-import sw4j.rdf.util.ToolOwl2SemanticMediaWiki;
 
 
 public class TaskOwl2WikiDump {
