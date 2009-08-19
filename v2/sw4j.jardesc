@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
 <jardesc>
-    <jar path="C:/dl/workspace/svn-google-sw4j/sw4j.jar"/>
+    <jar path="C:/dl/workspace/svn-google-sw4j/sw4j-2.0.jar"/>
     <options buildIfNeeded="true" compress="true" descriptionLocation="/svn-google-sw4j/sw4j.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
     <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
     <selectedProjects/>
@@ -11,8 +11,8 @@
         </sealing>
     </manifest>
     <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
-        <javaElement handleIdentifier="=svn-google-sw4j/src-example"/>
-        <javaElement handleIdentifier="=svn-google-sw4j/src-test"/>
-        <javaElement handleIdentifier="=svn-google-sw4j/src"/>
+        <javaElement handleIdentifier="=svn-google-sw4j/code_core/src"/>
+        <javaElement handleIdentifier="=svn-google-sw4j/code_jena/src"/>
+        <javaElement handleIdentifier="=svn-google-sw4j/code_ext/src"/>
     </selectedElements>
 </jardesc>
