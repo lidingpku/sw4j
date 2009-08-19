@@ -55,8 +55,8 @@ public class RDFSYNTAX {
 	 * @param rdfsyntax
 	 * @return
 	 */
-	public static String parseRdfSyntax(String rdfsyntax, String sz_default){
-		String ret = parseRdfSyntax(rdfsyntax);
+	public static String parseSyntaxRdf(String rdfsyntax, String sz_default){
+		String ret = parseSyntaxRdf(rdfsyntax);
 		if (null==ret)
 			return sz_default;
 		else
@@ -68,7 +68,28 @@ public class RDFSYNTAX {
 	 * @param rdfsyntax
 	 * @return
 	 */
-	public static String parseRdfSyntax(String rdfsyntax){
+	public static String parseSyntaxRdf(String rdfsyntax){
+		if (ToolSafe.isEmpty(rdfsyntax)){
+			return null;
+		}else{
+			if (N3.equalsIgnoreCase(rdfsyntax)){
+				return N3;
+			}else if (TURTLE.equalsIgnoreCase(rdfsyntax)){
+				return TURTLE;
+			}else if (RDFXML.equalsIgnoreCase(rdfsyntax)){
+				return RDFXML;
+			}else if (RDFXML_ABBREV.equalsIgnoreCase(rdfsyntax)){
+				return RDFXML_ABBREV;
+			}else if (NT.equalsIgnoreCase(rdfsyntax)){
+				return NT;
+			}else{
+				return null;
+			}
+		}
+		
+	}
+	
+	public static String parseSyntax(String rdfsyntax){
 		if (ToolSafe.isEmpty(rdfsyntax)){
 			return null;
 		}else{
