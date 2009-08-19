@@ -22,7 +22,7 @@ Features:
 <legend>Process Convert Request</legend>
 <form method="GET" action="/sw4j/convert" border="1">
 	URL: <input name="url" size="102" type="text">  <br/>
-    output syntax: <SELECT name="view">
+    output syntax: <SELECT name="output">
  <OPTION VALUE="N3" SELECTED>N3</OPTION>
  <OPTION VALUE="RDF/XML" >RDF/XML</OPTION>
  <OPTION VALUE="N-TRIPLE">N-TRIPLE</OPTION>
@@ -47,7 +47,7 @@ Base service URI: &nbsp;http://onto.rpi.edu/sw4j/convert<br />
       <td style="width: 378px;">the URL to be converted</td>
     </tr>
     <tr>
-      <td style="width: 111px;">view</td>
+      <td style="width: 111px;">output</td>
       <td style="width: 378px;">output rdf
 syntax : &nbsp;RDF/XML, N3, N-TRIPLE, RDF/XML-ABBREVE . <br />
 Default output: N3</td>
@@ -60,13 +60,11 @@ example usage
   <li> simple convert (RDF/XML => N3) - <a
  href="http://onto.rpi.edu/sw4j/convert?url=http://www.cs.rpi.edu/~dingl/foaf.rdf">http://onto.rpi.edu/sw4j/convert?url=http://www.cs.rpi.edu/~dingl/foaf.rdf</a></li>
   <li> simple convert (RDF/XML => N-TRIPLE) - <a
- href="http://onto.rpi.edu/sw4j/convert?url=http://www.cs.rpi.edu/~dingl/foaf.rdf&amp;view=N-TRIPLE">http://onto.rpi.edu/sw4j/convert?url=http://www.cs.rpi.edu/~dingl/foaf.rdf&view=N-TRIPLE</a></li>
+ href="http://onto.rpi.edu/sw4j/convert?url=http://www.cs.rpi.edu/~dingl/foaf.rdf&amp;output=N-TRIPLE">http://onto.rpi.edu/sw4j/convert?url=http://www.cs.rpi.edu/~dingl/foaf.rdf&output=N-TRIPLE</a></li>
   <li> simple convert (N3/Turtle => RDF/XML) - <a
- href="http://onto.rpi.edu/sw4j/convert?url=http://dig.csail.mit.edu/TAMI/2007/amord/air.ttl&amp;view=RDF/XML">http://onto.rpi.edu/sw4j/convert?url=http://dig.csail.mit.edu/TAMI/2007/amord/air.ttl&view=RDF/XML</a></li>
+ href="http://onto.rpi.edu/sw4j/convert?url=http://dig.csail.mit.edu/TAMI/2007/amord/air.ttl&amp;output=RDF/XML">http://onto.rpi.edu/sw4j/convert?url=http://dig.csail.mit.edu/TAMI/2007/amord/air.ttl&output=RDF/XML</a></li>
   <li> simple convert (gzipped RDF/XML => n3) - <a
- href="http://onto.rpi.edu/sw4j/convert?url=http://tw.rpi.edu/2008/05/foaf.rdf.gz&amp;view=RDF/XML">http://onto.rpi.edu/sw4j/convert?url=http://tw.rpi.edu/2008/05/foaf.rdf.gz&view=N3</a></li>
-  <li> simple convert (gzipped RDF/XML => n3) - <a
- href="http://onto.rpi.edu/sw4j/convert?url=http://tw.rpi.edu/2008/05/foaf.rdf.gz&amp;view=RDF/XML">http://onto.rpi.edu/sw4j/convert?url=http://tw.rpi.edu/2008/05/foaf.rdf.gz&view=N3</a></li>
+ href="http://onto.rpi.edu/sw4j/convert?url=http://tw.rpi.edu/2008/05/foaf.rdf.gz&amp;output=N3">http://onto.rpi.edu/sw4j/convert?url=http://tw.rpi.edu/2008/05/foaf.rdf.gz&output=N3</a></li>
 </ul>
 
 

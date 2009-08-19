@@ -24,7 +24,7 @@ Features:
 <form method="GET" action="/sw4j/ping" border="1">
 	URL: <input name="url" size="102" type="text">  <br/>
     Option: <input name="vrdf" type="checkbox" value=yes> check if it uses valid RDF syntax  <br/>
-    Option: output syntax<SELECT name="view">
+    Option: output syntax<SELECT name="output">
  <OPTION VALUE="" SELECTED>Text(default)</OPTION>
  <OPTION VALUE="RDF/XML">RDF/XML</OPTION>
  <OPTION VALUE="N3">N3</OPTION>
@@ -48,7 +48,7 @@ Base service URI: &nbsp;http://onto.rpi.edu/sw4j/ping<br />
       <td style="width: 378px;">the URL to be ping</td>
     </tr>
     <tr>
-      <td style="width: 111px;">view</td>
+      <td style="width: 111px;">output</td>
       <td style="width: 378px;">(optional) output rdf
 syntax : &nbsp;RDF/XML, N3 . <br />
 Default output:&nbsp; RDF/XML&nbsp;for describe/construction;
@@ -66,7 +66,7 @@ example usage
   <li> simple PING (default) - <a
  href="http://onto.rpi.edu/sw4j/ping?url=http://tw.rpi.edu/">http://onto.rpi.edu/sw4j/ping?url=http://tw.rpi.edu/</a></li>
   <li> simple PING (return RDF) - <a
- href="http://onto.rpi.edu/sw4j/ping?url=http://tw.rpi.edu/&amp;view=RDF/XML">http://onto.rpi.edu/sw4j/ping?url=http://tw.rpi.edu/&amp;view=RDF/XML</a></li>
+ href="http://onto.rpi.edu/sw4j/ping?url=http://tw.rpi.edu/&amp;output=RDF/XML">http://onto.rpi.edu/sw4j/ping?url=http://tw.rpi.edu/&amp;output=RDF/XML</a></li>
   <li> PING + RDF validation - <a
  href="http://onto.rpi.edu/sw4j/ping?url=http://www.cs.rpi.edu/~dingl/foaf.rdf&amp;vrdf=yes">http://onto.rpi.edu/sw4j/ping?url=http://www.cs.rpi.edu/~dingl/foaf.rdf&amp;vrdf=yes</a></li>
 </ul>

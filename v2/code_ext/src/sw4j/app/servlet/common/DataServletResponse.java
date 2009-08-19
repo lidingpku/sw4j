@@ -29,11 +29,11 @@ public class DataServletResponse {
 	public Resource m_root = null;
 
 	public static DataServletResponse createResponse(String msg, boolean isSucceed, AbstractService service){
-		return createResponse( msg,  isSucceed,  service.context.getAsString(AbstractService.HTTP_REQUEST_URI),  service.getName(),  service.getRdfSyntax());
+		return createResponse( msg,  isSucceed,  service.context.getAsString(AbstractService.HTTP_REQUEST_URI),  service.getName(),  service.params.getAsString(AbstractService.PARAM_OUTPUT));
 	}
 	
 	public static DataServletResponse createResponse(String msg, boolean isSucceed, String requestURI, String creator, String rdfsyntax){
-		rdfsyntax = RDFSYNTAX.parseRdfSyntax(rdfsyntax);
+		rdfsyntax = RDFSYNTAX.parseSyntax(rdfsyntax);
 		if (ToolSafe.isEmpty(rdfsyntax)){
 			DataServletResponse response = new DataServletResponse();
 			response.m_sz_mime_type = RDFSYNTAX.MIME_TEXT_PLAIN;
@@ -86,7 +86,7 @@ public class DataServletResponse {
 	}
 
 	public  static DataServletResponse createResponse(Model m, Resource root, String rdfsyntax){
-		rdfsyntax = RDFSYNTAX.parseRdfSyntax(rdfsyntax);
+		rdfsyntax = RDFSYNTAX.parseSyntaxRdf(rdfsyntax);
 		if (ToolSafe.isEmpty(rdfsyntax))
 			rdfsyntax = RDFSYNTAX.RDFXML;
 		
