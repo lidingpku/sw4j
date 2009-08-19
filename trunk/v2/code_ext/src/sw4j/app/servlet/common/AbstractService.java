@@ -16,9 +16,9 @@ abstract public class AbstractService  {
 	public static final String PARAM_URI = "uri";
 	public static final String PARAM_URL = "url";
 	public static final String PARAM_OUTPUT = "output";
+	public static final String PARAM_VIEW = "view";
 	public static final String PARAM_OPTION = "option";
 		
-	abstract public String [] getParamNames();
 	abstract public String getName();
 	abstract public DataServletResponse run();
 	
@@ -26,8 +26,8 @@ abstract public class AbstractService  {
 	protected DataSmartMap context = new DataSmartMap();
 
 	
-	public String getRdfSyntax(){
-		return RDFSYNTAX.parseRdfSyntax(this.params.getAsString(PARAM_OUTPUT));
+	public String getSyntaxRdf(){
+		return RDFSYNTAX.parseSyntaxRdf(this.params.getAsString(PARAM_OUTPUT));
 	}
 	
 	public boolean getBoolParam(String key){

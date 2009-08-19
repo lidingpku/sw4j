@@ -23,11 +23,7 @@ public class PingService extends AbstractService {
 		return "TW Ping Service. http://onto.rpi.edu/sw4j/ping.html";
 	}
 
-	@Override
-	public String[] getParamNames() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 	
 	public static final String PARAM_VALIDATE_RDF = "vrdf";
 
@@ -35,13 +31,12 @@ public class PingService extends AbstractService {
 	@Override
 	public DataServletResponse run(){
 		String szURL = this.params.getAsString(PARAM_URL);
-		String rdfsyntax = this.getRdfSyntax();
-		String requestURI = this.context.getAsString(HTTP_REQUEST_URI);
+		boolean bValidateRDF = this.getBoolParam(PARAM_VALIDATE_RDF);
 
 		boolean bEmptyURL = ToolSafe.isEmpty(szURL);
 
         if (bEmptyURL ){
-        	DataServletResponse ret = DataServletResponse.createResponse("URL not set.", false, requestURI,getName() , rdfsyntax);
+        	DataServletResponse ret = DataServletResponse.createResponse("URL not set.", false, this);
         	return ret;
         }
         
@@ -50,7 +45,7 @@ public class PingService extends AbstractService {
         DataServletResponse ret;
 		if (tl.isLoadSucceed()){
 			Resource item = null;
-        	ret = DataServletResponse.createResponse("alive", true, requestURI, getName(), rdfsyntax);
+        	ret = DataServletResponse.createResponse("alive", true, this);
         	if (null!=ret.m_root){
         		item= ret.m_root.getModel().createResource();
         		item.addProperty(RDF.type, FOAF.Document);
@@ -69,7 +64,7 @@ public class PingService extends AbstractService {
         			ret.m_sz_content += String.format("\nLast modified? %s ", ToolString.formatXMLDateTime(tl.getLastmodified()));
         	}
         	
-        	if (this.getBoolParam(PARAM_VALIDATE_RDF)){
+        	if (bValidateRDF){
         		TaskParseRdf tp = TaskParseRdf.parse(tl);
         		boolean isRDF =false;
         		if (null!=tp && tp.hasModel()){
@@ -108,7 +103,7 @@ public class PingService extends AbstractService {
         	}
         	
 		}else{
-        	ret = DataServletResponse.createResponse("offline", true, requestURI, getName(), rdfsyntax);
+        	ret = DataServletResponse.createResponse("offline", true, this);
 		}
 		
 		return ret;

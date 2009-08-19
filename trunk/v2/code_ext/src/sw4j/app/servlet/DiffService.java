@@ -35,18 +35,14 @@ public class DiffService extends AbstractService{
 		this.params.put(PARAM_RSS_TITLE_PROP, RSS.title.getURI());
 	}
 
-	@Override
-	public String[] getParamNames() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 	
 	@Override
 	public DataServletResponse run(){
 		String szPrev =this.params.getAsString(PARAM_PREV);
 		String szCur =this.params.getAsString(PARAM_CUR);
 		String root_type_uri =this.params.getAsString(PARAM_ROOT_TYPE_URI);
-		String xmlbase  =this.params.getAsString(PARAM_ROOT_TYPE_URI);
+		String xmlbase  =this.params.getAsString(PARAM_XMLBASE);
 		String rss_title  =this.params.getAsString(PARAM_RSS_TITLE);
 		String rss_link_prop =this.params.getAsString(PARAM_RSS_LINK_PROP);
 		String rss_title_prop  =this.params.getAsString(PARAM_RSS_TITLE_PROP);

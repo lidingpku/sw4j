@@ -2,24 +2,26 @@ package sw4j.app.servlet;
 
 import com.hp.hpl.jena.rdf.model.Model;
 
+import sw4j.app.servlet.common.AbstractService;
 import sw4j.app.servlet.common.DataServletResponse;
 import sw4j.rdf.load.AgentModelLoader;
+import sw4j.rdf.load.RDFSYNTAX;
 import sw4j.util.ToolSafe;
 
-public class ConvertService {
+public class ConvertService extends AbstractService{
 
-	final public static String AGENT = "TW Converter Service. http://onto.rpi.edu/sw4j/convert.html";
-	
-	public String szURL;
-	public String rdfsyntax;
-	public String requestURI;
-	public boolean bValidateRDF;
-
+	public ConvertService(){
+		//init default value
+		this.params.put(AbstractService.PARAM_OUTPUT, RDFSYNTAX.N3);
+	}
 	public DataServletResponse run(){
+		String szURL = this.params.getAsString(PARAM_URL);
+		String output = this.params.getAsString(AbstractService.PARAM_OUTPUT);
+
 		boolean bEmptyURL = ToolSafe.isEmpty(szURL);
 
         if (bEmptyURL ){
-        	DataServletResponse ret = DataServletResponse.createResponse("URL not set.", false, requestURI,AGENT , rdfsyntax);
+        	DataServletResponse ret = DataServletResponse.createResponse("URL not set.", false, this);
         	return ret;
         }
         
@@ -27,9 +29,15 @@ public class ConvertService {
 		AgentModelLoader aml = new AgentModelLoader(szURL);
 		m = aml.getModelData();
 		if (null!=m)
-			return DataServletResponse.createResponse(m, null, rdfsyntax);
+			return DataServletResponse.createResponse(m, null, output);
 		else
-			return DataServletResponse.createResponse("cannot load. "  , false, requestURI, AGENT, rdfsyntax);
+			return DataServletResponse.createResponse("cannot load. "  , false, this);
 		
 	}
+
+	@Override
+	public String getName() {
+		return "TW Converter Service. http://onto.rpi.edu/sw4j/convert.html";
+	}
+
 }

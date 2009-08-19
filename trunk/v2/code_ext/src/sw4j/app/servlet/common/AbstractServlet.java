@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import sw4j.util.DataSmartMap;
+import sw4j.util.ToolSafe;
 
 abstract public class AbstractServlet extends HttpServlet{
 	
@@ -33,13 +34,13 @@ abstract public class AbstractServlet extends HttpServlet{
 		@SuppressWarnings("unchecked")
 		 protected void initParams(HttpServletRequest request, AbstractService svc ) {
 	    	if (null!=svc && null!=request){
-	    		Map<String,String> params = (Map<String,String>)  request.getParameterMap();
-	    		Iterator<Map.Entry<String,String>> iter = params.entrySet().iterator();
+	    		Map<String,String[]> params = (Map<String,String[]>)  request.getParameterMap();
+	    		Iterator<Map.Entry<String,String[]>> iter = params.entrySet().iterator();
 	    		while (iter.hasNext()){
-	    			Map.Entry<String,String> entry = iter.next();
+	    			Map.Entry<String,String[]> entry = iter.next();
 	    			String key =  entry.getKey();
-	    			String value = entry.getValue();
-	    			put_key_value(svc.params, key, value);
+	    			String[] values = entry.getValue();
+	    			put_key_value(svc.params, key, values[0]);
 	    		}
 	    		put_key_value(svc.context,AbstractService.HTTP_REQUEST_URI, request.getRequestURI());
 	    		put_key_value(svc.context,AbstractService.HTTP_QUERY_STRING, request.getQueryString());
@@ -50,8 +51,18 @@ abstract public class AbstractServlet extends HttpServlet{
 	    }
 	    
 	    private void put_key_value(DataSmartMap data, String key, String value){
+	    	if (ToolSafe.isEmpty(value))
+	    		return;
+	    	
 	    	data.addStringProperty(key);
-	    	data.put(normalize_param(key),normalize_param( value));
+	    	key=normalize_param(key);
+	    	value=normalize_param(value);
+	    	if (AbstractService.PARAM_VIEW.equals(key)){
+	    		//TODO ad hoc code for dealing with legacy web service
+	    		data.put(AbstractService.PARAM_OUTPUT, value);
+	    	}else{
+	    		data.put(key, normalize_param( value));
+	    	}
 	    }
 	    
 	    private String normalize_param(String param){

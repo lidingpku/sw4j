@@ -26,7 +26,7 @@ Paste a valid sparql query in the text field below.<br>
 
 	<textarea rows="10" name="queryText" cols="80"></textarea>  <br/>
     Option: <input name="usePellet" type="checkbox" value=yes> use Pellet OWL DL reasoning support <br/>
-    Option: output syntax<SELECT name="view">
+    Option: output syntax<SELECT name="output">
  <OPTION VALUE="" SELECTED>not-specified</OPTION>
  <OPTION VALUE="RDF/XML">RDF/XML</OPTION>
  <OPTION VALUE="sparql/XML">SPARQL/XML</OPTION>
@@ -52,16 +52,16 @@ Base service URI: &nbsp;http://onto.rpi.edu/sw4j/sparql<br />
       <td style="width: 378px;">the URL of sparql query</td>
     </tr>
     <tr>
-      <td style="width: 111px;">view</td>
-      <td style="width: 378px;">(optional) output rdf
-syntax : &nbsp;RDF/XML, N3 . <br />
+      <td style="width: 111px;">output</td>
+      <td style="width: 378px;">(optional) output 
+syntax : &nbsp;RDF/XML, N3, SPARQL/XMl, SPARQL/JSON . <br />
 Default output:&nbsp; RDF/XML&nbsp;for describe/construction;
 &nbsp;TEXT/PLAIN for other queries</td>
     </tr>
     <tr>
       <td style="width: 111px;">usePellet</td>
       <td style="width: 378px;">(optional) run OWL DL
-inference on the dataset before SPARQL query </td>
+inference on the dataset before SPARQL query. possible value: "yes", "no" (default) </td>
     </tr>
   </tbody>
 </table>
@@ -71,11 +71,11 @@ example usage
   <li> return RDF/XML - <a
  href="http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test1.sparql">http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test1.sparql</a></li>
   <li> return N3 - <a
- href="http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test1.sparql&amp;view=n3">http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test1.sparql&amp;view=n3</a></li>
+ href="http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test1.sparql&amp;output=n3">http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test1.sparql&amp;output=n3</a></li>
   <li> return Text - <a
  href="http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test3.sparql">http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test3.sparql</a></li>
   <li> return SPARQL/Xml - <a
- href="http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test3.sparql&amp;view=sparql/xml">http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test3.sparql&amp;view=sparql/xml</a></li>
+ href="http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test3.sparql&amp;output=sparql/xml">http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test3.sparql&amp;output=sparql/xml</a></li>
   <li> use Pellet OWL DL inference - <a
  href="http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test4.sparql&amp;usePellet=yes">http://onto.rpi.edu/sw4j/sparql?queryURL=http://onto.rpi.edu/alpha/sparql/test4.sparql&amp;usePellet=yes</a></li>
 </ul>
