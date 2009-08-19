@@ -29,13 +29,13 @@ public class AgentSparql {
 	protected QueryExecution qexec;
 	protected Syntax defaultQuerySyntax= Syntax.syntaxARQ;
 	
-	public Object exec(String queryString, String szRdfSyntax){
+	public Object exec(String queryString, String syntax){
 		query = QueryFactory.create(queryString, defaultQuerySyntax) ;
 		
 		dataset = DatasetFactory.create(query.getGraphURIs(), query.getNamedGraphURIs());
 		run_sparql();
 		
-		Object ret = gerRet(szRdfSyntax);
+		Object ret = gerRet(syntax);
 		
 		qexec.close() ;
 		return ret;

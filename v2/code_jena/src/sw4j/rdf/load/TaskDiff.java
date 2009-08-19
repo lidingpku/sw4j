@@ -604,7 +604,9 @@ public class TaskDiff {
 		 
 		 
 		 channel.addProperty(RSS.link, this.m_xmlbase);
-		 channel.addProperty(RSS.title, rss_title);
+		 channel.addProperty(RSS.title, rss_title+" [total changes "
+				 +(m_roots_del.size()+ m_roots_add.size()+m_map_root_add.size()+ m_map_root_del.size()+ m_map_root_update_cur.size())
+				 +"]");
 		 
 		 //add item
 		 {
