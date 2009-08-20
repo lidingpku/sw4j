@@ -187,4 +187,11 @@ public class ToolString {
 		return temp;
 	}
 
+	public static String normalize_param(String v) {
+		if (ToolSafe.isEmpty(v))
+			return "";
+		else
+			return v.toLowerCase().trim();
+	}
+
 }
