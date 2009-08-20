@@ -11,8 +11,6 @@ import sw4j.app.servlet.DiffService;
 import sw4j.app.servlet.common.DataServletResponse;
 import sw4j.rdf.load.TaskDiff;
 
-import com.hp.hpl.jena.vocabulary.RSS;
-
 public class DiffServiceTest {
 	@Test
 	public void test_11() throws IOException{
@@ -37,10 +35,11 @@ public class DiffServiceTest {
 	@Test
 	public void test1b() throws IOException{
 		DiffService svc = new DiffService();
-		svc.params.put(DiffService.PARAM_CUR, "http://data-gov.tw.rpi.edu/raw/92/2009-07-03/today.rss");
-		svc.params.put(DiffService.PARAM_PREV, "http://data-gov.tw.rpi.edu/raw/92/2009-06-24/today.rss");
-		svc.params.put(DiffService.PARAM_ROOT_TYPE_URI, RSS.item.getURI());
+		svc.params.put(DiffService.PARAM_CUR, "http://data-gov.tw.rpi.edu/raw/92/2009-08-19/data-92.rdf");
+		svc.params.put(DiffService.PARAM_PREV, "http://data-gov.tw.rpi.edu/raw/92/2009-08-17/data-92.rdf");
+		svc.params.put(DiffService.PARAM_ROOT_TYPE_URI, "http%3A%2F%2Fdata-gov.tw.rpi.edu%2F2009%2Fdata-gov-twc.rdf%23DataEntry");
 		svc.params.put(DiffService.PARAM_OUTPUT, TaskDiff.DIFF_RSS);
+		svc.params.put(DiffService.PARAM_XMLBASE, "http://data-gov.tw.rpi.edu/raw/92/diff-data-92.rdf");
 
 
 		DataServletResponse ret = svc.run();
