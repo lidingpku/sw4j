@@ -3,7 +3,10 @@ package sw4j.app.servlet.common;
 
 import sw4j.rdf.load.RDFSYNTAX;
 import sw4j.util.DataSmartMap;
+import sw4j.util.Sw4jException;
 import sw4j.util.ToolSafe;
+import sw4j.util.ToolString;
+import sw4j.util.ToolURI;
 
 abstract public class AbstractService  {
 	
@@ -43,5 +46,26 @@ abstract public class AbstractService  {
 		if (value.equalsIgnoreCase("true"))
 			return true;
 		return false;
+	}
+	
+	public String getUriParam(String key) {
+		String value = this.params.getAsString(key);
+		if (ToolSafe.isEmpty(value))
+			return null;
+		else
+			try {
+				return ToolURI.decodeURIString(value);
+			} catch (Sw4jException e) {
+				e.printStackTrace();
+				return value;
+			}
+	}
+	
+	public String getNormalizedParam(String key) {
+		String value = this.params.getAsString(key);
+		if (ToolSafe.isEmpty(value))
+			return null;
+		else
+			return ToolString.normalize_param(value);
 	}
 }

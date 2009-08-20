@@ -30,7 +30,7 @@ public class PingService extends AbstractService {
 
 	@Override
 	public DataServletResponse run(){
-		String szURL = this.params.getAsString(PARAM_URL);
+		String szURL = this.getUriParam(PARAM_URL);
 		boolean bValidateRDF = this.getBoolParam(PARAM_VALIDATE_RDF);
 
 		boolean bEmptyURL = ToolSafe.isEmpty(szURL);

@@ -23,7 +23,7 @@ public class SparqlService extends AbstractService{
    	
 	
 	public DataServletResponse run(){
-		String queryURL =this.params.getAsString(PARAM_QUERY_URL);
+		String queryURL =this.getUriParam(PARAM_QUERY_URL);
 		String queryText =this.params.getAsString(PARAM_QUERY_TEXT);
 		boolean bUsePellet =this.getBoolParam(PARAM_USE_PELLET);
 		String output = this.params.getAsString(AbstractService.PARAM_OUTPUT);

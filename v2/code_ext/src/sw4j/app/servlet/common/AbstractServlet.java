@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import sw4j.util.DataSmartMap;
 import sw4j.util.ToolSafe;
+import sw4j.util.ToolString;
 
 abstract public class AbstractServlet extends HttpServlet{
 	
@@ -55,19 +56,16 @@ abstract public class AbstractServlet extends HttpServlet{
 	    		return;
 	    	
 	    	data.addStringProperty(key);
-	    	key=normalize_param(key);
-	    	value=normalize_param(value);
+	    	key=ToolString.normalize_param(key);
 	    	if (AbstractService.PARAM_VIEW.equals(key)){
 	    		//TODO ad hoc code for dealing with legacy web service
 	    		data.put(AbstractService.PARAM_OUTPUT, value);
 	    	}else{
-	    		data.put(key, normalize_param( value));
+	    		data.put(key, value );
 	    	}
 	    }
 	    
-	    private String normalize_param(String param){
-	    	return param.toLowerCase().trim();
-	    }
+
 
 	    
 	    

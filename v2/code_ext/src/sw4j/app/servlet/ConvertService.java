@@ -15,7 +15,7 @@ public class ConvertService extends AbstractService{
 		this.params.put(AbstractService.PARAM_OUTPUT, RDFSYNTAX.N3);
 	}
 	public DataServletResponse run(){
-		String szURL = this.params.getAsString(PARAM_URL);
+		String szURL = this.getUriParam(PARAM_URL);
 		String output = this.params.getAsString(AbstractService.PARAM_OUTPUT);
 
 		boolean bEmptyURL = ToolSafe.isEmpty(szURL);
