@@ -1,5 +1,7 @@
 package sw4j.app.servlet;
 
+import org.apache.log4j.Logger;
+
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.vocabulary.RSS;
@@ -39,13 +41,14 @@ public class DiffService extends AbstractService{
 	
 	@Override
 	public DataServletResponse run(){
-		String szPrev =this.params.getAsString(PARAM_PREV);
-		String szCur =this.params.getAsString(PARAM_CUR);
-		String root_type_uri =this.params.getAsString(PARAM_ROOT_TYPE_URI);
-		String xmlbase  =this.params.getAsString(PARAM_XMLBASE);
+		String szPrev =this.getUriParam(PARAM_PREV);
+		String szCur =this.getUriParam(PARAM_CUR);
+		String root_type_uri =this.getUriParam(PARAM_ROOT_TYPE_URI);
+		Logger.getLogger(this.getClass()).info(root_type_uri);
+		String xmlbase  =this.getUriParam(PARAM_XMLBASE);
 		String rss_title  =this.params.getAsString(PARAM_RSS_TITLE);
-		String rss_link_prop =this.params.getAsString(PARAM_RSS_LINK_PROP);
-		String rss_title_prop  =this.params.getAsString(PARAM_RSS_TITLE_PROP);
+		String rss_link_prop =this.getUriParam(PARAM_RSS_LINK_PROP);
+		String rss_title_prop  =this.getUriParam(PARAM_RSS_TITLE_PROP);
 		String output =this.params.getAsString(PARAM_OUTPUT);
 
 		
@@ -87,6 +90,10 @@ public class DiffService extends AbstractService{
 
 
 	}
+
+
+
+
 
 
 
