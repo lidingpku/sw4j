@@ -36,39 +36,44 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class DataHyperEdge implements Comparable<DataHyperEdge>{
-	Integer m_sink = null;
-	TreeSet<Integer> m_sources = new TreeSet<Integer>();
+	Integer m_output = null;
+	TreeSet<Integer> m_input = new TreeSet<Integer>();
+	Float m_weight= 0f;
 	
 	public DataHyperEdge(Integer sink, Collection<Integer> sources){
-		m_sink=sink;
+		m_output=sink;
 		if (null!=sources)
-			m_sources.addAll(sources);
+			m_input.addAll(sources);
 	}
 	
 	public DataHyperEdge(Integer sink){
-		m_sink=sink;
+		m_output=sink;
 	}
 
 
 	@Override
 	public String toString() {
-		return m_sink.toString()+", "+m_sources.toString();
+		return m_output.toString()+", "+m_input.toString();
 	}
 	
 	public boolean isAtomic(){
-		return m_sources.isEmpty();
+		return m_input.isEmpty();
 	}
 
-	public void addSource(Integer v_source) {
-		this.m_sources.add(v_source);
+	public void addInput(Integer v_source) {
+		this.m_input.add(v_source);
 	}
 
-	public Integer getSink(){
-		return m_sink;
+	public Integer getOutput(){
+		return m_output;
 	}
 
-	public Set<Integer> getSources(){
-		return m_sources;
+	public Set<Integer> getInputs(){
+		return m_input;
+	}
+	
+	public Float getWeight(){
+		return m_weight;
 	}
 	
 	public int compareTo(DataHyperEdge o) {
@@ -79,9 +84,9 @@ public class DataHyperEdge implements Comparable<DataHyperEdge>{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((m_sink == null) ? 0 : m_sink.hashCode());
+		result = prime * result + ((m_output == null) ? 0 : m_output.hashCode());
 		result = prime * result
-				+ ((m_sources == null) ? 0 : m_sources.hashCode());
+				+ ((m_input == null) ? 0 : m_input.hashCode());
 		return result;
 	}
 
@@ -94,15 +99,15 @@ public class DataHyperEdge implements Comparable<DataHyperEdge>{
 		if (getClass() != obj.getClass())
 			return false;
 		final DataHyperEdge other = (DataHyperEdge) obj;
-		if (m_sink == null) {
-			if (other.m_sink != null)
+		if (m_output == null) {
+			if (other.m_output != null)
 				return false;
-		} else if (!m_sink.equals(other.m_sink))
+		} else if (!m_output.equals(other.m_output))
 			return false;
-		if (m_sources == null) {
-			if (other.m_sources != null)
+		if (m_input == null) {
+			if (other.m_input != null)
 				return false;
-		} else if (!m_sources.equals(other.m_sources))
+		} else if (!m_input.equals(other.m_input))
 			return false;
 		return true;
 	}

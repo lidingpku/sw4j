@@ -216,7 +216,7 @@ public class AgentHyperGraphTraverse {
 		//list the edge (filter, reorder...)
 		Iterator<DataHyperEdge> iter = reorder_next_edges(G,v,Vx,Gx, 
 										filter_next_edges(G,v,Vx,Gx, 
-												G.getEdgesBySink(vh)) ).iterator();
+												G.getEdgesByOutput(vh)) ).iterator();
 
 		// try each edge,
 		// in case iter is empty, that mean vh is not justified by any hyper edge
@@ -230,9 +230,9 @@ public class AgentHyperGraphTraverse {
 			// prepare new to-visit vertex
 			HashSet<Integer> new_vx = new HashSet<Integer> ();
 			new_vx.addAll(Vx);
-			new_vx.addAll(g.getSources());
-			new_vx.removeAll(Gx.getSinks());
-			new_vx.remove(g.getSink());
+			new_vx.addAll(g.getInputs());
+			new_vx.removeAll(Gx.getOutputs());
+			new_vx.remove(g.getOutput());
 
 			// no need to track provenance in intermediate result
 			DataHyperGraph new_gx = new DataHyperGraph(Gx);
@@ -326,12 +326,12 @@ public class AgentHyperGraphTraverse {
 			DataHyperEdge g = iter.next();
 			
 			// skip if g is definitely causing incomplete linkedGraph
-			if (!G.getSinks().containsAll(g.getSources())){
+			if (!G.getOutputs().containsAll(g.getInputs())){
 				continue;
 			}
 
 			// avoid cycle
-			if (adj.isReachable(g.getSources(), g.getSink())){
+			if (adj.isReachable(g.getInputs(), g.getOutput())){
 				continue;
 			}
 

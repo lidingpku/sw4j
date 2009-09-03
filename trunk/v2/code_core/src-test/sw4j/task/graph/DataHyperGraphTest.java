@@ -102,7 +102,7 @@ public class DataHyperGraphTest {
 		System.out.println("======================================================================");
 		System.out.println("test_traverse_random");
 		DataHyperGraph lg = DataHyperGraph.data_create_random(20,10,5);
-		Integer v = (ToolRandom.randomSelect(lg.getSinks()));
+		Integer v = (ToolRandom.randomSelect(lg.getOutputs()));
 		do_traverse(lg,v, -1, -1, -1, -1);		
 	}
 	
@@ -125,51 +125,51 @@ public class DataHyperGraphTest {
 		DataHyperEdge g;
 		{
 			g = new DataHyperEdge(0);
-			g.addSource(1);
-			g.addSource(2);
-			g.addSource(3);
+			g.addInput(1);
+			g.addInput(2);
+			g.addInput(3);
 			lg.add(g,"A");
 
 			g = new DataHyperEdge(1);
-			g.addSource(11);	//t
+			g.addInput(11);	//t
 			lg.add(g,"A");
 
 			g = new DataHyperEdge(1);
-			g.addSource(10);	//f
+			g.addInput(10);	//f
 			lg.add(g,"A");
 
 			g = new DataHyperEdge(2);
-			g.addSource(21);	//t
+			g.addInput(21);	//t
 			lg.add(g,"A");
 
 			g = new DataHyperEdge(2);
-			g.addSource(20);	//f
+			g.addInput(20);	//f
 			lg.add(g,"A");
 
 			g = new DataHyperEdge(3);
-			g.addSource(31);	//t
+			g.addInput(31);	//t
 			lg.add(g,"A");
 
 			g = new DataHyperEdge(3);
-			g.addSource(30);	//f
+			g.addInput(30);	//f
 			lg.add(g,"A");
 
 			
 			g = new DataHyperEdge(10);
-			g.addSource(21);	//f
-			g.addSource(31);	//f
+			g.addInput(21);	//f
+			g.addInput(31);	//f
 			lg.add(g,"A");
 			
 			
 			g = new DataHyperEdge(20);
-			g.addSource(11);	//f
-			g.addSource(31);	//f
+			g.addInput(11);	//f
+			g.addInput(31);	//f
 			lg.add(g,"A");
 			
 			
 			g = new DataHyperEdge(30);
-			g.addSource(11);	//f
-			g.addSource(21);	//f
+			g.addInput(11);	//f
+			g.addInput(21);	//f
 			lg.add(g,"A");
 			
 
@@ -208,13 +208,13 @@ public class DataHyperGraphTest {
 
 			{
 				DataHyperEdge g = new DataHyperEdge(vi);
-				g.addSource( new Integer(i+1));
+				g.addInput( new Integer(i+1));
 				lg.add(g);
 			}
 			{
 				DataHyperEdge g = new DataHyperEdge(vi);
-				g.addSource( new Integer(i+1));
-				g.addSource( v0);
+				g.addInput( new Integer(i+1));
+				g.addInput( v0);
 				lg.add(g);
 			}
 		}
@@ -317,18 +317,18 @@ Steps:
 			lg_a.add(g,"A");
 			
 			g = new DataHyperEdge(v9);
-			g.addSource(v7);
-			g.addSource(v4);
+			g.addInput(v7);
+			g.addInput(v4);
 			lg_a.add(g,"A");
 
 			g = new DataHyperEdge(v10);
-			g.addSource(v9);
-			g.addSource(v2);
+			g.addInput(v9);
+			g.addInput(v2);
 			lg_a.add(g,"A");
 
 			g = new DataHyperEdge(v11);
-			g.addSource(v10);
-			g.addSource(v3);
+			g.addInput(v10);
+			g.addInput(v3);
 			lg_a.add(g,"A");
 		}
 		
@@ -343,23 +343,23 @@ Steps:
 			lg_b.add(g,"B");
 
 			g = new DataHyperEdge(v12);
-			g.addSource(v1);
-			g.addSource(v7);
+			g.addInput(v1);
+			g.addInput(v7);
 			lg_b.add(g,"B");
 			
 			g = new DataHyperEdge(v13);
-			g.addSource(v5);
-			g.addSource(v12);
+			g.addInput(v5);
+			g.addInput(v12);
 			lg_b.add(g,"B");
 
 			g = new DataHyperEdge(v14);
-			g.addSource(v13);
-			g.addSource(v6);
+			g.addInput(v13);
+			g.addInput(v6);
 			lg_b.add(g,"B");
 
 			g = new DataHyperEdge(v15);
-			g.addSource(v14);
-			g.addSource(v12);
+			g.addInput(v14);
+			g.addInput(v12);
 			lg_b.add(g,"B");
 
 		}		
@@ -427,15 +427,15 @@ Steps:
 			lg_a.add(g,"p1");
 			
 			g = new DataHyperEdge(v1);
-			g.addSource(v2);
+			g.addInput(v2);
 			lg_a.add(g,"p1");
 
 			g = new DataHyperEdge(v2);
-			g.addSource(v3);
+			g.addInput(v3);
 			lg_a.add(g,"p1");
 
 			g = new DataHyperEdge(v3);
-			g.addSource(v4);
+			g.addInput(v4);
 			lg_a.add(g,"p1");
 		}
 		
@@ -444,15 +444,15 @@ Steps:
 			lg_b.add(g,"p2");
 
 			g = new DataHyperEdge(v11);
-			g.addSource(v12);
+			g.addInput(v12);
 			lg_b.add(g,"p2");
 			
 			g = new DataHyperEdge(v12);
-			g.addSource(v13);
+			g.addInput(v13);
 			lg_b.add(g,"p2");
 
 			g = new DataHyperEdge(v13);
-			g.addSource(v14);
+			g.addInput(v14);
 			lg_b.add(g,"p2");
 
 		}		
