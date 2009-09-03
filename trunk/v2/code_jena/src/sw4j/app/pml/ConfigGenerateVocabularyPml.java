@@ -28,7 +28,7 @@ public class ConfigGenerateVocabularyPml {
 			for (int i=0; i< aryOntologyURL.length; i++){
 				ToolOwl2Java.genSimpleJavaCode(
 						aryOntologyURL[i][0], 
-						"src", 
+						"code_jena/src", 
 						"sw4j.app.pml" ,
 						aryOntologyURL[i][1].toUpperCase(), 
 						aryOntologyURL[i][1], 
