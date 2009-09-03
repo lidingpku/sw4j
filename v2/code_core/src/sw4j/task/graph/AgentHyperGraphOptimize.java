@@ -139,7 +139,7 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 				
 				
 				//update preferred vertex
-				this.m_runtime_preferred_vertex.addAll(Gx.getSinks());
+				this.m_runtime_preferred_vertex.addAll(Gx.getOutputs());
 			}
 			
 			return true;
@@ -200,7 +200,7 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 		while (iter.hasNext()){
 			DataHyperEdge e = iter.next();
 			
-			if (m_runtime_preferred_vertex.containsAll(e.getSources()))
+			if (m_runtime_preferred_vertex.containsAll(e.getInputs()))
 				new_next.add(0, e);
 			else
 				new_next.add(e);

@@ -54,14 +54,14 @@ public class DataHyperGraph {
 	DataPVHMap<DataHyperEdge,String> m_map_edge_context = new DataPVHMap<DataHyperEdge,String>();
 	
 	/**
-	 * data: all hyperedges, indexed by their sink 
+	 * data: all hyperedges, indexed by their output 
 	 */
-	DataPVHMap<Integer, DataHyperEdge> m_map_sink_edge = new DataPVHMap<Integer,DataHyperEdge>();
+	DataPVHMap<Integer, DataHyperEdge> m_map_output_edge = new DataPVHMap<Integer,DataHyperEdge>();
 	
 	/**
-	 * all sources
+	 * all inputs
 	 */
-	HashSet<Integer> m_sources = new HashSet<Integer>();
+	HashSet<Integer> m_inputs = new HashSet<Integer>();
 
 	/**
 	 * all axioms 
@@ -95,8 +95,8 @@ public class DataHyperGraph {
 	public void add(DataHyperGraph lg) {
 		if (null!=lg){
 			m_map_edge_context.add(lg.m_map_edge_context);			
-			m_map_sink_edge.add(lg.m_map_sink_edge);
-			m_sources.addAll(lg.m_sources);
+			m_map_output_edge.add(lg.m_map_output_edge);
+			m_inputs.addAll(lg.m_inputs);
 			m_axioms.addAll(lg.m_axioms);
 			m_contexts.addAll(lg.m_contexts);
 			clearCache();
@@ -108,8 +108,8 @@ public class DataHyperGraph {
 	 */
 	public void reset(){
 		m_map_edge_context.clear();
-		m_map_sink_edge.clear();
-		m_sources.clear();
+		m_map_output_edge.clear();
+		m_inputs.clear();
 		m_axioms.clear();
 		m_contexts.clear();
 		clearCache();
@@ -157,14 +157,14 @@ public class DataHyperGraph {
 		}
 		
 		//avoid self-linked hyperedge
-		if (g.getSources().contains(g.getSink()))
+		if (g.getInputs().contains(g.getOutput()))
 			return false;
 		
 		m_map_edge_context.add(g, contexts);
-		m_map_sink_edge.add(g.m_sink, g);
-		m_sources.addAll(g.m_sources);
+		m_map_output_edge.add(g.m_output, g);
+		m_inputs.addAll(g.m_input);
 		if (g.isAtomic())
-			m_axioms.add(g.getSink());
+			m_axioms.add(g.getOutput());
 
 		m_contexts.addAll(contexts);
 		
@@ -223,21 +223,21 @@ public class DataHyperGraph {
 		return ret;
 	}
 	/**
-	 * list all sink vertices
+	 * list all output vertices
 	 * 
 	 * @return
 	 */
-	public Set<Integer> getSinks() {
-		return this.m_map_sink_edge.keySet();
+	public Set<Integer> getOutputs() {
+		return this.m_map_output_edge.keySet();
 	}
 	
 	/**
-	 * list all source vertices
+	 * list all input vertices
 	 * @return
 	 */
-	public Set<Integer> getSources() {
+	public Set<Integer> getInputs() {
 		HashSet<Integer> temp = new HashSet<Integer>();
-		temp.addAll(this.m_sources);
+		temp.addAll(this.m_inputs);
 		return temp;
 	}
 	
@@ -250,15 +250,15 @@ public class DataHyperGraph {
 	}
 
 	/**
-	 * list edges sharing the given sink
+	 * list edges sharing the given output
 	 * 
-	 * @param sink
+	 * @param output
 	 * @return
 	 */
-	public Collection<DataHyperEdge> getEdgesBySink(Integer sink){
+	public Collection<DataHyperEdge> getEdgesByOutput(Integer output){
 		Collection<DataHyperEdge> ret = null;
-		if (null!=sink){
-			ret = this.m_map_sink_edge.getValues(sink);
+		if (null!=output){
+			ret = this.m_map_output_edge.getValues(output);
 		}
 		
 		if (null==ret){
@@ -274,8 +274,8 @@ public class DataHyperGraph {
 	 */
 	public HashSet<Integer> getVertices() {
 		HashSet<Integer> temp = new HashSet<Integer>();
-		temp.addAll(this.getSources());
-		temp.addAll(this.getSinks());
+		temp.addAll(this.getInputs());
+		temp.addAll(this.getOutputs());
 		return temp;
 	}
 
@@ -291,20 +291,20 @@ public class DataHyperGraph {
 	}
 
 	/**
-	 * list all root vertices. i.e. sinks not being mentioned as source
+	 * list all root vertices. i.e. outputs not being mentioned as input
 	 * @return
 	 */
 	public HashSet<Integer> getRoots() {
 		HashSet<Integer> temp = new HashSet<Integer>();
-		temp.addAll(this.getSinks());
-		temp.removeAll(this.getSources());
+		temp.addAll(this.getOutputs());
+		temp.removeAll(this.getInputs());
 		return temp;
 	}
 	
-	private Collection<Integer> getEdgesSharingSink(int nMaxResults){
+	private Collection<Integer> getEdgesSharingOutput(int nMaxResults){
 		HashSet<Integer> results = new HashSet<Integer>();
 		
-		Iterator <Map.Entry<Integer, Set<DataHyperEdge>>> iter = this.m_map_sink_edge.entrySet().iterator();
+		Iterator <Map.Entry<Integer, Set<DataHyperEdge>>> iter = this.m_map_output_edge.entrySet().iterator();
 		while (iter.hasNext()){
 			Map.Entry<Integer, Set<DataHyperEdge>> entry = iter.next();
 			if (entry.getValue().size()>1){
@@ -329,8 +329,8 @@ public class DataHyperGraph {
 	 * @return
 	 */
 	public boolean isComplete(){
-		// all sources must be a sink
-		return this.getSinks().containsAll(this.getSources());
+		// all inputs must be a output
+		return this.getOutputs().containsAll(this.getInputs());
 	}
 	
 	/**
@@ -347,13 +347,13 @@ public class DataHyperGraph {
 	}
 	
 	/**
-	 * a hypergraph is concise iff. no two hyperedges share the same sink
+	 * a hypergraph is concise iff. no two hyperedges share the same output
 	 * 
 	 * @param v
 	 * @return
 	 */
 	public boolean isConcise(){
-		return (getEdgesSharingSink(1).size() ==0);
+		return (getEdgesSharingOutput(1).size() ==0);
 	}
 
 	
@@ -381,7 +381,7 @@ public class DataHyperGraph {
 		Iterator<DataHyperEdge> iter = this.getEdges().iterator();
 		while (iter.hasNext()){
 			DataHyperEdge edge = iter.next();
-			ret.add(edge.getSink(),edge.getSources());
+			ret.add(edge.getOutput(),edge.getInputs());
 		}
 		
 		//ret = ret.create_tc();
@@ -401,10 +401,10 @@ public class DataHyperGraph {
 		ret += String.format("\n#context (total): %d - %s ", this.getContexts().size(), this.getContexts());
 		ret += String.format("\n#hyperedges (total): %d", this.getEdges().size());
 		ret += String.format("\n#hyperedges (axioms): %d", this.getAxioms().size());
-		ret += String.format("\n#hyperedges (sharing sink, limit 10): %d - %s", this.getEdgesSharingSink(-1).size(), this.getEdgesSharingSink(10));
+		ret += String.format("\n#hyperedges (sharing output, limit 10): %d - %s", this.getEdgesSharingOutput(-1).size(), this.getEdgesSharingOutput(10));
 		ret += String.format("\n#vertices (total): %d", this.getVertices().size());
-		ret += String.format("\n#vertices (sinks): %d", this.getSinks().size());
-		ret += String.format("\n#vertices (sources): %d", this.getSources().size());
+		ret += String.format("\n#vertices (outputs): %d", this.getOutputs().size());
+		ret += String.format("\n#vertices (inputs): %d", this.getInputs().size());
 		ret += String.format("\n#vertices (roots): %d - %s ", this.getRoots().size(), this.getRoots());
 		
 		return ret;
@@ -474,16 +474,16 @@ public class DataHyperGraph {
 			if (index5<index4)
 				continue;
 
-			Integer sink = new Integer(line.substring(0,index1).trim());
-			DataHyperEdge g = new DataHyperEdge(sink);
+			Integer output = new Integer(line.substring(0,index1).trim());
+			DataHyperEdge g = new DataHyperEdge(output);
 	
 			{
-				String szSources =line.substring(index2+1, index3).trim();
-				if (null!= szSources && !szSources.isEmpty()){
-					StringTokenizer st1 = new StringTokenizer(szSources,",");
+				String szInputs =line.substring(index2+1, index3).trim();
+				if (null!= szInputs && !szInputs.isEmpty()){
+					StringTokenizer st1 = new StringTokenizer(szInputs,",");
 					while (st1.hasMoreTokens()){
 						String temp = st1.nextToken().trim();
-						g.addSource(new Integer(temp));
+						g.addInput(new Integer(temp));
 					}
 				}
 			}
@@ -526,24 +526,24 @@ public class DataHyperGraph {
 		
 		//create HyperEdge
 		for (int i=0;i<total_edges; i++){
-			//choose sink
-			int id_sink= (int)(Math.random()* total_vertex);
-			Integer v_sink = ary_v[id_sink];
+			//choose output
+			int id_output= (int)(Math.random()* total_vertex);
+			Integer v_output = ary_v[id_output];
 	
-			DataHyperEdge g = new DataHyperEdge( v_sink);
+			DataHyperEdge g = new DataHyperEdge( v_output);
 			
-			//choose sources
+			//choose inputs
 			int iBranch = ToolRandom.randomInt(max_branch);
 			if (0==iBranch){
-				//System.out.println("no input node" + v_sink);
+				//System.out.println("no input node" + v_output);
 			}
 			for (int j=0; j<iBranch; j++){
-				int id_source;
+				int id_input;
 				do {
-					id_source= ToolRandom.randomInt( total_vertex);
-				} while (id_source == id_sink);
-				Integer v_source = ary_v[id_source];
-				g.addSource(v_source);
+					id_input= ToolRandom.randomInt( total_vertex);
+				} while (id_input == id_output);
+				Integer v_input = ary_v[id_input];
+				g.addInput(v_input);
 			}
 			
 			lg.add(g);
@@ -551,8 +551,8 @@ public class DataHyperGraph {
 	
 		//create missing missing Hypergraph
 		{
-			Set<Integer> vertex = lg.getSources();
-			vertex.removeAll(lg.getSinks());
+			Set<Integer> vertex = lg.getInputs();
+			vertex.removeAll(lg.getOutputs());
 			Iterator<Integer> iter = vertex.iterator();
 			while (iter.hasNext()){
 				lg.add(new DataHyperEdge(iter.next()));
