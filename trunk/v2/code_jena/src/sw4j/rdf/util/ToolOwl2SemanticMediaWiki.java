@@ -60,13 +60,25 @@ import sw4j.util.web.ToolMediaWiki;
 
 public class ToolOwl2SemanticMediaWiki {
 	
-	public static void dump_ontology(String szOntologyNamespace, String szPrefix, String szFilename ){
-		HashMap<String,String> map_pages = get_wikidump_pages(szOntologyNamespace, szPrefix);
+	public static void dump_ontology(String szOntologyNamespace, String szPrefix, String szFilename){
+		String szOntologyNamespaceUrl = DataQname.extractNamespaceUrl(szOntologyNamespace);
+		dump_ontology(szOntologyNamespace, szOntologyNamespaceUrl, szPrefix, szFilename);
+	}
+
+	public static void dump_ontology(String  szOntologyUrl, String szOntologyNamespace,  String szPrefix, String szFilename){
+		HashMap<String,String> map_pages = get_wikidump_pages(szOntologyUrl, szOntologyNamespace, szPrefix);
 		
 		System.out.println(map_pages.size() +" page generated!");
 		ToolMediaWiki.create_wiki_dump( map_pages, false, szFilename);				
 	}
 	
+	public static HashMap<String, String> get_wikidump_pages(String  szOntologyUrl, String szOntologyNamespace,  String szPrefix) {
+		AgentModelLoader loader = new AgentModelLoader(szOntologyUrl);
+		Model m = loader.getModelData();
+		m.setNsPrefix(szPrefix, szOntologyNamespace);
+
+		return get_wikidump_pages(m, szOntologyUrl, szOntologyNamespace,szPrefix);
+	}
 	/**
 	 * create wiki dump of an ontology
 	 * 
@@ -74,7 +86,7 @@ public class ToolOwl2SemanticMediaWiki {
 	 * @param szOntologyNamespace
 	 * @return a list of page name and page content mappings.
 	 */
-	private static HashMap<String, String> get_wikidump_pages(String szOntologyNamespace, String szPrefix) {
+	public static HashMap<String, String> get_wikidump_pages(Model m, String  szOntologyUrl, String szOntologyNamespace, String szPrefix) {
 		HashMap<String, String> data= new HashMap<String, String>();	
 		HashMap<String, String> data_import= new HashMap<String, String>();	
 		HashMap<String, String> data_import_default= new HashMap<String, String>();	
@@ -91,10 +103,6 @@ public class ToolOwl2SemanticMediaWiki {
 		HashMap<Resource, String> map_res_wikins = new HashMap<Resource, String>();
 		
 		String szSMW_import_page = String.format("MediaWiki:smw_import_%s", szPrefix);
-		AgentModelLoader loader = new AgentModelLoader(szOntologyNamespace);
-		Model m = loader.getModelData();
-		
-		String szOntologyNamespaceUrl = DataQname.extractNamespaceUrl(szOntologyNamespace);
 		
 		if (null== m)
 			return data;
@@ -182,7 +190,7 @@ public class ToolOwl2SemanticMediaWiki {
 					if (null==content){
 						content= new TreeSet<String>();
 						data1.put(sub, content);
-						content.add( toWiki("member of", szOntologyNamespaceUrl, false));
+						content.add( toWiki("member of", szOntologyUrl, false));
 						
 						if (null!=dq && dq.hasPrefix() && dq.getPrefix().equals(szPrefix) ){
 							content.add( toWiki("imported from", dq.getPrefix()+":"+dq.getLocalname(), false));
@@ -349,6 +357,7 @@ public class ToolOwl2SemanticMediaWiki {
 			while(iter.hasNext()){
 				String key = iter.next();
 				
+				
 				String content = "";
 
 				TreeSet<String> temp;
@@ -387,7 +396,7 @@ public class ToolOwl2SemanticMediaWiki {
 		// add MediaWiki:SMW_import_xx  page
 		// http://xmlns.com/foaf/0.1/|[http://www.foaf-project.org/ Friend Of A Friend]
 		{
-			String szTemp = String.format("%s|[%s %s]", szOntologyNamespace, szOntologyNamespaceUrl, szPrefix);
+			String szTemp = String.format("%s|[%s %s]", szOntologyNamespace, szOntologyUrl, szPrefix);
 			data_import_default.putAll(data_import);
 			Iterator<String> iter = data_import_default.values().iterator();
 			while (iter.hasNext()){
