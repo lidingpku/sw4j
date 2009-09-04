@@ -19,7 +19,7 @@ public class ConfigGenerateVocabularyPml {
 					{"http://inference-web.org/2.0/pml-provenance.owl#", "pmlp"},
 					{"http://inference-web.org/2.0/pml-justification.owl#", "pmlj"},
 					{"http://inference-web.org/2.0/pml-relation.owl#", "pmlr"},
-					{"http://inference-web.org/2.0/pml-owl.owl#", "pmlo"},
+					{"http://inference-web.org/2.0/pml-owl.owl#", "pmlowl"},
 					{"http://inference-web.org/2.0/ds.owl#", "pmlds"},
 					{"http://inferenceweb.stanford.edu/2004/03/iw.owl#","iw200403"},
 					{"http://inferenceweb.stanford.edu/2004/07/iw.owl#","iw200407"},
