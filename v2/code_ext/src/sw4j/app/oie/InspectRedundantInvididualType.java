@@ -51,7 +51,6 @@ public class InspectRedundantInvididualType extends AbstractTaskDesc{
 	 * @param model_all
 	 * @return
 	 */	
-	@SuppressWarnings("unchecked")
 	public boolean do_validate(Model model_data, Model model_onto, Model model_all){
 		boolean bRet =true;		
 		

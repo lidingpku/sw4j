@@ -7,6 +7,10 @@ import java.util.logging.Logger;
 
 public abstract class DataSettings extends Properties{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected  Logger getLogger(){
 		return Logger.getLogger(this.getClass().getSimpleName());
 	}

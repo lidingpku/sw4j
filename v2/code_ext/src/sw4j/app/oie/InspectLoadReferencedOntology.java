@@ -68,7 +68,7 @@ public class InspectLoadReferencedOntology extends AbstractTaskDesc{
 	 * @param urls
 	 * @return 
 	 */
-	@SuppressWarnings({ "unchecked", "unchecked" })
+	@SuppressWarnings("unchecked")
 	public void loadReferenceOntologies( Model model_data, String szXmlBase){
 		// extract links
 		m_stat_data.traverse(model_data);
