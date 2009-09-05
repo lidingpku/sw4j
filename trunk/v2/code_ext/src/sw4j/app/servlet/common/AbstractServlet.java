@@ -16,7 +16,16 @@ import sw4j.util.ToolString;
 abstract public class AbstractServlet extends HttpServlet{
 	
 	
-	   @Override
+	   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
+
+
+
+	@Override
 	   final public void doPost(HttpServletRequest request, HttpServletResponse response)
 	    throws IOException, ServletException
 		{

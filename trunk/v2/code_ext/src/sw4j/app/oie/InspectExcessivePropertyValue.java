@@ -52,7 +52,6 @@ public class InspectExcessivePropertyValue extends AbstractTaskDesc{
 	 * @param model_onto
 	 * @return
 	 */	
-	@SuppressWarnings("unchecked")
 	public boolean do_validate(Model model_data, Model model_all){
 		boolean bRet =true;
 		
