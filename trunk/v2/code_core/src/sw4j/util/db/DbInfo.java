@@ -24,48 +24,54 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
  */
-package sw4j.util;
 
-import java.io.File;
-import java.util.Properties;
-import java.util.logging.Logger;
+
+package sw4j.util.db;
 
 /**
- *  parse and validate settings files
- *  
- *  @author Li Ding
- *  
+ *
+ * Store database connection information
+ * @author  Li Ding
  */
-public abstract class DataSettings extends Properties{
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	protected  Logger getLogger(){
-		return Logger.getLogger(this.getClass().getSimpleName());
-	}
-	/**
-	 * check if the settings is valid
-	 * @return
-	 */
-	protected boolean isValid(String [] fields_required){
-		for (int i=0; i< fields_required.length; i++){
-			String field = fields_required[i];
-			String location = getProperty(field);
-			if (ToolSafe.isEmpty(location)){
-				getLogger().warning("value of a property not specified: "+field);
-				return false;
-			}
-			if (field.startsWith("dir_")){
-				File f  = new File(location);
-				if (!f.exists()){
-					getLogger().warning("the directory does not exist:"+ f.getAbsolutePath());
-					return false;
-				}
-			}
-		}
-		return true;
+public class DbInfo {
+
+    protected String host;
+    protected String user;
+    protected String passwd;
+    protected String db;
+    protected String jdbc_driver = "com.mysql.jdbc.Driver";
+
+	public ToolDBAccess newDB (){
+		return new ToolDBAccess(this);
 	}
 	
+	ToolDBAccess m_ToolDBAccess =null; 
+	public ToolDBAccess getDB (){
+		if (null ==  m_ToolDBAccess)
+			m_ToolDBAccess = newDB();
+		return m_ToolDBAccess;
+	}
+	
+	
+	public DbInfo(String szHost, String szUser, String szPass, String szDB){
+		db = szDB;
+		host = szHost+szDB;
+		user = szUser;
+		passwd = szPass;
+	}
+	
+	public DbInfo(String szHost, String szUser, String szPass, String szDB, String szJdbcDriver){
+		db = szDB;
+		host = szHost+szDB;
+		user = szUser;
+		passwd = szPass;
+		jdbc_driver = szJdbcDriver;
+	}
+
+    public void print(){
+        System.out.println( host );
+        System.out.println( user );
+        System.out.println( passwd );
+    }
+
 }

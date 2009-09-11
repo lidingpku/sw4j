@@ -24,6 +24,7 @@ public class TaskOwl2WikiDump {
 				{"http://inference-web.org/2.0/ds.owl#", "ds", "files/owl2wikidump/ds.xml"},
 				{"http://inference-web.org/2.0/pml-provenance.owl#", "pmlp","files/owl2wikidump/pmlp.xml"},
 				{"http://inference-web.org/2.0/pml-justification.owl#", "pmlj","files/owl2wikidump/pmlj.xml"},
+				{"http://inference-web.org/2.0/pml-relation.owl#", "pmlr","files/owl2wikidump/pmlr.xml"},
 				{"http://www.w3.org/2003/01/geo/wgs84_pos#", "geo","files/owl2wikidump/"+"geo"+".xml"}
 		};
 		for (int i=0; i<aryInputOutput.length; i++){

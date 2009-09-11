@@ -54,6 +54,7 @@ abstract public class AbstractService  {
 			return null;
 		else
 			try {
+				value = value.trim();
 				return ToolURI.decodeURIString(value);
 			} catch (Sw4jException e) {
 				e.printStackTrace();

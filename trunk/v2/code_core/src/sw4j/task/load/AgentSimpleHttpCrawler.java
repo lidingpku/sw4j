@@ -45,11 +45,16 @@ public class AgentSimpleHttpCrawler {
 	
 	public static boolean debug = false;
 	public boolean canContinue(){
+		if (m_max_results>0 && this.m_results.size()>m_max_results)
+			return false;
+			
 		return true;
 	}
 	
 	public String m_seed_url = null;
-	public  int m_max_crawl_depth=10;
+	public int m_max_crawl_depth=10;
+	public int m_max_results= -1;
+	public Set<String> m_results=  new HashSet<String>();
 	public Set<String> m_allowed_url_patterns = new HashSet<String>();
 
 	
@@ -126,8 +131,10 @@ public class AgentSimpleHttpCrawler {
 	}
 	
 	private void process_confirmed_url(String szURL) {
-		if (!isWebDirectory(szURL))
+		if (!isWebDirectory(szURL)){
 			System.out.println(szURL);
+			m_results.add(szURL);
+		}
 	}
 
 

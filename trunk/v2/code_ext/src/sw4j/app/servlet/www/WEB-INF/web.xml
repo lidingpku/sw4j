@@ -28,6 +28,16 @@
   </servlet-mapping>
   
   <servlet>
+    <servlet-name>Norm</servlet-name>
+    <servlet-class>sw4j.app.servlet.NormServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Norm</servlet-name>
+    <url-pattern>/norm</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>Convert</servlet-name>
     <servlet-class>sw4j.app.servlet.ConvertServlet</servlet-class>
   </servlet>

@@ -29,8 +29,11 @@ package sw4j.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
+import java.util.StringTokenizer;
 //import java.util.TimeZone;
 import java.util.TimeZone;
 
@@ -192,6 +195,18 @@ public class ToolString {
 			return "";
 		else
 			return v.toLowerCase().trim();
+	}
+
+	public static Set<String> explode(String delimiter, String szOption) {
+		HashSet<String> ret = new HashSet<String>();
+		if (ToolSafe.isEmpty(delimiter)|| ToolSafe.isEmpty(szOption))
+			return ret;
+		
+		StringTokenizer st = new StringTokenizer(szOption, delimiter);
+		while (st.hasMoreTokens()){
+			ret.add(st.nextToken().trim());
+		}
+		return ret;
 	}
 
 }

@@ -46,6 +46,23 @@ import com.hp.hpl.jena.rdf.model.Property;
 
 public class ToolJenaTest {
 
+	@Test 
+	public void testSignBlanknode(){
+		String [] urls = new String []{
+				"http://tw.rpi.edu/2009/08/test1.rdf",	
+				"http://tw.rpi.edu/2009/08/test4.rdf",	
+				"http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl",
+			};
+			for (int i=0; i<urls.length; i++){
+				String szURL =urls[i];
+				Model m = ModelFactory.createDefaultModel();
+				m.read(szURL);
+
+				Model ret = ToolJena.model_signBlankNode(m,"http://tw.rpi.edu/test#");
+				System.out.println(ToolJena.printModelToString(ret));
+			}
+	}
+	
 	@Test
 	public void testReadList() {
 		String szURL;
@@ -60,7 +77,7 @@ public class ToolJenaTest {
 			ToolJena.printModel(m);
 			
 			Model m1 = 	ToolJena.model_clone(m);
-			ToolJena.model_update_List2Map(m1, PMLDS_first, PMLDS_rest, false);
+			ToolJena.model_update_List2Map(m1, PMLDS_first, PMLDS_rest, null, false);
 			System.out.println("added");
 			System.out.println(m1.size());
 			ToolJena.printModel(m1);
@@ -70,7 +87,7 @@ public class ToolJenaTest {
 			}
 			
 			Model m2 = 	ToolJena.model_clone(m);
-			ToolJena.model_update_List2Map(m2, PMLDS_first, PMLDS_rest, true);
+			ToolJena.model_update_List2Map(m2, PMLDS_first, PMLDS_rest,null, true);
 			System.out.println("added and remove");
 			System.out.println(m2.size());
 			ToolJena.printModel(m2);

@@ -121,6 +121,9 @@ public class ToolOwl2SemanticMediaWiki {
 			propertylist.add(OWL.ObjectProperty);
 			propertylist.add(OWL.AnnotationProperty);
 			propertylist.add(OWL.DeprecatedProperty);
+			propertylist.add(OWL.TransitiveProperty);
+			propertylist.add(OWL.InverseFunctionalProperty);
+			propertylist.add(OWL.FunctionalProperty);
 			propertylist.add(RDF.Property);
 
 			HashMap<Resource,String[]> prop_wikins = new HashMap<Resource,String[]>();
