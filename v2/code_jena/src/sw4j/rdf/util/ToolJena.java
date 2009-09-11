@@ -33,18 +33,23 @@ import java.io.OutputStream;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
 import org.apache.log4j.Logger;
 
 import sw4j.rdf.load.RDFSYNTAX;
+import sw4j.task.graph.DataDigraph;
 import sw4j.util.DataPVCMap;
+import sw4j.util.DataPVHMap;
 import sw4j.util.DataQname;
 import sw4j.util.Sw4jException;
+import sw4j.util.ToolHash;
 import sw4j.util.ToolSafe;
 import sw4j.util.ToolIO;
 import sw4j.util.ToolString;
@@ -132,8 +137,10 @@ public class ToolJena {
 	 * @param bRemoveListTriple
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
-	public static void model_update_List2Map(Model m, Property first, Property rest, boolean bRemoveListTriple) {
+	public static void model_update_List2Map(Model m, Property first, Property rest, Property part, boolean bRemoveListTriple) {
+		if (null==part)
+			part=RDFS.member;
+		
 		Set<Resource> subjects = m.listSubjects().toSet();
 
 		// subjects of list
@@ -158,7 +165,7 @@ public class ToolJena {
 			
 			while (iter_member.hasNext()){
 				RDFNode member = iter_member.next();
-				mi.add(mi.createStatement(root, RDFS.member, member));
+				mi.add(mi.createStatement(root, part, member));
 			}
 			
 			//keep the type of the root
@@ -297,7 +304,6 @@ public class ToolJena {
 	 * @param m
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
 	public static TreeSet<String> namespace_listByJena(Model m){
 		TreeSet<String> ret = new TreeSet<String>();
 		ret.addAll(m.listNameSpaces().toSet());
@@ -751,7 +757,8 @@ public class ToolJena {
 		return deduction;
 	}
 	*/
-	
+	//TODO
+	/*
 	public static void model_add_transtive(Model m, Property p){
 		Model m1 = ModelFactory.createDefaultModel();
 		m1.add(m.listStatements(null, p, (String)null) );
@@ -769,9 +776,65 @@ public class ToolJena {
 			m.add(stmt);
 		}
 	}
+	*/
+	public static void model_add_transtive(Model m, Property p){
+		HashMap<Integer, Resource> map_id_resource = new  HashMap<Integer, Resource>();
+		HashMap<Resource, Integer> map_resource_id = new  HashMap<Resource,Integer>();
+		DataDigraph dag = new DataDigraph();
+		int id =1;
+		{
+			Iterator<Statement> iter = m.listStatements(null,p, (String)null);
+			while (iter.hasNext()){
+				Statement stmt = iter.next();
+				
+				if (stmt.getObject().isAnon())
+					continue;
+				
+				Resource subject = stmt.getSubject();
+				Integer nid_subject = map_resource_id.get(subject);
+				if (null==nid_subject){
+					nid_subject = id;
+					map_resource_id.put(subject,nid_subject);
+					map_id_resource.put(nid_subject, subject);
+					id++;
+				}
+				
+				Resource object = (Resource) stmt.getObject();
+				Integer nid_object = map_resource_id.get(object);
+				if (null==nid_object){
+					nid_object = id;
+					map_resource_id.put(object,nid_object);
+					map_id_resource.put(nid_object, object);
+					id++;
+				}
+				
+				dag.add(nid_subject,nid_object);
+			}
+		}
+		
+		
+		DataDigraph tc = dag.create_tc();
+
+		Iterator<Integer> iter = tc.keySet().iterator();
+		while (iter.hasNext()){
+			Integer nid_subject = iter.next();
+			Resource subject = map_id_resource.get(nid_subject);
+			
+			m.add(m.createStatement(subject, p, subject));
+
+			Iterator<Integer> iter_obj = tc.getValues(nid_subject).iterator();
+			while (iter_obj.hasNext()){
+				Integer nid_object =iter_obj.next();
+				Resource object = map_id_resource.get(nid_object);
+				
+				m.add(m.createStatement(subject, p, object));
+			}
+		}
+	}
 	
 	public static Model model_createDeductiveClosure(Model m){
 		Model deduction = ModelFactory.createDefaultModel();
+		deduction.add(m);
 		ToolJena.model_add_transtive(deduction, RDFS.subClassOf);
 		ToolJena.model_add_transtive(deduction, RDFS.subPropertyOf);
 		return deduction;
@@ -834,9 +897,54 @@ public class ToolJena {
 			return null;
 
 		Model ret = ModelFactory.createDefaultModel();
-		model_merge(ret,m_a);
-		ret.remove(m_b);
-		model_copyNsPrefix(ret,m_a);
+		Model signed_a = model_signBlankNode(m_a,null);
+		Model signed_b = model_signBlankNode(m_b,null);
+		model_merge(ret,signed_a);
+		ret.remove(signed_b);
+	
+		return model_restoreBnode(ret,m_a);
+	}
+	
+	public static Model model_restoreBnode(Model m, Model ref){
+		Model ret = ModelFactory.createDefaultModel();
+		
+		Set<Resource> subjects = m.listSubjects().toSet();
+		subjects.removeAll(ref.listSubjects().toSet());
+		
+		HashMap<RDFNode,Resource> map_res_bnode = new HashMap<RDFNode,Resource>();
+		{
+			Iterator<Resource> iter = subjects.iterator();
+			while (iter.hasNext()){
+				Resource res = iter.next();
+				map_res_bnode.put(res, ret.createResource());
+			}
+		}
+		
+		return model_replace_uri(m, map_res_bnode); 
+	}
+	
+	public static Model model_replace_uri(Model m, Map<RDFNode,Resource> map_from_to){
+		Model ret = ModelFactory.createDefaultModel();
+		StmtIterator iter = m.listStatements();
+		while (iter.hasNext()){
+			Statement stmt = iter.nextStatement();
+			
+			Resource subject = stmt.getSubject();
+			RDFNode object = stmt.getObject();
+			
+			//skip
+			if (map_from_to.keySet().contains(subject))
+				subject = map_from_to.get(subject);
+
+			if (map_from_to.keySet().contains(object))
+				object = map_from_to.get(object);
+			
+			ret.add(ret.createStatement(subject, stmt.getPredicate(),object));
+
+		}
+
+		model_copyNsPrefix(ret,m);
+
 		return ret;
 	}
 	
@@ -849,6 +957,84 @@ public class ToolJena {
 		Iterator<Model> iter = ref.iterator();
 		while (iter.hasNext())
 			model_merge(m,iter.next());
+	}
+	
+	public static Model model_unsignBlankNode(Model m, String type){
+		Iterator<Resource> iter = m.listSubjectsWithProperty(RDF.type, m.createResource(type));
+		HashMap<RDFNode,Resource> map_res_bnode = new HashMap<RDFNode,Resource>();
+		while (iter.hasNext()){
+			Resource subject = iter.next();
+			map_res_bnode.put(subject, m.createResource());
+		}
+		
+		return model_replace_uri(m, map_res_bnode); 
+	}
+	
+	public static Model model_signBlankNode(Model m, String xmlbase ){
+		Model ret = ModelFactory.createDefaultModel();
+
+		if (ToolSafe.isEmpty(xmlbase)){
+			xmlbase= "http://tw.rpi.edu/res/";
+		}
+		
+		//partition
+		DataPVHMap<RDFNode, String> map_s_bnode = new DataPVHMap<RDFNode, String>();
+		HashMap<RDFNode,RDFNode> map_os_bnode = new HashMap<RDFNode,RDFNode>();
+		DataPVHMap<RDFNode, Statement> map_o_bnode = new DataPVHMap<RDFNode, Statement>();
+		{
+			StmtIterator iter = m.listStatements();
+			while (iter.hasNext()){
+				Statement stmt = iter.nextStatement();
+				
+				//skip
+				if (!stmt.getSubject().isAnon())
+					continue;
+				
+				if (stmt.getObject().isAnon()){
+					map_o_bnode.add(stmt.getObject(),stmt);
+					map_os_bnode.put(stmt.getObject(), stmt.getSubject());
+				}else{
+					String hash_pv= ToolHash.hash_sum_md5(String.format("%s-%s", stmt.getPredicate().getURI(), ToolJena.getNodeString(stmt.getObject())).getBytes());
+					map_s_bnode.add(stmt.getSubject(), hash_pv);
+				}
+			}
+		}
+		
+		//updaet uri 
+		HashMap<RDFNode, Resource> map_bnode_res = new HashMap<RDFNode, Resource>();
+		while (true){
+			Set<RDFNode> terminal = new HashSet<RDFNode>(map_s_bnode.keySet());
+			terminal.removeAll(map_os_bnode.values());
+			
+			if (terminal.size()==0)
+				break;
+			
+			//create uri
+			Iterator<RDFNode> iter = terminal.iterator();
+			while (iter.hasNext()){
+				RDFNode bnode= iter.next();
+				TreeSet<String> temp = new TreeSet<String>(map_s_bnode.getValues(bnode));
+				String hash = ToolHash.hash_sum_md5(temp.toString().getBytes());
+				String bnode_uri = xmlbase+"_"+hash;
+				Resource bnode_res = ret.createResource(bnode_uri);
+				map_bnode_res.put(bnode, bnode_res);
+				map_s_bnode.remove(bnode);
+
+				//update
+				Iterator<Statement> iter_stmt = map_o_bnode.getValues(bnode).iterator();
+				while (iter_stmt.hasNext()){
+					Statement stmt = iter_stmt.next();
+
+					String hash_pv= ToolHash.hash_sum_md5(String.format("%s-%s", stmt.getPredicate().getURI(), bnode_uri).getBytes());
+					map_s_bnode.add(stmt.getSubject(), hash_pv);
+				}
+				map_os_bnode.remove(bnode);
+				
+			}
+		}
+		
+		return model_replace_uri(m, map_bnode_res); 
+
 	}
 
 	/**

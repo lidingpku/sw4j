@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+  <link href="http://inference-web.org/iw.css" rel="stylesheet" type="text/css" /> 
+</head>
+
+
+
+
+<body>
+
+
+<h3>Sign Web Service</h3>
+Features:
+<ul>
+<li> sign blank-node in an RDF document</li>
+<li> unsign URI in an RDF document to blank-node</li>
+<li> decouple recursive list structure</li>
+<li> materialize transitive relation</li>
+<li> compute deductive closure (RDFS)</li>
+<li> compute deductive closure (OWL)</li>
+</ul>
+
+<fieldset id="filedset_text">
+<legend>Sign blank-node</legend>
+<form method="GET" action="/sw4j/norm" border="1">
+    <input type="hidden" name="option" value="sign"/>
+	URL: <input name="url" size="102" type="text">  <br/>
+    <input value="go"  type="submit">
+ </form>
+</fieldset>
+
+<fieldset id="filedset_text">
+<legend>Unsign URI to blanknode</legend>
+<form method="GET" action="/sw4j/norm" border="1">
+    <input type="hidden" name="option" value="unsign"/>
+	URL: <input name="url" size="102" type="text">  <br/>
+	type URI : <input name="type_uri" size="102" type="text">  (separate multiple uris by comma)<br/>
+    <input value="go"  type="submit">
+ </form>
+</fieldset>
+
+<fieldset id="filedset_text">
+<legend>decouple recursive list</legend>
+<form method="GET" action="/sw4j/norm" border="1">
+    <input type="hidden" name="option" value="dlist"/>
+	URL: <input name="url" size="102" type="text">  <br/>
+    <input value="go"  type="submit">
+ </form>
+</fieldset>
+
+<fieldset id="filedset_text">
+<legend>materialize transitive property</legend>
+<form method="GET" action="/sw4j/norm" border="1">
+    <input type="hidden" name="option" value="tp"/>
+	URL: <input name="url" size="102" type="text">  <br/>
+	transitive property URI : <input name="tp_uri" size="102" type="text">  <br/>
+    <input value="go"  type="submit">
+ </form>
+</fieldset>
+
+<fieldset id="filedset_text">
+<legend>deductive model by RDFS</legend>
+<form method="GET" action="/sw4j/norm" border="1">
+    <input type="hidden" name="option" value="deduct_rdfs"/>
+	URL: <input name="url" size="102" type="text">  <br/>
+    <input value="go"  type="submit">
+ </form>
+</fieldset>
+
+<fieldset id="filedset_text">
+<legend>deductive model by OWL</legend>
+<form method="GET" action="/sw4j/norm" border="1">
+    <input type="hidden" name="option" value="deduct_owl"/>
+	URL: <input name="url" size="102" type="text">  <br/>
+    <input value="go"  type="submit">
+ </form>
+</fieldset>
+
+<h3>REST Service Interface Description</h3>
+Base service URI: &nbsp;http://onto.rpi.edu/sw4j/norm<br />
+<table style="text-align: left; width: 699px; height: 91px;"
+ border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="width: 111px; font-weight: bold;">parameter</td>
+      <td style="width: 378px; font-weight: bold;">meaning</td>
+    </tr>
+    <tr>
+      <td style="width: 111px;">url</td>
+      <td style="width: 378px;">the URL of an RDF document</td>
+    </tr>
+    <tr>
+      <td style="width: 111px;">type_uri (only for unsign option)</td>
+      <td style="width: 378px;">the URIs (separated by comma) of the class to be unsigned</td>
+    </tr>
+    <tr>
+      <td style="width: 111px;">tp_uri (only for tp option)</td>
+      <td style="width: 378px;">the URI of the transitive property</td>
+    </tr>
+  </tbody>
+</table>
+
+example usage
+<ul>
+  <li> simple sing (default) - <a
+ href="http://onto.rpi.edu/sw4j/sing?uri=http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl">http://onto.rpi.edu/sw4j/sing?uri=http://inference-web.org/proofs/tptp/Solutions/PUZ/PUZ001-1/EP---1.0/answer.owl</a></li>
+</ul>
+
+
+
+
+
+<hr style="font-family: sans-serif;">
+<p><font color="#008000"><i>This page is maintained by Li Ding. Page last updated on&nbsp; July 1, 2009
+
+</i></font></p>
+</body>
+</html>

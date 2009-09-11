@@ -147,7 +147,6 @@ public class TaskDiff {
 		 return task;
 	 }
 	 
-	 @SuppressWarnings("unchecked")
 	private void run(){
 		 m_model_add = ToolJena.model_diff(m_model_cur, m_model_prev);
 		 m_model_del = ToolJena.model_diff( m_model_prev,m_model_cur);
@@ -156,16 +155,16 @@ public class TaskDiff {
 		Set<Resource> roots_cur =null;
 		Set<Resource> roots_prev =null;
 		if (ToolSafe.isEmpty(m_res_root_type)){
-			roots_cur = (Set<Resource>) (m_model_cur.listSubjects()).toSet();
-			roots_prev = (Set<Resource>) (m_model_prev.listSubjects()).toSet();
+			roots_cur = (Set<Resource>) (m_model_add.listSubjects()).toSet();
+			roots_prev = (Set<Resource>) (m_model_del.listSubjects()).toSet();
 		}else{
-			roots_cur = (Set<Resource>) (m_model_cur.listSubjectsWithProperty( RDF.type, m_res_root_type)).toSet();
-			roots_prev = (Set<Resource>) (m_model_prev.listSubjectsWithProperty( RDF.type, m_res_root_type)).toSet();
+			roots_cur = (Set<Resource>) (m_model_add.listSubjectsWithProperty( RDF.type, m_res_root_type)).toSet();
+			roots_prev = (Set<Resource>) (m_model_del.listSubjectsWithProperty( RDF.type, m_res_root_type)).toSet();
 		}
         
 
 	    // 1. compute new roots
-		 m_roots_add =  new HashSet<Resource>(roots_cur);
+		 m_roots_add =  new HashSet<Resource>(m_model_add.listSubjects().toSet());
 		 m_roots_add.removeAll(roots_prev);
 	        
 		// Set t =  m_model_add.listSubjects().toSet();

@@ -27,6 +27,10 @@ public class DataServletResponse {
 	String m_sz_rdf_syntax = null;
 	public Model m_model_content=null;
 	public Resource m_root = null;
+	boolean m_bIsSucceed = false;
+	public boolean isSucceed(){
+		return m_bIsSucceed;
+	}
 
 	public static DataServletResponse createResponse(String msg, boolean isSucceed, AbstractService service){
 		return createResponse( msg,  isSucceed,  service.context.getAsString(AbstractService.HTTP_REQUEST_URI),  service.getName(),  service.params.getAsString(AbstractService.PARAM_OUTPUT));
@@ -34,6 +38,7 @@ public class DataServletResponse {
 	
 	public static DataServletResponse createResponse(String msg, boolean isSucceed, String requestURI, String creator, String rdfsyntax){
 		rdfsyntax = RDFSYNTAX.parseSyntax(rdfsyntax);
+		
 		if (ToolSafe.isEmpty(rdfsyntax)){
 			DataServletResponse response = new DataServletResponse();
 			response.m_sz_mime_type = RDFSYNTAX.MIME_TEXT_PLAIN;
@@ -41,6 +46,7 @@ public class DataServletResponse {
 			response.m_sz_content = msg;
 			response.m_model_content =null;
 			response.m_root =null;
+			response.m_bIsSucceed = isSucceed;
 
 			return response;
 		}else if (RDFSYNTAX.SPARQL_XML.equalsIgnoreCase(rdfsyntax)){
@@ -50,6 +56,7 @@ public class DataServletResponse {
 			response.m_sz_content = msg;
 			response.m_model_content =null;
 			response.m_root =null;
+			response.m_bIsSucceed = isSucceed;
 
 			return response;			
 		}else if (RDFSYNTAX.SPARQL_JSON.equalsIgnoreCase(rdfsyntax)){
@@ -59,6 +66,7 @@ public class DataServletResponse {
 			response.m_sz_content = msg;
 			response.m_model_content =null;
 			response.m_root =null;
+			response.m_bIsSucceed = isSucceed;
 
 			return response;			
 		}else{
@@ -81,7 +89,10 @@ public class DataServletResponse {
 			}
 			
 			m.setNsPrefix(RESPONSE.class.getSimpleName().toLowerCase(), RESPONSE.getURI());
-			return createResponse(m, root, rdfsyntax);
+			DataServletResponse response = createResponse(m, root, rdfsyntax);
+
+			response.m_bIsSucceed = isSucceed;
+			return response;			
 		}
 	}
 
@@ -96,6 +107,7 @@ public class DataServletResponse {
 		response.m_model_content = m;
 		response.m_sz_content =null;
 		response.m_root =root;
+		response.m_bIsSucceed = true;
 		
 		return response;
 	}	

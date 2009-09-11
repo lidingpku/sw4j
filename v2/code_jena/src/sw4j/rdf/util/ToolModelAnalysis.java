@@ -329,7 +329,6 @@ public class ToolModelAnalysis {
 	public static final int SUBJECT_INSTANCE = 0;
 	public static final int SUBJECT_ONTOLOGY = 1;
 	public static final int SUBJECT_UNKNOWN = 2;
-	@SuppressWarnings("unchecked")
 	public static List<Set<Resource>> splitSubjects(Model model_data) {
 		ArrayList<Set<Resource>> ret = new ArrayList<Set<Resource>>();
 		
