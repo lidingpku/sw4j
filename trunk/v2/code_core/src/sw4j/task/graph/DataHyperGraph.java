@@ -443,6 +443,39 @@ public class DataHyperGraph {
 	}
 
 	/**
+	 * export data in to text based exchange format
+	 * 
+	 * @param reference  - the referenced hypergraph that record the provenance metadata for each hyperedge
+	 * @return
+	 */
+	public String data_export_graphviz(){
+
+		
+		String ret = "/*\n"+data_summary()+"\n*/";
+		ret +="digraph g { node [ shape = box];\n";
+		
+		{
+			Iterator<DataHyperEdge> iter= this.getEdges().iterator();
+			int edgeid=1;
+			while (iter.hasNext()){
+				DataHyperEdge edge = iter.next();
+				
+				String e = "a_"+edgeid;
+				edgeid++;
+				ret += String.format(" %s [shape=diamond];\n ", e);
+				ret += String.format(" x_%s -> %s;\n ", edge.getOutput(), e );
+				Iterator<Integer> iter_input = edge.getInputs().iterator();
+				while (iter_input.hasNext()){
+					Integer input= iter_input.next();
+					ret += String.format(" %s -> x_%s;\n ", e, input);
+				}
+			}
+			
+		}
+		ret +="\n}\n";
+		return ret;
+	}
+	/**
 	 * import data 
 	 * 
 	 * @param dump

@@ -40,6 +40,7 @@ public class DataHyperGraphTest {
 		}else{
 			System.out.println("succeed");
 		}
+		System.out.println(lg1.data_export_graphviz());
 	}	
 	
 
