@@ -30,6 +30,7 @@ package sw4j.util;
 
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Map;
 
 
 /**
@@ -110,6 +111,19 @@ public class ToolSafe {
 		if (isEmpty(data)) {
 			throw new Sw4jException(state, ERROR_EMPTY_OBJECT, szMsg);
 		}
+	}
+
+	@SuppressWarnings("unchecked")
+	public static Object get(Map map_id_label, Integer id,
+			Object default_label) {
+		if (isEmpty(map_id_label))
+			return default_label;
+		
+		Object label = map_id_label.get(id);
+		if (isEmpty(label))
+			return default_label;
+		else
+			return label;
 	}
 	
 }

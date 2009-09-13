@@ -448,7 +448,7 @@ public class DataHyperGraph {
 	 * @param reference  - the referenced hypergraph that record the provenance metadata for each hyperedge
 	 * @return
 	 */
-	public String data_export_graphviz(){
+	public String data_export_graphviz(Map<Object,String> map_id_label){
 
 		
 		String ret = "/*\n"+data_summary()+"\n*/";
@@ -462,12 +462,14 @@ public class DataHyperGraph {
 				
 				String e = "a_"+edgeid;
 				edgeid++;
-				ret += String.format(" %s [shape=diamond];\n ", e);
-				ret += String.format(" x_%s -> %s;\n ", edge.getOutput(), e );
+				ret += String.format(" \"%s\" [shape=diamond];\n ", e);
+				Object label_o = ToolSafe.get(map_id_label, edge.getOutput(), "x_"+edge.getOutput());
+				ret += String.format(" \"%s\" -> \"%s\";\n ", label_o, e );
 				Iterator<Integer> iter_input = edge.getInputs().iterator();
 				while (iter_input.hasNext()){
 					Integer input= iter_input.next();
-					ret += String.format(" %s -> x_%s;\n ", e, input);
+					Object label_i = ToolSafe.get(map_id_label, input, "x_"+input);
+					ret += String.format(" \"%s\" -> \"%s\";\n ",  e, label_i );
 				}
 			}
 			
