@@ -2,6 +2,7 @@ package sw4j.task.graph;
 
 import static org.junit.Assert.fail;
 
+import java.util.HashMap;
 import java.util.Iterator;
 
 import org.junit.Test;
@@ -40,7 +41,7 @@ public class DataHyperGraphTest {
 		}else{
 			System.out.println("succeed");
 		}
-		System.out.println(lg1.data_export_graphviz());
+		System.out.println(lg1.data_export_graphviz(null));
 	}	
 	
 
@@ -289,20 +290,31 @@ Steps:
 	private static DataHyperGraph[] create_test_rain(){
 		DataHyperGraph lg_a = new DataHyperGraph();
 		DataHyperGraph lg_b = new DataHyperGraph();
+		HashMap<Object,String> map_id_label = new HashMap<Object,String>();
 
 		Integer v1 = new Integer(1);//, "w=>r" , "If it's winter, then it's raining ");
+		map_id_label.put(v1, "w=>r");
 		Integer v2 = new Integer(2);//, "u=>r" , "If you have out an umbrella, then it's raining.");
+		map_id_label.put(v2, "u=>r");
 		Integer v3 = new Integer(3);//, "r=>s" , "If it's raining, then you're singing.");
+		map_id_label.put(v3, "r=>s");
 		Integer v4 = new Integer(4);//, "w=>u" , "If it's winter, then you have out an umbrella.");
+		map_id_label.put(v4, "w=>u");
 		Integer v5 = new Integer(5);//, "(r & u) = (r=>s)" , "If it's raining and you have out an umbrella, then if it's raining you are singing.");
+		map_id_label.put(v5, "r&u");
 		Integer v6 = new Integer(6);//, "u" , "You have out an umbrella.");
+		map_id_label.put(v6, "u");
 		Integer v7 = new Integer(7);//, "w" , "It's winter.");
+		map_id_label.put(v7, "w");
 		Integer v8 = new Integer(8);//, "r" , "It's raining.");
+		map_id_label.put(v8, "r");
 		Integer v9 = v6;
 		Integer v10 = v8;
 		Integer v11 = new Integer(11);//, "s" , "You're singing.");
+		map_id_label.put(v11, "s");
 		Integer v12 = v8;
 		Integer v13 = new Integer(13);//, "u=>(r=>s)" , "If you have out an umbrella, then if it's raining, then you're singing.");
+		map_id_label.put(v13, "u=>(r=>s)");
 		Integer v14 = v3;
 		Integer v15 =v11;
 		
@@ -381,6 +393,7 @@ Steps:
 				lg
 		};
 		
+		System.out.println(lg.data_export_graphviz(map_id_label));
 		return lgs;
 	}
 	
