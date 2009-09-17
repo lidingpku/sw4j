@@ -72,6 +72,10 @@ public class DataObjectGroupMap <V>{
 		}
 	}
 
+	public Iterator<Integer> listGids(){
+		return this.m_map_gid_uris.keySet().iterator();
+	}
+	
 	public Integer getGid(V uri){
 		Integer gid = this.m_map_uri_gid.get(uri);
 		return gid;
