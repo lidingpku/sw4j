@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="code_core/src-test"/>
-	<classpathentry kind="src" path="code_ext/src"/>
-	<classpathentry kind="src" path="code_ext/src-test"/>
 	<classpathentry kind="src" path="code_jena/src-test"/>
 	<classpathentry kind="src" path="code_jena/src"/>
+	<classpathentry kind="src" path="code_ext/src"/>
+	<classpathentry kind="src" path="code_ext/src-test"/>
 	<classpathentry kind="src" path="code_core/src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="code_core/lib/googleapi.jar"/>
@@ -48,5 +48,6 @@
 	<classpathentry kind="lib" path="code_ext/lib/pellet_2_rc7/owlapi/owlapi-src.jar"/>
 	<classpathentry kind="lib" path="code_ext/lib/pellet_2_rc7/xsdlib/relaxngDatatype.jar"/>
 	<classpathentry kind="lib" path="code_ext/lib/pellet_2_rc7/xsdlib/xsdlib.jar"/>
+	<classpathentry kind="lib" path="code_core/lib/mysql-connector-java-5.1.8-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
