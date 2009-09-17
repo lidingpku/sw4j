@@ -41,7 +41,7 @@ public class DataHyperGraphTest {
 		}else{
 			System.out.println("succeed");
 		}
-		System.out.println(lg1.data_export_graphviz(null,null,null));
+		System.out.println(lg1.data_export_graphviz(null,null,null,""));
 	}	
 	
 
@@ -393,7 +393,7 @@ Steps:
 				lg
 		};
 		
-		System.out.println(lg.data_export_graphviz(map_id_label, null, null));
+		System.out.println(lg.data_export_graphviz(map_id_label, null, null,""));
 		return lgs;
 	}
 	
