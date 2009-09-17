@@ -462,7 +462,7 @@ public class DataHyperGraph {
 	 * @param reference  - the referenced hypergraph that record the provenance metadata for each hyperedge
 	 * @return
 	 */
-	public String data_export_graphviz(Map<Integer,String> map_node_id_input, Map<Integer,Properties> map_node_params, Map<DataHyperEdge,Properties> map_edge_params ){
+	public String data_export_graphviz(Map<Integer,String> map_node_id_input, Map<Integer,Properties> map_node_params, Map<DataHyperEdge,Properties> map_edge_params, String sz_more ){
 		//list all nodes
 		Set<Integer> nodes = getNodes();
 		
@@ -480,6 +480,7 @@ public class DataHyperGraph {
 	
 		String ret = "/*\n"+data_summary()+"\n*/";
 		ret +="digraph g { rankdir=BT; node [ shape = box];\n";
+		ret += sz_more +"\n";
 		{
 			//print nodes
 			for(Integer node: nodes){
@@ -487,11 +488,15 @@ public class DataHyperGraph {
 				String params ="";
 				if (null!=map_node_params){
 					Properties prop= map_node_params.get(node);
-					if (!ToolSafe.isEmpty(prop)){
-						for (Object key :prop.keySet()){
-							params += String.format("%s=\"%s\" ", key, prop.get(key));
-						}
+					if (ToolSafe.isEmpty(prop)){
+						prop= new Properties();
 					}
+					prop.put("shape", "box");
+
+					for (Object key :prop.keySet()){
+							params += String.format("%s=\"%s\" ", key, prop.get(key));
+					}
+					
 				}
 				ret += String.format(" \"%s\" [ %s ];\n ", label, params);
 			}
@@ -532,6 +537,13 @@ public class DataHyperGraph {
 			}
 			
 		}
+		
+		ret += "{ rank=same; ";
+		for(Integer leaf: this.getAxioms()){
+			String label = map_node_id.get(leaf);
+			ret += String.format(" \"%s\"",  label );			
+		}
+		ret +="}\n";
 		ret +="\n}\n";
 		return ret;
 	}
