@@ -14,7 +14,7 @@
 <h3>Sign Web Service</h3>
 Features:
 <ul>
-<li> sign blank-node in an RDF document</li>
+<li> sign blank-node in an RDF document </li>
 <li> unsign URI in an RDF document to blank-node</li>
 <li> decouple recursive list structure</li>
 <li> materialize transitive relation</li>
@@ -26,6 +26,15 @@ Features:
 <legend>Sign blank-node</legend>
 <form method="GET" action="/sw4j/norm" border="1">
     <input type="hidden" name="option" value="sign"/>
+	URL: <input name="url" size="102" type="text">  <br/>
+    <input value="go"  type="submit">
+ </form>
+</fieldset>
+
+<fieldset id="filedset_text">
+<legend>Sign blank-node (into hash)</legend>
+<form method="GET" action="/sw4j/norm" border="1">
+    <input type="hidden" name="option" value="sign_hash"/>
 	URL: <input name="url" size="102" type="text">  <br/>
     <input value="go"  type="submit">
  </form>

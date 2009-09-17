@@ -300,8 +300,8 @@ Steps:
 		map_id_label.put(v3, "r=>s");
 		Integer v4 = new Integer(4);//, "w=>u" , "If it's winter, then you have out an umbrella.");
 		map_id_label.put(v4, "w=>u");
-		Integer v5 = new Integer(5);//, "(r & u) = (r=>s)" , "If it's raining and you have out an umbrella, then if it's raining you are singing.");
-		map_id_label.put(v5, "r&u");
+		Integer v5 = new Integer(5);//, "(r & u) => (r=>s)" , "If it's raining and you have out an umbrella, then if it's raining you are singing.");
+		map_id_label.put(v5, "(r & u) => (r=>s)");
 		Integer v6 = new Integer(6);//, "u" , "You have out an umbrella.");
 		map_id_label.put(v6, "u");
 		Integer v7 = new Integer(7);//, "w" , "It's winter.");

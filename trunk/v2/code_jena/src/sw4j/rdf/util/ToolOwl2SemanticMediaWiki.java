@@ -62,7 +62,7 @@ public class ToolOwl2SemanticMediaWiki {
 	
 	public static void dump_ontology(String szOntologyNamespace, String szPrefix, String szFilename){
 		String szOntologyNamespaceUrl = DataQname.extractNamespaceUrl(szOntologyNamespace);
-		dump_ontology(szOntologyNamespace, szOntologyNamespaceUrl, szPrefix, szFilename);
+		dump_ontology(szOntologyNamespaceUrl, szOntologyNamespace, szPrefix, szFilename);
 	}
 
 	public static void dump_ontology(String  szOntologyUrl, String szOntologyNamespace,  String szPrefix, String szFilename){

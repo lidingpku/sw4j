@@ -970,11 +970,31 @@ public class ToolJena {
 		return model_replace_uri(m, map_res_bnode); 
 	}
 	
-	public static Model model_signBlankNode(Model m, String xmlbase ){
-		Model ret = ModelFactory.createDefaultModel();
+	public static Model model_signBlankNode(Model m, String namespace) {
 
-		if (ToolSafe.isEmpty(xmlbase)){
-			xmlbase= "http://tw.rpi.edu/res/";
+		HashMap<RDFNode, Resource> map_bnode_res = new HashMap<RDFNode, Resource>();
+		Iterator<Statement> iter = m.listStatements();
+		while (iter.hasNext()){
+			Statement stmt = iter.next();
+			Resource node = stmt.getSubject();
+			if (node.isAnon()){
+				map_bnode_res.put(node, m.createResource(namespace+node));
+			}
+			if (stmt.getObject().isAnon()){
+				node =(Resource) stmt.getObject();
+				map_bnode_res.put(node, m.createResource(namespace+node));
+			}
+				
+		}
+		return model_replace_uri(m, map_bnode_res); 
+
+	}
+	
+	public static Model model_signBlankNode_hash(Model m, String namespace ){
+		//Model ret = ModelFactory.createDefaultModel();
+
+		if (ToolSafe.isEmpty(namespace)){
+			namespace= "http://tw.rpi.edu/res/";
 		}
 		
 		//partition
@@ -1000,7 +1020,7 @@ public class ToolJena {
 			}
 		}
 		
-		//updaet uri 
+		//update uri 
 		HashMap<RDFNode, Resource> map_bnode_res = new HashMap<RDFNode, Resource>();
 		while (true){
 			Set<RDFNode> terminal = new HashSet<RDFNode>(map_s_bnode.keySet());
@@ -1015,8 +1035,8 @@ public class ToolJena {
 				RDFNode bnode= iter.next();
 				TreeSet<String> temp = new TreeSet<String>(map_s_bnode.getValues(bnode));
 				String hash = ToolHash.hash_sum_md5(temp.toString().getBytes());
-				String bnode_uri = xmlbase+"_"+hash;
-				Resource bnode_res = ret.createResource(bnode_uri);
+				String bnode_uri = namespace+"_"+hash;
+				Resource bnode_res = m.createResource(bnode_uri);
 				map_bnode_res.put(bnode, bnode_res);
 				map_s_bnode.remove(bnode);
 
@@ -1289,4 +1309,6 @@ public class ToolJena {
 			return ((Resource)node).getId().toString();
 		}
 	}
+
+
 }
