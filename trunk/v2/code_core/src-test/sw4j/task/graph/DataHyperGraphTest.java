@@ -41,7 +41,7 @@ public class DataHyperGraphTest {
 		}else{
 			System.out.println("succeed");
 		}
-		System.out.println(lg1.data_export_graphviz(null));
+		System.out.println(lg1.data_export_graphviz(null,null,null));
 	}	
 	
 
@@ -290,7 +290,7 @@ Steps:
 	private static DataHyperGraph[] create_test_rain(){
 		DataHyperGraph lg_a = new DataHyperGraph();
 		DataHyperGraph lg_b = new DataHyperGraph();
-		HashMap<Object,String> map_id_label = new HashMap<Object,String>();
+		HashMap<Integer,String> map_id_label = new HashMap<Integer,String>();
 
 		Integer v1 = new Integer(1);//, "w=>r" , "If it's winter, then it's raining ");
 		map_id_label.put(v1, "w=>r");
@@ -393,7 +393,7 @@ Steps:
 				lg
 		};
 		
-		System.out.println(lg.data_export_graphviz(map_id_label));
+		System.out.println(lg.data_export_graphviz(map_id_label, null, null));
 		return lgs;
 	}
 	
