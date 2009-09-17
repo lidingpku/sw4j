@@ -34,6 +34,7 @@ public class NormService extends AbstractService{
 	public static final String PARAM_TP_URI = "tp_uri";
 
 	public static final String PARAM_VALUE_OPTION_SIGN = "sign";
+	public static final String PARAM_VALUE_OPTION_SIGN_HASH = "sign_hash";
 	public static final String PARAM_VALUE_OPTION_UNSIGN = "unsign";
 	public static final String PARAM_VALUE_OPTION_DLIST = "dlist";
 	public static final String PARAM_VALUE_OPTION_TP = "tp";
@@ -81,6 +82,8 @@ public class NormService extends AbstractService{
         //sign or unsign
         if (options.contains(PARAM_VALUE_OPTION_SIGN)){
 			model = ToolJena.model_signBlankNode(model, DataQname.extractNamespaceUrl(szUrl)+"#");
+        }else if (options.contains(PARAM_VALUE_OPTION_SIGN_HASH)){
+			model = ToolJena.model_signBlankNode_hash(model, DataQname.extractNamespaceUrl(szUrl)+"#");        	
         }else if (options.contains(PARAM_VALUE_OPTION_UNSIGN)){
         	Iterator<String> iter = ToolString.explode(",",type_uri).iterator();
             while (iter.hasNext()){
@@ -91,8 +94,8 @@ public class NormService extends AbstractService{
         
         //decouple recursive lists use pmlr:hasPart
         if (options.contains(PARAM_VALUE_OPTION_DLIST)){
-        	ToolJena.model_update_List2Map(model, RDF.first, RDF.rest, PMLR.hasPart, false);
-        	ToolJena.model_update_List2Map(model, PMLDS.first, PMLDS.rest, PMLR.hasPart, false);
+        	ToolJena.model_update_List2Map(model, RDF.first, RDF.rest, PMLR.hasMember, false);
+        	ToolJena.model_update_List2Map(model, PMLDS.first, PMLDS.rest, PMLR.hasMember, false);
         	model.setNsPrefix(PMLR.class.getSimpleName().toLowerCase(), PMLR.getURI());
         }
         
