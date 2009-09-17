@@ -38,6 +38,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Properties;
 import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
@@ -443,33 +444,90 @@ public class DataHyperGraph {
 	}
 
 	/**
+	 * list all nodes
+	 * @return
+	 */
+	public Set<Integer> getNodes(){
+		TreeSet<Integer> ret = new TreeSet<Integer>();
+		for (DataHyperEdge e : this.getEdges()){
+			ret.add(e.getOutput());
+			ret.addAll(e.getInputs());
+		}
+		return ret;
+	}
+	
+	/**
 	 * export data in to text based exchange format
 	 * 
 	 * @param reference  - the referenced hypergraph that record the provenance metadata for each hyperedge
 	 * @return
 	 */
-	public String data_export_graphviz(Map<Object,String> map_id_label){
+	public String data_export_graphviz(Map<Integer,String> map_node_id_input, Map<Integer,Properties> map_node_params, Map<DataHyperEdge,Properties> map_edge_params ){
+		//list all nodes
+		Set<Integer> nodes = getNodes();
+		
+		//prepare map_node_id
+		HashMap <Integer,String> map_node_id = new HashMap<Integer,String> ();
+		for(Integer node: nodes){
+			String id = null;
+			if (null!=map_node_id_input)
+				id = map_node_id_input.get(node);
+			if (null==id)
+				id="x_"+node;
+			map_node_id.put(node,id);
+		}
 
-		
+	
 		String ret = "/*\n"+data_summary()+"\n*/";
-		ret +="digraph g { node [ shape = box];\n";
-		
+		ret +="digraph g { rankdir=BT; node [ shape = box];\n";
 		{
+			//print nodes
+			for(Integer node: nodes){
+				String label = map_node_id.get(node);
+				String params ="";
+				if (null!=map_node_params){
+					Properties prop= map_node_params.get(node);
+					if (!ToolSafe.isEmpty(prop)){
+						for (Object key :prop.keySet()){
+							params += String.format("%s=\"%s\" ", key, prop.get(key));
+						}
+					}
+				}
+				ret += String.format(" \"%s\" [ %s ];\n ", label, params);
+			}
+		}
+		{
+			//print arcs
 			Iterator<DataHyperEdge> iter= this.getEdges().iterator();
 			int edgeid=1;
+			String label;
 			while (iter.hasNext()){
 				DataHyperEdge edge = iter.next();
 				
 				String e = "a_"+edgeid;
 				edgeid++;
-				ret += String.format(" \"%s\" [shape=diamond];\n ", e);
-				Object label_o = ToolSafe.get(map_id_label, edge.getOutput(), "x_"+edge.getOutput());
-				ret += String.format(" \"%s\" -> \"%s\";\n ", label_o, e );
+				
+				String params ="";
+				if (null!=map_edge_params){
+					Properties prop= map_edge_params.get(edge);
+					if (ToolSafe.isEmpty(prop)){
+						prop= new Properties();
+					}
+					prop.put("shape", "diamond");
+					for (Object key :prop.keySet()){
+						params += String.format("%s=\"%s\" ", key, prop.get(key));
+					}
+				}
+				ret += String.format(" \"%s\" [ %s ];\n ", e, params);
+				
+				Integer output= edge.getOutput();
+				label = map_node_id.get(output);
+				ret += String.format(" \"%s\" -> \"%s\";\n ", label, e );
 				Iterator<Integer> iter_input = edge.getInputs().iterator();
 				while (iter_input.hasNext()){
 					Integer input= iter_input.next();
-					Object label_i = ToolSafe.get(map_id_label, input, "x_"+input);
-					ret += String.format(" \"%s\" -> \"%s\";\n ",  e, label_i );
+					label = map_node_id.get(input);
+					ret += String.format(" \"%s\" -> \"%s\";\n ",  e, label );
 				}
 			}
 			

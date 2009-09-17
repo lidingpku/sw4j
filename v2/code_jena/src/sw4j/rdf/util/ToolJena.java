@@ -1198,6 +1198,57 @@ public class ToolJena {
 		return m.createTypedLiteral(ToolString.formatXMLDateTime(millisecond), XSDDatatype.XSDdateTime);
 	}
 
+	public static Set<String> listNameSpacesData(Model m){
+		TreeSet<String> ret = new TreeSet<String>();
+		Iterator<Statement> iter = m.listStatements();
+		while (iter.hasNext()){
+			Statement stmt = iter.next();
+			String  ns;
+			Resource res = stmt.getSubject();
+			ns = DataQname.extractNamespace(res.getURI());
+			if (!ToolSafe.isEmpty(ns))
+				ret.add(ns);
+
+			if (stmt.getPredicate().equals(RDF.type))
+				continue;
+
+			if (!stmt.getObject().isURIResource())
+				continue;
+			res = (Resource)stmt.getObject();
+			ns = DataQname.extractNamespace(res.getURI());
+			if (!ToolSafe.isEmpty(ns))
+				ret.add(ns);
+		
+		}
+		return ret;
+	}
+	public static Set<String> listNameSpaces(Model m){
+		TreeSet<String> ret = new TreeSet<String>();
+		Iterator<Statement> iter = m.listStatements();
+		while (iter.hasNext()){
+			Statement stmt = iter.next();
+			String  ns;
+			Resource res = stmt.getSubject();
+			ns = DataQname.extractNamespace(res.getURI());
+			if (!ToolSafe.isEmpty(ns))
+				ret.add(ns);
+
+			res = stmt.getPredicate();
+			ns = DataQname.extractNamespace(res.getURI());
+			if (!ToolSafe.isEmpty(ns))
+				ret.add(ns);
+
+			if (!stmt.getObject().isURIResource())
+				continue;
+			res = (Resource)stmt.getObject();
+			ns = DataQname.extractNamespace(res.getURI());
+			if (!ToolSafe.isEmpty(ns))
+				ret.add(ns);
+		
+		}
+		return ret;
+	}
+
 	@SuppressWarnings("unchecked")
 	public static Set listLinkedResources(Model m){
 		Set<RDFNode> ret = m.listObjects().toSet();

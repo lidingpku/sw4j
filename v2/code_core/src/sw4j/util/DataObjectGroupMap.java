@@ -35,6 +35,7 @@ package sw4j.util;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Set;
 
 
 public class DataObjectGroupMap <V>{
@@ -75,6 +76,11 @@ public class DataObjectGroupMap <V>{
 	public Iterator<Integer> listGids(){
 		return this.m_map_gid_uris.keySet().iterator();
 	}
+
+	public Set<V> keyset(){
+		return this.m_map_uri_gid.keySet();
+	}
+	
 	
 	public Integer getGid(V uri){
 		Integer gid = this.m_map_uri_gid.get(uri);
