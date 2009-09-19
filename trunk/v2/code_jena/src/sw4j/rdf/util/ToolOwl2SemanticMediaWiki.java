@@ -66,18 +66,22 @@ public class ToolOwl2SemanticMediaWiki {
 	}
 
 	public static void dump_ontology(String  szOntologyUrl, String szOntologyNamespace,  String szPrefix, String szFilename){
-		HashMap<String,String> map_pages = get_wikidump_pages(szOntologyUrl, szOntologyNamespace, szPrefix);
+		HashMap<String,String> data_bot = new HashMap<String,String>(); 
+		HashMap<String,String> data_man= new HashMap<String,String>(); 
+		get_wikidump_pages(szOntologyUrl, szOntologyNamespace, szPrefix, data_bot, data_man);
 		
-		System.out.println(map_pages.size() +" page generated!");
-		ToolMediaWiki.create_wiki_dump( map_pages, false, szFilename);				
+		System.out.println(data_bot.size() +" bot page generated!");
+		System.out.println(data_man.size() +" man page generated!");
+		ToolMediaWiki.create_wiki_dump( data_bot, false, szFilename+".bot.xml");				
+		ToolMediaWiki.create_wiki_dump( data_man, true, szFilename);				
 	}
 	
-	public static HashMap<String, String> get_wikidump_pages(String  szOntologyUrl, String szOntologyNamespace,  String szPrefix) {
+	public static void get_wikidump_pages(String  szOntologyUrl, String szOntologyNamespace,  String szPrefix, HashMap<String, String> data_bot, HashMap<String, String> data_man) {
 		AgentModelLoader loader = new AgentModelLoader(szOntologyUrl);
 		Model m = loader.getModelData();
 		m.setNsPrefix(szPrefix, szOntologyNamespace);
 
-		return get_wikidump_pages(m, szOntologyUrl, szOntologyNamespace,szPrefix);
+		get_wikidump_pages(m, szOntologyUrl, szOntologyNamespace,szPrefix, data_bot, data_man);
 	}
 	/**
 	 * create wiki dump of an ontology
@@ -86,8 +90,7 @@ public class ToolOwl2SemanticMediaWiki {
 	 * @param szOntologyNamespace
 	 * @return a list of page name and page content mappings.
 	 */
-	public static HashMap<String, String> get_wikidump_pages(Model m, String  szOntologyUrl, String szOntologyNamespace, String szPrefix) {
-		HashMap<String, String> data= new HashMap<String, String>();	
+	public static void get_wikidump_pages(Model m, String  szOntologyUrl, String szOntologyNamespace, String szPrefix, HashMap<String, String> data_bot, HashMap<String, String> data_man) {
 		HashMap<String, String> data_import= new HashMap<String, String>();	
 		HashMap<String, String> data_import_default= new HashMap<String, String>();	
 
@@ -105,7 +108,7 @@ public class ToolOwl2SemanticMediaWiki {
 		String szSMW_import_page = String.format("MediaWiki:smw_import_%s", szPrefix);
 		
 		if (null== m)
-			return data;
+			return;
 
 		//System.out.println(m.getNsPrefixMap());
 		
@@ -391,8 +394,16 @@ public class ToolOwl2SemanticMediaWiki {
 					}
 				}
 
-
-				data.put(key,content);
+				//add real content
+				content = "<includeonly>{| style=\"border: 5px solid #DDD;background:#EEE;width:100%\"\n" +
+						"| style=\"text-align:center;background:#AAA\" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY\n" +
+						"|-\n" +
+						"|\n" +
+						content +
+						"\n" +
+						"|}</includeonly>";
+				data_bot.put("BOT:"+key, content);
+				data_man.put(key,"{{:BOT:"+key+"}}\n<!-- Please do not edit the template inclusion.-->\n");
 			}
 		}
 		
@@ -406,11 +417,10 @@ public class ToolOwl2SemanticMediaWiki {
 				szTemp += String.format("\n %s", iter.next());
 			}
 			
-			data.put(szSMW_import_page, szTemp);
+			data_bot.put(szSMW_import_page, szTemp);
 		}
 		
 
-		return data;
 	}
 	
 
