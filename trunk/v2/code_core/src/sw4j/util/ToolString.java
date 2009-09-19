@@ -36,6 +36,9 @@ import java.util.Set;
 import java.util.StringTokenizer;
 //import java.util.TimeZone;
 import java.util.TimeZone;
+import java.util.regex.Matcher;
+
+import java.util.regex.Pattern;
 
 /**
  * some convenient string functions
@@ -48,6 +51,7 @@ import java.util.TimeZone;
  */
 
 public class ToolString {
+	public static boolean debug= false;
 	
 	////////////////////////////////////////////////
 	// functions
@@ -208,5 +212,91 @@ public class ToolString {
 		}
 		return ret;
 	}
+	
+
+	/**
+	 * Returns the string where all non-ascii and <, &, > are encoded as numeric entities. I.e. "&lt;A &amp; B &gt;"
+	 * .... (insert result here). The result is safe to include anywhere in a text field in an XML-string. If there was
+	 * no characters to protect, the original string is returned.
+	 *  source http://stackoverflow.com/questions/439298/best-way-to-encode-text-data-for-xml-in-java
+
+	 * @param originalUnprotectedString
+	 *            original string which may contain characters either reserved in XML or with different representation
+	 *            in different encodings (like 8859-1 and UFT-8)
+	 * @return
+	 */
+
+	public static String protectSpecialCharactersForXml(String originalUnprotectedString) {
+        if (originalUnprotectedString == null) {
+                return null;
+        }
+        boolean anyCharactersProtected = false;
+
+        StringBuffer stringBuffer = new StringBuffer();
+        for (int i = 0; i < originalUnprotectedString.length(); i++) {
+                char ch = originalUnprotectedString.charAt(i);
+
+                boolean controlCharacter = ch < 32;
+                boolean unicodeButNotAscii = ch > 126;
+                boolean characterWithSpecialMeaningInXML = ch == '<' || ch == '&' || ch == '>';
+
+                if (characterWithSpecialMeaningInXML || unicodeButNotAscii || controlCharacter) {
+                        stringBuffer.append("&#" + (int) ch + ";");
+                        anyCharactersProtected = true;
+                } else {
+                        stringBuffer.append(ch);
+                }
+        }
+        if (anyCharactersProtected == false) {
+                return originalUnprotectedString;
+        }
+
+        return stringBuffer.toString();
+	}
+	
+	/**
+	 * check if the string is a hyperlink (plain, or a href )
+	 * @param value
+	 * @return
+	 */
+	public static String  parse_hyperlink(String value){
+		if (ToolSafe.isEmpty(value))
+			return null;
+		
+		value = value.trim();
+		{
+			String pattern = "\\s*<a +href=\"\\s*([^\"]+)\\s*\">\\s*((ht|f)tps?[^<]+)\\s*<\\/a>\\s*";
+			Pattern p = Pattern.compile(pattern);
+			Matcher m = p.matcher(value);
+			boolean b = m.matches();
+			 if (b){
+				 if (debug){
+					 for (int i=0; i<m.groupCount(); i++){
+						 System.out.println(m.group(i).trim());
+					 }					 
+				 }
+				 if (m.groupCount()==3 && m.group(1).trim().equals(m.group(2).trim()))
+					 return m.group(1);
+			 }			
+		}
+		{
+			String pattern = "\\s*(h?[t|f]tps?:[^\\s<>\"']+)\\s*";
+			Pattern p = Pattern.compile(pattern);
+			 Matcher m = p.matcher(value);
+			 boolean b = m.matches();
+			 if (b){
+				 if (debug){
+					 for (int i=0; i<m.groupCount(); i++){
+						 System.out.println(m.group(i));
+					 }					 
+				 }
+				 return m.group(0);
+			 }			
+		}
+		 	 
+		return null;
+			
+	}
+
 
 }
