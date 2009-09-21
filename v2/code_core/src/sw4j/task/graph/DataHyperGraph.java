@@ -428,13 +428,9 @@ public class DataHyperGraph {
 	}
 
 
-	public Integer getCost(){
-		
+	public Integer getWeight(){
 		int cost= 0;
-		Set<DataHyperEdge> edges= this.getEdges();
-		Iterator<DataHyperEdge> iter= edges.iterator();
-		while(iter.hasNext()){
-			DataHyperEdge edge= iter.next();
+		for (DataHyperEdge edge :this.getEdges()){
 			cost+= m_map_edge_weight.get(edge);
 		}
 		return cost;
