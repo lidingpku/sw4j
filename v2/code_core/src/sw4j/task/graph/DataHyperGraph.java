@@ -60,6 +60,11 @@ public class DataHyperGraph {
 	DataPVHMap<Integer, DataHyperEdge> m_map_output_edge = new DataPVHMap<Integer,DataHyperEdge>();
 	
 	/**
+	 * cost: associate each hyperedge with its weight
+	 */
+	HashMap<DataHyperEdge, Integer> m_map_edge_weight = new HashMap<DataHyperEdge, Integer>();
+	
+	/**
 	 * all inputs
 	 */
 	HashSet<Integer> m_inputs = new HashSet<Integer>();
@@ -97,6 +102,7 @@ public class DataHyperGraph {
 		if (null!=lg){
 			m_map_edge_context.add(lg.m_map_edge_context);			
 			m_map_output_edge.add(lg.m_map_output_edge);
+			m_map_edge_weight.putAll(lg.m_map_edge_weight);
 			m_inputs.addAll(lg.m_inputs);
 			m_axioms.addAll(lg.m_axioms);
 			m_contexts.addAll(lg.m_contexts);
@@ -110,6 +116,7 @@ public class DataHyperGraph {
 	public void reset(){
 		m_map_edge_context.clear();
 		m_map_output_edge.clear();
+		m_map_edge_weight.clear();
 		m_inputs.clear();
 		m_axioms.clear();
 		m_contexts.clear();
@@ -126,7 +133,27 @@ public class DataHyperGraph {
 	 * @return
 	 */
 	public boolean add(DataHyperEdge g){
-		return add(g, "default");
+		return add(g, "default", 0);
+	}
+	
+	/**
+	 * add a default hyperedge (empty context name)
+	 * @param g
+	 * @param weight
+	 * @return
+	 */
+	public boolean add(DataHyperEdge g, Integer weight){
+		return add(g, "default", weight);
+	}
+	
+	/**
+	 * add a default hyperedge (empty weight)
+	 * @param g
+	 * @param context
+	 * @return
+	 */
+	public boolean add(DataHyperEdge g, String context){
+		return add(g, context, 0);
 	}
 	
 	/**
@@ -135,7 +162,7 @@ public class DataHyperGraph {
 	 * @param context
 	 * @return
 	 */
-	public boolean add(DataHyperEdge g, String context){
+	public boolean add(DataHyperEdge g, String context, Integer weight){
 		if (null==context ){
 			return false;
 		}
@@ -143,7 +170,7 @@ public class DataHyperGraph {
 		HashSet<String> contexts = new HashSet<String>();
 		contexts.add(context);
 		
-		return this.add(g,contexts);
+		return this.add(g,contexts,weight);
 	}
 
 	/**
@@ -152,7 +179,7 @@ public class DataHyperGraph {
 	 * @param contexts
 	 * @return
 	 */
-	private boolean add(DataHyperEdge g, Collection<String> contexts) {
+	private boolean add(DataHyperEdge g, Collection<String> contexts, Integer weight) {
 		if (null==g || null==contexts ){
 			return false;
 		}
@@ -163,6 +190,7 @@ public class DataHyperGraph {
 		
 		m_map_edge_context.add(g, contexts);
 		m_map_output_edge.add(g.m_output, g);
+		m_map_edge_weight.put(g, weight);
 		m_inputs.addAll(g.m_input);
 		if (g.isAtomic())
 			m_axioms.add(g.getOutput());
@@ -188,6 +216,16 @@ public class DataHyperGraph {
 		
 		if (null==ret){
 			ret =new HashSet<String>();
+		}
+		
+		return ret;
+	}
+	
+	public Integer getWeightByEdge(DataHyperEdge g){
+		Integer ret = null;
+		
+		if (null!=g){
+			ret = this.m_map_edge_weight.get(g);
 		}
 		
 		return ret;
@@ -434,9 +472,11 @@ public class DataHyperGraph {
 
 				Collection<String> contexts = reference.getContextsByEdge(edge);
 
+				Integer weight= reference.getWeightByEdge(edge);
+				
 				if (!ToolSafe.isEmpty(ret))
 					ret +="\n";
-				ret += String.format("{%s, %s}", edge, contexts);
+				ret += String.format("{%s, %s, %s}", edge, contexts, weight);
 			}
 			
 		}
@@ -568,6 +608,8 @@ public class DataHyperGraph {
 			int index3 = line.indexOf("]");
 			int index4 = line.indexOf("[",index3);
 			int index5 = line.indexOf("]",index4);
+			int index6 = line.indexOf("[",index5);
+			int index7 = line.indexOf("]",index6);
 			if (index1<0)
 				continue;
 			if (index2<index1)
@@ -577,6 +619,10 @@ public class DataHyperGraph {
 			if (index4<index3)
 				continue;
 			if (index5<index4)
+				continue;
+			if (index6<index5)
+				continue;
+			if (index7<index6)
 				continue;
 
 			Integer output = new Integer(line.substring(0,index1).trim());
@@ -594,6 +640,7 @@ public class DataHyperGraph {
 			}
 			{
 				String szProofs =line.substring(index4+1, index5).trim();
+				String cost =line.substring(index6+1, index7).trim();
 				if (null!= szProofs ){
 					StringTokenizer st1 = new StringTokenizer(szProofs,",");
 					TreeSet<String> contexts = new TreeSet<String>();
@@ -601,7 +648,10 @@ public class DataHyperGraph {
 						String temp = st1.nextToken().trim();
 						contexts.add(temp);
 					}
-					this.add(g, contexts);
+					
+					Integer weight = Integer.parseInt(cost);			
+					this.add(g, contexts, weight);
+					
 				}
 			}
 			
@@ -616,7 +666,7 @@ public class DataHyperGraph {
 	 * @param max_branch
 	 * @return
 	 */
-	public static DataHyperGraph data_create_random(int total_edges, int total_vertex, int max_branch){
+	public static DataHyperGraph data_create_random(int total_edges, int total_vertex, int max_branch, int max_weight){
 		if (total_vertex<3){
 			return null;
 		}
@@ -650,8 +700,8 @@ public class DataHyperGraph {
 				Integer v_input = ary_v[id_input];
 				g.addInput(v_input);
 			}
-			
-			lg.add(g);
+			int weight= (int)(Math.random()* max_weight);
+			lg.add(g, weight);
 		}
 	
 		//create missing missing Hypergraph
