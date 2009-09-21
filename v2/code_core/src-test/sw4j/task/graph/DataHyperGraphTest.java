@@ -20,14 +20,14 @@ public class DataHyperGraphTest {
 	public  void test_random_gen(){
 		System.out.println("======================================================================");
 		System.out.println("Test Random Linked Graph Generation");
-		DataHyperGraph.data_create_random(10,5,3);
+		DataHyperGraph.data_create_random(10,5,3,10);
 	}
 	
 	@Test
 	public  void test_export_import(){
 		System.out.println("======================================================================");
 		System.out.println("Test Import Export");
-		DataHyperGraph lg = DataHyperGraph.data_create_random(10,5,3);
+		DataHyperGraph lg = DataHyperGraph.data_create_random(10,5,3,10);
 		
 		DataHyperGraph lg1 = new DataHyperGraph();
 		lg1.data_import(lg.data_export());
@@ -103,7 +103,7 @@ public class DataHyperGraphTest {
 	public void test_traverse_random(){
 		System.out.println("======================================================================");
 		System.out.println("test_traverse_random");
-		DataHyperGraph lg = DataHyperGraph.data_create_random(20,10,5);
+		DataHyperGraph lg = DataHyperGraph.data_create_random(20,10,5,10);
 		Integer v = (ToolRandom.randomSelect(lg.getOutputs()));
 		do_traverse(lg,v, -1, -1, -1, -1);		
 	}
