@@ -49,6 +49,8 @@ import sw4j.util.ToolSafe;
 import sw4j.util.ToolString;
 
 public class DataHyperGraph {
+	public static int DEFAULT_WEIGHT = 0;
+	
 	/**
 	 * provenance metadata: associate each hyperedge with its context
 	 */
@@ -153,7 +155,7 @@ public class DataHyperGraph {
 	 * @return
 	 */
 	public boolean add(DataHyperEdge g, String context){
-		return add(g, context, 0);
+		return add(g, context, DEFAULT_WEIGHT);
 	}
 	
 	/**
