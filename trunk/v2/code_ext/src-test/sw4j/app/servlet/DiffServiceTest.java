@@ -12,8 +12,6 @@ import org.junit.Test;
 import sw4j.app.servlet.DiffService;
 import sw4j.app.servlet.common.DataServletResponse;
 import sw4j.rdf.load.TaskDiff;
-import sw4j.util.Sw4jException;
-import sw4j.util.ToolIO;
 
 public class DiffServiceTest {
 	@Test
