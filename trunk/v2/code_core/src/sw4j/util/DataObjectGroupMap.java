@@ -54,6 +54,12 @@ public class DataObjectGroupMap <V>{
 		return new Integer(ggid++);
 	}
 	
+	public void add(DataObjectGroupMap <V> dog){
+		for(V uri : dog.m_map_uri_gid.keySet()){
+			this.addObject(uri);
+		}
+	}
+	
 	public Integer addObject(V uri){
 		Integer gid = getGid(uri);
 		if (null==gid){
