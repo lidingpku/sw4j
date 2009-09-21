@@ -2,6 +2,8 @@ package sw4j.app.servlet;
 
 import static org.junit.Assert.fail;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -10,8 +12,37 @@ import org.junit.Test;
 import sw4j.app.servlet.DiffService;
 import sw4j.app.servlet.common.DataServletResponse;
 import sw4j.rdf.load.TaskDiff;
+import sw4j.util.Sw4jException;
+import sw4j.util.ToolIO;
 
 public class DiffServiceTest {
+	@Test
+	public void test_new() throws IOException{
+		DiffService svc = new DiffService();
+		svc.params.put(DiffService.PARAM_CUR, "http://data-gov.tw.rpi.edu/raw/92/2009-09-18/data-92.rdf");
+		svc.params.put(DiffService.PARAM_PREV, "http://data-gov.tw.rpi.edu/raw/92/2009-09-11/data-92.rdf");
+		svc.params.put(DiffService.PARAM_ROOT_TYPE_URI, "http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf#DataEntry");
+		svc.params.put(DiffService.PARAM_OUTPUT, TaskDiff.DIFF_RDF);
+
+		DataServletResponse ret = svc.run();
+		
+		System.out.println(ret.getMimeType());
+		//ret.output(new PrintWriter(System.out));
+	
+		try {
+			File f= new File("temp/diff-data.rdf");
+			System.out.println(f.canWrite());
+			PrintWriter writer = new PrintWriter(new FileOutputStream(f));
+			ret.output(writer);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (ret.m_model_content==null)
+			fail("URL should be succeed");		
+	}	
+	
 	@Test
 	public void test_13() throws IOException{
 		DiffService svc = new DiffService();

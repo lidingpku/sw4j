@@ -10,9 +10,9 @@
             <packagesToUnSeal/>
         </sealing>
     </manifest>
-    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
-        <javaElement handleIdentifier="=svn-google-sw4j/code_core/src"/>
-        <javaElement handleIdentifier="=svn-google-sw4j/code_jena/src"/>
-        <javaElement handleIdentifier="=svn-google-sw4j/code_ext/src"/>
+    <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+        <javaElement handleIdentifier="=svn-google-sw4j/code_ext\/src"/>
+        <javaElement handleIdentifier="=svn-google-sw4j/code_jena\/src"/>
+        <javaElement handleIdentifier="=svn-google-sw4j/code_core\/src"/>
     </selectedElements>
 </jardesc>

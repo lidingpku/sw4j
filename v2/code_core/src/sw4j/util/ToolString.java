@@ -254,6 +254,26 @@ public class ToolString {
         return stringBuffer.toString();
 	}
 	
+	public static String filter_control_character(String text) {
+        if (ToolSafe.isEmpty(text)) {
+                return null;
+        }
+
+        StringBuffer stringBuffer = new StringBuffer();
+        for (int i = 0; i < text.length(); i++) {
+                char ch = text.charAt(i);
+
+                boolean controlCharacter = ch < 32;
+
+                if ( controlCharacter) {
+                    continue;
+                }
+                stringBuffer.append(ch);
+        }
+
+        return stringBuffer.toString();
+	}
+
 	/**
 	 * check if the string is a hyperlink (plain, or a href )
 	 * @param value
