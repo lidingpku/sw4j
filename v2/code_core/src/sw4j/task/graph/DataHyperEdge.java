@@ -38,7 +38,6 @@ import java.util.TreeSet;
 public class DataHyperEdge implements Comparable<DataHyperEdge>{
 	Integer m_output = null;
 	TreeSet<Integer> m_input = new TreeSet<Integer>();
-	Float m_weight= 0f;
 	
 	public DataHyperEdge(Integer sink, Collection<Integer> sources){
 		m_output=sink;
@@ -72,9 +71,7 @@ public class DataHyperEdge implements Comparable<DataHyperEdge>{
 		return m_input;
 	}
 	
-	public Float getWeight(){
-		return m_weight;
-	}
+
 	
 	public int compareTo(DataHyperEdge o) {
 		return this.toString().compareTo(o.toString());
