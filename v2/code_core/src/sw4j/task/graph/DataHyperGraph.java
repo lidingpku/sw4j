@@ -179,7 +179,7 @@ public class DataHyperGraph {
 	 * @param contexts
 	 * @return
 	 */
-	private boolean add(DataHyperEdge g, Collection<String> contexts, Integer weight) {
+	public boolean add(DataHyperEdge g, Collection<String> contexts, Integer weight) {
 		if (null==g || null==contexts ){
 			return false;
 		}
@@ -428,6 +428,18 @@ public class DataHyperGraph {
 	}
 
 
+	public Integer getCost(){
+		
+		int cost= 0;
+		Set<DataHyperEdge> edges= this.getEdges();
+		Iterator<DataHyperEdge> iter= edges.iterator();
+		while(iter.hasNext()){
+			DataHyperEdge edge= iter.next();
+			cost+= m_map_edge_weight.get(edge);
+		}
+		return cost;
+	}
+	
 
 	/**
 	 * summarize data
