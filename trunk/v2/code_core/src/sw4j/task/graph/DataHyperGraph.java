@@ -368,7 +368,15 @@ public class DataHyperGraph {
 	}
 	
 	
-	
+	public Integer getCost(){
+		int cost=0;
+		
+		for(DataHyperEdge edge: this.getEdges()){
+			cost += this.getWeightByEdge(edge);
+		}
+		
+		return cost;
+	}
 	
 	
 
