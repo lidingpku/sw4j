@@ -49,5 +49,6 @@
 	<classpathentry kind="lib" path="code_ext/lib/pellet_2_rc7/xsdlib/relaxngDatatype.jar"/>
 	<classpathentry kind="lib" path="code_ext/lib/pellet_2_rc7/xsdlib/xsdlib.jar"/>
 	<classpathentry kind="lib" path="code_core/lib/mysql-connector-java-5.1.8-bin.jar"/>
+	<classpathentry kind="lib" path="code_ext/lib/graphviz-api-1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
