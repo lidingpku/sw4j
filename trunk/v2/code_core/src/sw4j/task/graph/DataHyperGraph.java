@@ -43,6 +43,7 @@ import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
 
+import sw4j.task.graph.DataHyperEdge;
 import sw4j.util.DataPVHMap;
 import sw4j.util.ToolRandom;
 import sw4j.util.ToolSafe;
@@ -722,6 +723,14 @@ public class DataHyperGraph {
 			String label = map_node_id.get(leaf);
 			ret += String.format(" \"%s\"",  label );			
 		}
+		ret +="}\n";
+		
+		ret += "{ rank=same; ";
+		for(Integer root: hg.getRoots()){
+			String label = map_node_id.get(root);
+			ret += String.format(" \"%s\"",  label );
+		}
+		
 		ret +="}\n";
 		ret +="\n}\n";
 		return ret;
