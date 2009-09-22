@@ -466,11 +466,11 @@ public class DataHyperGraph {
 		ret += String.format("\n#context (total): %d - %s ", this.getContexts().size(), this.getContexts());
 		ret += String.format("\n#hyperedges (total): %d", this.getEdges().size());
 		ret += String.format("\n#hyperedges (axioms): %d", this.getAxioms().size());
-		ret += String.format("\n#hyperedges (sharing output, limit 10): %d - %s", this.getEdgesSharingOutput(-1).size(), this.getEdgesSharingOutput(10));
+		ret += String.format("\n#hyperedges (share conclusion): %d (e.g. %s)", this.getEdgesSharingOutput(-1).size(), this.getEdgesSharingOutput(10));
 		ret += String.format("\n#vertices (total): %d", this.getVertices().size());
 		ret += String.format("\n#vertices (outputs): %d", this.getOutputs().size());
 		ret += String.format("\n#vertices (inputs): %d", this.getInputs().size());
-		ret += String.format("\n#vertices (roots): %d - %s ", this.getRoots().size(), this.getRoots());
+		ret += String.format("\n#vertices (roots): %d (e.g. %s )", this.getRoots().size(), this.getRoots());
 		
 		return ret;
 	}
