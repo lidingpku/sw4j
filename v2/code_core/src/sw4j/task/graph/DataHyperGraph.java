@@ -33,9 +33,6 @@ package sw4j.task.graph;
  * 
  */
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -51,12 +48,11 @@ import sw4j.util.ToolRandom;
 import sw4j.util.ToolSafe;
 import sw4j.util.ToolString;
 
-import org.kohsuke.graphviz.Edge;
-import org.kohsuke.graphviz.Graph;
-import org.kohsuke.graphviz.Node;
+
 
 public class DataHyperGraph {
-	public static int DEFAULT_WEIGHT = 0;
+	public static int DEFAULT_WEIGHT = 1;
+	public static String DEFAULT_CONTEXT ="src";
 	
 	/**
 	 * provenance metadata: associate each hyperedge with its context
@@ -110,8 +106,8 @@ public class DataHyperGraph {
 	public void add(DataHyperGraph lg) {
 		if (null!=lg){
 			m_map_edge_context.add(lg.m_map_edge_context);			
-			m_map_output_edge.add(lg.m_map_output_edge);
 			m_map_edge_weight.putAll(lg.m_map_edge_weight);
+			m_map_output_edge.add(lg.m_map_output_edge);
 			m_inputs.addAll(lg.m_inputs);
 			m_axioms.addAll(lg.m_axioms);
 			m_contexts.addAll(lg.m_contexts);
@@ -124,8 +120,8 @@ public class DataHyperGraph {
 	 */
 	public void reset(){
 		m_map_edge_context.clear();
-		m_map_output_edge.clear();
 		m_map_edge_weight.clear();
+		m_map_output_edge.clear();
 		m_inputs.clear();
 		m_axioms.clear();
 		m_contexts.clear();
@@ -142,7 +138,7 @@ public class DataHyperGraph {
 	 * @return
 	 */
 	public boolean add(DataHyperEdge g){
-		return add(g, "default", 0);
+		return add(g, DEFAULT_CONTEXT);
 	}
 	
 	/**
@@ -152,7 +148,7 @@ public class DataHyperGraph {
 	 * @return
 	 */
 	public boolean add(DataHyperEdge g, Integer weight){
-		return add(g, "default", weight);
+		return add(g, DEFAULT_CONTEXT, weight);
 	}
 	
 	/**
@@ -198,8 +194,8 @@ public class DataHyperGraph {
 			return false;
 		
 		m_map_edge_context.add(g, contexts);
-		m_map_output_edge.add(g.m_output, g);
 		m_map_edge_weight.put(g, weight);
+		m_map_output_edge.add(g.m_output, g);
 		m_inputs.addAll(g.m_input);
 		if (g.isAtomic())
 			m_axioms.add(g.getOutput());
@@ -420,7 +416,8 @@ public class DataHyperGraph {
 		
 		DataHyperGraph other = (DataHyperGraph) obj;
 			
-		return ToolSafe.isEqual(this.m_map_edge_context, other.m_map_edge_context);
+		return ToolSafe.isEqual(this.m_map_edge_context, other.m_map_edge_context)&&
+				ToolSafe.isEqual(this.m_map_edge_weight, other.m_map_edge_weight);
 	}
 
 	/**
@@ -482,6 +479,9 @@ public class DataHyperGraph {
 	/**
 	 * export data in to text based exchange format
 	 * 
+	 * all integer
+	 * {output-node-id, [input-node-ids], [contexts], weight }
+	 * 
 	 * @param reference  - the referenced hypergraph that record the provenance metadata for each hyperedge
 	 * @return
 	 */
@@ -521,196 +521,10 @@ public class DataHyperGraph {
 		return ret;
 	}
 	
-	/**
-	 * export data using graphviz API format
-	 * 
-	 * @param reference  - the referenced hypergraph that record the provenance metadata for each hyperedge
-	 * @return
-	 */
-//	public Graph data_export_graphvizAPI(){
-	public Graph data_export_graphvizAPI(Map<Integer,String> map_node_id_input, Map<Integer,Properties> map_node_params, Map<DataHyperEdge,Properties> map_edge_params){
-		//list all nodes
-		Graph g= new Graph();
-		
-		g.attr("rankdir","BT");
-		Set<Integer> nodes = getNodes();
-		
-		//prepare map_node_id
-		HashMap <Integer,Node> map_node_id = new HashMap<Integer,Node> ();
-		for(Integer node: nodes){
-			String id = null;
-			if (null!= map_node_id_input)
-				id = map_node_id_input.get(node);
-			if (null==id)
-				id="x_"+node;
-			Node node1= new Node();
-			node1.id(id);
-			map_node_id.put(node,node1);
-		}
-		
-		{
-			//print nodes
-			for(Integer node: nodes){
 
-				Node label = map_node_id.get(node);
-				if (null!=map_node_params){
-					Properties prop= map_node_params.get(node);
-					if (ToolSafe.isEmpty(prop)){
-						prop= new Properties();
-					}
-					prop.put("shape", "box");
 
-					for (Object key :prop.keySet()){
-							label.attr(key.toString(),prop.get(key).toString());
-					}	
-				}
-			g.node(label);	
-			}
-		}
-		{
-			//print arcs
-			Iterator<DataHyperEdge> iter= this.getEdges().iterator();
-			int edgeid=1;
-			Node label;
-			while (iter.hasNext()){
-				DataHyperEdge edge = iter.next();
-				
-				String e = "a_"+edgeid;
-				edgeid++;
-				Node node2= new Node();
-				node2.id(e);
-				
-				if (null!=map_edge_params){
-					Properties prop= map_edge_params.get(edge);
-					if (ToolSafe.isEmpty(prop)){
-						prop= new Properties();
-					}
-					prop.put("shape", "diamond");
-					for (Object key :prop.keySet()){
-						node2.attr(key.toString(),prop.get(key).toString());
-					}
-				}
-				g.node(node2);
-				
-				
-				Integer output= edge.getOutput();
-				label = map_node_id.get(output);
-				Edge edge1= new Edge(label, node2);
-				g.edge(edge1);
-				Iterator<Integer> iter_input = edge.getInputs().iterator();
-				while (iter_input.hasNext()){
-					Integer input= iter_input.next();
-					label = map_node_id.get(input);
-					Edge edge2= new Edge(node2, label);
-					g.edge(edge2);
-				}
-			}
-			
-		}
-		
-//		g.attr("rank", "same");
-//		for(Integer leaf: this.getAxioms()){
-//			String label = map_node_id.get(leaf);
-//			ret += String.format(" \"%s\"",  label );			
-//		}
-
-		return g;
-	}
 
 	
-	/**
-	 * export data in to text based exchange format
-	 * 
-	 * @param reference  - the referenced hypergraph that record the provenance metadata for each hyperedge
-	 * @return
-	 */
-	public String data_export_graphviz(Map<Integer,String> map_node_id_input, Map<Integer,Properties> map_node_params, Map<DataHyperEdge,Properties> map_edge_params, String sz_more ){
-		//list all nodes
-		Set<Integer> nodes = getNodes();
-		
-		//prepare map_node_id
-		HashMap <Integer,String> map_node_id = new HashMap<Integer,String> ();
-		for(Integer node: nodes){
-			String id = null;
-			if (null!=map_node_id_input)
-				id = map_node_id_input.get(node);
-			if (null==id)
-				id="x_"+node;
-			map_node_id.put(node,id);
-		}
-
-	
-		String ret = "/*\n"+data_summary()+"\n*/";
-		ret +="digraph g { rankdir=BT; node [ shape = box];\n";
-		ret += sz_more +"\n";
-		{
-			//print nodes
-			for(Integer node: nodes){
-				String label = map_node_id.get(node);
-				String params ="";
-				if (null!=map_node_params){
-					Properties prop= map_node_params.get(node);
-					if (ToolSafe.isEmpty(prop)){
-						prop= new Properties();
-					}
-					prop.put("shape", "box");
-
-					for (Object key :prop.keySet()){
-							params += String.format("%s=\"%s\" ", key, prop.get(key));
-					}
-					
-				}
-				ret += String.format(" \"%s\" [ %s ];\n ", label, params);
-			}
-		}
-		{
-			//print arcs
-			Iterator<DataHyperEdge> iter= this.getEdges().iterator();
-			int edgeid=1;
-			String label;
-			while (iter.hasNext()){
-				DataHyperEdge edge = iter.next();
-				
-				String e = "a_"+edgeid;
-				edgeid++;
-				
-				String params ="";
-				if (null!=map_edge_params){
-					Properties prop= map_edge_params.get(edge);
-					if (ToolSafe.isEmpty(prop)){
-						prop= new Properties();
-					}
-					prop.put("shape", "diamond");
-					for (Object key :prop.keySet()){
-						params += String.format("%s=\"%s\" ", key, prop.get(key));
-					}
-				}
-				ret += String.format(" \"%s\" [ %s ];\n ", e, params);
-				
-				Integer output= edge.getOutput();
-				label = map_node_id.get(output);
-				ret += String.format(" \"%s\" -> \"%s\";\n ", label, e );
-				Iterator<Integer> iter_input = edge.getInputs().iterator();
-				while (iter_input.hasNext()){
-					Integer input= iter_input.next();
-					label = map_node_id.get(input);
-					ret += String.format(" \"%s\" -> \"%s\";\n ",  e, label );
-				}
-			}
-			
-		}
-		
-		ret += "{ rank=same; ";
-		for(Integer leaf: this.getAxioms()){
-			String label = map_node_id.get(leaf);
-			ret += String.format(" \"%s\"",  label );			
-		}
-		ret +="}\n";
-		ret +="\n}\n";
-		return ret;
-	}
-	
-
 	
 	/**
 	 * import data 
@@ -727,14 +541,17 @@ public class DataHyperGraph {
 			//skip comment line, which starts with #
 			if (line.trim().startsWith("#"))
 				continue;
-			
+
+			//input node id
 			int index1 = line.indexOf(",");
+			//output node ids
 			int index2 = line.indexOf("[");
 			int index3 = line.indexOf("]");
+			//context 
 			int index4 = line.indexOf("[",index3);
 			int index5 = line.indexOf("]",index4);
-			int index6 = line.indexOf("[",index5);
-			int index7 = line.indexOf("]",index6);
+			// weight
+			int index6 = line.indexOf(",",index5);
 			if (index1<0)
 				continue;
 			if (index2<index1)
@@ -747,12 +564,12 @@ public class DataHyperGraph {
 				continue;
 			if (index6<index5)
 				continue;
-			if (index7<index6)
-				continue;
 
+			//parse output node id
 			Integer output = new Integer(line.substring(0,index1).trim());
 			DataHyperEdge g = new DataHyperEdge(output);
 	
+			//parse input node id
 			{
 				String szInputs =line.substring(index2+1, index3).trim();
 				if (null!= szInputs && !szInputs.isEmpty()){
@@ -763,22 +580,21 @@ public class DataHyperGraph {
 					}
 				}
 			}
-			{
-				String szProofs =line.substring(index4+1, index5).trim();
-				String cost =line.substring(index6+1, index7).trim();
-				if (null!= szProofs ){
-					StringTokenizer st1 = new StringTokenizer(szProofs,",");
-					TreeSet<String> contexts = new TreeSet<String>();
-					while (st1.hasMoreTokens()){
-						String temp = st1.nextToken().trim();
-						contexts.add(temp);
-					}
-					
-					Integer weight = Integer.parseInt(cost);			
-					this.add(g, contexts, weight);
-					
+			//parse context
+			String szContexts =line.substring(index4+1, index5).trim();
+			if (null!= szContexts ){
+				StringTokenizer st1 = new StringTokenizer(szContexts,",");
+				TreeSet<String> contexts = new TreeSet<String>();
+				while (st1.hasMoreTokens()){
+					String temp = st1.nextToken().trim();
+					contexts.add(temp);
 				}
 			}
+			//parse weight
+			String cost =line.substring(index6+1).trim();
+			Integer weight = Integer.parseInt(cost);			
+				
+			this.add(g, szContexts, weight);
 			
 		}
 	}
@@ -851,7 +667,102 @@ public class DataHyperGraph {
 		return lg;
 	}
 	
-	
-	
+
+	/**
+	 * export hypergraph data into DOT format
+	 * http://www.graphviz.org/doc/info/lang.html
+	 *
+	 * @param hg
+	 * @param map_node_id_input
+	 * @param map_node_params
+	 * @param map_edge_params
+	 * @param sz_more
+	 * @return
+	 */
+	public static String data_export_graphviz(DataHyperGraph hg, Map<Integer,String> map_node_id_input, Map<Integer,Properties> map_node_params, Map<DataHyperEdge,Properties> map_edge_params, String sz_more ){
+		//list all nodes
+		Set<Integer> nodes = hg.getNodes();
+
+		//prepare map_node_id
+		HashMap <Integer,String> map_node_id = new HashMap<Integer,String> ();
+		for(Integer node: nodes){
+			String id = null;
+			if (null!=map_node_id_input)
+				id = map_node_id_input.get(node);
+			if (null==id)
+				id="x_"+node;
+			map_node_id.put(node,id);
+		}
+
+
+		String ret = "/*\n"+hg.data_summary()+"\n*/";
+		ret +="digraph g { rankdir=BT; node [ shape = box];\n";
+		ret += sz_more +"\n";
+		{
+			//print nodes
+			for(Integer node: nodes){
+				String label = map_node_id.get(node);
+				String params ="";
+				if (null!=map_node_params){
+					Properties prop= map_node_params.get(node);
+					if (ToolSafe.isEmpty(prop)){
+						prop= new Properties();
+					}
+					prop.put("shape", "box");
+
+					for (Object key :prop.keySet()){
+						params += String.format("%s=\"%s\" ", key, prop.get(key));
+					}
+
+				}
+				ret += String.format(" \"%s\" [ %s ];\n ", label, params);
+			}
+		}
+		{
+			//print arcs
+			Iterator<DataHyperEdge> iter= hg.getEdges().iterator();
+			int edgeid=1;
+			String label;
+			while (iter.hasNext()){
+				DataHyperEdge edge = iter.next();
+
+				String e = "a_"+edgeid;
+				edgeid++;
+
+				String params ="";
+				if (null!=map_edge_params){
+					Properties prop= map_edge_params.get(edge);
+					if (ToolSafe.isEmpty(prop)){
+						prop= new Properties();
+					}
+					prop.put("shape", "diamond");
+					for (Object key :prop.keySet()){
+						params += String.format("%s=\"%s\" ", key, prop.get(key));
+					}
+				}
+				ret += String.format(" \"%s\" [ %s ];\n ", e, params);
+
+				Integer output= edge.getOutput();
+				label = map_node_id.get(output);
+				ret += String.format(" \"%s\" -> \"%s\";\n ", label, e );
+				Iterator<Integer> iter_input = edge.getInputs().iterator();
+				while (iter_input.hasNext()){
+					Integer input= iter_input.next();
+					label = map_node_id.get(input);
+					ret += String.format(" \"%s\" -> \"%s\";\n ",  e, label );
+				}
+			}
+
+		}
+
+		ret += "{ rank=same; ";
+		for(Integer leaf: hg.getAxioms()){
+			String label = map_node_id.get(leaf);
+			ret += String.format(" \"%s\"",  label );			
+		}
+		ret +="}\n";
+		ret +="\n}\n";
+		return ret;
+	}	
 	
 }
