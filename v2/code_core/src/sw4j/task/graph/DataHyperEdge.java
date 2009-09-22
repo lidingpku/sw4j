@@ -128,5 +128,9 @@ public class DataHyperEdge implements Comparable<DataHyperEdge>{
 			return false;
 		return true;
 	}
+
+	public void setWeigth(Integer weight) {
+		m_weight= weight;
+	}
 	
 }
