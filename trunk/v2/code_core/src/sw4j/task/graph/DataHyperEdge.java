@@ -28,6 +28,11 @@ package sw4j.task.graph;
 /**
  * data structure that encodes a hyperedge which links to one sink from multiple sources
  * 
+ * a hyperedge has only one input
+ * a hyperedge has multiple outputs
+ * a hyperedge is uniquely identified by its input and outputs
+ * the weight is an annotation property, default 1
+ * 
  * @author Li Ding
  * 
  */
@@ -36,23 +41,35 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class DataHyperEdge implements Comparable<DataHyperEdge>{
+	public static int DEFAULT_WEIGHT = 1;
 	Integer m_output = null;
 	TreeSet<Integer> m_input = new TreeSet<Integer>();
+	int m_weight = DEFAULT_WEIGHT;
+	
+	
+	public DataHyperEdge(Integer sink){
+		this(sink, null, DEFAULT_WEIGHT);
+	}
+
+	public DataHyperEdge(Integer sink, int weight){
+		this(sink, null, weight);
+	}
 	
 	public DataHyperEdge(Integer sink, Collection<Integer> sources){
+		this(sink, sources, DEFAULT_WEIGHT);
+
+	}
+
+	public DataHyperEdge(Integer sink, Collection<Integer> sources, int weight){
 		m_output=sink;
 		if (null!=sources)
 			m_input.addAll(sources);
+		m_weight=weight;
 	}
-	
-	public DataHyperEdge(Integer sink){
-		m_output=sink;
-	}
-
 
 	@Override
 	public String toString() {
-		return m_output.toString()+", "+m_input.toString();
+		return m_output.toString()+", "+m_input.toString()+", "+ m_weight;
 	}
 	
 	public boolean isAtomic(){
@@ -71,6 +88,9 @@ public class DataHyperEdge implements Comparable<DataHyperEdge>{
 		return m_input;
 	}
 	
+	public int getWeight(){
+		return m_weight;
+	}
 
 	
 	public int compareTo(DataHyperEdge o) {
