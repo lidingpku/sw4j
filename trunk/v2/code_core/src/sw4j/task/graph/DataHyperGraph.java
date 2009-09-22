@@ -36,7 +36,6 @@ package sw4j.task.graph;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -615,17 +614,6 @@ public class DataHyperGraph {
 //			ret += String.format(" \"%s\"",  label );			
 //		}
 
-//		Node node1= new Node();
-//		node1.id("I");
-//		Node node2= new Node();
-//		node2.id("you");
-//		node1.attr("shape", "diamond");
-//		node2.attr("shape","box");
-//		Edge edge= new Edge(node1,node2);
-//		edge.attr("label", "love");
-//		g.node(node1);
-//		g.node(node2);
-//		g.edge(edge);
 		return g;
 	}
 
@@ -722,18 +710,7 @@ public class DataHyperGraph {
 		return ret;
 	}
 	
-	public static void main(String[] args) throws IOException{
-	
-	DataHyperGraph g= new DataHyperGraph();
-	Graph g1= g.data_export_graphvizAPI(null,null,null);
-	File f=new File("docs/test.dot");
-    FileOutputStream fop=new FileOutputStream(f);
-	g1.writeTo(fop);
-    
-}
 
-
-	
 	
 	/**
 	 * import data 
