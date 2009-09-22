@@ -533,6 +533,7 @@ public class DataHyperGraph {
 		//list all nodes
 		Graph g= new Graph();
 		
+		g.attr("rankdir","BT");
 		Set<Integer> nodes = getNodes();
 		
 		//prepare map_node_id
@@ -608,7 +609,7 @@ public class DataHyperGraph {
 			
 		}
 		
-//		rank=same;
+//		g.attr("rank", "same");
 //		for(Integer leaf: this.getAxioms()){
 //			String label = map_node_id.get(leaf);
 //			ret += String.format(" \"%s\"",  label );			
