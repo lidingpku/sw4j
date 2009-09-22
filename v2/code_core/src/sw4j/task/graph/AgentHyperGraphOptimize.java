@@ -63,7 +63,7 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 	 */
 	public int getQuality(DataHyperGraph g){
 		//return g.getEdges().size();
-		return g.getWeight();
+		return g.getTotalWeight();
 	}
 	
 	/**
