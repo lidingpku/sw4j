@@ -69,9 +69,13 @@ public class DataHyperEdge implements Comparable<DataHyperEdge>{
 
 	@Override
 	public String toString() {
-		return m_output.toString()+", "+m_input.toString()+", "+ m_weight;
+		return m_output+", "+m_input+", "+ m_weight;
 	}
-	
+
+	public String getID() {
+		return m_output+"-"+m_input;
+	}
+
 	public boolean isAtomic(){
 		return m_input.isEmpty();
 	}
@@ -94,7 +98,7 @@ public class DataHyperEdge implements Comparable<DataHyperEdge>{
 
 	
 	public int compareTo(DataHyperEdge o) {
-		return this.toString().compareTo(o.toString());
+		return this.getID().compareTo(o.getID());
 	}
 	
 	@Override
@@ -116,17 +120,7 @@ public class DataHyperEdge implements Comparable<DataHyperEdge>{
 		if (getClass() != obj.getClass())
 			return false;
 		final DataHyperEdge other = (DataHyperEdge) obj;
-		if (m_output == null) {
-			if (other.m_output != null)
-				return false;
-		} else if (!m_output.equals(other.m_output))
-			return false;
-		if (m_input == null) {
-			if (other.m_input != null)
-				return false;
-		} else if (!m_input.equals(other.m_input))
-			return false;
-		return true;
+		return this.getID().equals(other.getID());
 	}
 
 	public void setWeigth(Integer weight) {
