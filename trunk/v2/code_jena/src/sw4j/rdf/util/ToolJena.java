@@ -392,7 +392,10 @@ public class ToolJena {
 			if (szRdfSyntax.startsWith("RDF/XML")){
 				writer.setProperty("allowBadURIs", true);
 				writer.setProperty("showXmlDeclaration", true);
+				writer.setProperty("relativeURIs","same-document");
 			}
+			
+			getLogger().info("write to file "+ f.getAbsolutePath());
 			writer.write(model, _fos, "");
 			_fos.close();
 			return true;
