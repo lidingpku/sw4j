@@ -166,7 +166,7 @@ public class DataHyperGraph {
 			return false;
 		}
 		
-		//avoid self-linked hyperedge
+		//TODO we need to rethink it avoid self-linked hyperedge
 		if (g.getInputs().contains(g.getOutput()))
 			return false;
 		
@@ -684,13 +684,14 @@ public class DataHyperGraph {
 		{
 			//print arcs
 			Iterator<DataHyperEdge> iter= hg.getEdges().iterator();
-			int edgeid=1;
+			//int edgeid=1;
 			String label;
 			while (iter.hasNext()){
 				DataHyperEdge edge = iter.next();
 
-				String e = "a_"+edgeid;
-				edgeid++;
+				//String e = "a_"+edgeid;
+				//edgeid++;
+				String e = edge.getID();
 
 				String params ="";
 				if (null!=map_edge_params){
@@ -717,7 +718,7 @@ public class DataHyperGraph {
 			}
 
 		}
-
+/*
 		ret += "{ rank=same; ";
 		for(Integer leaf: hg.getAxioms()){
 			String label = map_node_id.get(leaf);
@@ -730,7 +731,7 @@ public class DataHyperGraph {
 			String label = map_node_id.get(root);
 			ret += String.format(" \"%s\"",  label );
 		}
-		
+*/		
 		ret +="}\n";
 		ret +="\n}\n";
 		return ret;
