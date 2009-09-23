@@ -981,11 +981,11 @@ public class ToolJena {
 			Statement stmt = iter.next();
 			Resource node = stmt.getSubject();
 			if (node.isAnon()){
-				map_bnode_res.put(node, m.createResource(namespace+node));
+				map_bnode_res.put(node, m.createResource(namespace+"_"+node));
 			}
 			if (stmt.getObject().isAnon()){
 				node =(Resource) stmt.getObject();
-				map_bnode_res.put(node, m.createResource(namespace+node));
+				map_bnode_res.put(node, m.createResource(namespace+"_"+node));
 			}
 				
 		}
