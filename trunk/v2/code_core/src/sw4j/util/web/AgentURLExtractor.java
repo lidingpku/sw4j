@@ -34,6 +34,9 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import sw4j.util.DataQname;
+import sw4j.util.ToolString;
+
 
 
 /**
@@ -55,18 +58,23 @@ public class AgentURLExtractor {
 		String temp,temp1;
 //		int indexBegin,  indexEnd;
 
-		pattern = Pattern.compile ("http://[^\\s'\"<#>]*[\\s'\"<#>]", Pattern.CASE_INSENSITIVE);
+		pattern = Pattern.compile (ToolString.PATTERN_URL, Pattern.CASE_INSENSITIVE);
 		matcher = pattern.matcher( szText);
 		while (matcher.find()){
-			temp = matcher.group();
+			temp = matcher.group().trim();
 			//System.out.println( temp );
 //			indexBegin = temp.lastIndexOf("<b>")+3; 
 //			indexEnd = temp.lastIndexOf("</b>");
-			temp1 = temp.substring(0, temp.length()-1);
+			//temp1 = temp.substring(0, temp.length()-1);
+			temp1 = DataQname.extractNamespaceUrl(temp);
 //			temp1= temp1.replaceAll(",","");
 //			temp1= temp1.trim();
 			//System.out.println(temp1);
 			
+			if (null==temp1){
+				System.out.println(temp);
+				return;
+			}
 			try{	
 //				URL tempURL = new URL( temp1 );
 				
