@@ -273,7 +273,9 @@ public class ToolString {
 
         return stringBuffer.toString();
 	}
-
+	public final static String PATTERN_URL="\\s*(h?[t|f]tps?:[^,\\s<>\"'\\]\\[]+)\\s*";
+	public final static String PATTERN_HYPERLINK="\\s*<a +href=\"\\s*([^\"]+)\\s*\">\\s*((ht|f)tps?[^<]+)\\s*<\\/a>\\s*";
+	
 	/**
 	 * check if the string is a hyperlink (plain, or a href )
 	 * @param value
@@ -285,8 +287,8 @@ public class ToolString {
 		
 		value = value.trim();
 		{
-			String pattern = "\\s*<a +href=\"\\s*([^\"]+)\\s*\">\\s*((ht|f)tps?[^<]+)\\s*<\\/a>\\s*";
-			Pattern p = Pattern.compile(pattern);
+			//String pattern = "\\s*<a +href=\"\\s*([^\"]+)\\s*\">\\s*((ht|f)tps?[^<]+)\\s*<\\/a>\\s*";
+			Pattern p = Pattern.compile(PATTERN_HYPERLINK);
 			Matcher m = p.matcher(value);
 			boolean b = m.matches();
 			 if (b){
@@ -300,8 +302,8 @@ public class ToolString {
 			 }			
 		}
 		{
-			String pattern = "\\s*(h?[t|f]tps?:[^\\s<>\"']+)\\s*";
-			Pattern p = Pattern.compile(pattern);
+			//String pattern = "\\s*(h?[t|f]tps?:[^\\s<>\"']+)\\s*";
+			Pattern p = Pattern.compile(PATTERN_URL);
 			 Matcher m = p.matcher(value);
 			 boolean b = m.matches();
 			 if (b){

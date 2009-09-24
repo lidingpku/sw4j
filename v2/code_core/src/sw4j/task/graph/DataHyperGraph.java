@@ -167,8 +167,8 @@ public class DataHyperGraph {
 		}
 		
 		//TODO we need to rethink it avoid self-linked hyperedge
-		if (g.getInputs().contains(g.getOutput()))
-			return false;
+//		if (g.getInputs().contains(g.getOutput()))
+//			return false;
 		
 		m_map_edge_context.add(g, contexts);
 		m_map_output_edge.add(g.m_output, g);
