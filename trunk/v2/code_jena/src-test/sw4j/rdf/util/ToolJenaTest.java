@@ -31,14 +31,17 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
+import sw4j.rdf.load.AgentModelLoader;
 import sw4j.rdf.util.ToolJena;
 import sw4j.util.Sw4jException;
 import sw4j.util.ToolIO;
+import sw4j.util.ToolString;
 
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
+import com.hp.hpl.jena.vocabulary.RDFS;
 /**
  * 
  * @author Li Ding
@@ -104,6 +107,27 @@ public class ToolJenaTest {
 		}
 	}
 
+	@Test
+	public void test_deductive_closure() {
+		String [] urls = new String []{
+			"files/deductive_test/test1-subclass-for-rdfsclass.rdf",	
+			"http://inference-web.org/2.0/pml-provenance.owl",	
+		};
+		for (int i=0; i<urls.length; i++){
+			String szURL =urls[i];
+			AgentModelLoader loader= new AgentModelLoader(szURL);
+			if (null == loader.getModelData())
+				continue;
+			
+			Model m = loader.getModelData();
+			int size_old = m.listStatements(null,RDFS.subClassOf,(String)null).toSet().size();
+			System.out.println(ToolString.printCollectionToString(m.listStatements(null,RDFS.subClassOf,(String)null).toSet()));
+			ToolJena.model_add_transtive(m, RDFS.subClassOf);
+			int size_new = m.listStatements(null,RDFS.subClassOf,(String)null).toSet().size();
+			System.out.println(size_new-size_old);
+			System.out.println(ToolString.printCollectionToString(m.listStatements(null,RDFS.subClassOf,(String)null).toSet()));
+		}
+	}
 /*	
 	@Test
 	public void test_deductive_closure() {
