@@ -126,4 +126,12 @@ public class ToolSafe {
 			return label;
 	}
 	
+	
+	public static Integer max(Collection<Integer> set_int){
+		int max=0;
+		for (int i: set_int){
+			max = Math.max(i, max);
+		}
+		return max;
+	}
 }

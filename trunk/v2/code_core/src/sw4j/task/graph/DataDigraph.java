@@ -30,102 +30,141 @@ package sw4j.task.graph;
  * @author Li Ding
  * 
  */
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
+
 import java.util.Set;
+import java.util.TreeSet;
 
-import sw4j.util.DataPVHMap;
+import sw4j.util.AbstractPropertyValuesMap;
+import sw4j.util.ToolSafe;
 
-public class DataDigraph extends DataPVHMap<Integer, Integer> {
 
-	/**
-	 * make transitive closure without using self-reflective relation (v,v)
-	 */
-	public DataDigraph create_tc(){
-		DataDigraph dd = new DataDigraph();
-		dd.add(this);
+public class DataDigraph  {
+	boolean [][] m_mat_adj= null;
+
+	public DataDigraph(int max_index){
+		//plus 1 here for play safe, some time user just put a max index here.
+		m_mat_adj = new boolean [max_index+1][max_index+1];
 		
-		Iterator<Integer> iter = this.keySet().iterator();
-		while (iter.hasNext()){
-			Integer v = iter.next();
-			do_dfs_tc(dd, v, v, new HashSet<Integer>());
+		//init all false
+		int max = this.m_mat_adj.length;
+		 for(int i = 0;i <max; i++)
+			  for(int j = 0;j < max; j++)
+				  this.m_mat_adj[i][j]=false;
+
+	}
+	
+	public static DataDigraph careate(AbstractPropertyValuesMap<Integer,Integer> apvm){
+		int max = 0;
+		max=Math.max(max,ToolSafe.max(apvm.getValues()));
+		max=Math.max(max,ToolSafe.max(apvm.keySet()));
+		
+		DataDigraph dd = new DataDigraph(max);
+		for (Integer from: apvm.keySet()){
+			dd.add(from, apvm.getValuesAsSet(from));
 		}
 		return dd;
 	}
 	
-	public static void do_dfs_tc(DataDigraph dd, Integer v, Integer sink, HashSet<Integer> visited){
-		visited.add(sink);
-		HashSet<Integer> temp = new HashSet<Integer>(dd.getValues(sink));
-		temp.removeAll(visited);
-		Iterator<Integer> iter = temp.iterator();
-		while (iter.hasNext()){
-			Integer source = iter.next();
-			
-			dd.add(v, source);
-			do_dfs_tc(dd,v, source, visited);
-		}
+	public DataDigraph(DataDigraph other){		
+		m_mat_adj = new boolean [other.m_mat_adj.length][other.m_mat_adj[0].length];
+		for (int i=0; i< other.m_mat_adj.length; i++)
+			System.arraycopy(other.m_mat_adj[i],0,this.m_mat_adj[i],0,other.m_mat_adj[i].length);
 	}
 	
-	public boolean isReachable(Integer sink, Integer source){
-		
-		HashSet<Integer> visited = new HashSet<Integer> ();
-		visited.add(sink);
-		
-		HashSet<Integer> goal = new HashSet<Integer> ();
-		goal.add(source);
-		
-		return do_check_connected(visited, this.getValues(sink), goal);
-		
+	public DataDigraph create_tc(){
+		return create_tc(true);
 	}
 
-	private HashSet<Integer> getNext(Collection<Integer> from){
-		HashSet<Integer> next = new HashSet<Integer> (); 
-		Iterator<Integer> iter = from.iterator();
-		while (iter.hasNext()){
-			Integer node = iter.next();
-			
-			next.addAll(this.getValues(node));
+	public void make_tc(){
+		create_tc(false);
+	}
+	/**
+	 * make transitive closure without using self-reflective relation (v,v)
+	 */
+	public DataDigraph create_tc(boolean b_new){
+		DataDigraph dd = this;
+		if (b_new){
+			dd = new DataDigraph(this);
 		}
-		return next;
+		 
+		int max = dd.m_mat_adj.length;
+		 for(int i = 0;i <max; i++)
+			  for(int j = 0;j < max; j++)
+			   if(dd.isReachable(i,j))
+			    for(int k = 0; k < max; k++)
+			      if(dd.isReachable(j,k))
+			    	  dd.add(i,k);
+		 
+		 return dd;
 	}
 	
-	private boolean do_check_connected(Collection<Integer> visited, Collection<Integer> visiting,  Set<Integer> goal){
-		if (null==visited)
-			visited = new HashSet<Integer> ();
-		
-		if (goal.removeAll(visiting))
-			return true;
-		
-		if (null==visiting || visiting.isEmpty())
+	public void add(int from, int to){
+		this.m_mat_adj[from][to]=true;
+	}
+	   
+	public void add(int from, Set<Integer> set_to){
+		for (int to: set_to)
+			this.m_mat_adj[from][to]=true;
+	}
+	
+	public boolean isReachable(int from, int to){
+		if (from>=this.m_mat_adj.length)
 			return false;
-
-		Collection<Integer> new_visiting = getNext(visiting);
-
 		
-		new_visiting.removeAll(visited);
-		new_visiting.removeAll(visiting);
-		visited.addAll(visiting);
-		
-		return do_check_connected(visited, new_visiting, goal);
+		if (to>=this.m_mat_adj[0].length)
+			return false;
+		return this.m_mat_adj[from][to];
 	}
 
-	public boolean isReachable(Set<Integer> sinks, Integer source){
-		Set<Integer> visiting = sinks;
-		
-		HashSet<Integer> goal = new HashSet<Integer> ();
-		goal.add(source);
-		
-		return do_check_connected(null, visiting, goal);
+	public boolean isReachable(Set<Integer> set_from, Integer to){
+		for (int from : set_from){
+			if (isReachable(from,to))
+				return true;
+		}
+		return false;
 	}
 	
 	public boolean hasCycle(){
-		Iterator<Integer> iter = this.keySet().iterator();
-		while (iter.hasNext()){
-			Integer sink = iter.next();
-			if (isReachable(sink, sink))
+		for (int i=0; i<this.m_mat_adj.length; i++)
+			if (this.isReachable(i,i) )
 				return true;
+		return false;
+	}
+	
+	public Set<Integer> getTo(int from){
+		TreeSet<Integer> ret = new TreeSet<Integer>();
+		for (int i=0; i<this.m_mat_adj[from].length; i++){
+			if (isReachable(from, i))
+					ret.add(i);
 		}
-		return false;		
+		return ret;
+	}
+	
+	public Set<Integer> getFrom(int to){
+		TreeSet<Integer> ret = new TreeSet<Integer>();
+		for (int i=0; i<this.m_mat_adj.length; i++){
+			if (isReachable(i, to))
+					ret.add(i);
+		}
+		return ret;
+	}
+
+	public Set<Integer> getFrom(){
+		TreeSet<Integer> ret = new TreeSet<Integer>();
+		for (int i=0; i<this.m_mat_adj.length; i++){
+			for (int j=0; j<this.m_mat_adj[i].length; j++)
+				if (isReachable(i, j))
+					ret.add(i);
+		}
+		return ret;
+	}
+
+	@Override
+	public String toString(){
+		String ret = "";
+		for (int i=0; i<this.m_mat_adj.length; i++){
+			ret += String.format ("%d -> %s\n", i, getTo(i));
+		}			
+		return ret;
 	}
 }

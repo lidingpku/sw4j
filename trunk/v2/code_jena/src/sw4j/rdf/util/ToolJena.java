@@ -783,7 +783,8 @@ public class ToolJena {
 	public static void model_add_transtive(Model m, Property p){
 		HashMap<Integer, Resource> map_id_resource = new  HashMap<Integer, Resource>();
 		HashMap<Resource, Integer> map_resource_id = new  HashMap<Resource,Integer>();
-		DataDigraph dag = new DataDigraph();
+		
+		DataPVHMap<Integer,Integer> map_dag= new DataPVHMap<Integer,Integer>();
 		int id =1;
 		{
 			Iterator<Statement> iter = m.listStatements(null,p, (String)null);
@@ -811,23 +812,19 @@ public class ToolJena {
 					id++;
 				}
 				
-				dag.add(nid_subject,nid_object);
+				map_dag.add(nid_subject,nid_object);
 			}
 		}
 		
-		
+		DataDigraph dag = DataDigraph.careate(map_dag);
 		DataDigraph tc = dag.create_tc();
 
-		Iterator<Integer> iter = tc.keySet().iterator();
-		while (iter.hasNext()){
-			Integer nid_subject = iter.next();
+		for (int nid_subject: tc.getFrom()){
 			Resource subject = map_id_resource.get(nid_subject);
 			
 			m.add(m.createStatement(subject, p, subject));
 
-			Iterator<Integer> iter_obj = tc.getValues(nid_subject).iterator();
-			while (iter_obj.hasNext()){
-				Integer nid_object =iter_obj.next();
+			for (int nid_object: tc.getTo(nid_subject)){
 				Resource object = map_id_resource.get(nid_object);
 				
 				m.add(m.createStatement(subject, p, object));
@@ -863,29 +860,7 @@ public class ToolJena {
 		return false;
 	}
 	
-	/**
-	 * add a model to a model m
-	 * @param m
-	 * @param ref
-	 */
-	public static void model_merge(Model m, Model ref){
-		if (ToolSafe.isEmpty(ref))
-			return;
-		
-		if (!isConsistent(ref)){
-			//System.out.println("inconsistent reference");
-			return;
-		}
-		
-		if (!isConsistent(m)){
-			//System.out.println("inconsistent reference");
-			return;
-		}
-				
-		m.add(ref);
-		model_copyNsPrefix( m,ref);						
 
-	}
 	
 	/**
 	 * create model A-B
@@ -952,16 +927,55 @@ public class ToolJena {
 	}
 	
 	/**
+	 * merge a collection of models into a new model
+	 * @param ref
+	 * @return
+	 */
+	public static Model model_merge(Collection<Model> ref){
+		Model m = ModelFactory.createDefaultModel();
+		model_merge(m, ref);
+		return m;
+	}
+	/**
 	 * add a list of models to model m
 	 * @param m
 	 * @param ref
 	 */
-	public static void model_merge(Model m, Collection<Model> ref){
-		Iterator<Model> iter = ref.iterator();
-		while (iter.hasNext())
-			model_merge(m,iter.next());
+	public static void model_merge(Model m, Collection<Model> set_ref){
+		for (Model ref : set_ref)
+			model_merge(m,ref);
 	}
 	
+	/**
+	 * add a model to a model m
+	 * @param m
+	 * @param ref
+	 */
+	public static void model_merge(Model m, Model ref){
+		if (ToolSafe.isEmpty(ref))
+			return;
+		
+		if (!isConsistent(ref)){
+			//System.out.println("inconsistent reference");
+			return;
+		}
+		
+		if (!isConsistent(m)){
+			//System.out.println("inconsistent reference");
+			return;
+		}
+				
+		m.add(ref);
+		model_copyNsPrefix( m,ref);						
+
+	}
+	
+	/**
+	 * unsign some instance to blank node
+	 * @param m
+	 * @param type
+	 * @return
+	 */
 	public static Model model_unsignBlankNode(Model m, String type){
 		Iterator<Resource> iter = m.listSubjectsWithProperty(RDF.type, m.createResource(type));
 		HashMap<RDFNode,Resource> map_res_bnode = new HashMap<RDFNode,Resource>();
@@ -974,6 +988,10 @@ public class ToolJena {
 	}
 	
 	public static Model model_signBlankNode(Model m, String namespace) {
+		if (ToolSafe.isEmpty(namespace)){
+			namespace="http://inference-web.org/vocab/";
+			m.setNsPrefix("iwv",namespace);
+		}
 
 		HashMap<RDFNode, Resource> map_bnode_res = new HashMap<RDFNode, Resource>();
 		Iterator<Statement> iter = m.listStatements();
@@ -994,10 +1012,9 @@ public class ToolJena {
 	}
 	
 	public static Model model_signBlankNode_hash(Model m, String namespace ){
-		//Model ret = ModelFactory.createDefaultModel();
-
 		if (ToolSafe.isEmpty(namespace)){
-			namespace= "http://tw.rpi.edu/res/";
+			namespace="http://inference-web.org/vocab/";
+			m.setNsPrefix("iwv",namespace);
 		}
 		
 		//partition
