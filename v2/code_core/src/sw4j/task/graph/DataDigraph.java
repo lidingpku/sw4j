@@ -53,7 +53,7 @@ public class DataDigraph  {
 
 	}
 	
-	public static DataDigraph careate(AbstractPropertyValuesMap<Integer,Integer> apvm){
+	public static DataDigraph create(AbstractPropertyValuesMap<Integer,Integer> apvm){
 		int max = 0;
 		max=Math.max(max,ToolSafe.max(apvm.getValues()));
 		max=Math.max(max,ToolSafe.max(apvm.keySet()));
@@ -68,34 +68,50 @@ public class DataDigraph  {
 	public DataDigraph(DataDigraph other){		
 		m_mat_adj = new boolean [other.m_mat_adj.length][other.m_mat_adj[0].length];
 		for (int i=0; i< other.m_mat_adj.length; i++)
-			System.arraycopy(other.m_mat_adj[i],0,this.m_mat_adj[i],0,other.m_mat_adj[i].length);
+			for (int j=0; j< other.m_mat_adj[i].length; j++)
+				m_mat_adj[i][j]=other.m_mat_adj[i][j];
+			//System.arraycopy(other.m_mat_adj[i],0,this.m_mat_adj[i],0,other.m_mat_adj[i].length);
 	}
 	
 	public DataDigraph create_tc(){
-		return create_tc(true);
+		DataDigraph dd = new DataDigraph(this);
+		dd.tc();
+		return dd;
 	}
 
-	public void make_tc(){
-		create_tc(false);
-	}
 	/**
 	 * make transitive closure without using self-reflective relation (v,v)
 	 */
-	public DataDigraph create_tc(boolean b_new){
-		DataDigraph dd = this;
-		if (b_new){
-			dd = new DataDigraph(this);
-		}
-		 
-		int max = dd.m_mat_adj.length;
+	public void tc(){
+		int max = m_mat_adj.length;
+		int k,row,col;
+	      for ( k = 0; k < max; k++ )
+	      {  
+	         for ( row = 0; row < max; row++ )
+	         // In Warshall's original paper, the inner-most loop is
+	         // guarded by the boolean value in [row][k] --- omitting
+	         // the loop on false and removing the "&" in the evaluation.
+	            if ( m_mat_adj[row][k] )
+	               for ( col = 0; col < max; col++ )
+	            	   m_mat_adj[row][col] = m_mat_adj[row][col] | m_mat_adj[k][col];
+	      }
+		/*
 		 for(int i = 0;i <max; i++)
 			  for(int j = 0;j < max; j++)
-			   if(dd.isReachable(i,j))
+			   if(isReachable(i,j))
 			    for(int k = 0; k < max; k++)
-			      if(dd.isReachable(j,k))
-			    	  dd.add(i,k);
-		 
-		 return dd;
+			      if(isReachable(j,k))
+			    	  add(i,k);
+		 */
+	}
+	
+	/**
+	 * add self-reflex link
+	 */
+	public void reflex(){
+		for (int i:getVertex()){
+			this.add(i, i);
+		}
 	}
 	
 	public void add(int from, int to){
@@ -147,6 +163,28 @@ public class DataDigraph  {
 					ret.add(i);
 		}
 		return ret;
+	}
+
+	public Set<Integer> getVertex(){
+		TreeSet<Integer> ret = new TreeSet<Integer>();
+		for (int i=0; i<this.m_mat_adj.length; i++){
+			for (int j=0; j<this.m_mat_adj[i].length; j++)
+				if (isReachable(i,j)){
+					ret.add(i);
+					ret.add(j);
+				}
+		}
+		return ret;
+	}
+	
+	public int size(){
+		int size =0;
+		for (int i=0; i<this.m_mat_adj.length; i++){
+			for (int j=0; j<this.m_mat_adj[i].length; j++)
+				if (isReachable(i, j))
+					size++;
+		}
+		return size;
 	}
 
 	public Set<Integer> getFrom(){

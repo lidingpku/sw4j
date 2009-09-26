@@ -816,20 +816,25 @@ public class ToolJena {
 			}
 		}
 		
-		DataDigraph dag = DataDigraph.careate(map_dag);
+		DataDigraph dag = DataDigraph.create(map_dag);
 		DataDigraph tc = dag.create_tc();
+		tc.reflex();
 
+		long size_before = m.size();
 		for (int nid_subject: tc.getFrom()){
 			Resource subject = map_id_resource.get(nid_subject);
 			
-			m.add(m.createStatement(subject, p, subject));
-
 			for (int nid_object: tc.getTo(nid_subject)){
 				Resource object = map_id_resource.get(nid_object);
 				
 				m.add(m.createStatement(subject, p, object));
 			}
 		}
+		
+		String message= "";
+		message +=String.format("added %d edges to (%d) after transitive inference \n", tc.size()-dag.size(),dag.size());
+		message += String.format("added %d triples to (%d) after transitive inference \n", m.size()-size_before,size_before);
+		getLogger().info(message);
 	}
 	
 	public static Model model_createDeductiveClosure(Model m){

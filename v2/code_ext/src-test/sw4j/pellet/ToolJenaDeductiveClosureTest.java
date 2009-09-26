@@ -334,7 +334,7 @@ public class ToolJenaDeductiveClosureTest {
 			DataSmartMap entry = new DataSmartMap();
 			entry.put(FIELD_URL, "files/deductive_test/test9-foaf.rdf");
 			entry.put(FIELD_ORIGINAL, 571);
-			entry.put(FIELD_DEDUCTIVE_PELLET, 973);  
+			entry.put(FIELD_DEDUCTIVE_PELLET, 974);  
  			entry.put(FIELD_DEDUCTIVE_RDFS, 615); 
 			entry.put(FIELD_DEDUCTIVE_SW4J, 976);  
 			
