@@ -38,42 +38,75 @@ package sw4j.task.graph;
  */
 import java.util.Collection;
 import java.util.Set;
+import java.util.StringTokenizer;
 import java.util.TreeSet;
 
+import sw4j.util.ToolSafe;
+
 public class DataHyperEdge implements Comparable<DataHyperEdge>{
-	public static int DEFAULT_WEIGHT = 1;
 	Integer m_output = null;
 	TreeSet<Integer> m_input = new TreeSet<Integer>();
-	int m_weight = DEFAULT_WEIGHT;
+	String m_id = DEFAULT_ID;
 	
+	public static int DEFAULT_WEIGHT = 1;
+	public static String DEFAULT_ID = "";	
+	int m_weight = DEFAULT_WEIGHT;	
 	
-	public DataHyperEdge(Integer sink){
-		this(sink, null, DEFAULT_WEIGHT);
+	public DataHyperEdge(Integer output){
+		this(output, null);
 	}
 
-	public DataHyperEdge(Integer sink, int weight){
-		this(sink, null, weight);
-	}
-	
-	public DataHyperEdge(Integer sink, Collection<Integer> sources){
-		this(sink, sources, DEFAULT_WEIGHT);
-
+	public DataHyperEdge(Integer output, Collection<Integer> set_input){
+		this(output, set_input,  DEFAULT_ID);
 	}
 
-	public DataHyperEdge(Integer sink, Collection<Integer> sources, int weight){
-		m_output=sink;
-		if (null!=sources)
-			m_input.addAll(sources);
+	public DataHyperEdge(Integer output, Collection<Integer> set_input, String sz_id){
+		this(output, set_input, sz_id, DEFAULT_WEIGHT);
+	}
+
+	public DataHyperEdge(Integer output, Collection<Integer> set_input, String sz_id, int weight){
+		m_output=output;
 		m_weight=weight;
+		if (!ToolSafe.isEmpty(set_input))
+			m_input.addAll(set_input);
+		if (!ToolSafe.isEmpty(sz_id))
+			m_id=sz_id;
+	}
+
+
+
+	public String export() {
+		return toString()+",["+ m_weight+"]";
 	}
 
 	@Override
 	public String toString() {
-		return m_output+", "+m_input+", "+ m_weight;
+		return "["+m_id+"],["+m_output+"],"+m_input ;
 	}
+	
+	public static DataHyperEdge parseString(String sz_id, String sz_output, String sz_inputs, String sz_weight){
+		if (ToolSafe.isEmpty(sz_output))
+			return null;
+		
+		//parse output node id
+		Integer output = new Integer(sz_output);
 
-	public String getID() {
-		return m_output+"-"+m_input;
+		DataHyperEdge edge= new DataHyperEdge(output, null, sz_id);
+
+		//parse weight
+		if (!ToolSafe.isEmpty(sz_weight)){
+			Integer weight = Integer.parseInt(sz_weight);
+			edge.setWeight(weight);
+		}
+		
+		//process input
+		StringTokenizer st1 = new StringTokenizer(sz_inputs,",");
+		while (st1.hasMoreTokens()){
+			String temp = st1.nextToken().trim();
+			edge.addInput(new Integer(temp));
+		}
+		
+		return edge;
 	}
 
 	public boolean isAtomic(){
@@ -92,22 +125,29 @@ public class DataHyperEdge implements Comparable<DataHyperEdge>{
 		return m_input;
 	}
 	
+
+
 	public int getWeight(){
 		return m_weight;
+	}
+	
+	public void setWeight(int mWeight) {
+		m_weight = mWeight;
 	}
 
 	
 	public int compareTo(DataHyperEdge o) {
-		return this.getID().compareTo(o.getID());
+		return this.toString().compareTo(o.toString());
 	}
 	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((m_output == null) ? 0 : m_output.hashCode());
+		result = prime * result + ((m_input == null) ? 0 : m_input.hashCode());
 		result = prime * result
-				+ ((m_input == null) ? 0 : m_input.hashCode());
+				+ ((m_output == null) ? 0 : m_output.hashCode());
 		return result;
 	}
 
@@ -119,8 +159,18 @@ public class DataHyperEdge implements Comparable<DataHyperEdge>{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		final DataHyperEdge other = (DataHyperEdge) obj;
-		return this.getID().equals(other.getID());
+		DataHyperEdge other = (DataHyperEdge) obj;
+		if (m_input == null) {
+			if (other.m_input != null)
+				return false;
+		} else if (!m_input.equals(other.m_input))
+			return false;
+		if (m_output == null) {
+			if (other.m_output != null)
+				return false;
+		} else if (!m_output.equals(other.m_output))
+			return false;
+		return true;
 	}
 
 	public void setWeigth(Integer weight) {

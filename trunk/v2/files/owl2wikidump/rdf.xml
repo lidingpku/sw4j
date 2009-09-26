@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Category:rdf:Bag</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:rdf:Bag}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:rdf:List</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:rdf:List}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdf:value</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdf:value}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdf:object</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdf:object}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:rdf:Alt</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:rdf:Alt}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:rdf:XMLLiteral</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:rdf:XMLLiteral}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdf:type</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdf:type}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdf:subject</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdf:subject}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>rdf:nil</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:rdf:nil}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://www.w3.org/1999/02/22-rdf-syntax-ns#</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:http://www.w3.org/1999/02/22-rdf-syntax-ns#}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdf:predicate</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdf:predicate}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:rdf:Seq</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:rdf:Seq}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdf:rest</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdf:rest}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdf:first</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdf:first}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:rdf:Statement</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:rdf:Statement}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:rdf:Property</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:rdf:Property}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+</mediawiki>

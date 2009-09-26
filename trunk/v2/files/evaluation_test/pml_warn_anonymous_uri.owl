@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:iw="http://inferenceweb.stanford.edu/2004/07/iw.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#">
+
+
+  <iw:NodeSet>
+    <iw:hasConclusion>(|http://www.w3.org/1999/02/22-rdf-syntax-ns#|::type |http://iw.stanford.edu/enginesdoc/jtp/script-data/tonys.daml#|::|TonysSpecialty| ?x)</iw:hasConclusion>
+	
+<!--
+    <iw:hasLanguage rdf:resource="http://inferenceweb.stanford.edu/registry/LG/KIF.owl#KIF"/>
+-->
+	
+    <iw:isConsequentOf>
+      <iw:InferenceStep>
+        <iw:hasIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</iw:hasIndex>
+<!--
+        <iw:hasRule rdf:resource="http://inferenceweb.stanford.edu/registry/DPR/GMP.owl#GMP"/>
+        <iw:hasInferenceEngine rdf:resource="http://inferenceweb.stanford.edu/registry/IE/JTP.owl#JTP"/>
+-->
+
+        <iw:hasAntecedent rdf:resource="http://logos.cs.umbc.edu:8080/iwvalidator/doc/iw200407/test1/tonysns1_1.owl#tonysns1_1"/>
+        <iw:fromQuery rdf:resource="http://logos.cs.umbc.edu:8080/iwvalidator/doc/iw200407/test1/tonys.owl#tonys"/>
+        <iw:hasVariableMapping>
+          <iw:Mapping>
+            <iw:mapTo>|http://iw.stanford.edu/enginesdoc/jtp/script-data/tonys.daml#|::|CRAB|</iw:mapTo>
+            <iw:mapFrom>?x</iw:mapFrom>
+          </iw:Mapping>
+        </iw:hasVariableMapping>
+      </iw:InferenceStep>
+    </iw:isConsequentOf>
+  </iw:NodeSet>
+</rdf:RDF>

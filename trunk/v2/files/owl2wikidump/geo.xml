@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Category:geo:SpatialThing</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:geo:SpatialThing}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:geo:lat_long</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:geo:lat_long}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:geo:location</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:geo:location}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:geo:long</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:geo:long}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:geo:Point</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:geo:Point}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:geo:alt</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:geo:alt}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:geo:lat</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:geo:lat}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://www.w3.org/2003/01/geo/wgs84_pos#</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:http://www.w3.org/2003/01/geo/wgs84_pos#}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+</mediawiki>

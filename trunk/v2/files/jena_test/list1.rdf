@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+  <!ENTITY pmlj "http://inference-web.org/2.0/pml-justification.owl#">
+  <!ENTITY pmlp "http://inference-web.org/2.0/pml-provenance.owl#">
+  <!ENTITY ds "http://inference-web.org/2.0/ds.owl#">
+  <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+  <!ENTITY ds "http://inference-web.org/2.0/ds.owl#">
+]>
+
+<rdf:RDF 
+         xmlns ="&pmlj;"
+         xmlns:pmlj ="&pmlj;"
+         xmlns:pmlp ="&pmlp;"
+         xmlns:ds ="&ds;"
+         xmlns:owl="&owl;"
+         xmlns:rdf="&rdf;"
+         xmlns:rdfs="&rdfs;">
+
+<pmlj:NodeSet rdf:about="#uri_revision___title___Main_Page_oldid_2690">
+  <pmlj:isConsequentOf>
+    <pmlj:InferenceStep>
+      <pmlj:hasAntecedentList>
+        <pmlj:NodeSetList>
+          <ds:first>
+            <pmlj:NodeSet rdf:about="#uri_revision___title___Main_Page_oldid_2535" />
+          </ds:first>
+          <ds:rest>
+             <pmlj:NodeSetList>
+	          <ds:first>
+	            <pmlj:NodeSet rdf:about="#uri_revision___title___Main_Page_oldid_2534" />
+	          </ds:first>
+             </pmlj:NodeSetList>
+          </ds:rest>
+        </pmlj:NodeSetList>
+      </pmlj:hasAntecedentList>
+           <pmlj:hasInferenceRule rdf:resource="http://tw.rpi.edu/2008/sw/semanticwiki.owl#Revision" />
+    </pmlj:InferenceStep>
+  </pmlj:isConsequentOf>
+</pmlj:NodeSet>
+
+
+</rdf:RDF>

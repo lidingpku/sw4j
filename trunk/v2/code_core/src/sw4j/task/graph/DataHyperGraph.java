@@ -33,6 +33,8 @@ package sw4j.task.graph;
  * 
  */
 
+import java.io.IOException;
+import java.io.StringReader;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -43,17 +45,18 @@ import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
 
-import sw4j.task.graph.DataHyperEdge;
 import sw4j.util.DataPVHMap;
 import sw4j.util.ToolRandom;
 import sw4j.util.ToolSafe;
 import sw4j.util.ToolString;
 
+import com.csvreader.CsvReader;
+
 
 
 public class DataHyperGraph {
 	public static int DEFAULT_WEIGHT = 1;
-	public static String DEFAULT_CONTEXT ="src";
+	public static String DEFAULT_CONTEXT ="";
 	
 	/**
 	 * provenance metadata: associate each hyperedge with its context
@@ -76,10 +79,6 @@ public class DataHyperGraph {
 	 */
 	HashSet<Integer> m_axioms = new HashSet<Integer>() ;
 		
-	/**
-	 * all contexts 
-	 */
-	HashSet<String> m_contexts = new HashSet<String>() ;
 	
 	/**
 	 * default constructor
@@ -106,7 +105,6 @@ public class DataHyperGraph {
 			m_map_output_edge.add(lg.m_map_output_edge);
 			m_inputs.addAll(lg.m_inputs);
 			m_axioms.addAll(lg.m_axioms);
-			m_contexts.addAll(lg.m_contexts);
 			clearCache();
 		}
 	}
@@ -119,7 +117,6 @@ public class DataHyperGraph {
 		m_map_output_edge.clear();
 		m_inputs.clear();
 		m_axioms.clear();
-		m_contexts.clear();
 		clearCache();
 	}
 	
@@ -176,17 +173,13 @@ public class DataHyperGraph {
 		if (g.isAtomic())
 			m_axioms.add(g.getOutput());
 
-		m_contexts.addAll(contexts);
 		
 		clearCache();
 		return true;
 	}
 	
 	public Collection<String> getContexts(){
-		HashSet<String> temp = new HashSet<String>();
-		temp.addAll(this.m_contexts);
-		return temp;
-
+		return this.m_map_edge_context.getValues();
 	}
 	
 	public Collection<String> getContextsByEdge(DataHyperEdge g){
@@ -437,8 +430,8 @@ public class DataHyperGraph {
 	/**
 	 * export data in to text based exchange format
 	 * 
-	 * all integer
-	 * {output-node-id, [input-node-ids], [contexts], weight }
+	 * csv format, each row corresponds to a hyperarc
+	 * "id", "output-node-id", "input-node-ids", "weight", "contexts"
 	 * 
 	 * @param reference  - the referenced hypergraph that record the provenance metadata for each hyperedge
 	 * @return
@@ -458,7 +451,7 @@ public class DataHyperGraph {
 				
 				if (!ToolSafe.isEmpty(ret))
 					ret +="\n";
-				ret += String.format("{%s, %s}", edge, contexts);
+				ret += String.format("%s,%s\n", edge.export(), contexts.toString()).replaceAll("[\\[|\\]]", "\"");
 			}
 			
 		}
@@ -491,74 +484,53 @@ public class DataHyperGraph {
 	public void data_import(String dump){
 		this.reset();
 
-		
-		StringTokenizer st = new StringTokenizer(dump, "{}\n");
-		while (st.hasMoreTokens()){
-			String line = st.nextToken();
-			//skip comment line, which starts with #
-			if (line.trim().startsWith("#"))
-				continue;
+		CsvReader csv = new CsvReader(new StringReader(dump));
 
-			//input node id
-			int index1 = line.indexOf(",");
-			//output node ids
-			int index2 = line.indexOf("[");
-			int index3 = line.indexOf("]");
-			// weight
-			int index4 = line.indexOf(",",index3);
-			int index5 = line.indexOf(",",index4+1);
-			//context 
-			int index6 = line.indexOf("[",index5);
-			int index7 = line.indexOf("]",index6);
-			if (index1<0)
-				continue;
-			if (index2<index1)
-				continue;
-			if (index3<index2)
-				continue;
-			if (index4<index3)
-				continue;
-			if (index5<index4)
-				continue;
-			if (index6<index5)
-				continue;
-			if (index7<index6)
-				continue;
-
-			//parse output node id
-			Integer output = new Integer(line.substring(0,index1).trim());
-
-			//parse weight
-			String sz_weigth =line.substring(index4+1, index5).trim();
-			Integer weight = Integer.parseInt(sz_weigth);			
-
-			//create hyperedge
-			DataHyperEdge g = new DataHyperEdge(output, weight);
-	
-			//parse input node id
-			{
-				String szInputs =line.substring(index2+1, index3).trim();
-				if (null!= szInputs && !szInputs.isEmpty()){
-					StringTokenizer st1 = new StringTokenizer(szInputs,",");
-					while (st1.hasMoreTokens()){
-						String temp = st1.nextToken().trim();
-						g.addInput(new Integer(temp));
-					}
-				}
-			}
+		try {
+			while (csv.readRecord()){
+				String line = csv.getRawRecord().trim();
+				if (line.startsWith("#"))
+					continue;
 				
-			//parse context
-			String szContexts =line.substring(index6+1, index7).trim();
-			if (null!= szContexts ){
-				StringTokenizer st1 = new StringTokenizer(szContexts,",");
-				TreeSet<String> contexts = new TreeSet<String>();
+				if (csv.getColumnCount()!=5)
+					continue;
+				
+				int index=0;
+				String sz_id = csv.get(index).trim();
+				
+				index++;
+				String sz_output = csv.get(index).trim();
+
+				index++;
+				String sz_inputs = csv.get(index).trim();
+				
+				index++;
+				String sz_weight = csv.get(index).trim();
+
+				index++;
+				String sz_contexts = csv.get(index).trim();
+				
+
+				//create hyperedge
+				DataHyperEdge edge = DataHyperEdge.parseString(sz_id, sz_output, sz_inputs, sz_weight);
+				
+				if (null==edge)
+					continue;
+
+				add(edge);
+				
+				//parse context
+				StringTokenizer st1 = new StringTokenizer(sz_contexts,",");
+				TreeSet<String> set_contexts = new TreeSet<String>();
 				while (st1.hasMoreTokens()){
-					String temp = st1.nextToken().trim();
-					contexts.add(temp);
+					String sz_context = st1.nextToken().trim();
+					set_contexts.add(sz_context);
+					this.m_map_edge_context.add(edge, sz_context);
 				}
 			}
-			this.add(g, szContexts);
-			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	
@@ -590,7 +562,8 @@ public class DataHyperGraph {
 			Integer v_output = ary_v[id_output];
 	
 			int weight= (int)(Math.random()* max_weight);
-			DataHyperEdge g = new DataHyperEdge( v_output, weight);
+			DataHyperEdge g = new DataHyperEdge( v_output);
+			g.setWeight( weight);
 			
 			//choose inputs
 			int iBranch = ToolRandom.randomInt(max_branch);
@@ -691,7 +664,7 @@ public class DataHyperGraph {
 
 				//String e = "a_"+edgeid;
 				//edgeid++;
-				String e = edge.getID();
+				String e = edge.toString();
 
 				String params ="";
 				if (null!=map_edge_params){

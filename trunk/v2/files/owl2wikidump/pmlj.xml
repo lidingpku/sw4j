@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Property:pmlj:hasAnswerPattern</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:hasAnswerPattern}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlj:NodeSet</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlj:NodeSet}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:fromQuery</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:fromQuery}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasInferenceRule</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:hasInferenceRule}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:isQueryFor</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:isQueryFor}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:mapFrom</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:mapFrom}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlj:Question</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlj:Question}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlj:AbstractionRule</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlj:AbstractionRule}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:isExplanationOf</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:isExplanationOf}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://inference-web.org/2.0/pml-provenance.owl#</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:http://inference-web.org/2.0/pml-provenance.owl#}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasAnswer</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:hasAnswer}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasSourceUsage</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:hasSourceUsage}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasInferenceEngine</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:hasInferenceEngine}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:fromAnswerOrQuery</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:fromAnswerOrQuery}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlj:Query</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlj:Query}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlj:InferenceStep</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlj:InferenceStep}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasIndex</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:hasIndex}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:fromAnswer</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:fromAnswer}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasPatternNodeSet</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:hasPatternNodeSet}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasDischarge</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:hasDischarge}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:isFromEngine</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:isFromEngine}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://inference-web.org/2.0/pml-justification.owl</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:http://inference-web.org/2.0/pml-justification.owl}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasMetaBinding</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:hasMetaBinding}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:mapTo</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:mapTo}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlj:NodeSetList</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlj:NodeSetList}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasVariableMapping</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:hasVariableMapping}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:isConsequentOf</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:isConsequentOf}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasAntecedentList</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:hasAntecedentList}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlj:hasConclusion</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlj:hasConclusion}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlj:Mapping</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlj:Mapping}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlj:JustificationElement</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlj:JustificationElement}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+</mediawiki>

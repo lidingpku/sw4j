@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>BOT:Property:pmlr:isPartOf</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:56Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlr:isPartOf]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-relation.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:TransitiveProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:pmlr:hasPart]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:TransitiveProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::one thing is part of another thing]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::part of]]
+* see also [[MediaWiki:smw_import_pmlr]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:pmlr:Step</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:56Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlr:Step]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-relation.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A direct depdency relation from a collection of things to another collection of things, plus the corresponding provenance annotation. ]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Step]]
+* [original] [[Property:rdfs:seeAlso|rdfs:seeAlso]]: [[rdfs:seeAlso::http://en.wikipedia.org/wiki/Step_(project_management)]]
+* see also [[MediaWiki:smw_import_pmlr]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:pmlr:hasPart</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:56Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlr:hasPart]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-relation.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:TransitiveProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:TransitiveProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::one thing has another thing as a part]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::part]]
+* see also [[MediaWiki:smw_import_pmlr]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:pmlr:sufficient_condition</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:56Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlr:sufficient_condition]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-relation.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Thing]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Thing]]
+* see also [[MediaWiki:smw_import_pmlr]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:pmlr:hasMember</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:56Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlr:hasMember]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-relation.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:pmlr:isMemberOf]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::one thing (collection) has another thing as a member, not transitive]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::member]]
+* see also [[MediaWiki:smw_import_pmlr]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:pmlr:hasRestfulUri</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:56Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlr:hasRestfulUri]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-relation.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the RESTful URI for generating the output from the input.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlr:Step]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::restful uri]]
+* see also [[MediaWiki:smw_import_pmlr]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:pmlr:hasOutput</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:56Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlr:hasOutput]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-relation.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the output (or. conclusion,effect) of a Step.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlr:Step]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::output]]
+* see also [[MediaWiki:smw_import_pmlr]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>MediaWiki:smw_import_pmlr</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:56Z</timestamp>
+       <text xml:space="preserve">http://inference-web.org/2.0/pml-relation.owl#|[http://inference-web.org/2.0/pml-relation.owl pmlr]
+ hasWeight|Type:Page
+ sufficient_condition|Type:Page
+ Step|Category
+ hasMember|Type:Page
+ isPartOf|Type:Page
+ hasRestfulUri|Type:Page
+ hasRelation|Type:Page
+ hasPart|Type:Page
+ hasCondition|Type:Page
+ isMemberOf|Type:Page
+ dependsOnDirect|Type:Page
+ pml-relation.owl|Type:Page
+ hasOutput|Type:Page
+ hasInput|Type:Page
+ dependsOn|Type:Page
+ hasOperation|Type:Page
+ hasContext|Type:Page
+ necessary_condition|Type:Page</text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:pmlr:dependsOnDirect</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:56Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlr:dependsOnDirect]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-relation.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::one thing directly depends on another thing, non transitive]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::depends on]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:pmlr:dependsOn]]
+* see also [[MediaWiki:smw_import_pmlr]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:pmlr:hasCondition</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:56Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlr:hasCondition]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-relation.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the condition (necessarily or sufficiently) how the output depends on the input.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlr:Step]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::condition]]
+* see also [[MediaWiki:smw_import_pmlr]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:pmlr:dependsOn</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:56Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlr:dependsOn]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-relation.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:TransitiveProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:TransitiveProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::one thing depends on another thing]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::depends on]]
+* see also [[MediaWiki:smw_import_pmlr]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:pmlr:necessary_condition</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:56Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlr:necessary_condition]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-relation.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Thing]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Thing]]
+* see also [[MediaWiki:smw_import_pmlr]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:pmlr:hasWeight</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:56Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlr:hasWeight]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-relation.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the weight associated with a Step.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlr:Step]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::weight]]
+* see also [[MediaWiki:smw_import_pmlr]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:pmlr:hasRelation</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:56Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlr:hasRelation]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-relation.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:SymmetricProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:SymmetricProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::one thing is related to another thing]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::relation]]
+* see also [[MediaWiki:smw_import_pmlr]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:http://inference-web.org/2.0/pml-relation.owl</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:56Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-relation.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Ontology]]
+* [original] [[Property:owl:versionInfo|owl:versionInfo]]: [[owl:versionInfo::version 2.4, Authors: Li Ding ]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Ontology]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The relation part of PML2 ontology. ]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::PML2 relation ontology]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:pmlr:hasOperation</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:56Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlr:hasOperation]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-relation.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the declarative description of the operation which has been used to compute the output from the input.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlr:Step]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::operation]]
+* see also [[MediaWiki:smw_import_pmlr]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:pmlr:hasInput</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:56Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlr:hasInput]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-relation.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the input (or. antecedent,cause) of a Step.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlr:Step]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::input]]
+* see also [[MediaWiki:smw_import_pmlr]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:pmlr:hasContext</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:56Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlr:hasContext]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-relation.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::the context confirming this Step.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:pmlr:Step]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::context]]
+* see also [[MediaWiki:smw_import_pmlr]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:pmlr:isMemberOf</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:56Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::pmlr:isMemberOf]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://inference-web.org/2.0/pml-relation.owl]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:pmlr:hasMember]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::one thing is member of another thing (collection), not transitive]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::member of]]
+* see also [[MediaWiki:smw_import_pmlr]]
+|}</includeonly></text>
+     </revision>
+ </page>
+</mediawiki>

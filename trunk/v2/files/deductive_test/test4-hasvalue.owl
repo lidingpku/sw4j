@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+	Goal: test owl hasvalue inference
+	
+	Expect:
+		hasValue inference
+			[http://ex.org/foo#myRacingCar, http://ex.org/foo#hasColor, http://ex.org/foo#Red]
+
+	Issues:
+		Require OWL DL inference
+		
+-->
+
+<!DOCTYPE owl [
+<!ENTITY dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY foo "http://ex.org/foo#">
+]>
+<rdf:RDF
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:owl="http://www.w3.org/2002/07/owl#"
+ xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+ xmlns:foo="http://ex.org/foo#"
+ xml:base="http://ex.org/foo"
+>
+
+<owl:ObjectProperty rdf:about="#hasColor">
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#RedCar">
+	<rdfs:subClassOf>
+		<owl:Restriction>
+			<owl:onProperty rdf:resource="#hasColor" />
+			<owl:hasValue rdf:resource="#Red" />
+		</owl:Restriction>
+	</rdfs:subClassOf>
+</owl:Class>
+
+
+<foo:RedCar rdf:about="#myRacingCar"/>
+
+</rdf:RDF>

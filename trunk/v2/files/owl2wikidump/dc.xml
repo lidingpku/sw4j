@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Property:dc:type</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dc:type}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:rights</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dc:rights}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:source</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dc:source}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:description</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dc:description}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://purl.org/dc/elements/1.1/</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:http://purl.org/dc/elements/1.1/}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:subject</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dc:subject}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:format</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dc:format}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:publisher</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dc:publisher}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:identifier</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dc:identifier}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:title</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dc:title}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:relation</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dc:relation}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:coverage</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dc:coverage}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:date</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dc:date}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:language</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dc:language}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:creator</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dc:creator}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:contributor</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dc:contributor}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+</mediawiki>
