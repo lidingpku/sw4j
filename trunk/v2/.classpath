@@ -33,8 +33,6 @@
 	<classpathentry kind="lib" path="code_jena/lib/jena2.6.0/jena.jar"/>
 	<classpathentry kind="lib" path="code_jena/lib/jena2.6.0/jenatest.jar"/>
 	<classpathentry kind="lib" path="code_jena/lib/jena2.6.0/json.jar"/>
-	<classpathentry kind="lib" path="code_jena/lib/jena2.6.0/junit-4.5.jar"/>
-	<classpathentry kind="lib" path="code_jena/lib/jena2.6.0/log4j-1.2.12.jar"/>
 	<classpathentry kind="lib" path="code_jena/lib/jena2.6.0/lucene-core-2.3.1.jar"/>
 	<classpathentry kind="lib" path="code_jena/lib/jena2.6.0/slf4j-api-1.5.6.jar"/>
 	<classpathentry kind="lib" path="code_jena/lib/jena2.6.0/slf4j-log4j12-1.5.6.jar"/>
@@ -43,12 +41,11 @@
 	<classpathentry kind="lib" path="code_jena/lib/jena2.6.0/xercesImpl.jar"/>
 	<classpathentry kind="lib" path="code_ext/lib/pellet_2_rc7/jetty/jetty.jar"/>
 	<classpathentry kind="lib" path="code_ext/lib/pellet_2_rc7/jgrapht/jgrapht-jdk1.5.jar"/>
-	<classpathentry kind="lib" path="code_ext/lib/pellet_2_rc7/junit/junit.jar"/>
 	<classpathentry kind="lib" path="code_ext/lib/pellet_2_rc7/owlapi/owlapi-bin.jar"/>
 	<classpathentry kind="lib" path="code_ext/lib/pellet_2_rc7/owlapi/owlapi-src.jar"/>
 	<classpathentry kind="lib" path="code_ext/lib/pellet_2_rc7/xsdlib/relaxngDatatype.jar"/>
 	<classpathentry kind="lib" path="code_ext/lib/pellet_2_rc7/xsdlib/xsdlib.jar"/>
 	<classpathentry kind="lib" path="code_core/lib/mysql-connector-java-5.1.8-bin.jar"/>
-	<classpathentry kind="lib" path="code_ext/lib/graphviz-api-1.1.jar"/>
+	<classpathentry kind="lib" path="code_core/lib/javacsv.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
