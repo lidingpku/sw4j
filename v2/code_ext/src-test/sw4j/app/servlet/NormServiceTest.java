@@ -69,7 +69,7 @@ public class NormServiceTest {
 		if (ret.m_model_content==null || !ret.isSucceed())
 			fail("URL should be succeed");		
 		 
-		Iterator<Resource> iter = ret.m_model_content.listSubjectsWithProperty(PMLR.hasPart, (RDFNode)null);
+		Iterator<Resource> iter = ret.m_model_content.listSubjectsWithProperty(PMLR.hasMember, (RDFNode)null);
 		if (!iter.hasNext())
 			fail("some list should be generated");
 	}

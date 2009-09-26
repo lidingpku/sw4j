@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Property:foaf:logo</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:logo}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:birthday</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:birthday}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:gender</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:gender}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:weblog</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:weblog}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:surname</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:surname}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:name</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:name}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:tipjar</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:tipjar}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:geekcode</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:geekcode}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:msnChatID</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:msnChatID}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:jabberID</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:jabberID}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:fundedBy</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:fundedBy}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:firstName</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:firstName}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:maker</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:maker}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:topic</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:topic}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:membershipClass</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:membershipClass}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:date</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dc:date}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:depicts</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:depicts}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:img</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:img}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:theme</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:theme}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:nick</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:nick}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:homepage</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:homepage}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:myersBriggs</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:myersBriggs}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:made</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:made}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:schoolHomepage</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:schoolHomepage}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:description</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dc:description}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:page</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:page}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:foaf:Document</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:foaf:Document}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:depiction</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:depiction}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:mbox_sha1sum</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:mbox_sha1sum}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:foaf:Agent</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:foaf:Agent}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:foaf:OnlineAccount</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:foaf:OnlineAccount}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:age</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:age}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:mbox</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:mbox}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:workInfoHomepage</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:workInfoHomepage}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:plan</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:plan}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:http://www.w3.org/2000/10/swap/pim/contact#Person</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:http://www.w3.org/2000/10/swap/pim/contact#Person}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:vs:term_status</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:vs:term_status}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:pastProject</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:pastProject}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:foaf:OnlineChatAccount</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:foaf:OnlineChatAccount}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:foaf:OnlineGamingAccount</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:foaf:OnlineGamingAccount}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:family_name</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:family_name}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:accountName</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:accountName}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:foaf:OnlineEcommerceAccount</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:foaf:OnlineEcommerceAccount}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:topic_interest</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:topic_interest}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:yahooChatID</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:yahooChatID}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:knows</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:knows}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:geo:SpatialThing</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:geo:SpatialThing}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:wot:src_assurance</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:wot:src_assurance}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:interest</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:interest}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:givenname</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:givenname}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:primaryTopic</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:primaryTopic}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:foaf:PersonalProfileDocument</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:foaf:PersonalProfileDocument}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:accountServiceHomepage</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:accountServiceHomepage}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://xmlns.com/foaf/0.1/</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:http://xmlns.com/foaf/0.1/}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:foaf:Group</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:foaf:Group}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:foaf:Image</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:foaf:Image}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:foaf:Organization</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:foaf:Organization}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:member</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:member}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:phone</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:phone}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:based_near</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:based_near}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:Thing</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:owl:Thing}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:wot:assurance</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:wot:assurance}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:aimChatID</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:aimChatID}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:thumbnail</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:thumbnail}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:dnaChecksum</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:dnaChecksum}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:workplaceHomepage</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:workplaceHomepage}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:rdfs:Class</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:rdfs:Class}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:foaf:Person</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:foaf:Person}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:isPrimaryTopicOf</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:isPrimaryTopicOf}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dc:title</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dc:title}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:icqChatID</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:icqChatID}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:title</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:title}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:currentProject</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:currentProject}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:publications</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:publications}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:holdsAccount</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:holdsAccount}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:sha1</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:sha1}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:foaf:Project</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:foaf:Project}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+</mediawiki>

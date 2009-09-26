@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>BOT:Property:rdf:rest</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:49Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::rdf:rest]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/1999/02/22-rdf-syntax-ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The rest of the subject RDF list after the first item.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:rdf:List]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/1999/02/22-rdf-syntax-ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::rest]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdf:List]]
+* see also [[MediaWiki:smw_import_rdf]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:rdf:subject</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:49Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::rdf:subject]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/1999/02/22-rdf-syntax-ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The subject of the subject RDF statement.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:rdf:Statement]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/1999/02/22-rdf-syntax-ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::subject]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Resource]]
+* see also [[MediaWiki:smw_import_rdf]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:rdf:XMLLiteral</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:49Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[:Category:rdfs:Literal]][[Category:rdfs:Literal]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::rdf:XMLLiteral]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/1999/02/22-rdf-syntax-ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Datatype]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Datatype]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The class of XML literal values.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/1999/02/22-rdf-syntax-ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::XMLLiteral]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:rdfs:Literal]]
+* see also [[MediaWiki:smw_import_rdf]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:rdf:predicate</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:49Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::rdf:predicate]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/1999/02/22-rdf-syntax-ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The predicate of the subject RDF statement.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:rdf:Statement]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/1999/02/22-rdf-syntax-ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::predicate]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Resource]]
+* see also [[MediaWiki:smw_import_rdf]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:rdf:first</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:49Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::rdf:first]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/1999/02/22-rdf-syntax-ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The first item in the subject RDF list.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:rdf:List]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/1999/02/22-rdf-syntax-ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::first]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Resource]]
+* see also [[MediaWiki:smw_import_rdf]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:rdf:Property</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:49Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[:Category:rdfs:Resource]][[Category:rdfs:Resource]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::rdf:Property]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/1999/02/22-rdf-syntax-ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The class of RDF properties.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/1999/02/22-rdf-syntax-ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Property]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:rdfs:Resource]]
+* see also [[MediaWiki:smw_import_rdf]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:rdf:List</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:49Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[:Category:rdfs:Resource]][[Category:rdfs:Resource]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::rdf:List]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/1999/02/22-rdf-syntax-ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The class of RDF Lists.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/1999/02/22-rdf-syntax-ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::List]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:rdfs:Resource]]
+* see also [[MediaWiki:smw_import_rdf]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:rdf:Seq</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:49Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[:Category:rdfs:Container]][[Category:rdfs:Container]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::rdf:Seq]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/1999/02/22-rdf-syntax-ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The class of ordered containers.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/1999/02/22-rdf-syntax-ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Seq]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:rdfs:Container]]
+* see also [[MediaWiki:smw_import_rdf]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:rdf:value</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:49Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::rdf:value]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/1999/02/22-rdf-syntax-ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Idiomatic property used for structured values.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:rdfs:Resource]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/1999/02/22-rdf-syntax-ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::value]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Resource]]
+* see also [[MediaWiki:smw_import_rdf]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:http://www.w3.org/1999/02/22-rdf-syntax-ns#</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:49Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::rdf:]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/1999/02/22-rdf-syntax-ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Ontology]]
+* [original] [[Property:dc:description|dc:description]]: [[dc:description::This is the RDF Schema for the RDF vocabulary defined in the RDF namespace.]]
+* [original] [[Property:dc:title|dc:title]]: [[dc:title::The RDF Vocabulary (RDF)]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Ontology]]
+* [original] [[Property:rdfs:seeAlso|rdfs:seeAlso]]: [[rdfs:seeAlso::http://www.w3.org/2000/01/rdf-schema-more]]
+* see also [[MediaWiki:smw_import_rdf]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>MediaWiki:smw_import_rdf</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:49Z</timestamp>
+       <text xml:space="preserve">http://www.w3.org/1999/02/22-rdf-syntax-ns#|[http://www.w3.org/1999/02/22-rdf-syntax-ns rdf]
+ Bag|Category
+ List|Category
+ value|Type:Page
+ object|Type:Page
+ Alt|Category
+ XMLLiteral|Category
+ type|Type:Page
+ subject|Type:Page
+ nil|Type:Page
+ predicate|Type:Page
+ Seq|Category
+ first|Type:Page
+ rest|Type:Page
+ Statement|Category
+ Property|Category</text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:rdf:Statement</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:49Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[:Category:rdfs:Resource]][[Category:rdfs:Resource]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::rdf:Statement]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/1999/02/22-rdf-syntax-ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The class of RDF statements.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/1999/02/22-rdf-syntax-ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Statement]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:rdfs:Resource]]
+* see also [[MediaWiki:smw_import_rdf]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:rdf:Bag</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:49Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[:Category:rdfs:Container]][[Category:rdfs:Container]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::rdf:Bag]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/1999/02/22-rdf-syntax-ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The class of unordered containers.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/1999/02/22-rdf-syntax-ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Bag]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:rdfs:Container]]
+* see also [[MediaWiki:smw_import_rdf]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:rdf:Alt</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:49Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[:Category:rdfs:Container]][[Category:rdfs:Container]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::rdf:Alt]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/1999/02/22-rdf-syntax-ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdfs:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdfs:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The class of containers of alternatives.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/1999/02/22-rdf-syntax-ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Alt]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:rdfs:Container]]
+* see also [[MediaWiki:smw_import_rdf]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:rdf:nil</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:49Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::rdf:nil]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/1999/02/22-rdf-syntax-ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:List]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:List]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The empty list, with no items in it. If the rest of a list is nil then the list has no more items in it.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/1999/02/22-rdf-syntax-ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::nil]]
+* see also [[MediaWiki:smw_import_rdf]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:rdf:object</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:49Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::rdf:object]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/1999/02/22-rdf-syntax-ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The object of the subject RDF statement.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:rdf:Statement]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/1999/02/22-rdf-syntax-ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::object]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Resource]]
+* see also [[MediaWiki:smw_import_rdf]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:rdf:type</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:49Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::rdf:type]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/1999/02/22-rdf-syntax-ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The subject is an instance of a class.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:rdfs:Resource]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/1999/02/22-rdf-syntax-ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::type]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Class]]
+* see also [[MediaWiki:smw_import_rdf]]
+|}</includeonly></text>
+     </revision>
+ </page>
+</mediawiki>

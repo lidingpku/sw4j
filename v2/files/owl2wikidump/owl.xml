@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Category:owl:DeprecatedClass</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:owl:DeprecatedClass}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:Class</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:owl:Class}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:AnnotationProperty</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:owl:AnnotationProperty}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:maxCardinality</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:maxCardinality}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:incompatibleWith</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:incompatibleWith}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:inverseOf</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:inverseOf}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:distinctMembers</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:distinctMembers}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:allValuesFrom</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:allValuesFrom}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:DatatypeProperty</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:owl:DatatypeProperty}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:equivalentClass</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:equivalentClass}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:Restriction</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:owl:Restriction}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:DataRange</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:owl:DataRange}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:minCardinality</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:minCardinality}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:backwardCompatibleWith</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:backwardCompatibleWith}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:FunctionalProperty</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:owl:FunctionalProperty}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:oneOf</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:oneOf}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:disjointWith</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:disjointWith}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:InverseFunctionalProperty</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:owl:InverseFunctionalProperty}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:OntologyProperty</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:owl:OntologyProperty}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:versionInfo</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:versionInfo}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:Thing</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:owl:Thing}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdfs:seeAlso</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdfs:seeAlso}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:SymmetricProperty</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:owl:SymmetricProperty}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:DeprecatedProperty</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:owl:DeprecatedProperty}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:onProperty</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:onProperty}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://www.w3.org/2002/07/owl</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:http://www.w3.org/2002/07/owl}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:TransitiveProperty</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:owl:TransitiveProperty}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:intersectionOf</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:intersectionOf}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdfs:label</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdfs:label}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:unionOf</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:unionOf}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:differentFrom</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:differentFrom}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:Ontology</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:owl:Ontology}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:someValuesFrom</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:someValuesFrom}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdfs:isDefinedBy</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdfs:isDefinedBy}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:complementOf</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:complementOf}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:priorVersion</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:priorVersion}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:AllDifferent</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:owl:AllDifferent}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:sameAs</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:sameAs}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:hasValue</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:hasValue}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:imports</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:imports}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:ObjectProperty</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:owl:ObjectProperty}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:owl:Nothing</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:owl:Nothing}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:cardinality</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:cardinality}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdfs:comment</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdfs:comment}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:owl:equivalentProperty</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:owl:equivalentProperty}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+</mediawiki>

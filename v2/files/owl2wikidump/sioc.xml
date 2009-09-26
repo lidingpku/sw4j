@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Category:sioc:Container</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:sioc:Container}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:account_of</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:account_of}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:administrator_of</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:administrator_of}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:part_of</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:part_of}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:email</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:email}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:sioc:Space</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:sioc:Space}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:space_of</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:space_of}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:has_discussion</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:has_discussion}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:email_sha1</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:email_sha1}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:previous_by_date</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:previous_by_date}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:related_to</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:related_to}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:references</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:references}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:sioc:Role</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:sioc:Role}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:created_at</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:created_at}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:modifier_of</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:modifier_of}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:sioc:Usergroup</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:sioc:Usergroup}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:member_of</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:member_of}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:has_modifier</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:has_modifier}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:link</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:link}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:title</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:title}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:function_of</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:function_of}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:has_member</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:has_member}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:next_version</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:next_version}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:group_of</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:group_of}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:has_moderator</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:has_moderator}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:id</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:id}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:num_replies</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:num_replies}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:foaf:Document</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:foaf:Document}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:depiction</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:depiction}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:has_space</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:has_space}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:foaf:Agent</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:foaf:Agent}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:has_container</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:has_container}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://rdfs.org/sioc/ns#</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:http://rdfs.org/sioc/ns#}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:last_name</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:last_name}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:has_host</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:has_host}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:attachment</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:attachment}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:sioc:Thread</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:sioc:Thread}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:foaf:OnlineAccount</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:foaf:OnlineAccount}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:creator_of</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:creator_of}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:has_administrator</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:has_administrator}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:container_of</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:container_of}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:links_to</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:links_to}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:content_encoded</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:content_encoded}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:description</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:description}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:has_function</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:has_function}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:has_group</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:has_group}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:has_subscriber</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:has_subscriber}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:reply_of</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:reply_of}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:has_parent</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:has_parent}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:reference</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:reference}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:description</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:description}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:earlier_version</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:earlier_version}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:has_creator</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:has_creator}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:has_reply</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:has_reply}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:previous_version</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:previous_version}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:has_part</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:has_part}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:owner_of</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:owner_of}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:name</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:name}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:sioc:Item</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:sioc:Item}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:content</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:content}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:about</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:about}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:next_by_date</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:next_by_date}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://rdfs.org/sioc/spec</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:http://rdfs.org/sioc/spec}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:has_scope</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:has_scope}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:has_usergroup</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:has_usergroup}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:moderator_of</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:moderator_of}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:sioc:User</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:sioc:User}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:sioc:Site</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:sioc:Site}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:num_views</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:num_views}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:sioc:Forum</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:sioc:Forum}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:modified_at</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:modified_at}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:topic</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:topic}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:title</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:title}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:subject</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:subject}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:ip_address</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:ip_address}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:sibling</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:sibling}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:first_name</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:first_name}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:subject</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:subject}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:subscriber_of</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:subscriber_of}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:sioc:Community</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:sioc:Community}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:feed</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:feed}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:usergroup_of</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:usergroup_of}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:note</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:note}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:latest_version</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:latest_version}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:host_of</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:host_of}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:avatar</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:avatar}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:has_owner</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:has_owner}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:parent_of</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:parent_of}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:scope_of</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:scope_of}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:sioc:Post</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:sioc:Post}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:later_version</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:later_version}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:foaf:holdsAccount</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:foaf:holdsAccount}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:sioc:follows</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:sioc:follows}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+</mediawiki>

@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Property:pmlp:hasDataCollectionEndDateTime</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasDataCollectionEndDateTime}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:TranslationRule</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:TranslationRule}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasPublicationDateTime</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasPublicationDateTime}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Person</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:Person}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Website</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:Website}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasCreationDateTime</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasCreationDateTime}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasFromCol</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasFromCol}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasMimetype</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasMimetype}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasName</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasName}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasUsageQueryContent</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasUsageQueryContent}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Document</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:Document}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasToLanguage</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasToLanguage}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Language</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:Language}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:SourceUsage</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:SourceUsage}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasToCol</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasToCol}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasEncoding</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasEncoding}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasConfidenceValue</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasConfidenceValue}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Software</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:Software}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://inference-web.org/2.0/pml-provenance.owl</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:http://inference-web.org/2.0/pml-provenance.owl}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasToRow</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasToRow}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasFromRow</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasFromRow}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasDescription</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasDescription}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Agent</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:Agent}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasInferenceEngineRule</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasInferenceEngineRule}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasPrettyString</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasPrettyString}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Ontology</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:Ontology}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:AgentList</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:AgentList}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:IdentifiedThing</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:IdentifiedThing}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:MethodRule</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:MethodRule}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:InferenceEngine</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:InferenceEngine}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Format</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:Format}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:LearnedSourceUsage</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:LearnedSourceUsage}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Source</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:Source}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasContent</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasContent}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasLanguage</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasLanguage}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Information</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:Information}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:WebService</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:WebService}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:InferenceRule</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:InferenceRule}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasReferenceSourceUsage</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasReferenceSourceUsage}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasRuleExample</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasRuleExample}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Organization</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:Organization}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasPrettyNameMappingList</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasPrettyNameMappingList}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasOwner</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasOwner}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasAuthorList</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasAuthorList}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasToOffset</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasToOffset}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasAbstract</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasAbstract}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasFromLanguage</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasFromLanguage}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:usesInferenceEngine</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:usesInferenceEngine}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasMember</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasMember}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasEscapeCharacterSequence</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasEscapeCharacterSequence}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasDataCollectionStartDateTime</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasDataCollectionStartDateTime}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasDocument</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasDocument}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasEnglishDescriptionTemplate</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasEnglishDescriptionTemplate}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:DeclarativeRule</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:DeclarativeRule}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasShortPrettyName</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasShortPrettyName}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasModificationDateTime</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasModificationDateTime}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://inference-web.org/2.0/ds.owl#</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:http://inference-web.org/2.0/ds.owl#}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasRawString</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasRawString}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasUsageDateTime</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasUsageDateTime}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:PrettyNameMappingList</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:PrettyNameMappingList}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Publication</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:Publication}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:DocumentFragment</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:DocumentFragment}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasPrettyName</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasPrettyName}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasFromOffset</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasFromOffset}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:DocumentFragmentByOffset</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:DocumentFragmentByOffset}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Dataset</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:Dataset}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:PrettyNameMapping</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:PrettyNameMapping}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasLongPrettyName</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasLongPrettyName}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasPublisher</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasPublisher}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:Sensor</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:Sensor}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasISBN</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasISBN}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasFormat</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasFormat}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:DocumentFragmentByRowCol</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:DocumentFragmentByRowCol}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlp:EmptyInformation</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlp:EmptyInformation}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasURL</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasURL}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:isMemberOf</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:isMemberOf}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasSource</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasSource}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasVersion</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasVersion}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlp:hasReplacee</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlp:hasReplacee}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+</mediawiki>

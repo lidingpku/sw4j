@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Property:rdfs:seeAlso</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdfs:seeAlso}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:rdfs:ContainerMembershipProperty</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:rdfs:ContainerMembershipProperty}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:rdfs:Container</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:rdfs:Container}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdfs:label</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdfs:label}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:rdfs:Literal</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:rdfs:Literal}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:rdfs:Class</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:rdfs:Class}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdfs:domain</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdfs:domain}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:rdfs:Datatype</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:rdfs:Datatype}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdfs:isDefinedBy</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdfs:isDefinedBy}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdfs:range</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdfs:range}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdfs:subPropertyOf</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdfs:subPropertyOf}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdfs:subClassOf</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdfs:subClassOf}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdfs:member</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdfs:member}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://www.w3.org/2000/01/rdf-schema#</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:http://www.w3.org/2000/01/rdf-schema#}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:rdfs:comment</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:rdfs:comment}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:rdfs:Resource</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:rdfs:Resource}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+</mediawiki>

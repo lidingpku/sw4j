@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Property:pmlr:hasWeight</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlr:hasWeight}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>pmlr:sufficient_condition</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:pmlr:sufficient_condition}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:pmlr:Step</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:pmlr:Step}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlr:hasMember</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlr:hasMember}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlr:isPartOf</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlr:isPartOf}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlr:hasRestfulUri</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlr:hasRestfulUri}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>pmlr:hasRelation</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:pmlr:hasRelation}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlr:hasPart</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlr:hasPart}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlr:hasCondition</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlr:hasCondition}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlr:isMemberOf</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlr:isMemberOf}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlr:dependsOnDirect</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlr:dependsOnDirect}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://inference-web.org/2.0/pml-relation.owl</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:http://inference-web.org/2.0/pml-relation.owl}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlr:hasInput</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlr:hasInput}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlr:hasOutput</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlr:hasOutput}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlr:hasOperation</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlr:hasOperation}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlr:dependsOn</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlr:dependsOn}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:pmlr:hasContext</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:pmlr:hasContext}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>pmlr:necessary_condition</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:pmlr:necessary_condition}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+</mediawiki>

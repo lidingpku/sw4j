@@ -1,0 +1,13 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX PC3: <http://www.cs.rpi.edu/~michaj6/provenance/UCDGC.owl#>
+PREFIX PC3OPM: <http://www.cs.rpi.edu/~michaj6/provenance/PC3OPM.owl#>
+
+SELECT ?fxn1 ?fxn2
+FROM  <http://www.cs.rpi.edu/~michaj6/provenance/PC3OPM.owl#>
+FROM  <http://www.cs.rpi.edu/~michaj6/provenance/UCDGC.owl#>
+FROM  <http://onto.rpi.edu/sw4j/sparql?queryURL=http://tw.rpi.edu/proj/portal.wiki/images/c/c6/CoreQuery3_1_UCDGC.sparql>
+
+WHERE { ?wgb PC3OPM:wgbSource PC3:1748.
+      ?wgb PC3OPM:wgbTarget ?fxn1 .
+      ?fxn1 PC3OPM:opWasTriggeredBy ?fxn2 .
+}

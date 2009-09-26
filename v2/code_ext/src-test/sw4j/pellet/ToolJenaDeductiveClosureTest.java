@@ -72,8 +72,7 @@ public class ToolJenaDeductiveClosureTest {
 				fail("cannot load");
 			}
 			
-			do_test(model,entry);
-			
+			do_test(model,entry);	
 		}
 	}
 	
@@ -153,7 +152,7 @@ public class ToolJenaDeductiveClosureTest {
 			//transitive subclass
 			//rdfs class 
 			DataSmartMap entry = new DataSmartMap();
-			entry.put(FIELD_URL, "files/deductive/test1-subclass-for-rdfsclass.rdf");
+			entry.put(FIELD_URL, "files/deductive_test/test1-subclass-for-rdfsclass.rdf");
 			entry.put(FIELD_ORIGINAL, 5);
 			entry.put(FIELD_DEDUCTIVE_PELLET, 39);  //34
  			entry.put(FIELD_DEDUCTIVE_RDFS, 9); 
@@ -180,7 +179,7 @@ public class ToolJenaDeductiveClosureTest {
 			//transitive subclass
 			//owl class, I can infer additional triples (c  rdf:type  owl:Class)
 			DataSmartMap entry = new DataSmartMap();
-			entry.put(FIELD_URL, "files/deductive/test1-subclass-for-owlclass.owl");
+			entry.put(FIELD_URL, "files/deductive_test/test1-subclass-for-owlclass.owl");
 			entry.put(FIELD_ORIGINAL, 5);
 			entry.put(FIELD_DEDUCTIVE_PELLET, 36);  //34
  			entry.put(FIELD_DEDUCTIVE_RDFS, 9); 
@@ -195,7 +194,7 @@ public class ToolJenaDeductiveClosureTest {
 		{
 			// equivalentclass + intersection of  (list)
 			DataSmartMap entry = new DataSmartMap();
-			entry.put(FIELD_URL, "files/deductive/test2-equivalentclass-intersectionof.owl");
+			entry.put(FIELD_URL, "files/deductive_test/test2-equivalentclass-intersectionof.owl");
 			entry.put(FIELD_ORIGINAL, 12);
 			entry.put(FIELD_DEDUCTIVE_PELLET, 52);  //50
  			entry.put(FIELD_DEDUCTIVE_RDFS, 14); 
@@ -208,7 +207,7 @@ public class ToolJenaDeductiveClosureTest {
 		{
 			//transitive subproperty
 			DataSmartMap entry = new DataSmartMap();
-			entry.put(FIELD_URL, "files/deductive/test3-subproperty.owl");
+			entry.put(FIELD_URL, "files/deductive_test/test3-subproperty.owl");
 			entry.put(FIELD_ORIGINAL, 8);
 			entry.put(FIELD_DEDUCTIVE_PELLET, 31);  //30
  			entry.put(FIELD_DEDUCTIVE_RDFS, 12); 
@@ -223,9 +222,9 @@ public class ToolJenaDeductiveClosureTest {
 			// restriction (anonymous subclass relation)
 			// has value restriction inferred on instance property
 			DataSmartMap entry = new DataSmartMap();
-			entry.put(FIELD_URL, "files/deductive/test4-hasvalue.owl");
+			entry.put(FIELD_URL, "files/deductive_test/test4-hasvalue.owl");
 			entry.put(FIELD_ORIGINAL, 7);
-			entry.put(FIELD_DEDUCTIVE_PELLET, 33);  //29
+			entry.put(FIELD_DEDUCTIVE_PELLET, 32);  //29
  			entry.put(FIELD_DEDUCTIVE_RDFS, 9); 
 			entry.put(FIELD_DEDUCTIVE_SW4J, 34);  //18 
 			
@@ -237,9 +236,9 @@ public class ToolJenaDeductiveClosureTest {
 			// transitive subclass
 			// restriction 
 			DataSmartMap entry = new DataSmartMap();
-			entry.put(FIELD_URL, "files/deductive/test5-onproperty-subproperty.owl");
+			entry.put(FIELD_URL, "files/deductive_test/test5-onproperty-subproperty.owl");
 			entry.put(FIELD_ORIGINAL, 12);
-			entry.put(FIELD_DEDUCTIVE_PELLET, 40);  
+			entry.put(FIELD_DEDUCTIVE_PELLET, 39);  
  			entry.put(FIELD_DEDUCTIVE_RDFS, 17); 
 			entry.put(FIELD_DEDUCTIVE_SW4J, 41);   
 			
@@ -250,9 +249,9 @@ public class ToolJenaDeductiveClosureTest {
 			// transitive subclass
 			// restriction 
 			DataSmartMap entry = new DataSmartMap();
-			entry.put(FIELD_URL, "files/deductive/test6-onproperty-subproperty-objectproperty.owl");
+			entry.put(FIELD_URL, "files/deductive_test/test6-onproperty-subproperty-objectproperty.owl");
 			entry.put(FIELD_ORIGINAL, 13);
-			entry.put(FIELD_DEDUCTIVE_PELLET, 50);  //45
+			entry.put(FIELD_DEDUCTIVE_PELLET, 49);  //45
  			entry.put(FIELD_DEDUCTIVE_RDFS, 18);	 
 			entry.put(FIELD_DEDUCTIVE_SW4J, 51);  //34 
 			
@@ -264,9 +263,9 @@ public class ToolJenaDeductiveClosureTest {
 			// cardinality restriction  => inference same
 			
 			DataSmartMap entry = new DataSmartMap();
-			entry.put(FIELD_URL, "files/deductive/test6-maxcard1-eq.owl");
+			entry.put(FIELD_URL, "files/deductive_test/test6-maxcard1-eq.owl");
 			entry.put(FIELD_ORIGINAL, 13);
-			entry.put(FIELD_DEDUCTIVE_PELLET, 46);  //45
+			entry.put(FIELD_DEDUCTIVE_PELLET, 45);  //45
  			entry.put(FIELD_DEDUCTIVE_RDFS, 17);	 
 			entry.put(FIELD_DEDUCTIVE_SW4J, 47);  //34 
 			
@@ -280,7 +279,7 @@ public class ToolJenaDeductiveClosureTest {
 		{
 			// one of
 			DataSmartMap entry = new DataSmartMap();
-			entry.put(FIELD_URL, "files/deductive/test7-oneof-named.owl");
+			entry.put(FIELD_URL, "files/deductive_test/test7-oneof-named.owl");
 			entry.put(FIELD_ORIGINAL, 8);
 			entry.put(FIELD_DEDUCTIVE_PELLET, 30);  //26
  			entry.put(FIELD_DEDUCTIVE_RDFS, 8); 
@@ -295,7 +294,7 @@ public class ToolJenaDeductiveClosureTest {
 			// anonymous  
 			
 			DataSmartMap entry = new DataSmartMap();
-			entry.put(FIELD_URL, "files/deductive/test7-oneof-anonymous.owl");
+			entry.put(FIELD_URL, "files/deductive_test/test7-oneof-anonymous.owl");
 			entry.put(FIELD_ORIGINAL, 8);
 			entry.put(FIELD_DEDUCTIVE_PELLET, 22);  //34
  			entry.put(FIELD_DEDUCTIVE_RDFS, 8); 
@@ -308,7 +307,7 @@ public class ToolJenaDeductiveClosureTest {
 			// unionof => subclass  
 			
 			DataSmartMap entry = new DataSmartMap();
-			entry.put(FIELD_URL, "files/deductive/test8-unionof-named.owl");
+			entry.put(FIELD_URL, "files/deductive_test/test8-unionof-named.owl");
 			entry.put(FIELD_ORIGINAL, 8);
 			entry.put(FIELD_DEDUCTIVE_PELLET, 40);  //34
  			entry.put(FIELD_DEDUCTIVE_RDFS, 8); 
@@ -321,7 +320,7 @@ public class ToolJenaDeductiveClosureTest {
 			// unionof => subclass  
 			
 			DataSmartMap entry = new DataSmartMap();
-			entry.put(FIELD_URL, "files/deductive/test8-unionof-anonymous.owl");
+			entry.put(FIELD_URL, "files/deductive_test/test8-unionof-anonymous.owl");
 			entry.put(FIELD_ORIGINAL, 8);
 			entry.put(FIELD_DEDUCTIVE_PELLET, 32);  //34
  			entry.put(FIELD_DEDUCTIVE_RDFS, 8); 
@@ -333,7 +332,7 @@ public class ToolJenaDeductiveClosureTest {
 		{
 			// rdfs label ??
 			DataSmartMap entry = new DataSmartMap();
-			entry.put(FIELD_URL, "files/deductive/test9-foaf.rdf");
+			entry.put(FIELD_URL, "files/deductive_test/test9-foaf.rdf");
 			entry.put(FIELD_ORIGINAL, 571);
 			entry.put(FIELD_DEDUCTIVE_PELLET, 973);  
  			entry.put(FIELD_DEDUCTIVE_RDFS, 615); 
@@ -345,7 +344,7 @@ public class ToolJenaDeductiveClosureTest {
 		{
 			// rdfs label ??
 			DataSmartMap entry = new DataSmartMap();
-			entry.put(FIELD_URL, "files/deductive/test9-ok_pml_200407_tonysns1_0.owl");
+			entry.put(FIELD_URL, "files/deductive_test/test9-ok_pml_200407_tonysns1_0.owl");
 			entry.put(FIELD_ORIGINAL, 11);
 			entry.put(FIELD_DEDUCTIVE_PELLET, 78);  //838
  			entry.put(FIELD_DEDUCTIVE_RDFS, 11); 
@@ -367,7 +366,7 @@ public class ToolJenaDeductiveClosureTest {
 			DataSmartMap entry = new DataSmartMap();
 			entry.put(FIELD_URL, "http://inferenceweb.stanford.edu/2004/07/iw.owl");
 			entry.put(FIELD_ORIGINAL, 616);
-			entry.put(FIELD_DEDUCTIVE_PELLET, 1443); 
+			entry.put(FIELD_DEDUCTIVE_PELLET, 1152);//1443); 
  			entry.put(FIELD_DEDUCTIVE_RDFS, 993);	 
 			entry.put(FIELD_DEDUCTIVE_SW4J, 1572);   
 			
@@ -378,7 +377,7 @@ public class ToolJenaDeductiveClosureTest {
 			DataSmartMap entry = new DataSmartMap();
 			entry.put(FIELD_URL, "http://tw.rpi.edu/2008/04/wine-instance_mpv.rdf");
 			entry.put(FIELD_ORIGINAL, 179);
-			entry.put(FIELD_DEDUCTIVE_PELLET, 364); 
+			entry.put(FIELD_DEDUCTIVE_PELLET, 346);//364); 
  			entry.put(FIELD_DEDUCTIVE_RDFS, 206);	 
 			entry.put(FIELD_DEDUCTIVE_SW4J, 1572);   
 			
@@ -390,7 +389,7 @@ public class ToolJenaDeductiveClosureTest {
 			DataSmartMap entry = new DataSmartMap();
 			entry.put(FIELD_URL, "http://tw.rpi.edu/2008/03/wine.owl");
 			entry.put(FIELD_ORIGINAL, 627);
-			entry.put(FIELD_DEDUCTIVE_PELLET, 1473); 
+			entry.put(FIELD_DEDUCTIVE_PELLET, 1182);//1473); 
  			entry.put(FIELD_DEDUCTIVE_RDFS, 1004);	 
 			entry.put(FIELD_DEDUCTIVE_SW4J, 1572);   
 			
@@ -400,9 +399,9 @@ public class ToolJenaDeductiveClosureTest {
 		
 		{
 			DataSmartMap entry = new DataSmartMap();
-			entry.put(FIELD_URL, "files/deductive/test9-ok_pml_200407_tonysns1_0.owl");
+			entry.put(FIELD_URL, "files/deductive_test/test9-ok_pml_200407_tonysns1_0.owl");
 			entry.put(FIELD_ORIGINAL, 627);
-			entry.put(FIELD_DEDUCTIVE_PELLET, 1473); 
+			entry.put(FIELD_DEDUCTIVE_PELLET, 1182);//1473); 
  			entry.put(FIELD_DEDUCTIVE_RDFS, 1004);	 
 			entry.put(FIELD_DEDUCTIVE_SW4J, 1572);   
 			
@@ -423,7 +422,7 @@ public class ToolJenaDeductiveClosureTest {
 			// restriction 
 			// inconsistency
 			DataSmartMap entry = new DataSmartMap();
-			entry.put(FIELD_URL, "files/deductive/test6-onproperty-subproperty-datatypeproperty.owl");
+			entry.put(FIELD_URL, "files/deductive_test/test6-onproperty-subproperty-datatypeproperty.owl");
 
 			
 			data.add(entry);

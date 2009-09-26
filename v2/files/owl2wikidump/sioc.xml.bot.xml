@@ -1,0 +1,2159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>BOT:Property:sioc:administrator_of</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:administrator_of]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:has_administrator]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A Site that the User is an administrator of.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:User]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::administrator of]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Site]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:foaf:depiction</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:topic</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:topic]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A topic of interest, linking to the appropriate URI, e.g. in the Open Directory Project or of a SKOS category.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::topic]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:dcterms:subject]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:sioc:Site</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[:Category:sioc:Space]][[Category:sioc:Space]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:Site]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A Site can be the location of an online community or set of communities, with Users and Usergroups creating Items in a set of Containers. It can be thought of as a web-accessible data Space.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Site]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:sioc:Space]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:function_of</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:function_of]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:has_function]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A User who has this Role.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Role]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::function of]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:parent_of</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:parent_of]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:has_parent]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A child Container or Forum that this Container or Forum is a parent of.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Container]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::parent of]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Container]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:creator_of</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:creator_of]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:has_creator]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A resource that the User is a creator of.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:User]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::creator of]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:has_part</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:has_part]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DeprecatedProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:part_of]]
+* [original] [[Property:owl:versionInfo|owl:versionInfo]]: [[owl:versionInfo::This property is deprecated. Use dcterms:hasPart from the Dublin Core ontology instead.]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DeprecatedProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An resource that is a part of this subject.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has part]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:has_function</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:has_function]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:function_of]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A Role that this User has.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has function]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Role]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:content</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:content]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The content of the Item in plain text format.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Item]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::content]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Literal]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:previous_by_date</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:previous_by_date]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:next_by_date]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Previous Item or Post in a given Container sorted by date.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Item]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::previous by date]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Item]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:has_moderator</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:has_moderator]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A User who is a moderator of this Forum.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Forum]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has moderator]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:User]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:has_discussion</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:has_discussion]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The discussion that is related to this Item.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Item]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has discussion]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:has_space</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:has_space]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:space_of]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A data Space which this resource is a part of.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has space]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Space]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:avatar</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:avatar]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An image or depiction used to represent this User.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:User]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::avatar]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:foaf:depiction]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:has_member</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:has_member]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:member_of]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A User who is a member of this Usergroup.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Usergroup]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has member]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:User]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:sioc:Space</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:Space]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Item]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Role]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:User]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Usergroup]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A Space is a place where data resides, e.g. on a website, desktop, fileshare, etc.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Space]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:part_of</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:part_of]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DeprecatedProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:has_part]]
+* [original] [[Property:owl:versionInfo|owl:versionInfo]]: [[owl:versionInfo::This property is deprecated. Use dcterms:isPartOf from the Dublin Core ontology instead.]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DeprecatedProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A resource that the subject is a part of.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::part of]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:latest_version</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:latest_version]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Links to the latest revision of this Item or Post.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Item]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::latest version]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Item]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:note</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:note]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A note associated with this resource, for example, if it has been edited by a User.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::note]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Literal]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:has_creator</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:has_creator]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:creator_of]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::This is the User who made this resource.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has creator]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:User]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>MediaWiki:smw_import_sioc</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve">http://rdfs.org/sioc/ns#|[http://rdfs.org/sioc/ns sioc]
+ Container|Category
+ account_of|Type:Page
+ administrator_of|Type:Page
+ part_of|Type:Page
+ email|Type:Page
+ Space|Category
+ space_of|Type:Page
+ has_discussion|Type:Page
+ email_sha1|Type:Text
+ previous_by_date|Type:Page
+ related_to|Type:Page
+ references|Type:Page
+ Role|Category
+ created_at|Type:Text
+ Usergroup|Category
+ modifier_of|Type:Page
+ member_of|Type:Page
+ has_modifier|Type:Page
+ link|Type:Page
+ title|Type:Text
+ has_member|Type:Page
+ function_of|Type:Page
+ next_version|Type:Page
+ group_of|Type:Page
+ has_moderator|Type:Page
+ id|Type:Text
+ num_replies|Type:Number
+ Document|Category
+ depiction|Type:Page
+ has_space|Type:Page
+ Agent|Category
+ has_container|Type:Page
+ last_name|Type:Text
+ has_host|Type:Page
+ attachment|Type:Page
+ Thread|Category
+ OnlineAccount|Category
+ creator_of|Type:Page
+ has_administrator|Type:Page
+ container_of|Type:Page
+ links_to|Type:Page
+ content_encoded|Type:Text
+ description|Type:Text
+ has_function|Type:Page
+ has_group|Type:Page
+ has_subscriber|Type:Page
+ reply_of|Type:Page
+ has_parent|Type:Page
+ description|Type:Page
+ reference|Type:Page
+ earlier_version|Type:Page
+ has_reply|Type:Page
+ has_creator|Type:Page
+ previous_version|Type:Page
+ has_part|Type:Page
+ owner_of|Type:Page
+ content|Type:Text
+ name|Type:Text
+ Item|Category
+ about|Type:Page
+ next_by_date|Type:Page
+ has_scope|Type:Page
+ has_usergroup|Type:Page
+ moderator_of|Type:Page
+ User|Category
+ Site|Category
+ num_views|Type:Number
+ Forum|Category
+ modified_at|Type:Text
+ topic|Type:Page
+ title|Type:Page
+ subject|Type:Page
+ ip_address|Type:Text
+ sibling|Type:Page
+ first_name|Type:Text
+ subject|Type:Text
+ Community|Category
+ subscriber_of|Type:Page
+ feed|Type:Page
+ note|Type:Text
+ usergroup_of|Type:Page
+ has_owner|Type:Page
+ avatar|Type:Page
+ host_of|Type:Page
+ latest_version|Type:Page
+ scope_of|Type:Page
+ parent_of|Type:Page
+ later_version|Type:Page
+ Post|Category
+ holdsAccount|Type:Page
+ follows|Type:Page</text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:title</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:title]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DeprecatedProperty]]
+* [original] [[Property:owl:versionInfo|owl:versionInfo]]: [[owl:versionInfo::This property is deprecated. Use dcterms:title from the Dublin Core ontology instead.]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DeprecatedProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::This is the title (subject line) of the Post. Note that for a Post within a threaded discussion that has no parents, it would detail the topic thread.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Post]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::title]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Literal]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:has_group</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:has_group]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DeprecatedProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:group_of]]
+* [original] [[Property:owl:versionInfo|owl:versionInfo]]: [[owl:versionInfo::This property has been renamed. Use sioc:has_usergroup instead.]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DeprecatedProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has group]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:related_to</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:related_to]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Related Posts for this Post, perhaps determined implicitly from topics or references.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::related to]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:link</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:link]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A URI of a document which contains this SIOC object.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::link]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:foaf:holdsAccount</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:sioc:Community</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:Community]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Item]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Role]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:User]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Community is a high-level concept that defines an online community and what it consists of.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Community]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:id</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:id]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An identifier of a SIOC concept instance. For example, a user ID. Must be unique for instances of each type of SIOC concept within the same site.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::id]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Literal]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:ip_address</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:ip_address]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The IP address used when creating this Item. This can be associated with a creator. Some wiki articles list the IP addresses for the creator or modifiers when the usernames are absent.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Item]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::ip address]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Literal]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:container_of</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:container_of]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:has_container]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An Item that this Container contains.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Container]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::container of]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Item]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:has_modifier</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:has_modifier]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:modifier_of]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A User who modified this Item.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Item]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has modifier]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:User]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:space_of</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:space_of]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:has_space]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A resource which belongs to this data Space.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Space]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::space of]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:sibling</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:sibling]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:SymmetricProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:SymmetricProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An Item may have a sibling or a twin that exists in a different Container, but the siblings may differ in some small way (for example, language, category, etc.). The sibling of this Item should be self-describing (that is, it should contain all available information).]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Item]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::sibling]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Item]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:reference</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:reference]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DeprecatedProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:versionInfo|owl:versionInfo]]: [[owl:versionInfo::Renamed to sioc:links_to.]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DeprecatedProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Links either created explicitly or extracted implicitly on the HTML level from the Post.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Post]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::reference]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:foaf:OnlineAccount</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:has_administrator</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:has_administrator]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:administrator_of]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A User who is an administrator of this Site.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Site]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has administrator]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:User]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:earlier_version</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:earlier_version]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:TransitiveProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:later_version]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:TransitiveProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Links to a previous (older) revision of this Item or Post.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Item]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::earlier version]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Item]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:sioc:Item</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:Item]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Container]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Role]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Space]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:User]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Usergroup]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An Item is something which can be in a Container.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Item]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:sioc:Container</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:Container]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Item]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Role]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:User]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Usergroup]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An area in which content Items are contained.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Container]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:reply_of</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:reply_of]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:has_reply]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Links to an Item or Post which this Item or Post is a reply to.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Item]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::reply of]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Item]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:sioc:related_to]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:dcterms:subject</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:has_host</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:has_host]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:host_of]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The Site that hosts this Forum.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Forum]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has host]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Site]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:http://rdfs.org/sioc/spec</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::SIOC Core Ontology Specification]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:modifier_of</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:modifier_of]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:has_modifier]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An Item that this User has modified.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:User]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::modifier of]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Item]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:account_of</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:account_of]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:foaf:holdsAccount]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Refers to the foaf:Agent or foaf:Person who owns this sioc:User online account.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:User]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::account of]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:foaf:Agent]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:next_version</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:next_version]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:previous_version]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Links to the next revision of this Item or Post.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Item]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::next version]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Item]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:sioc:later_version]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:http://rdfs.org/sioc/ns#</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Ontology]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Thing]]
+* [original] [[Property:dcterms:description|dcterms:description]]: [[dcterms:description::SIOC (Semantically-Interlinked Online Communities) is an ontology for describing the information in online communities.  This information can be used to export information from online communities and to link them together. The scope of the application areas that SIOC can be used for includes (and is not limited to) weblogs, message boards, mailing lists and chat channels.]]
+* [original] [[Property:dcterms:title|dcterms:title]]: [[dcterms:title::SIOC Core Ontology Namespace]]
+* [original] [[Property:owl:versionInfo|owl:versionInfo]]: [[owl:versionInfo::Revision: 1.31]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Ontology]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Thing]]
+* [original] [[Property:rdfs:seeAlso|rdfs:seeAlso]]: [[rdfs:seeAlso::http://rdfs.org/sioc/spec]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:links_to</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:links_to]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Links extracted from hyperlinks within a SIOC concept, e.g. Post or Site.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::links to]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:dcterms:references]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:later_version</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:later_version]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:TransitiveProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:earlier_version]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:TransitiveProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Links to a later (newer) revision of this Item or Post.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Item]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::later version]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Item]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:host_of</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:host_of]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:has_host]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A Forum that is hosted on this Site.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Site]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::host of]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Forum]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:owner_of</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:owner_of]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:has_owner]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A resource owned by a particular User, for example, a weblog or image gallery.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:User]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::owner of]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:dcterms:references</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:dcterms:title</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:description</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:description]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DeprecatedProperty]]
+* [original] [[Property:owl:versionInfo|owl:versionInfo]]: [[owl:versionInfo::This property is deprecated. Use sioc:content or other methods (AtomOwl, content:encoded from RSS 1.0, etc.) instead.]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DeprecatedProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The content of the Post.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Post]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::description]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Literal]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:scope_of</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:scope_of]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:has_scope]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A Role that has a scope of this resource.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::scope of]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Role]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:feed</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:feed]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A feed (e.g. RSS, Atom, etc.) pertaining to this resource (e.g. for a Forum, Site, User, etc.).]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::feed]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:sioc:User</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[:Category:foaf:OnlineAccount]][[Category:foaf:OnlineAccount]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:User]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Container]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Item]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Role]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Space]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Usergroup]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A User account in an online community site.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::User]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:foaf:OnlineAccount]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:moderator_of</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:moderator_of]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:has_moderator]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A Forum that User is a moderator of.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:User]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::moderator of]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Forum]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:has_owner</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:has_owner]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:owner_of]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A User that this resource is owned by.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has owner]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:User]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:has_scope</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:has_scope]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:scope_of]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A resource that this Role applies to.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Role]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has scope]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:sioc:Post</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[:Category:foaf:Document]][[Category:foaf:Document]]
+* [<font color='red'>inferred</font>] [[:Category:sioc:Item]][[Category:sioc:Item]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:Post]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An article or message that can be posted to a Forum.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Post]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:foaf:Document]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:sioc:Item]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:subject</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:subject]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DeprecatedProperty]]
+* [original] [[Property:owl:versionInfo|owl:versionInfo]]: [[owl:versionInfo::This property is deprecated. Use dcterms:subject from the Dublin Core ontology for text keywords and sioc:topic if the subject can be represented by a URI instead.]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DeprecatedProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Keyword(s) describing subject of the Post.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Post]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::subject]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Literal]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:dcterms:description</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:previous_version</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:previous_version]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:next_version]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Links to the previous revision of this Item or Post.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Item]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::previous version]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Item]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:sioc:earlier_version]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:num_replies</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Number]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:num_replies]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The number of replies that this Item, Thread, Post, etc. has. Useful for when the reply structure is absent.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::num replies]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#integer]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:sioc:Forum</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[:Category:sioc:Container]][[Category:sioc:Container]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:Forum]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A discussion area on which Posts or entries are made.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Forum]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:sioc:Container]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:foaf:Document</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:follows</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:follows]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Indicates that one User follows another User (e.g. for microblog posts or other content item updates).]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:User]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::follows]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:User]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:first_name</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:first_name]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DeprecatedProperty]]
+* [original] [[Property:owl:versionInfo|owl:versionInfo]]: [[owl:versionInfo::This property is deprecated. Use foaf:name or foaf:firstName from the FOAF vocabulary instead.]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DeprecatedProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::First (real) name of this User. Synonyms include given name or christian name.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:User]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::first name]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Literal]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:has_usergroup</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:has_usergroup]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:usergroup_of]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Points to a Usergroup that has certain access to this Space.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Space]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has usergroup]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Usergroup]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:about</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:about]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Specifies that this Item is about a particular resource, e.g. a Post describing a book, hotel, etc.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Item]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::about]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:last_name</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:last_name]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DeprecatedProperty]]
+* [original] [[Property:owl:versionInfo|owl:versionInfo]]: [[owl:versionInfo::This property is deprecated. Use foaf:name or foaf:surname from the FOAF vocabulary instead.]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DeprecatedProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Last (real) name of this user. Synonyms include surname or family name.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:User]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::last name]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Literal]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:sioc:Usergroup</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:Usergroup]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Container]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Item]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Role]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Space]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:User]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A set of User accounts whose owners have a common purpose or interest. Can be used for access control purposes.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Usergroup]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:sioc:Thread</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[:Category:sioc:Container]][[Category:sioc:Container]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:Thread]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A container for a series of threaded discussion Posts or Items.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Thread]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:sioc:Container]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:email</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:email]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An electronic mail address of the User.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:User]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::email]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:usergroup_of</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:usergroup_of]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:has_usergroup]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A Space that the Usergroup has access to.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Usergroup]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::usergroup of]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Space]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:group_of</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:group_of]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DeprecatedProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:has_group]]
+* [original] [[Property:owl:versionInfo|owl:versionInfo]]: [[owl:versionInfo::This property has been renamed. Use sioc:usergroup_of instead.]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DeprecatedProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::group of]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:attachment</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:attachment]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The URI of a file attached to an Item.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Item]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::attachment]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:foaf:Agent</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:modified_at</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:modified_at]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DeprecatedProperty]]
+* [original] [[Property:owl:versionInfo|owl:versionInfo]]: [[owl:versionInfo::This property is deprecated. Use dcterms:modified from the Dublin Core ontology instead.]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DeprecatedProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::When this was modified, in ISO 8601 format.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Post]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::modified at]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Literal]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:has_parent</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:has_parent]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:parent_of]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A Container or Forum that this Container or Forum is a child of.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Container]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has parent]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Container]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:content_encoded</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:content_encoded]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DeprecatedProperty]]
+* [original] [[Property:owl:versionInfo|owl:versionInfo]]: [[owl:versionInfo::This property is deprecated. Use content:encoded from the RSS 1.0 content module instead.]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DeprecatedProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The encoded content of the Post, contained in CDATA areas.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Post]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::content encoded]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Literal]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:sioc:Role</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:Role]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Container]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Item]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Space]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:User]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:sioc:Usergroup]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A Role is a function of a User within a scope of a particular Forum, Site, etc.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Role]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:member_of</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:member_of]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:has_member]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A Usergroup that this User is a member of.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:User]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::member of]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Usergroup]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:created_at</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:created_at]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DeprecatedProperty]]
+* [original] [[Property:owl:versionInfo|owl:versionInfo]]: [[owl:versionInfo::This property is deprecated. Use dcterms:created from the Dublin Core ontology instead.]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DeprecatedProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::When this was created, in ISO 8601 format.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Post]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::created at]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Literal]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:next_by_date</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:next_by_date]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:previous_by_date]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Next Item or Post in a given Container sorted by date.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Item]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::next by date]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Item]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:name</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:name]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The name of a SIOC instance, e.g. a username for a User, group name for a Usergroup, etc.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::name]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Literal]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:has_reply</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:has_reply]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:reply_of]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Points to an Item or Post that is a reply or response to this Item or Post.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Item]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has reply]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Item]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:sioc:related_to]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:email_sha1</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Text]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:email_sha1]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::An electronic mail address of the User, encoded using SHA1.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:User]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::email sha1]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdfs:Literal]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:num_views</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:has type|has type]]: [[has type::Type:Number]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:num_views]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The number of times this Item, Thread, User profile, etc. has been viewed.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::num views]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::http://www.w3.org/2001/XMLSchema#integer]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:subscriber_of</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:subscriber_of]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:has_subscriber]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A Container that a User is subscribed to.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:User]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::subscriber of]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Container]]
+* [original] [[Property:rdfs:seeAlso|rdfs:seeAlso]]: [[rdfs:seeAlso::Property:sioc:feed]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:has_subscriber</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:has_subscriber]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:subscriber_of]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A User who is subscribed to this Container.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Container]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has subscriber]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:User]]
+* [original] [[Property:rdfs:seeAlso|rdfs:seeAlso]]: [[rdfs:seeAlso::Property:sioc:feed]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:sioc:has_container</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:54Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::sioc:has_container]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://rdfs.org/sioc/ns]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:sioc:container_of]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The Container to which this Item belongs.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:sioc:Item]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://rdfs.org/sioc/ns#]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has container]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:sioc:Container]]
+* see also [[MediaWiki:smw_import_sioc]]
+|}</includeonly></text>
+     </revision>
+ </page>
+</mediawiki>

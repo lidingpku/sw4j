@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Category:dcterms:Policy</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:Policy}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:isVersionOf</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:isVersionOf}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:tableOfContents</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:tableOfContents}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:FileFormat</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:FileFormat}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:publisher</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:publisher}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:PeriodOfTime</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:PeriodOfTime}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:MediaTypeOrExtent</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:MediaTypeOrExtent}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:relation</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:relation}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:coverage</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:coverage}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:rightsHolder</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:rightsHolder}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:MethodOfAccrual</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:MethodOfAccrual}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:URI</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:URI}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:type</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:type}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:LCSH</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:LCSH}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:mediator</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:mediator}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:extent</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:extent}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:Point</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:Point}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:hasFormat</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:hasFormat}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:LocationPeriodOrJurisdiction</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:LocationPeriodOrJurisdiction}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:LinguisticSystem</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:LinguisticSystem}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:creator</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:creator}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:DDC</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:DDC}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:available</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:available}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:identifier</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:identifier}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:accrualMethod</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:accrualMethod}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:PhysicalMedium</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:PhysicalMedium}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:rights</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:rights}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:spatial</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:spatial}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:accessRights</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:accessRights}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:Jurisdiction</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:Jurisdiction}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:description</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:description}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:ProvenanceStatement</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:ProvenanceStatement}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:TGN</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:TGN}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:RFC3066</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:RFC3066}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:modified</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:modified}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://purl.org/dc/terms/</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:http://purl.org/dc/terms/}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:conformsTo</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:conformsTo}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:license</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:license}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:dateCopyrighted</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:dateCopyrighted}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:RightsStatement</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:RightsStatement}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:subject</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:subject}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:date</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:date}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:Standard</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:Standard}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:Box</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:Box}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:isReferencedBy</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:isReferencedBy}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:requires</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:requires}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:temporal</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:temporal}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:dateAccepted</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:dateAccepted}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:hasPart</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:hasPart}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:UDC</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:UDC}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:references</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:references}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:Frequency</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:Frequency}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:BibliographicResource</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:BibliographicResource}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:dateSubmitted</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:dateSubmitted}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:Agent</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:Agent}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:isFormatOf</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:isFormatOf}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:RFC1766</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:RFC1766}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:contributor</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:contributor}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:RFC4646</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:RFC4646}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:replaces</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:replaces}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:accrualPolicy</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:accrualPolicy}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:audience</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:audience}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:MESH</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:MESH}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:hasVersion</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:hasVersion}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:isRequiredBy</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:isRequiredBy}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:medium</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:medium}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:LCC</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:LCC}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:accrualPeriodicity</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:accrualPeriodicity}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:MediaType</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:MediaType}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:DCMIType</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:DCMIType}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:AgentClass</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:AgentClass}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:bibliographicCitation</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:bibliographicCitation}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:isReplacedBy</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:isReplacedBy}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:format</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:format}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:LicenseDocument</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:LicenseDocument}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:alternative</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:alternative}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:valid</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:valid}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:provenance</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:provenance}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:language</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:language}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:SizeOrDuration</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:SizeOrDuration}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:educationLevel</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:educationLevel}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:created</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:created}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:ISO639-2</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:ISO639-2}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:ISO639-3</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:ISO639-3}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:ISO3166</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:ISO3166}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:isPartOf</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:isPartOf}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:IMT</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:IMT}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:title</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:title}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:issued</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:issued}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:PhysicalResource</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:PhysicalResource}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:MethodOfInstruction</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:MethodOfInstruction}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:instructionalMethod</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:instructionalMethod}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:Period</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:Period}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:W3CDTF</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:W3CDTF}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:source</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:source}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:dcterms:abstract</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:dcterms:abstract}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:dcterms:Location</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:dcterms:Location}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>dcterms:NLM</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:dcterms:NLM}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+</mediawiki>

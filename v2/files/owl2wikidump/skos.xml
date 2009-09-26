@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Property:skos:inScheme</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:inScheme}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:broader</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:broader}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:skos:ConceptScheme</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:skos:ConceptScheme}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:topConceptOf</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:topConceptOf}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:relatedMatch</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:relatedMatch}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:narrower</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:narrower}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:notation</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:notation}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:skos:Collection</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:skos:Collection}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:historyNote</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:historyNote}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:member</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:member}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:prefLabel</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:prefLabel}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:semanticRelation</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:semanticRelation}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:altLabel</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:altLabel}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:narrowerTransitive</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:narrowerTransitive}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:mappingRelation</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:mappingRelation}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:note</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:note}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:skos:OrderedCollection</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:skos:OrderedCollection}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:narrowMatch</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:narrowMatch}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:changeNote</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:changeNote}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Category:skos:Concept</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:skos:Concept}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:exactMatch</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:exactMatch}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:example</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:example}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:hasTopConcept</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:hasTopConcept}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://www.w3.org/2004/02/skos/core</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:http://www.w3.org/2004/02/skos/core}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:broadMatch</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:broadMatch}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:editorialNote</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:editorialNote}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:hiddenLabel</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:hiddenLabel}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:related</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:related}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:memberList</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:memberList}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:scopeNote</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:scopeNote}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:closeMatch</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:closeMatch}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:definition</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:definition}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:skos:broaderTransitive</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:skos:broaderTransitive}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+</mediawiki>

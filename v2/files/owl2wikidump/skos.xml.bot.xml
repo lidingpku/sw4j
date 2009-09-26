@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>BOT:Property:skos:narrowMatch</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:narrowMatch]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:skos:broadMatch]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has narrower match]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:mappingRelation]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:narrower]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::skos:narrowMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:scopeNote</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:scopeNote]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:AnnotationProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:AnnotationProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::scope note]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:note]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::A note that helps to clarify the meaning and/or the use of a concept.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:skos:Collection</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:Collection]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:skos:ConceptScheme]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:skos:Concept]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Collection]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::A meaningful collection of concepts.]]
+* [original] [[Property:skos:scopeNote|skos:scopeNote]]: [[skos:scopeNote::Labelled collections can be used where you would like a set of concepts to be displayed under a 'node label' in the hierarchy.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:skos:Concept</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:Concept]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Concept]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::An idea or notion; a unit of thought.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:closeMatch</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:closeMatch]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:SymmetricProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:SymmetricProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has close match]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:mappingRelation]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::skos:closeMatch is used to link two concepts that are sufficiently similar that they can be used interchangeably in some information retrieval applications. In order to avoid the possibility of "compound errors" when combining mappings across more than two concept schemes, skos:closeMatch is not declared to be a transitive property.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:example</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:example]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:AnnotationProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:AnnotationProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::example]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:note]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::An example of the use of a concept.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:related</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:related]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:SymmetricProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:SymmetricProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::skos:related is disjoint with skos:broaderTransitive]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has related]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:semanticRelation]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::Relates a concept to a concept with which there is an associative semantic relationship.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:narrowerTransitive</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:narrowerTransitive]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:TransitiveProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:skos:broaderTransitive]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:TransitiveProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has narrower transitive]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:semanticRelation]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::skos:narrowerTransitive is a transitive superproperty of skos:narrower.]]
+* [original] [[Property:skos:scopeNote|skos:scopeNote]]: [[skos:scopeNote::By convention, skos:narrowerTransitive is not used to make assertions. Rather, the properties can be used to draw inferences about the transitive closure of the hierarchical relation, which is useful e.g. when implementing a simple query expansion algorithm in a search application.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:exactMatch</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:exactMatch]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:SymmetricProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:TransitiveProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:SymmetricProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:TransitiveProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::skos:exactMatch is disjoint with each of the properties skos:broadMatch and skos:relatedMatch.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has exact match]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:closeMatch]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::skos:exactMatch is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. skos:exactMatch is a transitive property, and is a sub-property of skos:closeMatch.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:memberList</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:memberList]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:FunctionalProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:FunctionalProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::For any resource, every item in the list given as the value of the       skos:memberList property is also a value of the skos:member property.]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:skos:OrderedCollection]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has member list]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:rdf:List]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::Relates an ordered collection to the RDF list containing its members.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:skos:OrderedCollection</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[:Category:skos:Collection]][[Category:skos:Collection]]
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:OrderedCollection]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Ordered Collection]]
+* [original] [[Property:rdfs:subClassOf|rdfs:subClassOf]]: [[rdfs:subClassOf::Category:skos:Collection]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::An ordered collection of concepts, where both the grouping and the ordering are meaningful.]]
+* [original] [[Property:skos:scopeNote|skos:scopeNote]]: [[skos:scopeNote::Ordered collections can be used where you would like a set of concepts to be displayed in a specific order, and optionally under a 'node label'.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:inScheme</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:inScheme]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::is in scheme]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:skos:ConceptScheme]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::Relates a resource (for example a concept) to a concept scheme in which it is included.]]
+* [original] [[Property:skos:scopeNote|skos:scopeNote]]: [[skos:scopeNote::A concept may be a member of more than one concept scheme.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Category:skos:ConceptScheme</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:ConceptScheme]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Class]]
+* [original] [[Property:owl:disjointWith|owl:disjointWith]]: [[owl:disjointWith::Category:skos:Concept]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Class]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::Concept Scheme]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::A set of concepts, optionally including statements about semantic relationships between those concepts.]]
+* [original] [[Property:skos:example|skos:example]]: [[skos:example::Thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', and other types of controlled vocabulary are all examples of concept schemes. Concept schemes are also embedded in glossaries and terminologies.]]
+* [original] [[Property:skos:scopeNote|skos:scopeNote]]: [[skos:scopeNote::A concept scheme may be defined to include concepts from different sources.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:notation</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:notation]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:DatatypeProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:DatatypeProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::notation]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::A notation, also known as classification code, is a string of characters such as "T58.5" or "303.4833" used to uniquely identify a concept within the scope of a given concept scheme.]]
+* [original] [[Property:skos:scopeNote|skos:scopeNote]]: [[skos:scopeNote::By convention, skos:notation is used with a typed literal in the object position of the triple.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:changeNote</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:changeNote]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:AnnotationProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:AnnotationProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::change note]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:note]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::A note about a modification to a concept.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:member</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:member]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:skos:Collection]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has member]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::Relates a collection to one of its members.]]
+* see also [[MediaWiki:smw_import_skos]]
+==more description==
+===43060f15:123f41c77ad:-7fc1===
+* [original] [[Property:rdf:type|rdf:type]] [[:Category:owl:Class]]
+* [original] [[Property:owl:unionOf|owl:unionOf]] [[#43060f15:123f41c77ad:-7fc0]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:definition</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:definition]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:AnnotationProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:AnnotationProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::definition]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:note]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::A statement or formal explanation of the meaning of a concept.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:semanticRelation</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:semanticRelation]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:skos:Concept]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::is in semantic relation with]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:skos:Concept]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::Links a concept to a concept related by meaning.]]
+* [original] [[Property:skos:scopeNote|skos:scopeNote]]: [[skos:scopeNote::This property should not be used directly, but as a super-property for all properties denoting a relationship of meaning between concepts.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:altLabel</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:altLabel]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:AnnotationProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:AnnotationProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The range of skos:altLabel is the class of RDF plain literals.]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::skos:prefLabel, skos:altLabel and skos:hiddenLabel are pairwise disjoint properties.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::alternative label]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:rdfs:label]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::An alternative lexical label for a resource.]]
+* [original] [[Property:skos:example|skos:example]]: [[skos:example::Acronyms, abbreviations, spelling variants, and irregular plural/singular forms may be included among the alternative labels for a concept. Mis-spelled terms are normally included as hidden labels (see skos:hiddenLabel).]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:note</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:note]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:AnnotationProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:AnnotationProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::note]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::A general note, for any purpose.]]
+* [original] [[Property:skos:scopeNote|skos:scopeNote]]: [[skos:scopeNote::This property may be used directly, or as a super-property for more specific note types.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:hasTopConcept</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:hasTopConcept]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:skos:topConceptOf]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:skos:ConceptScheme]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has top concept]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:skos:Concept]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:editorialNote</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:editorialNote]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:AnnotationProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:AnnotationProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::editorial note]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:note]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::A note for an editor, translator or maintainer of the vocabulary.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:relatedMatch</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:relatedMatch]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:SymmetricProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:SymmetricProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has related match]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:mappingRelation]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:related]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::skos:relatedMatch is used to state an associative mapping link between two conceptual resources in different concept schemes.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:broadMatch</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:broadMatch]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:skos:narrowMatch]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has broader match]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:broader]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:mappingRelation]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::skos:broadMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:broader</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:broader]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:skos:narrower]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Broader concepts are typically rendered as parents in a concept hierarchy (tree).]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has broader]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:broaderTransitive]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::Relates a concept to a concept that is more general in meaning.]]
+* [original] [[Property:skos:scopeNote|skos:scopeNote]]: [[skos:scopeNote::By convention, skos:broader is only used to assert an immediate (i.e. direct) hierarchical link between two conceptual resources.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>MediaWiki:smw_import_skos</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve">http://www.w3.org/2004/02/skos/core#|[http://www.w3.org/TR/skos-reference/skos.rdf skos]
+ inScheme|Type:Page
+ topConceptOf|Type:Page
+ ConceptScheme|Category
+ broader|Type:Page
+ relatedMatch|Type:Page
+ narrower|Type:Page
+ notation|Type:Page
+ Collection|Category
+ member|Type:Page
+ historyNote|Type:Page
+ semanticRelation|Type:Page
+ prefLabel|Type:Page
+ altLabel|Type:Page
+ narrowerTransitive|Type:Page
+ mappingRelation|Type:Page
+ note|Type:Page
+ OrderedCollection|Category
+ narrowMatch|Type:Page
+ changeNote|Type:Page
+ Concept|Category
+ exactMatch|Type:Page
+ example|Type:Page
+ hasTopConcept|Type:Page
+ core|Type:Page
+ broadMatch|Type:Page
+ editorialNote|Type:Page
+ hiddenLabel|Type:Page
+ related|Type:Page
+ closeMatch|Type:Page
+ scopeNote|Type:Page
+ memberList|Type:Page
+ definition|Type:Page
+ broaderTransitive|Type:Page</text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:broaderTransitive</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:broaderTransitive]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:TransitiveProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:skos:narrowerTransitive]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:TransitiveProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has broader transitive]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:semanticRelation]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::skos:broaderTransitive is a transitive superproperty of skos:broader.]]
+* [original] [[Property:skos:scopeNote|skos:scopeNote]]: [[skos:scopeNote::By convention, skos:broaderTransitive is not used to make assertions. Rather, the properties can be used to draw inferences about the transitive closure of the hierarchical relation, which is useful e.g. when implementing a simple query expansion algorithm in a search application.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:historyNote</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:historyNote]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:AnnotationProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:AnnotationProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::history note]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:note]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::A note about the past state/use/meaning of a concept.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:http://www.w3.org/2004/02/skos/core</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:Ontology]]
+* [original] [[Property:dcterms:contributor|dcterms:contributor]]: [[dcterms:contributor::Dave Beckett]]
+* [original] [[Property:dcterms:contributor|dcterms:contributor]]: [[dcterms:contributor::Nikki Rogers]]
+* [original] [[Property:dcterms:contributor|dcterms:contributor]]: [[dcterms:contributor::Participants in W3C's Semantic Web Deployment Working Group.]]
+* [original] [[Property:dcterms:creator|dcterms:creator]]: [[dcterms:creator::Alistair Miles]]
+* [original] [[Property:dcterms:creator|dcterms:creator]]: [[dcterms:creator::Sean Bechhofer]]
+* [original] [[Property:dcterms:description|dcterms:description]]: [[dcterms:description::An RDF vocabulary for describing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', other types of controlled vocabulary, and also concept schemes embedded in glossaries and terminologies.]]
+* [original] [[Property:dcterms:title|dcterms:title]]: [[dcterms:title::SKOS Vocabulary]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:Ontology]]
+* [original] [[Property:rdfs:seeAlso|rdfs:seeAlso]]: [[rdfs:seeAlso::http://www.w3.org/TR/skos-reference/]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:hiddenLabel</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:hiddenLabel]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:AnnotationProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:AnnotationProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The range of skos:hiddenLabel is the class of RDF plain literals.]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::skos:prefLabel, skos:altLabel and skos:hiddenLabel are pairwise disjoint properties.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::hidden label]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:rdfs:label]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::A lexical label for a resource that should be hidden when generating visual displays of the resource, but should still be accessible to free text search operations.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:topConceptOf</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:topConceptOf]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:skos:hasTopConcept]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:domain|rdfs:domain]]: [[rdfs:domain::Category:skos:Concept]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::is top concept in scheme]]
+* [original] [[Property:rdfs:range|rdfs:range]]: [[rdfs:range::Category:skos:ConceptScheme]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:inScheme]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::Relates a concept to the concept scheme that it is a top level concept of.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:mappingRelation</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:mappingRelation]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::These concept mapping relations mirror semantic relations, and the data model defined below is similar (with the exception of skos:exactMatch) to the data model defined for semantic relations. A distinct vocabulary is provided for concept mapping relations, to provide a convenient way to differentiate links within a concept scheme from links between concept schemes. However, this pattern of usage is not a formal requirement of the SKOS data model, and relies on informal definitions of best practice.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::is in mapping relation with]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:semanticRelation]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::Relates two concepts coming, by convention, from different schemes, and that have comparable meanings]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:prefLabel</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:prefLabel]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:AnnotationProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:AnnotationProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::A resource has no more than one value of skos:prefLabel per language tag.]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::The range of skos:prefLabel is the class of RDF plain literals.]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::skos:prefLabel, skos:altLabel and skos:hiddenLabel are pairwise       disjoint properties.]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::preferred label]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:rdfs:label]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::The preferred lexical label for a resource, in a given language.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+ <page>
+     <title>BOT:Property:skos:narrower</title>
+     <revision>
+       <timestamp>2009-09-26T02:09:57Z</timestamp>
+       <text xml:space="preserve"><includeonly>{| style="border: 5px solid #DDD;background:#EEE;width:100%"
+| style="text-align:center;background:#AAA" | AUTO-TRANSLATED FROM THE ORIGINAL ONTOLOGY. PLEASE DO NOT MODIFY
+|-
+|
+==direct description==
+* [<font color='red'>inferred</font>] [[Property:imported from|imported from]]: [[imported from::skos:narrower]]
+* [<font color='red'>inferred</font>] [[Property:member of|member of]]: [[member of::http://www.w3.org/TR/skos-reference/skos.rdf]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:owl:ObjectProperty]]
+* [<font color='red'>inferred</font>] [[Property:tag|tag]]: [[tag::Category:rdf:Property]]
+* [original] [[Property:owl:inverseOf|owl:inverseOf]]: [[owl:inverseOf::Property:skos:broader]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:owl:ObjectProperty]]
+* [original] [[Property:rdf:type|rdf:type]]: [[rdf:type::Category:rdf:Property]]
+* [original] [[Property:rdfs:comment|rdfs:comment]]: [[rdfs:comment::Narrower concepts are typically rendered as children in a concept hierarchy (tree).]]
+* [original] [[Property:rdfs:isDefinedBy|rdfs:isDefinedBy]]: [[rdfs:isDefinedBy::http://www.w3.org/2004/02/skos/core]]
+* [original] [[Property:rdfs:label|rdfs:label]]: [[rdfs:label::has narrower]]
+* [original] [[Property:rdfs:subPropertyOf|rdfs:subPropertyOf]]: [[rdfs:subPropertyOf::Property:skos:narrowerTransitive]]
+* [original] [[Property:skos:definition|skos:definition]]: [[skos:definition::Relates a concept to a concept that is more specific in meaning.]]
+* [original] [[Property:skos:scopeNote|skos:scopeNote]]: [[skos:scopeNote::By convention, skos:broader is only used to assert an immediate (i.e. direct) hierarchical link between two conceptual resources.]]
+* see also [[MediaWiki:smw_import_skos]]
+|}</includeonly></text>
+     </revision>
+ </page>
+</mediawiki>

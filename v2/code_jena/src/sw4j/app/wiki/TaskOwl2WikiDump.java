@@ -15,18 +15,18 @@ public class TaskOwl2WikiDump {
 	public static void main(String[] args) {
 
 		String [][] aryInputOutput = new String [][]{
-				{DC.getURI(), DC.class.getSimpleName().toLowerCase(),"files/owl2wikidump/"+DC.class.getSimpleName().toLowerCase()+".xml"},
-				{OWL.getURI(), OWL.class.getSimpleName().toLowerCase(), "files/owl2wikidump/"+OWL.class.getSimpleName().toLowerCase()+".xml"},
-				{RDF.getURI(), RDF.class.getSimpleName().toLowerCase(), "files/owl2wikidump/"+RDF.class.getSimpleName().toLowerCase()+".xml"},
-				{RDFS.getURI(), RDFS.class.getSimpleName().toLowerCase(),"files/owl2wikidump/"+RDFS.class.getSimpleName().toLowerCase()+".xml"},
-				{DCTerms.getURI(), DCTerms.class.getSimpleName().toLowerCase(),"files/owl2wikidump/"+DCTerms.class.getSimpleName().toLowerCase()+".xml"},
-				{FOAF.getURI(), FOAF.class.getSimpleName().toLowerCase(),"files/owl2wikidump/"+FOAF.class.getSimpleName().toLowerCase()+".xml"},
-				{"http://rdfs.org/sioc/ns#", "sioc",  "files/owl2wikidump/sioc.xml"},
-				{"http://www.w3.org/2003/01/geo/wgs84_pos#", "geo","files/owl2wikidump/"+"geo"+".xml"},
-				{"http://inference-web.org/2.0/ds.owl#", "ds", "files/owl2wikidump/ds.xml"},
-				{"http://inference-web.org/2.0/pml-provenance.owl#", "pmlp","files/owl2wikidump/pmlp.xml"},
-				{"http://inference-web.org/2.0/pml-justification.owl#", "pmlj","files/owl2wikidump/pmlj.xml"},
-				{"http://inference-web.org/2.0/pml-relation.owl#", "pmlr","files/owl2wikidump/pmlr.xml"},
+				{DC.getURI(), DC.class.getSimpleName().toLowerCase(),"output/owl2wikidump/"+DC.class.getSimpleName().toLowerCase()+".xml"},
+				{OWL.getURI(), OWL.class.getSimpleName().toLowerCase(), "output/owl2wikidump/"+OWL.class.getSimpleName().toLowerCase()+".xml"},
+				{RDF.getURI(), RDF.class.getSimpleName().toLowerCase(), "output/owl2wikidump/"+RDF.class.getSimpleName().toLowerCase()+".xml"},
+				{RDFS.getURI(), RDFS.class.getSimpleName().toLowerCase(),"output/owl2wikidump/"+RDFS.class.getSimpleName().toLowerCase()+".xml"},
+				{DCTerms.getURI(), DCTerms.class.getSimpleName().toLowerCase(),"output/owl2wikidump/"+DCTerms.class.getSimpleName().toLowerCase()+".xml"},
+				{FOAF.getURI(), FOAF.class.getSimpleName().toLowerCase(),"output/owl2wikidump/"+FOAF.class.getSimpleName().toLowerCase()+".xml"},
+				{"http://rdfs.org/sioc/ns#", "sioc",  "output/owl2wikidump/sioc.xml"},
+				{"http://www.w3.org/2003/01/geo/wgs84_pos#", "geo","output/owl2wikidump/"+"geo"+".xml"},
+				{"http://inference-web.org/2.0/ds.owl#", "ds", "output/owl2wikidump/ds.xml"},
+				{"http://inference-web.org/2.0/pml-provenance.owl#", "pmlp","output/owl2wikidump/pmlp.xml"},
+				{"http://inference-web.org/2.0/pml-justification.owl#", "pmlj","output/owl2wikidump/pmlj.xml"},
+				{"http://inference-web.org/2.0/pml-relation.owl#", "pmlr","output/owl2wikidump/pmlr.xml"},
 		};
 		for (int i=0; i<aryInputOutput.length; i++){
 
@@ -36,7 +36,7 @@ public class TaskOwl2WikiDump {
 			ToolOwl2SemanticMediaWiki.dump_ontology(szOntologyNamespace, szPrefix, szFilename);
 		}
 		aryInputOutput = new String [][]{
-				{"http://www.w3.org/2004/02/skos/core#", "skos", "files/owl2wikidump/skos.xml","http://www.w3.org/TR/skos-reference/skos.rdf"},
+				{"http://www.w3.org/2004/02/skos/core#", "skos", "output/owl2wikidump/skos.xml","http://www.w3.org/TR/skos-reference/skos.rdf"},
 		};
 		for (int i=0; i<aryInputOutput.length; i++){
 

@@ -266,7 +266,7 @@ public class ToolURITest {
 		System.out.println("++++++++++ Testing testUrl2ipString ++++++++++++");
 		{
 			String [][] aryURIURI = new String[][]{
-					{"http://mit.edu/", "18.7.22.69"},
+					{"http://mit.edu/", "18.9.22.69"},
 					{"mailto:joe@foo.com", "127.0.0.1"},
 			};
 			for (int i=0; i<aryURIURI.length; i++){

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki>
+ <page>
+     <title>Category:ds:List</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Category:ds:List}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>http://inference-web.org/2.0/ds.owl</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:http://inference-web.org/2.0/ds.owl}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:ds:rest</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:ds:rest}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>ds:nil</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:ds:nil}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+ <page>
+     <title>Property:ds:first</title>
+     <revision>
+       <text xml:space="preserve">{{:BOT:Property:ds:first}}
+<!-- Please do not edit the template inclusion.-->
+</text>
+     </revision>
+ </page>
+</mediawiki>

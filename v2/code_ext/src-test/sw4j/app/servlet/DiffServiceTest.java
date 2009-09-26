@@ -28,7 +28,8 @@ public class DiffServiceTest {
 		//ret.output(new PrintWriter(System.out));
 	
 		try {
-			File f= new File("temp/diff-data.rdf");
+			File f= new File("output/diff/diff-data.rdf");
+			f.mkdirs();
 			System.out.println(f.canWrite());
 			PrintWriter writer = new PrintWriter(new FileOutputStream(f));
 			ret.output(writer);
@@ -41,20 +42,7 @@ public class DiffServiceTest {
 			fail("URL should be succeed");		
 	}	
 	
-	@Test
-	public void test_13() throws IOException{
-		DiffService svc = new DiffService();
-		svc.params.put(DiffService.PARAM_CUR, "http://www.rpi.edu/~huangr3/sw4j/EP---1.0/combined.rdf");
-		svc.params.put(DiffService.PARAM_PREV, "http://www.rpi.edu/~huangr3/sw4j/EP---1.0/answer.rdf");
-		svc.params.put(DiffService.PARAM_OUTPUT, TaskDiff.DIFF_RDF);
 
-		DataServletResponse ret = svc.run();
-		
-		System.out.println(ret.getMimeType());
-		ret.output(new PrintWriter(System.out));
-		if (ret.m_model_content==null)
-			fail("URL should be succeed");		
-	}
 	
 	@Test
 	public void test_12() throws IOException{
