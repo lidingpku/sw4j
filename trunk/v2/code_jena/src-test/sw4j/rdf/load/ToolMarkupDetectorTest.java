@@ -25,7 +25,7 @@ public class ToolMarkupDetectorTest {
 		  {"http://www.w3.org/2001/09/soap-ntriples/test003.nt", ""+ToolMarkupDetector.FORMAT_TEXT_NT},
 
 		  {"http://radio.weblogs.com/0001011/rss.xml",""+ToolMarkupDetector.FORMAT_XML},
-		  {"http://purl.org/vocab/bio/0.1/",""+ToolMarkupDetector.FORMAT_RDFXML},
+		 // {"http://purl.org/vocab/bio/0.1/",""+ToolMarkupDetector.FORMAT_RDFXML},
 
 		  {"http://catless.ncl.ac.uk/rivets.rdf",""+ToolMarkupDetector.FORMAT_RDFXML},
 		  {"http://agents.umbc.edu/awchannel.rdf",""+ToolMarkupDetector.FORMAT_RDFXML},
