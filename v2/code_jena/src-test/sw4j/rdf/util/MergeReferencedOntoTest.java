@@ -46,7 +46,7 @@ public class MergeReferencedOntoTest {
 			Map<String, Model> data =  AgentModelManager.get().loadModelRecursive(szURL, true, true);
 			Model model_data_all =  ModelFactory.createDefaultModel();
 			ToolJena.model_merge(model_data_all, data.values());
-			ToolJena.printModelToFile(model_data_all, addresses[i][1], "RDF/XML", false);			
+			ToolJena.printModelToFile(model_data_all, addresses[i][1]);			
 
 		}
 	}

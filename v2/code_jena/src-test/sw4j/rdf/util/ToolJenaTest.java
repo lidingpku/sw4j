@@ -28,10 +28,13 @@ package sw4j.rdf.util;
 
 import static org.junit.Assert.fail;
 
+import java.io.File;
+
 
 import org.junit.Test;
 
 import sw4j.rdf.load.AgentModelLoader;
+import sw4j.rdf.load.RDFSYNTAX;
 import sw4j.rdf.util.ToolJena;
 import sw4j.util.Sw4jException;
 import sw4j.util.ToolIO;
@@ -48,7 +51,35 @@ import com.hp.hpl.jena.vocabulary.RDFS;
 */
 
 public class ToolJenaTest {
+	@Test
+	public void test_write_relative_url() {
+		String szURL;
+		szURL = "files/jena_test/list1.rdf";
+		Model m = ModelFactory.createDefaultModel() ;
+		try {
+			String sz_xmlbase =  "http://foo.com/rdf";
+			m.read(ToolIO.prepareFileInputStream(szURL),sz_xmlbase);
+			System.out.println(m.size());
+			
+			System.out.println("original");
+			String sz_temp2= ToolJena.printModelToString(m, RDFSYNTAX.RDFXML,"");
+			System.out.println(sz_temp2);
+			if (sz_temp2.indexOf(sz_xmlbase)<=0)
+				fail("expect absolute data");
+			
+			System.out.println("relative");
+			String sz_temp1=ToolJena.printModelToString(m, RDFSYNTAX.RDFXML,sz_xmlbase+"#");
+			System.out.println(sz_temp1);
+			if (sz_temp1.indexOf(sz_xmlbase)>0)
+				fail("expect relative data");
 
+			
+		} catch (Sw4jException e) {
+			e.printStackTrace();
+		}
+	}
+
+	
 	@Test 
 	public void testSignBlanknode(){
 		String [] urls = new String []{
@@ -184,7 +215,7 @@ public class ToolJenaTest {
 		m.read(szURI);
 		ToolJena.printModel(m);
 		if (null!= m)
-			ToolJena.printModelToFile(m, "test-pml-writer.rdf", null,false);
+			ToolJena.printModelToFile(m, new File("output/test-pml-writer.rdf"));
 		
 	}
 

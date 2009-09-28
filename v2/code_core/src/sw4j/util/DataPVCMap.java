@@ -137,6 +137,8 @@ public class DataPVCMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 		}
 
 		public int compareTo(Object o) {
+			if (null==o)
+				return -1;
 			return this.toString().compareTo(o.toString());
 		}
 

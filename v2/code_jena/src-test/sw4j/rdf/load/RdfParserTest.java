@@ -329,7 +329,7 @@ public class RdfParserTest {
 					}
 
 					//					data_rdfparse.getModel().write(new FileWriter("test1.rdf"));
-					if (!ToolJena.printModelToFile(data_rdfparse.getModel(), new File("output/rdfparse/test.rdf"),null, false))
+					if (!ToolJena.printModelToFile(data_rdfparse.getModel(), new File("output/rdfparse/test.rdf")))
 						fail();
 					
 					if (!aryURL[i][1].equals(""+data_rdfparse.getModel().size())){

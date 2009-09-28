@@ -30,7 +30,9 @@ package sw4j.rdf.util;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -326,7 +328,37 @@ public class ToolJena {
 	////////////////////////////////////////////////
 	// model print
 	////////////////////////////////////////////////
-	
+	public static boolean printModelToWriter(Model m, String sz_rdfsyntax, String sz_namespace, Writer out) throws IOException {
+		if (null==m || null==out)
+			return false;
+		
+		if (ToolSafe.isEmpty(sz_rdfsyntax))
+			sz_rdfsyntax = RDFSYNTAX.RDFXML;
+
+		if (ToolSafe.isEmpty(sz_namespace))
+			sz_namespace = "";
+
+		RDFWriter writer = m.getWriter(sz_rdfsyntax);
+		if (RDFSYNTAX.RDFXML.equals(sz_rdfsyntax)||RDFSYNTAX.RDFXML_ABBREV.equals(sz_rdfsyntax)){
+			writer.setProperty("showXmlDeclaration", "true");
+			writer.setProperty("allowBadURIs", "true");
+			writer.setProperty("relativeURIs","same-document");
+		}
+		writer.write(m, out, sz_namespace);
+		out.flush();
+		return true;
+	}
+
+	/**
+	 * print model to an RDF/XML string
+	 * 
+	 * @param m
+	 * @return
+	 */
+	public static String printModelToString(Model m) {
+		return  printModelToString(m, null);
+	}
+
 	/**
 	 * print model to a string
 	 * 
@@ -334,29 +366,21 @@ public class ToolJena {
 	 * @param rdfsyntax
 	 * @return
 	 */
-	public static String printModelToString(Model m, String rdfsyntax) {
-		if (null==m)
+	public static String printModelToString(Model m, String sz_rdfsyntax){
+		return printModelToString(m, sz_rdfsyntax, null);
+	}
+	
+	public static String printModelToString(Model m, String sz_rdfsyntax, String sz_namespace) {
+		try {
+			StringWriter sw = new StringWriter();
+			printModelToWriter(m, sz_rdfsyntax, sz_namespace, sw);
+			return sw.toString();
+		} catch (IOException e) {
+			e.printStackTrace();
 			return "";
-		StringWriter sw = new StringWriter();
-		RDFWriter writer = m.getWriter(rdfsyntax);
-		if (RDFSYNTAX.RDFXML.equals(rdfsyntax)||RDFSYNTAX.RDFXML_ABBREV.equals(rdfsyntax)){
-			writer.setProperty("showXmlDeclaration", "true");
-			writer.setProperty("allowBadURIs", "true");
 		}
-		writer.write(m, sw, null);
-		return sw.toString();
 	}
 
-	/**
-	 * print model to an RDF/XML string
-	 * 
-	 * @param m
-	 * @param rdfsyntax
-	 * @return
-	 */
-	public static String printModelToString(Model m) {
-		return  printModelToString(m,  "RDF/XML-ABBREV");
-	}
 
 	/**
 	 * print model to file
@@ -365,62 +389,61 @@ public class ToolJena {
 	 * @param szFilename
 	 * @return
 	 */
-	public static boolean printModelToFile(Model model, String szFilename) {
-		return printModelToFile(model, new File(szFilename),"RDF/XML-ABBREV" , false);
+	public static boolean printModelToFile(Model m, String szFilename) {
+		return printModelToFile(m, new File(szFilename));
 	}
 
-	public static boolean printModelToFile(Model model, String szFilename, String szRdfSyntax, boolean bGzip) {
-		return printModelToFile(model, new File(szFilename), szRdfSyntax,bGzip);
+	public static boolean printModelToFile(Model m, File f) {
+		return printModelToFile(m, RDFSYNTAX.RDFXML ,f,  false);
 	}
-	
 
-	public static boolean printModelToFile(Model model, File f, String szRdfSyntax, boolean bGzip) {
-		
+
+	public static boolean printModelToFile(Model model,String szRdfSyntax, File f, boolean bGzip) {
+		return printModelToFile(model,szRdfSyntax,null, f, bGzip);
+	}
+
+	public static boolean printModelToFile(Model model, String sz_rdfsyntax, String sz_namespace, File f, boolean bGzip) {
+		boolean bRet =true;
+		OutputStream _fos =null;
 		try {
-			if (null==model)
-				return false;
-			
-			if (ToolSafe.isEmpty(szRdfSyntax))
-				szRdfSyntax = "RDF/XML";
-			// cannote use RDF/XML-ABBREV, has some sirious problem in write results
-			// negative example: http://inference-web.org/proofs/tptp/Solutions/LAT/LAT195-1/Vampire---9.0/answer.owl
-			
-			//getLogger().info(	"writing RDF data to file: " + f.getAbsolutePath());
-
-			OutputStream _fos = ToolIO.prepareFileOutputStream(f,false, bGzip);
-			RDFWriter writer = model.getWriter(szRdfSyntax);
-			if (szRdfSyntax.startsWith("RDF/XML")){
-				writer.setProperty("allowBadURIs", true);
-				writer.setProperty("showXmlDeclaration", true);
-				writer.setProperty("relativeURIs","same-document");
+			 _fos = ToolIO.prepareFileOutputStream(f,false, bGzip);
+			PrintWriter out = new PrintWriter(_fos);
+			try {
+				
+				bRet = printModelToWriter(model, sz_rdfsyntax, sz_namespace, out);
+			} catch (IOException e) {
+				e.printStackTrace();
+				bRet =false;
 			}
-			
-			getLogger().info("write to file "+ f.getAbsolutePath());
-			writer.write(model, _fos, "");
-			_fos.close();
-			return true;
-		} catch (IOException e) {
-			getLogger().info(e.getMessage());
-			return false;	
-			//throw new RuntimeException(ioxc.toString());
+			out.close();
 		} catch (Sw4jException e) {
-			getLogger().info(e.getMessage());
-			return false;	
+			e.printStackTrace();
 		}
-
+		if (null!=_fos)
+			try {
+				_fos.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}		
+		return bRet;
 	}	
 	
+	public static void printModel(Model m, String sz_rdfsyntax, String sz_namespace) {
+		try {
+			PrintWriter out = new PrintWriter(System.out);
+			printModelToWriter(m, sz_rdfsyntax,sz_namespace, out);
+		} catch (IOException e) {
+			//e.printStackTrace();
+		}
+	}
+
 	/**
 	 * just print the triples line by line
 	 * 
 	 * @param m
 	 */
 	public static void printModel(Model m) {
-		StmtIterator iter = m.listStatements();
-		while (iter.hasNext()) {
-			Statement stmt = iter.nextStatement();
-			System.out.println(stmt);
-		}
+		printModel(m, RDFSYNTAX.NT,"");
 	}
 
 	
@@ -791,8 +814,8 @@ public class ToolJena {
 			while (iter.hasNext()){
 				Statement stmt = iter.next();
 				
-				if (stmt.getObject().isAnon())
-					continue;
+			//	if (stmt.getObject().isAnon())
+			//		continue;
 				
 				Resource subject = stmt.getSubject();
 				Integer nid_subject = map_resource_id.get(subject);
@@ -982,7 +1005,11 @@ public class ToolJena {
 	 * @return
 	 */
 	public static Model model_unsignBlankNode(Model m, String type){
-		Iterator<Resource> iter = m.listSubjectsWithProperty(RDF.type, m.createResource(type));
+		return model_unsignBlankNode(m, m.createResource(type));
+	}
+	
+	public static Model model_unsignBlankNode(Model m, Resource type){
+		Iterator<Resource> iter = m.listSubjectsWithProperty(RDF.type, type );
 		HashMap<RDFNode,Resource> map_res_bnode = new HashMap<RDFNode,Resource>();
 		while (iter.hasNext()){
 			Resource subject = iter.next();
@@ -992,10 +1019,14 @@ public class ToolJena {
 		return model_replace_uri(m, map_res_bnode); 
 	}
 	
-	public static Model model_signBlankNode(Model m, String namespace) {
-		if (ToolSafe.isEmpty(namespace)){
-			namespace="http://inference-web.org/vocab/";
-			m.setNsPrefix("iwv",namespace);
+	private static Resource resource_sign_bnode(Model m, Resource node, String sz_namespace){
+		return m.createResource(sz_namespace+"_"+node.getId().getLabelString());
+	}
+	
+	public static Model model_signBlankNode(Model m, String sz_namespace) {
+		if (ToolSafe.isEmpty(sz_namespace)){
+			sz_namespace="http://inference-web.org/vocab/";
+			m.setNsPrefix("iwv",sz_namespace);
 		}
 
 		HashMap<RDFNode, Resource> map_bnode_res = new HashMap<RDFNode, Resource>();
@@ -1004,11 +1035,11 @@ public class ToolJena {
 			Statement stmt = iter.next();
 			Resource node = stmt.getSubject();
 			if (node.isAnon()){
-				map_bnode_res.put(node, m.createResource(namespace+"_"+node));
+				map_bnode_res.put(node, resource_sign_bnode(m,node, sz_namespace));
 			}
 			if (stmt.getObject().isAnon()){
 				node =(Resource) stmt.getObject();
-				map_bnode_res.put(node, m.createResource(namespace+"_"+node));
+				map_bnode_res.put(node, resource_sign_bnode(m,node, sz_namespace));
 			}
 				
 		}
@@ -1364,7 +1395,7 @@ public class ToolJena {
 		 NodeIterator iter_node = m.listObjectsOfProperty(s,p);
 		 if (iter_node.hasNext()){
 			 RDFNode node= iter_node.nextNode();
-			 if (node.isURIResource())
+//			 if (node.isURIResource())
 				 return (Resource)node;
 		 }
 		 return default_value;

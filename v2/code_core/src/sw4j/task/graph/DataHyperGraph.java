@@ -211,12 +211,12 @@ public class DataHyperGraph {
 			
 			Iterator<String> iter_context= entry.getValue().iterator();
 			while (iter_context.hasNext()){
-				String szContext = iter_context.next();
+				String context = iter_context.next();
 				
-				DataHyperGraph g = ret.get(szContext);
+				DataHyperGraph g = ret.get(context);
 				if (null==g){
 					g = new DataHyperGraph();
-					ret.put(szContext,g);
+					ret.put(context,g);
 				}
 				
 				g.add(entry.getKey());
