@@ -85,7 +85,7 @@ public class AgentSparql {
 	
 	protected Model get_new_model(Model m) throws Sw4jException{
 		if (inf_option== INF_RDFS){
-			return ToolJena.model_createDeductiveClosure(m);
+			return ToolJena.create_deduction(m);
 		}else{
 			return m;
 		}

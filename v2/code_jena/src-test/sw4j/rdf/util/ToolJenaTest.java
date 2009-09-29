@@ -92,7 +92,7 @@ public class ToolJenaTest {
 				Model m = ModelFactory.createDefaultModel();
 				m.read(szURL);
 
-				Model ret = ToolJena.model_signBlankNode(m,"http://tw.rpi.edu/test#");
+				Model ret = ToolJena.create_signBlankNode(m,"http://tw.rpi.edu/test#");
 				System.out.println(ToolJena.printModelToString(ret));
 			}
 	}
@@ -110,8 +110,8 @@ public class ToolJenaTest {
 			System.out.println(m.size());
 			ToolJena.printModel(m);
 			
-			Model m1 = 	ToolJena.model_clone(m);
-			ToolJena.model_update_List2Map(m1, PMLDS_first, PMLDS_rest, null, false);
+			Model m1 = 	ToolJena.create_copy(m);
+			ToolJena.update_decoupleList(m1, PMLDS_first, PMLDS_rest, null, false);
 			System.out.println("added");
 			System.out.println(m1.size());
 			ToolJena.printModel(m1);
@@ -120,8 +120,8 @@ public class ToolJenaTest {
 				fail();
 			}
 			
-			Model m2 = 	ToolJena.model_clone(m);
-			ToolJena.model_update_List2Map(m2, PMLDS_first, PMLDS_rest,null, true);
+			Model m2 = 	ToolJena.create_copy(m);
+			ToolJena.update_decoupleList(m2, PMLDS_first, PMLDS_rest,null, true);
 			System.out.println("added and remove");
 			System.out.println(m2.size());
 			ToolJena.printModel(m2);
@@ -153,7 +153,7 @@ public class ToolJenaTest {
 			Model m = loader.getModelData();
 			int size_old = m.listStatements(null,RDFS.subClassOf,(String)null).toSet().size();
 			System.out.println(ToolString.printCollectionToString(m.listStatements(null,RDFS.subClassOf,(String)null).toSet()));
-			ToolJena.model_add_transtive(m, RDFS.subClassOf);
+			ToolJena.updateModelTranstive(m, RDFS.subClassOf);
 			int size_new = m.listStatements(null,RDFS.subClassOf,(String)null).toSet().size();
 			System.out.println(size_new-size_old);
 			System.out.println(ToolString.printCollectionToString(m.listStatements(null,RDFS.subClassOf,(String)null).toSet()));

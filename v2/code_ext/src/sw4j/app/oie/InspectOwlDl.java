@@ -92,11 +92,11 @@ public class InspectOwlDl extends AbstractTaskDesc{
 
 		// step 3: check owl consistency when merging the data with all consistent referenced ontologies  
 		// if referenced ontologies does not exist, or cannot be load,is not asked to load;  we will just focus on the instance data itself
-		ToolJena.model_merge(m_ontmodel_all, model_data);
+		ToolJena.update_copy(m_ontmodel_all, model_data);
 		
 		
 		if (null!=model_onto && !model_onto.isEmpty())
-			ToolJena.model_merge(this.m_ontmodel_all, model_onto);
+			ToolJena.update_copy(this.m_ontmodel_all, model_onto);
 		
 		try {
 			

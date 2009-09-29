@@ -252,7 +252,7 @@ public class AgentModelStat {
 						getLogger().error("object should not be literal. see "+stmt);
 					
 					if (object.isResource()){
-						List<RDFNode> nodes = ToolJena.getListMembers(m, (Resource)object);
+						List<RDFNode> nodes = ToolJena.listListMembers(m, (Resource)object);
 						Iterator<RDFNode> iter_node = nodes.iterator();
 						while (iter_node.hasNext()){
 							do_count_meta_usage(META_USAGE_REF_C, iter_node.next());

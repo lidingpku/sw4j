@@ -81,31 +81,31 @@ public class NormService extends AbstractService{
 
         //sign or unsign
         if (options.contains(PARAM_VALUE_OPTION_SIGN)){
-			model = ToolJena.model_signBlankNode(model, DataQname.extractNamespaceUrl(szUrl)+"#");
+			model = ToolJena.create_signBlankNode(model, DataQname.extractNamespaceUrl(szUrl)+"#");
         }else if (options.contains(PARAM_VALUE_OPTION_SIGN_HASH)){
-			model = ToolJena.model_signBlankNode_hash(model, DataQname.extractNamespaceUrl(szUrl)+"#");        	
+			model = ToolJena.create_signBlankNode_hash(model, DataQname.extractNamespaceUrl(szUrl)+"#");        	
         }else if (options.contains(PARAM_VALUE_OPTION_UNSIGN)){
         	Iterator<String> iter = ToolString.explode(",",type_uri).iterator();
             while (iter.hasNext()){
             	String a_type_uri = iter.next();
-            	model = ToolJena.model_unsignBlankNode(model, a_type_uri);
+            	model = ToolJena.create_unsignBlankNode(model, a_type_uri);
             }
         }
         
         //decouple recursive lists use pmlr:hasPart
         if (options.contains(PARAM_VALUE_OPTION_DLIST)){
-        	ToolJena.model_update_List2Map(model, RDF.first, RDF.rest, PMLR.hasMember, false);
-        	ToolJena.model_update_List2Map(model, PMLDS.first, PMLDS.rest, PMLR.hasMember, false);
+        	ToolJena.update_decoupleList(model, RDF.first, RDF.rest, PMLR.hasMember, false);
+        	ToolJena.update_decoupleList(model, PMLDS.first, PMLDS.rest, PMLR.hasMember, false);
         	model.setNsPrefix(PMLR.class.getSimpleName().toLowerCase(), PMLR.getURI());
         }
         
 		String tp_uri =this.getUriParam(PARAM_TP_URI);
         if (options.contains(PARAM_VALUE_OPTION_TP) && !ToolSafe.isEmpty(tp_uri)){
-        	ToolJena.model_add_transtive(model, model.createProperty(tp_uri));
+        	ToolJena.updateModelTranstive(model, model.createProperty(tp_uri));
         }
 
         if (options.contains(PARAM_VALUE_OPTION_DEDUCT_RDFS)){
-			model =ToolJena.model_createDeductiveClosure(model);
+			model =ToolJena.create_deduction(model);
         }else if (options.contains(PARAM_VALUE_OPTION_DEDUCT_OWL)){
         	try {
 				model =ToolPellet.model_createDeductiveClosure(model);

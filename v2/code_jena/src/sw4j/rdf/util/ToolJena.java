@@ -33,7 +33,6 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -47,6 +46,7 @@ import org.apache.log4j.Logger;
 
 import sw4j.rdf.load.RDFSYNTAX;
 import sw4j.task.graph.DataDigraph;
+import sw4j.util.DataObjectGroupMap;
 import sw4j.util.DataPVCMap;
 import sw4j.util.DataPVHMap;
 import sw4j.util.DataQname;
@@ -95,8 +95,8 @@ public class ToolJena {
 	 * @param root
 	 * @return
 	 */
-	public static List<RDFNode> getListMembers(Model m, Resource root) {
-		return getListMembers(m, root, RDF.first, RDF.rest);
+	public static List<RDFNode> listListMembers(Model m, Resource root) {
+		return listListMembers(m, root, RDF.first, RDF.rest);
 	}
 
 	/**
@@ -106,7 +106,10 @@ public class ToolJena {
 	 * @param root
 	 * @return
 	 */
-	public static List<RDFNode> getListMembers(Model m, Resource root, Property first, Property rest) {
+	public static List<RDFNode> listListMembers(Model m, Resource root, Property first, Property rest) {
+		Model model_list = create_copyList(m,root,first, rest);
+		return model_list.listObjectsOfProperty(first).toList();
+		/*
 		ArrayList<RDFNode> data = new ArrayList<RDFNode>();
 		Resource node = root;
 		while (null != node) {
@@ -123,8 +126,24 @@ public class ToolJena {
 			}
 		}
 		return data;
+		*/
 	}	
 
+	public static Model create_copyList(Model m, Resource root, Property first, Property rest) {
+		Model ret = ModelFactory.createDefaultModel();
+		Resource node = root;
+		while (null != node) {
+			ret.add(m.listStatements(node,null,(String)null));
+
+			NodeIterator iter_obj = m.listObjectsOfProperty(node, rest);
+			if (iter_obj.hasNext()) {
+				node=(Resource) iter_obj.next();
+			} else {
+				node = null;
+			}
+		}
+		return ret;
+	}	
 	////////////////////////////////////////////////
 	// generate a model from the current model
 	////////////////////////////////////////////////
@@ -139,7 +158,7 @@ public class ToolJena {
 	 * @param bRemoveListTriple
 	 * @return
 	 */
-	public static void model_update_List2Map(Model m, Property first, Property rest, Property part, boolean bRemoveListTriple) {
+	public static void update_decoupleList(Model m, Property first, Property rest, Property part, boolean bRemoveListTriple) {
 		if (null==part)
 			part=RDFS.member;
 		
@@ -162,7 +181,7 @@ public class ToolJena {
 			Resource root = iter_sub.next();
 
 			
-			List<RDFNode> members = ToolJena.getListMembers(m, root, first, rest);
+			List<RDFNode> members = ToolJena.listListMembers(m, root, first, rest);
 			Iterator<RDFNode> iter_member = members.iterator();
 			
 			while (iter_member.hasNext()){
@@ -234,7 +253,7 @@ public class ToolJena {
 	 * 
 	 * Limitation: we only collect triples having the resource as the subject by
 	 * assuming all resources in m are not anonymous. future work may consider
-	 * better huristics.
+	 * better heuristics.
 	 * 
 	 * 
 	 * @param m
@@ -245,7 +264,7 @@ public class ToolJena {
 	 *            recursively get the entire graph rooted from res 
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
+/*	@SuppressWarnings("unchecked")
 	public static Model getModel_byDescription(Model m, Resource res, boolean bRecursive) {
 		Model m_desc = ModelFactory.createDefaultModel();
 		m_desc.add(m.listStatements(res, null, (RDFNode) null));
@@ -293,7 +312,7 @@ public class ToolJena {
 		// TODO maybe we want provide CBD support
 		return m_desc;
 	}
-
+*/
 	////////////////////////////////////////////////
 	// namespace
 	////////////////////////////////////////////////
@@ -306,13 +325,13 @@ public class ToolJena {
 	 * @param m
 	 * @return
 	 */
-	public static TreeSet<String> namespace_listByJena(Model m){
+	public static TreeSet<String> listNamespaceByJena(Model m){
 		TreeSet<String> ret = new TreeSet<String>();
 		ret.addAll(m.listNameSpaces().toSet());
 		return ret;
 	}
 	
-	public static Set<String> namespace_listByParse(Set<Resource> set_res){
+	public static Set<String> listNamespaceByParse(Set<Resource> set_res){
 		Set<String> namespaces = new HashSet<String>();
 		Iterator<Resource> iter = set_res.iterator();
 		while (iter.hasNext()){
@@ -803,7 +822,7 @@ public class ToolJena {
 		}
 	}
 	*/
-	public static void model_add_transtive(Model m, Property p){
+	public static void updateModelTranstive(Model m, Property p){
 		HashMap<Integer, Resource> map_id_resource = new  HashMap<Integer, Resource>();
 		HashMap<Resource, Integer> map_resource_id = new  HashMap<Resource,Integer>();
 		
@@ -860,11 +879,11 @@ public class ToolJena {
 		getLogger().info(message);
 	}
 	
-	public static Model model_createDeductiveClosure(Model m){
+	public static Model create_deduction(Model m){
 		Model deduction = ModelFactory.createDefaultModel();
 		deduction.add(m);
-		ToolJena.model_add_transtive(deduction, RDFS.subClassOf);
-		ToolJena.model_add_transtive(deduction, RDFS.subPropertyOf);
+		ToolJena.updateModelTranstive(deduction, RDFS.subClassOf);
+		ToolJena.updateModelTranstive(deduction, RDFS.subPropertyOf);
 		return deduction;
 	}
 
@@ -895,7 +914,7 @@ public class ToolJena {
 	 * @param m
 	 * @param ref
 	 */
-	public static Model model_diff(Model m_a, Model m_b){
+	public static Model create_diff(Model m_a, Model m_b){
 		if (ToolSafe.isEmpty(m_a))
 			return null;
 		
@@ -903,33 +922,21 @@ public class ToolJena {
 			return null;
 
 		Model ret = ModelFactory.createDefaultModel();
-		Model signed_a = model_signBlankNode(m_a,null);
-		Model signed_b = model_signBlankNode(m_b,null);
-		model_merge(ret,signed_a);
+		Model signed_a = create_signBlankNode(m_a,null);
+		Model signed_b = create_signBlankNode(m_b,null);
+		update_copy(ret,signed_a);
 		ret.remove(signed_b);
 	
-		return model_restoreBnode(ret,m_a);
+		return create_unsignBlankNode(ret,m_a);
 	}
 	
-	public static Model model_restoreBnode(Model m, Model ref){
-		Model ret = ModelFactory.createDefaultModel();
-		
+	public static Model create_unsignBlankNode(Model m, Model ref){
 		Set<Resource> subjects = m.listSubjects().toSet();
 		subjects.removeAll(ref.listSubjects().toSet());
-		
-		HashMap<RDFNode,Resource> map_res_bnode = new HashMap<RDFNode,Resource>();
-		{
-			Iterator<Resource> iter = subjects.iterator();
-			while (iter.hasNext()){
-				Resource res = iter.next();
-				map_res_bnode.put(res, ret.createResource());
-			}
-		}
-		
-		return model_replace_uri(m, map_res_bnode); 
+		return create_unsignBlankNode(m, subjects); 
 	}
 	
-	public static Model model_replace_uri(Model m, Map<RDFNode,Resource> map_from_to){
+	public static Model create_rename(Model m, Map<RDFNode,Resource> map_from_to){
 		Model ret = ModelFactory.createDefaultModel();
 		StmtIterator iter = m.listStatements();
 		while (iter.hasNext()){
@@ -949,7 +956,7 @@ public class ToolJena {
 
 		}
 
-		model_copyNsPrefix(ret,m);
+		update_copyNsPrefix(ret,m);
 
 		return ret;
 	}
@@ -959,9 +966,9 @@ public class ToolJena {
 	 * @param ref
 	 * @return
 	 */
-	public static Model model_merge(Collection<Model> ref){
+	public static Model create_copy(Collection<Model> ref){
 		Model m = ModelFactory.createDefaultModel();
-		model_merge(m, ref);
+		update_copy(m, ref);
 		return m;
 	}
 	/**
@@ -969,9 +976,9 @@ public class ToolJena {
 	 * @param m
 	 * @param ref
 	 */
-	public static void model_merge(Model m, Collection<Model> set_ref){
+	public static void update_copy(Model m, Collection<Model> set_ref){
 		for (Model ref : set_ref)
-			model_merge(m,ref);
+			update_copy(m,ref);
 	}
 	
 	/**
@@ -979,7 +986,7 @@ public class ToolJena {
 	 * @param m
 	 * @param ref
 	 */
-	public static void model_merge(Model m, Model ref){
+	public static void update_copy(Model m, Model ref){
 		if (ToolSafe.isEmpty(ref))
 			return;
 		
@@ -994,7 +1001,7 @@ public class ToolJena {
 		}
 				
 		m.add(ref);
-		model_copyNsPrefix( m,ref);						
+		update_copyNsPrefix( m,ref);						
 
 	}
 	
@@ -1004,26 +1011,28 @@ public class ToolJena {
 	 * @param type
 	 * @return
 	 */
-	public static Model model_unsignBlankNode(Model m, String type){
-		return model_unsignBlankNode(m, m.createResource(type));
+	public static Model create_unsignBlankNode(Model m, String type){
+		return create_unsignBlankNode(m, m.createResource(type));
 	}
 	
-	public static Model model_unsignBlankNode(Model m, Resource type){
-		Iterator<Resource> iter = m.listSubjectsWithProperty(RDF.type, type );
+	public static Model create_unsignBlankNode(Model m, Resource type){
+		return create_unsignBlankNode(m, m.listSubjectsWithProperty(RDF.type, type).toSet()); 
+	}
+	
+	public static Model create_unsignBlankNode(Model m, Collection<Resource> set_res){
 		HashMap<RDFNode,Resource> map_res_bnode = new HashMap<RDFNode,Resource>();
-		while (iter.hasNext()){
-			Resource subject = iter.next();
+		for(Resource subject: set_res){
 			map_res_bnode.put(subject, m.createResource());
 		}
 		
-		return model_replace_uri(m, map_res_bnode); 
+		return create_rename(m, map_res_bnode); 
 	}
 	
 	private static Resource resource_sign_bnode(Model m, Resource node, String sz_namespace){
 		return m.createResource(sz_namespace+"_"+node.getId().getLabelString());
 	}
 	
-	public static Model model_signBlankNode(Model m, String sz_namespace) {
+	public static Model create_signBlankNode(Model m, String sz_namespace) {
 		if (ToolSafe.isEmpty(sz_namespace)){
 			sz_namespace="http://inference-web.org/vocab/";
 			m.setNsPrefix("iwv",sz_namespace);
@@ -1043,11 +1052,11 @@ public class ToolJena {
 			}
 				
 		}
-		return model_replace_uri(m, map_bnode_res); 
+		return create_rename(m, map_bnode_res); 
 
 	}
 	
-	public static Model model_signBlankNode_hash(Model m, String namespace ){
+	public static Model create_signBlankNode_hash(Model m, String namespace ){
 		if (ToolSafe.isEmpty(namespace)){
 			namespace="http://inference-web.org/vocab/";
 			m.setNsPrefix("iwv",namespace);
@@ -1109,7 +1118,7 @@ public class ToolJena {
 			}
 		}
 		
-		return model_replace_uri(m, map_bnode_res); 
+		return create_rename(m, map_bnode_res); 
 
 	}
 
@@ -1118,7 +1127,7 @@ public class ToolJena {
 	 * @param m
 	 * @param ref
 	 */
-	public static void model_copyNsPrefix(Model m, Model ref){
+	public static void update_copyNsPrefix(Model m, Model ref){
 		if (!isConsistent(m))
 			return;
 
@@ -1151,9 +1160,9 @@ public class ToolJena {
 	 * @param target
 	 * @param m
 	 */
-	public static Model model_clone( Model m){
+	public static Model create_copy( Model m){
 		Model target= ModelFactory.createDefaultModel();
-		model_merge(target, m);
+		update_copy(target, m);
 		return target;
 	}
 
@@ -1416,6 +1425,56 @@ public class ToolJena {
 			return ((Resource)node).getId().toString();
 		}
 	}
+	
+	public static Model create_rename(Model m, DataObjectGroupMap<Resource> map_res_id, String sz_namespace){
+		HashMap<RDFNode,Resource> map_from_to = new HashMap<RDFNode,Resource>();
+		for (Resource res: map_res_id.keyset()){
+			Integer gid= map_res_id.getGid(res);
+			map_from_to.put(res, m.createResource(sz_namespace+"id"+gid));
+		}
+		return create_rename(m,map_from_to);
+	}
 
+	public static Model create_filter(Model m, Property[] properties) {
+		HashSet<Property> set_property = new HashSet<Property>();
+		for (Property property: properties){
+			set_property.add(property);
+		}
+		
+		Model ret= ModelFactory.createDefaultModel();
+		for (Statement stmt: m.listStatements().toList()){
+			if (set_property.contains(stmt.getPredicate()))
+				continue;
+			
+			ret.add(stmt);
+		}
+		return ret;
+		
+	}
 
+	/** copy description of instance 
+	 * 
+	 * @param model_data
+	 * @param model_ref
+	 * @param res_subject
+	 * @param prop
+	 * @param bRecursive
+	 */
+
+	public static void update_copyResourceDescription(Model model_data, Model model_ref, Resource res_subject, Property prop, boolean bRecursive){
+		//skip copied resoruces
+		Collection<Resource> subjects = model_data.listSubjects().toSet();
+		if (subjects.contains(res_subject))
+			return;
+
+		StmtIterator iter =  model_ref.listStatements(res_subject,prop,(String)null);
+		if (!iter.hasNext())
+			return;
+		for (Statement stmt:iter.toSet()){
+			model_data.add(res_subject, stmt.getPredicate(), stmt.getObject());
+			if (bRecursive && stmt.getObject().isResource()){
+				update_copyResourceDescription(model_data, model_ref, (Resource)stmt.getObject(),null, bRecursive);
+			}
+		}
+	}
 }

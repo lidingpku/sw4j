@@ -78,7 +78,7 @@ public class ToolPellet {
 			ont = (OntModel) m;
 		}else{
 			ont = ToolPellet.createOntModel();
-			ToolJena.model_merge(ont, m);
+			ToolJena.update_copy(ont, m);
 		}
 
 		//ont.setStrictMode( false );
@@ -93,9 +93,9 @@ public class ToolPellet {
 
 		
 		
-		ToolJena.model_merge(deduction,ont);
-		ToolJena.model_add_transtive(deduction, RDFS.subClassOf);
-		ToolJena.model_add_transtive(deduction, RDFS.subPropertyOf);
+		ToolJena.update_copy(deduction,ont);
+		ToolJena.updateModelTranstive(deduction, RDFS.subClassOf);
+		ToolJena.updateModelTranstive(deduction, RDFS.subPropertyOf);
 		return deduction;
 	}
 	
