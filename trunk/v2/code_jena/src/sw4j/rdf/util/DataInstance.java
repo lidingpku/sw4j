@@ -79,7 +79,7 @@ public class DataInstance {
 		if (!ToolSafe.isEmpty(m)){
 			m_global_model = m;
 			m_model.add( m.listStatements(subject, null, (String)null) );
-			ToolJena.model_copyNsPrefix(m_model, m);
+			ToolJena.update_copyNsPrefix(m_model, m);
 		}
 	}
 	

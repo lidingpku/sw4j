@@ -68,8 +68,8 @@ public class InspectRedundantInvididualType extends AbstractTaskDesc{
 			datasource.addNamedModel("http://ex.com/foo", model_data);
 			//Instance data + All reference ontologies: D+O'
 			Model model_data_onto = ModelFactory.createDefaultModel();
-			ToolJena.model_merge(model_data_onto, model_data);
-			ToolJena.model_merge(model_data_onto, model_onto);			
+			ToolJena.update_copy(model_data_onto, model_data);
+			ToolJena.update_copy(model_data_onto, model_onto);			
 			datasource.addNamedModel("http://ex.com/data_onto", model_data_onto);	
 			
 			QueryExecution qexec = QueryExecutionFactory.create(query, datasource) ;

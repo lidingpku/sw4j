@@ -374,6 +374,17 @@ public class ToolIO {
 	///////////////////////////////////////////////////////
 
 
+
+	public static boolean pipeStringToFile(String szContent, File f){
+		try {
+			pipeStringToFile(szContent, f, false, false);
+			return true;
+		} catch (Sw4jException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
 	/**
 	 * pipe a string into file storage.
 	 * 

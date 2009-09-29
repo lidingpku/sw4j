@@ -112,7 +112,7 @@ public class TaskParseRdf extends AbstractTaskDesc {
 	public void addModel(Model m){
 		if (null== m_model)
 			m_model = ModelFactory.createDefaultModel();
-		ToolJena.model_merge(m_model,m);
+		ToolJena.update_copy(m_model,m);
 	}
 	
 	public boolean hasModel(){

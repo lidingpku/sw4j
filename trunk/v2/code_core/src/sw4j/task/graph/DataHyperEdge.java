@@ -176,5 +176,9 @@ public class DataHyperEdge implements Comparable<DataHyperEdge>{
 	public void setWeigth(Integer weight) {
 		m_weight= weight;
 	}
+
+	public boolean hasLoop() {
+		return (this.m_input.contains(this.m_output));
+	}
 	
 }

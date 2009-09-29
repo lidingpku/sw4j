@@ -149,8 +149,8 @@ public class TaskDiff {
 	 }
 	 
 	private void run(){
-		 m_model_add = ToolJena.model_diff(m_model_cur, m_model_prev);
-		 m_model_del = ToolJena.model_diff( m_model_prev,m_model_cur);
+		 m_model_add = ToolJena.create_diff(m_model_cur, m_model_prev);
+		 m_model_del = ToolJena.create_diff( m_model_prev,m_model_cur);
 		 
 		 
 		Set<Resource> roots_cur = (Set<Resource>) (m_model_add.listSubjects()).toSet();
@@ -445,7 +445,7 @@ public class TaskDiff {
 		 }
 		 
 		 
-		 ToolJena.model_copyNsPrefix(m, m_model_cur);
+		 ToolJena.update_copyNsPrefix(m, m_model_cur);
 		 m.setNsPrefix(PMLOWL.class.getSimpleName().toLowerCase(), PMLOWL.getURI());
 		 
 		 return m;
@@ -725,7 +725,7 @@ public class TaskDiff {
 			 }
 		 }		 
 		 
-		 ToolJena.model_copyNsPrefix(m, m_model_cur);
+		 ToolJena.update_copyNsPrefix(m, m_model_cur);
 		 m.setNsPrefix("", RSS.getURI());
 		 
 		 return m;
