@@ -1462,18 +1462,19 @@ public class ToolJena {
 	 */
 
 	public static void update_copyResourceDescription(Model model_data, Model model_ref, Resource res_subject, Property prop, boolean bRecursive){
-		//skip copied resoruces
-		Collection<Resource> subjects = model_data.listSubjects().toSet();
-		if (subjects.contains(res_subject))
+		if (ToolSafe.isEmpty(res_subject))
 			return;
-
+		
 		StmtIterator iter =  model_ref.listStatements(res_subject,prop,(String)null);
 		if (!iter.hasNext())
 			return;
 		for (Statement stmt:iter.toSet()){
 			model_data.add(res_subject, stmt.getPredicate(), stmt.getObject());
 			if (bRecursive && stmt.getObject().isResource()){
-				update_copyResourceDescription(model_data, model_ref, (Resource)stmt.getObject(),null, bRecursive);
+				Collection<Resource> subjects = model_data.listSubjects().toSet();
+				//skip copied resoruces
+				if (!subjects.contains(stmt.getObject()))
+					update_copyResourceDescription(model_data, model_ref, (Resource)stmt.getObject(),null, bRecursive);
 			}
 		}
 	}

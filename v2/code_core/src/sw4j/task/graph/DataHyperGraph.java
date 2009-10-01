@@ -284,6 +284,7 @@ public class DataHyperGraph {
 		return temp;
 	}
 
+	
 	/**
 	 * list all axiom hyperedges
 	 * 
@@ -458,19 +459,7 @@ public class DataHyperGraph {
 		return ret;
 	}
 
-	/**
-	 * list all nodes
-	 * @return
-	 */
-	public Set<Integer> getNodes(){
-		TreeSet<Integer> ret = new TreeSet<Integer>();
-		for (DataHyperEdge e : this.getEdges()){
-			ret.add(e.getOutput());
-			ret.addAll(e.getInputs());
-		}
-		return ret;
-	}
-	
+
 
 
 
@@ -617,7 +606,7 @@ public class DataHyperGraph {
 	 */
 	public static String data_export_graphviz(DataHyperGraph hg, Map<Integer,String> map_node_id_input, Map<Integer,Properties> map_node_params, Map<DataHyperEdge,Properties> map_edge_params, String sz_more ){
 		//list all nodes
-		Set<Integer> nodes = hg.getNodes();
+		Set<Integer> nodes = hg.getVertices();
 
 		//prepare map_node_id
 		HashMap <Integer,String> map_node_id = new HashMap<Integer,String> ();
