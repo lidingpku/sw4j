@@ -29,7 +29,6 @@ OTHER DEALINGS IN THE SOFTWARE.
 package sw4j.util;
 
 import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -175,7 +174,8 @@ public class ToolIO {
 			if (!bAppend && bGzip){
 				// this is used for performance improvement
 				//http://bugs.sun.com/bugdatabase/view_bug.do;jsessionid=15171f31aada88399a136fc29745?bug_id=6623164
-				out = new GZIPOutputStream(new BufferedOutputStream(out));
+				//out = new GZIPOutputStream(new BufferedOutputStream(out));
+				out = new GZIPOutputStream(out);
 			}
 			return out;
 			
