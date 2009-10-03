@@ -163,7 +163,11 @@ public class ToolString {
 	public static String formatXMLDateTime(long date){
 		return formatXMLDateTime(date, null);
 	}
-
+	
+	public static String formatXMLDateTime(){
+		return formatXMLDateTime(System.currentTimeMillis(), null);
+	}
+	
 	@SuppressWarnings("unchecked")
 	public static String printCollectionToString(Collection data) {
 		if (ToolSafe.isEmpty(data))
