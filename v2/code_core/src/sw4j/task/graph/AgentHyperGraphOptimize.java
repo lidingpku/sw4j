@@ -44,48 +44,36 @@ import java.util.Set;
  */
 public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 	
-
+	@Override
+	public String getLabel(){
+		return "best";
+	}
 	
 	HashSet<Integer> m_runtime_preferred_vertex = new HashSet<Integer>();
 
 
-	public int m_runtime_solution_count_best = 0;
+
 
 	/**
-	 * quality of optimal solutions, better quality has lower integer value
-	 */
-	public int m_runtime_best_quality = -1;
-
-	/**
-	 * g function - measure the cost of current solution
-	 * @param g
-	 * @return
-	 */
-	public int getQuality(DataHyperGraph g){
-		//return g.getEdges().size();
-		return g.getTotalWeight();
-	}
-	
-	/**
-	 * predict the minimum total quality
+	 * predict the minimum total weight
 	 * 
 	 * @param g
 	 * @param Vx
 	 * @return
 	 */
-	public int predictTotalQuality(DataHyperGraph G, Set<Integer> Vx, DataHyperGraph Gx){
+	public int predictTotalWeight(DataHyperGraph G, Set<Integer> Vx, DataHyperGraph Gx){
 		// we need to include the founded hyperedges and at least |Vx| more hyperedges
-		return getQuality(Gx) + Vx.size();
+		return Gx.getTotalWeight() + Vx.size();
 	}
 	
 	@Override
-	protected void before_traverse(DataHyperGraph G, Integer v){
-		super.before_traverse(G, v);
+	protected void doTraverseBefore(DataHyperGraph G, Integer v){
+		doInit();
 		
-		//initiate best quality and preferred vertex
+		//initiate best weight and preferred vertex
 		Map<String,DataHyperGraph> map_graph_context = G.getSubHyperGraphs();
 		Iterator<DataHyperGraph> iter = map_graph_context.values().iterator();
-		int best_quality = -1;
+		int best_weight = -1;
 		DataHyperGraph best_g = null;
 		while (iter.hasNext()){
 			DataHyperGraph g = iter.next();
@@ -93,11 +81,11 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 			if (!isSolution(v, new HashSet<Integer>(), g))
 				continue;
 						
-			int quality = getQuality(g);
+			int weight = g.getTotalWeight();
 			
-			if (null==best_g || best_quality > quality){
+			if (null==best_g || best_weight > weight){
 				best_g =g;
-				best_quality = quality;
+				best_weight = weight;
 			}
 		}
 		
@@ -106,43 +94,22 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 	}
 	
 	@Override
-	public boolean checkSolution(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
+	public boolean doCheckSolution(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
 		if (isSolution(v,Vx,Gx)){	
-			int quality = getQuality(Gx);
 
-			// init m_query_best_result, just do it one time
-			if (-1 == m_runtime_best_quality){
-				m_runtime_best_quality = quality;
-				m_runtime_solution_count_best =0;
+			int ret = doCheckSolutionBest(Gx);
+			if (1==ret){
+				// update best weight if better weight found
+				this.doResetSolution();
 			}
-
-			// update best quality if better quality found
-			if (m_runtime_best_quality > quality){
-				
-				//rest
-				m_runtime_solutions.clear();
-				m_runtime_best_quality = quality;
-				m_runtime_solution_count_best =0;
-				
-				m_runtime_preferred_vertex.clear();
-
-				m_runtime_timer_start = System.currentTimeMillis();
-			}	
-
-			// check if the solution is the best
-			if (quality <= m_runtime_best_quality){
-				//yes
-				
-				saveSolution(Gx);
-
-				//increment counter
-				m_runtime_solution_count_best ++;
-				
-				
+			
+			if (0<=ret){
+				// update best weight if better weight found
+				this.doSaveSolution(Gx);
 				//update preferred vertex
 				this.m_runtime_preferred_vertex.addAll(Gx.getOutputs());
 			}
-			
+
 			return true;
 		}else{
 			return false;			
@@ -151,22 +118,22 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 	
 	
 	@Override
-	protected boolean canDiscard(DataHyperGraph G, Set<Integer> Vx, DataHyperGraph Gx){
-		int quality = predictTotalQuality(G, Vx, Gx);
+	protected boolean isSolutionDiscardable(DataHyperGraph G, Set<Integer> Vx, DataHyperGraph Gx){
+		int weight = predictTotalWeight(G, Vx, Gx);
 
 		if (debug){
-			log(String.format("edges %d, vertices %d, solutions %d, quality %d, best_q %d. todo %s ", 
+			log(String.format("edges %d, vertices %d, solutions %d, weight %d, best_q %d. todo %s ", 
 					Gx.getEdges().size(), 
 					Gx.getVertices().size(),
-					this.m_runtime_solution_count,
-					quality,
-					m_runtime_best_quality,
+					this.getResultSolutionFoundCount(),
+					weight,
+					m_runtime_best_weight,
 					Vx.toString()));
 		}
 
 		
-		// skip worse quality 
-		if (m_runtime_best_quality!=-1 && quality > m_runtime_best_quality){
+		// skip worse weight 
+		if (m_runtime_best_weight!=-1 && weight > m_runtime_best_weight){
 			return true;
 		}
 		
@@ -175,7 +142,7 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 	
 	
 	@Override
-	protected Integer select_next_vertex(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
+	protected Integer doSelectNextVertex(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
 
 		if (Vx.isEmpty())
 			return null;
@@ -194,7 +161,7 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 	}
 	
 	@Override
-	protected Collection<DataHyperEdge> reorder_next_edges(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx, Collection<DataHyperEdge> edges){
+	protected Collection<DataHyperEdge> doNextEdgesReorder(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx, Collection<DataHyperEdge> edges){
 		ArrayList<DataHyperEdge> new_next = new ArrayList<DataHyperEdge>();
 
 		Iterator<DataHyperEdge> iter =edges.iterator();
@@ -211,12 +178,12 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 	}
 	
 	@Override
-	public String getSummary(DataHyperGraph G) {
+	public String getResultSummary(DataHyperGraph G) {
 		
-		String ret = String.format("%s | best-total: %d best-quality: %d" ,
-				super.getSummary(G),
-				this.m_runtime_solution_count_best,
-				this.m_runtime_best_quality);
+		String ret = String.format("%s | best-total: %d best-weight: %d" ,
+				super.getResultSummary(G),
+				this.m_runtime_solutions.size(),
+				this.m_runtime_best_weight);
 			
 		return ret;
 	}

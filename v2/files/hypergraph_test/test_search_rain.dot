@@ -1,0 +1,64 @@
+/*
+
+#generated: 2009-10-10T22:43:07Z
+#context (total): 2 - [A, B] 
+#hyperedges (total): 13
+#hyperedges (axioms): 7
+#hyperedges (share conclusion): 3 (e.g. [3, 6, 8])
+#vertices (total): 10
+#vertices (outputs): 10
+#vertices (inputs): 9
+#vertices (roots): 1 (e.g. [0] )
+*/digraph g { 
+label=search_rain
+ "0" [ shape="box" label="s"  ];
+  "1" [ shape="box" label="w=>r"  ];
+  "2" [ shape="box" label="u=>r"  ];
+  "3" [ color="red" shape="box" label="r=>s" style="filled"  ];
+  "4" [ shape="box" label="w=>u"  ];
+  "5" [ shape="box" label="(r & u) => (r=>s)"  ];
+  "6" [ color="red" shape="box" label="u" style="filled"  ];
+  "7" [ shape="box" label="w"  ];
+  "8" [ color="red" shape="box" label="r" style="filled"  ];
+  "13" [ shape="box" label="u=>(r=>s)"  ];
+  "[8],[2, 6]" [ color="black" shape="diamond" label=""  ];
+  "[8],[2, 6]" -> "8";
+  "2" -> "[8],[2, 6]";
+  "6" -> "[8],[2, 6]";
+  "[8],[1, 7]" [ color="blue" shape="diamond" label=""  ];
+  "[8],[1, 7]" -> "8";
+  "1" -> "[8],[1, 7]";
+  "7" -> "[8],[1, 7]";
+  "[6],[4, 7]" [ color="black" shape="diamond" label=""  ];
+  "[6],[4, 7]" -> "6";
+  "4" -> "[6],[4, 7]";
+  "7" -> "[6],[4, 7]";
+  "[0],[3, 8]" [ color="black:blue" shape="diamond" label="" penwidth="5"  ];
+  "[0],[3, 8]" -> "0";
+  "3" -> "[0],[3, 8]";
+  "8" -> "[0],[3, 8]";
+  "[7],[]" [ color="black:blue" shape="invhouse" label="" penwidth="5"  ];
+  "[7],[]" -> "7";
+  "[2],[]" [ color="black" shape="invhouse" label=""  ];
+  "[2],[]" -> "2";
+  "[1],[]" [ color="blue" shape="invhouse" label=""  ];
+  "[1],[]" -> "1";
+  "[3],[6, 13]" [ color="blue" shape="diamond" label=""  ];
+  "[3],[6, 13]" -> "3";
+  "6" -> "[3],[6, 13]";
+  "13" -> "[3],[6, 13]";
+  "[6],[]" [ color="blue" shape="invhouse" label=""  ];
+  "[6],[]" -> "6";
+  "[13],[5, 8]" [ color="blue" shape="diamond" label=""  ];
+  "[13],[5, 8]" -> "13";
+  "5" -> "[13],[5, 8]";
+  "8" -> "[13],[5, 8]";
+  "[5],[]" [ color="blue" shape="invhouse" label=""  ];
+  "[5],[]" -> "5";
+  "[4],[]" [ color="black" shape="invhouse" label=""  ];
+  "[4],[]" -> "4";
+  "[3],[]" [ color="black" shape="invhouse" label=""  ];
+  "[3],[]" -> "3";
+ }
+
+}

@@ -1,0 +1,45 @@
+/*
+
+#generated: 2009-10-10T22:43:07Z
+#context (total): 2 - [p2, p1] 
+#hyperedges (total): 8
+#hyperedges (axioms): 2
+#hyperedges (share conclusion): 1 (e.g. [2])
+#vertices (total): 7
+#vertices (outputs): 7
+#vertices (inputs): 5
+#vertices (roots): 2 (e.g. [1, 11] )
+*/digraph g { 
+label=search_paulo
+ "1" [ shape="box" label="x_1"  ];
+  "2" [ color="red" shape="box" label="x_2" style="filled"  ];
+  "3" [ shape="box" label="x_3"  ];
+  "4" [ shape="box" label="x_4"  ];
+  "11" [ shape="box" label="x_11"  ];
+  "13" [ shape="box" label="x_13"  ];
+  "14" [ shape="box" label="x_14"  ];
+  "[11],[2]" [ color="black" shape="diamond" label=""  ];
+  "[11],[2]" -> "11";
+  "2" -> "[11],[2]";
+  "[13],[14]" [ color="black" shape="diamond" label=""  ];
+  "[13],[14]" -> "13";
+  "14" -> "[13],[14]";
+  "[14],[]" [ color="black" shape="invhouse" label=""  ];
+  "[14],[]" -> "14";
+  "[1],[2]" [ color="blue" shape="diamond" label=""  ];
+  "[1],[2]" -> "1";
+  "2" -> "[1],[2]";
+  "[2],[13]" [ color="black" shape="diamond" label=""  ];
+  "[2],[13]" -> "2";
+  "13" -> "[2],[13]";
+  "[2],[3]" [ color="blue" shape="diamond" label=""  ];
+  "[2],[3]" -> "2";
+  "3" -> "[2],[3]";
+  "[3],[4]" [ color="blue" shape="diamond" label=""  ];
+  "[3],[4]" -> "3";
+  "4" -> "[3],[4]";
+  "[4],[]" [ color="blue" shape="invhouse" label=""  ];
+  "[4],[]" -> "4";
+ }
+
+}

@@ -1,0 +1,67 @@
+/*
+
+#generated: 2009-10-10T22:43:07Z
+#context (total): 1 - [A] 
+#hyperedges (total): 13
+#hyperedges (axioms): 3
+#hyperedges (share conclusion): 3 (e.g. [1, 2, 3])
+#vertices (total): 10
+#vertices (outputs): 10
+#vertices (inputs): 9
+#vertices (roots): 1 (e.g. [0] )
+*/digraph g { 
+label=search_case2
+ "0" [ shape="box" label="x_0"  ];
+  "1" [ color="red" shape="box" label="x_1" style="filled"  ];
+  "2" [ color="red" shape="box" label="x_2" style="filled"  ];
+  "3" [ color="red" shape="box" label="x_3" style="filled"  ];
+  "21" [ shape="box" label="x_21"  ];
+  "20" [ shape="box" label="x_20"  ];
+  "10" [ shape="box" label="x_10"  ];
+  "11" [ shape="box" label="x_11"  ];
+  "31" [ shape="box" label="x_31"  ];
+  "30" [ shape="box" label="x_30"  ];
+  "[2],[20]" [ color="black" shape="diamond" label=""  ];
+  "[2],[20]" -> "2";
+  "20" -> "[2],[20]";
+  "[10],[21, 31]" [ color="black" shape="diamond" label=""  ];
+  "[10],[21, 31]" -> "10";
+  "21" -> "[10],[21, 31]";
+  "31" -> "[10],[21, 31]";
+  "[2],[21]" [ color="black" shape="diamond" label=""  ];
+  "[2],[21]" -> "2";
+  "21" -> "[2],[21]";
+  "[30],[11, 21]" [ color="black" shape="diamond" label=""  ];
+  "[30],[11, 21]" -> "30";
+  "11" -> "[30],[11, 21]";
+  "21" -> "[30],[11, 21]";
+  "[1],[11]" [ color="black" shape="diamond" label=""  ];
+  "[1],[11]" -> "1";
+  "11" -> "[1],[11]";
+  "[21],[]" [ color="black" shape="invhouse" label=""  ];
+  "[21],[]" -> "21";
+  "[3],[31]" [ color="black" shape="diamond" label=""  ];
+  "[3],[31]" -> "3";
+  "31" -> "[3],[31]";
+  "[0],[1, 2, 3]" [ color="black" shape="diamond" label=""  ];
+  "[0],[1, 2, 3]" -> "0";
+  "1" -> "[0],[1, 2, 3]";
+  "2" -> "[0],[1, 2, 3]";
+  "3" -> "[0],[1, 2, 3]";
+  "[20],[11, 31]" [ color="black" shape="diamond" label=""  ];
+  "[20],[11, 31]" -> "20";
+  "11" -> "[20],[11, 31]";
+  "31" -> "[20],[11, 31]";
+  "[11],[]" [ color="black" shape="invhouse" label=""  ];
+  "[11],[]" -> "11";
+  "[31],[]" [ color="black" shape="invhouse" label=""  ];
+  "[31],[]" -> "31";
+  "[1],[10]" [ color="black" shape="diamond" label=""  ];
+  "[1],[10]" -> "1";
+  "10" -> "[1],[10]";
+  "[3],[30]" [ color="black" shape="diamond" label=""  ];
+  "[3],[30]" -> "3";
+  "30" -> "[3],[30]";
+ }
+
+}
