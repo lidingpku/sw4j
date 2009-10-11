@@ -43,34 +43,32 @@ import java.util.TreeSet;
 
 import sw4j.util.ToolSafe;
 
-public class DataHyperEdge implements Comparable<DataHyperEdge>{
+public class DataHyperEdge extends Object implements Comparable<DataHyperEdge>{
 	Integer m_output = null;
 	TreeSet<Integer> m_input = new TreeSet<Integer>();
-	String m_id = DEFAULT_ID;
+//	String m_id = DEFAULT_ID;
 	
 	public static int DEFAULT_WEIGHT = 1;
-	public static String DEFAULT_ID = "";	
+//	public static String DEFAULT_ID = "";	
 	int m_weight = DEFAULT_WEIGHT;	
 	
 	public DataHyperEdge(Integer output){
 		this(output, null);
 	}
 
+//	public DataHyperEdge(Integer output, Collection<Integer> set_input){
+//		this(output, set_input,  DEFAULT_ID);
+//	}
+
 	public DataHyperEdge(Integer output, Collection<Integer> set_input){
-		this(output, set_input,  DEFAULT_ID);
+		this(output, set_input, DEFAULT_WEIGHT);
 	}
 
-	public DataHyperEdge(Integer output, Collection<Integer> set_input, String sz_id){
-		this(output, set_input, sz_id, DEFAULT_WEIGHT);
-	}
-
-	public DataHyperEdge(Integer output, Collection<Integer> set_input, String sz_id, int weight){
+	public DataHyperEdge(Integer output, Collection<Integer> set_input, int weight){
 		m_output=output;
 		m_weight=weight;
 		if (!ToolSafe.isEmpty(set_input))
 			m_input.addAll(set_input);
-		if (!ToolSafe.isEmpty(sz_id))
-			m_id=sz_id;
 	}
 
 
@@ -81,17 +79,17 @@ public class DataHyperEdge implements Comparable<DataHyperEdge>{
 
 	@Override
 	public String toString() {
-		return "["+m_id+"],["+m_output+"],"+m_input ;
+		return "["+m_output+"],"+m_input ;
 	}
 	
-	public static DataHyperEdge parseString(String sz_id, String sz_output, String sz_inputs, String sz_weight){
+	public static DataHyperEdge parseString(String sz_output, String sz_inputs, String sz_weight){
 		if (ToolSafe.isEmpty(sz_output))
 			return null;
 		
 		//parse output node id
 		Integer output = new Integer(sz_output);
 
-		DataHyperEdge edge= new DataHyperEdge(output, null, sz_id);
+		DataHyperEdge edge= new DataHyperEdge(output, null);
 
 		//parse weight
 		if (!ToolSafe.isEmpty(sz_weight)){

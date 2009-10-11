@@ -1,0 +1,25 @@
+
+#generated: 2009-10-10T22:43:07Z
+#context (total): 2 - [p2, p1] 
+#hyperedges (total): 8
+#hyperedges (axioms): 2
+#hyperedges (share conclusion): 1 (e.g. [2])
+#vertices (total): 7
+#vertices (outputs): 7
+#vertices (inputs): 5
+#vertices (roots): 2 (e.g. [1, 11] )
+"11","2","1","p2","",""
+
+"13","14","1","p2","",""
+
+"14","","1","p2","",""
+
+"1","2","1","p1","",""
+
+"2","13","1","p2","",""
+
+"2","3","1","p1","",""
+
+"3","4","1","p1","",""
+
+"4","","1","p1","",""

@@ -1,30 +1,141 @@
 package sw4j.task.graph;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
-import java.util.Iterator;
+import java.util.HashSet;
 
 import org.junit.Test;
 
 import sw4j.util.Sw4jException;
 import sw4j.util.ToolIO;
-import sw4j.util.ToolRandom;
+import sw4j.util.ToolSafe;
 
 
 public class DataHyperGraphTest {
 	
 	static boolean debug= false;
-
+	
+	//@Test
+	public void gen_test(){
+		this.create_test_search_aostar();
+		this.create_test_search_case2();
+		this.create_test_search_worstcase(5);
+		this.create_test_search_paulo();
+		this.create_test_search_rain();
+	}
 	@Test
-	public  void test_random_gen(){
+	public  void test_random_many() throws IOException, Sw4jException{
+		HashSet<String> set_filename = new HashSet<String>();
 		System.out.println("======================================================================");
-		System.out.println("Test Random Linked Graph Generation");
-		DataHyperGraph.data_create_random(10,5,3,10);
+		System.out.println("Test Random test_random_many");
+		{
+			int i=20;
+			for (int j=1; j<=3; j++){
+				DataHyperGraph lg=null;
+				do {
+					lg=DataHyperGraph.data_create_random(i*2,i,3,-1);
+				}while (lg.getRoots().size()==0);
+				String filename= save_graph(String.format("z%03d_%02d",i,j),lg, true, "output/hypergraph/test_random_many/");
+				set_filename.add(filename);
+				
+				do_search(filename);
+			}
+		}
+
+	}
+	//@Test
+	public  void test_random_scale() throws IOException, Sw4jException{
+		HashSet<String> set_filename = new HashSet<String>();
+		System.out.println("======================================================================");
+		System.out.println("Test Random test_random_scale");
+
+		for (int i=8; i<1000; i*=2){
+			for (int j=1; j<=2; j++){
+				DataHyperGraph lg=null;
+				do {
+					lg=DataHyperGraph.data_create_random(i*3/2,i,3,-1);
+				}while (lg.getRoots().size()==0);
+				String filename= save_graph(String.format("%z03d_%02d",i,j),lg, false,"output/hypergraph/test_random_scale/");
+				set_filename.add(filename);
+				
+				do_search(filename);
+
+			}
+		}
+
 	}
 	
+	public static String save_graph(String problem, DataHyperGraph lg){
+		return save_graph(problem, lg, true, "");
+	}
+	public static String save_graph(String problem, DataHyperGraph lg, boolean bGenerateGraph, String path){
+		String sz_file_output_common= "files/hypergraph_test/test_"+problem;
+		if (!ToolSafe.isEmpty(path)){
+			sz_file_output_common= path+problem;
+		}
+		String sz_filename= sz_file_output_common+".csv";
+		ToolIO.pipeStringToFile(lg.data_export(), new File(sz_filename));
+
+		if (!bGenerateGraph)
+			return sz_filename;
+		
+		try {
+			File f_dot = new File(sz_file_output_common+".dot");
+			String sz_content = lg.data_export_graphviz(String.format("label=%s",problem ));
+			
+			ToolIO.pipeStringToFile(sz_content, f_dot.getAbsolutePath(), false);
+
+			String [] formats = new String[]{"png"};
+//			String [] formats = new String[]{"svg","png"};
+			for (String format :formats){
+				File f_format = new File(sz_file_output_common+"."+format);
+				String command = "dot  -T"+format+" -o"+ f_format.getAbsolutePath() +" "+ f_dot.getAbsolutePath() ;
+				System.out.println("run command: "+command);
+				Runtime.getRuntime().exec(command);
+			}
+		} catch (Sw4jException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return sz_filename;
+	}
+	
+	public static void save_diff(String problem, DataHyperGraph lg, DataHyperGraph lg_all){
+		String sz_file_output_common= "output/hypergraph/diff_"+problem;
+
+		try {
+			File f_dot = new File(sz_file_output_common+".dot");
+			String sz_subgraph = lg.data_export_graphviz_subgraph(String.format("label=%s",problem ));
+			String sz_content = lg_all.data_export_graphviz(String.format("%s",sz_subgraph ));
+			
+			ToolIO.pipeStringToFile(sz_content, f_dot.getAbsolutePath(), false);
+
+			String [] formats = new String[]{"png"};
+//			String [] formats = new String[]{"svg","png"};
+			for (String format :formats){
+				File f_format = new File(sz_file_output_common+"."+format);
+				String command = "dot  -T"+format+" -o"+ f_format.getAbsolutePath() +" "+ f_dot.getAbsolutePath() ;
+				System.out.println("run command: "+command);
+				Runtime.getRuntime().exec(command);
+			}
+		} catch (Sw4jException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	
+	
+	
+	
+	
 	@Test
-	public  void test_export_import(){
+	public  void test2_export_import(){
 		System.out.println("======================================================================");
 		System.out.println("Test Import Export");
 		DataHyperGraph lg = DataHyperGraph.data_create_random(10,5,3,10);
@@ -44,7 +155,200 @@ public class DataHyperGraphTest {
 	}	
 	
 
-	private void do_traverse(DataHyperGraph lg, Integer v, int total, int optimized_total, int best_total, int best_quality){
+	public static final String OPT_ROOT="root";
+
+	public static final String OPT_ENUM="enum";
+	public static final String OPT_ENUM_FOUND="enum found";
+	public static final String OPT_ENUM_W="enum weight";
+	public static final String OPT_BEST="best";
+	public static final String OPT_BEST_FOUND="best found";
+	public static final String OPT_BEST_W="best weight";
+	public static final String OPT_AO="ao";
+	public static final String OPT_AO_FOUND="ao found";
+	public static final String OPT_AO_W="ao weight";
+	
+	@Test
+	public  void test_search() throws Sw4jException, IOException{
+		String [][] ary_problem= new String[][]{
+				{	
+					"search_paulo",
+					"1",
+					String.format("%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,",
+							OPT_ENUM,2, OPT_ENUM_FOUND,2,  	OPT_ENUM_W,4, 
+							OPT_BEST,2, OPT_BEST_FOUND,2,	OPT_BEST_W,4, 
+							OPT_AO,2, 	OPT_AO_FOUND,2,	OPT_AO_W,4)
+				},
+				{	
+					"search_rain",
+					"0",
+					String.format("%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,",
+							OPT_ENUM,7, OPT_ENUM_FOUND,7,  	OPT_ENUM_W,5, 
+							OPT_BEST,2, OPT_BEST_FOUND,2,	OPT_BEST_W,5, 
+							OPT_AO,1, 	OPT_AO_FOUND,1,	OPT_AO_W,5)
+				},
+				{	
+					"search_worst5",
+					"1",
+					String.format("%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,",
+							OPT_ENUM,16, OPT_ENUM_FOUND,16,  	OPT_ENUM_W,5, 
+							OPT_BEST,1, OPT_BEST_FOUND,16,	OPT_BEST_W,5, 
+							OPT_AO,1, 	OPT_AO_FOUND,1,	OPT_AO_W,5)
+				},
+				{	
+					"search_case2",
+					"0",
+					String.format("%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,",
+							OPT_ENUM,8, OPT_ENUM_FOUND,8,  	OPT_ENUM_W,7, 
+							OPT_BEST,4, OPT_BEST_FOUND,5,	OPT_BEST_W,7, 
+							OPT_AO,1, 	OPT_AO_FOUND,1,	OPT_AO_W,7)
+				},
+				
+				//this one AO start does not yield optimal solution
+				{	
+					"search_aostar",
+					"0",
+					String.format("%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,",
+							OPT_ENUM,2, OPT_ENUM_FOUND,2,  	OPT_ENUM_W,4, 
+							OPT_BEST,1, OPT_BEST_FOUND,2,	OPT_BEST_W,4, 
+							OPT_AO,1, 	OPT_AO_FOUND,1,	OPT_AO_W,5)
+				},
+		};
+		
+		for (String problem[]: ary_problem){
+			System.out.println("======================================================================");
+			System.out.println("loading - "+problem[0]);
+			DataHyperGraph lg = new DataHyperGraph();
+			lg.data_import(ToolIO.pipeFileToString("files/hypergraph_test/test_"+problem[0]+".csv"));
+			if (lg.getEdges().size()==0){
+				fail(problem[0]);
+			}
+			do_search(lg, problem);
+		}
+		
+	}	
+	private void do_search(String filename) throws IOException, Sw4jException{
+		File f= new File(filename);
+		DataHyperGraph lg = new DataHyperGraph();
+		lg.data_import(ToolIO.pipeFileToString(filename));
+		if (lg.getEdges().size()==0){
+			fail();
+		}
+		
+		for (int root:lg.getRoots()){
+			String []problem = new String[]{
+					f.getName().substring(0,f.getName().lastIndexOf("."))+"_root_"+root,
+					""+root,
+			};
+			
+			do_search(lg,problem);
+		}
+	}
+	
+	private void do_search(DataHyperGraph lg, String[] problem) throws IOException{
+
+		AgentHyperGraphTraverse.debug= debug;
+
+		AgentHyperGraphTraverse[] ary_alg= new AgentHyperGraphTraverse[]{
+				 new AgentHyperGraphTraverse(),
+				 new AgentHyperGraphOptimize(),
+				 new AgentHyperGraphAoStar(),
+		};
+		
+		String [][] propname= new String[][]{
+				{OPT_ENUM,OPT_ENUM_FOUND,OPT_ENUM_W}, 
+				{OPT_BEST,OPT_BEST_FOUND,OPT_BEST_W} ,
+				{OPT_AO,OPT_AO_FOUND,OPT_AO_W} ,
+		};
+		
+		//root
+		int v= Integer.parseInt(problem[1]);
+		String output="";
+		for (int i=0; i<ary_alg.length;i++)
+		{
+
+			AgentHyperGraphTraverse alg = ary_alg[i];
+			System.out.println("\n-------"+alg.getClass().getSimpleName()+"-------");
+			alg.traverse(lg, v,-1, -1, -1);
+			output+=String.format("%s=%d,%s=%d,%s=%d,",
+									propname[i][0],alg.getResultSolutions().size(),
+									propname[i][1],alg.getResultSolutionFoundCount(),
+									propname[i][2],alg.getResultBestWeight());
+			
+			if (null!=alg.m_runtime_best_subgraph)
+				alg.m_runtime_best_subgraph.data_summary();
+			else
+				fail("no solution "+ problem[0]);
+			save_diff(problem[0]+"_"+propname[i][0],alg.m_runtime_best_subgraph,lg);
+			System.out.println(String.format("time spend %2.3f seconds",alg.getResultProcessSeconds()));
+		}
+		
+		if (problem.length>=3){
+			if (!output.equals(problem[2])){
+				System.out.println("expected: "+problem[2]);
+				System.out.println("actually: "+output);
+				fail(problem[0]);
+			}
+		}else{
+			System.out.println("actually: "+output);			
+		}
+	}
+
+	
+	
+	
+	
+/*	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@Test
+	public void test3_traverse_case2(){
+		System.out.println("======================================================================");
+		System.out.println("test_traverse_case2");
+		DataHyperGraph lg = create_case2();
+		debug=true;
+		Integer v = new Integer(0);
+		do_traverse(lg,v, 8, 6, 4, 7,-1,-1);
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	private void do_traverse(DataHyperGraph lg, Integer v, int total, int optimized_total, int best_total, int best_quality, int ao_total, int ao_quality){
+		
 		{
 			System.out.println();
 			System.out.println("-------"+AgentHyperGraphTraverse.class.getSimpleName()+"-------");
@@ -77,6 +381,25 @@ public class DataHyperGraphTest {
 //				fail();
 //			}
 
+			
+		}		
+		
+		{
+			System.out.println();
+			System.out.println("-------"+AgentHyperGraphOptimizeAoStar.class.getSimpleName()+"-------");
+			AgentHyperGraphOptimize alg = new AgentHyperGraphOptimizeAoStar();
+			AgentHyperGraphTraverse.debug= debug;
+			do_traverse(lg, v, alg);
+
+			if (-1!=ao_total && alg.m_runtime_solution_count_best!=ao_total){
+				fail();
+			}
+			
+			if (-1!=ao_quality && alg.m_runtime_best_quality!=ao_quality){
+				fail();
+			}
+
+
 		}		
 		
 	}
@@ -106,23 +429,46 @@ public class DataHyperGraphTest {
 		System.out.println("test_traverse_random");
 		DataHyperGraph lg = DataHyperGraph.data_create_random(20,10,5,10);
 		Integer v = (ToolRandom.randomSelect(lg.getOutputs()));
-		do_traverse(lg,v, -1, -1, -1, -1);		
+		do_traverse(lg,v, -1, -1, -1, -1, -1, -1);		
 	}
 	
 	
-	@Test
-	public void test_traverse_case2(){
-		System.out.println("======================================================================");
-		System.out.println("test_traverse_case2");
-		DataHyperGraph lg = create_case2();
-		debug=true;
-		Integer v = new Integer(0);
-		do_traverse(lg,v, 8, 6, 4, 7);
+*/
+	private  DataHyperGraph create_test_search_aostar(){
+		DataHyperGraph lg = new DataHyperGraph();
 
+		DataHyperEdge g;
+		{
+			g = new DataHyperEdge(0);
+			g.addInput(1);
+			g.addInput(2);
+			g.addInput(3);
+			lg.add(g,"A");
+
+			g = new DataHyperEdge(1);
+			g.addInput(4);	//t
+			lg.add(g,"A");
+
+			g = new DataHyperEdge(1);
+			g.addInput(2);	//f
+			g.addInput(3);	//f
+			lg.add(g,"A");
+			
+			int [] axioms= new int []{
+					2,3,4,
+			};
+			for (int i=0; i<axioms.length; i++){
+				g = new DataHyperEdge(axioms[i]);
+				lg.add(g,"A");
+			}
+		}
+		
+		save_graph("search_aostar", lg);
+
+		return lg;
 	}
-
 	
-	private static DataHyperGraph create_case2(){
+	private  DataHyperGraph create_test_search_case2(){
 		DataHyperGraph lg = new DataHyperGraph();
 
 		DataHyperEdge g;
@@ -186,23 +532,14 @@ public class DataHyperGraphTest {
 			
 			
 		}
+		
+		save_graph("search_case2", lg);
+
 		return lg;
 	}
 	
-	
-	
-	@Test
-	public void test_traverse_worstcase1(){
-		System.out.println("======================================================================");
-		System.out.println("test_traverse_worstcase1");
-		DataHyperGraph lg = create_worstcase1(5);
-		Integer v = new Integer(1);
-		do_traverse(lg,v,16,2,1,5);		
-
-	}
-
-	
-	private static DataHyperGraph create_worstcase1(int max){
+		
+	private  DataHyperGraph create_test_search_worstcase(int max){
 		DataHyperGraph lg = new DataHyperGraph();
 
 		Integer v0 = new Integer(0);
@@ -230,6 +567,10 @@ public class DataHyperGraphTest {
 			DataHyperEdge g = new DataHyperEdge(v0);
 			lg.add(g);
 		}
+
+		save_graph("search_worst"+max, lg);
+
+		
 		return lg;
 	}
 	
@@ -278,17 +619,8 @@ Steps:
 8+3 => 11 
 	 * @return
 	 */
-	@Test
-	public void test_rain(){
-		System.out.println("======================================================================");
-		System.out.println("test_rain");
-		DataHyperGraph[] lgs =create_test_rain();
-		DataHyperGraph lg =lgs[2];
-		Integer v = new Integer(11);
-		do_traverse(lg,v,7,5,2,5);		
-	}
 
-	private static DataHyperGraph[] create_test_rain(){
+	private  DataHyperGraph[] create_test_search_rain(){
 		DataHyperGraph lg_a = new DataHyperGraph();
 		DataHyperGraph lg_b = new DataHyperGraph();
 		HashMap<Integer,String> map_id_label = new HashMap<Integer,String>();
@@ -311,7 +643,7 @@ Steps:
 		map_id_label.put(v8, "r");
 		Integer v9 = v6;
 		Integer v10 = v8;
-		Integer v11 = new Integer(11);//, "s" , "You're singing.");
+		Integer v11 = new Integer(0);//, "s" , "You're singing.");
 		map_id_label.put(v11, "s");
 		Integer v12 = v8;
 		Integer v13 = new Integer(13);//, "u=>(r=>s)" , "If you have out an umbrella, then if it's raining, then you're singing.");
@@ -393,35 +725,22 @@ Steps:
 				lg_b,
 				lg
 		};
+
+		for(Integer v: map_id_label.keySet()){
+			String label = map_id_label.get(v);
+			lg.setLabel(v, label);
+		}
 		
+		save_graph("search_rain", lg);
 		return lgs;
 	}
 	
 	
 	
-	/**
-	 * 
-	 */
 
-	
-	@Test
-	public  void test_2_paulo(){
-		System.out.println("======================================================================");
-		System.out.println("test_2_paulo");
-		DataHyperGraph[] lgs =create_test_2_paulo();
-		DataHyperGraph lg =lgs[2];
-		{
-			Integer v = new Integer(1);
-			do_traverse(lg,v,2,3,2,4);		
-		}
-		
-		{
-			Integer v = new Integer(11);
-			do_traverse(lg,v,2,3,2,4);		
-		}
-	}
 
-	private static DataHyperGraph[] create_test_2_paulo(){
+
+	private  DataHyperGraph[] create_test_search_paulo(){
 		DataHyperGraph lg_a = new DataHyperGraph();
 		DataHyperGraph lg_b = new DataHyperGraph();
 
@@ -487,30 +806,9 @@ Steps:
 				lg
 		};
 		
+		save_graph("search_paulo", lg);
+
 		return lgs;
 	}
 	
-	@Test
-	public  void test_lg1(){
-		String szFilename = "files/hypergraph_test/lg1.txt";
-		DataHyperGraph lg = new DataHyperGraph();
-		try {
-			String szGraph = ToolIO.pipeFileToString(szFilename); 
-			System.out.println(szGraph);
-			
-			lg.data_import(szGraph);
-			
-
-			Iterator<Integer> iter = lg.getRoots().iterator();
-			while (iter.hasNext()){
-				Integer root = iter.next();
-				do_traverse(lg,root,-1,-1,-1,-1);		
-			}
-
-			
-		} catch (Sw4jException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 }

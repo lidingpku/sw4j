@@ -45,6 +45,7 @@ import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
 
+import sw4j.util.DataColorMap;
 import sw4j.util.DataPVHMap;
 import sw4j.util.ToolRandom;
 import sw4j.util.ToolSafe;
@@ -57,6 +58,7 @@ import com.csvreader.CsvReader;
 public class DataHyperGraph {
 	public static int DEFAULT_WEIGHT = 1;
 	public static String DEFAULT_CONTEXT ="";
+	public static final int HG_CSV_FIELDS=6;
 	
 	/**
 	 * provenance metadata: associate each hyperedge with its context
@@ -68,6 +70,15 @@ public class DataHyperGraph {
 	 */
 	DataPVHMap<Integer, DataHyperEdge> m_map_output_edge = new DataPVHMap<Integer,DataHyperEdge>();
 	
+	/**
+	 * provenance metadata: associate each hyperedge with its label
+	 */
+	HashMap<DataHyperEdge,String> m_map_edge_label = new HashMap<DataHyperEdge,String>();
+
+	/**
+	 * provenance metadata: associate each vertex with its label
+	 */
+	HashMap<Integer,String> m_map_vertex_label = new HashMap<Integer,String>();
 	
 	/**
 	 * all inputs
@@ -201,7 +212,34 @@ public class DataHyperGraph {
 		return getSubHyperGraphs().get(szContext);
 	}
 	
+	public String getLabel(DataHyperEdge edge){
+		return getLabel(edge,edge.toString());
+	}
+	public String getLabel(DataHyperEdge edge, String defaultLabel){
+		String ret = this.m_map_edge_label.get(edge);
+		if (ToolSafe.isEmpty(ret))
+			ret = defaultLabel;
+		return ret;
+	}
 	
+	public String getLabel(Integer vertex){
+		return getLabel(vertex,"x_"+vertex.toString());
+	}
+	public String getLabel(Integer vertex, String defaultLabel){
+		String ret = this.m_map_vertex_label.get(vertex);
+		if (ToolSafe.isEmpty(ret))
+			ret =defaultLabel;
+		return ret;
+	}
+
+	public void setLabel(DataHyperEdge edge, String label){
+		this.m_map_edge_label.put(edge,label);
+	}
+	
+	public void setLabel(Integer vertex, String label){
+		this.m_map_vertex_label.put(vertex,label);
+	}
+
 	public Map<String,DataHyperGraph> getSubHyperGraphs(){
 		HashMap<String,DataHyperGraph> ret = new HashMap<String,DataHyperGraph>();
 		
@@ -452,7 +490,8 @@ public class DataHyperGraph {
 				
 				if (!ToolSafe.isEmpty(ret))
 					ret +="\n";
-				ret += String.format("%s,%s\n", edge.export(), contexts.toString()).replaceAll("[\\[|\\]]", "\"");
+				
+				ret += String.format("%s,%s,\"%s\",\"%s\"\n", edge.export().replaceAll("[\\[|\\]]", "\""), contexts.toString().replaceAll("[\\[|\\]]", "\""),getLabel(edge.getOutput(),""),getLabel(edge,""));
 			}
 			
 		}
@@ -481,13 +520,10 @@ public class DataHyperGraph {
 				if (line.startsWith("#"))
 					continue;
 				
-				if (csv.getColumnCount()!=5)
+				if (csv.getColumnCount()!=HG_CSV_FIELDS)
 					continue;
 				
 				int index=0;
-				String sz_id = csv.get(index).trim();
-				
-				index++;
 				String sz_output = csv.get(index).trim();
 
 				index++;
@@ -499,14 +535,21 @@ public class DataHyperGraph {
 				index++;
 				String sz_contexts = csv.get(index).trim();
 				
+				index++;
+				String sz_label_output= csv.get(index).trim();
+
+				index++;
+				String sz_label_edge = csv.get(index).trim();
 
 				//create hyperedge
-				DataHyperEdge edge = DataHyperEdge.parseString(sz_id, sz_output, sz_inputs, sz_weight);
+				DataHyperEdge edge = DataHyperEdge.parseString( sz_output, sz_inputs, sz_weight);
 				
 				if (null==edge)
 					continue;
 
-				add(edge);
+				//add(edge);
+				setLabel(edge,sz_label_edge);
+				setLabel(edge.getOutput(),sz_label_output);
 				
 				//parse context
 				StringTokenizer st1 = new StringTokenizer(sz_contexts,",");
@@ -514,7 +557,10 @@ public class DataHyperGraph {
 				while (st1.hasMoreTokens()){
 					String sz_context = st1.nextToken().trim();
 					set_contexts.add(sz_context);
-					this.m_map_edge_context.add(edge, sz_context);
+					this.add(edge, sz_context);
+				}					
+				if (set_contexts.size()==0){
+					this.add(edge);	
 				}
 			}
 		} catch (IOException e) {
@@ -547,27 +593,26 @@ public class DataHyperGraph {
 		//create HyperEdge
 		for (int i=0;i<total_edges; i++){
 			//choose output
-			int id_output= (int)(Math.random()* total_vertex);
+			int id_output = ToolRandom.randomInt( total_vertex);
+			
 			Integer v_output = ary_v[id_output];
 	
-			int weight= (int)(Math.random()* max_weight);
-			DataHyperEdge g = new DataHyperEdge( v_output);
-			g.setWeight( weight);
-			
-			//choose inputs
-			int iBranch = ToolRandom.randomInt(max_branch);
-			if (0==iBranch){
-				//System.out.println("no input node" + v_output);
+			DataHyperEdge edge = new DataHyperEdge(v_output);
+			if (max_weight>0){
+				int weight= ToolRandom.randomInt( max_weight);
+				edge.setWeight( weight);
 			}
+			//choose inputs
+			int iBranch = ToolRandom.randomInt(max_branch-1)+1;
 			for (int j=0; j<iBranch; j++){
 				int id_input;
 				do {
-					id_input= ToolRandom.randomInt( total_vertex);
+					id_input= ToolRandom.randomInt(total_vertex);
 				} while (id_input == id_output);
 				Integer v_input = ary_v[id_input];
-				g.addInput(v_input);
+				edge.addInput(v_input);
 			}
-			lg.add(g);
+			lg.add(edge);
 		}
 	
 		//create missing missing Hypergraph
@@ -580,19 +625,36 @@ public class DataHyperGraph {
 			}
 		}
 
-		System.out.println("# --- BEGIN Created random Linked Graph ------");
-		System.out.println("# 1. Metadata ");
-		System.out.println(String.format("# * hyperedges: %d (config %d)" ,  lg.getEdges().size(), total_edges));
-		System.out.println(String.format("# * vertices: %d (config %d)" , lg.getVertices().size(), total_vertex));
-		System.out.println(String.format("# * max_branch: %d " , max_branch));
-		System.out.println("# 2. Data ");
-		System.out.println(lg.data_export());
-		System.out.println("# ---- END  Created random Linked Graph------");
-
+		{
+			System.out.println("# --- BEGIN Created random Linked Graph ------");
+			System.out.println("# 1. Metadata ");
+			System.out.println(String.format("# * hyperedges: %d (config %d)" ,  lg.getEdges().size(), total_edges));
+			System.out.println(String.format("# * vertices: %d (config %d)" , lg.getVertices().size(), total_vertex));
+			System.out.println(String.format("# * max_branch: %d " , max_branch));
+			System.out.println("# 2. Data ");
+			System.out.println(lg.data_export());
+			System.out.println("# ---- END  Created random Linked Graph------");
+		}
 		return lg;
 	}
 	
+	public String data_export_graphviz(String sz_more){
+		return data_export_graphviz(this,null,null,null,sz_more);
+	}
 
+	public String data_export_graphviz_subgraph(String sz_more){
+		String sz_content ="";
+		for (int node: this.getVertices()){
+			sz_content +=String.format("\"%d\";\n",node);
+		}
+		for (DataHyperEdge edge: this.getEdges()){
+			sz_content +=String.format("\"%s\";\n",edge.toString());
+		}
+		
+		return String.format("subgraph cluster_opt \n{  label=\"%s\"; \n fillcolor=cornsilk; style=filled; \n %s \n}\n", sz_more, sz_content);
+
+	}
+	
 	/**
 	 * export hypergraph data into DOT format
 	 * http://www.graphviz.org/doc/info/lang.html
@@ -604,50 +666,46 @@ public class DataHyperGraph {
 	 * @param sz_more
 	 * @return
 	 */
-	public static String data_export_graphviz(DataHyperGraph hg, Map<Integer,String> map_node_id_input, Map<Integer,Properties> map_node_params, Map<DataHyperEdge,Properties> map_edge_params, String sz_more ){
+	public static String data_export_graphviz(DataHyperGraph hg, Map<Integer,String> map_node_id_label, Map<Integer,Properties> map_node_params, Map<DataHyperEdge,Properties> map_edge_params, String sz_more ){
 		//list all nodes
 		Set<Integer> nodes = hg.getVertices();
 
-		//prepare map_node_id
-		HashMap <Integer,String> map_node_id = new HashMap<Integer,String> ();
-		for(Integer node: nodes){
-			String id = null;
-			if (null!=map_node_id_input)
-				id = map_node_id_input.get(node);
-			if (null==id)
-				id="x_"+node;
-			map_node_id.put(node,id);
-		}
-
 
 		String ret = "/*\n"+hg.data_summary()+"\n*/";
-		ret +="digraph g { rankdir=BT; node [ shape = box];\n";
-		ret += sz_more +"\n";
+		ret +="digraph g { \n";
+		
+		if (!ToolSafe.isEmpty(sz_more))
+			ret += sz_more +"\n";
+		
 		{
 			//print nodes
 			for(Integer node: nodes){
-				String label = map_node_id.get(node);
 				String params ="";
-				if (null!=map_node_params){
-					Properties prop= map_node_params.get(node);
-					if (ToolSafe.isEmpty(prop)){
-						prop= new Properties();
-					}
-					prop.put("shape", "box");
-
-					for (Object key :prop.keySet()){
-						params += String.format("%s=\"%s\" ", key, prop.get(key));
-					}
-
+				Properties prop= null;
+				if (null!=map_node_params)
+					prop = map_node_params.get(node);
+				if (ToolSafe.isEmpty(prop)){
+					prop= new Properties();
 				}
-				ret += String.format(" \"%s\" [ %s ];\n ", label, params);
+				prop.put("shape", "box");
+				if (hg.getEdgesByOutput(node).size()>1){
+					prop.put("color", "red");
+					prop.put("style", "filled");					
+				}
+				prop.put("label", hg.getLabel(node));
+				
+				for (Object key :prop.keySet()){
+					params += String.format("%s=\"%s\" ", key, prop.get(key));
+				}
+
+				ret += String.format(" \"%s\" [ %s ];\n ", node, params);
 			}
 		}
 		{
+			DataColorMap colors = new DataColorMap();
 			//print arcs
 			Iterator<DataHyperEdge> iter= hg.getEdges().iterator();
 			//int edgeid=1;
-			String label;
 			while (iter.hasNext()){
 				DataHyperEdge edge = iter.next();
 
@@ -656,26 +714,43 @@ public class DataHyperGraph {
 				String e = edge.toString();
 
 				String params ="";
-				if (null!=map_edge_params){
-					Properties prop= map_edge_params.get(edge);
-					if (ToolSafe.isEmpty(prop)){
-						prop= new Properties();
-					}
+				Properties prop= null;
+				if (null!=map_edge_params)
+					prop=map_edge_params.get(edge);
+				if (ToolSafe.isEmpty(prop)){
+					prop= new Properties();
+				}
+				if (edge.isAtomic())
+					prop.put("shape", "invhouse");
+				else
 					prop.put("shape", "diamond");
-					for (Object key :prop.keySet()){
-						params += String.format("%s=\"%s\" ", key, prop.get(key));
-					}
+
+				Collection<String> contexts = hg.getContextsByEdge(edge);
+				String color= "";
+				for (String context: contexts){
+					if (color.length()>0)
+						color +=":";
+					color+= colors.getColor(context);
+				}
+				prop.put("color",color);
+				//prop.put("color", colors.getColor(contexts.iterator().next()));
+
+				if (contexts.size()>1){
+					prop.put("penwidth", 5);					
+				}
+				prop.put("label","");
+
+				for (Object key :prop.keySet()){
+					params += String.format("%s=\"%s\" ", key, prop.get(key));
 				}
 				ret += String.format(" \"%s\" [ %s ];\n ", e, params);
 
 				Integer output= edge.getOutput();
-				label = map_node_id.get(output);
-				ret += String.format(" \"%s\" -> \"%s\";\n ", label, e );
+				ret += String.format(" \"%s\" -> \"%s\";\n ",  e ,output );
 				Iterator<Integer> iter_input = edge.getInputs().iterator();
 				while (iter_input.hasNext()){
 					Integer input= iter_input.next();
-					label = map_node_id.get(input);
-					ret += String.format(" \"%s\" -> \"%s\";\n ",  e, label );
+					ret += String.format(" \"%s\" -> \"%s\";\n ",   input, e );
 				}
 			}
 
@@ -697,6 +772,64 @@ public class DataHyperGraph {
 		ret +="}\n";
 		ret +="\n}\n";
 		return ret;
+	}
+
+	/**
+	 * find the subgraph starting from the hyperedge
+	 * @param edge
+	 * @return
+	 */
+	public HashMap<DataHyperEdge,Integer> getEdgeWeightMap(boolean bInf) {
+		HashMap<DataHyperEdge,Integer> map_edge_weight = new HashMap<DataHyperEdge,Integer>();
+		
+		if (bInf){
+			//assign id to hyperedge
+			Set<DataHyperEdge> set_edge = this.m_map_edge_context.keySet();
+			DataHyperEdge[] ary_edge= new DataHyperEdge[set_edge.size()];
+			HashMap<DataHyperEdge,Integer> map_edge_id = new HashMap<DataHyperEdge,Integer>();
+			int i =0;
+			for (DataHyperEdge edge: set_edge){
+				ary_edge[i]=edge;
+				map_edge_id.put(edge,i);
+				i++;
+			}
+			
+			//create a digraph for hyperedge dependency
+			DataDigraph dag = new DataDigraph(ary_edge.length);
+			for (DataHyperEdge from: ary_edge ){
+				Integer id_from = map_edge_id.get(from);
+				if (null==id_from)
+					System.out.println("from");
+				dag.add(id_from, id_from);
+				
+				for (Integer input: from.getInputs()){
+					for (DataHyperEdge to: this.getEdgesByOutput(input)){
+						int id_to= map_edge_id.get(to);
+						dag.add(id_from, id_to);
+					}
+				}
+			}
+			
+			//compute tc
+			DataDigraph tc = dag.create_tc();
+			
+			//use tc to sum the weight to edge
+			for (Integer id_from: tc.getFrom()){
+				DataHyperEdge from = ary_edge[id_from];
+				int sum=0;
+				for (Integer id_to: tc.getTo(id_from)){
+					DataHyperEdge to = ary_edge[id_to];
+					sum += to.getWeight();
+				}
+				map_edge_weight.put(from, sum);
+			}
+		}else{
+			for (DataHyperEdge edge: this.m_map_edge_context.keySet()){
+				map_edge_weight.put(edge, edge.getWeight());
+			}
+		}
+		
+		return map_edge_weight;
 	}	
 	
 }

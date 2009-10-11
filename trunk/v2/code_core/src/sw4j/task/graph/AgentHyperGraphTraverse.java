@@ -54,12 +54,15 @@ public class AgentHyperGraphTraverse {
 	
 	public static boolean debug = false;
 	
+	public String getLabel(){
+		return "enum";
+	}
 
 	// threshold for how many seconds can be used between two effective solutions
 	long m_config_timer_limit  = -1;
 	long m_runtime_timer_start;
 	long m_runtime_timer_end;
-	public boolean isAboveLimitTimeout(){
+	protected boolean isAboveLimitTimeout(){
 		return (-1 != m_config_timer_limit && (m_runtime_timer_end - m_runtime_timer_start)>= m_config_timer_limit);
 	}
 
@@ -70,35 +73,46 @@ public class AgentHyperGraphTraverse {
 	 * return the seconds used by this process
 	 * @return
 	 */
-	public double getProcessSeconds(){
+	public double getResultProcessSeconds(){
 		return (this.m_runtime_process_end- this.m_runtime_process_start)/1000.0;
 	}
 
 	
 	// threshold for how many solutions have been seen
-	int m_config_solution_count_limit  = -1;
-	int m_runtime_solution_count = 0;
-	public boolean isAboveLimitSolutionCount(){
-		return -1 != m_config_solution_count_limit &&  m_runtime_solution_count>= m_config_solution_count_limit;
+	int m_config_solution_found_limit  = -1;
+	int m_runtime_solution_found_count = 0;
+	protected boolean isAboveLimitSolutionCount(){
+		return -1 != m_config_solution_found_limit &&  m_runtime_solution_found_count>= m_config_solution_found_limit;
 	}
 
 	/**
 	 * return how many solutions have been found
 	 * @return
 	 */
-	public int getSolutionCount() {
-		return this.m_runtime_solution_count;
+	public int getResultSolutionFoundCount() {
+		return this.m_runtime_solution_found_count;
 	}
 	
 	
 	// record samples of found solutions
-	int m_config_solutions_limit = 1;
+	int m_config_solutions_saved_limit = 1;
 	ArrayList<DataHyperGraph> m_runtime_solutions = new ArrayList<DataHyperGraph>();
 
-	protected void saveSolution(DataHyperGraph g){
+	protected void doSaveSolution(DataHyperGraph g){
+		if (this.isMustStop())
+			return ;
 
-		if (-1 == m_config_solution_count_limit ||  m_runtime_solutions.size() < m_config_solutions_limit)
+		this.m_runtime_solution_found_count ++;
+		if (-1 == m_config_solutions_saved_limit ||  m_runtime_solutions.size() < m_config_solutions_saved_limit){
 			m_runtime_solutions.add(g);
+			
+			//reset time
+			m_runtime_timer_start = System.currentTimeMillis();
+		}
+	}
+	
+	protected void doResetSolution(){
+		m_runtime_solutions.clear();
 	}
 	
 	
@@ -110,7 +124,7 @@ public class AgentHyperGraphTraverse {
 	 * return a list of recorded solutions
 	 * @return
 	 */
-	public List<DataHyperGraph> getSolutions(){
+	public List<DataHyperGraph> getResultSolutions(){
 		return this.m_runtime_solutions;
 	}
 
@@ -131,28 +145,32 @@ public class AgentHyperGraphTraverse {
 	 * @param limit - total result to be returned (-1 means no limit)
 	 * @return
 	 */
-	public void traverse(DataHyperGraph G, Integer v, int solution_count_limit, int timeout_limit, int solutions_limit){
-		before_traverse(G,v);
+	public void traverse(DataHyperGraph G, Integer v, int solution_found_limit, int timeout_limit, int solutions_saved_limit){
+		doTraverseBefore(G,v);
 		
 		//additional init
-		m_config_solution_count_limit = solution_count_limit;
+		m_config_solution_found_limit = solution_found_limit;
 		m_config_timer_limit = timeout_limit;
-		m_config_solutions_limit= solutions_limit;
+		m_config_solutions_saved_limit= solutions_saved_limit;
 		
 		HashSet<Integer> Vx = new HashSet<Integer> ();
 		Vx.add(v);
 
 		// run process
-		on_traverse(G, v, Vx, new DataHyperGraph());
+		doTraverse(G, v, Vx, new DataHyperGraph());
 		
 		
-		after_traverse();
+		doTraverseAfter();
 		
 	}
 
-	protected void before_traverse(DataHyperGraph G, Integer v){
+	protected void doTraverseBefore(DataHyperGraph G, Integer v){
 		//init
-		m_runtime_solution_count =0;
+		doInit();
+	}
+	
+	protected void doInit(){
+		m_runtime_solution_found_count =0;
 
 		m_runtime_process_start = System.currentTimeMillis();
 		m_runtime_timer_start = m_runtime_process_start;
@@ -160,13 +178,13 @@ public class AgentHyperGraphTraverse {
 		// set run token file
 		try {
 			m_szFileName_runtime = "run-"+m_runtime_timer_start;
-			ToolIO.pipeStringToFile("remove file to stop",m_szFileName_runtime,false,false);
+			ToolIO.pipeStringToFile(this.getClass().getName()+" remove file to stop",m_szFileName_runtime,false,false);
 		} catch (Sw4jException e) {
 			e.printStackTrace();
 		}		
 	}
 
-	protected void after_traverse(){
+	protected void doTraverseAfter(){
 		//record when finished
 		m_runtime_process_end = System.currentTimeMillis();
 
@@ -176,7 +194,6 @@ public class AgentHyperGraphTraverse {
 			f.delete();
 		}
 
-		System.gc();
 		System.gc();
 		System.gc();
 		//System.out.println("free memory:" + Runtime.getRuntime().freeMemory());
@@ -193,13 +210,13 @@ public class AgentHyperGraphTraverse {
 	 * @param Gx	the current path, i.e. concise selection of hyperedge
 	 * @return	if some solution was found
 	 */
-	protected boolean on_traverse(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
+	protected boolean doTraverse(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
 		// check if g is not meeting other criteria
-		if (canDiscard(G, Vx, Gx))
+		if (isSolutionDiscardable(G, Vx, Gx))
 			return false;
 
 		// check the hyperedge selection
-		if (checkSolution(G, v, Vx, Gx))
+		if (doCheckSolution(G, v, Vx, Gx))
 			return true;
 
 		// stop if there are no more vertices
@@ -207,15 +224,15 @@ public class AgentHyperGraphTraverse {
 			return false;
 
 		//select one vertex 
-		Integer vh = select_next_vertex(G,v,Vx,Gx);
+		Integer vh = doSelectNextVertex(G,v,Vx,Gx);
 		
 		if (null==vh)
 			return false;
 		
 
 		//list the edge (filter, reorder...)
-		Iterator<DataHyperEdge> iter = reorder_next_edges(G,v,Vx,Gx, 
-										filter_next_edges(G,v,Vx,Gx, 
+		Iterator<DataHyperEdge> iter = doNextEdgesReorder(G,v,Vx,Gx, 
+										doNextEdgesFilter(G,v,Vx,Gx, 
 												G.getEdgesByOutput(vh)) ).iterator();
 
 		// try each edge,
@@ -238,7 +255,7 @@ public class AgentHyperGraphTraverse {
 			DataHyperGraph new_gx = new DataHyperGraph(Gx);
 			new_gx.add(g);
 			
-			bRet |= on_traverse(G, v, new_vx, new_gx);
+			bRet |= doTraverse(G, v, new_vx, new_gx);
 		}
 		
 		
@@ -253,31 +270,52 @@ public class AgentHyperGraphTraverse {
 	 * @param Gx
 	 * @return
 	 */
-	protected boolean canDiscard(DataHyperGraph G, Set<Integer> Vx, DataHyperGraph Gx){
+	protected boolean isSolutionDiscardable(DataHyperGraph G, Set<Integer> Vx, DataHyperGraph Gx){
 		if (debug){
 			log(String.format("edges %d, vertices %d, solutions %d. todo %s ", 
 					Gx.getEdges().size(), 
 					Gx.getVertices().size(),
-					this.m_runtime_solution_count,
+					this.m_runtime_solution_found_count,
 					Vx.toString()));
 		}
 		
 		return false;
 	}
 	
+	/**
+	 * weight of the best solution, better quality has lower integer value
+	 */
+	public int m_runtime_best_weight= -1;
+	public DataHyperGraph m_runtime_best_subgraph = null;
+	public int getResultBestWeight(){
+		return m_runtime_best_weight;
+	}
+
 	protected boolean isSolution(Integer v, Set<Integer> Vx, DataHyperGraph Gx){
 		boolean bRet = (Vx.isEmpty() && Gx.isComplete() && Gx.isSingleRoot(v) && Gx.isAcyclic());
-		if (bRet){
-			this.m_runtime_solution_count ++;
-		}
 		
 		return bRet;
 	}
 	
-	protected boolean checkSolution(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
+	protected int doCheckSolutionBest(DataHyperGraph Gx){
+		int weight= Gx.getTotalWeight();
+		if (m_runtime_best_weight== -1 || weight<m_runtime_best_weight){
+			m_runtime_best_weight=weight;
+			m_runtime_best_subgraph=Gx;
+			return 1;
+		}else if(weight == m_runtime_best_weight){
+			return 0;
+		}else{
+			return -1;
+		}
+	}
+	protected boolean doCheckSolution(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
 		if (isSolution(v,Vx,Gx)){	
 
-			saveSolution(Gx);
+			doCheckSolutionBest(Gx);
+			
+			
+			doSaveSolution(Gx);
 
 			if (debug){
 				System.out.println(Gx.data_summary());
@@ -303,11 +341,16 @@ public class AgentHyperGraphTraverse {
 		if (null!= m_szFileName_runtime && !new File(m_szFileName_runtime).exists())
 			return  true;
 
+		if (m_bMustStop)
+			return true;
+		
 		return false;	
 	}
 	
+	protected boolean m_bMustStop=false;
+	
 
-	protected Integer select_next_vertex(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
+	protected Integer doSelectNextVertex(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx){
 		// simply pick the edges associated with the first to-visit vertex.
 		if (!Vx.isEmpty())
 			return Vx.iterator().next();
@@ -315,7 +358,7 @@ public class AgentHyperGraphTraverse {
 			return null;
 	}
 	
-	protected Collection<DataHyperEdge> filter_next_edges(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx, Collection<DataHyperEdge> edges){
+	protected Collection<DataHyperEdge> doNextEdgesFilter(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx, Collection<DataHyperEdge> edges){
 		ArrayList<DataHyperEdge> new_next = new ArrayList<DataHyperEdge>();
 
 		//generate a directed graph 
@@ -343,13 +386,13 @@ public class AgentHyperGraphTraverse {
 		
 		return new_next;
 	}
-	protected Collection<DataHyperEdge> reorder_next_edges(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx, Collection<DataHyperEdge> edges){
+	protected Collection<DataHyperEdge> doNextEdgesReorder(DataHyperGraph G, Integer v, Set<Integer> Vx, DataHyperGraph Gx, Collection<DataHyperEdge> edges){
 		return edges;
 	}	
 
 
-	public String getSummary(DataHyperGraph G) {
-		return String.format("found %d solutions in %.3f seconds", this.m_runtime_solution_count, this.getProcessSeconds());
+	public String getResultSummary(DataHyperGraph G) {
+		return String.format("found %d solutions in %.3f seconds", this.m_runtime_solution_found_count, this.getResultProcessSeconds());
 	}
 	
 	

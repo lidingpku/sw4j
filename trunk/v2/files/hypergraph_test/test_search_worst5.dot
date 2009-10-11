@@ -1,0 +1,54 @@
+/*
+
+#generated: 2009-10-10T22:43:07Z
+#context (total): 1 - [] 
+#hyperedges (total): 10
+#hyperedges (axioms): 2
+#hyperedges (share conclusion): 4 (e.g. [1, 2, 3, 4])
+#vertices (total): 6
+#vertices (outputs): 6
+#vertices (inputs): 5
+#vertices (roots): 1 (e.g. [1] )
+*/digraph g { 
+label=search_worst5
+ "0" [ shape="box" label="x_0"  ];
+  "1" [ color="red" shape="box" label="x_1" style="filled"  ];
+  "2" [ color="red" shape="box" label="x_2" style="filled"  ];
+  "3" [ color="red" shape="box" label="x_3" style="filled"  ];
+  "4" [ color="red" shape="box" label="x_4" style="filled"  ];
+  "5" [ shape="box" label="x_5"  ];
+  "[1],[0, 2]" [ color="black" shape="diamond" label=""  ];
+  "[1],[0, 2]" -> "1";
+  "0" -> "[1],[0, 2]";
+  "2" -> "[1],[0, 2]";
+  "[1],[2]" [ color="black" shape="diamond" label=""  ];
+  "[1],[2]" -> "1";
+  "2" -> "[1],[2]";
+  "[0],[]" [ color="black" shape="invhouse" label=""  ];
+  "[0],[]" -> "0";
+  "[2],[0, 3]" [ color="black" shape="diamond" label=""  ];
+  "[2],[0, 3]" -> "2";
+  "0" -> "[2],[0, 3]";
+  "3" -> "[2],[0, 3]";
+  "[2],[3]" [ color="black" shape="diamond" label=""  ];
+  "[2],[3]" -> "2";
+  "3" -> "[2],[3]";
+  "[3],[0, 4]" [ color="black" shape="diamond" label=""  ];
+  "[3],[0, 4]" -> "3";
+  "0" -> "[3],[0, 4]";
+  "4" -> "[3],[0, 4]";
+  "[3],[4]" [ color="black" shape="diamond" label=""  ];
+  "[3],[4]" -> "3";
+  "4" -> "[3],[4]";
+  "[5],[]" [ color="black" shape="invhouse" label=""  ];
+  "[5],[]" -> "5";
+  "[4],[0, 5]" [ color="black" shape="diamond" label=""  ];
+  "[4],[0, 5]" -> "4";
+  "0" -> "[4],[0, 5]";
+  "5" -> "[4],[0, 5]";
+  "[4],[5]" [ color="black" shape="diamond" label=""  ];
+  "[4],[5]" -> "4";
+  "5" -> "[4],[5]";
+ }
+
+}
