@@ -33,6 +33,7 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.net.URI;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -50,11 +51,13 @@ import sw4j.util.DataObjectGroupMap;
 import sw4j.util.DataPVCMap;
 import sw4j.util.DataPVHMap;
 import sw4j.util.DataQname;
+import sw4j.util.DataSmartMap;
 import sw4j.util.Sw4jException;
 import sw4j.util.ToolHash;
 import sw4j.util.ToolSafe;
 import sw4j.util.ToolIO;
 import sw4j.util.ToolString;
+import sw4j.util.ToolURI;
 
 import com.hp.hpl.jena.datatypes.xsd.XSDDatatype;
 import com.hp.hpl.jena.ontology.Individual;
@@ -1478,4 +1481,84 @@ public class ToolJena {
 			}
 		}
 	}
+	
+	
+	public static void update_addInstance(Model model_data, DataSmartMap ind, String prop_namespace, String ind_uri){
+		Resource subject = model_data.createResource();
+		if (!ToolSafe.isEmpty(ind_uri))
+			subject = model_data.createResource(ind_uri);
+		
+		for (Map.Entry<String,Object> entry : ind.getData().entrySet()){
+			String prop = entry.getKey();
+			Object value = entry.getValue();
+			
+			Property p =  model_data.createProperty(prop_namespace+prop);
+			
+			update_addTriple(subject, p, value.toString());
+		}
+	}
+	
+	public static boolean update_addTriple(Resource res, Property property, String value){
+		if (ToolSafe.isEmpty(value))
+			return false;
+		value = value.trim();
+
+		//process http url
+		String szURL= ToolString.parse_hyperlink(value);
+		if (!ToolSafe.isEmpty(szURL)){
+			URI uri;
+			try {
+				uri = ToolURI.string2uri(szURL);
+				if (!ToolSafe.isEmpty(uri)&&!ToolSafe.isEmpty(uri.toString()) ){
+					Resource obj = res.getModel().createResource(uri.toString());
+					res.addProperty(property, obj);
+					
+					//correctly processed url
+					return true;
+				}
+			} catch (Sw4jException e) {
+			}
+		}
+
+		//do normal literal triple generation
+		String value_norm = ToolString.filter_control_character(value);
+		//ToolString.protectSpecialCharactersForXml(value);
+
+		if (ToolSafe.isEmpty(value_norm))
+			return false;
+
+		if ("NA".equalsIgnoreCase(value_norm))
+			return false;
+
+		if (!value.equals(value_norm)){
+			System.out.println("filtered control charaters: "+ value_norm +" FROM "+ value);
+		}
+
+		//parse typed literal
+		//try{
+		//	res.addLiteral(property, Boolean.parseBoolean(value_norm));	
+		//	return  true;
+		//}catch(NumberFormatException e){
+		//}
+
+		try{
+			Integer.parseInt(value_norm);
+			
+			res.addProperty(property, value_norm, XSDDatatype.XSDinteger);			
+			return  true;
+		}catch(NumberFormatException e){
+		}
+
+		try{
+			res.addLiteral(property, Float.parseFloat(value_norm));			
+			return  true;
+		}catch(NumberFormatException e){
+		}
+		
+		// if now type can be determined, use plain literal
+		res.addProperty(property, value_norm);			
+
+		return true;
+	}
+
 }

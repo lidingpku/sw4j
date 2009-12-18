@@ -1,0 +1,41 @@
+/*
+
+#generated: 2009-10-10T22:43:41Z
+#context (total): 1 - [A] 
+#hyperedges (total): 6
+#hyperedges (axioms): 3
+#hyperedges (share conclusion): 1 (e.g. [1])
+#vertices (total): 5
+#vertices (outputs): 5
+#vertices (inputs): 4
+#vertices (roots): 1 (e.g. [0] )
+*/digraph g { 
+
+
+ "0" [ shape="box" label="A"  ];
+  "1" [ color="red" shape="box" label="B" style="filled"  ];
+  "2" [ shape="box" label="C"  ];
+  "3" [ shape="box" label="D"  ];
+  "4" [ shape="box" label="E"  ];
+  "[1],[2, 3]" [ color="black" shape="diamond" label="s3"  ];
+  "[1],[2, 3]" -> "1";
+  "2" -> "[1],[2, 3]";
+  "3" -> "[1],[2, 3]";
+  "[0],[1, 2, 3]" [ color="black" shape="diamond" label="s1"  ];
+  "[0],[1, 2, 3]" -> "0";
+  "1" -> "[0],[1, 2, 3]";
+  "2" -> "[0],[1, 2, 3]";
+  "3" -> "[0],[1, 2, 3]";
+  "[1],[4]" [ color="black" shape="diamond" label="s2"  ];
+  "[1],[4]" -> "1";
+  "4" -> "[1],[4]";
+  "[2],[]" [ color="black" shape="invhouse" label="s4"  ];
+  "[2],[]" -> "2";
+  "[4],[]" [ color="black" shape="invhouse" label="s5"  ];
+  "[4],[]" -> "4";
+  "[3],[]" [ color="black" shape="invhouse" label="s6"  ];
+  "[3],[]" -> "3";
+ }
+
+}
+

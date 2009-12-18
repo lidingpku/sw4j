@@ -52,6 +52,16 @@ import com.hp.hpl.jena.vocabulary.RDFS;
 
 public class ToolJenaTest {
 	@Test
+	public void test_encoding(){
+		String szURI;
+		szURI = "http://data.semanticweb.org/conference/iswc/2009/complete";
+		Model m = ModelFactory.createDefaultModel() ;
+		m.read(szURI);
+		ToolJena.printModel(m);
+		if (null!= m)
+			ToolJena.printModelToFile(m, new File("output/test-encoding.rdf"));
+	}
+	//@Test
 	public void test_write_relative_url() {
 		String szURL;
 		szURL = "files/jena_test/list1.rdf";
