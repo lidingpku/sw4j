@@ -44,6 +44,8 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.zip.GZIPOutputStream;
@@ -121,24 +123,68 @@ public class ToolIO {
 	 * @return
 	 * @throws Sw4jException
 	 */
-	public static InputStream pipeUrlToInputStream(String szUrl) throws Sw4jException {
+	public static InputStream pipeUrlToInputStream(String szUrl, boolean bFollowRedirect) throws Sw4jException {
 		URL url = ToolURI.string2url(szUrl);
-		return pipeUrlToInputStream(url);
+		return pipeUrlToInputStream(url,bFollowRedirect);
 	}	
 
 
+	public static HttpURLConnection openHttpConnection(String szUrl, boolean bFollowRedirect){
+		try {
+			return openHttpConnection(new URL(szUrl),bFollowRedirect );
+		} catch (MalformedURLException e) {
+			return null;
+		}
+	}
+	
+	public static HttpURLConnection openHttpConnection(URL url, boolean bFollowRedirect){
+		//System.out.println(HttpURLConnection.getFollowRedirects());
+		HttpURLConnection conn = null;
+		try {
+			boolean foundRedirect;
+			do{
+				foundRedirect = false;
+				if (!url.getProtocol().toLowerCase().startsWith("http"))
+					return null;
+				
+				conn = (HttpURLConnection) url.openConnection();
+				conn.setInstanceFollowRedirects(bFollowRedirect);
+			    int responseCode = conn.getResponseCode();
+
+                if (bFollowRedirect && responseCode == 302) {
+                	String location = conn.getHeaderField("Location");
+					url = new URL(location);
+                	foundRedirect =true;
+                }  
+			}while (foundRedirect);
+        } catch (IOException e1) {
+			e1.printStackTrace();
+		}
+        return conn;
+	}
+	
 	/**
 	 * prepare an input stream from url
 	 * @param url
 	 * @return
 	 * @throws Sw4jException
 	 */
-	private static InputStream pipeUrlToInputStream(URL url) throws Sw4jException {
+	private static InputStream pipeUrlToInputStream(URL url, boolean bFollowRedirect) throws Sw4jException {
 		try {
-			URLConnection conn = null;
-			conn = url.openConnection();
-			conn.connect();
-			return conn.getInputStream();
+			URLConnection conn = openHttpConnection(url,bFollowRedirect );
+			if (null==conn){
+				conn = url.openConnection();
+			}
+
+			if (null!=conn){
+				conn.connect();
+				return conn.getInputStream();				
+			}else{
+				Sw4jException e1 = new Sw4jException(Sw4jMessage.STATE_FATAL, "cannot establish connection");
+				getLogger().error(e1.getMessage());
+				throw e1;
+			}
+				
 		} catch (IOException e) {
 			Sw4jException e1 = new Sw4jException(Sw4jMessage.STATE_FATAL, e);
 			getLogger().error(e1.getMessage());
@@ -204,12 +250,12 @@ public class ToolIO {
 	 * @return non-null byte array if succeed, otherwise an exception will be thrown
 	 * @throws Sw4jException
 	 */
-	public static byte[] pipeUrlToBytes(String szUrl) throws Sw4jException {
-		return pipeUrlToBytes(ToolURI.string2url(szUrl));
+	public static byte[] pipeUrlToBytes(String szUrl, boolean bFollowRedirection) throws Sw4jException {
+		return pipeUrlToBytes(ToolURI.string2url(szUrl),bFollowRedirection);
 	}
 
-	public static byte[] pipeUrlToBytes(URL url) throws Sw4jException {
-		BufferedInputStream bis = new BufferedInputStream(pipeUrlToInputStream(url));
+	public static byte[] pipeUrlToBytes(URL url, boolean bFollowRedirection) throws Sw4jException {
+		BufferedInputStream bis = new BufferedInputStream(pipeUrlToInputStream(url,bFollowRedirection));
 		return  pipeInputStreamToBytes(bis);
 	}
 
@@ -221,9 +267,9 @@ public class ToolIO {
 	 * @param szFileName
 	 * @throws Sw4jException
 	 */
-	public static void pipeUrlToFile(String szUrl, String szFileName, boolean bGzip)
+	public static void pipeUrlToFile(String szUrl, String szFileName, boolean bGzip, boolean bFollowRedirection)
 	throws Sw4jException {
-		byte[] data = pipeUrlToBytes(szUrl);
+		byte[] data = pipeUrlToBytes(szUrl,bFollowRedirection);
 		File output = prepareFile(szFileName);
 		pipeBytesToFile(data, output, false, bGzip);
 	}
@@ -234,10 +280,13 @@ public class ToolIO {
 	 * @throws Sw4jException
 	 */
 	public static String pipeUrlToString(String szUrl) throws Sw4jException {
-		return pipeInputStreamToString( pipeUrlToInputStream(szUrl));
+		return pipeUrlToString(szUrl, false);
 	}
 
 
+	public static String pipeUrlToString(String szUrl, boolean bFollowRedirect) throws Sw4jException {
+		return pipeInputStreamToString( pipeUrlToInputStream(szUrl,bFollowRedirect));
+	}
 
 
 

@@ -189,7 +189,7 @@ public class AgentURLExtractor {
 					continue;
 				
 				
-				if (!tempURL.getProtocol().toLowerCase().equals("http"))
+				if (!tempURL.getProtocol().toLowerCase().startsWith("http"))
 					continue;
 					
 				String szTempURL = tempURL.toString();

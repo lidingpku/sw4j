@@ -21,7 +21,7 @@ public class DataTable {
 	public static DataTable fromCSV(String szURL){
 		DataTable  table = new DataTable();
 		try {
-			BufferedReader reader = new BufferedReader(new InputStreamReader (ToolIO.pipeUrlToInputStream(szURL)));
+			BufferedReader reader = new BufferedReader(new InputStreamReader (ToolIO.pipeUrlToInputStream(szURL, true)));
 			String line = null;
 			int rowid=0;
 			ToolCsvParser parser = new ToolCsvParser();

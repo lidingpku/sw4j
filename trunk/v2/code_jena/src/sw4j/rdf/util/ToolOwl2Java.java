@@ -137,6 +137,9 @@ public class ToolOwl2Java {
         		}
         	}
         	
+        	//keep them disjoint 
+			arySetRes[CAT_INSTANCE].removeAll(arySetRes[CAT_CLASS]);
+        	
         	// generate ontology content
         	
         	String content = "";
@@ -179,6 +182,8 @@ public class ToolOwl2Java {
 	}
 
 	private static String genSimpleJavaCodeOneEntry(String szURI, String szOntologyNamespace, String szType, String szPrefix, boolean bUseJena){
+		String localname = szURI.substring(szOntologyNamespace.length());
+		localname = normalize_java_variable_name(localname);
 		if (bUseJena){
 			
 			
@@ -188,7 +193,6 @@ public class ToolOwl2Java {
 				 "\t public final static String __LOCALNAME___uri = \"__URI__\";\n" +
 				 "\t public final static __TYPE__  __LOCALNAME__ = ResourceFactory.create__TYPE__(__LOCALNAME___uri);\n\n";
 
-			String localname = szURI.substring(szOntologyNamespace.length());
 			return template.replaceAll("__LOCALNAME__", localname)
 							.replaceAll("__TYPE__", szType)
 							.replaceAll("__PREFIX__", szPrefix)
@@ -199,7 +203,6 @@ public class ToolOwl2Java {
 				 "\t public final static String __LOCALNAME___qname = \"__PREFIX__:__LOCALNAME__\";\n" +
 				 "\t public final static String __LOCALNAME___uri = \"__URI__\";\n";
 
-			String localname = szURI.substring(szOntologyNamespace.length());
 			return template.replaceAll("__LOCALNAME__", localname)
 							.replaceAll("__TYPE__", szType)
 							.replaceAll("__PREFIX__", szPrefix)
@@ -208,6 +211,77 @@ public class ToolOwl2Java {
 	}
 	
 	
+	public static String normalize_java_variable_name(String variable_name){
+		variable_name = variable_name.replace('-','_');
+		
+		//handle reserved word
+		final String  [] reserved_names = new String[]{
+				"abstract",
+				"assert",
+				"boolean",
+				"break",
+				"byte",
+				"case",
+				"catch",
+				"char",
+				"class",
+				"const",
+				"continue",
+					
+				"default",
+				"do",
+				"double",
+				"else",
+				"enum",
+				"extends",
+				"false",
+				"final",
+				"finally",
+				"float",
+				"for",
+				
+				"goto",
+				"if",
+				"implements",
+				"import",
+				"instanceof",
+				"int",
+				"interface",
+				"long",
+				"native",
+				"new",
+				"null",
+				
+				"package",
+				"private",
+				"protected",
+				"public",
+				"return",
+				"short",
+				"static",
+				"strictfp",
+				"super",
+				"switch",
+				
+				"synchronized",
+				"this",
+				"throw",
+				"throws",
+				"transient",
+				"true",
+				"try",
+				"void",
+				"volatile",
+				"while",
+		};
+		
+		for(String reserved_name : reserved_names){
+			if (reserved_name.equals(variable_name))
+				variable_name=variable_name+"_";
+		}
+		
+		return variable_name;
 	
+	}
 
 }

@@ -14,6 +14,16 @@ import sw4j.task.load.TaskLoad;
 
 public class RdfParserTest {
 	@Test
+	public void test_rdfa_parse(){
+		String [][] aryURL = new String [][]{
+				  {	"http://tw.rpi.edu/portal/News","1"},		//
+
+
+		};
+		test_rdf_rdfa_parse(aryURL);
+	}
+	
+	@Test
 	public void test_gzip() {
 		String [][] aryURL = new String [][]{
 				//{"/work/iw/swa/swoogle3cache/2005/01/24/110080_nt","29"},
@@ -306,7 +316,6 @@ public class RdfParserTest {
 			ToolParseRdfJena.debug=true;
 			for (int i=0; i<aryURL.length; i++){
 				String szURL = aryURL[i][0];
-				
 				TaskLoad data_crawl = TaskLoad.load(szURL);
 				
 				//System.out.println(data_crawl.getContent());
