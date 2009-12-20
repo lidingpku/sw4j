@@ -139,6 +139,8 @@ public class ToolOwl2Java {
         	
         	//keep them disjoint 
 			arySetRes[CAT_INSTANCE].removeAll(arySetRes[CAT_CLASS]);
+			arySetRes[CAT_INSTANCE].removeAll(arySetRes[CAT_PROPERTY]);
+			arySetRes[CAT_PROPERTY].removeAll(arySetRes[CAT_CLASS]);
         	
         	// generate ontology content
         	
@@ -183,27 +185,31 @@ public class ToolOwl2Java {
 
 	private static String genSimpleJavaCodeOneEntry(String szURI, String szOntologyNamespace, String szType, String szPrefix, boolean bUseJena){
 		String localname = szURI.substring(szOntologyNamespace.length());
-		localname = normalize_java_variable_name(localname);
+		localname = normalize_localname(localname);
+		
+		String var_name = normalize_java_variable_name(localname);
 		if (bUseJena){
 			
 			
 			String template =//"\t public final static String __LOCALNAME___uri = \"__URI__\";\n" +
-				 "\t public final static String __LOCALNAME___lname = \"__LOCALNAME__\";\n" +
-				 "\t public final static String __LOCALNAME___qname = \"__PREFIX__:__LOCALNAME__\";\n" +
-				 "\t public final static String __LOCALNAME___uri = \"__URI__\";\n" +
-				 "\t public final static __TYPE__  __LOCALNAME__ = ResourceFactory.create__TYPE__(__LOCALNAME___uri);\n\n";
+				 "\t public final static String __VAR_NAME___lname = \"__LOCALNAME__\";\n" +
+				 "\t public final static String __VAR_NAME___qname = \"__PREFIX__:__LOCALNAME__\";\n" +
+				 "\t public final static String __VAR_NAME___uri = \"__URI__\";\n" +
+				 "\t public final static __TYPE__  __VAR_NAME__ = ResourceFactory.create__TYPE__(__VAR_NAME___uri);\n\n";
 
-			return template.replaceAll("__LOCALNAME__", localname)
+			return template.replaceAll("__VAR_NAME__", var_name)
+							.replaceAll("__LOCALNAME__", localname)
 							.replaceAll("__TYPE__", szType)
 							.replaceAll("__PREFIX__", szPrefix)
 							.replaceAll("__URI__", szURI);
 		}else{
 			String template =//"\t public final static String __LOCALNAME___uri = \"__URI__\";\n" +
-				 "\t public final static String __LOCALNAME___lname = \"__LOCALNAME__\";\n" +
-				 "\t public final static String __LOCALNAME___qname = \"__PREFIX__:__LOCALNAME__\";\n" +
-				 "\t public final static String __LOCALNAME___uri = \"__URI__\";\n";
+				 "\t public final static String __VAR_NAME___lname = \"__LOCALNAME__\";\n" +
+				 "\t public final static String __VAR_NAME___qname = \"__PREFIX__:__LOCALNAME__\";\n" +
+				 "\t public final static String __VAR_NAME___uri = \"__URI__\";\n";
 
-			return template.replaceAll("__LOCALNAME__", localname)
+			return template.replaceAll("__VAR_NAME__", var_name)
+							.replaceAll("__LOCALNAME__", localname)
 							.replaceAll("__TYPE__", szType)
 							.replaceAll("__PREFIX__", szPrefix)
 							.replaceAll("__URI__", szURI);
@@ -211,9 +217,12 @@ public class ToolOwl2Java {
 	}
 	
 	
+	public static String normalize_localname(String variable_name){
+		return variable_name.replace('-','_');
+	}
+
 	public static String normalize_java_variable_name(String variable_name){
-		variable_name = variable_name.replace('-','_');
-		
+
 		//handle reserved word
 		final String  [] reserved_names = new String[]{
 				"abstract",
@@ -277,7 +286,7 @@ public class ToolOwl2Java {
 		
 		for(String reserved_name : reserved_names){
 			if (reserved_name.equals(variable_name))
-				variable_name=variable_name+"_";
+				return variable_name+"_java";
 		}
 		
 		return variable_name;
