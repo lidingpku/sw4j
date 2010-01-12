@@ -594,7 +594,7 @@ Formula:
       u
 7. It's winter.
       w
-8. It's winter.
+8. It's raining.
       r
 11.  You're singing
       s
