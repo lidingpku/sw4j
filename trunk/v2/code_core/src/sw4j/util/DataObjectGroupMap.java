@@ -83,7 +83,11 @@ public class DataObjectGroupMap <V>{
 		return this.m_map_gid_uris.keySet().iterator();
 	}
 
-	public Set<V> keyset(){
+	public Set<Integer> getGids(){
+		return this.m_map_gid_uris.keySet();
+	}
+
+	public Set<V> getObjects(){
 		return this.m_map_uri_gid.keySet();
 	}
 	
