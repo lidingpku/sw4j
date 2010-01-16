@@ -45,6 +45,7 @@ import java.util.TreeSet;
 
 import org.apache.log4j.Logger;
 
+import sw4j.app.pml.PMLR;
 import sw4j.rdf.load.RDFSYNTAX;
 import sw4j.task.graph.DataDigraph;
 import sw4j.util.DataObjectGroupMap;
@@ -963,6 +964,27 @@ public class ToolJena {
 
 		return ret;
 	}
+
+	/** 
+	 * list all same as relation in m and create an all same model
+	 * @param m
+	 * @return
+	 */
+	public static Model create_allsame(Model ref){
+		Model m = ModelFactory.createDefaultModel();
+		DataObjectGroupMap<Resource> eqmap = new DataObjectGroupMap<Resource>();
+		for (Statement stmt : ref.listStatements(null, OWL.sameAs, (String) null).toSet()){
+			eqmap.addSameObjectAs(stmt.getSubject(), (Resource)stmt.getObject());
+		}
+		for (Integer gid: eqmap.getGids()){
+			Resource subject = m.createResource(PMLR.AllSame);
+			for (Resource res : eqmap.getObjectsByGid(gid)){
+				subject.addProperty(PMLR.hasMember, res);
+			}
+		}
+		
+		return m;
+	}
 	
 	/**
 	 * merge a collection of models into a new model
@@ -1431,7 +1453,7 @@ public class ToolJena {
 	
 	public static Model create_rename(Model m, DataObjectGroupMap<Resource> map_res_id, String sz_namespace){
 		HashMap<RDFNode,Resource> map_from_to = new HashMap<RDFNode,Resource>();
-		for (Resource res: map_res_id.keyset()){
+		for (Resource res: map_res_id.getObjects()){
 			Integer gid= map_res_id.getGid(res);
 			map_from_to.put(res, m.createResource(sz_namespace+"id"+gid));
 		}
