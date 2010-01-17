@@ -257,7 +257,7 @@ public class DataHyperGraph {
 					ret.put(context,g);
 				}
 				
-				g.add(entry.getKey());
+				g.add(entry.getKey(),context);
 				
 				
 				
@@ -774,62 +774,5 @@ public class DataHyperGraph {
 		return ret;
 	}
 
-	/**
-	 * find the subgraph starting from the hyperedge
-	 * @param edge
-	 * @return
-	 */
-	public HashMap<DataHyperEdge,Integer> getEdgeWeightMap(boolean bInf) {
-		HashMap<DataHyperEdge,Integer> map_edge_weight = new HashMap<DataHyperEdge,Integer>();
-		
-		if (bInf){
-			//assign id to hyperedge
-			Set<DataHyperEdge> set_edge = this.m_map_edge_context.keySet();
-			DataHyperEdge[] ary_edge= new DataHyperEdge[set_edge.size()];
-			HashMap<DataHyperEdge,Integer> map_edge_id = new HashMap<DataHyperEdge,Integer>();
-			int i =0;
-			for (DataHyperEdge edge: set_edge){
-				ary_edge[i]=edge;
-				map_edge_id.put(edge,i);
-				i++;
-			}
-			
-			//create a digraph for hyperedge dependency
-			DataDigraph dag = new DataDigraph(ary_edge.length);
-			for (DataHyperEdge from: ary_edge ){
-				Integer id_from = map_edge_id.get(from);
-				if (null==id_from)
-					System.out.println("from");
-				dag.add(id_from, id_from);
-				
-				for (Integer input: from.getInputs()){
-					for (DataHyperEdge to: this.getEdgesByOutput(input)){
-						int id_to= map_edge_id.get(to);
-						dag.add(id_from, id_to);
-					}
-				}
-			}
-			
-			//compute tc
-			DataDigraph tc = dag.create_tc();
-			
-			//use tc to sum the weight to edge
-			for (Integer id_from: tc.getFrom()){
-				DataHyperEdge from = ary_edge[id_from];
-				int sum=0;
-				for (Integer id_to: tc.getTo(id_from)){
-					DataHyperEdge to = ary_edge[id_to];
-					sum += to.getWeight();
-				}
-				map_edge_weight.put(from, sum);
-			}
-		}else{
-			for (DataHyperEdge edge: this.m_map_edge_context.keySet()){
-				map_edge_weight.put(edge, edge.getWeight());
-			}
-		}
-		
-		return map_edge_weight;
-	}	
 	
 }

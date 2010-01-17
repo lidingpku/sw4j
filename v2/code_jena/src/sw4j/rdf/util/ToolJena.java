@@ -970,19 +970,24 @@ public class ToolJena {
 	 * @param m
 	 * @return
 	 */
-	public static Model create_allsame(Model ref){
+	public static Model create_allsame(Model ref, String szNamespace){
 		Model m = ModelFactory.createDefaultModel();
 		DataObjectGroupMap<Resource> eqmap = new DataObjectGroupMap<Resource>();
 		for (Statement stmt : ref.listStatements(null, OWL.sameAs, (String) null).toSet()){
 			eqmap.addSameObjectAs(stmt.getSubject(), (Resource)stmt.getObject());
 		}
 		for (Integer gid: eqmap.getGids()){
-			Resource subject = m.createResource(PMLR.AllSame);
+			Resource subject = m.createResource();
+			if (ToolURI.isUriHttp(szNamespace)){
+				subject= m.createResource(szNamespace+"group"+gid);
+			}
+			subject.addProperty(RDF.type, PMLR.AllSame);
 			for (Resource res : eqmap.getObjectsByGid(gid)){
 				subject.addProperty(PMLR.hasMember, res);
 			}
 		}
-		
+		m.setNsPrefix( PMLR.class.getSimpleName().toLowerCase(),PMLR.getURI());
+		ToolJena.update_copyNsPrefix(m, ref);
 		return m;
 	}
 	
