@@ -26,7 +26,7 @@ public class DataHyperGraphTest {
 		this.create_test_search_paulo();
 		this.create_test_search_rain();
 	}
-	@Test
+	//@Test
 	public  void test_random_many() throws IOException, Sw4jException{
 		HashSet<String> set_filename = new HashSet<String>();
 		System.out.println("======================================================================");
@@ -184,7 +184,7 @@ public class DataHyperGraphTest {
 					String.format("%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,%s=%d,",
 							OPT_ENUM,7, OPT_ENUM_FOUND,7,  	OPT_ENUM_W,5, 
 							OPT_BEST,2, OPT_BEST_FOUND,2,	OPT_BEST_W,5, 
-							OPT_AO,1, 	OPT_AO_FOUND,1,	OPT_AO_W,5)
+							OPT_AO,2, 	OPT_AO_FOUND,2,	OPT_AO_W,5)
 				},
 				{	
 					"search_worst5",
