@@ -185,6 +185,7 @@ public class ToolURI {
 		try {
 			String szDecoded = URLDecoder.decode(szUri, "UTF-8");
 			szDecoded = szDecoded.replaceAll("%2B", "+");
+			szDecoded = szDecoded.replaceAll(" ", "+");
 			return szDecoded;
 		} catch (UnsupportedEncodingException e) {
 			throw new Sw4jException( Sw4jMessage.STATE_ERROR, e);
