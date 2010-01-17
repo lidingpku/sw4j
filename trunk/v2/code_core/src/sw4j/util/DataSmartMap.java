@@ -513,7 +513,7 @@ public class DataSmartMap implements Comparable<String>{
 		while (iter.hasNext()){
 			Map.Entry<String, Object> entry = iter.next();
 			
-			out.print(String.format("%s,", entry.getKey()));
+			out.print(String.format("\"%s\",", entry.getKey()));
 		}
 		return sw.toString();
 	}
