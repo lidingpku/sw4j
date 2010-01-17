@@ -364,7 +364,22 @@ public class DataHyperGraph {
 	}
 	
 
-	
+	private HashMap<DataHyperEdge,Integer> getEdgesSharingContext(int nMaxResults){
+		HashMap<DataHyperEdge,Integer> results = new HashMap<DataHyperEdge,Integer>();
+		
+		for (DataHyperEdge edge: this.getEdges()){
+			Collection<String> contexts= this.getContextsByEdge(edge);
+			if (!ToolSafe.isEmpty(contexts) && contexts.size()>1){
+				results.put(edge, contexts.size());
+			}
+			
+			if (nMaxResults !=-1 && results.size()>nMaxResults){
+				break;
+			}
+		}
+		return results;
+	}
+		
 	
 
 	/**
@@ -463,6 +478,7 @@ public class DataHyperGraph {
 
 		if(bWithListing){
 			data.put("hyperedges (share conclusion)(example listing)",  this.getEdgesSharingOutput(10));
+			data.put("hyperedges (share context)(example listing)",  this.getEdgesSharingContext(10));
 			data.put("context (listing)", this.getContexts().toString());
 			data.put("verteics (roots)(listing)", this.getRoots().toString());			
 		}
@@ -472,6 +488,7 @@ public class DataHyperGraph {
 		data.put("hyperedges (total)", this.getEdges().size());
 		data.put("hyperedges (axioms)", this.getAxioms().size());
 		data.put("hyperedges (share conclusion)", this.getEdgesSharingOutput(-1).size());
+		data.put("hyperedges (share context)", this.getEdgesSharingContext(-1).size());
 		data.put("vertices (total)", this.getVertices().size());
 		data.put("vertices (outputs)", this.getOutputs().size());
 		data.put("vertices (inputs)", this.getInputs().size());
