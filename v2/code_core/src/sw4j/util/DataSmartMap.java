@@ -504,8 +504,20 @@ public class DataSmartMap implements Comparable<String>{
 
 	
 	////////////////////////////////////////////////
-	// translation (to SQL)
+	// translation (to CSV)
 	////////////////////////////////////////////////
+	public String toCSVheader() {
+		StringWriter sw = new StringWriter();
+		PrintWriter out = new PrintWriter(sw);
+		Iterator<Map.Entry<String, Object>> iter = getData().entrySet().iterator();
+		while (iter.hasNext()){
+			Map.Entry<String, Object> entry = iter.next();
+			
+			out.print(String.format("%s,", entry.getKey()));
+		}
+		return sw.toString();
+	}
+
 	public String toCSVrow() {
 		StringWriter sw = new StringWriter();
 		PrintWriter out = new PrintWriter(sw);
@@ -513,7 +525,7 @@ public class DataSmartMap implements Comparable<String>{
 		while (iter.hasNext()){
 			Map.Entry<String, Object> entry = iter.next();
 			
-			out.print(String.format("%s,", entry.getValue()));
+			out.print(String.format("\"%s\",", entry.getValue()));
 		}
 		return sw.toString();
 	}

@@ -47,6 +47,7 @@ import java.util.TreeSet;
 
 import sw4j.util.DataColorMap;
 import sw4j.util.DataPVHMap;
+import sw4j.util.DataSmartMap;
 import sw4j.util.ToolRandom;
 import sw4j.util.ToolSafe;
 import sw4j.util.ToolString;
@@ -447,20 +448,37 @@ public class DataHyperGraph {
 	 * @return
 	 */
 	public String data_summary(){
-		String ret ="";
-		ret += String.format("\n#generated: %s", ToolString.formatXMLDateTime(System.currentTimeMillis()));
-		ret += String.format("\n#context (total): %d - %s ", this.getContexts().size(), this.getContexts());
-		ret += String.format("\n#hyperedges (total): %d", this.getEdges().size());
-		ret += String.format("\n#hyperedges (axioms): %d", this.getAxioms().size());
-		ret += String.format("\n#hyperedges (share conclusion): %d (e.g. %s)", this.getEdgesSharingOutput(-1).size(), this.getEdgesSharingOutput(10));
-		ret += String.format("\n#vertices (total): %d", this.getVertices().size());
-		ret += String.format("\n#vertices (outputs): %d", this.getOutputs().size());
-		ret += String.format("\n#vertices (inputs): %d", this.getInputs().size());
-		ret += String.format("\n#vertices (roots): %d (e.g. %s )", this.getRoots().size(), this.getRoots());
+		String ret = "";
+		DataSmartMap data =get_data_summary(true);
 		
+
+		for (String key: data.getAllFieldName()){
+			ret +=String.format("#%s: %s\n", key, data.getAsString(key));
+		}
 		return ret;
 	}
 	
+	public DataSmartMap get_data_summary(boolean bWithListing){
+		DataSmartMap data = new DataSmartMap();
+
+		if(bWithListing){
+			data.put("hyperedges (share conclusion)(example listing)",  this.getEdgesSharingOutput(10));
+			data.put("context (listing)", this.getContexts().toString());
+			data.put("verteics (roots)(listing)", this.getRoots().toString());			
+		}
+		
+		data.put("generated", ToolString.formatXMLDateTime(System.currentTimeMillis()));
+		data.put("context (total)", this.getContexts().size());
+		data.put("hyperedges (total)", this.getEdges().size());
+		data.put("hyperedges (axioms)", this.getAxioms().size());
+		data.put("hyperedges (share conclusion)", this.getEdgesSharingOutput(-1).size());
+		data.put("vertices (total)", this.getVertices().size());
+		data.put("vertices (outputs)", this.getOutputs().size());
+		data.put("vertices (inputs)", this.getInputs().size());
+		data.put("vertices (roots)", this.getRoots().size());
+		
+		return data;
+	}
 	
 	public String data_export(){
 		return data_export(null);
