@@ -483,12 +483,12 @@ public class DataHyperGraph {
 			data.put("verteics (roots)(listing)", this.getRoots().toString());			
 		}
 		
-		data.put("generated", ToolString.formatXMLDateTime(System.currentTimeMillis()));
+		data.put("created", ToolString.formatXMLDateTime(System.currentTimeMillis()));
 		data.put("context (total)", this.getContexts().size());
 		data.put("hyperedges (total)", this.getEdges().size());
-		data.put("hyperedges (axioms)", this.getAxioms().size());
-		data.put("hyperedges (share conclusion)", this.getEdgesSharingOutput(-1).size());
-		data.put("hyperedges (share context)", this.getEdgesSharingContext(-1).size());
+		data.put("hyperedges (terminal)", this.getAxioms().size());
+		data.put("hyperedges (sharing output)", this.getEdgesSharingOutput(-1).size());
+		data.put("hyperedges (sharing context)", this.getEdgesSharingContext(-1).size());
 		data.put("vertices (total)", this.getVertices().size());
 		data.put("vertices (outputs)", this.getOutputs().size());
 		data.put("vertices (inputs)", this.getInputs().size());
