@@ -88,10 +88,14 @@ public class DataHyperGraph {
 	HashSet<Integer> m_set_vertex_input = new HashSet<Integer>();
 
 	/**
-	 * all axioms 
+	 * all terminal node 
 	 */
 	HashSet<Integer> m_set_vertex_leaf = new HashSet<Integer>() ;
 		
+	/**
+	 * all leaf edges 
+	 */
+	HashSet<DataHyperEdge> m_set_edge_leaf = new HashSet<DataHyperEdge>() ;
 	
 	/**
 	 * default constructor
@@ -118,6 +122,7 @@ public class DataHyperGraph {
 			m_map_output_edge.add(lg.m_map_output_edge);
 			m_set_vertex_input.addAll(lg.m_set_vertex_input);
 			m_set_vertex_leaf.addAll(lg.m_set_vertex_leaf);
+			m_set_edge_leaf.addAll(lg.m_set_edge_leaf);
 			clearCache();
 		}
 	}
@@ -130,6 +135,7 @@ public class DataHyperGraph {
 		m_map_output_edge.clear();
 		m_set_vertex_input.clear();
 		m_set_vertex_leaf.clear();
+		m_set_edge_leaf.clear();
 		clearCache();
 	}
 	
@@ -183,9 +189,10 @@ public class DataHyperGraph {
 		m_map_edge_context.add(g, contexts);
 		m_map_output_edge.add(g.m_output, g);
 		m_set_vertex_input.addAll(g.m_input);
-		if (g.isAtomic())
+		if (g.isLeaf()){
 			m_set_vertex_leaf.add(g.getOutput());
-
+			m_set_edge_leaf.add(g);
+		}
 		
 		clearCache();
 		return true;
@@ -326,7 +333,7 @@ public class DataHyperGraph {
 
 	
 	/**
-	 * list all axiom hyperedges
+	 * list all terminal vertices
 	 * 
 	 * @return
 	 */
@@ -336,6 +343,18 @@ public class DataHyperGraph {
 		return temp;
 	}
 
+	/**
+	 * list all leaf hyperedges
+	 * 
+	 * @return
+	 */
+	public HashSet<DataHyperEdge> getEdgesLeaf() {
+		HashSet<DataHyperEdge> temp = new HashSet<DataHyperEdge>();
+		temp.addAll(this.m_set_edge_leaf);
+		return temp;
+	}
+
+	
 	/**
 	 * list all root vertices. i.e. outputs not being mentioned as input
 	 * @return
@@ -766,7 +785,7 @@ public class DataHyperGraph {
 				if (ToolSafe.isEmpty(prop)){
 					prop= new Properties();
 				}
-				if (edge.isAtomic())
+				if (edge.isLeaf())
 					prop.put("shape", "invhouse");
 				else
 					prop.put("shape", "diamond");

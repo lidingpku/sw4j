@@ -107,7 +107,7 @@ public class DataHyperEdge extends Object implements Comparable<DataHyperEdge>{
 		return edge;
 	}
 
-	public boolean isAtomic(){
+	public boolean isLeaf(){
 		return m_input.isEmpty();
 	}
 
