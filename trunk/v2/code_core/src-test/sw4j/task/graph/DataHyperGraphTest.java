@@ -37,7 +37,7 @@ public class DataHyperGraphTest {
 				DataHyperGraph lg=null;
 				do {
 					lg=DataHyperGraph.data_create_random(i*2,i,3,-1);
-				}while (lg.getRoots().size()==0);
+				}while (lg.getVerticesRoot().size()==0);
 				String filename= save_graph(String.format("z%03d_%02d",i,j),lg, true, "output/hypergraph/test_random_many/");
 				set_filename.add(filename);
 				
@@ -57,7 +57,7 @@ public class DataHyperGraphTest {
 				DataHyperGraph lg=null;
 				do {
 					lg=DataHyperGraph.data_create_random(i*3/2,i,3,-1);
-				}while (lg.getRoots().size()==0);
+				}while (lg.getVerticesRoot().size()==0);
 				String filename= save_graph(String.format("%z03d_%02d",i,j),lg, false,"output/hypergraph/test_random_scale/");
 				set_filename.add(filename);
 				
@@ -234,7 +234,7 @@ public class DataHyperGraphTest {
 			fail();
 		}
 		
-		for (int root:lg.getRoots()){
+		for (int root:lg.getVerticesRoot()){
 			String []problem = new String[]{
 					f.getName().substring(0,f.getName().lastIndexOf("."))+"_root_"+root,
 					""+root,

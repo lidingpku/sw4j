@@ -107,7 +107,7 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 				// update best weight if better weight found
 				this.doSaveSolution(Gx);
 				//update preferred vertex
-				this.m_runtime_preferred_vertex.addAll(Gx.getOutputs());
+				this.m_runtime_preferred_vertex.addAll(Gx.getVerticesOutput());
 			}
 
 			return true;
