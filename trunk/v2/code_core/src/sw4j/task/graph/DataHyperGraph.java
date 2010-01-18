@@ -510,12 +510,12 @@ public class DataHyperGraph {
 		{
 			Collection<Integer> ary = this.countEdgesSharingOutput(-1).values();
 			data.put("hyperedges[sharing output]", ary.size());
-			data.put("hyperedges[sharing output max]", ToolMath.max(ary));
+			data.put("hyperedges[sharing output max]", ToolMath.max(ary,1));
 		}
 		{
 			Collection<Integer> ary = this.countContextsSharingEdge(-1).values();
 			data.put("contexts[sharing hyperedge]", ary.size());
-			data.put("contexts[sharing hyperedge max]", ToolMath.max(ary));
+			data.put("contexts[sharing hyperedge max]", ToolMath.max(ary,1));
 			
 			data.put("hyperedges[occurence]", ToolMath.sum(ary)-ary.size()+this.getEdges().size());
 		}
