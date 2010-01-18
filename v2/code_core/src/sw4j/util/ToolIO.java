@@ -457,10 +457,13 @@ public class ToolIO {
 
 	public static void pipeStringToFile(String szContent, File f, boolean bGzip, boolean bAppend)
 	throws Sw4jException {
+		PrintWriter out = new PrintWriter(ToolIO.prepareFileOutputStream(f, bAppend, bGzip));
 		if (ToolSafe.isEmpty(szContent))
-			pipeBytesToFile("".getBytes(), f, bAppend, bGzip);
-		else
-			pipeBytesToFile(szContent.getBytes(), f, bAppend, bGzip);
+			out.print("");
+		else{
+			out.print(szContent);
+		}
+		out.close();
 	}
 
 	public static StringReader pipeStringToReader(String szContent)
