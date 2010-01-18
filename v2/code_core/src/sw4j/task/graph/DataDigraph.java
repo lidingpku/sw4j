@@ -35,7 +35,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import sw4j.util.AbstractPropertyValuesMap;
-import sw4j.util.ToolSafe;
+import sw4j.util.ToolMath;
 
 
 public class DataDigraph  {
@@ -55,8 +55,8 @@ public class DataDigraph  {
 	
 	public static DataDigraph create(AbstractPropertyValuesMap<Integer,Integer> apvm){
 		int max = 0;
-		max=Math.max(max,ToolSafe.max(apvm.getValues()));
-		max=Math.max(max,ToolSafe.max(apvm.keySet()));
+		max=Math.max(max,ToolMath.max(apvm.getValues(),0));
+		max=Math.max(max,ToolMath.max(apvm.keySet(),0));
 		
 		DataDigraph dd = new DataDigraph(max);
 		for (Integer from: apvm.keySet()){

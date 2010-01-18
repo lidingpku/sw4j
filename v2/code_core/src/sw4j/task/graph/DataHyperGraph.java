@@ -456,7 +456,7 @@ public class DataHyperGraph {
 	}
 	
 	public DataDigraph getDigraph(){
-		DataDigraph ret = new DataDigraph(ToolSafe.max(this.getVertices()));
+		DataDigraph ret = new DataDigraph(ToolMath.max(this.getVertices(),0));
 		Iterator<DataHyperEdge> iter = this.getEdges().iterator();
 		while (iter.hasNext()){
 			DataHyperEdge edge = iter.next();
