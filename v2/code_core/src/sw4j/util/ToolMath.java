@@ -3,30 +3,27 @@ package sw4j.util;
 import java.util.Collection;
 
 public class ToolMath {
-	public static Integer max(Collection<Integer> ary){
-		Integer ret = null;
+	public static int max(Collection<Integer> ary, int defaultMax){
+		int ret = defaultMax;
 		for(Integer value: ary){
-			if (null==ret)
-				ret = value;
-			else
-				ret = Math.max(ret, value);
+			ret = Math.max(ret, value);
 		}
 		return ret;
 	}
 	
-	public static Integer avg(Collection<Integer> ary){
+	public static int avg(Collection<Integer> ary){
 		if (ary.size()==0)
 			return 0;
 		
-		Integer sum = 0;
+		int sum = 0;
 		for(Integer value: ary){
 			sum += value;
 		}
 		return sum/ary.size();
 	}
 
-	public static Integer sum(Collection<Integer> ary){
-		Integer sum = 0;
+	public static int sum(Collection<Integer> ary){
+		int sum = 0;
 		for(Integer value: ary){
 			sum += value;
 		}
