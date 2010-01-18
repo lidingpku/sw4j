@@ -31,7 +31,6 @@ package sw4j.task.load;
  * 
  * @author Li Ding
  */
-import java.io.IOException;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -57,11 +56,20 @@ public class AgentSimpleHttpCrawler {
 	public Set<String> m_results=  new HashSet<String>();
 	public Set<String> m_allowed_url_patterns = new HashSet<String>();
 
+	public void init(String sz_seed_url){
+		HashSet<String> patterns = new HashSet<String>();
+		String sz_pattern = sz_seed_url+".*";
+		sz_pattern = sz_pattern.replaceAll("\\+", "\\\\+");
+		patterns.add(sz_pattern );
+		init(sz_seed_url, patterns);
+	}
+
+	public void init(String seed_url, Set<String> allowed_url_patterns){
+		m_seed_url = seed_url;
+		m_allowed_url_patterns = new HashSet<String>(allowed_url_patterns);
+	}
+
 	
-	/**
-	 * 
-	 * @throws IOException 
-	 */
 	public void crawl() {
 		crawl(new HashSet<String>());
 	}
