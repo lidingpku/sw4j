@@ -84,12 +84,12 @@ public class DataHyperGraph {
 	/**
 	 * all inputs
 	 */
-	HashSet<Integer> m_inputs = new HashSet<Integer>();
+	HashSet<Integer> m_set_vertex_input = new HashSet<Integer>();
 
 	/**
 	 * all axioms 
 	 */
-	HashSet<Integer> m_axioms = new HashSet<Integer>() ;
+	HashSet<Integer> m_set_vertex_leaf = new HashSet<Integer>() ;
 		
 	
 	/**
@@ -115,8 +115,8 @@ public class DataHyperGraph {
 		if (null!=lg){
 			m_map_edge_context.add(lg.m_map_edge_context);			
 			m_map_output_edge.add(lg.m_map_output_edge);
-			m_inputs.addAll(lg.m_inputs);
-			m_axioms.addAll(lg.m_axioms);
+			m_set_vertex_input.addAll(lg.m_set_vertex_input);
+			m_set_vertex_leaf.addAll(lg.m_set_vertex_leaf);
 			clearCache();
 		}
 	}
@@ -127,8 +127,8 @@ public class DataHyperGraph {
 	public void reset(){
 		m_map_edge_context.clear();
 		m_map_output_edge.clear();
-		m_inputs.clear();
-		m_axioms.clear();
+		m_set_vertex_input.clear();
+		m_set_vertex_leaf.clear();
 		clearCache();
 	}
 	
@@ -181,9 +181,9 @@ public class DataHyperGraph {
 		
 		m_map_edge_context.add(g, contexts);
 		m_map_output_edge.add(g.m_output, g);
-		m_inputs.addAll(g.m_input);
+		m_set_vertex_input.addAll(g.m_input);
 		if (g.isAtomic())
-			m_axioms.add(g.getOutput());
+			m_set_vertex_leaf.add(g.getOutput());
 
 		
 		clearCache();
@@ -271,7 +271,7 @@ public class DataHyperGraph {
 	 * 
 	 * @return
 	 */
-	public Set<Integer> getOutputs() {
+	public Set<Integer> getVerticesOutput() {
 		return this.m_map_output_edge.keySet();
 	}
 	
@@ -279,9 +279,9 @@ public class DataHyperGraph {
 	 * list all input vertices
 	 * @return
 	 */
-	public Set<Integer> getInputs() {
+	public Set<Integer> getVerticesInput() {
 		HashSet<Integer> temp = new HashSet<Integer>();
-		temp.addAll(this.m_inputs);
+		temp.addAll(this.m_set_vertex_input);
 		return temp;
 	}
 	
@@ -318,8 +318,8 @@ public class DataHyperGraph {
 	 */
 	public HashSet<Integer> getVertices() {
 		HashSet<Integer> temp = new HashSet<Integer>();
-		temp.addAll(this.getInputs());
-		temp.addAll(this.getOutputs());
+		temp.addAll(this.getVerticesInput());
+		temp.addAll(this.getVerticesOutput());
 		return temp;
 	}
 
@@ -329,9 +329,9 @@ public class DataHyperGraph {
 	 * 
 	 * @return
 	 */
-	public HashSet<Integer> getAxioms() {
+	public HashSet<Integer> getVerticesLeaf() {
 		HashSet<Integer> temp = new HashSet<Integer>();
-		temp.addAll(this.m_axioms);
+		temp.addAll(this.m_set_vertex_leaf);
 		return temp;
 	}
 
@@ -339,10 +339,10 @@ public class DataHyperGraph {
 	 * list all root vertices. i.e. outputs not being mentioned as input
 	 * @return
 	 */
-	public HashSet<Integer> getRoots() {
+	public HashSet<Integer> getVerticesRoot() {
 		HashSet<Integer> temp = new HashSet<Integer>();
-		temp.addAll(this.getOutputs());
-		temp.removeAll(this.getInputs());
+		temp.addAll(this.getVerticesOutput());
+		temp.removeAll(this.getVerticesInput());
 		return temp;
 	}
 	
@@ -389,7 +389,7 @@ public class DataHyperGraph {
 	 */
 	public boolean isComplete(){
 		// all inputs must be a output
-		return this.getOutputs().containsAll(this.getInputs());
+		return this.getVerticesOutput().containsAll(this.getVerticesInput());
 	}
 	
 	/**
@@ -399,10 +399,10 @@ public class DataHyperGraph {
 	 * @return
 	 */
 	public boolean isSingleRoot(Integer v){
-		if (this.getRoots().size()!=1)
+		if (this.getVerticesRoot().size()!=1)
 			return false;
 		
-		return ToolSafe.isEmpty(v)|| this.getRoots().contains(v);
+		return ToolSafe.isEmpty(v)|| this.getVerticesRoot().contains(v);
 	}
 	
 	/**
@@ -477,22 +477,22 @@ public class DataHyperGraph {
 		DataSmartMap data = new DataSmartMap();
 
 		if(bWithListing){
-			data.put("hyperedges (share conclusion)(example listing)",  this.getEdgesSharingOutput(10));
-			data.put("hyperedges (share context)(example listing)",  this.getEdgesSharingContext(10));
-			data.put("context (listing)", this.getContexts().toString());
-			data.put("verteics (roots)(listing)", this.getRoots().toString());			
+			data.put("hyperedges[sharing conclusion][example listing]",  this.getEdgesSharingOutput(10));
+			data.put("hyperedges[sharing context][example listing]",  this.getEdgesSharingContext(10));
+			data.put("context[listing]", this.getContexts().toString());
+			data.put("verteics[roots][listing]", this.getVerticesRoot().toString());			
 		}
 		
-		data.put("created", ToolString.formatXMLDateTime(System.currentTimeMillis()));
-		data.put("context (total)", this.getContexts().size());
-		data.put("hyperedges (total)", this.getEdges().size());
-		data.put("hyperedges (terminal)", this.getAxioms().size());
-		data.put("hyperedges (sharing output)", this.getEdgesSharingOutput(-1).size());
-		data.put("hyperedges (sharing context)", this.getEdgesSharingContext(-1).size());
-		data.put("vertices (total)", this.getVertices().size());
-		data.put("vertices (outputs)", this.getOutputs().size());
-		data.put("vertices (inputs)", this.getInputs().size());
-		data.put("vertices (roots)", this.getRoots().size());
+		data.put("date", ToolString.formatXMLDateTime(System.currentTimeMillis()));
+		data.put("context[total]", this.getContexts().size());
+		data.put("hyperedges[total]", this.getEdges().size());
+		data.put("hyperedges[terminal]", this.getVerticesLeaf().size());
+		data.put("hyperedges[sharing output]", this.getEdgesSharingOutput(-1).size());
+		data.put("hyperedges[sharing context]", this.getEdgesSharingContext(-1).size());
+		data.put("vertices[total]", this.getVertices().size());
+		data.put("vertices[outputs]", this.getVerticesOutput().size());
+		data.put("vertices[inputs]", this.getVerticesInput().size());
+		data.put("vertices[roots]", this.getVerticesRoot().size());
 		
 		return data;
 	}
@@ -652,8 +652,8 @@ public class DataHyperGraph {
 	
 		//create missing missing Hypergraph
 		{
-			Set<Integer> vertex = lg.getInputs();
-			vertex.removeAll(lg.getOutputs());
+			Set<Integer> vertex = lg.getVerticesInput();
+			vertex.removeAll(lg.getVerticesOutput());
 			Iterator<Integer> iter = vertex.iterator();
 			while (iter.hasNext()){
 				lg.add(new DataHyperEdge(iter.next()));

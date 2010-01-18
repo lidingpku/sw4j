@@ -248,7 +248,7 @@ public class AgentHyperGraphTraverse {
 			HashSet<Integer> new_vx = new HashSet<Integer> ();
 			new_vx.addAll(Vx);
 			new_vx.addAll(g.getInputs());
-			new_vx.removeAll(Gx.getOutputs());
+			new_vx.removeAll(Gx.getVerticesOutput());
 			new_vx.remove(g.getOutput());
 
 			// no need to track provenance in intermediate result
@@ -369,7 +369,7 @@ public class AgentHyperGraphTraverse {
 			DataHyperEdge g = iter.next();
 			
 			// skip if g is definitely causing incomplete linkedGraph
-			if (!G.getOutputs().containsAll(g.getInputs())){
+			if (!G.getVerticesOutput().containsAll(g.getInputs())){
 				continue;
 			}
 
