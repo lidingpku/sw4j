@@ -131,7 +131,7 @@ public class AgentHyperGraphAoStar extends AgentHyperGraphTraverse{
 					
 					boolean bProcessed = true;
 					int total_weight = edge.getWeight();
-					if (edge.isAtomic()){
+					if (edge.isLeaf()){
 					}else{
 						for (Integer input: edge.getInputs()){
 							//if (input == edge.getOutput())
