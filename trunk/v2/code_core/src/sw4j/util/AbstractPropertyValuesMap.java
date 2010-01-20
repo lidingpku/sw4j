@@ -104,7 +104,8 @@ abstract public class AbstractPropertyValuesMap <P,V> implements Comparable<Abst
 		}
 		return ret;
 	}
-	
+
+
 	/**
 	 * test existence of a value
 	 * @param p
