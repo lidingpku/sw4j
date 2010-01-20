@@ -497,33 +497,31 @@ public class DataHyperGraph {
 		DataSmartMap data = new DataSmartMap();
 
 		if(bWithListing){
-			data.put("hyperedges[sharing conclusion][example listing]",  this.countEdgesSharingOutput(10));
-			data.put("hyperedges[sharing context][example listing]",  this.countContextsSharingEdge(10));
+			data.put("vertex(shared by hyperedge)[example listing]",  this.countEdgesSharingOutput(10));
+			data.put("hyperedge(share by context)[example listing]",  this.countContextsSharingEdge(10));
 			data.put("context[listing]", this.getContexts().toString());
-			data.put("verteics[roots][listing]", this.getVerticesRoot().toString());			
+			data.put("vertex(roots)[listing]", this.getVerticesRoot().toString());			
 		}
 		
 		data.put("date", ToolString.formatXMLDateTime(System.currentTimeMillis()));
-		data.put("context[total]", this.getContexts().size());
-		data.put("hyperedges[total]", this.getEdges().size());
-		data.put("hyperedges[terminal]", this.getVerticesLeaf().size());
+		data.put("context", this.getContexts().size());
+		data.put("hyperedge", this.getEdges().size());
+		data.put("hyperedge(terminal)", this.getVerticesLeaf().size());
+		data.put("vertex", this.getVertices().size());
+		data.put("vertex(outputs)", this.getVerticesOutput().size());
+		data.put("vertex(inputs)", this.getVerticesInput().size());
+		data.put("vertex(roots)", this.getVerticesRoot().size());
+		
 		{
 			Collection<Integer> ary = this.countEdgesSharingOutput(-1).values();
-			data.put("hyperedges[sharing output]", ary.size());
-			data.put("hyperedges[sharing output max]", ToolMath.max(ary,1));
+			data.put("vertex(shared by hyperedge)", ary.size());
+			data.put("vertex(shared by hyperedge)[max]", ToolMath.max(ary,1));
 		}
 		{
 			Collection<Integer> ary = this.countContextsSharingEdge(-1).values();
-			data.put("contexts[sharing hyperedge]", ary.size());
-			data.put("contexts[sharing hyperedge max]", ToolMath.max(ary,1));
-			
-			data.put("hyperedges[occurence]", ToolMath.sum(ary)-ary.size()+this.getEdges().size());
+			data.put("hyperedge(shared by context)", ary.size());
+			data.put("hyperedge(shared by context)[max]", ToolMath.max(ary,1));			
 		}
-		data.put("vertices[total]", this.getVertices().size());
-		data.put("vertices[outputs]", this.getVerticesOutput().size());
-		data.put("vertices[inputs]", this.getVerticesInput().size());
-		data.put("vertices[roots]", this.getVerticesRoot().size());
-		
 		return data;
 	}
 	

@@ -970,27 +970,47 @@ public class ToolJena {
 	 * @param m
 	 * @return
 	 */
-	public static Model create_allsame(Model ref, String szNamespace){
+
+	
+	public static Model create_allsame(Collection<Set<Resource>> groups, String szNamespace){
 		Model m = ModelFactory.createDefaultModel();
-		DataObjectGroupMap<Resource> eqmap = new DataObjectGroupMap<Resource>();
-		for (Statement stmt : ref.listStatements(null, OWL.sameAs, (String) null).toSet()){
-			eqmap.addSameObjectAs(stmt.getSubject(), (Resource)stmt.getObject());
-		}
-		for (Integer gid: eqmap.getGids()){
+		int gid = 1;
+		for (Set<Resource> set_info: groups){
 			Resource subject = m.createResource();
 			if (ToolURI.isUriHttp(szNamespace)){
 				subject= m.createResource(szNamespace+"group"+gid);
+				gid++;
 			}
 			subject.addProperty(RDF.type, PMLR.AllSame);
-			for (Resource res : eqmap.getObjectsByGid(gid)){
+			for (Resource res : set_info){
 				subject.addProperty(PMLR.hasMember, res);
 			}
 		}
 		m.setNsPrefix( PMLR.class.getSimpleName().toLowerCase(),PMLR.getURI());
-		ToolJena.update_copyNsPrefix(m, ref);
 		return m;
+		
 	}
-	
+
+	public static Model create_sameas(Collection<Set<Resource>> groups){
+		Model model_sameas = ModelFactory.createDefaultModel();
+		for (Set<Resource> set_info: groups){
+			//no need to map single element set
+			if (set_info.size()<2)
+				continue;
+			
+			Resource res_info_root = null;
+			for (Resource res_info: set_info){
+				
+				if (null==res_info_root)
+					res_info_root = res_info;
+				else{
+					model_sameas.add(model_sameas.createStatement(res_info_root, OWL.sameAs, res_info));
+				}
+			}
+		}
+		return model_sameas;
+	}
+
 	/**
 	 * merge a collection of models into a new model
 	 * @param ref

@@ -107,6 +107,9 @@ public class DataPVHMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 		return this.data.keySet();
 	}
 
+	public Collection<Set<V>> values() {
+		return this.data.values();
+	}
 
 	@Override
 	public String toString() {
