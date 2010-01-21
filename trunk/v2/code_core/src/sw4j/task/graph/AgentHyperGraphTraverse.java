@@ -34,6 +34,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import sw4j.util.DataSmartMap;
 import sw4j.util.Sw4jException;
 import sw4j.util.ToolIO;
 
@@ -378,7 +379,7 @@ public class AgentHyperGraphTraverse {
 				continue;
 			}
 			// avoid self-loop
-			if (g.getInputs().contains(g.getOutput())&& g.getInputs().size()==1){
+			if (g.hasLoop()){
 				continue;
 			}
 
@@ -395,8 +396,17 @@ public class AgentHyperGraphTraverse {
 	}	
 
 
-	public String getResultSummary(DataHyperGraph G) {
-		return String.format("found %d solutions in %.3f seconds", this.m_runtime_solution_found_count, this.getResultProcessSeconds());
+	public String getResultSummary() {
+		return getResultSummaryData().toString();
+	}
+	
+	public DataSmartMap getResultSummaryData(){
+		DataSmartMap data = new DataSmartMap();
+		data.put("alg_solutions_best", this.getResultSolutions().size());
+		data.put("alg_solutions_found", this.getResultSolutionFoundCount());
+		data.put("alg_seconds_spent", this.getResultProcessSeconds());
+		data.put("alg_weight_best", this.m_runtime_best_weight);
+		return data;
 	}
 	
 	

@@ -138,6 +138,11 @@ public class DataHyperGraph {
 		m_set_edge_leaf.clear();
 		clearCache();
 	}
+
+	
+	public boolean isEmpty(){
+		return this.getEdges().size()==0;
+	}
 	
 	public void clearCache(){
 		
