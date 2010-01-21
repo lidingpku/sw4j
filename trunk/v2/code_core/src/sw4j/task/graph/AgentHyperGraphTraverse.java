@@ -377,6 +377,10 @@ public class AgentHyperGraphTraverse {
 			if (adj.isReachable(g.getInputs(), g.getOutput())){
 				continue;
 			}
+			// avoid self-loop
+			if (g.getInputs().contains(g.getOutput())&& g.getInputs().size()==1){
+				continue;
+			}
 
 			//if (m_runtime_preferred_vertex.containsAll(g.getSources()))
 			//	new_next.add(0, g);
