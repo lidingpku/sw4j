@@ -159,7 +159,7 @@ public class ToolURI {
 			if (null!=temp)
 				szUri = temp;
 			temp = decodeURIString(szUri);
-		}while (szUri != temp);
+		}while (!szUri.equals(temp));
 
 		//encode
 		try {
