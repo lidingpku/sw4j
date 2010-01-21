@@ -29,6 +29,8 @@ package sw4j.task.graph;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 
@@ -117,6 +119,25 @@ public class AgentHyperGraphAoStar extends AgentHyperGraphTraverse{
 		HashMap<DataHyperEdge,Integer> map_edge_weight = new HashMap<DataHyperEdge,Integer>();
 		HashMap<Integer,Integer> map_vertex_weight = new HashMap<Integer,Integer>();
 		if (bInf){
+			//build edge set
+			Set<DataHyperEdge> edges = new HashSet<DataHyperEdge>();
+			edges.addAll(g.getEdges());
+
+			//build vertex set
+			Set<Integer> vertices = new HashSet<Integer>();
+			
+			//clean up loops edge (they are not helping)
+			Iterator<DataHyperEdge> iter = edges.iterator();
+			while (iter.hasNext()){
+				DataHyperEdge e = iter.next();
+				if (e.hasLoop()){
+					iter.remove();
+				}else{
+					vertices.add(e.getOutput());
+					vertices.addAll(e.getInputs());
+				}
+			}
+			
 			//iteratively, assign weight for all vertex
 			int nChanged  ;
 			do{
@@ -124,7 +145,9 @@ public class AgentHyperGraphAoStar extends AgentHyperGraphTraverse{
 				nChanged = 0;
 				
 				// get edge weight
-				for (DataHyperEdge edge: g.getEdges()){
+				for (DataHyperEdge edge: edges){
+					
+
 					//skip processed 
 					if (map_edge_weight.keySet().contains(edge))
 						continue;
@@ -147,6 +170,10 @@ public class AgentHyperGraphAoStar extends AgentHyperGraphTraverse{
 						}
 					}
 					
+					//if (edge.getOutput()==6 && edge.getInputs().contains(0) && !bProcessed){
+					//	System.out.println(edge);
+					//}
+					
 					if (bProcessed){
 						map_edge_weight.put(edge, total_weight);
 						nChanged ++;
@@ -154,7 +181,7 @@ public class AgentHyperGraphAoStar extends AgentHyperGraphTraverse{
 				}
 
 				// get vertex weight
-				for (Integer vertex: g.getVertices()){
+				for (Integer vertex: vertices){
 					//skip processed 
 					if (map_vertex_weight.keySet().contains(vertex))
 						continue;
@@ -163,6 +190,9 @@ public class AgentHyperGraphAoStar extends AgentHyperGraphTraverse{
 					int minimal_weight = 0;
 					
 					for (DataHyperEdge edge: g.getEdgesByOutput(vertex)){
+						if (!edges.contains(edge))
+							continue;							
+						
 						Integer weight = map_edge_weight.get(edge);
 						
 						if (edge.getInputs().contains(vertex)){
@@ -237,6 +267,13 @@ public class AgentHyperGraphAoStar extends AgentHyperGraphTraverse{
 		int best_weight = -1;
 		for (DataHyperEdge edge: edges){
 			Integer weight = m_map_edge_weight.get(edge);
+			
+			// the missing weight indicate that the graph contains cycles. We should return empty set.
+			if (null==weight){
+				new_next.clear();
+				return new_next;
+			}
+			
 			if (best_weight ==-1 || weight<best_weight){
 				new_next.clear();
 				best_weight=weight;

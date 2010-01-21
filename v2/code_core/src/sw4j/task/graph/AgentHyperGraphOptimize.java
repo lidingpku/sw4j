@@ -178,10 +178,10 @@ public class AgentHyperGraphOptimize extends AgentHyperGraphTraverse{
 	}
 	
 	@Override
-	public String getResultSummary(DataHyperGraph G) {
+	public String getResultSummary() {
 		
 		String ret = String.format("%s | best-total: %d best-weight: %d" ,
-				super.getResultSummary(G),
+				super.getResultSummary(),
 				this.m_runtime_solutions.size(),
 				this.m_runtime_best_weight);
 			
