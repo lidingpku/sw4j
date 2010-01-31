@@ -69,6 +69,8 @@ public class DataPVCMapTest {
 			dml1.add("year", new Integer("1999"));
 
 			if (!dml.equals(dml1)){
+				System.out.println(dml1);
+				System.out.println(dml);
 				fail();
 			}
 
