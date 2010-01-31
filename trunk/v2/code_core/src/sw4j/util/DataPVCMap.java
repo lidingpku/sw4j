@@ -32,6 +32,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
@@ -60,7 +61,7 @@ public class DataPVCMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 	/**
 	 * raw data (property,value) => count
 	 */ 
-	TreeMap<Entry, Integer> m_counter = new TreeMap<Entry, Integer>();
+	DataObjectCounter<Entry> m_counter = new DataObjectCounter<Entry>();
 	
 	/** 
 	 * index property => values
@@ -68,7 +69,7 @@ public class DataPVCMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 	HashMap<P, List<V>> m_index = new HashMap<P, List<V>>();
 
 	/**
-	 * unique option
+	 * unique option, allow a property's value list containing duplicated values
 	 */
 	private boolean m_bUnique = true;
 
@@ -163,22 +164,14 @@ public class DataPVCMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 	public void add(P property, V value) {
 		//find existing entry
 		Entry entry = new Entry(property, value);
-		Integer count = m_counter.get(entry);
-		if (null==count){
-			count= new Integer(1);
-		}else{
-			// the entry has already been indexed
-			
-			if (m_bUnique){
-				//no need to store or index a duplicated entry if no duplicate is allowed
-				return;
-			}else{
-				count =new Integer(count.intValue()+1);
-			}
-		}
 		
-		//update data
-		m_counter.put(entry,count);
+		// count p,v pair
+		int count =	m_counter.getCount(entry);
+		
+		//if the value already exists, then do not add it to the property's value list
+		if (m_bUnique && count>=1)
+			return;
+		m_counter.count(entry);
 		
 		//update index
 		List<V> values = m_index.get(property);
@@ -223,12 +216,7 @@ public class DataPVCMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 	 */
 	public int getEntryCount(P property, V value) {
 		Entry entry = new Entry(property, value);
-		Integer count = m_counter.get(entry);
-		if (null==count){
-			return 0;
-		}else{
-			return count.intValue();
-		}
+		return m_counter.getCount(entry);
 	}
 	
 	/**
@@ -241,24 +229,24 @@ public class DataPVCMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 		m_index.remove(property);
 		
 		// remove data entries
-		Iterator<Entry> iter= this.m_counter.keySet().iterator();
+		Iterator<Map.Entry<Entry, Integer>> iter= this.m_counter.entrySet().iterator();
 		while (iter.hasNext()){
-			Entry entry = iter.next();
-			if (entry.property.equals(property))
+			Map.Entry<Entry,Integer> entry = iter.next();
+			if (entry.getKey().property.equals(property))
 				iter.remove();
 		}
 	}
 	
 
 	/**
-	 * print an alphabatical ordered list of (property, value) pairs with their count
+	 * print an alphabetical ordered list of (property, value) pairs with their count
 	 */
 	@Override
 	public String toString() {
 		if (null==this.m_counter)
 			return "";
 		else
-			return this.m_counter.toString();//ToolSafe.printMapToString(this.m_counter);
+			return new TreeMap<Entry, Integer>(this.m_counter.getData()).toString();//ToolSafe.printMapToString(this.m_counter);
 	}
 
 

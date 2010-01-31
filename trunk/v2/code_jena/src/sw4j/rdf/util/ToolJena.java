@@ -1607,5 +1607,22 @@ public class ToolJena {
 
 		return true;
 	}
-
+/**
+ * create concise bounded description
+ * i.e. list all triples decribing the subject, and recursively, include triples describing the blank-node objects of the descriptions.
+ * @param m
+ * @param subject
+ * @return
+ */
+	public static Model createCBD(Model m, Resource subject){
+		Model mret= ModelFactory.createDefaultModel();
+		mret.add(m.listStatements(subject, null, (String)null));
+		for (RDFNode node : mret.listObjects().toList()){
+			if (node.isAnon()){
+				mret.add(createCBD(m,(Resource)node));
+			}
+		}
+		return mret;
+	}
+	
 }
