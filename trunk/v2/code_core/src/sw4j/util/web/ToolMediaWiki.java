@@ -50,7 +50,7 @@ public class ToolMediaWiki {
 	
 	public static void create_wiki_dump(Map<String,String> map_pages, boolean bNoTimestamp, String szFileName){
 		try {
-			PrintWriter out =  new PrintWriter(ToolIO.prepareFileOutputStream(szFileName, false));
+			PrintWriter out =  ToolIO.prepareUtf8Writer((ToolIO.prepareFileOutputStream(szFileName, false)));
 			create_wiki_dump(map_pages, bNoTimestamp,out);
 			out.close();
 		} catch (Sw4jException e) {

@@ -34,7 +34,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
 
 
 /**
@@ -219,6 +218,10 @@ public class DataPVCMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 		return m_counter.getCount(entry);
 	}
 	
+	public DataObjectCounter<Entry> getEntryCounter() {
+		return m_counter;
+	}
+	
 	/**
 	 * remove a property
 	 * 
@@ -246,7 +249,7 @@ public class DataPVCMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 		if (null==this.m_counter)
 			return "";
 		else
-			return new TreeMap<Entry, Integer>(this.m_counter.getData()).toString();//ToolSafe.printMapToString(this.m_counter);
+			return m_counter.getSortedDataByKey().toString();//ToolSafe.printMapToString(this.m_counter);
 	}
 
 

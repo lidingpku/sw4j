@@ -111,10 +111,10 @@ public class ToolParseRdfJena {
 			
 			// this code is removed because jena can parse more rdf data from pdf file
 			//
-			if (szRdfSyntax.equalsIgnoreCase(RDFSYNTAX.RDFXML))
+			if (szRdfSyntax.equalsIgnoreCase(RDFSYNTAX.RDFXML)){
 				reader.setProperty("error-mode","strict");
-			
-			reader.setErrorHandler(oMyErrorHandler);
+				reader.setErrorHandler(oMyErrorHandler);
+			}
 			
 			// we need to first remove comments lines to tolerate RDF/XML in bad XML format, e.g. the first chars are not '<?xml'.
 			String szRuntimeXmlbase =szURL;
