@@ -105,6 +105,17 @@ public class DataObjectGroupMap <V>{
 		do_merge(uri1,uri2);
 		m_map_uri_uri.add(uri1,uri2);
 	}
+
+	public void addObjectAllSame(Collection<V> uris){
+		if (null==uris || uris.size()<=1)
+			return;
+		
+		Iterator<V> iter = uris.iterator();
+		V v1 = iter.next();
+		while (iter.hasNext()){
+			addSameObjectAs(v1,iter.next());
+		}		
+	}
 	
 	public void normalize(){
 		Iterator<V> iter = this.m_map_uri_uri.keySet().iterator();
@@ -195,5 +206,12 @@ public class DataObjectGroupMap <V>{
 			 ToolString.printCollectionToString(this.getObjectsByGid(gid)));
 		}
 		return ret;
+	}
+	
+	public void clear(){
+		this.m_map_gid_uris.clear();
+		this.m_map_uri_gid.clear();
+		this.m_map_uri_uri.clear();
+		ggid=0;
 	}
 }

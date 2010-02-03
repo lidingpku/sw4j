@@ -60,7 +60,8 @@ public class ToolLoadHttp extends ToolLoad{
 //	public static String CRAWLER_NAME = "swooglebot"; 
 //	public static String HTTP_USER_AGENT = "Swooglebot/2.0. (+http://swoogle.umbc.edu/swooglebot.html)";
 //  private final static String HTTP_USER_AGENT = "Mozilla/4.0 (compatible;MSIE 5.5; Windows NT 5.0; H010818)";
-	public static String HTTP_ACCEPT_MIME= "application/rdf+xml;q=1, text/xml,application/xml;q=0.6, text/n3,text/rdf+n3,text/turtle;q=0.9, application/rss+xml; q=0.4, application/x-gzip;q=0.3, text/html;q=0.3, text/plain;q=0.1,";
+	public static String HTTP_ACCEPT_MIME= "application/rdf+xml";
+	//public static String HTTP_ACCEPT_MIME= "application/rdf+xml;q=1, text/xml,application/xml;q=0.6, text/n3,text/rdf+n3,text/turtle;q=0.9, application/rss+xml; q=0.4, application/x-gzip;q=0.3, text/html;q=0.3, text/plain;q=0.1,";
 	//http://dowhatimean.net/2008/03/what-is-your-rdf-browsers-accept-header
 	//
 	// now we plan to support RDF stored in gzip form (assuming the xml:base has been asserted in the zipped RDF)

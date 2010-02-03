@@ -41,9 +41,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -51,6 +53,7 @@ import java.net.URLConnection;
 import java.util.zip.GZIPOutputStream;
 
 import org.apache.log4j.Logger;
+
 
 
 
@@ -191,7 +194,21 @@ public class ToolIO {
 			throw e1;
 		}
 	}	
+
+	public static PrintWriter prepareUtf8Writer(OutputStream out){
+		return prepareUtf8Writer(out,false);
+	}
 	
+	public static PrintWriter prepareUtf8Writer(OutputStream out, boolean bAutoFlush){
+		try {
+			getLogger().info("use utf-8 as output");
+			return new PrintWriter(new OutputStreamWriter(out,"UTF-8"));
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
 
 	public static OutputStream prepareFileOutputStream(String szFileName, boolean bGzip)
 	throws Sw4jException {
@@ -210,6 +227,7 @@ public class ToolIO {
 	 */
 	public static OutputStream prepareFileOutputStream(File f, boolean bAppend, boolean bGzip)
 	throws Sw4jException {
+		getLogger().info("write to "+ f.getAbsolutePath());
 		try {
 			File _dir = f.getAbsoluteFile().getParentFile();
 			if (!_dir.exists()) {
@@ -457,8 +475,7 @@ public class ToolIO {
 
 	public static void pipeStringToFile(String szContent, File f, boolean bGzip, boolean bAppend)
 	throws Sw4jException {
-		getLogger().info("write to "+ f.getAbsolutePath());
-		PrintWriter out = new PrintWriter(ToolIO.prepareFileOutputStream(f, bAppend, bGzip));
+		PrintWriter out = prepareUtf8Writer(ToolIO.prepareFileOutputStream(f, bAppend, bGzip));
 		if (ToolSafe.isEmpty(szContent))
 			out.print("");
 		else{

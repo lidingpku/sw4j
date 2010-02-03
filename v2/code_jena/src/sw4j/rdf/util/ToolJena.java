@@ -430,7 +430,7 @@ public class ToolJena {
 		OutputStream _fos =null;
 		try {
 			 _fos = ToolIO.prepareFileOutputStream(f,false, bGzip);
-			PrintWriter out = new PrintWriter(_fos);
+			PrintWriter out = ToolIO.prepareUtf8Writer(_fos);
 			try {
 				
 				bRet = printModelToWriter(model, sz_rdfsyntax, sz_namespace, out);

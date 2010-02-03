@@ -53,6 +53,9 @@ public class DataPVHMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 	 * @param value
 	 */
 	public void add(P property, V value) {
+		if (null==value)
+			return;
+		
 		Set<V> values = this.data.get(property);
 		if (null == values) {
 			values = new HashSet<V>();
@@ -64,6 +67,8 @@ public class DataPVHMap <P, V> extends AbstractPropertyValuesMap<P,V>{
 
 	@Override
 	public void add(P property, Collection<V> vs) {
+		if (null==vs)
+			return;
 		Set<V> values = this.data.get(property);
 		if (null == values) {
 			values = new HashSet<V>();

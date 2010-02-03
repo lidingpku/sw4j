@@ -30,6 +30,8 @@ package sw4j.util;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 
 /**
@@ -41,14 +43,27 @@ import java.util.Set;
 public class DataObjectCounter<V> {
 	
 	HashMap<V,Integer> m_counter = new HashMap<V,Integer>();
+	DataPVHMap<V,String> m_value_source= new DataPVHMap<V,String>();
 	
 	public int count(V object){
-		int count = getCount(object);
-		count++;
+		return count(object,null);
+	}
+
+	public int count(V object, String source){
+		m_value_source.add(object, source);
+		return setCount(object,getCount(object)+1);
+	}
+
+	public int setCount(V object, int count){
+		return setCount(object,count, null);
+	}
+
+	public int setCount(V object, int count, Set<String> sources){
 		m_counter.put(object, count);
+		m_value_source.add(object, sources);
 		return count;
 	}
-	
+
 	public Set<V> keySet(){
 		return m_counter.keySet();
 	}
@@ -59,6 +74,48 @@ public class DataObjectCounter<V> {
 	
 	public Map<V,Integer> getData(){
 		return m_counter;
+	}
+	
+	public TreeMap<V,Integer> getSortedDataByKey(){
+		return new TreeMap<V,Integer>(m_counter);
+	}
+	public TreeSet<DataObjectCounter<V>.Entry> getSortedDataByCount(){
+		TreeSet<DataObjectCounter<V>.Entry> set_ret = new TreeSet<DataObjectCounter<V>.Entry>();
+		for (Map.Entry<V, Integer> entry: this.m_counter.entrySet()){
+			Entry x = new Entry();
+			x.key = entry.getKey();
+			x.count = entry.getValue();
+			x.sources = this.m_value_source.getValuesAsSet(x.key);
+			set_ret.add(x);
+		}
+		return set_ret;		
+	}
+	
+	class Entry implements Comparable<Entry>{
+		V key;
+		Integer count =0;
+		Set<String> sources;
+		
+		@Override
+		public int compareTo(Entry arg0) {
+			int ret = this.count.compareTo(arg0.count);
+			if (ret==0)
+				ret = this.key.toString().compareTo(arg0.key.toString());
+			
+			return -1 * ret;
+		}
+		
+		@Override
+		public String toString(){
+			DataSmartMap data = new DataSmartMap();
+			data.put("key", key);
+			data.put("count", count);
+			String temp = sources.toString();
+			temp= temp.substring(1,temp.length()-1);			
+			data.put("sources", temp);
+			return data.toCSVrow();
+		}
+		
 	}
 
 	
