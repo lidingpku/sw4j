@@ -1622,6 +1622,7 @@ public class ToolJena {
 				mret.add(createCBD(m,(Resource)node));
 			}
 		}
+		update_copyNsPrefix(mret,m);
 		return mret;
 	}
 	
