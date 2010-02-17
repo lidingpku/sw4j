@@ -57,6 +57,16 @@
     <url-pattern>/ping</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>LC</servlet-name>
+    <servlet-class>sw4j.app.servlet.CacheServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>LC</servlet-name>
+    <url-pattern>/lc</url-pattern>
+  </servlet-mapping>
+
 
   <session-config>
     <session-timeout>15</session-timeout>
