@@ -3,10 +3,10 @@
 = Introduction =
 This project is designed to provide better JAVA APIs for semantic web programming.
 
-* author: [[Li Ding]]
-* license:MIT License
-* status:alpha
-* version:0.6
+ * author: [http://www.cs.rpi.edu/~dingl Li Ding]
+ * license:MIT License
+ * status:alpha
+ * version:0.6
   
 
 
