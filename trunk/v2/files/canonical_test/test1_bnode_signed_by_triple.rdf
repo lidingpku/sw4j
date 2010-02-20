@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+	Goal: a blank node can be signed by just one triple
+      
+      Number	Subject	Predicate	Object
+1 	http://ex.org/foo#a 	http://purl.org/dc/elements/1.1/relation 	genid:A56807
+2 	genid:A56807 	http://purl.org/dc/elements/1.1/title 	"val"
+3 	http://ex.org/foo#b 	http://purl.org/dc/elements/1.1/relation 	genid:A56808
+-->
+
+<rdf:RDF
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xml:base="http://ex.org/foo"
+>
+
+<rdf:Description rdf:about="#a">
+  <dc:relation>
+    <rdf:Description>
+      <dc:title>val</dc:title>
+    </rdf:Description>
+  </dc:relation>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="#b">
+  <dc:relation>
+    <rdf:Description>
+    </rdf:Description>
+  </dc:relation>
+</rdf:Description>
+
+
+</rdf:RDF>

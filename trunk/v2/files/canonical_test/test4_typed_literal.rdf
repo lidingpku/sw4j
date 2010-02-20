@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+	Goal: blank nodes are indistinguishable, i.e. we can see the two triples are "equivalent" .
+	We can also see that this RDF graph is not "lean".
+    see: http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/#section-graph-equality
+	see: http://www.w3.org/TR/rdf-mt/#graphdefs
+	      
+      Number	Subject	Predicate	Object
+1 	genid:A56805 	http://purl.org/dc/elements/1.1/title 	"val"
+2 	genid:A56806 	http://purl.org/dc/elements/1.1/title 	"val" 
+-->
+
+<rdf:RDF
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xml:base="http://ex.org/foo"
+>
+
+<rdf:Description>
+  <dc:title>val</dc:title>
+</rdf:Description>
+
+<rdf:Description>
+   <dc:title xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">val</dc:title>
+</rdf:Description>
+
+</rdf:RDF>
