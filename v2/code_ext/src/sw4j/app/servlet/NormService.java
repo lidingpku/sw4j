@@ -9,12 +9,12 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.vocabulary.RDF;
 
-import sw4j.app.pellet.ToolPellet;
-import sw4j.app.pml.PMLDS;
-import sw4j.app.pml.PMLR;
 import sw4j.app.servlet.common.AbstractService;
 import sw4j.app.servlet.common.DataServletResponse;
 import sw4j.rdf.load.RDFSYNTAX;
+import sw4j.rdf.pellet.ToolPellet;
+import sw4j.rdf.pml.PMLDS;
+import sw4j.rdf.pml.PMLR;
 import sw4j.rdf.util.ToolJena;
 import sw4j.util.DataQname;
 import sw4j.util.Sw4jException;

@@ -7,7 +7,7 @@
  *  @author: Li Ding (http://www.cs.rpi.edu/~dingl )
  *
  */
-package  sw4j.app.pml;
+package  sw4j.rdf.pml;
 
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.Property;
