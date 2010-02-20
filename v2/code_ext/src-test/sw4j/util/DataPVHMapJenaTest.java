@@ -31,8 +31,8 @@ import org.junit.Test;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.vocabulary.RDF;
 
-import sw4j.app.pml.PMLP;
 import sw4j.util.DataPVHMap;
+import sw4j.vocabulary.pml.PMLP;
 import static org.junit.Assert.fail;
 
 /**

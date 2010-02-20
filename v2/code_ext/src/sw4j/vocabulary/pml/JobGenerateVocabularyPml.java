@@ -1,4 +1,4 @@
-package sw4j.rdf.pml;
+package sw4j.vocabulary.pml;
 
 
 import sw4j.rdf.util.ToolOwl2Java;
@@ -10,7 +10,7 @@ import sw4j.util.Sw4jException;
  * @author Li Ding
  *
  */
-public class ConfigGenerateVocabularyPml {
+public class JobGenerateVocabularyPml {
 	
 	
 	public static void main(String [] arg){
@@ -28,8 +28,8 @@ public class ConfigGenerateVocabularyPml {
 			for (int i=0; i< aryOntologyURL.length; i++){
 				ToolOwl2Java.genSimpleJavaCode(
 						aryOntologyURL[i][0], 
-						"code_jena/src", 
-						"sw4j.app.pml" ,
+						"code_ext/src", 
+						"sw4j.vocabulary.pml" ,
 						aryOntologyURL[i][1].toUpperCase(), 
 						aryOntologyURL[i][1], 
 						true);

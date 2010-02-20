@@ -11,8 +11,8 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
-import sw4j.app.pellet.ToolPellet;
 import sw4j.rdf.load.AgentModelManager;
+import sw4j.rdf.pellet.ToolPellet;
 import sw4j.rdf.util.ToolJena;
 import sw4j.util.Sw4jException;
 import sw4j.util.ToolIO;

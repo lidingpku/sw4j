@@ -1,4 +1,4 @@
-package sw4j.task.wiki;
+package sw4j.app.job;
 
 import sw4j.rdf.util.ToolOwl2SemanticMediaWiki;
 
@@ -11,7 +11,7 @@ import com.hp.hpl.jena.vocabulary.RDFS;
 
 
 
-public class TaskOwl2WikiDump {
+public class JobGenerateWikiDumpFromOwlOntology {
 	public static void main(String[] args) {
 
 		String [][] aryInputOutput = new String [][]{

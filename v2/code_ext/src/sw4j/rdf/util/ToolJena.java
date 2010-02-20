@@ -48,7 +48,6 @@ import java.util.TreeSet;
 import org.apache.log4j.Logger;
 
 import sw4j.rdf.load.RDFSYNTAX;
-import sw4j.rdf.pml.PMLR;
 import sw4j.task.graph.DataDigraph;
 import sw4j.util.DataObjectGroupMap;
 import sw4j.util.DataPVCMap;
@@ -62,6 +61,7 @@ import sw4j.util.ToolSafe;
 import sw4j.util.ToolIO;
 import sw4j.util.ToolString;
 import sw4j.util.ToolURI;
+import sw4j.vocabulary.pml.PMLR;
 
 import com.hp.hpl.jena.datatypes.xsd.XSDDatatype;
 import com.hp.hpl.jena.ontology.Individual;

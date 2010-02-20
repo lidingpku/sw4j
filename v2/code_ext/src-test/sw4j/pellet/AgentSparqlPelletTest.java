@@ -33,8 +33,8 @@ import org.junit.Test;
 
 import com.hp.hpl.jena.rdf.model.Model;
 
-import sw4j.app.pellet.AgentSparqlPellet;
 import sw4j.rdf.load.RDFSYNTAX;
+import sw4j.rdf.pellet.AgentSparqlPellet;
 import sw4j.util.Sw4jException;
 import sw4j.util.ToolIO;
 import sw4j.util.ToolSafe;
