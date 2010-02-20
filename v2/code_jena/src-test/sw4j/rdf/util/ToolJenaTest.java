@@ -31,6 +31,7 @@ import static org.junit.Assert.fail;
 import java.io.File;
 
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import sw4j.rdf.load.AgentModelLoader;
@@ -51,6 +52,64 @@ import com.hp.hpl.jena.vocabulary.RDFS;
 */
 
 public class ToolJenaTest {
+	
+	public Logger getLogger(){
+		return Logger.getLogger(this.getClass());
+	}
+	@Test
+	public void test_canonical(){
+		//szURI = "http://data.semanticweb.org/conference/iswc/2009/complete";
+		//szURI = "http://www.cs.rpi.edu/~dingl/foaf.rdf";
+		String [] files = new String []{
+				"files/canonical_test/test1_bnode_signed_by_triple.rdf",
+				"files/canonical_test/test2_bnode_signed_by_triples.rdf",
+				"files/canonical_test/test3_bnode_indistinguishable.rdf",
+				"files/canonical_test/test4_typed_literal.rdf",
+		};
+		
+		for (String file: files){
+			
+			getLogger().info("=======================");
+			getLogger().info("testing: "+ file);
+			Model m = ModelFactory.createDefaultModel() ;
+			String sz_xmlbase =  "http://foo.com/rdf";
+			try {
+				m.read(ToolIO.prepareFileInputStream(file),sz_xmlbase);
+				String ret = ToolJena.printModel_cannonical_carroll(m);
+				getLogger().info (ret);
+				
+			} catch (Sw4jException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				fail();
+			}
+		}
+		
+	}
+
+	@Test
+	public void test_rdf_molecule(){
+		String szURI;
+		//szURI = "http://data.semanticweb.org/conference/iswc/2009/complete";
+		szURI = "http://www.cs.rpi.edu/~dingl/foaf.rdf";
+		Model m = ModelFactory.createDefaultModel() ;
+		m.read(szURI);
+		
+		int cnt =0;
+		for (Model ret : ToolJena.decompse_rdf_molecule(m)){
+			cnt +=ret.size();
+			System.out.println("+++++++++++");
+			ToolJena.printModel(ret);
+		}
+		
+		if (cnt!=m.size()){
+			System.out.println("expected"+m.size());
+			System.out.println("found"+cnt);
+			fail("mismached triple count after decomposition");
+		}
+	}
+	
+
 	@Test
 	public void test_encoding(){
 		String szURI;
@@ -61,6 +120,7 @@ public class ToolJenaTest {
 		if (null!= m)
 			ToolJena.printModelToFile(m, new File("output/test-encoding.rdf"));
 	}
+	
 	//@Test
 	public void test_write_relative_url() {
 		String szURL;

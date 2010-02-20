@@ -49,8 +49,8 @@ public class DataObjectGroupMap <V>{
 	//group (merged node) to original node
 	DataPVCMap<Integer,V> m_map_gid_uris = new DataPVCMap<Integer,V>();
 	
-	private static int ggid= 0;
-	public static Integer create_gid(){
+	private int ggid= 0;
+	public Integer create_gid(){
 		return new Integer(ggid++);
 	}
 	
