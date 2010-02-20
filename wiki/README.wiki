@@ -3,9 +3,11 @@
 = Introduction =
 This project is designed to provide better JAVA APIs for semantic web programming.
 
- [[author::Li Ding]]
- [[license::MIT License]]
- [[status::alpha]]
+* author: [[Li Ding]]
+* license:MIT License
+* status:alpha
+* version:0.6
+  
 
 
 = Install =
@@ -81,5 +83,5 @@ sw4j.app - applications
 
 
 =Change log=
-* Feb 20, 2010. v0.6 
-* April 23, 2009. v0.5  first alpha release. 
+ * Feb 20, 2010. v0.6 
+ * April 23, 2009. v0.5  first alpha release. 
