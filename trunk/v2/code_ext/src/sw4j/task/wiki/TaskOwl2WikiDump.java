@@ -1,4 +1,4 @@
-package sw4j.app.wiki;
+package sw4j.task.wiki;
 
 import sw4j.rdf.util.ToolOwl2SemanticMediaWiki;
 

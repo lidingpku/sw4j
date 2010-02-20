@@ -9,8 +9,8 @@ import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.reasoner.ValidityReport;
 
-import sw4j.app.pellet.ToolPellet;
 import sw4j.rdf.load.AgentModelManager;
+import sw4j.rdf.pellet.ToolPellet;
 import sw4j.rdf.util.AgentModelStat;
 import sw4j.rdf.util.ToolModelAnalysis;
 import sw4j.task.common.AbstractTaskDesc;

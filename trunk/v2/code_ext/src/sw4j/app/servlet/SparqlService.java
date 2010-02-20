@@ -2,9 +2,9 @@ package sw4j.app.servlet;
 
 import com.hp.hpl.jena.rdf.model.Model;
 
-import sw4j.app.pellet.AgentSparqlPellet;
 import sw4j.app.servlet.common.AbstractService;
 import sw4j.app.servlet.common.DataServletResponse;
+import sw4j.rdf.pellet.AgentSparqlPellet;
 import sw4j.rdf.util.AgentSparql;
 import sw4j.util.Sw4jException;
 import sw4j.util.ToolIO;

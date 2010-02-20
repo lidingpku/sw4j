@@ -1,4 +1,4 @@
-package sw4j.app.pellet;
+package sw4j.rdf.pellet;
 
 
 import com.hp.hpl.jena.rdf.model.Model;

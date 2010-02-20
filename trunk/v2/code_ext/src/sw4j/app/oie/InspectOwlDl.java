@@ -2,7 +2,7 @@ package sw4j.app.oie;
 
 import java.util.Iterator;
 
-import sw4j.app.pellet.ToolPellet;
+import sw4j.rdf.pellet.ToolPellet;
 import sw4j.rdf.util.ToolJena;
 import sw4j.task.common.AbstractTaskDesc;
 import sw4j.util.Sw4jException;

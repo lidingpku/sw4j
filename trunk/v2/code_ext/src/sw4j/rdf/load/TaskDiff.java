@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-import sw4j.app.pml.PMLOWL;
+import sw4j.rdf.pml.PMLOWL;
 import sw4j.rdf.util.ToolJena;
 import sw4j.util.DataPVHMap;
 import sw4j.util.ToolSafe;

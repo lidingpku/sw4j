@@ -1,4 +1,4 @@
-package sw4j.app.pml;
+package sw4j.rdf.pml;
 
 import java.util.ArrayList;
 import java.util.Iterator;
