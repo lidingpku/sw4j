@@ -14,17 +14,14 @@ This project is designed to provide better JAVA APIs for semantic web programmin
 general requirements
  * java 1.6.03  (1.5.12 may also work)
 
-== core release==
-use sw4j-core.jar
-
+*core release*
+ * use sw4j-core.jar. 
  * minimal java library dependency
  * some useful data structure and tools for semantic web programming
  * web crawling support
 
-== full release==
-use sw4j.jar
-
- * all core release feature
+*full release*
+ * use sw4j.jar
  * additional power for manipulate RDF, especially loading RDF
  * owl instance data validation
  * a couple of web service for normalize, diff, RDF data.
