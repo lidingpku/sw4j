@@ -7,10 +7,10 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-import sw4j.rdf.pml.PMLOWL;
 import sw4j.rdf.util.ToolJena;
 import sw4j.util.DataPVHMap;
 import sw4j.util.ToolSafe;
+import sw4j.vocabulary.pml.PMLOWL;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;

@@ -99,7 +99,7 @@ public class DataInstance {
 	 * check if the property has value
 	 * 
 	 * @param prop
-	 * @return
+	 * @return 
 	 */
 	public boolean hasPropertyValue(Property prop){
 		return m_model.listObjectsOfProperty(m_subject, prop).hasNext();
