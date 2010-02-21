@@ -181,10 +181,5 @@ public class DefaultOwlInstanceDataChecker {
 		
 	}
 	
-	public static void main(String[] args){
-		//example code for calling this validator
-        DefaultOwlInstanceDataChecker validator = new DefaultOwlInstanceDataChecker();
-        DataTaskResult der = validator.inspect("/dl/workspace/cvs-project-gila2/gila2/logs/owl/gila.owl", null, new DataEvaluationConfig());
-        System.out.println(der.toXml());
-	}
+
 }
