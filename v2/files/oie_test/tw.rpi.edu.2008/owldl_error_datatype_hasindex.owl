@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+This document has OWL-DL consistency issue. 
+The range of iw:hasIndex is http://www.w3.org/2001/XMLSchema#int, but the plain literal value "0" does not have corresponding data type, int, for rdf:datatype atrrtibute.
+-->
+<rdf:RDF
+    xmlns:iw="http://inferenceweb.stanford.edu/2004/07/iw.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#">
+  <iw:NodeSet rdf:about="http://iw4.stanford.edu/proofs/tonys/tonys/tonysns1_1.owl#tonysns1_1"/>
+  <iw:Query rdf:about="http://iw4.stanford.edu/proofs/tonys/tonys.owl#tonys"/>
+  <iw:DeclarativeRule rdf:about="http://inferenceweb.stanford.edu/registry/DPR/GMP.owl#GMP"/>
+  <rdf:List rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <iw:Language rdf:about="http://inferenceweb.stanford.edu/registry/LG/KIF.owl#KIF"/>
+  <iw:NodeSet rdf:about="http://iw4.stanford.edu/proofs/tonys/tonys/tonysns1_0.owl#tonysns1_0">
+    <iw:conclusion>(|http://www.w3.org/1999/02/22-rdf-syntax-ns#|::type |http://iw.stanford.edu/enginesdoc/jtp/script-data/tonys.daml#|::|TonysSpecialty| ?x)</iw:conclusion>
+    <iw:hasLanguage rdf:resource="http://inferenceweb.stanford.edu/registry/LG/KIF.owl#KIF"/>
+    <iw:isConsequentOf rdf:parseType="Collection">
+      <iw:InferenceStep
+         iw:hasIndex="0">
+        <iw:hasRule rdf:resource="http://inferenceweb.stanford.edu/registry/DPR/GMP.owl#GMP"/>
+        <iw:hasInferenceEngine rdf:resource="http://inferenceweb.stanford.edu/registry/IE/JTP.owl#JTP"
+           rdf:type="http://inferenceweb.stanford.edu/2004/07/iw.owl#InferenceEngine"/>
+        <iw:hasAntecedent rdf:parseType="Collection">
+          <iw:NodeSet rdf:about="http://iw4.stanford.edu/proofs/tonys/tonys/tonysns1_1.owl#tonysns1_1"/>
+        </iw:hasAntecedent>
+        <iw:hasVariableMapping rdf:parseType="Collection">
+          <iw:Mapping>
+            <iw:mapTo>|http://iw.stanford.edu/enginesdoc/jtp/script-data/tonys.daml#|::|CRAB|</iw:mapTo>
+            <iw:mapFrom>?x</iw:mapFrom>
+          </iw:Mapping>
+	    </iw:hasVariableMapping>
+        <iw:fromQuery rdf:parseType="Collection">
+          <iw:Query rdf:about="http://iw4.stanford.edu/proofs/tonys/tonys.owl#tonys"/>
+        </iw:fromQuery>
+      </iw:InferenceStep>
+    </iw:isConsequentOf>
+  </iw:NodeSet>
+</rdf:RDF>
