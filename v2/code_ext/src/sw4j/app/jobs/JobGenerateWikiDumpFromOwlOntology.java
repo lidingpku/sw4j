@@ -1,4 +1,4 @@
-package sw4j.app.job;
+package sw4j.app.jobs;
 
 import sw4j.rdf.util.ToolOwl2SemanticMediaWiki;
 
