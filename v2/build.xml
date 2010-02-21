@@ -127,16 +127,6 @@
     	</copy>  		
   		
 
-		<!-- release oie servlet for tomcat webapp  -->
-		<mkdir  dir="${release.dir}/webapps/oie"/>
-
-  		<copy todir="${release.dir}/webapps/oie" >
-  	      <fileset dir="${ext.dir}/src/sw4j/app/oie/www/"  />
-    	</copy>
-
-  		<copy todir="${release.dir}/webapps/oie/WEB-INF/lib" flatten="true" >
-  	      <fileset dir="${release.dir}/full/" includes="**/*.jar"/>
-    	</copy>  		
 
     </target>  
 

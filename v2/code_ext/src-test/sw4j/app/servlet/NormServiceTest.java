@@ -14,6 +14,7 @@ import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
+import sw4j.app.servlet.NormService;
 import sw4j.app.servlet.common.DataServletResponse;
 import sw4j.vocabulary.pml.PMLJ;
 import sw4j.vocabulary.pml.PMLR;
