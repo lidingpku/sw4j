@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+Instance CL has potential missing property value issue. 
+By the inference on range of pmlj:hasInferenceEngine CL belongs to class InferenceEngine.
+All InferenceEngine instances are supposed to have at least 1 value for property hasInferenceEngineRule due to the owl:minCardinality=1 restriction. However CL has no value for hasInferenceEngineRule.
+-->
+<rdf:RDF
+    xmlns:pmlj="http://inference-web.org/2.0/pml-justification.owl#"
+    xmlns:pmlp="http://inference-web.org/2.0/pml-provenance.owl#"
+    xmlns:gilcore="http://inferenceweb.stanford.edu/2006/12/gilcore.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:cons="http://www.mindswap.org/2007/GILA/cons.owl#"
+    xmlns:ds="http://inference-web.org/2.0/ds.owl#"
+    xmlns:pmlowl="http://inference-web.org/2.0/pml-owl.owl#">
+  
+  <pmlj:InferenceStep rdf:about="#is6">
+	<pmlj:hasInferenceEngine rdf:resource="http://inferenceweb.stanford.edu/registry/IE/CL.owl#CL"/>
+	<pmlj:hasInferenceRule rdf:resource="http://inferenceweb.stanford.edu/registry/DPR/Told.owl#Told"/>
+  </pmlj:InferenceStep>
+</rdf:RDF>

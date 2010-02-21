@@ -54,13 +54,13 @@ public class DefaultOwlInstanceDataCheckerTest {
 				// non-exist URL
 				{"http://tw.rpi.edu/proofs/tonys0000/tonys_1/ns2", TaskLoad.REPORT_TITLE, TaskLoad.ERROR_SUMMARY_1},
 				// empty file
-				{"files/evaluation_test/rdf_fatal_empty_file.rdf", TaskParseRdf.REPORT_TITLE, TaskParseRdf.ERROR_SUMMARY_5},
+				{"files/oie_test/evaluation_test/rdf_fatal_empty_file.rdf", TaskParseRdf.REPORT_TITLE, TaskParseRdf.ERROR_SUMMARY_5},
 				// empty file
-				{"files/evaluation_test/rdf_fatal_only_comment.rdf", TaskParseRdf.REPORT_TITLE, TaskParseRdf.ERROR_SUMMARY_1},
+				{"files/oie_test/evaluation_test/rdf_fatal_only_comment.rdf", TaskParseRdf.REPORT_TITLE, TaskParseRdf.ERROR_SUMMARY_1},
 				// bad rdf
-				{"files/evaluation_test/rdf_fatal_bad_rdf.rdf", TaskParseRdf.REPORT_TITLE, TaskParseRdf.ERROR_SUMMARY_1},
+				{"files/oie_test/evaluation_test/rdf_fatal_bad_rdf.rdf", TaskParseRdf.REPORT_TITLE, TaskParseRdf.ERROR_SUMMARY_1},
 				// not rdf
-				{"files/evaluation_test/rdf_fatal_not_rdf.rdf", TaskParseRdf.REPORT_TITLE, TaskParseRdf.ERROR_SUMMARY_1},
+				{"files/oie_test/evaluation_test/rdf_fatal_not_rdf.rdf", TaskParseRdf.REPORT_TITLE, TaskParseRdf.ERROR_SUMMARY_1},
 		};
 		
 		for (int i=0; i< address_issue1.length; i++){
@@ -93,12 +93,12 @@ public class DefaultOwlInstanceDataCheckerTest {
 		
 
 		String [][] address_issue = new String [][]{
-			{"files/evaluation_test/reference_warn_undefined_class.rdf", InspectLoadReferencedOntology.REPORT_TITLE, InspectLoadReferencedOntology.ERROR_SUMMARY_6},
-			{"files/evaluation_test/reference_warn_undefined_property.rdf", InspectLoadReferencedOntology.REPORT_TITLE, InspectLoadReferencedOntology.ERROR_SUMMARY_7},
-			{"files/evaluation_test/reference_warn_eswc.rdf", InspectLoadReferencedOntology.REPORT_TITLE, InspectLoadReferencedOntology.ERROR_SUMMARY_1},
+			{"files/oie_test/evaluation_test/reference_warn_undefined_class.rdf", InspectLoadReferencedOntology.REPORT_TITLE, InspectLoadReferencedOntology.ERROR_SUMMARY_6},
+			{"files/oie_test/evaluation_test/reference_warn_undefined_property.rdf", InspectLoadReferencedOntology.REPORT_TITLE, InspectLoadReferencedOntology.ERROR_SUMMARY_7},
+			{"files/oie_test/evaluation_test/reference_warn_eswc.rdf", InspectLoadReferencedOntology.REPORT_TITLE, InspectLoadReferencedOntology.ERROR_SUMMARY_1},
 			//{"http://data.semanticweb.org/dumps/conferences/eswc-2007-complete.rdf",DataTaskLoadReference.REPORT_TITLE, DataTaskLoadReference.ERROR_SUMMARY_1},
-			{"files/evaluation_test/reference_warn_bad_namespace.owl", InspectLoadReferencedOntology.REPORT_TITLE, InspectLoadReferencedOntology.ERROR_SUMMARY_1},
-			{"files/evaluation_test/reference_warn_pml_undefined_fromoriginalanswer.owl", InspectLoadReferencedOntology.REPORT_TITLE, InspectLoadReferencedOntology.ERROR_SUMMARY_7},
+			{"files/oie_test/evaluation_test/reference_warn_bad_namespace.owl", InspectLoadReferencedOntology.REPORT_TITLE, InspectLoadReferencedOntology.ERROR_SUMMARY_1},
+			{"files/oie_test/evaluation_test/reference_warn_pml_undefined_fromoriginalanswer.owl", InspectLoadReferencedOntology.REPORT_TITLE, InspectLoadReferencedOntology.ERROR_SUMMARY_7},
 			
 		};
 		
@@ -112,11 +112,11 @@ public class DefaultOwlInstanceDataCheckerTest {
 		
 
 		String [][] address_issue = new String [][]{				
-			{"files/evaluation_test/owldl_error_datatype_datetime.owl", InspectOwlDl.REPORT_TITLE, InspectOwlDl.ERROR_SUMMARY_2},
-			{"files/evaluation_test/owldl_error_datatype_hasindex.owl", InspectOwlDl.REPORT_TITLE, InspectOwlDl.ERROR_SUMMARY_2},
-			{"files/evaluation_test/owldl_error_disjointwith.owl", InspectOwlDl.REPORT_TITLE, InspectOwlDl.ERROR_SUMMARY_2},
-			{"files/evaluation_test/owldl_error_cardinality_hasname.owl", InspectOwlDl.REPORT_TITLE, InspectOwlDl.ERROR_SUMMARY_2},
-			{"files/evaluation_test/owldl_error_foaf_disjoin.owl", InspectOwlDl.REPORT_TITLE, InspectOwlDl.ERROR_SUMMARY_2},
+			{"files/oie_test/evaluation_test/owldl_error_datatype_datetime.owl", InspectOwlDl.REPORT_TITLE, InspectOwlDl.ERROR_SUMMARY_2},
+			{"files/oie_test/evaluation_test/owldl_error_datatype_hasindex.owl", InspectOwlDl.REPORT_TITLE, InspectOwlDl.ERROR_SUMMARY_2},
+			{"files/oie_test/evaluation_test/owldl_error_disjointwith.owl", InspectOwlDl.REPORT_TITLE, InspectOwlDl.ERROR_SUMMARY_2},
+			{"files/oie_test/evaluation_test/owldl_error_cardinality_hasname.owl", InspectOwlDl.REPORT_TITLE, InspectOwlDl.ERROR_SUMMARY_2},
+			{"files/oie_test/evaluation_test/owldl_error_foaf_disjoin.owl", InspectOwlDl.REPORT_TITLE, InspectOwlDl.ERROR_SUMMARY_2},
 		};
 		
 		for (int i=0; i< address_issue.length; i++){
@@ -130,10 +130,10 @@ public class DefaultOwlInstanceDataCheckerTest {
 
 		String [][] address_issue = new String [][]{
 			{"http://tw.rpi.edu/2008/04/wine-instance_mpv.rdf", InspectMissingPropertyValue.REPORT_TITLE, InspectMissingPropertyValue.ERROR_SUMMARY_2},
-			{"files/evaluation_test/mpv_warn_cardinality.owl", InspectMissingPropertyValue.REPORT_TITLE, InspectMissingPropertyValue.ERROR_SUMMARY_2},
-			{"files/evaluation_test/mpv_warn_mincardinality.owl", InspectMissingPropertyValue.REPORT_TITLE, InspectMissingPropertyValue.ERROR_SUMMARY_3},
-			{"files/evaluation_test/mpv_warn_cardinality_external_ref.owl", InspectMissingPropertyValue.REPORT_TITLE, InspectMissingPropertyValue.ERROR_SUMMARY_2},
-			{"files/evaluation_test/mpv_pml_200606_tonys_4.owl", InspectMissingPropertyValue.REPORT_TITLE, InspectMissingPropertyValue.ERROR_SUMMARY_3},
+			{"files/oie_test/evaluation_test/mpv_warn_cardinality.owl", InspectMissingPropertyValue.REPORT_TITLE, InspectMissingPropertyValue.ERROR_SUMMARY_2},
+			{"files/oie_test/evaluation_test/mpv_warn_mincardinality.owl", InspectMissingPropertyValue.REPORT_TITLE, InspectMissingPropertyValue.ERROR_SUMMARY_3},
+			{"files/oie_test/evaluation_test/mpv_warn_cardinality_external_ref.owl", InspectMissingPropertyValue.REPORT_TITLE, InspectMissingPropertyValue.ERROR_SUMMARY_2},
+			{"files/oie_test/evaluation_test/mpv_pml_200606_tonys_4.owl", InspectMissingPropertyValue.REPORT_TITLE, InspectMissingPropertyValue.ERROR_SUMMARY_3},
 		};
 		
 		for (int i=0; i< address_issue.length; i++){
@@ -147,8 +147,8 @@ public class DefaultOwlInstanceDataCheckerTest {
 
 		String [][] address_issue = new String [][]{
 			{"http://tw.rpi.edu/2008/04/wine-instance_uit.rdf", InspectUnexpectedIndividualType.REPORT_TITLE, InspectUnexpectedIndividualType.ERROR_SUMMARY_3},
-			{"files/evaluation_test/uit_warn_incompatible_domain.owl", InspectUnexpectedIndividualType.REPORT_TITLE, InspectUnexpectedIndividualType.ERROR_SUMMARY_1},
-			{"files/evaluation_test/uit_warn_incompatible_range.owl", InspectUnexpectedIndividualType.REPORT_TITLE, InspectUnexpectedIndividualType.ERROR_SUMMARY_2},			
+			{"files/oie_test/evaluation_test/uit_warn_incompatible_domain.owl", InspectUnexpectedIndividualType.REPORT_TITLE, InspectUnexpectedIndividualType.ERROR_SUMMARY_1},
+			{"files/oie_test/evaluation_test/uit_warn_incompatible_range.owl", InspectUnexpectedIndividualType.REPORT_TITLE, InspectUnexpectedIndividualType.ERROR_SUMMARY_2},			
 		};
 		
 		for (int i=0; i< address_issue.length; i++){
@@ -203,7 +203,7 @@ public class DefaultOwlInstanceDataCheckerTest {
 		
 
 		String [][] address_issue = new String [][]{
-			{"files/evaluation_test/special_duplicated_entries.rdf", InspectUnexpectedIndividualType.REPORT_TITLE, InspectUnexpectedIndividualType.ERROR_SUMMARY_2},			
+			{"files/oie_test/evaluation_test/special_duplicated_entries.rdf", InspectUnexpectedIndividualType.REPORT_TITLE, InspectUnexpectedIndividualType.ERROR_SUMMARY_2},			
 		};
 		
 		for (int i=0; i< address_issue.length; i++){
@@ -217,8 +217,8 @@ public class DefaultOwlInstanceDataCheckerTest {
 		DefaultOwlInstanceDataChecker validator = new DefaultOwlInstanceDataChecker();
 
 		String [][] address_issue = new String [][]{
-			{"files/evaluation_test/epv_error_cardinality_fromanswerorquery.owl", DataEvaluationConfig.CHECK_EXCESSIVE_PROPERTY_VALUE, InspectExcessivePropertyValue.ERROR_SUMMARY_1},
-			{"files/evaluation_test/epv_error_maxcardinality_hasauthorlist.owl", DataEvaluationConfig.CHECK_EXCESSIVE_PROPERTY_VALUE, InspectExcessivePropertyValue.ERROR_SUMMARY_1},			
+			{"files/oie_test/evaluation_test/epv_error_cardinality_fromanswerorquery.owl", DataEvaluationConfig.CHECK_EXCESSIVE_PROPERTY_VALUE, InspectExcessivePropertyValue.ERROR_SUMMARY_1},
+			{"files/oie_test/evaluation_test/epv_error_maxcardinality_hasauthorlist.owl", DataEvaluationConfig.CHECK_EXCESSIVE_PROPERTY_VALUE, InspectExcessivePropertyValue.ERROR_SUMMARY_1},			
 		};
 		
 		for (int i=0; i< address_issue.length; i++){

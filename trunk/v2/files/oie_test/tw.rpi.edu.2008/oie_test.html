@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type" />
+  <title>Test Files for TW OIE</title>
+  <link href="http://tw.rpi.edu/base.css" rel="stylesheet" type="text/css" /> 
+
+</head>
+
+
+<body>
+
+<h1>Test Files for TW OIE</h1>
+
+<p>TW OIE: <a href="http://onto.rpi.edu/demo/oie/">demo page</a> </p>
+
+<div>
+Try to run the test:
+<form method="get" action="http://onto.rpi.edu/iw2api/ie" name="test">
+  <select name="inputUrl">
+  <optgroup label="test1 (just data)">
+  <option>http://tw.rpi.edu/2008/04/rdf_fatal_not_rdf.rdf</option>
+  <option>http://tw.rpi.edu/2008/04/rdf_fatal_bad_rdf.rdf</option>
+  <option>http://tw.rpi.edu/2008/04/owldl_error_datatype_datetime.rdf</option>
+  <option>http://tw.rpi.edu/2008/04/owldl_error_cardinality_hasname.rdf</option>
+  <option>http://tw.rpi.edu/2008/04/owldl_error_disjointwith.rdf</option>
+  <option>http://tw.rpi.edu/2008/04/wine-instance_uit.rdf</option>
+  <option>http://tw.rpi.edu/2008/04/wine-instance_rit.rdf</option>
+  <option>http://tw.rpi.edu/2008/04/wine-instance_nsit.rdf</option>
+  <option>http://tw.rpi.edu/2008/04/wine-instance_mpv.rdf</option>
+  <option>http://tw.rpi.edu/2008/04/wine-instance_epv.rdf</option>
+  </optgroup>
+  <optgroup label="test2 (with ref onto)">
+  <option>http://tw.rpi.edu/2008/04/rdf_fatal_not_rdf.rdf</option>
+  <option>http://tw.rpi.edu/2008/04/rdf_fatal_bad_rdf.rdf</option>
+  <option>http://tw.rpi.edu/2008/04/owldl_error_datatype_datetime_withonto.rdf</option>
+  <option>http://tw.rpi.edu/2008/04/owldl_error_cardinality_hasname_withonto.rdf</option>
+  <option>http://tw.rpi.edu/2008/04/owldl_error_disjointwith_withonto.rdf</option>
+  <option>http://tw.rpi.edu/2008/04/wine-instance_uit_withonto.rdf</option>
+  <option>http://tw.rpi.edu/2008/04/wine-instance_rit_withonto.rdf</option>
+  <option>http://tw.rpi.edu/2008/04/wine-instance_nsit_withonto.rdf</option>
+  <option>http://tw.rpi.edu/2008/04/wine-instance_mpv_withonto.rdf</option>
+  <option>http://tw.rpi.edu/2008/04/wine-instance_epv_withonto.rdf</option>
+  </optgroup>
+  </select>
+
+  <input name="inputMethod" value="uri" type="hidden" />
+  <input value="validate URI" type="submit" />
+<br/>
+<input id="check2" name="InspectUnexpectedIndividualType" type="checkbox" checked /> check unexpected individual type (UIT)
+<br/>
+<input id="check3" name="InspectRedundantInvididualType" type="checkbox" checked /> check redundant individual type (RIT)
+<br/>
+
+<input id="check4" name="InspectNonSpecificInvididualType" type="checkbox" checked /> check non-specific individual type (NSIT)
+<br/>
+<input id="check6" name="InspectMissingPropertyValue" type="checkbox" checked /> check missing property value (MPV)
+<br/>
+<input id="check7" name="InspectExcessivePropertyValue" type="checkbox" checked /> check excessive property value (EPV)
+</form>  
+</div>
+
+
+<h2>Test 1: Instance data only</h2>
+
+<ol>
+
+  <li><a href="http://tw.rpi.edu/2008/04/rdf_fatal_not_rdf.rdf">http://tw.rpi.edu/2008/04/rdf_fatal_not_rdf.rdf</a>
+&nbsp;</li>
+
+  <li><a href="http://tw.rpi.edu/2008/04/rdf_fatal_bad_rdf.rdf">http://tw.rpi.edu/2008/04/rdf_fatal_bad_rdf.rdf</a></li>
+
+  <li><a href="http://tw.rpi.edu/2008/04/owldl_error_datatype_datetime.rdf">http://tw.rpi.edu/2008/04/owldl_error_datatype_datetime.rdf</a></li>
+
+  <li><a href="http://tw.rpi.edu/2008/04/owldl_error_cardinality_hasname.rdf">http://tw.rpi.edu/2008/04/owldl_error_cardinality_hasname.rdf</a></li>
+
+  <li><a href="http://tw.rpi.edu/2008/04/owldl_error_disjointwith.rdf">http://tw.rpi.edu/2008/04/owldl_error_disjointwith.rdf</a></li>
+
+  <li><a href="http://tw.rpi.edu/2008/04/wine-instance_uit.rdf">http://tw.rpi.edu/2008/04/wine-instance_uit.rdf</a></li>
+
+  <li><a href="http://tw.rpi.edu/2008/04/wine-instance_rit.rdf">http://tw.rpi.edu/2008/04/wine-instance_rit.rdf</a></li>
+
+  <li><a href="http://tw.rpi.edu/2008/04/wine-instance_nsit.rdf">http://tw.rpi.edu/2008/04/wine-instance_nsit.rdf</a></li>
+
+  <li><a href="http://tw.rpi.edu/2008/04/wine-instance_mpv.rdf">http://tw.rpi.edu/2008/04/wine-instance_mpv.rdf</a></li>
+
+  <li><a href="http://tw.rpi.edu/2008/04/wine-instance_epv.rdf">http://tw.rpi.edu/2008/04/wine-instance_epv.rdf</a></li>
+
+</ol>
+
+
+
+<h2>Test 2: &nbsp;The same instance data enriched with the
+referenced
+ontologies</h2>
+
+<ol>
+
+  <li>n/a</li>
+
+  <li>n/a</li>
+
+  <li><a href="http://tw.rpi.edu/2008/04/owldl_error_datatype_datetime_withonto.rdf">http://tw.rpi.edu/2008/04/owldl_error_datatype_datetime_withonto.rdf</a></li>
+
+  <li><a href="http://tw.rpi.edu/2008/04/owldl_error_cardinality_hasname_withonto.rdf">http://tw.rpi.edu/2008/04/owldl_error_cardinality_hasname_withonto.rdf</a></li>
+
+  <li><a href="http://tw.rpi.edu/2008/04/owldl_error_disjointwith_withonto.rdf">http://tw.rpi.edu/2008/04/owldl_error_disjointwith_withonto.rdf</a></li>
+
+  <li><a href="http://tw.rpi.edu/2008/04/wine-instance_uit_withonto.rdf">http://tw.rpi.edu/2008/04/wine-instance_uit_withonto.rdf</a></li>
+
+  <li><a href="http://tw.rpi.edu/2008/04/wine-instance_rit_withonto.rdf">http://tw.rpi.edu/2008/04/wine-instance_rit_withonto.rdf</a></li>
+
+  <li><a href="http://tw.rpi.edu/2008/04/wine-instance_nsit_withonto.rdf">http://tw.rpi.edu/2008/04/wine-instance_nsit_withonto.rdf</a></li>
+
+  <li><a href="http://tw.rpi.edu/2008/04/wine-instance_mpv_withonto.rdf">http://tw.rpi.edu/2008/04/wine-instance_mpv_withonto.rdf</a></li>
+
+  <li><a href="http://tw.rpi.edu/2008/04/wine-instance_epv_withonto.rdf">http://tw.rpi.edu/2008/04/wine-instance_epv_withonto.rdf</a></li>
+
+</ol>
+
+</body>
+</html>

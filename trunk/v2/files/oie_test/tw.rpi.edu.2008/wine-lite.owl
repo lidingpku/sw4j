@@ -1,0 +1,325 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+     <!ENTITY wine  "http://tw.rpi.edu/2008/04/wine-lite.owl#" >
+     <!ENTITY base  "http://tw.rpi.edu/2008/04/wine-lite.owl" >
+     <!ENTITY owl  "http://www.w3.org/2002/07/owl#" >
+     <!ENTITY rdf  "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+     <!ENTITY rdfs  "http://www.w3.org/2000/01/rdf-schema#" >
+     <!ENTITY xsd  "http://www.w3.org/2001/XMLSchema#" >
+   ]>
+<!-- 
+  An abridged wine ontology based on OWL guide. It is abridged to speed up our instance data evaluation test.  see http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine.
+-->
+<rdf:RDF
+  xmlns     = "&wine;"
+  xml:base     = "&base;"
+  xmlns:owl = "&owl;"
+  xmlns:rdf = "&rdf;"
+  xmlns:rdfs= "&rdfs;">
+
+<owl:Class rdf:about="#Wine">
+  <rdfs:label xml:lang="fr">vin</rdfs:label>
+  <rdfs:label xml:lang="en">wine</rdfs:label>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasBody" />
+      <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasColor" />
+      <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasMaker" />
+      <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasFlavor" />
+      <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#locatedIn" />
+      <owl:someValuesFrom>
+        <owl:Class rdf:about="#Region">
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasMaker" />
+      <owl:allValuesFrom>
+        <owl:Class rdf:about="#Winery">
+        </owl:Class>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+<!--
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#madeFromGrape" />
+      <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+-->
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasSugar" />
+      <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+
+<owl:ObjectProperty rdf:about="#hasBody">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:range>
+    <owl:Class rdf:about="#WineBody">
+    </owl:Class>
+  </rdfs:range>
+  <rdfs:subPropertyOf rdf:resource="#hasWineDescriptor" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasColor">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:domain>
+    <owl:Class rdf:about="#Wine">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="#WineColor">
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasColor">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="#hasWineDescriptor">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="#hasWineDescriptor">
+  <rdfs:domain>
+    <owl:Class rdf:about="#Wine">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="#WineDescriptor">
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="#hasFlavor">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:range>
+    <owl:Class rdf:about="#WineFlavor">
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="#hasFlavor">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="#hasWineDescriptor">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="#hasSugar">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+  <rdfs:range>
+    <owl:Class rdf:about="#WineSugar">
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="#hasSugar">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="#hasWineDescriptor">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#WineDescriptor">
+  <rdfs:comment>Made WineDescriptor unionType of tastes and color</rdfs:comment>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class rdf:about="#WineTaste">
+        </owl:Class>
+        <owl:Class rdf:about="#WineColor">
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+<owl:Class rdf:about="#WineColor">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="#WineDescriptor">
+    </owl:Class>
+  </rdfs:subClassOf>
+  <owl:oneOf rdf:parseType="Collection">
+    <owl:Thing rdf:about="#Rose">
+    </owl:Thing>
+    <owl:Thing rdf:about="#White">
+    </owl:Thing>
+    <owl:Thing rdf:about="#Red">
+    </owl:Thing>
+  </owl:oneOf>
+</owl:Class>
+<owl:Class rdf:about="#WineTaste">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="#WineDescriptor">
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="#WineBody">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="#WineTaste">
+    </owl:Class>
+  </rdfs:subClassOf>
+  <owl:oneOf rdf:parseType="Collection">
+    <owl:Thing rdf:about="#Light">
+    </owl:Thing>
+    <owl:Thing rdf:about="#Full">
+    </owl:Thing>
+    <owl:Thing rdf:about="#Medium">
+    </owl:Thing>
+  </owl:oneOf>
+</owl:Class>
+<owl:Class rdf:about="#WineFlavor">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="#WineTaste">
+    </owl:Class>
+  </rdfs:subClassOf>
+  <owl:oneOf rdf:parseType="Collection">
+    <owl:Thing rdf:about="#Delicate">
+    </owl:Thing>
+    <owl:Thing rdf:about="#Strong">
+    </owl:Thing>
+    <owl:Thing rdf:about="#Moderate">
+    </owl:Thing>
+  </owl:oneOf>
+</owl:Class>
+<owl:Class rdf:about="#WineSugar">
+  <rdfs:subClassOf>
+    <owl:Class rdf:about="#WineTaste">
+    </owl:Class>
+  </rdfs:subClassOf>
+  <owl:oneOf rdf:parseType="Collection">
+    <owl:Thing rdf:about="#OffDry">
+    </owl:Thing>
+    <owl:Thing rdf:about="#Sweet">
+    </owl:Thing>
+    <owl:Thing rdf:about="#Dry">
+    </owl:Thing>
+  </owl:oneOf>
+</owl:Class>
+<owl:ObjectProperty rdf:about="#hasMaker">
+  <rdf:type rdf:resource="&owl;FunctionalProperty" />
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="#locatedIn">
+  <rdf:type rdf:resource="&owl;TransitiveProperty" />
+  <rdfs:domain>
+    <owl:Class rdf:about="&owl;Thing">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="#Region">
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#madeFromGrape">
+  <rdfs:domain>
+    <owl:Class rdf:about="#Wine">
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class rdf:about="#WineGrape">
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+
+<!--
+<owl:ObjectProperty rdf:about="#madeFromGrape">
+  <rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="&food;madeFromFruit">
+  </owl:ObjectProperty>
+  </rdfs:subPropertyOf>
+</owl:ObjectProperty>
+-->
+
+<owl:Class rdf:about="#Zinfandel">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#madeFromGrape" />
+          <owl:hasValue rdf:resource="#ZinfandelGrape" />
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#madeFromGrape" />
+          <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+        </owl:Restriction>
+        <owl:Class rdf:about="#Wine">
+        </owl:Class>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasColor" />
+      <owl:hasValue rdf:resource="#Red" />
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasBody" />
+      <owl:allValuesFrom>
+        <owl:Class>
+          <owl:oneOf rdf:parseType="Collection">
+            <owl:Thing rdf:about="#Medium">
+            </owl:Thing>
+            <owl:Thing rdf:about="#Full">
+            </owl:Thing>
+          </owl:oneOf>
+        </owl:Class>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasFlavor" />
+      <owl:allValuesFrom>
+        <owl:Class>
+          <owl:oneOf rdf:parseType="Collection">
+            <owl:Thing rdf:about="#Moderate">
+            </owl:Thing>
+            <owl:Thing rdf:about="#Strong">
+            </owl:Thing>
+          </owl:oneOf>
+        </owl:Class>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasSugar" />
+      <owl:hasValue rdf:resource="#Dry" />
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<rdf:Description rdf:about="#ZinfandelGrape">
+  <rdf:type>
+    <owl:Class rdf:about="#WineGrape">
+    </owl:Class>
+  </rdf:type>
+</rdf:Description>
+
+
+</rdf:RDF>
