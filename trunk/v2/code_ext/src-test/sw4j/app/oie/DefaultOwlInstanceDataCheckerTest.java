@@ -275,7 +275,6 @@ public class DefaultOwlInstanceDataCheckerTest {
 			DataTaskResult der = checker.inspect(szFileOrUrl, null, new DataEvaluationConfig());
 			verifyReport(der, title, message);
 		}
-		
 	}
 		
 	private void verifyReport(DataTaskResult der, String title, String message){

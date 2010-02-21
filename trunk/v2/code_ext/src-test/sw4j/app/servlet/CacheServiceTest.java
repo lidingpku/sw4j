@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 
 import org.junit.Test;
 
+import sw4j.app.servlet.CacheService;
 import sw4j.app.servlet.SparqlService;
 import sw4j.app.servlet.common.DataServletResponse;
 
