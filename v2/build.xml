@@ -4,40 +4,144 @@
 ]>
 
   <!--     TODO: set project name    -->
-  <project default="build" basedir="." name="sw4j">
+  <project default="run" basedir="." name="sw4j">
 
 
   <!-- ********** properties/paths ********** -->
-    <!-- jwsdp directories -->
-    <!-- jwsdp.home is set automatically by jwsdp's ant -->
-  <property environment="env"/>
+  <property name="version"  value="0.6"/>
   
   <!-- local directories -->
   <property name="build.dir"  value="${basedir}/bin"/>
-  <property name="src.dir"  value="${basedir}/src"/>
+  <property name="release.dir"  value="${basedir}/release/nightly"/>
+  <property name="core.dir"  value="${basedir}/code_core"/>
+  <property name="ext.dir"  value="${basedir}/code_ext"/>
 
     <!-- paths -->
-  	<path id="my.classpath">
-      <fileset dir="${basedir}/lib" includes="**/*.jar"/>
+  	<path id="core.classpath">
+        <fileset dir="${core.dir}/lib" includes="**/*.jar"/>
   	</path>
 
+  	<path id="full.classpath">
+      <fileset dir="${core.dir}/lib" includes="**/*.jar"/>
+      <fileset dir="${ext.dir}/lib" includes="**/*.jar"/>
+  	</path>
+
+  	<path id="core.src">
+      <fileset dir="${core.dir}/src"/>
+  	</path>
+
+  	<path id="full.src">
+      <fileset dir="${core.dir}/src"/>
+      <fileset dir="${ext.dir}/src"/>
+  	</path>
 
     <!-- targets -->
-	<target name="clean-bin" >
-		<delete dir="${build.dir}"/>
-		
+	<target name="clean" >
+		<delete dir="${build.dir}"/>		
 		<mkdir  dir="${build.dir}"/>
+		<mkdir  dir="${build.dir}/core"/>
+		<mkdir  dir="${build.dir}/full"/>
+		
+		<delete dir="${release.dir}"/>		
+		<mkdir  dir="${release.dir}"/>
     </target>  
 	
-  	<target name="build" depends="clean-bin">
+  	<target name="build-core" depends="clean">
       <javac 
-      		srcdir="${src.dir}"
-            destdir="${build.dir}">
+            destdir="${build.dir}/core">
+  		<src path="${core.dir}/src"/>
         <classpath>
-          <path refid="my.classpath"/>
+          <path refid="core.classpath"/>
         </classpath>
       </javac>
     </target>  
-  	
+
+  	<target name="build-full" depends="build-core">
+      <javac 
+            destdir="${build.dir}/full">
+  		<src path="${core.dir}/src"/>
+  		<src path="${ext.dir}/src"/>
+        <classpath>
+          <path refid="full.classpath"/>
+        </classpath>
+      </javac>
+    </target>  
+
+  	<target name="release" depends="build-full">
+		<!-- release core version -->
+		<mkdir  dir="${release.dir}/core"/>
+		<mkdir  dir="${release.dir}/core/lib"/>
+  		
+	  <copy todir="${release.dir}/core/lib" flatten="true">
+	    <path refid="core.classpath"/>
+	  </copy>
+
+  		<copy todir="${release.dir}/core/src" >
+    	    <path refid="core.src"/>
+    	</copy>
+
+  		<copy todir="${release.dir}/core/docs" >
+  	      <fileset dir="${basedir}/docs"  />
+    	</copy>
+  		
+  		<jar destfile="${release.dir}/core/sw4j-core-${version}.jar">
+	      <fileset dir="${build.dir}/core"  />
+	      <path refid="core.src"/>
+	    </jar>
+  		
+  		<tar destfile="${release.dir}/sw4j-core-${version}.tar.gz" basedir="${release.dir}/core" compression="gzip"/>
+	
+		<!-- release full version -->
+		<mkdir  dir="${release.dir}/full"/>
+		<mkdir  dir="${release.dir}/full/lib"/>
+
+  		<copy todir="${release.dir}/full/lib" flatten="true">
+    	    <path refid="full.classpath"/>
+    	  </copy>
+
+  		<copy todir="${release.dir}/full/src" >
+    	    <path refid="full.src"/>
+    	  </copy>
+  		
+  		<copy todir="${release.dir}/full/docs" >
+  	      <fileset dir="${basedir}/docs"  />
+    	</copy>
+
+
+  		<jar destfile="${release.dir}/full/sw4j-${version}.jar">
+	      <fileset dir="${build.dir}/full"  />
+          <path refid="full.src"/>
+	    </jar>
+
+  		<tar destfile="${release.dir}/sw4j-full-${version}.tar.gz" basedir="${release.dir}/full" compression="gzip"/>
+
+		<!-- release sw4j servlet for tomcat webapp  -->
+		<mkdir  dir="${release.dir}/webapps/sw4j"/>
+
+  		<copy todir="${release.dir}/webapps/sw4j" >
+  	      <fileset dir="${ext.dir}/src/sw4j/app/servlet/www/"  />
+    	</copy>
+
+  		<copy todir="${release.dir}/webapps/sw4j/WEB-INF/lib" flatten="true" >
+  	      <fileset dir="${release.dir}/full/" includes="**/*.jar"/>
+    	</copy>  		
+  		
+
+		<!-- release oie servlet for tomcat webapp  -->
+		<mkdir  dir="${release.dir}/webapps/oie"/>
+
+  		<copy todir="${release.dir}/webapps/oie" >
+  	      <fileset dir="${ext.dir}/src/sw4j/app/oie/www/"  />
+    	</copy>
+
+  		<copy todir="${release.dir}/webapps/oie/WEB-INF/lib" flatten="true" >
+  	      <fileset dir="${release.dir}/full/" includes="**/*.jar"/>
+    	</copy>  		
+
+    </target>  
+
+ 	
+  	<target name="run" depends="release">
+    </target>  
   
    </project>
