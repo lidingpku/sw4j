@@ -12,7 +12,8 @@
   
   <!-- local directories -->
   <property name="build.dir"  value="${basedir}/bin"/>
-  <property name="release.dir"  value="${basedir}/release/nightly"/>
+  <property name="release.dir"  value="${basedir}/release"/>
+  <property name="nightly.dir"  value="${release.dir}/nightly"/>
   <property name="core.dir"  value="${basedir}/code_core"/>
   <property name="ext.dir"  value="${basedir}/code_ext"/>
 
@@ -43,10 +44,6 @@
 		<mkdir  dir="${build.dir}/full"/>
     </target>  
 	
-	<target name="reset" depends="clean" >
-		<delete dir="${release.dir}"/>		
-		<mkdir  dir="${release.dir}"/>
-    </target>  
     	
   	<target name="build-core" depends="clean">
       <javac 
@@ -69,71 +66,84 @@
       </javac>
     </target>  
 
-  	<target name="release" depends="build-full">
+  	<target name="nightly" depends="build-full">
 		<!-- release core version -->
-		<mkdir  dir="${release.dir}/core"/>
-		<mkdir  dir="${release.dir}/core/lib"/>
+		<mkdir  dir="${nightly.dir}/core"/>
+		<mkdir  dir="${nightly.dir}/core/lib"/>
   		
-	  <copy todir="${release.dir}/core/lib" flatten="true">
+	  <copy todir="${nightly.dir}/core/lib" flatten="true">
 	    <path refid="core.classpath"/>
 	  </copy>
 
-  		<copy todir="${release.dir}/core/src" >
+  		<copy todir="${nightly.dir}/core/src" >
     	    <path refid="core.src"/>
     	</copy>
 
-  		<copy todir="${release.dir}/core/docs" >
+  		<copy todir="${nightly.dir}/core/docs" >
   	      <fileset dir="${basedir}/docs"  />
     	</copy>
   		
-  		<jar destfile="${release.dir}/core/sw4j-core-${version}.jar">
+  		<jar destfile="${nightly.dir}/core/sw4j-core-${version}.jar">
 	      <fileset dir="${build.dir}/core"  />
 	      <path refid="core.src"/>
 	    </jar>
   		
-  		<tar destfile="${release.dir}/sw4j-core-${version}.tar.gz" basedir="${release.dir}/core" compression="gzip"/>
 	
 		<!-- release full version -->
-		<mkdir  dir="${release.dir}/full"/>
-		<mkdir  dir="${release.dir}/full/lib"/>
+		<mkdir  dir="${nightly.dir}/full"/>
+		<mkdir  dir="${nightly.dir}/full/lib"/>
 
-  		<copy todir="${release.dir}/full/lib" flatten="true">
+  		<copy todir="${nightly.dir}/full/lib" flatten="true">
     	    <path refid="full.classpath"/>
     	  </copy>
 
-  		<copy todir="${release.dir}/full/src" >
+  		<copy todir="${nightly.dir}/full/src" >
     	    <path refid="full.src"/>
     	  </copy>
   		
-  		<copy todir="${release.dir}/full/docs" >
+  		<copy todir="${nightly.dir}/full/docs" >
   	      <fileset dir="${basedir}/docs"  />
     	</copy>
 
 
-  		<jar destfile="${release.dir}/full/sw4j-${version}.jar">
+  		<jar destfile="${nightly.dir}/full/sw4j-${version}.jar">
 	      <fileset dir="${build.dir}/full"  />
           <path refid="full.src"/>
 	    </jar>
 
-  		<tar destfile="${release.dir}/sw4j-full-${version}.tar.gz" basedir="${release.dir}/full" compression="gzip"/>
 
 		<!-- release sw4j servlet for tomcat webapp  -->
-		<mkdir  dir="${release.dir}/webapps/sw4j"/>
+		<mkdir  dir="${nightly.dir}/webapps/sw4j"/>
 
-  		<copy todir="${release.dir}/webapps/sw4j" >
+  		<copy todir="${nightly.dir}/webapps/sw4j" >
   	      <fileset dir="${ext.dir}/src/sw4j/app/servlet/www/"  />
     	</copy>
 
-  		<copy todir="${release.dir}/webapps/sw4j/WEB-INF/lib" flatten="true" >
-  	      <fileset dir="${release.dir}/full/" includes="**/*.jar"/>
-    	</copy>  		
-  		
+  		<copy todir="${nightly.dir}/webapps/sw4j/WEB-INF/lib" flatten="true" >
+  	      <fileset dir="${nightly.dir}/full/" includes="**/*.jar"/>
+    	</copy>  	
 
 
     </target>  
+
+  	
+
 
  	
   	<target name="run" depends="release">
     </target>  
-  
-   </project>
+
+  	<target name="release" depends="nightly">
+		<mkdir  dir="${release.dir}/${version}"/>
+
+  		<tar destfile="${release.dir}/${version}/sw4j-full-${version}.tar.gz" basedir="${nightly.dir}/full" compression="gzip"/>
+  		<tar destfile="${release.dir}/${version}/sw4j-core-${version}.tar.gz" basedir="${nightly.dir}/core" compression="gzip"/>
+
+    </target>  
+
+	<target name="reset" depends="clean" >
+		<delete dir="${release.dir}"/>		
+		<mkdir  dir="${release.dir}"/>
+    </target>  
+
+  </project>
