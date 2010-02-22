@@ -12,7 +12,7 @@
   
   <!-- local directories -->
   <property name="build.dir"  value="${basedir}/bin"/>
-  <property name="release.dir"  value="${basedir}/release/nightly"/>
+  <property name="release.dir"  value="${basedir}/output/nightly"/>
   <property name="core.dir"  value="${basedir}/code_core"/>
   <property name="ext.dir"  value="${basedir}/code_ext"/>
 
@@ -42,8 +42,10 @@
 		<mkdir  dir="${build.dir}/core"/>
 		<mkdir  dir="${build.dir}/full"/>
 		
+	
 		<delete dir="${release.dir}"/>		
 		<mkdir  dir="${release.dir}"/>
+		
     </target>  
 	
   	<target name="build-core" depends="clean">
