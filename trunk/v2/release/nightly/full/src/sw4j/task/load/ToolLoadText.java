@@ -43,6 +43,11 @@ public class ToolLoadText extends ToolLoad{
 
 	public static DataTaskLoadText loadText(String szText, String szXmlBase, String szRdfSyntax){
 		DataTaskLoadText task = new DataTaskLoadText(szXmlBase);
+
+		if (ToolSafe.isEmpty(szText)){
+			task.setState(TaskLoad.STATE_OUTPUT_INVALID_EMPTY_TEXT, "empty text", null);
+			return task;
+		}
 		
 		//task.m_lastmodified = 0;
 		saveStream(new ByteArrayInputStream(szText.getBytes()), null, task);

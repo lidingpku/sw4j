@@ -66,6 +66,8 @@ public class DefaultOwlInstanceDataChecker {
 			return der;
 		}
 		
+		getLogger().info("start inspecting...");
+		
 		//load referenced ontology, it is ok if referenced ontology cannot be loaded
 		if (null!= model_load.getLoadReference())
 			der.reports.add(model_load.getLoadReference().getReport());

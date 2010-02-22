@@ -72,6 +72,7 @@ abstract public class TaskLoad extends AbstractTaskDesc{
 	// SwutilEvaluationTask (super class)
 	////////////////////////////////////////////////
 	public static final String ERROR_SUMMARY_1 = "Cannot load content from the specified file or URL.";
+	public static final String ERROR_SUMMARY_2 = "Empty text content.";
 	
 	public static final String REPORT_TITLE ="Load Data";
 	public static final String REPORT_DESC ="This service loads data from a file, URL, or test string";
@@ -108,6 +109,7 @@ abstract public class TaskLoad extends AbstractTaskDesc{
 	public final static int STATE_OUTPUT_INVALID_BAD_URL = 10;
 	public final static int STATE_OUTPUT_INVALID_CRAWLER_TRAP = 11;
 	public final static int STATE_OUTPUT_INVALID_EMPTY_URL = 12;
+	public final static int STATE_OUTPUT_INVALID_EMPTY_TEXT = 13;
 	
 	public final static int STATE_OUTPUT_SUCCESS_DOWNLOAD = 99;
 
@@ -156,6 +158,8 @@ abstract public class TaskLoad extends AbstractTaskDesc{
 			return "crawler trap";
 		case STATE_OUTPUT_INVALID_EMPTY_URL :
 			return "empty url";
+		case STATE_OUTPUT_INVALID_EMPTY_TEXT:
+			return "empty text";
 		case STATE_OUTPUT_SUCCESS_DOWNLOAD :
 			return "ok";
 		default:
@@ -192,7 +196,15 @@ abstract public class TaskLoad extends AbstractTaskDesc{
 		//	Logger logger = getLogger();
 		//	report.addEntry(error_level, error_summary, error_msg, error_location, error_suggestion, error_msg_raw, logger);
 		} else if (isLoadUnfinished()){
-			
+
+		} else if (getState()== STATE_OUTPUT_INVALID_EMPTY_TEXT){
+			Integer error_level =Sw4jMessage.STATE_FATAL;
+			String error_summary = ERROR_SUMMARY_2;
+			String error_details = getStateMessageDetails();
+			String error_creator = this.getClass().getSimpleName();
+
+			this.getReport().addEntry(error_level, error_summary,  error_creator, error_details, false);
+
 		} else {
 			Integer error_level =Sw4jMessage.STATE_FATAL;
 			String error_summary = ERROR_SUMMARY_1;
