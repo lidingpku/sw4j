@@ -14,7 +14,6 @@ import sw4j.app.servlet.common.AbstractService;
 import sw4j.app.servlet.common.DataServletResponse;
 import sw4j.rdf.util.AgentSparql;
 import sw4j.rdf.util.ToolJena;
-import sw4j.task.common.DataTaskReport;
 import sw4j.util.DataQname;
 import sw4j.util.Sw4jException;
 import sw4j.util.ToolIO;
@@ -29,7 +28,7 @@ public class CacheService extends AbstractService{
 	@Override
 	public String getHomepage() {
 		try {
-			return ToolIO.pipeInputStreamToString(DataTaskReport.class.getResourceAsStream("www/lodc.html"));
+			return ToolIO.pipeInputStreamToString(CacheService.class.getResourceAsStream("www/lodc.html"));
 		} catch (Sw4jException e) {
 			//e.printStackTrace();
 			return "";
