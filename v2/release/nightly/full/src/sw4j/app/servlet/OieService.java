@@ -6,7 +6,6 @@ import sw4j.app.oie.DefaultOwlInstanceDataChecker;
 import sw4j.app.servlet.common.AbstractService;
 import sw4j.app.servlet.common.DataServletResponse;
 import sw4j.task.common.DataTaskResult;
-import sw4j.util.ToolSafe;
 
 public class OieService extends AbstractService{
 	@Override
@@ -30,10 +29,10 @@ public class OieService extends AbstractService{
 
 	   try {   
 			//String output = this.params.getAsString(AbstractService.PARAM_OUTPUT);
-			
+		   
 	        String inputUrl =  this.getUriParam(PARAM_inputUrl);
 			String inputText=  this.getUriParam(PARAM_inputText);
-//			String inputMethod = this.params.getAsString(PARAM_inputMethod);
+			String inputMethod = this.params.getAsString(PARAM_inputMethod);
 			String inputTextRdfSyntax = this.params.getAsString(PARAM_inputTextRdfSyntax);
         	
 		
@@ -42,14 +41,16 @@ public class OieService extends AbstractService{
 			
 			DataEvaluationConfig vc = new DataEvaluationConfig();
 			//debug if (!ToolCommon.isEmpty(inputUrl))
-			if (!ToolSafe.isEmpty(this.params))
-				vc = new DataEvaluationConfig(this.params.getAllFieldName());
+			if (this.hasParams())
+				vc = new DataEvaluationConfig(this.params.getData().keySet());
 	        
 	        //validate RDF document
 	        DefaultOwlInstanceDataChecker validator = new DefaultOwlInstanceDataChecker();
 	        DataTaskResult der =null;
-        	if (!ToolSafe.isEmpty(inputUrl)){
+        	if ("uri".equals(inputMethod) ){
         		// process URL
+    			getLogger().info("process url"+ inputUrl);
+        		
         		der = validator.inspect(inputUrl, null, vc);
         	}else {
         		// process text
@@ -65,7 +66,7 @@ public class OieService extends AbstractService{
            		der = validator.inspectText(inputText, null, inputTextRdfSyntax,vc);
         	}
         		
-        	DataServletResponse ret = DataServletResponse.createResponse(der.toHtml(), true, this);
+        	DataServletResponse ret = DataServletResponse.createResponse(der.toHtml(), der.isSuccessful(), this);
         	return ret;
         	
         }catch (Exception e){

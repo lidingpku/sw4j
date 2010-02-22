@@ -36,19 +36,19 @@
   	</path>
 
     <!-- targets -->
-	<target name="init" >
+	<target name="clean" >
 		<delete dir="${build.dir}"/>		
 		<mkdir  dir="${build.dir}"/>
 		<mkdir  dir="${build.dir}/core"/>
 		<mkdir  dir="${build.dir}/full"/>
-		
-	
-		<delete dir="${release.dir}"/>		
-		<mkdir  dir="${release.dir}"/>
-		
     </target>  
 	
-  	<target name="build-core">
+	<target name="reset" depends="clean" >
+		<delete dir="${release.dir}"/>		
+		<mkdir  dir="${release.dir}"/>
+    </target>  
+    	
+  	<target name="build-core" depends="clean">
       <javac 
             destdir="${build.dir}/core">
   		<src path="${core.dir}/src"/>

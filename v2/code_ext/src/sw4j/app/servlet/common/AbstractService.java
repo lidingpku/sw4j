@@ -32,7 +32,7 @@ abstract public class AbstractService  {
 	protected DataSmartMap context = new DataSmartMap();
 
 	public boolean hasParams(){
-		return params.isEmpty();
+		return !params.isEmpty();
 	}
 	
 	public String getSyntaxRdf(){
