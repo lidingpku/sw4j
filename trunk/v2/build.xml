@@ -12,7 +12,7 @@
   
   <!-- local directories -->
   <property name="build.dir"  value="${basedir}/bin"/>
-  <property name="release.dir"  value="${basedir}/output/nightly"/>
+  <property name="release.dir"  value="${basedir}/release/nightly"/>
   <property name="core.dir"  value="${basedir}/code_core"/>
   <property name="ext.dir"  value="${basedir}/code_ext"/>
 
@@ -36,7 +36,7 @@
   	</path>
 
     <!-- targets -->
-	<target name="clean" >
+	<target name="init" >
 		<delete dir="${build.dir}"/>		
 		<mkdir  dir="${build.dir}"/>
 		<mkdir  dir="${build.dir}/core"/>
@@ -48,7 +48,7 @@
 		
     </target>  
 	
-  	<target name="build-core" depends="clean">
+  	<target name="build-core">
       <javac 
             destdir="${build.dir}/core">
   		<src path="${core.dir}/src"/>
