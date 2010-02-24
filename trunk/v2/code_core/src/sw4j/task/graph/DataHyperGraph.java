@@ -192,10 +192,12 @@ public class DataHyperGraph {
 //			return false;
 		
 		m_map_edge_context.add(g, contexts);
-		m_map_output_edge.add(g.m_output, g);
+		for (Integer output: g.getOutputs())
+			m_map_output_edge.add(output, g);
+		
 		m_set_vertex_input.addAll(g.m_input);
 		if (g.isLeaf()){
-			m_set_vertex_leaf.add(g.getOutput());
+			m_set_vertex_leaf.addAll(g.getOutputs());
 			m_set_edge_leaf.add(g);
 		}
 		
@@ -462,10 +464,9 @@ public class DataHyperGraph {
 	
 	public DataDigraph getDigraph(){
 		DataDigraph ret = new DataDigraph(ToolMath.max(this.getVertices(),0));
-		Iterator<DataHyperEdge> iter = this.getEdges().iterator();
-		while (iter.hasNext()){
-			DataHyperEdge edge = iter.next();
-			ret.add(edge.getOutput(),edge.getInputs());
+		for (DataHyperEdge edge: this.getEdges()){
+			for (Integer output: edge.getOutputs())
+				ret.add(output, edge.getInputs());
 		}
 		
 		//ret = ret.create_tc();
@@ -559,7 +560,8 @@ public class DataHyperGraph {
 				if (!ToolSafe.isEmpty(ret))
 					ret +="\n";
 				
-				ret += String.format("%s,%s,\"%s\",\"%s\"\n", edge.export().replaceAll("[\\[|\\]]", "\""), contexts.toString().replaceAll("[\\[|\\]]", "\""),getLabel(edge.getOutput(),""),getLabel(edge,""));
+				for (Integer output: edge.getOutputs())
+					ret += String.format("%s,%s,\"%s\",\"%s\"\n", edge.export().replaceAll("[\\[|\\]]", "\""), contexts.toString().replaceAll("[\\[|\\]]", "\""),getLabel(output,""),getLabel(edge,""));
 			}
 			
 		}
@@ -617,7 +619,8 @@ public class DataHyperGraph {
 
 				//add(edge);
 				setLabel(edge,sz_label_edge);
-				setLabel(edge.getOutput(),sz_label_output);
+				for (Integer output: edge.getOutputs())
+					setLabel(output,sz_label_output);
 				
 				//parse context
 				StringTokenizer st1 = new StringTokenizer(sz_contexts,",");
@@ -813,12 +816,13 @@ public class DataHyperGraph {
 				}
 				ret += String.format(" \"%s\" [ %s ];\n ", e, params);
 
-				Integer output= edge.getOutput();
-				ret += String.format(" \"%s\" -> \"%s\";\n ",  e ,output );
-				Iterator<Integer> iter_input = edge.getInputs().iterator();
-				while (iter_input.hasNext()){
-					Integer input= iter_input.next();
-					ret += String.format(" \"%s\" -> \"%s\";\n ",   input, e );
+				for (Integer output: edge.getOutputs()){
+					ret += String.format(" \"%s\" -> \"%s\";\n ",  e ,output );
+					Iterator<Integer> iter_input = edge.getInputs().iterator();
+					while (iter_input.hasNext()){
+						Integer input= iter_input.next();
+						ret += String.format(" \"%s\" -> \"%s\";\n ",   input, e );
+					}
 				}
 			}
 

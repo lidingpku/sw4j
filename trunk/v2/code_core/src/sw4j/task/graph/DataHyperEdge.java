@@ -44,7 +44,8 @@ import java.util.TreeSet;
 import sw4j.util.ToolSafe;
 
 public class DataHyperEdge extends Object implements Comparable<DataHyperEdge>{
-	Integer m_output = null;
+//	Integer m_output = null;
+	TreeSet<Integer> m_output = new TreeSet<Integer>();
 	TreeSet<Integer> m_input = new TreeSet<Integer>();
 //	String m_id = DEFAULT_ID;
 	
@@ -63,14 +64,23 @@ public class DataHyperEdge extends Object implements Comparable<DataHyperEdge>{
 	public DataHyperEdge(Integer output, Collection<Integer> set_input){
 		this(output, set_input, DEFAULT_WEIGHT);
 	}
-
+	
 	public DataHyperEdge(Integer output, Collection<Integer> set_input, int weight){
-		m_output=output;
+		this (new TreeSet<Integer>(),set_input,weight);
+		this.m_output.add(output);
+	}
+
+	public DataHyperEdge( Collection<Integer>  set_output, Collection<Integer> set_input){
+		this (set_output,set_input,DEFAULT_WEIGHT);
+		
+	}
+	public DataHyperEdge( Collection<Integer>  set_output, Collection<Integer> set_input, int weight){
 		m_weight=weight;
+		if (!ToolSafe.isEmpty(set_output))
+			m_output.addAll(set_output);
 		if (!ToolSafe.isEmpty(set_input))
 			m_input.addAll(set_input);
 	}
-
 
 
 	public String export() {
@@ -115,7 +125,7 @@ public class DataHyperEdge extends Object implements Comparable<DataHyperEdge>{
 		this.m_input.add(v_source);
 	}
 
-	public Integer getOutput(){
+	public Set<Integer> getOutputs(){
 		return m_output;
 	}
 
