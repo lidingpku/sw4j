@@ -130,8 +130,9 @@
 
 
  	
-  	<target name="run" depends="release">
+  	<target name="run" depends="nightly">
     </target>  
+  	
 
   	<target name="release" depends="nightly">
 		<mkdir  dir="${release.dir}/${version}"/>

@@ -5,23 +5,113 @@
 <!--	 		template: root					   -->
 <!-- ***************************************************  -->
 
-<xsl:template match="OieResult">
+<xsl:template match="Sw4jResult">
 
 <!--	===========  HTML HEADER =========== -->
-
+<html>
 <head>
 	<title>	TW OWL instance data evaluation 
-		<xsl:if test="//hasReport/OieReport/file_or_url">
-			- checking <xsl:value-of select="//hasReport/OieReport/file_or_url"/>
+		<xsl:if test="//hasReport/Sw4jReport/file_or_url">
+			- checking <xsl:value-of select="//hasReport/Sw4jReport/file_or_url"/>
 		</xsl:if >
 	</title>
 	
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<link href="http://tw.rpi.edu/base.css" rel="stylesheet" type="text/css" />
-	<link href="http://onto.rpi.edu/demo/oie/report.css" rel="stylesheet" type="text/css" /> 
 <!--  TODO: will add more features via javascript
 <script type="text/javascript" src="http://onto.rpi.edu/oie/report.js"></script>
 -->
+
+<style  type="text/css"> 
+body.oie{
+}
+
+
+div.oie_section{
+	margin: 0.5em;
+}
+
+
+div.oie_section_title{
+	background: #DDE;
+	text-align: center;
+	color: #005A9C;
+	font: 120% sans-serif ;
+}
+
+div.oie_section_content table{
+text-align: left;
+/*font-family: Verdana, Geneva, Arial, Helvetica, sans-serif ;
+*/
+font-weight: normal;
+background-color: #EEE;
+border: 0px;
+border-collapse: collapse;
+border-spacing: 0px;
+font: 80% ;
+}
+
+div.oie_section_content td{
+background-color: #DDD;
+color: #000;
+/*
+padding: 4px;
+*/
+text-align: left;
+border: 1px #fff solid;
+}
+
+
+div.oie_section_content td.header{
+background-color: #AAA;
+/*
+color: #fff;
+padding: 4px;
+*/
+text-align: left;
+border-bottom: 2px #fff solid;
+font-weight: bold;
+}
+
+div.oie_section_content td.has_issue{
+color: #000;
+}
+
+div.oie_section_content td.has_no_issue{
+color: #fff;
+}
+
+
+div.oie_report{
+/*	border: 1 solid;
+*/
+	margin: 0.5em 1em;	
+}
+
+
+div.oie_report_title {
+	margin-bottom: 0.5em;	
+	color: #005A9C;
+	font: bold 100% sans-serif ;
+}
+
+div.oie_report_entry {
+/*	border: 1 solid;
+	display: block;
+	padding: 0.5em 1em;	
+*/	
+	margin: 0.5em 1em;
+	background: #EEE;
+}
+
+div.oie_entry_abstract {
+	font:   100%  sans-serif
+}
+div.oie_entry_detail {
+	font: italic 100% times
+}
+</style>
+
 </head>
 
 <!--	===========  HTML HEADER =========== -->
@@ -43,26 +133,26 @@
 
 	<div class="oie_section_content" align="center">
 		<p>Your OWL instance data 
-			<xsl:if test="//hasReport/OieReport/file_or_url">
-				(<a href="{//hasReport/OieReport/file_or_url}"> <xsl:value-of select="//hasReport/OieReport/file_or_url"/></a>)
+			<xsl:if test="//hasReport/Sw4jReport/file_or_url">
+				(<a href="{//hasReport/Sw4jReport/file_or_url}"> <xsl:value-of select="//hasReport/Sw4jReport/file_or_url"/></a>)
 			</xsl:if >
 			<b><xsl:value-of select="result"/></b> the following evaluation options.</p>
 
 	<table border = "1">
 		<tr>
 			<td class="header">  Evaluation Options </td>		
-			<td class="header"> <img src="http://tw.rpi.edu/images/misc/fatal.png" /> fatal error(s) </td>		
-			<td class="header"> <img src="http://tw.rpi.edu/images/misc/error.png" /> error(s) </td>		
-			<td class="header"> <img src="http://tw.rpi.edu/images/misc/warn.png" /> warning(s) </td>		
+			<td class="header"> <img src="http://tw.rpi.edu/images/misc/FATAL.png" /> FATAL ERROR(s) </td>		
+			<td class="header"> <img src="http://tw.rpi.edu/images/misc/ERROR.png" /> ERROR(s) </td>		
+			<td class="header"> <img src="http://tw.rpi.edu/images/misc/WARNING.png" /> WARNING(s) </td>		
 		</tr>
 
-		<xsl:for-each select="hasReport/OieReport">
+		<xsl:for-each select="hasReport/Sw4jReport">
 			<tr>
 				<td><xsl:value-of select="report_title"/></td>
 				<xsl:choose>
-					<xsl:when test="count(hasEntry/OieEntry[level='fatal'])>0" >
+					<xsl:when test="count(hasMessage/Sw4jMessage[state='FATAL'])>0" >
 					<td class="has_issue">
-						<xsl:value-of select="count(hasEntry/OieEntry[level='fatal'])" />
+						<xsl:value-of select="count(hasMessage/Sw4jMessage[state='FATAL'])" />
 					</td>
 					</xsl:when>
 					<xsl:otherwise>
@@ -70,9 +160,9 @@
 					</xsl:otherwise>
 				</xsl:choose>
 				<xsl:choose>
-					<xsl:when test="count(hasEntry/OieEntry[level='error'])>0" >
+					<xsl:when test="count(hasMessage/Sw4jMessage[state='ERROR'])>0" >
 					<td class="has_issue">
-						<xsl:value-of select="count(hasEntry/OieEntry[level='error'])" />
+						<xsl:value-of select="count(hasMessage/Sw4jMessage[state='ERROR'])" />
 					</td>
 					</xsl:when>
 					<xsl:otherwise>
@@ -80,9 +170,9 @@
 					</xsl:otherwise>
 				</xsl:choose>
 				<xsl:choose>
-					<xsl:when test="count(hasEntry/OieEntry[level='warn'])>0" >
+					<xsl:when test="count(hasMessage/Sw4jMessage[state='WARNING'])>0" >
 					<td class="has_issue">
-						<xsl:value-of select="count(hasEntry/OieEntry[level='warn'])" />
+						<xsl:value-of select="count(hasMessage/Sw4jMessage[state='WARNING'])" />
 					</td>
 					</xsl:when>
 					<xsl:otherwise>
@@ -90,11 +180,11 @@
 					</xsl:otherwise>
 				</xsl:choose>
 <!--
-				<td  class="error">
-					<xsl:value-of select="count(hasEntry/OieEntry[level='error'])" />
+				<td  class="ERROR">
+					<xsl:value-of select="count(hasMessage/Sw4jMessage[state='ERROR'])" />
 				</td>
-				<td  class="warn">
-					<xsl:value-of select="count(hasEntry/OieEntry[level='warn'])" />
+				<td  class="WARNING">
+					<xsl:value-of select="count(hasMessage/Sw4jMessage[state='WARNING'])" />
 				</td>
 -->
 			</tr>
@@ -108,7 +198,7 @@
 
 	<div class="oie_section_title">Details</div>
 
-	<div class="oie_section_content"><xsl:apply-templates select="hasReport/OieReport"/></div >
+	<div class="oie_section_content"><xsl:apply-templates select="hasReport/Sw4jReport"/></div >
 	
 </div>
 
@@ -128,8 +218,8 @@
 		</xsl:if>
 -->
 <!--
-		<xsl:value-of select="//hasReport/OieReport/raw_content" />
-		<xsl:value-of select="hasReport/OieReport/raw_content" />
+		<xsl:value-of select="//hasReport/Sw4jReport/raw_content" />
+		<xsl:value-of select="hasReport/Sw4jReport/raw_content" />
 		<xsl:value-of select="//hasRawLine/OieRawLine" />
 		<xsl:value-of select="//hasRawLine/OieRawLine/L01" />
 		
@@ -147,7 +237,7 @@
 
 
 </body>
-
+</html>
 </xsl:template>
 
 
@@ -155,12 +245,12 @@
 <!--	 	template: for individual report	  			  -->
 <!-- ***************************************************  -->
 
-<xsl:template match="hasReport/OieReport">
-	<xsl:if test="count(hasEntry)>0">
+<xsl:template match="hasReport/Sw4jReport">
+	<xsl:if test="count(hasMessage)>0">
 		<div class="oie_report">
 			<div class="oie_report_title" title="{report_description}"> <xsl:value-of select="report_title"/> </div>
 
-			<xsl:apply-templates select="hasEntry/OieEntry"/>
+			<xsl:apply-templates select="hasMessage/Sw4jMessage"/>
 		</div>
 	</xsl:if>
 </xsl:template>
@@ -170,17 +260,18 @@
 <!--	 	template: for individual report	entry		  -->
 <!-- ***************************************************  -->
 
-<xsl:template match="hasEntry/OieEntry">
+<xsl:template match="hasMessage/Sw4jMessage">
 	<div class="oie_report_entry">
 
-		<div class="oie_entry_abstract"> 
+		<div class="state"> 
 			<xsl:choose>
-				<xsl:when test="level='fatal'">  <img src="http://tw.rpi.edu/images/misc/fatal.png" />    </xsl:when>	  
-				<xsl:when test="level='warn'">  <img src="http://tw.rpi.edu/images/misc/warn.png" />    </xsl:when>	  
-				<xsl:when test="level='error'">  <img src="http://tw.rpi.edu/images/misc/error.png" />    </xsl:when>	  
+				<xsl:when test="state='FATAL'">  <img src="http://tw.rpi.edu/images/misc/fatal.png" />    </xsl:when>	  
+				<xsl:when test="state='WARNING'">  <img src="http://tw.rpi.edu/images/misc/warning.png" />    </xsl:when>	  
+				<xsl:when test="state='ERROR'">  <img src="http://tw.rpi.edu/images/misc/error.png" />    </xsl:when>	  
 			</xsl:choose>
 			<xsl:text>   </xsl:text> 
-			<xsl:value-of select="message"/>
+			<xsl:value-of select="summary"/>
+			( <xsl:value-of select="creator"/> )
 		</div>
 		 
 		<xsl:if test="details">

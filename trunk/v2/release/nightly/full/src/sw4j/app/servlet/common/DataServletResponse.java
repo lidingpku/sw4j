@@ -155,8 +155,8 @@ public class DataServletResponse {
 	
 
 	public void output(HttpServletResponse response) throws IOException{
+    	response.setContentType(getMimeType()+";charset=UTF-8");
         PrintWriter out = response.getWriter();
-    	response.setContentType(getMimeType());
         output(out);
         out.flush();
 		out.close();
