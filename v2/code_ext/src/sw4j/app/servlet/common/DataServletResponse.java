@@ -154,7 +154,20 @@ public class DataServletResponse {
 	}
 	
 
+	/**
+	 * http://java.sun.com/products/servlet/2.2/javadoc/javax/servlet/ServletResponse.html#getWriter%28%29
+	 * 
+	 * Returns a PrintWriter object that can send character text to the client. 
+	 * The character encoding used is the one specified in the charset= property of 
+	 * the setContentType(java.lang.String) method, which must be called before calling 
+	 * this method for the charset to take effect.
+	 * 
+
+	 * @param response
+	 * @throws IOException
+	 */
 	public void output(HttpServletResponse response) throws IOException{
+		
     	response.setContentType(getMimeType()+";charset=UTF-8");
         PrintWriter out = response.getWriter();
         output(out);

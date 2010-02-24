@@ -132,10 +132,12 @@ public class DataDigraph  {
 		return this.m_mat_adj[from][to];
 	}
 
-	public boolean isReachable(Set<Integer> set_from, Integer to){
+	public boolean isReachable(Set<Integer> set_from, Set<Integer> set_to){
 		for (int from : set_from){
-			if (isReachable(from,to))
-				return true;
+			for (int to : set_to){
+				if (isReachable(from,to))
+					return true;
+			}
 		}
 		return false;
 	}

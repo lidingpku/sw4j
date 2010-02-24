@@ -133,7 +133,7 @@ public class AgentHyperGraphAoStar extends AgentHyperGraphTraverse{
 				if (e.hasLoop()){
 					iter.remove();
 				}else{
-					vertices.add(e.getOutput());
+					vertices.addAll(e.getOutputs());
 					vertices.addAll(e.getInputs());
 				}
 			}

@@ -250,7 +250,7 @@ public class AgentHyperGraphTraverse {
 			new_vx.addAll(Vx);
 			new_vx.addAll(g.getInputs());
 			new_vx.removeAll(Gx.getVerticesOutput());
-			new_vx.remove(g.getOutput());
+			new_vx.removeAll(g.getOutputs());
 
 			// no need to track provenance in intermediate result
 			DataHyperGraph new_gx = new DataHyperGraph(Gx);
@@ -375,7 +375,7 @@ public class AgentHyperGraphTraverse {
 			}
 
 			// avoid cycle
-			if (adj.isReachable(g.getInputs(), g.getOutput())){
+			if (adj.isReachable(g.getInputs(), g.getOutputs())){
 				continue;
 			}
 			// avoid self-loop
