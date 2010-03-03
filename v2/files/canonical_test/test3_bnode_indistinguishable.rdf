@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <!--
-	Goal: blank nodes are indistinguishable, i.e. we can see the two triples are "equivalent" .
+	    Goal: blank nodes are indistinguishable, i.e. we can see the two triples are "equivalent" .
+      	Expected Result: No Canonical
+
 	We can also see that this RDF graph is not "lean".
     see: http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/#section-graph-equality
 	see: http://www.w3.org/TR/rdf-mt/#graphdefs
