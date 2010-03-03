@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <!--
-	Goal: blank nodes are indistinguishable, i.e. we can see the two triples are "equivalent" .
-	We can also see that this RDF graph is not "lean".
+     Goal: two literal strings are not exactly the same due to language tag and typed literal
+     Expected Result: Trivial Canonical
+
     see: http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/#section-graph-equality
-	see: http://www.w3.org/TR/rdf-mt/#graphdefs
 	      
       Number	Subject	Predicate	Object
 1 	genid:A56805 	http://purl.org/dc/elements/1.1/title 	"val"
-2 	genid:A56806 	http://purl.org/dc/elements/1.1/title 	"val" 
+2 	genid:A56806 	http://purl.org/dc/elements/1.1/title 	"val"@en^^<http://www.w3.org/2001/XMLSchema#string>
 -->
 
 <rdf:RDF

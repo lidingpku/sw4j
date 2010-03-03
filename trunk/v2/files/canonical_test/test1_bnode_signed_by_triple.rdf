@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <!--
-	Goal: a blank node can be signed by just one triple
+	Goal: a blank node can be signed by just one triple (example1 in carroll's 2003 paper)
+	Expected Result: Trivial Canonical
       
       Number	Subject	Predicate	Object
 1 	http://ex.org/foo#a 	http://purl.org/dc/elements/1.1/relation 	genid:A56807
