@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
 <!--
-	Goal: a blank node can be signed by just one triple (example1 in carroll's 2003 paper)
-	Expected Result: Trivial Canonical
+	Goal: a blank node can be signed by just one triple (example2 in carroll's 2003 paper)
+	Expected Result: Hard to Code Canonical
       
       Number	Subject	Predicate	Object
-1 	http://ex.org/eg#a 	http://ex.org/eg#foo	genid:A56807
-2 	genid:A56807 		http://ex.org/eg#prop	"val"
+1 	genid:A56807 	http://ex.org/eg#zee	"why"
+2 	genid:A56807 	http://ex.org/eg#prop	"val"
 3 	http://ex.org/eg#b 	http://ex.org/eg#prop	genid:A56808
+2 	genid:A56809 	http://ex.org/eg#prop	"val"
 -->
 
 <rdf:RDF
@@ -15,12 +16,9 @@
  xml:base="http://ex.org/eg"
 >
 
-<rdf:Description rdf:about="#a">
-  <ex:foo>
-    <rdf:Description>
-      <ex:prop>val</ex:prop>
-    </rdf:Description>
-  </ex:foo>
+<rdf:Description >
+    <ex:zee>why</ex:zee>
+    <ex:prop>val</ex:prop>
 </rdf:Description>
 
 
@@ -29,6 +27,10 @@
     <rdf:Description>
     </rdf:Description>
   </ex:prop>
+</rdf:Description>
+
+<rdf:Description >
+    <ex:prop>val</ex:prop>
 </rdf:Description>
 
 
