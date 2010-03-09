@@ -26,6 +26,8 @@ public class ToolModelDiffTest {
 				"files/canonical_test/test1b_bnode_signed_by_triple.rdf",
 				"files/canonical_test/test2_bnode_signed_by_triples.rdf",
 				"files/canonical_test/test3_bnode_indistinguishable.rdf",
+				"files/canonical_test/test5_bnode_signed_by_subject.rdf",
+				"files/canonical_test/test6_bnode_signed_by_triples.rdf",
 		};
 		
 		for (String file: files){

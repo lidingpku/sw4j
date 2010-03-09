@@ -63,6 +63,7 @@ public class TaskParseRdf extends AbstractTaskDesc {
 	public static final String ERROR_SUMMARY_3 = "cannot find xsl file when parsing RDFA using xslt translation";
 	public static final String ERROR_SUMMARY_4 = "issues found when parsing RDFA using xslt translation";
 	public static final String ERROR_SUMMARY_5 = "RDF parser need non empty content from the input";
+	public static final String ERROR_SUMMARY_6 = "issues found in GRDDL parsing";
 
 	public static final String REPORT_TITLE ="RDF parsing and validation";
 	public static final String REPORT_DESC ="This service checks if there exists any syntax errors in instance data";
@@ -181,10 +182,13 @@ public class TaskParseRdf extends AbstractTaskDesc {
 			    	 output.setGuessFormat(ToolMarkupDetector.FORMAT_TEXT_RDFA);
 			    	 return output;
 				}
+								
 			}else{
 				//if it is not xml, then it can only be html or text
 				output.setGuessFormat(ToolMarkupDetector.FORMAT_HTML);
-			}			
+			}	
+
+
 			return output;
 			//break;
 		case ToolMarkupDetector.FORMAT_HTML_EMBED_RDFXML: 

@@ -13,10 +13,13 @@ import sw4j.task.load.TaskLoad;
 
 
 public class RdfParserTest {
+
+
 	@Test
 	public void test_rdfa_parse(){
 		String [][] aryURL = new String [][]{
-				  {	"http://tw.rpi.edu/portal/News","1"},		//
+//				  {	"http://tw.rpi.edu/portal/News","1"},		//
+				  {"http://data-gov.tw.rpi.edu/wiki/Dataset_92","5"},
 
 
 		};

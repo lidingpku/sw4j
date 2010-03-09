@@ -55,6 +55,7 @@ public class ToolMarkupDetector {
     public final static int FORMAT_TEXT_NO_CONTENT= 8;
     public final static int FORMAT_TEXT_EMBED_RDFXML = 9;
     public final static int FORMAT_TEXT_RDFA = 10;
+    public final static int FORMAT_TEXT_GRDDL = 11;
     
     public final static String [][] FORMAT_NAME= new String [][]{
     	{"text", ""},
