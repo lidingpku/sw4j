@@ -45,7 +45,6 @@
 	<classpathentry kind="lib" path="code_ext/lib/pellet_2_rc7/xsdlib/xsdlib.jar"/>
 	<classpathentry kind="lib" path="code_core/lib/mysql-connector-java-5.1.8-bin.jar"/>
 	<classpathentry kind="lib" path="code_core/lib/javacsv.jar"/>
-	<classpathentry kind="var" path="JAVA_HOME"/>
 	<classpathentry kind="lib" path="code_ext/lib/arq/arq-2.8.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
