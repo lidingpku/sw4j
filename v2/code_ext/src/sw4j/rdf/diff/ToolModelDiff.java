@@ -9,7 +9,6 @@ import sw4j.util.DataObjectGroupMap;
 import sw4j.util.DataPVTMap;
 
 import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.RDFNode;
 
 public class ToolModelDiff {
 

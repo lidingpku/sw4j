@@ -1,6 +1,5 @@
 package sw4j.rdf.diff;
 
-import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Statement;
 
 import sw4j.rdf.util.ToolJena;

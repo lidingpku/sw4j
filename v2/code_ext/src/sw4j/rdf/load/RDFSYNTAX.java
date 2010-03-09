@@ -11,6 +11,7 @@ public class RDFSYNTAX {
 	public static final String RDFXML_ABBREV = "RDF/XML-ABBREV";
 	
 	public static final String RDFA = "RDFA";
+	public static final String GRDDL = "GRDDL";
 	public static final String SPARQL_XML = "sparql/xml";
 	public static final String SPARQL_JSON = "sparql/json";
 	
