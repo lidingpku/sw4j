@@ -77,6 +77,13 @@ public class AgentModelStat {
 		}
 		//TODO
 	}
+	
+	public Set<String> listOntologies(){
+		TreeSet<String> ret = new TreeSet<String>();
+		ret.addAll(m_imported_ontology);
+		ret.addAll(m_namespace_ontology);
+		return ret;
+	}
 
 	private boolean do_count_instance_usage(String usage, RDFNode node){
 		if (node.isURIResource()){
