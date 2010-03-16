@@ -11,7 +11,7 @@
   <property name="version"  value="0.6"/>
   
   <!-- local directories -->
-  <property name="build.dir"  value="${basedir}/bin"/>
+  <property name="build.dir"  value="${basedir}/classes"/>
   <property name="release.dir"  value="${basedir}/release"/>
   <property name="nightly.dir"  value="${release.dir}/nightly"/>
   <property name="core.dir"  value="${basedir}/code_core"/>
