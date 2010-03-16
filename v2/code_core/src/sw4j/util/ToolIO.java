@@ -361,7 +361,7 @@ public class ToolIO {
 	}
 
 	public static void pipeFileToFile(File from, File to, boolean bAppend) throws Sw4jException{
-		ToolIO.pipeInputStreamToOutputStream(prepareFileInputStream(from), prepareFileOutputStream(to, false, bAppend));
+		ToolIO.pipeInputStreamToOutputStream(prepareFileInputStream(from), prepareFileOutputStream(to, bAppend, false));
 	}
 
 	///////////////////////////////////////////////////////
