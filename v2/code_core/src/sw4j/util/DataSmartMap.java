@@ -514,7 +514,7 @@ public class DataSmartMap implements Comparable<String>{
 			
 			if (content.length()>0)
 				content+=",";
-			content+= String.format("\"%s\",", entry.getKey());
+			content+= String.format("\"%s\"", entry.getKey());
 		}
 		return content;
 	}
