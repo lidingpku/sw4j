@@ -28,6 +28,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 package sw4j.util;
 
+import java.io.File;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
@@ -54,6 +55,10 @@ public class ToolSafe {
 
 	public static boolean isEmpty(String szText) {
 		return null == szText || szText.trim().length() == 0;
+	}
+
+	public static boolean isEmpty(File f) {
+		return null == f || f.exists();
 	}
 
 	public static boolean isEmpty(Object data) {
