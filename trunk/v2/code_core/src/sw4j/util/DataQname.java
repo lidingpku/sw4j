@@ -63,6 +63,10 @@ public class DataQname {
 		return new DataQname(); 
 	}
 
+	public static DataQname create(String szUri) throws Sw4jException{
+		return create(szUri, null);
+	}
+
 	public static DataQname create(String szUri,String szPrefix) throws Sw4jException{
 		int index = ToolURI.splitUri(szUri);
 		return create(
@@ -92,7 +96,7 @@ public class DataQname {
 	
 	public static String extractNamespace(String szUri){
 		try {
-			return create(szUri, null).getNamespace();
+			return create(szUri).getNamespace();
 		} catch (Sw4jException e) {
 			if (debug)
 				e.printStackTrace();
@@ -105,7 +109,7 @@ public class DataQname {
 			return null;
 		
 		try {
-			return create(szUri, null).getNamespaceUrl();
+			return create(szUri).getNamespaceUrl();
 		} catch (Sw4jException e) {
 			if (debug)
 				e.printStackTrace();
