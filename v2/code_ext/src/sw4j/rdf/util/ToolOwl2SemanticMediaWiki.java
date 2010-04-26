@@ -56,6 +56,7 @@ import sw4j.rdf.util.ToolJena;
 import sw4j.util.DataQname;
 import sw4j.util.ToolSafe;
 import sw4j.util.web.ToolMediaWiki;
+import sw4j.util.web.ToolWeb;
 
 
 public class ToolOwl2SemanticMediaWiki {
@@ -493,7 +494,7 @@ public class ToolOwl2SemanticMediaWiki {
 				return String.format("%s%s", wikins, szRes);
 
 		}else if (node.isLiteral()){
-			return ((Literal)node).getString().replaceAll("\n", " ");
+			return ToolWeb.escapeHTML(((Literal)node).getString().replaceAll("\n", " "));
 		}else {
 			return node.toString();
 		}
