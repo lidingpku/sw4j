@@ -112,6 +112,8 @@ public class ToolURI {
 	 * @throws Sw4jException 
 	 */
 	public static URI string2uri(String szUri) throws Sw4jException{
+		szUri = szUri.replaceAll("\\\"", "%22");			
+		szUri = szUri.replaceAll("`", "%60");			
 		return string2uri(szUri, false);
 	}
 
@@ -467,6 +469,12 @@ public class ToolURI {
 		"http://xmlns.com/wordnet/1.6/",
 		"http://purl.org/dc/dcmitype/",
 		"http://purl.org/vocab/bio/0.1/",
+		"http://sws.geonames.org/",	// there URIs are ugly   http://sws.geonames.org/1283416/
+		"http://rdf.freebase.com/ns/", //freebase
+		"http://dbpedia.org/resource/", //dbpedia
+		"http://data.nytimes.com/",  // http://data.nytimes.com/34102657707806421181
+		"http://sw.cyc.com/concept/", 
+		"http://umbel.org/umbel/ne/wikipedia/",
 	};
 
 	public static int splitUri(String szFileOrURI){
