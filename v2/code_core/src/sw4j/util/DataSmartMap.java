@@ -531,9 +531,41 @@ public class DataSmartMap implements Comparable<String>{
 		}
 		return content;
 	}
-	
+
 	private static String escapeCSV(String text){
 		return text.replace("\"","\"\"");
+	}
+	////////////////////////////////////////////////
+	// translation (to TSV)
+	////////////////////////////////////////////////
+	public String toTSVheader() {
+		String content = "";
+		Iterator<Map.Entry<String, Object>> iter = getData().entrySet().iterator();
+		while (iter.hasNext()){
+			Map.Entry<String, Object> entry = iter.next();
+			
+			if (content.length()>0)
+				content+="\t";
+			content+= String.format("%s", escapeTSV(entry.getKey()));
+		}
+		return content;
+	}
+
+	public String toTSVrow() {
+		String content = "";
+		Iterator<Map.Entry<String, Object>> iter = getData().entrySet().iterator();
+		while (iter.hasNext()){
+			Map.Entry<String, Object> entry = iter.next();
+			
+			if (content.length()>0)
+				content+="\t";
+			content +=String.format("%s", escapeTSV(entry.getValue().toString()));
+		}
+		return content;
+	}
+
+	private static String escapeTSV(String text){
+		return text.replace("\\s+"," ");
 	}
 
 	////////////////////////////////////////////////
