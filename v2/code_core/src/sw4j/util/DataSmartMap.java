@@ -514,7 +514,7 @@ public class DataSmartMap implements Comparable<String>{
 			
 			if (content.length()>0)
 				content+=",";
-			content+= String.format("\"%s\"", entry.getKey());
+			content+= String.format("\"%s\"", escapeCSV(entry.getKey()));
 		}
 		return content;
 	}
@@ -527,9 +527,13 @@ public class DataSmartMap implements Comparable<String>{
 			
 			if (content.length()>0)
 				content+=",";
-			content +=String.format("\"%s\"", entry.getValue());
+			content +=String.format("\"%s\"", escapeCSV(entry.getValue().toString()));
 		}
 		return content;
+	}
+	
+	private static String escapeCSV(String text){
+		return text.replace("\"","\"\"");
 	}
 
 	////////////////////////////////////////////////
