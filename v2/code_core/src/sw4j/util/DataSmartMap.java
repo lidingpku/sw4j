@@ -569,6 +569,25 @@ public class DataSmartMap implements Comparable<String>{
 	}
 
 	////////////////////////////////////////////////
+	// translation (to JSON object)
+	////////////////////////////////////////////////
+	public String toJSON(){
+		String content = "";
+		Iterator<Map.Entry<String, Object>> iter = getData().entrySet().iterator();
+		while (iter.hasNext()){
+			Map.Entry<String, Object> entry = iter.next();
+			
+			if (content.length()>0)
+				content+=",";
+			content +=String.format("\"%s\":\"%s\"",escapeJSON(entry.getKey()), escapeJSON(entry.getValue().toString()));
+		}
+		return String.format("{%s}",content);
+		
+	}
+	private static String escapeJSON(String text){
+		return text.replace("\"","\\\"");
+	}
+	////////////////////////////////////////////////
 	// translation (to SQL)
 	////////////////////////////////////////////////
 	
