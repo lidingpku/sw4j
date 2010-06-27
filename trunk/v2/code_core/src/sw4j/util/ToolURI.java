@@ -461,22 +461,53 @@ public class ToolURI {
 	
 
 	public static String [] well_known_ns = new String []{
+		"http://sws.geonames.org/",	// there URIs are ugly   http://sws.geonames.org/1283416/
+		"http://rdf.freebase.com/ns/", //freebase
+		"http://data.nytimes.com/",  // http://data.nytimes.com/34102657707806421181
+		"http://sw.cyc.com/concept/", 
+		"http://ontology.dumontierlab.com/",
+		"http://purl.uniprot.org/core/",
+		"http://rdf.insee.fr/geo/",
+		"http://web.resource.org/cc/",
+		"http://www.w3.org/2006/03/wn/wn20/schema/",
+
 		"http://xmlns.com/foaf/0.1/",
+		"http://xmlns.com/wot/0.1/",
+		"http://xmlns.com/wordnet/1.6/",
+
 		"http://purl.org/dc/elements/1.1/",
 		"http://purl.org/dc/terms/",
 		"http://purl.org/rss/1.0/",
-		"http://xmlns.com/wot/0.1/",
-		"http://xmlns.com/wordnet/1.6/",
 		"http://purl.org/dc/dcmitype/",
 		"http://purl.org/vocab/bio/0.1/",
-		"http://sws.geonames.org/",	// there URIs are ugly   http://sws.geonames.org/1283416/
-		"http://rdf.freebase.com/ns/", //freebase
+
+		"http://dbpedia.org/class/yago/",
+		"http://dbpedia.org/ontology/",
 		"http://dbpedia.org/resource/", //dbpedia
-		"http://data.nytimes.com/",  // http://data.nytimes.com/34102657707806421181
-		"http://sw.cyc.com/concept/", 
-		"http://umbel.org/umbel/ne/wikipedia/",
+
+		"http://sw.opencyc.org/concept/",
+		"http://wiki.infowiss.net/Spezial:URIResolver/Kategorie-3A",
 	};
 
+	public static String [][] well_known_special_pattern = new String [][]{
+		{"http://umbel.org/.*","/"},
+		{"http://sw.nokia.com/.*","/"},
+		{"http://wiki.infowiss.net/.*","/"},
+		{"http://www.rdfabout.com/.*","/"},
+		{"http://sw.opencyc.org/.*","/"},
+		{"http://xmlns.com/.*","/"},
+		{"http://dbpedia.org/.*","/"},
+		{"http://purl.org/.*","/"},
+		{"http://data-gov.tw.rpi.edu/.*","/"},
+		{".*Category-3A.*","Category-3A"},
+		{".*Kategorie-3A.*","Kategorie-3A"},
+		{".*:URIResolver/.*","/"},
+		{"http://bio2rdf.org/.*",":"},
+		{".*/resource/.*","/"},
+		{".*/class/.*","/"},
+		{".*/things/.*","/"},
+	};
+	
 	public static int splitUri(String szFileOrURI){
 		int index = szFileOrURI.indexOf("#");
 		if (index == 0) {
@@ -485,6 +516,14 @@ public class ToolURI {
 				for (int i=0; i<well_known_ns.length; i++){
 					if (szFileOrURI.startsWith(well_known_ns[i])){
 						return well_known_ns[i].length();
+					}
+				}
+				
+				for (int i=0; i<well_known_special_pattern.length; i++){
+					if (szFileOrURI.matches(well_known_special_pattern[i][0])){
+						index = szFileOrURI.lastIndexOf(well_known_special_pattern[i][1]);
+						if (index>0 && index <szFileOrURI.length())
+							return index+ (well_known_special_pattern[i][1].length());
 					}
 				}
 			return szFileOrURI.length();
