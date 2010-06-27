@@ -227,7 +227,7 @@ public class DataQname {
 	private void validateNamespace(String szNamespace) throws Sw4jException{
 		// namespace should end with any of the following: '/' '#' ':'
 		if (!szNamespace.endsWith("/") && !szNamespace.endsWith("#")
-				&& !szNamespace.endsWith(":")) {
+				&& !szNamespace.endsWith(":") && !szNamespace.endsWith("-3A")) {
 			throw new Sw4jException( Sw4jMessage.STATE_ERROR, "bad Namespace.", "Expect end with either /, #, or : , but see "+szNamespace);
 		}
 	}
