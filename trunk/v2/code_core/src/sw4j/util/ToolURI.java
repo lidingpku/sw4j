@@ -498,7 +498,7 @@ public class ToolURI {
 		{"http://xmlns.com/.*","/"},
 		{"http://dbpedia.org/.*","/"},
 		{"http://purl.org/.*","/"},
-		{"http://data-gov.tw.rpi.edu/.*","/"},
+//		{"http://data-gov.tw.rpi.edu/.*","/"},
 		{".*Category-3A.*","Category-3A"},
 		{".*Kategorie-3A.*","Kategorie-3A"},
 		{".*:URIResolver/.*","/"},
