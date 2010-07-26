@@ -392,6 +392,23 @@ public class ToolURI {
 		}
 	}	
 	
+	/**
+	 * obtain the URL of an URI, require web connection
+	 * 
+	 * @param uri
+	 * @return
+	 * @throws Sw4jException 
+	 */
+	public static String uri2url(String uri) throws Sw4jException {
+		ToolSafe.checkNonEmpty(uri, "Expect non-empty URI");
+
+		int index = uri.indexOf("#");
+		if (index>0){
+			return uri.substring(0,index);
+		}else{
+			return uri;
+		}
+	}	
 	
 	
 	
