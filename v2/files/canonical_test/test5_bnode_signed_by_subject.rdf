@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+	Goal: a blank node signed by subject
+	Expected Result: Trivial Canonical
+      
+      Number	Subject	Predicate	Object
+1 	http://ex.org/eg#a 	http://ex.org/eg#foo	genid:A56807
+2 	genid:A56807 		http://ex.org/eg#prop	"val"
+3 	http://ex.org/eg#b 	http://ex.org/eg#foo	genid:A56808
+2 	genid:A56808 		http://ex.org/eg#prop	"val"
+-->
+
+<rdf:RDF
+ xmlns:ex="http://ex.org/eg#"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xml:base="http://ex.org/eg"
+>
+
+<rdf:Description rdf:about="#a">
+  <ex:foo>
+    <rdf:Description>
+      <ex:prop>val</ex:prop>
+    </rdf:Description>
+  </ex:foo>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="#b">
+  <ex:foo>
+    <rdf:Description>
+      <ex:prop>val</ex:prop>
+    </rdf:Description>
+  </ex:foo>
+</rdf:Description>
+
+
+</rdf:RDF>
