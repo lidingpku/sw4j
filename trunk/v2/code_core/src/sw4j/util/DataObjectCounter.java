@@ -91,10 +91,10 @@ public class DataObjectCounter<V> {
 		return set_ret;		
 	}
 	
-	class Entry implements Comparable<Entry>{
-		V key;
-		Integer count =0;
-		Set<String> sources;
+	public class Entry implements Comparable<Entry>{
+		public V key;
+		public Integer count =0;
+		public Set<String> sources;
 		
 		@Override
 		public int compareTo(Entry arg0) {
