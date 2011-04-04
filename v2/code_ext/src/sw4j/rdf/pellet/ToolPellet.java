@@ -92,8 +92,12 @@ public class ToolPellet {
 			deduction = ModelFactory.createDefaultModel();
 
 		
-		
 		ToolJena.update_copy(deduction,ont);
+
+		//remove ontological triples from default owl 
+		deduction.remove(ToolPellet.createOntModel());
+
+		//ensure transitive closure  
 		ToolJena.updateModelTranstive(deduction, RDFS.subClassOf);
 		ToolJena.updateModelTranstive(deduction, RDFS.subPropertyOf);
 		return deduction;
